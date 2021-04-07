@@ -4564,6 +4564,28 @@
       "1552235156499": {
         "type": "slideshow",
         "blocks": {
+          "a9484219-1f34-4a05-9cd7-97d7d9097e71": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/DSC_3160.jpg",
+              "pretext": "",
+              "title": "Fresh <br> Flowers",
+              "subtitle": "<p>Vibrant Stones for<br\/>Vibrant Love<\/p>",
+              "caption_background": true,
+              "caption_background_transparency": true,
+              "button1": "Shop the Drop",
+              "button1_link": "shopify:\/\/collections\/new-arrivals",
+              "button1_highlight": false,
+              "button2": "",
+              "button2_highlight": false,
+              "text_position": "left",
+              "text_align": "center",
+              "mobile_image_crop": "none",
+              "is_timed_slide": false,
+              "start_datetime": "",
+              "end_datetime": ""
+            }
+          },
           "e80aee0c-2f19-4966-9ed5-f850a1332840": {
             "type": "image",
             "settings": {
@@ -4584,28 +4606,6 @@
               "is_timed_slide": false,
               "start_datetime": "",
               "end_datetime": ""
-            }
-          },
-          "ff1a27e1-dfd8-48a5-a1ad-972e6a3f101c": {
-            "type": "image",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/OOAK412_Supernova_white_gold_teal_sapphire_round_3.jpg",
-              "pretext": "",
-              "title": "New Rings <br> Every Week",
-              "subtitle": "<p>Check back every Friday for Fresh Rings!<\/p>",
-              "caption_background": true,
-              "caption_background_transparency": false,
-              "button1": "New Arrivals",
-              "button1_link": "shopify:\/\/collections\/new-products",
-              "button1_highlight": false,
-              "button2": "",
-              "button2_highlight": false,
-              "text_position": "right",
-              "text_align": "center",
-              "mobile_image_crop": "none",
-              "is_timed_slide": true,
-              "start_datetime": "2021-03-19",
-              "end_datetime": "2021-03-26"
             }
           },
           "97d33d13-e319-45ba-a204-254bf4d49ac4": {
@@ -4654,8 +4654,8 @@
           }
         },
         "block_order": [
+          "a9484219-1f34-4a05-9cd7-97d7d9097e71",
           "e80aee0c-2f19-4966-9ed5-f850a1332840",
-          "ff1a27e1-dfd8-48a5-a1ad-972e6a3f101c",
           "97d33d13-e319-45ba-a204-254bf4d49ac4",
           "bd8c36db-7547-4162-a7ed-25fed40efaf5"
         ],
@@ -5567,7 +5567,7 @@
           "5139f07c-f98e-48cd-bf28-eea7fb2b234c": {
             "type": "employee",
             "settings": {
-              "image": "shopify:\/\/shop_images\/Amara_Palmer_Headshot_2_x_3.jpg",
+              "image": "shopify:\/\/shop_images\/DSC_4217-8.jpg",
               "title": "Amara Palmer",
               "job_title": "Sales Associate",
               "description": "<p>I fell in love with vintage and ethically made fine jewelry in college. To adorn yourself in it marries the stunning beauty our planet provides us with a sentimental meaning you attach. As a sales associate, I am excited to share the craftsmanship at VM. When not at work, you can find me practicing minimalism with maximalist design, lounging with my cat Miss Cleo, collecting tea, and learning how to parallel park!<\/p>",
@@ -5644,6 +5644,16 @@
               "twitter": ""
             }
           },
+          "864f5b3d-9233-4135-976e-c65ebd4dc2e8": {
+            "type": "employee",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Megan_Headshot.jpg",
+              "title": "Megan Cosgrove",
+              "job_title": "Customer Service Specialist",
+              "description": "<p><strong>As the face of VM’s Customer Service Department, I strive to make your experience unforgettable. My sense of humor and colorful personality helps ensure that you will be taken care of no matter what! I love to help individuals find lifelong custom rings or commemorate milestones in gold. When I am away from work, you can find me hunting for vintage clothing, obsessing over my dog or impulsively dying my hair.<\/strong><\/p>",
+              "twitter": ""
+            }
+          },
           "7019976c-c8ec-434f-8686-060a3c419fdd": {
             "type": "employee",
             "settings": {
@@ -5667,12 +5677,13 @@
           "74b5eb3d-a21e-4489-9df5-45efb4ae385c",
           "5a588bf3-a969-4dbc-a335-3c33601d043f",
           "35caa73a-11f1-4d08-93a4-0b42716a4a49",
+          "864f5b3d-9233-4135-976e-c65ebd4dc2e8",
           "7019976c-c8ec-434f-8686-060a3c419fdd"
         ],
         "settings": {
           "image_position": "left",
           "title": "Meet the Valerie Madison Team",
-          "text": "<p>These are the lovely folks that make VM a wonderful place to work in and serve our clients. <\/p><p>Are you interested in joining our team? Click<a href=\"https:\/\/www.valeriemadison.com\/pages\/jobs\" title=\"https:\/\/www.valeriemadison.com\/pages\/jobs\" target=\"_blank\"> here<\/a> to see what roles we have open or send your resume to joinus@valeriemadison.com<\/p>",
+          "text": "<p>These are the lovely folks that make VM a wonderful place to work in and serve our clients. <\/p><p>Are you interested in joining our team? Click<a href=\"https:\/\/www.valeriemadison.com\/pages\/jobs\" target=\"_blank\" title=\"https:\/\/www.valeriemadison.com\/pages\/jobs\"> here<\/a> to see what roles we have open or send your resume to joinus@valeriemadison.com<\/p>",
           "text_position": "left",
           "employee_per_row": 2,
           "member_color": "#0c0a0a",
