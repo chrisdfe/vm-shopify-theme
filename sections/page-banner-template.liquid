@@ -1,0 +1,426 @@
+{% comment %}
+** Banner page - custom view **
+- Page template
+{% endcomment %}
+
+{% assign count = 0 %}
+{% for block in section.blocks %}
+{% if block.settings.show_banner and page.handle == block.settings.banner_page_filter and count == 0 %}
+  {% assign count = count | plus: 1 %}
+  <section id="banner-{{section.id}}" class="banner page_banner">
+    {% if block.settings.image != nil %}
+      {% include 'image-element', image: block.settings.image, alt: block.settings.image.alt, stretch_width: true %}
+    {% else %}
+      {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg placeholder-svg--banner' }}
+    {% endif %}
+    {% unless block.settings.button1_link != blank and block.settings.button2_link != blank %}
+      {% if block.settings.button1_link != blank %}
+        <a href="{{ block.settings.button1_link }}" class="banner-full-link">
+          {{ block.settings.button1 }}
+        </a>
+      {% endif %}
+      {% if block.settings.button2_link != blank %}
+        <a href="{{ block.settings.button2_link }}" class="banner-full-link">
+          {{ block.settings.button2 }}
+        </a>
+      {% endif %}
+    {% endunless %}
+    {% unless block.settings.pretext == blank and block.settings.title == blank and block.settings.subtitle == blank and block.settings.button1 == blank and block.settings.button2 == blank %}
+      <div class="position-{{ block.settings.text_position }} caption js-caption">
+        <div class="caption-content caption-background-{{ block.settings.caption_background }} caption-transparency-{{ block.settings.caption_background_transparency }} align-{{ block.settings.text_align }}">
+          {% if block.settings.pretext != blank %}
+            <div class="pretext">
+              {{ block.settings.pretext }}
+            </div>
+          {% endif %}
+          {% if block.settings.title != blank %}
+            <h1 class="headline">
+              {{ block.settings.title }}
+            </h1>
+          {% endif %}
+          {% if block.settings.subtitle != blank %}
+            <div class="subtitle">
+              {{ block.settings.subtitle }}
+            </div>
+          {% endif %}
+          {% if block.settings.button1 != blank %}
+            <a {% if block.settings.button1_link != blank %}href="{{ block.settings.button1_link }}"{% endif %} class="action_button first_button highlight-{{ block.settings.button1_highlight }}">
+              {{ block.settings.button1 }}
+            </a>
+          {% endif %}
+          {% if block.settings.button2 != blank %}
+            <a {% if block.settings.button2_link != blank %}href="{{ block.settings.button2_link }}"{% endif %} class="action_button second_button highlight-{{ block.settings.button2_highlight }}">
+              {{ block.settings.button2 }}
+            </a>
+          {% endif %}
+        </div>
+      </div>
+    {% endunless %}
+  </section>
+  {% if block.settings.banner_page_width > 0 %}
+<style>
+  .page-banner .container.main.content {width:{{block.settings.banner_page_width}}%;}
+</style>
+  {% endif %}
+{% endif %}
+{% endfor %}
+
+<!-- Default Section -->
+{% if section.settings.show_banner and  count == 0 %}
+  <section id="banner-{{section.id}}" class="banner page_banner">
+    {% if section.settings.image != nil %}
+      {% include 'image-element', image: section.settings.image, alt: section.settings.image.alt, stretch_width: true %}
+    {% else %}
+      {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg placeholder-svg--banner' }}
+    {% endif %}
+    {% unless section.settings.button1_link != blank and section.settings.button2_link != blank %}
+      {% if section.settings.button1_link != blank %}
+        <a href="{{ section.settings.button1_link }}" class="banner-full-link">
+          {{ section.settings.button1 }}
+        </a>
+      {% endif %}
+      {% if section.settings.button2_link != blank %}
+        <a href="{{ section.settings.button2_link }}" class="banner-full-link">
+          {{ section.settings.button2 }}
+        </a>
+      {% endif %}
+    {% endunless %}
+    {% unless section.settings.pretext == blank and section.settings.title == blank and section.settings.subtitle == blank and section.settings.button1 == blank and section.settings.button2 == blank %}
+      <div class="position-{{ section.settings.text_position }} caption js-caption">
+        <div class="caption-content caption-background-{{ section.settings.caption_background }} caption-transparency-{{ section.settings.caption_background_transparency }} align-{{ section.settings.text_align }}">
+          {% if section.settings.pretext != blank %}
+            <div class="pretext">
+              {{ section.settings.pretext }}
+            </div>
+          {% endif %}
+          {% if section.settings.title != blank %}
+            <h1 class="headline">
+              {{ section.settings.title }}
+            </h1>
+          {% endif %}
+          {% if section.settings.subtitle != blank %}
+            <div class="subtitle">
+              {{ section.settings.subtitle }}
+            </div>
+          {% endif %}
+          {% if section.settings.button1 != blank %}
+            <a {% if section.settings.button1_link != blank %}href="{{ section.settings.button1_link }}"{% endif %} class="action_button first_button highlight-{{ section.settings.button1_highlight }}">
+              {{ section.settings.button1 }}
+            </a>
+          {% endif %}
+          {% if section.settings.button2 != blank %}
+            <a {% if section.settings.button2_link != blank %}href="{{ section.settings.button2_link }}"{% endif %} class="action_button second_button highlight-{{ section.settings.button2_highlight }}">
+              {{ section.settings.button2 }}
+            </a>
+          {% endif %}
+        </div>
+      </div>
+    {% endunless %}
+  </section>
+   {% if section.settings.default_page_width > 0 %}
+    <style>
+      .page-banner .container.main.content {width:{{section.settings.default_page_width}}%;}
+    </style>
+  {% endif %}
+{% endif %}
+
+
+<span name="pagecontent" id="pagecontent"></span>
+
+<div class="container main content content--block-text">
+  <div class="twelve columns offset-by-two page clearfix">
+    {%comment%}{% unless section.settings.show_banner %}
+      <h1>
+        {{ page.title }}
+      </h1>
+      <div class="feature_divider"></div>
+    {% endunless %}
+    <div>{%endcomment%}
+      {% include 'page-multi-column', content: page.content %}
+    </div>
+  </div>
+</div>
+
+<style>
+
+    
+@media only screen and (max-width: 798px){
+.caption .headline {
+    padding-bottom:0px;
+    margin-bottom:0px;
+}
+  
+  span#pagecontent {padding:7px !important;}
+div .main.content {padding-top:0px !important;margin-top:0px !important;}
+}
+@media only screen and (max-width: 480px){
+.position-center.caption.js-caption {margin-bottom:0px !important;}
+.container .main.content {padding-top:0px !important;}
+}
+
+</style>
+
+{% schema %}
+
+{
+  "name": "Page | Banner",
+  "class": "banner-template-section",
+  "max_blocks": 10,
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_banner",
+      "label": "Show default banner",
+      "default": true
+    },
+    {
+      "type":      "range",
+      "id":        "default_page_width",
+      "min":        10,
+      "max":        100,
+      "step":       5,
+      "unit":       "%",
+      "label":     "Default Page Width",
+      "default":   90
+    },  
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image",
+      "info": "1800 x 1000px recommended"
+    },
+    {
+      "type": "richtext",
+      "id": "pretext",
+      "label": "Preheading"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "subtitle",
+      "label": "Subheading"
+    },
+    {
+      "type": "checkbox",
+      "id": "caption_background",
+      "label": "Display solid text background",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "caption_background_transparency",
+      "label": "Enable background transparency"
+    },
+    {
+      "type": "select",
+      "id": "text_position",
+      "label": "Text position",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "text_align",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "button1",
+      "label": "First button label"
+    },
+    {
+      "type": "url",
+      "id": "button1_link",
+      "label": "First button link"
+    },
+    {
+      "type": "checkbox",
+      "id": "button1_highlight",
+      "label": "Highlight first button"
+    },
+    {
+      "type": "text",
+      "id": "button2",
+      "label": "Second button label"
+    },
+    {
+      "type": "url",
+      "id": "button2_link",
+      "label": "Second button link"
+    },
+    {
+      "type": "checkbox",
+      "id": "button2_highlight",
+      "label": "Highlight second button"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "select",
+      "name": "Custom Banner",
+      "settings": [
+      {
+        "type": "checkbox",
+        "id": "show_banner",
+        "label": "Show custom banner",
+        "default": true
+      },
+      {
+          "type":      "range",
+          "id":        "banner_page_width",
+          "min":       10,
+          "max":        100,
+          "step":       5,
+          "unit":       "%",
+          "label":     "Page Width",
+          "default":   100
+      },       
+	  {
+         "type":      "page",
+         "id":        "banner_page_filter",
+         "label":     "Show Banner On This Page:"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image",
+        "info": "1800 x 1000px recommended"
+      },
+      {
+        "type": "richtext",
+        "id": "pretext",
+        "label": "Preheading"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading"
+      },
+      {
+        "type": "richtext",
+        "id": "subtitle",
+        "label": "Subheading"
+      },
+      {
+        "type": "checkbox",
+        "id": "caption_background",
+        "label": "Display solid text background",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "caption_background_transparency",
+        "label": "Enable background transparency"
+      },
+      {
+        "type": "select",
+        "id": "text_position",
+        "label": "Text position",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "center",
+            "label": "Center"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "text_align",
+        "label": "Text alignment",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "center",
+            "label": "Center"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "id": "button1",
+        "label": "First button label"
+      },
+      {
+        "type": "url",
+        "id": "button1_link",
+        "label": "First button link"
+      },
+      {
+        "type": "checkbox",
+        "id": "button1_highlight",
+        "label": "Highlight first button"
+      },
+      {
+        "type": "text",
+        "id": "button2",
+        "label": "Second button label"
+      },
+      {
+        "type": "url",
+        "id": "button2_link",
+        "label": "Second button link"
+      },
+      {
+        "type": "checkbox",
+        "id": "button2_highlight",
+        "label": "Highlight second button"
+      }
+  	]
+    }
+  ],
+  "default": {
+    "settings": {
+      "title": "Page Banner Template",
+      "subtitle": "<p>Create an amazing page with a full-width banner</p>",
+      "text_position": "center",
+      "text_align": "center"
+    }
+  }
+}
+
+{% endschema %}

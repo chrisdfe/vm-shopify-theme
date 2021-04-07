@@ -1,0 +1,62 @@
+<div class="authorsec">
+  <div class="container">
+    <h5 class="title5new1">
+      {% if section.settings.section_title %}
+      	{{ section.settings.section_title }}
+      {% else %}
+        {{  collection.title | escape }}
+      {% endif %}
+    </h5>   
+    <div class="authorlist">
+      {% for block in section.blocks %}
+       {% assign collection = collections[block.settings.collection] %}
+      <div class="listingdiv">
+        <a href="{{ collection.url }}">
+          <span class="img">
+<!--             <img src="https://cdn.shopify.com/s/files/1/0481/2678/7744/files/list2.jpg?v=1604423581" alt="listimg"/> -->
+            {{ block.settings.image | img_url: '200', scale: 2 | img_tag: logo_alt_title, 'itm__image' }}
+          </span> 
+          <h4>{{ block.settings.name }}</h4>
+          <span class="side">({{ collection.products_count }} Items)</span>
+        </a>
+      </div>
+      {% endfor %} 
+    </div> 
+  </div>
+</div>
+{% schema %}
+  {
+      "name": "Collection List",
+      "class": "custom-collection-items",
+    "settings": [
+      {
+        "type": "text",
+        "id": "section_title",
+        "label": "Section Title"
+      }
+    ],
+  "blocks": [
+	{
+      "type": "logo_image",
+      "name": "Custom Items",
+      "settings": [
+        {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+        },
+        {
+        "type": "text",
+        "id": "name",
+        "label": "Title"
+        },
+        {
+        "type": "collection",
+        "id": "collection",
+        "label": "Collection"
+        }
+      ]
+	}
+  ]
+}
+{% endschema %}

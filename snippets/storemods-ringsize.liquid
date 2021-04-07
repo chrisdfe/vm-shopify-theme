@@ -1,0 +1,79 @@
+{% comment %}
+How it works:
+On the product listing page, you include the example shortcode shown below in the <> source code section
+
+Example: <!--[ringsize="3.5-9"]-->
+{% endcomment %}
+
+{% if section.settings.enable_ring_size %}
+  {% for collection in product.collections %}
+    {% if collection.handle == collections[section.settings.collection1].handle or collection.handle == collections[section.settings.collection2].handle %}
+    	{% capture contains_collection %}true{% endcapture %}
+    {% endif %}
+  {% endfor %}
+
+  {% if product.tags contains 'Design Your Own Ring' or contains_collection == "true" or product.tags contains 'Ring Resizing'  or product.tags contains 'ring resizing' or product.type == "OOAK and RTS" %}
+    <!-- Ringsize Lineitem Snippet - SM 11/1/2016-->
+    {% assign text_before_code = product.description | split: '<!--[ringsize="' %}
+    {% if text_before_code[1].length != '' %}
+      {% assign ringsizes = text_before_code[1] | split: '"]-->' %}
+      {% assign ringsize_list = ringsizes[0] | split: '-' %}
+      {% assign first_ringsize = ringsize_list[0] | plus: 0 %}
+      {% assign last_ringsize = ringsize_list[1] | plus: 0 %}
+    {% endif %}
+    {% if first_ringsize >= 1 and last_ringsize >= 1 %}
+	  <!-- Ringsize Lineitem Snippet - SM 11/12/2020 (load product defined options) -->
+      <p class="line-item-property__field">
+      <label for="ring-size">{{settings.ring_size_title}}</label>
+      <select required class="required" id="ring-size" name="properties[Ring Size]">
+        <option value="">{{ settings.ring_size_dropdown }} {{ ringsizes[0] }}</option>
+
+        {% capture num %}{{last_ringsize | minus: first_ringsize | times: 4}} {% endcapture %}
+        {% for i in (0..num) %}
+       	 {% assign ring_enlargement = i | times: 0.25 %}
+        	<option value="{{ first_ringsize | plus: ring_enlargement }}">{{ first_ringsize | plus: ring_enlargement }}</option>  
+        {% endfor %}
+      </select>
+      </p>
+    {% elsif min_size != blank and max_size != blank %}
+	  <!-- Ringsize Lineitem Snippet - SM 11/12/2020 (Load options from other snippet) -->
+      <p class="line-item-property__field">
+        <label for="ring-size">{{settings.ring_size_title}}</label>
+        <select required class="required" id="ring-size" name="properties[Ring Size]">
+          <option value="">{{ settings.ring_size_dropdown }} {{min_size}}-{{max_size}}</option>
+
+          {% capture num %}{% if section.settings.include_quarter_sizes == true %}{{max_size | minus: min_size | times: 4}}{% else %}{{max_size | minus: min_size | times: 1}}{% endif %}{% endcapture %}
+          {% for i in (0..num) %}
+            {% if section.settings.include_quarter_sizes == true %}
+            	{% assign ring_enlargement = i | times: 0.25 %}
+            {% else %}
+            	{% assign ring_enlargement = i | times: 1 %}
+            {% endif %}
+            <option value="{{ min_size | plus: ring_enlargement }}">{{ min_size | plus: ring_enlargement }}</option>  
+          {% endfor %}
+        </select>
+      </p>
+    {% else %}
+	  <!-- Ringsize Lineitem Snippet - SM 11/12/2020 - Load Default Customizer Options -->
+      {% assign min_size = section.settings.minimum_ring_size %}
+      {% assign max_size = section.settings.maximum_ring_size %}
+      <p class="line-item-property__field">
+        <label for="ring-size">{{settings.ring_size_title}}</label>
+        <select required class="required" id="ring-size" name="properties[Ring Size]">
+          <option value="">{{ settings.ring_size_dropdown }} {{min_size}}-{{max_size}}</option>
+
+          {% capture num %}{% if section.settings.include_quarter_sizes == true %}{{max_size | minus: min_size | times: 4}}{% else %}{{max_size | minus: min_size | times: 1}}{% endif %}{% endcapture %}
+          {% for i in (0..num) %}
+            {% if section.settings.include_quarter_sizes == true %}
+            	{% assign ring_enlargement = i | times: 0.25 %}
+            {% else %}
+            	{% assign ring_enlargement = i | times: 1 %}
+            {% endif %}
+            <option value="{{ min_size | plus: ring_enlargement }}">{{ min_size | plus: ring_enlargement }}</option>  
+          {% endfor %}
+        </select>
+      </p>
+     
+  	{% endif %}
+  {% endif %}
+{% endif %}	

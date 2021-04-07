@@ -1,0 +1,1939 @@
+<!--Client Invoice Script Code -->
+<script>  
+  //Customer Order Script
+  var i=0;
+  var ClientInvoiceDiscount ="";
+  var ProductQuantity=0;
+Clientproduct=[];
+  ClientInvoiceselectedProduct=[];
+  InvoiceOrders=[]; 
+   var CommissionanddiscountOn="";
+
+ function bioAffiliateLink(event) {
+  	$('#aff_link').text(window.location.protocol +"//"+ window.location.hostname + "/" + event.target.value);
+ };
+  
+   var createCart = function()
+  {
+  	  var sr_cartName=document.getElementById("sr_sharedcartname").value;
+    if(sr_cartName == ""){
+            $("#cretecart_btn").text("Create Cart");	
+      		$("#productnotselectforcartsharing").text('Please Enter Cart Name');
+      }
+  	  else if (selectedProduct.length < 1){
+			$("#cretecart_btn").text("Create Cart");	
+      		$("#productnotselectforcartsharing").text('No Products Selected. Please select products and try again.');
+      }
+        else{
+             $("#cretecart_btn").text("Wait While Processing..."); 
+          myCart=[]; 
+          for(var data in SharedCartProduct)
+		  {
+            myCart.push({
+              id : SharedCartProduct[data].variantId,  
+              quantity : SharedCartProduct[data].product_quantity
+            });
+          }
+              var myCartString = JSON.stringify(myCart);
+         	  var cart = {
+        			"salesRepName" : "{{customer.first_name}}",
+         			"SalesrepId" : {{customer.id}},
+                    "cartName" : sr_cartName,
+                    "cartdata" : myCartString
+        		}
+        	  var data = JSON.stringify(cart);
+              //change the pageIndex value according to whatever latest 
+         	  var urlVal=window.location.protocol +"//"+ window.location.hostname +"/apps/SalesRep?pageIndex=30&data="+data;
+			  $.post(
+       			   urlVal,
+			   function (data, status) {                 
+                 			if(data == true)
+                            {
+							   $("#cretecart_btn").text("Create Cart");	
+                               location.reload();
+                            }
+                 			else
+							   $("#cretecart_btn").text("Create Cart");
+						}
+					);
+              }    
+    }
+
+        var ShowSharedCartProduct = function(data)
+        {
+        	var orderRow = '<tr>'+
+              '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Cart Link</th>'+
+              '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Share Link</th>'+
+             '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Remove Cart</th></tr>';
+			
+              for(var cart in data.SharedCarts)
+              {
+				  var url = "{{shop.url}}/products/"+CartData[product].handle+"/?myCart={{customer.first_name}}{{customer.id | modulo:1000}}";
+                                 
+                  orderRow += '<tr class="Polaris-DataTable__TableRow">'+
+                  '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;"></td>'+
+                  '<a href="http://pinterest.com/pin/create/bookmarklet/?is_video=false&url='+url+'" class="ssbp-btn ssbp-pinterest" rel="nofollow"  data-ssbp-url="'+url+'" data-ssbp-site="Pinterest_force" target="_blank">'+ 
+                  '<img src="https://simplesharebuttons.com/images/somacro/pinterest.png" alt="Pinterest" style="width:35px;"/></a>'+
+                  '<a href="http://instagram.com/###?ref='+url+'" class="ig-b- ig-b-32"  target="_blank"><img src="https://badges.instagram.com/static/images/ig-badge-32.png" alt="Instagram"/></a>'+
+                  '<a href="https://twitter.com/share?url='+url+'&amp;text='+shopname+'" target="_blank"><img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" style="width:35px;"/></a>'+
+                  '<a href="http://www.facebook.com/sharer.php?u='+url+'" target="_blank"><img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" style="width:35px;"/></a>'+                               
+                  '</td>'+
+                  '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+
+				'</tr>';  
+              }
+        }
+
+
+  var ClientInvoiceCartData = function(CartData)
+       {
+         for(var data in CartData)
+          {
+           Clientproduct.push({
+                  "Image":CartData[data].Image,
+                  "title":CartData[data].title,
+                  "product_quantity":CartData[data].product_quantity,
+                  "Item_Price":CartData[data].Item_Price,
+                  "product_price":CartData[data].product_price,
+                  "product_type":CartData[data].product_type,
+                  "variantId":CartData[data].variantId,
+                  "product_size":CartData[data].product_size
+            });
+
+              ClientInvoiceselectedProduct.push({
+                "variantId" :CartData[data].variantId, 
+                 "quantity" :CartData[data].product_quantity,
+                 "product_type" :CartData[data].product_type
+              });
+
+              showDetailsInClientInvoiceProductTable(serverData,Clientproduct[data].Item_Price,Clientproduct[data].product_quantity,Clientproduct[data].Image,Clientproduct[data].title,Clientproduct[data].product_type,Clientproduct[data].product_size);
+
+          }        
+       }
+  
+  // Add selected products to the product table
+  var AddProductInClientInvoice=function(title,price,image,type,Pid,size,updatestring = false,quantity = 0){
+    var quantity;
+    if(updatestring == "BeforeUpdate")
+    {
+     quantity =$('#ClientInvoicequantity_'+Pid).val();
+    }
+    else
+    {
+      quantity = $('#quantity_'+Pid).val();
+    }
+    
+    if(quantity==""){
+      quantity=1;
+    }
+    	       	  
+    $('#clientinvoicetable').hide();
+
+if(ClientInvoiceselectedProduct.length==0){
+       ClientInvoiceselectedProduct.push({
+      "variantId" :Pid , 
+       "quantity" :  quantity,
+       "product_type" : type
+    });
+}
+else{
+      if((ClientInvoiceselectedProductIndex = ClientInvoiceselectedProduct.findIndex((obj => obj.variantId == Pid)))>=0){
+        if(updatestring == "BeforeUpdate")
+        {
+           ClientInvoiceselectedProduct[ClientInvoiceselectedProductIndex].quantity = parseInt(ClientInvoiceselectedProduct[ClientInvoiceselectedProductIndex].quantity)+parseInt(quantity)
+        }
+        else
+        {
+           ClientInvoiceselectedProduct[ClientInvoiceselectedProductIndex].quantity = parseInt(quantity)
+        }
+    }
+  else{
+       ClientInvoiceselectedProduct.push({
+      "variantId" :Pid , 
+       "quantity" :  quantity,
+       "product_type" : type
+    });
+  }
+}
+
+  if(Clientproduct.length==0){
+     Clientproduct.push({
+    "product_type":type,
+    "product_price":price*quantity,
+    "Item_Price":price,
+    "product_quantity":quantity,
+    "Image":image,
+    "title":title,
+    "product_size":size,
+    "variantId":Pid
+  });
+  }
+  else{
+    if((ProductIndex = Clientproduct.findIndex((obj => obj.variantId == Pid)))>=0){
+      	if(updatestring == "BeforeUpdate")
+        {
+            Clientproduct[ProductIndex].product_price = Clientproduct[ProductIndex].product_price+(price*quantity)
+        	Clientproduct[ProductIndex].product_quantity = parseInt(Clientproduct[ProductIndex].product_quantity)+parseInt(quantity)
+   		}
+        else
+        {
+            Clientproduct[ProductIndex].product_price = (price*quantity)
+            Clientproduct[ProductIndex].product_quantity = parseInt(quantity)
+        }
+    }
+    else{
+    Clientproduct.push({
+    "product_type":type,
+    "product_price":price*quantity,
+    "Item_Price":price,
+    "product_quantity":quantity,
+    "Image":image,
+    "title":title,
+    "product_size":size,
+    "variantId":Pid
+  });
+    }
+
+  }
+     showDetailsInClientInvoiceProductTable(serverData,price,quantity,image,title,type,size);
+  }
+  
+  var showDetailsInClientInvoiceProductTable=function(response,price,quantity,image,title,type,size){
+    $('#productnotselect1').hide();
+    $("#Customedraft_btn").show();
+     CommissionanddiscountOn = response.CommissionDiscountOn.CommissionDiscountOn;
+     var val=$('#DiscountType').val();
+     console.log(response.CommissionDiscountOn.CommissionDiscountOn);
+   
+    
+    //if ClientDiscount is selected     
+    if(response.select.ClientDiscount)
+    {
+      	$("#CreateInvoice").hide();
+      if(response.CommissionDiscountOn.CommissionDiscountOn == "Product") {
+        ClientInvoiceDiscount = response.ClientInvoiceDiscountPerProduct;
+      }
+      else{
+        ClientInvoiceDiscount = response.ClientInvoiceDiscount;
+      }
+        
+      	if(Clientproduct == 0)
+		{
+	   		$("#productTable").hide();
+       		$("#productnotselect1").text('No Products Selected. Please select products and try again.'); 
+		}
+      	else
+      	{
+          $('#CustomDiscount').show();
+			var count = 1;
+          var customersalerows = '<tr id="ClientInvoicerow">'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Product </th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Product Name</th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Size</th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Quantity </th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Item Price</th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Total Price</th>'+
+  			'<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Discounted Price for Customer</th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">SalesRep Commission</th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">DiscountType</th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Remove Product</th></tr>';
+   
+          	for(var data in Clientproduct)
+          	{
+              var AfterUpdate = "AfterUpdate";
+              ProductQuantity=parseInt(Clientproduct[data].product_quantity);
+              if(response.CommissionDiscountOn.CommissionDiscountOn == "Product") {
+                var VariantId=Clientproduct[data].variantId;
+                              	var k=0;
+        		var optns = null ;  
+              	console.log(response.ClientInvoiceDiscountPerProduct);
+        		for(var discount in response.ClientInvoiceDiscountPerProduct)
+        		{
+                  if(response.ClientInvoiceDiscountPerProduct[discount].VariantId == VariantId)
+                  {
+          			optns += '<option value="'+response.ClientInvoiceDiscountPerProduct[discount].DiscountName.toString()+'" id="'+response.ClientInvoiceDiscountPerProduct[discount].DiscountRate+'">'+ response.ClientInvoiceDiscountPerProduct[discount].DiscountName.toString()+'</option>';
+           			k++;
+                  }
+        		}
+                customersalerows += '<tr id="row' + (Clientproduct[data].variantId) +'" class = "class="Polaris-DataTable__TableRow"">'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;" id=image'+Clientproduct[data].variantId+'><img style="width:60px;" src='+(Clientproduct[data].Image)+'></td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;" id=Title'+Clientproduct[data].variantId+'>'+(Clientproduct[data].title)+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;" id=size'+Clientproduct[data].variantId+'>'+(Clientproduct[data].product_size)+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;" ><input onchange="AddProductInClientInvoice(\''+ title +'\',\''+ price +'\',\''+ image +'\',\''+type+'\',\''+Clientproduct[data].variantId+'\',\''+size+'\',\''+AfterUpdate+'\')" type="text" style="width:90px;" id=quantity_'+Clientproduct[data].variantId+' placeholder=' + Clientproduct[data].product_quantity + '></td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;" id=ItemPrice'+Clientproduct[data].variantId+'>'+(currencyFormat +" "+ parseFloat(Clientproduct[data].Item_Price).toFixed(2))+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;" id=productPrice'+Clientproduct[data].variantId+'>'+(currencyFormat +" "+ parseFloat(Clientproduct[data].product_price).toFixed(2))+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;" id=Discount'+Clientproduct[data].variantId+'>No Discount</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;" id=Commission'+Clientproduct[data].variantId+'>No Commission</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;"><select id="discounttype_'+Clientproduct[data].variantId +'" onchange="ApplyInvoiceDiscount(this, ' + Clientproduct[data].variantId +' );" > <option value="No Discount"> No DiscountType </option>'+ optns +'</select></td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;" id=productPrice'+Clientproduct[data].variantId+'><div class="Polaris-ButtonGroup__Item"><button type="button" id="sentinvoice' + i + '" class="Polaris-Button Polaris-Button--primary" style="font-size:18px;padding-left: 35px;padding-right: 35px;" onclick="RemoveClientInvoiceProduct('+Clientproduct[data].variantId+')"><span class="Polaris-Button__Content"><span>Remove</span></span></button></td></tr>';
+  
+              count++;
+              }
+              else{
+                var producttype = Clientproduct[data].product_type;
+                if(producttype == "" )
+        		{
+            		var producttype = "all other products";          
+        		}
+              	var k=0;
+        		var optns = null ;  
+              	console.log(response.ClientInvoiceDiscount);
+        		for(var discount in response.ClientInvoiceDiscount)
+        		{
+                  if(response.ClientInvoiceDiscount[discount].ProductType.toLowerCase() == producttype.toLowerCase())
+                  {
+          			optns += '<option value="'+response.ClientInvoiceDiscount[discount].DiscountName.toString()+'" id="'+response.ClientInvoiceDiscount[discount].DiscountRate+'">'+ response.ClientInvoiceDiscount[discount].DiscountName.toString()+'</option>';
+           			k++;
+                  }
+        		}
+                customersalerows += '<tr id="row' + (Clientproduct[data].variantId) +'" class = "class="Polaris-DataTable__TableRow"">'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;" id=image'+Clientproduct[data].variantId+'><img style="width:60px;" src='+(Clientproduct[data].Image)+'></td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;" id=Title'+Clientproduct[data].variantId+'>'+(Clientproduct[data].title)+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;" id=size'+Clientproduct[data].variantId+'>'+(Clientproduct[data].product_size)+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;"><input onchange="AddProductInClientInvoice(\''+ title +'\',\''+ price +'\',\''+ image +'\',\''+type+'\',\''+Clientproduct[data].variantId+'\',\''+size+'\',\''+AfterUpdate+'\')" type="text" style="width:90px;" id=quantity_'+Clientproduct[data].variantId+' placeholder=' + Clientproduct[data].product_quantity + '></td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;" id=ItemPrice'+Clientproduct[data].variantId+'>'+(currencyFormat +" "+ parseFloat(Clientproduct[data].Item_Price).toFixed(2))+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;" id=productPrice'+Clientproduct[data].variantId+'>'+(currencyFormat +" "+ parseFloat(Clientproduct[data].product_price).toFixed(2))+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;" id=Discount'+Clientproduct[data].variantId+'>No Discount</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;" id=Commission'+Clientproduct[data].variantId+'>No Commission</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;"><select id="discounttype_'+Clientproduct[data].variantId +'" onchange="ApplyInvoiceDiscount(this, ' + Clientproduct[data].variantId +');" > <option value="No Discount"> No DiscountType </option>'+ optns +'</select></td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;" id=productPrice'+Clientproduct[data].variantId+'><div class="Polaris-ButtonGroup__Item"><button type="button" id="sentinvoice' + i + '" class="Polaris-Button Polaris-Button--primary" style="font-size:18px;padding-left: 35px;padding-right: 35px;" onclick="RemoveClientInvoiceProduct('+Clientproduct[data].variantId+')"><span class="Polaris-Button__Content"><span>Remove</span></span></button></td></tr>';
+  
+              count++;
+              }
+            }
+            $('#productTable').show();
+          	document.getElementById( 'productTable' ).innerHTML = customersalerows;
+      	}
+    }
+    else{
+     
+      if(response.CommissionDiscountOn.CommissionDiscountOn == "Product")
+      {
+        console.log(response.PerProductSetCommissionModel);
+        getClientCommissionandDiscount(Clientproduct,response.PerProductSetCommissionModel,currencyFormat, response.CommissionDiscountOn.CommissionDiscountOn,response.CommissionDiscountOn.CommissionDiscountType);
+      }
+      else if(response.CommissionDiscountOn.CommissionDiscountOn == "ProductType")
+      {
+        console.log(response.productssetcommission);
+        getClientCommissionandDiscount(Clientproduct,response.productssetcommission,currencyFormat, response.CommissionDiscountOn.CommissionDiscountOn,response.CommissionDiscountOn.CommissionDiscountType);
+      }
+      else if(response.CommissionDiscountOn.CommissionDiscountOn == "SalesRep")
+      {
+        console.log(response.PerRepCommissionModel);
+        getCommissionPerRep(Clientproduct,response.PerRepCommissionModel,currencyFormat);
+      }
+      else if(response.CommissionDiscountOn.CommissionDiscountOn == "ProfitMargin")
+      {
+        console.log(response.productssetcommission);
+        getClientCommissionandDiscount(Clientproduct,response.productssetcommission,currencyFormat, response.CommissionDiscountOn.CommissionDiscountOn,response.CommissionDiscountOn.CommissionDiscountType);
+      }
+      $("#Choice").show();
+      $('#CreateInvoice').show();
+      $('#productTable').show();
+      $('#draft_btn').show();
+    }
+    
+  }
+  
+var RemoveClientInvoiceProduct=function(Id){
+  Id=Id.toString();
+   $('#row'+Id).remove();
+          ClientInvoiceselectedProduct=ClientInvoiceselectedProduct.filter(function(item){
+          return item.variantId!==Id;
+         });     
+    Clientproduct = Clientproduct.filter(function(item) { 
+  return item.variantId !== Id; 
+});
+    if(Clientproduct.length<1){
+      $('#ClientInvoicerow').hide();
+      $("#Customedraft_btn").hide();
+	  $('#draft_btn').hide();
+    }
+    var data = {
+                "id": Id,
+                "quantity": 0,
+            };
+	    $.ajax({
+	      type: 'POST',
+          url: '/cart/change.js',
+	      dataType: 'json',
+	       data: data,             
+        });
+}   
+  
+var filterCustomerName = function(){
+    var input, filter, ul, li, a, i, txtValue;
+    filter = $("#sr_customer_fname").val().toLowerCase();
+	if(filter != "")
+    {
+       $("#custnamelist").show();
+    }
+    else{
+      $("#custnamelist").hide();
+    }
+    ul = document.getElementById("custnamelist");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toLowerCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+  }
+
+function showSelected(email,customerName)
+{
+  document.getElementById('sr_customer_fname').value = customerName;
+  document.getElementById('sr_customer_email').value = email;
+  $("#custnamelist").hide();
+}
+  
+                     
+ var onSuccessInvoice = function(response)
+ {
+      if(response == false)
+	  {
+		 $("#sentinvoice"+i).text("Invoice Sending Failed");
+	  }
+      else
+      {
+         $("#sentinvoice"+i).text("Invoice Sent Successfully");
+      }
+    }
+   
+       
+  var SendInvoice = function(orderid,shopname,emailid,i)
+  {
+
+     $("#sentinvoice"+i).text("Sending Invoice"); 
+       var data = {
+        			"orderid" : orderid,
+         			"shopname" : shopname,
+                    "emailid" : emailid,
+         			
+        		}
+                var invoicedata = JSON.stringify(data);
+                var urlVal=window.location.protocol +"//"+ window.location.hostname +"/apps/SalesRep?pageIndex=2&data="+invoicedata;
+               $.post(
+                  urlVal,
+                   function (data, status) {            
+                             onSuccessInvoice(data, status);
+                             $("#sentinvoice"+i).text("Invoice Sent Successfully");                
+                      }
+					                      );
+  }
+  
+                
+  var DeleteInvoice = function(orderid,shopname,i)
+  {
+     $("#deleteinvoice"+i).text("Deleting Invoice"); 
+       var data = {
+        			"orderid" : orderid,
+         			"shopname" : shopname
+         			
+        		}
+                var invoicedata = JSON.stringify(data);
+                var urlVal=window.location.protocol +"//"+ window.location.hostname +"/apps/SalesRep?pageIndex=14&data="+invoicedata;
+               $.post(
+                  urlVal,
+                   function (data, status) {  
+                             if(data == false)
+	  						{
+		 						$("#deleteinvoice"+i).text("Delete Invoice Failed");
+	  						}
+      						else
+      						{
+         						$("#deleteinvoice"+i).text("Invoice deleted Successfully");
+      						}               
+                      }
+                    );
+  }
+
+  var DeleteSharedCartLink = function(cartUniqueId,shopName,i)
+  {
+     $("#deletesharedcart"+i).text("Deleting Link"); 
+       var data = {
+        			"salesRepName" : "{{customer.first_name}}",
+         			"SalesrepId" : {{customer.id}},
+                    "cartUniqueId" : cartUniqueId
+        		}
+                var data = JSON.stringify(data);
+                var urlVal=window.location.protocol +"//"+ window.location.hostname +"/apps/SalesRep?pageIndex=31&data="+data;
+               $.post(
+                  urlVal,
+                   function (data, status) {            
+                             if(data == false)
+                              {
+                                 $("#deletesharedcart"+i).text("Error in deleting link. Please try again..");
+                              }
+                              else
+                              {
+                                 $("#deletesharedcart"+i).text("Link Deleted Successfully");
+								 location.reload();
+                              }               
+                      }
+                    );
+      } 
+  
+  var onSuccessdata = function(response)
+     {
+          if(response.ClientInvoiceDetails!= 0)
+         { 
+
+           var rows = '<tr>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Customer Name </th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Product Title </th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Subtotal Price</th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Status </th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Invoice</th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Delete Invoice</th></tr>';
+           for(var cust in response.ClientInvoiceDetails) { 
+
+              if(response.ClientInvoiceDetails[cust].status != "completed")
+              {
+                 rows += '<tr id="row' + i +'" class = "class="Polaris-DataTable__TableRow"">'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(response.ClientInvoiceDetails[cust].customername)+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(response.ClientInvoiceDetails[cust].lineitems)+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(response.ClientInvoiceDetails[cust].subtotalprice)+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(response.ClientInvoiceDetails[cust].status)+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+
+                '<div><div class="Polaris-ButtonGroup__Item"><button type="button" id="sentinvoice' + i + '" class="Polaris-Button Polaris-Button--primary" style="font-size:18px;padding-left: 35px;padding-right: 35px;" onclick="SendInvoice(\'' + response.ClientInvoiceDetails[cust].orderid+ '\',\'' + response.ClientInvoiceDetails[cust].shopname + '\',\'' + response.ClientInvoiceDetails[cust].emailid + '\',\''+i+'\')"><span class="Polaris-Button__Content"><span>Send Invoice</span></span></button></div></div></td>' +
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+
+                '<div><div class="Polaris-ButtonGroup__Item"><button type="button" id="deleteinvoice' + i + '" class="Polaris-Button Polaris-Button--primary" style="font-size:18px;padding-left: 35px;padding-right: 35px;" onclick="DeleteInvoice(\'' + response.ClientInvoiceDetails[cust].orderid+ '\',\'' + response.ClientInvoiceDetails[cust].shopname + '\',\''+i+'\')"><span class="Polaris-Button__Content"><span>Delete Invoice</span></span></button></div></div></td></tr>';
+              } 
+			  else
+             {
+               rows += '<tr id="row' + i +'" class = "class="Polaris-DataTable__TableRow"">'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(response.ClientInvoiceDetails[cust].customername)+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(response.ClientInvoiceDetails[cust].lineitems)+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(response.ClientInvoiceDetails[cust].subtotalprice)+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(response.ClientInvoiceDetails[cust].status)+'</td>'+
+				 '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">-</td>'+ 
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">-</td></tr>';
+               }
+                     i++;
+             }
+
+          $("#clientorder").hide();
+          $("#ViewOrders").show();
+          document.getElementById( 'ViewClientOrders' ).innerHTML = rows;
+         }
+         else
+           {
+		      $("#clientorder").hide();
+              $("#ViewOrders").show();
+              $("#noclientorder").show();
+           }
+         };
+            
+  var ViewInvoiceOrders= function()
+  {
+     $("#Order_btn").text("Getting...");   
+     if(InvoiceOrders.length==0)
+     {
+        var urlVal=window.location.protocol +"//"+ window.location.hostname +"/apps/SalesRep?customerId={{customer.id}}&customerName={{customer.first_name }}&data=2";
+        $.get(
+            urlVal,
+            function (data, status) {  
+                InvoiceOrders=data;
+               onSuccessdata(InvoiceOrders)
+                $("#Order_btn").text(" View Previous Orders");
+               
+            });        
+     }
+     else     
+     {
+       onSuccessdata(InvoiceOrders)
+       $("#Order_btn").text(" View Previous Orders");          
+     }
+              
+   }
+
+            var ResponseSuccess = function (response,textStatus) {
+    		if (response == null)
+		  	{
+		   		$("#SalesRep_order").text('Error during creating your order.Please contact support');
+          	}        
+          	else if (response.email && textStatus){
+            	$("#SalesRep_order").attr('href',response.invoice_url);
+                
+                $("#SalesRep_order").text('Order Invoice created successfully!  Invoice has been emailed to Customer!');
+                $("#SalesRep_order").show().delay(2000).fadeOut();
+                Clientproduct=[];
+                ClientInvoiceselectedProduct=[];
+          	}
+          	else {
+                 $("#SalesRep_order").text('Error during creating your order.Please contact support');                   
+            }    
+          }	
+ 
+ //Custom Tiers Client Invoice	   
+ var CustomDiscountDraftOrder = function(){
+    	
+    	for(var count in ClientInvoiceselectedProduct)
+        {
+          	var type = document.getElementById("discounttype_"+ClientInvoiceselectedProduct[count].variantId);
+            if(type!=null){
+             var discounttype = type.options[type.selectedIndex].value;
+          	
+        	ClientInvoiceselectedProduct[count]["DiscountType"] = discounttype;
+            }    
+			
+        }
+    	var prods = JSON.stringify(ClientInvoiceselectedProduct);	 
+    
+         var sr_customer_email=document.getElementById("sr_customer_email").value;
+         var sr_customer_fname=document.getElementById("sr_customer_fname").value;
+         var sr_custom_message=document.getElementById("sr_custom_message").value;
+
+         if(sr_customer_fname == "" || sr_customer_email == "")
+         {
+         	$("#sr_customerOrder_error1").show();
+         }
+          else 
+            {
+                if(ClientInvoiceselectedProduct.length<1){
+           		 $("#Customedraft_btn").text("Create New Invoice");
+          		 $("#SalesRep_order").text('No Products Selected. Please select products and try again.');
+                }
+                else{  
+				$("#Customedraft_btn").text("Creating Order...");
+				 
+                var order = {
+        			"email" : "{{customer.email}}",
+         			"prods" : prods,
+         			"customerId" : {{customer.id}},
+         			"wholesale": "false",
+         			"Index": Index,
+                  	"fnamecus" : sr_customer_fname,
+                  	"cusemail": sr_customer_email,
+                    "message" : sr_custom_message,
+					"pro":  $('#reppro').is(":checked")
+                    
+        		}
+                var customerdata = JSON.stringify(order);
+              
+                var urlVal=window.location.protocol +"//"+ window.location.hostname +"/apps/SalesRep?pageIndex=0&data="+customerdata;
+                 
+               $.post(
+                  urlVal,
+                   function (data, status) {            
+                             ResponseSuccess(data, status);
+							 document.getElementById("sr_customer_email").value = "" ;
+                             document.getElementById("sr_customer_fname").value = "";
+                             document.getElementById("sr_custom_message").value = "";
+                             $("#Customedraft_btn").text("Create New Invoice"); 
+                             $('#productTable').hide();
+                      }
+                    );
+                }
+        }
+      } 
+
+
+//Default Tiers Client Invoice	
+    var DraftOrder = function(){	       
+       	 var prods = JSON.stringify(ClientInvoiceselectedProduct);
+         var sr_customer_email=document.getElementById("sr_customer_email").value;
+         var sr_customer_fname=document.getElementById("sr_customer_fname").value;
+         var sr_custom_message=document.getElementById("sr_custom_message").value;
+         
+         if(sr_customer_fname == "" || sr_customer_email=="")
+         {
+         	$("#sr_customerOrder_error1").show();
+         }
+              else 
+            {
+                if(ClientInvoiceselectedProduct.length<1){
+           		 $("#draft_btn").text("Create New Invoice");
+          		 $("#SalesRep_order").text('No Products Selected. Please select products and try again.');   
+                }
+                else{
+				$("#draft_btn").text("Creating Order...");
+
+                var order = {
+        			"email" : "{{customer.email}}",
+         			"prods" : prods,
+         			"customerId" : {{customer.id}},
+         			"wholesale": "false",
+         			"Index": Index,
+                  	"fnamecus" : sr_customer_fname,
+                  	"cusemail": sr_customer_email,
+                    "message" : sr_custom_message,
+                    "pro":  $('#reppro').is(":checked")
+        		}
+                var customerdata = JSON.stringify(order);
+                
+                var urlVal=window.location.protocol +"//"+ window.location.hostname +"/apps/SalesRep?pageIndex=0&data="+customerdata;
+                
+                $.post(
+                  urlVal,
+                   function (data, status) {            
+                             ResponseSuccess(data, status);
+						     document.getElementById("sr_customer_email").value = "" ;
+                             document.getElementById("sr_customer_fname").value = "";
+                             document.getElementById("sr_custom_message").value = "";
+                             $("#draft_btn").text("Create New Invoice");
+                             $('#productTable').hide();
+                      }
+                    );
+                }
+        }
+      }          
+                
+	   var BacktoClientPage = function(){
+	              $("#clientorder").show();
+                  $("#ViewOrders").hide();
+	     }        
+</script>
+
+<!--Wholesale Order Script Code -->
+<script>
+  selectedProduct=[];
+  wholesaleProduct=[];
+  SharedCartProduct=[];
+  subtotal=0;
+  finalDiscount=0;
+  finaldiscountamount=0;
+  
+   var SharedCartData = function(CartData)
+    {
+      	for(var data in CartData)
+        {
+          SharedCartProduct.push({
+                "Image":CartData[data].Image,
+                "title":CartData[data].title,
+                "product_quantity":CartData[data].product_quantity,
+                "Item_Price":CartData[data].Item_Price,
+                "product_price":CartData[data].product_price,
+                "product_type":CartData[data].product_type,
+                "variantId":CartData[data].variantId,
+                "product_size":CartData[data].product_size
+          });
+          
+          selectedProduct.push({
+            "variantId" :CartData[data].variantId, 
+             "quantity" :CartData[data].product_quantity,
+             "product_type" :CartData[data].product_type
+          });
+          
+          subtotal=subtotal+SharedCartProduct[data].Item_Price*SharedCartProduct[data].product_quantity;
+  		  showDetailsInSharedCartProductTable(serverData,SharedCartProduct[data].Item_Price,SharedCartProduct[data].product_quantity,SharedCartProduct[data].Image,SharedCartProduct[data].title,SharedCartProduct[data].product_type,SharedCartProduct[data].product_size,SharedCartProduct[data].variantId);
+        }
+    }
+
+   var WholesaleOrderCartData = function(CartData)
+    {
+      	for(var data in CartData)
+        {
+          wholesaleProduct.push({
+                "Image":CartData[data].Image,
+                "title":CartData[data].title,
+                "product_quantity":CartData[data].product_quantity,
+                "Item_Price":CartData[data].Item_Price,
+                "product_price":CartData[data].product_price,
+                "product_type":CartData[data].product_type,
+                "variantId":CartData[data].variantId,
+                "product_size":CartData[data].product_size
+          });
+          
+          selectedProduct.push({
+            "variantId" :CartData[data].variantId, 
+             "quantity" :CartData[data].product_quantity,
+             "product_type" :CartData[data].product_type
+          });
+          
+          subtotal=subtotal+wholesaleProduct[data].Item_Price*wholesaleProduct[data].product_quantity;
+  		  showDetailsInProductTable(serverData,wholesaleProduct[data].Item_Price,wholesaleProduct[data].product_quantity,wholesaleProduct[data].Image,wholesaleProduct[data].title,wholesaleProduct[data].product_type,wholesaleProduct[data].product_size,wholesaleProduct[data].variantId);
+
+        }
+    }
+
+	// Add selected products to the product table
+  var AddProductToSharedCart=function(title,price,image,type,Pid,size){
+    
+     var quantity=$('#quantity_'+Pid).val();
+    if(quantity==""){
+      quantity=1;
+    }
+    	
+     $('#SharedCarttable').hide();
+    
+if(selectedProduct.length==0){
+      selectedProduct.push({
+      "variantId" :Pid , 
+       "quantity" :  quantity,
+       "product_type" : type
+   });
+}
+
+else{
+      if((selectedProductIndex = selectedProduct.findIndex((obj => obj.variantId == Pid)))>=0){
+        selectedProduct[selectedProductIndex].quantity = parseInt(selectedProduct[selectedProductIndex].quantity)+parseInt(quantity)
+    }
+  else{
+      selectedProduct.push({
+      "variantId" :Pid , 
+      "quantity" :  quantity,
+      "product_type" : type
+    });
+  }
+}
+
+  if(SharedCartProduct.length==0){
+     SharedCartProduct.push({
+    "product_type":type,
+    "product_price":price*quantity,
+    "Item_Price":price,
+    "product_quantity":quantity,
+    "Image":image,
+    "title":title,
+    "product_size":size,
+    "variantId":Pid
+  });
+  }
+  else{
+    if((ProductIndex = SharedCartProduct.findIndex((obj => obj.variantId == Pid)))>=0){
+        SharedCartProduct[ProductIndex].product_price = SharedCartProduct[ProductIndex].product_price+(price*quantity)
+        SharedCartProduct[ProductIndex].product_quantity = parseInt(SharedCartProduct[ProductIndex].product_quantity)+parseInt(quantity)
+    }
+    else{
+      SharedCartProduct.push({
+        "product_type":type,
+        "product_price":price*quantity,
+        "Item_Price":price,
+        "product_quantity":quantity,
+        "Image":image,
+        "title":title,
+        "product_size":size,
+        "variantId":Pid
+      });
+    }
+
+  }
+  subtotal=subtotal+price*quantity;
+  showDetailsInSharedCartProductTable(serverData,price,quantity,image,title,type,size,Pid);
+  addItems(Pid,quantity);
+}
+
+  // Add selected products to the product table
+  var AddProduct=function(title,price,image,type,Pid,size){
+    
+     var quantity=$('#quantity_'+Pid).val();
+    if(quantity==""){
+      quantity=1;
+    }
+    	
+    $('#wholesaleinvoicetable').hide();
+ 
+if(selectedProduct.length==0){
+      selectedProduct.push({
+      "variantId" :Pid , 
+       "quantity" :  quantity,
+       "product_type" : type
+    });
+}
+
+else{
+      if((selectedProductIndex = selectedProduct.findIndex((obj => obj.variantId == Pid)))>=0){
+        selectedProduct[selectedProductIndex].quantity = parseInt(selectedProduct[selectedProductIndex].quantity)+parseInt(quantity)
+    }
+  else{
+      selectedProduct.push({
+      "variantId" :Pid , 
+      "quantity" :  quantity,
+      "product_type" : type
+    });
+  }
+}
+
+  if(wholesaleProduct.length==0){
+     wholesaleProduct.push({
+    "product_type":type,
+    "product_price":price*quantity,
+    "Item_Price":price,
+    "product_quantity":quantity,
+    "Image":image,
+    "title":title,
+    "product_size":size,
+    "variantId":Pid
+  });
+  }
+  else{
+    if((ProductIndex = wholesaleProduct.findIndex((obj => obj.variantId == Pid)))>=0){
+        wholesaleProduct[ProductIndex].product_price = wholesaleProduct[ProductIndex].product_price+(price*quantity)
+        wholesaleProduct[ProductIndex].product_quantity = parseInt(wholesaleProduct[ProductIndex].product_quantity)+parseInt(quantity)
+    }
+    else{
+    wholesaleProduct.push({
+    "product_type":type,
+    "product_price":price*quantity,
+    "Item_Price":price,
+    "product_quantity":quantity,
+    "Image":image,
+    "title":title,
+    "product_size":size,
+    "variantId":Pid
+  });
+    }
+
+  }
+  subtotal=subtotal+price*quantity;
+  showDetailsInProductTable(serverData,price,quantity,image,title,type,size,Pid);
+  addItems(Pid,quantity);
+
+}
+  
+   var showDetailsInSharedCartProductTable=function(response,price,quantity,image,title,type,size,Pid){
+    $('#productnotselectforcartsharing').hide();
+
+    if(SharedCartProduct == 0)
+	{
+	   $("#sharedProdTable").hide();
+      $("#productnotselectforcartsharing").text('No Products Selected. Please select products and try again.');
+	}
+	else
+	{ 
+       var cartrows = '<tr id="SharedCartOrderrow">'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Product </th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Product Name</th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Size</th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Quantity </th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Item Price</th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Total Price</th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Remove Product</th></tr>';
+		 for(var data in SharedCartProduct)
+		  {
+                cartrows += '<tr id="SCrow' + (SharedCartProduct[data].variantId) +'" class = "class="Polaris-DataTable__TableRow"">'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;"><img style="width:60px;" src='+SharedCartProduct[data].Image+'></td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(SharedCartProduct[data].title)+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(SharedCartProduct[data].product_size)+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(SharedCartProduct[data].product_quantity)+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(currencyFormat +" "+ SharedCartProduct[data].Item_Price)+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(currencyFormat +" "+ SharedCartProduct[data].product_price)+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;"><div class="Polaris-ButtonGroup__Item"><button type="button" id="sentinvoice' + i + '" class="Polaris-Button Polaris-Button--primary" style="font-size:18px;padding-left: 35px;padding-right: 35px;" onclick="RemoveProductFromSharedCart('+SharedCartProduct[data].variantId+','+SharedCartProduct[data].product_price+','+')"><span class="Polaris-Button__Content"><span>Remove</span></span></button></td></tr>';
+          }
+     document.getElementById( 'sharedProdTable' ).innerHTML = cartrows;
+	  $('#SharedCarttable').hide();
+      $('#sharedProdTable').show(); 
+    }
+}
+
+  var showDetailsInProductTable=function(response,price,quantity,image,title,type,size,Pid){
+  finaldiscountamount=0;
+    $('#productnotselect').hide();
+    $('#draftWholesale_btn').show();
+    $('#totalPrice').show();
+    $('#DiscountedPrice').show();
+    console.log(response.CommissionDiscountOn.CommissionDiscountOn);
+    if(response.select.wholesaleqtydiscount)
+    {
+      console.log(response.productssetcommission);
+        getQuantityBasedWholesaleDiscount(wholesaleProduct,response.productssetdiscount,currencyFormat,response.select.wholesaleqtydiscount,response.CommissionDiscountOn.CommissionDiscountOn,response.CommissionDiscountOn.CommissionDiscountType,response.quantitybaseddiscountperproduct);
+    }
+    else
+    {
+      if(response.CommissionDiscountOn.CommissionDiscountOn == "Product")
+      {
+        console.log(response.WholesaleDiscountPerProduct);
+        getWholesaleDiscount(wholesaleProduct,response.WholesaleDiscountPerProduct,currencyFormat,response.select.wholesaleqtydiscount,response.CommissionDiscountOn.CommissionDiscountOn,response.CommissionDiscountOn.CommissionDiscountType);
+      }
+      
+      if(response.CommissionDiscountOn.CommissionDiscountOn == "ProductType")
+      {
+        console.log(response.productssetcommission);
+        getWholesaleDiscount(wholesaleProduct,response.productssetdiscount,currencyFormat,response.select.wholesaleqtydiscount,response.CommissionDiscountOn.CommissionDiscountOn,response.CommissionDiscountOn.CommissionDiscountType);
+      }
+     
+      if(response.CommissionDiscountOn.CommissionDiscountOn == "SalesRep")
+      {
+        console.log(response.SalesRepCommissionModel);
+        getWholesaleDiscount(wholesaleProduct,response.SalesRepCommissionModel,currencyFormat,response.select.wholesaleqtydiscount,response.CommissionDiscountOn.CommissionDiscountOn,response.CommissionDiscountOn.CommissionDiscountType);
+      }
+    }
+     
+
+    if(wholesaleProduct == 0)
+	{
+	   $("#prodTable").hide();
+      $("#productnotselect").text('No Products Selected. Please select products and try again.');
+	}
+	else
+	{ 
+       var wholesalerows = '<tr id="WholesaleOrderrow">'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Product </th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Product Name</th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Size</th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Quantity </th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Item Price</th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Total Price</th>'+
+  			'<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Your Discounted Price</th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Remove Product</th></tr>';
+		 for(var data in wholesaleProduct)
+		  {
+			var discountText="";
+			if(wholesaleProduct[data].Discounted_Amount>0){
+			  discountText=currencyFormat+" "+(wholesaleProduct[data].Discounted_Amount);
+			  finaldiscountamount = finaldiscountamount + wholesaleProduct[data].product_price -wholesaleProduct[data].Discounted_Amount;          
+			}
+			else{
+			   wholesaleProduct[data].Discounted_Amount = wholesaleProduct[data].product_price;
+			   discountText="No Discount";
+			   finaldiscountamount = finaldiscountamount + wholesaleProduct[data].product_price -wholesaleProduct[data].product_price;        
+			}
+
+                wholesalerows += '<tr id="WOrow' + (wholesaleProduct[data].variantId) +'" class = "class="Polaris-DataTable__TableRow"">'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;"><img style="width:60px;" src='+wholesaleProduct[data].Image+'></td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(wholesaleProduct[data].title)+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(wholesaleProduct[data].product_size)+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(wholesaleProduct[data].product_quantity)+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(currencyFormat +" "+ wholesaleProduct[data].Item_Price)+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(currencyFormat +" "+ wholesaleProduct[data].product_price)+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(discountText)+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;"><div class="Polaris-ButtonGroup__Item"><button type="button" id="sentinvoice' + i + '" class="Polaris-Button Polaris-Button--primary" style="font-size:18px;padding-left: 35px;padding-right: 35px;" onclick="RemoveProduct('+wholesaleProduct[data].variantId+','+wholesaleProduct[data].product_price+','+parseFloat(wholesaleProduct[data].Discounted_Amount)+')"><span class="Polaris-Button__Content"><span>Remove</span></span></button></td></tr>';
+          }
+     document.getElementById( 'prodTable' ).innerHTML = wholesalerows;
+	  $('#wholesaleinvoicetable').hide();
+      $('#prodTable').show(); 
+    }
+}
+  
+  var RemoveProductFromSharedCart=function(Id,totalPrice){
+        Id=Id.toString();
+        subtotal=subtotal-totalPrice;
+       $('#totalPrice').html('Total Price: '+"<b>"+currencyFormat+"</b>"+" "+"<b>"+ subtotal.toFixed(2)+"</b>");
+
+       $('#SCrow'+Id).remove();
+         
+         selectedProduct=selectedProduct.filter(function(item){
+              return item.variantId!==Id;
+             });
+        SharedCartProduct = SharedCartProduct.filter(function(item) { 
+      return item.variantId !== Id; 
+    });
+        if(SharedCartProduct.length<1){
+          $('#SharedCartProductOrderrow').hide();
+        }
+        var data = {
+                    "id": Id,
+                    "quantity": 0,
+                };
+	        $.ajax({
+	          type: 'POST',
+              url: '/cart/change.js',
+	          dataType: 'json',
+	           data: data,             
+            });
+    }
+
+var RemoveProduct=function(Id,totalPrice,discountAmt){
+    Id=Id.toString();
+    subtotal=subtotal-totalPrice;
+    globalTotalDiscountAmt=globalTotalDiscountAmt-discountAmt;
+  
+  finalDiscount=subtotal-parseFloat(globalTotalDiscountAmt);
+  finaldiscountamount=finalDiscount;
+   $('#totalPrice').html('Total Price: '+"<b>"+currencyFormat+"</b>"+" "+"<b>"+ subtotal.toFixed(2)+"</b>");
+
+        $('#DiscountedPrice').html(' Your Discounted Price: '+"<b>"+currencyFormat+"</b>"+" "+"<b>"+(subtotal- finalDiscount).toFixed(2)+"</b>"); 
+  
+   $('#WOrow'+Id).remove();
+         
+     selectedProduct=selectedProduct.filter(function(item){
+          return item.variantId!==Id;
+         });
+    wholesaleProduct = wholesaleProduct.filter(function(item) { 
+  return item.variantId !== Id; 
+});
+    if(wholesaleProduct.length<1){
+      $('#WholesaleOrderrow').hide();
+      $('#totalPrice').hide();
+      $('#DiscountedPrice').hide();
+      $('#draftWholesale_btn').hide();
+    }
+    var data = {
+                "id": Id,
+                "quantity": 0,
+            };
+	    $.ajax({
+	      type: 'POST',
+          url: '/cart/change.js',
+	      dataType: 'json',
+	       data: data,             
+        });
+}   
+  
+
+function addItems(Id,quantity){  
+  var data = {
+                "id": Id,
+                "quantity": quantity,
+            };
+	    $.ajax({
+	      type: 'POST',
+          url: '/cart/add.js',
+	      dataType: 'json',
+	       data: data,             
+        });
+  
+  };  
+  
+    
+var onSuccessWholesale = function (response,textStatus) {
+   document.location.href = '/checkout?discount='+response;
+       
+};
+    
+    var DraftWholesaleOrder=function(){
+
+        var prods = JSON.stringify(selectedProduct);
+         
+      if (selectedProduct.length < 1){
+			$("#draftWholesale_btn").text("Create New Invoice");	
+      		$("#SalesRepWholesale_order").text('No Products Selected. Please select products and try again.');
+      }
+        else{
+             $("#draftWholesale_btn").text("Wait While Processing..."); 
+          if(finaldiscountamount==subtotal){
+            finaldiscountamount=0;
+          }
+         	  var order = {
+        			"email" : "{{customer.email}}",
+         			"customerId" : {{customer.id}},
+         			"wholesale": "true",
+         			"Index": 5,
+                    "discountAmount":finaldiscountamount,
+        		}
+        	  var data = JSON.stringify(order);
+         	  var urlVal=window.location.protocol +"//"+ window.location.hostname +"/apps/SalesRep?pageIndex=5&data="+data;
+			  $.post(
+       			   urlVal,
+			   function (data, status) {                 
+							   onSuccessWholesale(data, status);
+						}
+					);
+              }    
+			            
+      }     
+</script>
+
+<!--Discount Coupon Order Script Code -->
+<script>
+
+  	var CreateCoupon = function()
+	{
+      	var discount=document.getElementById("Discount").value;
+  		var coupon = document.getElementById("DiscountCouponCode").value;
+		var strUser;
+
+		if(discount == "" || coupon == "")
+		{
+		  $("#sr_coupon_error1").show();
+		}
+		else
+		{
+		{% if customer %}
+			strUser = {{customer.id}};
+		{% else %}
+			strUser = "";
+		{% endif %}
+          
+        $("#submit").text("Creating Coupon..");
+      	var data = {
+          				"couponCode" : coupon,
+        				"salesrepId" : strUser,
+         				"Discount" : discount,
+        			}
+        var couponeData = JSON.stringify(data);
+        var urlVal=window.location.protocol +"//"+ window.location.hostname +"/apps/SalesRep?pageIndex=3&data="+couponeData;
+        $.post(
+				urlVal,
+				function (data, status) {     
+                if (data == null)
+                  {
+                      $("#couponempty").text(data);
+                  }
+                  else {
+                        if(data == "Coupon Created")
+                        {
+						   $("#couponempty").hide();
+                           $("#submit").text(data);						   
+                        }
+                        else
+                        {
+                           $("#couponempty").text(data);
+                        }
+                      
+              }
+                  
+        }
+        );
+		}
+  	}
+
+var DeleteCoupon = function(coupon,couponid,i)
+  {
+     $("#deletecoupon"+i).text("Deleting Coupon"); 
+       var data = {
+        			"coupon" : coupon,
+         			"customerId" : {{customer.id}},
+                    "couponid" : couponid,
+         			
+        		}
+                var data = JSON.stringify(data);
+                var urlVal=window.location.protocol +"//"+ window.location.hostname +"/apps/SalesRep?pageIndex=4&data="+data;
+               $.post(
+                  urlVal,
+                   function (data, status) {            
+                             if(data == false)
+                              {
+                                 $("#deletecoupon"+i).text("Coupon deleting Failed");
+                              }
+                              else
+                              {
+                                 $("#deletecoupon"+i).text("Coupon Deleted");
+                              }               
+                      }
+                    );
+      }        
+          
+         
+      var onSuccessCoupondata = function (response, textStatus)
+        {
+        console.log(response.Coupons);
+        if(response.Coupons == 0)
+    	{
+            $("#Discount_Coupon").hide();
+            $("#salesrepcoupon").hide();
+            $("#View_DiscountCoupons").show();
+      		$("#OneTimeCoupons").hide();
+      		$("#nodiscountcoupon").show();
+    	}
+    	else{
+         var DiscountCoupons = '<tr>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Coupon Code</th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Discount</th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Delete Coupon</th></tr>';
+           for(var coupon in response.Coupons)
+           {  
+                DiscountCoupons += '<tr id="row' + i +'" class = "class="Polaris-DataTable__TableRow"">'+                
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(response.Coupons[coupon].CouponeCode)+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+ response.Coupons[coupon].Discount +"%"+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+
+                '<div><div class="Polaris-ButtonGroup__Item"><button type="button" id="deletecoupon' + i + '" class="Polaris-Button Polaris-Button--primary" style="font-size:18px;padding-left: 35px;padding-right: 35px;" onclick="DeleteCoupon(\'' + response.Coupons[coupon].CouponeCode+ '\',\''+response.Coupons[coupon].couponId+'\',\''+i+'\')"><span class="Polaris-Button__Content"><span>Delete</span></span></button></div></div></td></tr>';
+             i++;
+           }
+    	
+         $("#salesrepcoupon").hide();
+         $("#Discount_Coupon").hide();
+         $("#View_DiscountCoupons").show();
+          
+    		document.getElementById('OneTimeCoupons').innerHTML = DiscountCoupons;
+  		}
+        }
+        
+	function myFunction() {
+  		var copyText = document.getElementById("myInput");
+  		copyText.select();
+  		document.execCommand("Copy");
+  		$('#btnmsg').text('Copied');
+ 
+	}
+       var ShowCouponTable = function ()
+        {
+        
+        $("#Coupon_btn").text("Getting...");       
+        var urlVal=window.location.protocol +"//"+ window.location.hostname +"/apps/SalesRep?customerId={{customer.id}}&customerName={{customer.first_name }}&data=8";
+               $.get(
+                  urlVal,
+                   function (data, status) {  
+                          onSuccessCoupondata(data, status)
+                          $("#Coupon_btn").text("View Coupons");
+                               
+                  });
+        }
+        
+   var BacktoCouponPage = function(){
+	  $("#Discount_Coupon").show();
+      $("#salesrepcoupon").show();
+	  $("#View_DiscountCoupons").hide();
+	 }
+</script>
+
+<!--Affiliate Orders Script Code -->
+<script>
+ AffiliateOrders=[];
+   var onSuccessAffiliatedata = function(response)
+   {
+     var i;    
+    
+     if(response.CustomerDetails!= 0)
+       { 
+	       var rows = '<tr>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Customer Name </th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;"> Customer Email </th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Product Title</th>'+
+			'<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Order Date</th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Subtotal </th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Commission</th></tr>';
+           for(var cust in response.CustomerDetails)
+           {  
+              var OrderDate = new Date(parseInt(response.CustomerDetails[cust].OrderDate.replace('/Date(', '')));
+                rows += '<tr id="row' + i +'" class = "class="Polaris-DataTable__TableRow"">'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(response.CustomerDetails[cust].CustomerName)+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(response.CustomerDetails[cust].CustomerEmailId)+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(response.CustomerDetails[cust].ProductTitle)+'</td>'+
+			    '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(OrderDate.toLocaleDateString())+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(response.CustomerDetails[cust].SubTotal)+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(response.CustomerDetails[cust].TotalCommission)+'</td></tr>';
+             i++;
+           }                     
+              $("#affiliateorder").hide();
+              $("#View_AffiliateOrders").show();
+              document.getElementById( 'AffiliateOrders' ).innerHTML = rows;
+      }
+	  else
+       {
+          $("#View_AffiliateOrders").show();
+          $("#noaffiliateorder").show();
+		  $("#affiliateorder").hide();
+       }
+     };
+        
+  
+  var ViewAffiliateOrders= function(){
+     $("#AffiliateOrder_btn").text("Getting..."); 
+    if(AffiliateOrders.length==0)
+    {
+      var urlVal=window.location.protocol +"//"+ window.location.hostname +"/apps/SalesRep?customerId={{customer.id}}&customerName={{customer.first_name }}&data=3";
+               $.get(
+                  urlVal,
+                   function (data, status) { 
+                          AffiliateOrders=data;
+                          onSuccessAffiliatedata(AffiliateOrders)
+                          $("#AffiliateOrder_btn").text(" View Affiliate Orders");
+                               
+                  });
+    }
+      else
+      {
+         onSuccessAffiliatedata(AffiliateOrders)
+         $("#AffiliateOrder_btn").text(" View Affiliate Orders");
+      }
+     
+     }
+
+	 var BacktoAffiliatePage = function(){
+	  $("#affiliateorder").show();
+	  $("#View_AffiliateOrders").hide();
+	 }
+</script>
+
+<!--Your Bio Script Code -->
+<script>
+ var onSuccess = function(response)
+    {
+      if(response == false)
+	  {
+         $("#error_link").show();
+		 $("#save_btn").text("Failed");
+	  }
+      else
+      {
+	     $("#error_link").hide();
+         $("#save_btn").text("Saved Successfully");
+      }
+    }
+
+var uploadProfilePic = function () {
+        $('#upload_btn').text("Uploading...");
+        var postedFile = $('#profilePicFile')[0].files[0];
+        let fileData = new FormData();
+        fileData.append("postedFile", postedFile);
+
+        var strUser;
+        {% if customer %}
+        strUser = {{ customer.id }};
+        {% else %}
+        strUser = "";
+        {% endif %}
+
+    var user = {
+        "repId": strUser
+    }
+
+    var data = JSON.stringify(user);
+    var urlVal = window.location.protocol + "//" + window.location.hostname + "/apps/SalesRep?pageIndex=28&data=" + data;
+    console.log(urlVal);
+
+    $.ajax({
+        url: urlVal,
+        type: "POST",
+        contentType: false,
+        processData: false,
+        data: fileData,
+        success: function (data, status) {
+            $('#upload_btn').text("Uploaded");
+            location.reload();
+        },
+        error: function (err) {
+            $('#upload_btn').text("Sorry, Try Again");
+        }
+    }); 
+}	
+
+var SaveBio = function()
+{
+    $("#save_btn").text("Saving..");
+    var bio = document.getElementById("repbio").value;
+	var uniquelink = document.getElementById("uniquelink").value;
+    var repbio = {       			
+         			"bio" : bio,
+         			"repId" : {{customer.id}},
+					"repname" : "{{customer.first_name}}",
+					"uniquelink" : uniquelink
+        		 }
+
+           var customerdata = JSON.stringify(repbio);
+           var urlVal=window.location.protocol +"//"+ window.location.hostname +"/apps/SalesRep?pageIndex=8&data="+customerdata;
+				
+               $.post(
+                  urlVal,
+                   function (data, status) {            
+                             onSuccess(data, status);							
+                      }
+                    );
+    }            
+  
+</script>
+
+<!--Team Script Code -->
+<script>
+
+var onSuccessTeamMemberData = function(response, textStatus)
+{
+    $("#teamdata").show();
+  $('#TeamOrderloadGif').hide();
+  //Client Order
+   var teamrows = "";
+ var items='';
+   console.log(response.AllOrdersCommission);
+  
+  for(var RepOrder in response.AllOrdersCommission)
+  {
+     if(response.AllOrdersCommission[RepOrder].ProductTitle !=null)
+	 {
+       var products =response.AllOrdersCommission[RepOrder].ProductTitle.split(",");
+     }
+    items='';
+    for(var item in products)
+    {
+      if(products[item]!= "")
+      {
+        items+='<li>'+products[item]+'</li>'
+      }
+    }
+    teamrows += '<tr class="Polaris-DataTable__TableRow">'+                
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(response.AllOrdersCommission[RepOrder].orderNumber)+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(response.AllOrdersCommission[RepOrder].orderDate)+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+ (response.AllOrdersCommission[RepOrder].CustomerName)+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+ (response.AllOrdersCommission[RepOrder].SalesRepName)+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+ (response.AllOrdersCommission[RepOrder].subtotal)+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+ (response.AllOrdersCommission[RepOrder].commission)+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+ (response.AllOrdersCommission[RepOrder].CommissionType)+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;"><ul>'+items+'</ul></td></tr>';
+  }
+   
+  $("#TeamManagerOrders").show();
+   $("#ViewPreviousOrderloadGif").hide();
+  $("#ClientOrderTeamMember").show();
+  return teamrows;
+  
+}
+
+
+function showTeamDetails(thisrep)
+{
+  $('#TeamOrderloadGif').show();
+  $("#TeamManagerOrders").hide();
+
+  $('#TeamManagerOrders').find('tr').not(':first').remove();
+  var RepName = thisrep.options[thisrep.selectedIndex].text;
+  var Repid = thisrep.options[thisrep.selectedIndex].id;
+  if(RepName == "All Reps")
+  {
+      $('#TeamManagerOrders').append(teamMemberData);
+  }
+  else
+  {
+  	var urlVal=window.location.protocol +"//"+ window.location.hostname +"/apps/SalesRep?customerId="+Repid+"&customerName="+RepName+"&data=18";
+    $.get(
+          urlVal,
+          function (data, status) {  
+		 	$('#TeamManagerOrders').append(onSuccessTeamMemberData(data,$));
+     }); 
+  }
+
+}
+</script>
+
+<!-- Team Lead -->
+<script>
+
+  	var CreateLead = function()
+	{
+	$("#Leadsuccessmsg").hide()
+      $("#LeadErrror").hide();
+      $('#LeadEmptyErrror').hide();
+      	var firstname=document.getElementById("customer_fname").value;
+  		var lastname = document.getElementById("customer_lname").value;
+        //var phoneno=document.getElementById("customer_phoneno").value;
+  		var email = document.getElementById("customer_email").value;
+        var note=document.getElementById("customer_note").value;
+  		var address = document.getElementById("customer_address").value;
+        var customercity=document.getElementById("customer_city").value;
+        var customerstate=document.getElementById("customer_state").value;
+        var customercountry=document.getElementById("customer_country").value;
+        var customerpincode=document.getElementById("customer_pincode").value;
+        var business_name=document.getElementById("business_name").value;
+        var companyaddress=document.getElementById("cust_company_address").value;
+        var companycity=document.getElementById("cust_company_city").value;
+        var companystate=document.getElementById("cust_company_state").value;
+        var companycountry=document.getElementById("cust_company_country").value;
+        var companypincode=document.getElementById("cust_company_pincode").value;
+  		
+		var salesrepid, salesrepname;
+
+      if(firstname==""||email==""){
+        $('#LeadEmptyErrror').show();
+      }
+      else
+      {
+        {% if customer %}
+			salesrepid = {{customer.id}};
+			salesrepname = "{{customer.first_name}}";
+		{% else %}
+			strUser = "";
+		{% endif %}
+          
+        $("#leadsave").text("Saving..");
+      	var data = {
+                "SalesRepId" : salesrepid,
+				"SalesRepName" : salesrepname,    
+                "firstname" : firstname, 
+                "lastname" : lastname,
+                //"phoneno" : phoneno,
+                "email" : email,
+                "note" : note,
+                "address" : address,
+                "customercity" : customercity,
+                "customerstate" : customerstate,
+                "customercountry": customercountry,
+                "customerpincode" : customerpincode,
+                "companyaddress" : companyaddress,
+                "companycity" : companycity,
+                "companystate" : companystate,
+                "companycountry" : companycountry,
+                "companypincode" : companypincode,
+                "business_name":business_name,
+    
+         }
+        var leadData = JSON.stringify(data);
+        var urlVal=window.location.protocol +"//"+ window.location.hostname +"/apps/SalesRep?pageIndex=13&data="+leadData;
+        $.post(
+				urlVal,
+				function (data, status) {     
+                
+                     if(data == "This customer is already tagged to a rep.")
+                      {        
+                        $("#Leadsuccessmsg").hide()
+                        $("#LeadErrror").show();
+                        $("#leadsave").text("Save");
+                        $('#LeadEmptyErrror').hide();
+                        $("#AddCustomerErrror").hide();
+                      }
+                      else if(data == "Customer sucessfully tagged to a rep.")
+                      {
+                        $("#LeadErrror").hide();
+                        $("#Leadsuccessmsg").show();
+                        $("#leadsave").text("Save");
+                        $('#LeadEmptyErrror').hide();
+                        $("#AddCustomerErrror").hide();
+                      }
+                  	  else
+                      {
+                        $("#Leadsuccessmsg").hide()
+                        $("#LeadErrror").hide();
+                        $("#leadsave").text("Save");
+                  		$("#AddCustomerErrror").text(data);
+						$("#AddCustomerErrror").show();                        
+                  	  }
+                 
+                  }
+        );
+      }
+		
+		
+  	}
+</script>
+
+<!--Your Clients Code-->
+<script>
+  ClientOrders=[];
+var onSuccessClientOrdersData = function(response,Clientid)
+{
+   console.log(response.clientallorders);
+  for(var data in response)
+  {
+    if(response[data].data.clientallorders != 0 && response[data].clientId==Clientid)
+       { 
+        
+	       var rows = '<tr>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Order Number </th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Order Date </th>'+
+			'<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Subtotal</th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Status</th>'+
+  			'<th colspan="3" data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Product Details</th></tr>';
+		 var items='';
+         var quantity='';
+         var price='';
+         for(var order in response[data].data.clientallorders)
+           { 
+		      items='';
+              quantity='';
+              price='';
+             items+='<li><b>Product Title</b></li>';
+             quantity+='<b><li>Quantity</b></li>';
+             price+='<b><li>Price</b></li>';
+             
+             for(var item in response[data].data.clientallorders[order].lineitems)
+             {
+               if(response[data].data.clientallorders[order].lineitems[item].title!= "")
+                {
+                  items+='<li>'+response[data].data.clientallorders[order].lineitems[item].title+'</li>'
+                  quantity+='<li>'+response[data].data.clientallorders[order].lineitems[item].quantity+'</li>'
+                  price+='<li>'+response[data].data.clientallorders[order].lineitems[item].price+'</li>'
+                }
+             }
+              var orderDate = new Date(parseInt(response[data].data.clientallorders[order].created_at.replace('/Date(', '')));
+                rows += '<tr id="row' + i +'" class = "class="Polaris-DataTable__TableRow"">'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(response[data].data.clientallorders[order].order_number)+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(orderDate.toLocaleDateString())+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(response[data].data.clientallorders[order].subtotal_price.toFixed(2))+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(response[data].data.clientallorders[order].financial_status)+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;"><ul>'+items+'</ul></td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;"><ul>'+quantity+'</ul></td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;"><ul>'+price+'</ul></td></tr>';
+             
+           }        
+              $("#norepclientorder").hide();
+              $("#Clientdetails").hide();
+              $("#ViewRepClientOrders").show();
+              $("#ViewRepClientOrdersDetails").show();
+              document.getElementById( 'ViewRepClientOrdersDetails' ).innerHTML = rows;
+           break;
+       }
+	  else
+       {     
+          $("#Clientdetails").hide();
+          $("#ViewRepClientOrders").show();
+          $("#norepclientorder").show();
+		  $("#ViewRepClientOrdersDetails").hide();       
+       }
+    
+  }
+    
+  
+}
+
+var ClientOrdersDetails = function(Clientid,ClientName)
+{  
+  if(ClientOrders.length==0)
+  {
+    var urlVal=window.location.protocol +"//"+ window.location.hostname +"/apps/SalesRep?customerId="+Clientid+"&customerName="+ClientName+"&data=12";
+    $.get(
+          urlVal,
+          function (data, status) {  
+            ClientOrders.push({
+                "clientId" :Clientid , 
+                "data" :  data,
+            });
+          onSuccessClientOrdersData(ClientOrders,Clientid)         
+     });
+  }
+  else if(ClientOrders.length>0)
+  {
+    if(ClientOrders.find(x => x.clientId === Clientid))
+    {
+          onSuccessClientOrdersData(ClientOrders,Clientid)   
+    }
+    else
+    {
+      var urlVal=window.location.protocol +"//"+ window.location.hostname +"/apps/SalesRep?customerId="+Clientid+"&customerName="+ClientName+"&data=12";
+          $.get(
+            urlVal,
+            function (data, status) {  
+            ClientOrders.push({
+                "clientId" :Clientid , 
+                "data" :  data,
+            });
+          onSuccessClientOrdersData(ClientOrders,Clientid)         
+        });
+      
+    }
+  }                              
+}
+
+var BacktoYourClientPage = function(){
+	              $("#Clientdetails").show();
+                  $("#ViewRepClientOrders").hide();
+	     }
+
+
+		
+var onSuccessOrderProducts=function(response,textStatus)
+{
+  var rows = "";
+    for(var item in response.ProductDetails)
+    {        	       
+        $('#OrdersSubtotal').html(response.ProductDetails[item].Subtotal.toFixed(2));
+        $('#OrdersTax').html(response.ProductDetails[item].tax.toFixed(2));
+        $('#OrderTotal').html(response.ProductDetails[item].Total.toFixed(2));
+        $('#OrdersShipping').html(response.ProductDetails[item].shippingCost.toFixed(2));
+        var totalPrice=response.ProductDetails[item].quantity*response.ProductDetails[item].ItemPrice
+         rows += '<tr class = "class="Polaris-DataTable__TableRow"">'+
+          		'<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;"><img src='+response.ProductDetails[item].Image+' height=100></td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+response.ProductDetails[item].Title+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+response.ProductDetails[item].quantity+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+response.ProductDetails[item].ItemPrice+'</td>'+
+          		'<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+response.ProductDetails[item].trackingNumber+'</td>'+
+          		'<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+response.ProductDetails[item].ship_date+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+totalPrice.toFixed(2)+'</td></tr>';
+
+    }
+    return rows; 
+}
+
+        var showModelData = function(Id, flag = "orderId")
+{
+  $('#modalDialog').show();
+  $('#PopuploadGif').show();
+  document.getElementById( 'ViewProductModel' ).innerHTML = "";
+  $('#OrdersSubtotal').html("");
+  $('#OrdersTax').html("");
+  $('#OrdersShipping').html("");
+  $('#OrderTotal').html("");
+    if(flag=="clientId")
+    {
+         $("#popupTitle").html("Customer Details");
+		 $('#orderAmountDetailsOnPopup').hide();
+        urlVal=window.location.protocol +"//"+ window.location.hostname +"/apps/SalesRep?customerId={{customer.id}}&customerName={{customer.first_name}}&clientId="+Id+"&data=25";
+               $.get(
+               urlVal,
+               function (data, status) {
+                       var rows = '<tr>'+
+                        '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Name</th>'+
+                        '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Email</th>'+
+                        '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Address</th>'+
+                        '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Customer Notes</th>'+
+                        '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Total Spent</th>'+
+                        '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Number of Orders</th>'+
+                        '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Tags</th></tr>'+
+                        '<tr class = "class="Polaris-DataTable__TableRow"">'+
+                            '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+data.SingleClientOrders.ClientName+'</td>'+
+                            '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+data.SingleClientOrders.CustomerMailid+'</td>'+
+                            '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(data.SingleClientOrders.address1 == null ? "" : data.SingleClientOrders.address1)+'</td>'+
+                            '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(data.SingleClientOrders.notes == null ? "" :data.SingleClientOrders.notes) +'</td>'+
+                            '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+data.SingleClientOrders.shopifyTotalSpent +'</td>'+
+                            '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+data.SingleClientOrders.shopifyOrdersCount+'</td>'+
+                            '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(data.SingleClientOrders.tags == null ? "" :data.SingleClientOrders.tags)+'</td></tr>';
+               $('#ViewProductModel').html(rows);
+               $('#PopuploadGif').hide();
+           }
+         );          
+    }
+    else
+    {
+	  $("#popupTitle").html("Product Details");
+     var rows = '<tr>'+
+        '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Product</th>'+
+        '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Title</th>'+
+        '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Quantity</th>'+
+        '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Item Price</th>'+
+        '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Tracking Number</th>'+
+        '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Ship Date</th>'+
+        '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Total Price</th></tr>';
+      
+    	if(flag == "orderNumber")
+      {
+        for(var item in ProductsArray)
+        {        	       
+          if(ProductsArray[item].OrderNumber==Id)
+          {
+            isPresentInProductArray = true;
+            $('#OrdersSubtotal').html(ProductsArray[item].subtotal);
+            $('#OrdersTax').html(ProductsArray[item].tax);
+            $('#OrdersShipping').html(ProductsArray[item].shipping);
+            $('#OrderTotal').html(ProductsArray[item].total);
+
+             rows += '<tr class = "class="Polaris-DataTable__TableRow"">'+
+                    '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+ProductsArray[item].image+'</td>'+
+                    '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+ProductsArray[item].title+'</td>'+
+                    '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+ProductsArray[item].quantity+'</td>'+
+                    '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+ProductsArray[item].price+'</td>'+
+                    '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+ProductsArray[item].TrackingNumber+'</td>'+
+                    '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+ProductsArray[item].ShipDate+'</td>'+
+                    '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+ProductsArray[item].Totalprice+'</td></tr>';
+          }
+        }
+        }    
+        else
+        {
+          var urlVal = window.location.protocol +"//"+ window.location.hostname +"/apps/SalesRep?customerId={{customer.id}}&customerName={{customer.first_name }}&orderId="+Id+"&data=19";
+          $.get(
+                urlVal,
+                function (data, status) {  
+                rows += onSuccessOrderProducts(data, status);
+
+           });
+        }
+        $('#ViewProductModel').html(rows);
+        $('#PopuploadGif').hide();
+    }
+          
+    }
+    var closeModal = function()
+{
+ 	$('#modalDialog').hide(); 
+}
+
+    var onSuccessSubmit = function (response,textStatus)
+    {
+      if(response == false)
+      {
+        $("#errorsmsg").show();
+        $("#successmsg").hide();
+      }
+      else
+      {
+        $("#successmsg").show();
+        $("#errorsmsg").hide();
+      }
+	  $("#addsalesrep").html("Add SalesRep");
+    }
+  
+  var AddSalesRep = function(){
+  	var url_string = window.location.href;
+    var url = new URL(url_string);
+    var ManagerId = url.searchParams.get("manager");
+
+    if (!ManagerId) {
+        ManagerId = url.searchParams.get("MANAGER");
+    }
+    
+    if(document.getElementById("sr_salesrep_email").value==""){
+        $('#emailerror').show();
+      }     
+      else if(document.getElementById("sr_salesrep_firstname").value==""){
+        $('#fnameerror').show();
+      }
+      
+      else{
+        $("#addsalesrep").html("Adding SalesRep...");        
+		$("#errorsmsg").hide();
+		$("#successmsg").hide();
+      	
+        var email = document.getElementById("sr_salesrep_email").value;
+        var fname = document.getElementById("sr_salesrep_firstname").value;
+        var lname = document.getElementById("sr_salesrep_lastname").value;
+        
+        var SalesRepId;
+		{% if customer %}
+			SalesRepId = {{customer.id}};
+		{% else %}
+			SalesRepId = "";
+		{% endif %}
+        
+         var TeamManagerName="{{customer.first_name}} {{customer.last_name}}"
+    	
+    	var user = {
+    		"salesrepId" : SalesRepId,
+        	"email" : email,
+            "name" : fname,
+            "TeamManagerName": TeamManagerName,
+            "Lname": lname,
+          "IsTeamManager":true,
+    	}
+        console.log(user);
+        var data = JSON.stringify(user);
+        var urlVal = window.location.protocol +"//"+ window.location.hostname +"/apps/SalesRep?pageIndex=21&data="+data;
+        console.log(urlVal);
+        $.post(
+       		urlVal,
+		    function (data, status) {                 
+					   onSuccessSubmit(data, status);					                   
+					}
+			);
+      }
+  }
+
+  var ShowSharedCartProducts=function(productarray,filter)
+    {
+        if(filter)
+        {
+            var orderRow = '<tr>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Add Product </th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Image</th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Add Quantity</th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Title</th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Variant Title</th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Price</th></tr>';
+      
+                        for(var product in productarray)
+                        {
+                            for(var variant=0;productarray[product].variants.length>variant;variant++)
+                            {
+                            var productprice =productarray[product].variants[variant].price/100;
+                                orderRow += '<tr class="Polaris-DataTable__TableRow">'+
+                                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+
+                                '<img class="sr_productImage" src="{{ 'plusIcon.png' | asset_url }}" style="cursor: pointer;" onclick="AddProductToSharedCart(\''+productarray[product].title+'\',\''+productprice+'\',\''+productarray[product].images+'\',\''+productarray[product].type+'\',\''+productarray[product].variants[variant].id+'\',\''+productarray[product].variants[variant].option1+'\',\''+productarray[product].variants[variant].available+'\')"></td>'+                 
+                                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;"><img class="sr_productImage" style="width:60px;" src="'+productarray[product].images+'"></td>'+
+                                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;"><input type="text" style="width:90px;" id="quantity_'+productarray[product].variants[variant].id+'" placeholder="Quantity"></td>'+
+                                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+productarray[product].title+'</td>'+
+                                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+productarray[product].variants[variant].option1+'</td>'+     
+                                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+productprice+  " " +currency+'</td></tr>';                                                  
+                                 
+                            }
+                        }
+                                                                                                                                                    
+                        document.getElementById('Carttable').innerHTML = orderRow; 
+                        $('#SharedCarttable').show();
+                        $("#SharedCartSpinner").hide(); 
+            }
+        else 
+        {
+            $('#SharedCarttable').hide();			
+        }                                        
+   } 
+
+      var showAllSharedCart = function(data)
+    {
+        if(data.select.CartSharing)
+              {
+          		 var row = '<tr>'+
+                '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric number" scope="col" style="height: 54px;">Cart Name</th>'+
+                '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric number" scope="col" style="height: 54px;">Sharable Cart Link</th>' +
+                '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric number" scope="col" style="height: 54px;">Delete Cart Link</th>';
+           		for(var i = 0; i < data.SharedCartDetails.length; i++)
+           		{
+           			row += '<tr id="row" class = "class="Polaris-DataTable__TableRow"">'+             
+                     '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric commission" style="height: 72px;">'+(data.SharedCartDetails[i].CartName)+'</td>'+
+                     '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric commission" style="height: 72px;"><a href="' + (data.SharedCartDetails[i].CartUrl) + '"; target="_blank"; style="color:blue;" >' + (data.SharedCartDetails[i].CartUrl) + '</a></td>' +
+                     '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;"><div><div class="Polaris-ButtonGroup__Item"><button type="button" id="deletesharedcart' + i + '" class="Polaris-Button Polaris-Button--primary" style="font-size:18px;padding-left: 35px;padding-right: 35px;" onclick="DeleteSharedCartLink(\'' + data.SharedCartDetails[i].CartUniqueId + '\',\'' + data.SharedCartDetails[i].ShopName + '\',\'' + i + '\')"><span class="Polaris-Button__Content"><span>Delete Link</span></span></button></div></div></td>';
+           		}
+                document.getElementById('existingSharedCartDetails').innerHTML = row;
+      }
+    }
+</script>

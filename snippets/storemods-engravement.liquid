@@ -1,0 +1,51 @@
+{%comment%}
+
+    {
+        "type": "header",
+        "content": "Mod - Custom Product Monogram"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_engravement",
+        "label": "Enable Engravement Option"
+      },
+      {
+        "type": "text",
+        "id": "monogram_title",
+        "label": "Monogram Text",
+        "default": "Personalized Monogram"
+      },
+      {
+        "type": "text",
+        "id": "monogram_subtext",
+        "label": "Placeholder Text"
+      },
+      {
+        "type": "text",
+        "id": "monogram_field",
+        "label": "Form Field Name (For Cart Page\/Checkout Info)",
+        "default": "Monogram"
+      },
+      {
+         "type":      "collection",
+         "id":        "engravement_collection",
+         "label":     "Product Collection",
+         "info":      "Enable Engravement on this collection"
+      },
+{%endcomment%}
+
+{% if settings.enable_engravement %}
+  {% for collection in product.collections %}
+    {% if collection.handle == settings.engravement_collection %}
+		{% capture contains_engrave_collection %}true{% endcapture %}
+	{% endif %}
+	{% endfor %}
+   {% if contains_engrave_collection == "true" or product.tags  contains 'engraved' or product.tags  contains 'Engraved' %}
+  <p class="line-item-property__field">
+    <label for="{{settings.monogram_field}}">{{ settings.monogram_title }}</label>
+    <input id="{{settings.monogram_field}}" type="text" placeholder="{{ settings.monogram_subtext }}" name="properties[{{settings.monogram_field}}]">
+  </p>
+  {%endif%}
+{%endif%}
+    
+    

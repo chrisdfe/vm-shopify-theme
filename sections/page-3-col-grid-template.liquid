@@ -1,0 +1,269 @@
+{% comment %}
+** Grid page - 3 Col custom view **
+- Page template
+- Uses blocks
+{% endcomment %}
+
+<div class="gallerynewsec">
+  <div class="gallerytop galcommon">
+    <div class="container">
+      <h1 class="title">{{ section.settings.page_heading }}</h1>
+      <p>{{ section.settings.page_description }}</p>
+    </div>
+  </div>
+  <div class="gallerymain">
+    <div class="container">
+      {% for block in section.blocks %}
+        <div class="galleryloop">
+          <ul class="gallerylist">
+            <li>
+<!--               <img src="https://cdn.shopify.com/s/files/1/1077/2230/files/ring.jpg?v=1604769815" alt="ring"/> -->
+              {% if block.settings.image1 != blank %}
+                {% render 'image-element',
+                  	image: block.settings.image1,
+                	alt: block.settings.image1.alt,
+                	progressive: true
+                %}
+              {% endif %}
+              <div class="overlay">
+                <div>
+                  <span class="name">{{ block.settings.job_title1 }}</span>
+                  <a href="{{ block.settings.link_url1 }}" class="click">{{ block.settings.link_title1 }}</a>
+                </div>
+              </div>
+            </li>
+            <li>
+              {% if block.settings.image2 != blank %}
+                {% render 'image-element',
+                  	image: block.settings.image2,
+                	alt: block.settings.image2.alt,
+                	progressive: true
+                %}
+              {% endif %}
+              <div class="overlay">
+                <div>
+                  <span class="name">{{ block.settings.job_title2 }}</span>
+                  <a href="{{ block.settings.link_url2 }}" class="click">{{ block.settings.link_title2 }}</a>
+                </div>
+              </div>
+            </li>
+            <li>
+              {% if block.settings.image3 != blank %}
+                {% render 'image-element',
+                  	image: block.settings.image3,
+                	alt: block.settings.image3.alt,
+                	progressive: true
+                %}
+              {% endif %}
+              <div class="overlay">
+                <div>
+                  <span class="name">{{ block.settings.job_title3 }}</span>
+                  <a href="{{ block.settings.link_url3 }}" class="click">{{ block.settings.link_title3 }}</a>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <div class="galcommon"> 
+            <h2 class="block-title">{{ block.settings.title }}</h2>
+            <p>{{ block.settings.description }}</p> 
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+<style>
+  .gallerylist li .overlay{background: {{ section.settings.overlay_color | color_modify: 'alpha', section.settings.overylay_opacity }};}
+  .gallerylist li .overlay span.name{color: {{ section.settings.overlay_title_color }};}
+  .gallerylist li .overlay span.name:hover{color: {{ section.settings.overlay_title_hover_color }};}
+  .gallerylist li .overlay .click {color: {{ section.settings.overlay_subtitle_color }};}
+  .gallerylist li .overlay .click:hover {color: {{ section.settings.overlay_subtitle_hover_color }};}
+</style>
+{% schema %}
+
+{
+  "name": "Page | 3 Col Grid",
+  "class": "team-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Header Content"
+    },
+    {
+      "type": "text",
+      "id": "page_heading",
+      "label": "Page Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "page_description",
+      "label": "Page Description"
+    },
+    {
+      "type": "header",
+      "content": "Color & Design"
+    },
+    {
+      "type": "range",
+      "id": "overylay_opacity",
+      "label": "Hover Overylay Opacity",
+      "min": 0.1,
+      "max": 1.0,
+      "step": 0.1,
+      "default": 0.8
+    },
+    {
+      "type": "color",
+      "id": "overlay_color",
+      "label": "Overlay Color",
+      "default": "#000"
+    },
+    {
+      "type": "color",
+      "id": "overlay_title_color",
+      "label": "Overlay Title Color",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "overlay_title_hover_color",
+      "label": "Overlay Title Hover Color",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "overlay_subtitle_color",
+      "label": "Overlay Sub-Title Color",
+      "default": "#95adb1"
+    },
+    {
+      "type": "color",
+      "id": "overlay_subtitle_hover_color",
+      "label": "Overlay Sub-Title Hover Color",
+      "default": "#d3bc73"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Featured Item Block",
+      "type": "featured-ring",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Column 1 Details"
+        },
+        {
+          "type": "image_picker",
+          "id": "image1",
+          "label": "Image",
+          "info": "800 x 800px recommended"
+        },
+        {
+          "type": "text",
+          "id": "job_title1",
+          "label": "Featured Item Title"
+        },
+       	{
+          "id": "link_url1",
+          "type": "url",
+          "label": "Link URL"
+        },
+        {
+          "type": "text",
+          "id": "link_title1",
+          "label": "Link Text"
+        },
+        {
+          "type": "header",
+          "content": "Column 2 Details"
+        },
+        {
+          "type": "image_picker",
+          "id": "image2",
+          "label": "Image",
+          "info": "800 x 800px recommended"
+        },
+        {
+          "type": "text",
+          "id": "job_title2",
+          "label": "Featured Item Title",
+          "default": "Featured Past Ring"
+        },
+       	{
+          "id": "link_url2",
+          "type": "url",
+          "label": "Link URL"
+        },
+        {
+          "type": "text",
+          "id": "link_title2",
+          "label": "Link Text"
+        },
+        {
+          "type": "header",
+          "content": "Column 3 Details"
+        },
+        {
+          "type": "image_picker",
+          "id": "image3",
+          "label": "Image",
+          "info": "800 x 800px recommended"
+        },
+        {
+          "type": "text",
+          "id": "job_title3",
+          "label": "Featured Item Title",
+          "default": "Featured Past Ring"
+        },
+       	{
+          "id": "link_url3",
+          "type": "url",
+          "label": "Link URL"
+        },
+        {
+          "type": "text",
+          "id": "link_title3",
+          "label": "Link Text"
+        },
+        {
+          "type": "header",
+          "content": "Column Info"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      {
+        "type": "featured-ring",
+        "settings": {
+          "job_title1": "Featured Item Title"
+        }
+      },
+      {
+        "type": "featured-ring",
+        "settings": {
+          "job_title2": "Featured Item Title"
+        }
+      },
+      {
+        "type": "featured-ring",
+        "settings": {
+          "job_title3": "Featured Item Title"
+        }
+      }
+    ]
+  }
+}
+
+{% endschema %}
