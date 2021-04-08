@@ -11,7 +11,9 @@
   <div class="featured-promotions container full-width--{{ section.settings.featured_promos_grid }}">
     <div class="content-section">
       {% if section.settings.title %}
-      	<h2 class="content-section__title heading--with-accent">{{ section.settings.title }}</h2>
+        <div class="sixteen columns">
+          <h2 class="content-section__title heading--with-accent">{{ section.settings.title }}</h2>
+        </div>
       {% endif %}
       
    	  <div class="js-featured-promotions promo-per-row-{{ featured_promos_per_row }} clearfix"

@@ -7,6 +7,7 @@ Description: Shopify Theme (https://www.shopify.com/&ref=out-of-the-sandbox)
 /* Table of Contents
 ==================================================
 #Variables
+#VM Variables
 #Mixins
 #Functions
 #Reset
@@ -60,10 +61,12 @@ Description: Shopify Theme (https://www.shopify.com/&ref=out-of-the-sandbox)
 #Home page - Text column with images
 #Font-Face
 #Custom Styles
+#Valerie Madison Styles
 */
 
 /* Loads 2021 VM fonts */
 @import url("https://use.typekit.net/gio1gfe.css");
+
 
 /* #Variables
 ================================================== */
@@ -106,6 +109,38 @@ $breakpoints: (
   $widescreen-down '(max-width: #{$grid-widescreen})',
   $widescreen-up '(min-width: #{$grid-widescreen + 1})'
 );
+
+/* #VM Variables
+================================================== */
+
+$vm-color-sea-green: #1c4047;
+$vm-color-plum: #714457;
+$vm-color-sand: #dec1a8;
+$vm-color-cream: #fbf9f7;
+$vm-color-white: #ffffff;
+
+// Typography
+$vm-body-text-color: $vm-color-sea-green;
+
+$vm-heading-accent-color: $vm-color-sand;
+
+$vm-link-color: $vm-color-plum;
+$vm-link-hover-color: $vm-color-sand;
+
+// Components
+$vm-navbar-background-color: $vm-color-white;
+$vm-navbar-text-color: $vm-color-sea-green;
+
+$vm-button-background-color: $vm-color-sea-green;
+$vm-button-text-color: $vm-color-white;
+$vm-button-hover-background-color: $vm-color-plum;
+$vm-button-hover-text-color: $vm-color-white;
+
+$vm-footer-background-color: $vm-color-plum;
+$vm-footer-text-color: $vm-color-white;
+$vm-footer-heading-color: $vm-color-sand;
+$vm-footer-link-color: $vm-color-white;
+$vm-footer-link-hover-color: $vm-color-sand;
 
 /* #Mixins
 ================================================== */
@@ -539,7 +574,8 @@ body {
   font-style: {{ settings.regular__font.style }};
   font-size: {{ settings.regular_font_size }}px;
   text-transform: {{ settings.regular_font_style }};
-  color: {{ settings.regular_color }};
+  // color: {{ settings.regular_color }};
+  color: $vm-body-text-color;
   line-height: 1.6em;
   overflow: auto;
   -webkit-font-smoothing: antialiased;
@@ -1594,10 +1630,6 @@ $borderStyle: {{ settings.divider_style }};
   &.no-margin {
     margin-bottom: 0px;
   }
-
-/*   @include respond-to('medium-down'){
-    margin-bottom: 10px;
-  } */
 }
 
 div.container.bottom-fix {
@@ -1658,7 +1690,7 @@ div.section.collection_description {
 a,
 a:visited,
 a span {
-  color: {{ settings.link_color }};
+  color: $vm-link-color;
   text-decoration: none;
   position: relative;
   transition: color .1s linear;
@@ -1666,7 +1698,7 @@ a span {
 
 a:hover,
 a:focus {
-  color: {{ settings.link_hover_color }};
+  color: $vm-link-hover-color;
 }
 
 a,
@@ -1747,14 +1779,14 @@ ol {
   a:visited,
   a span,
   select.currencies {
-    color: {{ settings.nav_color }};
-    text-shadow: none;
+    // color: {{ settings.nav_color }};
+    color: $vm-navbar-text-color;
   }
   
-  div.container {
-    padding-top: 5px;
-    padding-bottom: 5px;
-  }
+  // div.container {
+  //   padding-top: 5px;
+  //   padding-bottom: 5px;
+  // }
 }
 
 /* Dropdown Menu Drop Shadow */
@@ -1764,6 +1796,7 @@ ol {
 
 body.is-active {
   overflow-y: hidden;
+
   #header {
     bottom: 0;
     overflow-y: scroll;
@@ -1883,10 +1916,12 @@ body.is-active {
   text-align: left;
   width: 270px;
   @include background-opacity({{ settings.header_bg_color }}, {% if settings.transparent_header %}0.9{% else %}1{% endif %});
+  
   li {
     padding: 0 20px;
     display: block;
   }
+
   a {
     display: block;
     font-size: {{ settings.mega_text_font_size }}px;
@@ -1897,6 +1932,7 @@ body.is-active {
       letter-spacing: {{ settings.mega_text_letter_spacing }}px;
     }
   }
+
   span.icon-down-arrow {
     -webkit-transform: rotate(-90deg);
     -moz-transform: rotate(-90deg);
@@ -2118,22 +2154,27 @@ li > a.url-deadlink {
   height: 40px;
   background-color: {{ settings.top_bar_bg_color }};
   padding: 0 0 0 10px;
+
   .social_icons {
     float: left;
     margin: 0;
     padding-left: 10px;
+
     li {
       padding: 5px;
     }
   }
+
   a {
     @include flexbox();
     @include align-items(center);
   }
+
   ul.social_icons a {
     display: inline;
     @include flex(none);
   }
+
   .top_bar--right {
     @include flexbox();
     @include align-items(center);
@@ -3911,9 +3952,9 @@ input.action_button[type="submit"],
 input.action_button[type="button"],
 input.action_button[type="button"],
 button.shopify-payment-button__button.shopify-payment-button__button--unbranded {
-  background: {{ settings.btn_color }};
-  color: {{ settings.btn_text_color }};
-  border: 1px solid {{ settings.btn_color }};
+  background: $vm-button-background-color;
+  color: $vm-button-text-color;
+  border: 1px solid $vm-button-background-color;
   border-radius: 0;
   padding: 0 20px;
   text-align: center;
@@ -3922,12 +3963,14 @@ button.shopify-payment-button__button.shopify-payment-button__button--unbranded 
   height: 40px;
   line-height: 1.2;
   vertical-align: top;
-  font-family: {{ settings.nav__font.family }}, {{ settings.nav__font.fallback_families }};
-  font-weight: {{ settings.button_weight }};
-  font-style: {{ settings.nav__font.style }};
-  font-size: {{ settings.button_font_size }}px;
-  text-transform: {{ settings.button_font_style }};
-/*   letter-spacing: {{ settings.nav_letter_spacing }}px; */
+  // font-family: {{ settings.nav__font.family }}, {{ settings.nav__font.fallback_families }};
+  // font-weight: {{ settings.button_weight }};
+  // font-style: {{ settings.nav__font.style }};
+  // font-size: {{ settings.button_font_size }}px;
+  // text-transform: {{ settings.button_font_style }};
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
   letter-spacing: 0.05em;
   @include inline-flexbox();
   @include align-items(center);
@@ -3963,8 +4006,9 @@ input.action_button[type="submit"]:hover,
 input.action_button[type="button"]:hover,
 input.action_button[type="button"]:hover,
 button.shopify-payment-button__button.shopify-payment-button__button--unbranded:hover {
-  background-color: {{ settings.btn_hover_color }};
-  border: 1px solid {{ settings.btn_hover_color }};
+  background-color: $vm-button-hover-background-color;
+  border: 1px solid $vm-button-hover-background-color;
+  color: $vm-button-hover-text-color;
 }
 
 a.button:active,
@@ -3977,8 +4021,8 @@ input.action_button[type="submit"]:active,
 input.action_button[type="button"]:active,
 input.action_button[type="button"]:active,
 button.shopify-payment-button__button.shopify-payment-button__button--unbranded:active {
-    box-shadow: inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);
-    outline: 0;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);
+  outline: 0;
 }
 
 .add_to_cart,
@@ -3994,10 +4038,6 @@ input.action_button[type="submit"],
 input.action_button[type="button"],
 button.action_button {
   display: inline-block;
-
-  {% if settings.button_style == 'pill_shaped' %}
-    border-radius: 100px;
-  {% endif %}
 }
 
 /* Animation for checkmark on add to cart button */
@@ -4025,6 +4065,7 @@ button .checkmark {
   bottom: 0;
   right: 0;
   margin: auto;
+
   path {
     stroke-dasharray: 19.79 19.79;
     stroke-dashoffset: 19.79;
@@ -4613,11 +4654,11 @@ ul.tabs {
 /* #Forms
 ================================================== */
 form {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 fieldset {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 input[type="text"],
@@ -4645,8 +4686,8 @@ textarea {
   border: 1px solid {{ settings.border_color }};
   outline: none;
   background: #fff;
+  // TODO - not this color
   color: #5f6a7d;
-/*   font: 13px "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif; */
   font-size: 13px;
   // TODO - use font stack variable
   font-family: poppins, sans-serif;
@@ -4655,9 +4696,7 @@ textarea {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  {% if settings.button_style != 'square' %}
-  border-radius: 3px;
-  {% endif %}
+
   @include respond-to('small-down') {
     font-size: 16px;
   }
@@ -4692,14 +4731,16 @@ select:active,
 select:focus,
 textarea:active,
 textarea:focus {
-    border: 1px solid #aaa;
-    color: #444;
+  border: 1px solid #aaa;
+  color: #444;
 }
+
 input[type=number]::-webkit-outer-spin-button,
 input[type=number]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+  -webkit-appearance: none;
+  margin: 0;
 }
+
 input[type=text]::-ms-clear {  display: none; width : 0; height: 0; }
 input[type=text]::-ms-reveal {  display: none; width : 0; height: 0; }
 input[type="search"]::-webkit-search-decoration,
@@ -4716,16 +4757,6 @@ select::-ms-expand {
 select {
   background: #fff url({{ "select.png" | asset_url }}) no-repeat 96% 50%;
   background-size: 18px 12px;
-  {% if settings.button_style != 'square' %}
-    padding: 8px 14px 8px;
-    border-radius: 3px;
-  {% elsif settings.button_style == 'pill_shaped'  %}
-    padding: 8px 16px 8px;
-    border-radius: 100px;
-  {% else %}
-    padding: 8px 14px 8px;
-    border-radius: 0;
-  {% endif %}
   border: 1px solid #d9dbdc;
   -webkit-appearance: none;
   -ms-appearance: none;
@@ -4749,7 +4780,7 @@ legend,
 }
 
 input[type="checkbox"] {
-    display: inline;
+  display: inline;
 }
 
 label span,
@@ -5569,10 +5600,12 @@ input[type="button"].get-rates.action_button {
   .newsletter_section {
     background-color: transparent;
     color: {{ settings.sub_footer_text_color }};
+    
     h6 {
       color: {{ settings.headline_footer_text_color }};
       font-size: {{ settings.footer_heading_font_size }}px;
     }
+
     p {
       padding: 15px 0;
     }
@@ -8632,17 +8665,10 @@ $swatch-label-size: 34px;
 ================================================== */
 
 .footer {
-  font-size: {{ settings.footer_font_size }}px;
-  padding: 60px 0;
-  background-color: {{ settings.sub_footer_color }};
+  padding: 80px 0;
+  background-color: $vm-footer-background-color;
   background-position: center center;
-  color: {{ settings.sub_footer_text_color }};
-  {% if settings.footer_bg != nil %}
-    background-image: url("{{ settings.footer_bg | img_url: '1400x' }}");
-    {% if settings.footer_bg_stretched %}
-      background-size:cover;
-    {% endif %}
-  {% endif %}
+  color: $vm-footer-text-color;
   pointer-events: all;
   font-size: 14px;
 
@@ -8683,6 +8709,7 @@ $swatch-label-size: 34px;
   width:100%;
   word-wrap: break-word;
   float: none;
+
   @include respond-to('medium-down'){
     text-align: center;
   }
@@ -8707,9 +8734,9 @@ img.footer-logo {
 .footer .footer-menu-wrap h6 {
   margin: 0;
   padding: 0 0 5px 0;
-/*   color: {{ settings.headline_footer_text_color }}; */
-/*   font-size: {{ settings.footer_heading_font_size }}px; */
-  @include respond-to('medium-down'){
+  color: $vm-footer-heading-color;
+
+  @include respond-to('medium-down') {
     border-top: 1px solid {{ settings.sub_footer_border_color }};
     margin-bottom: 5px;
     padding: 10px 0 5px;
@@ -8718,7 +8745,7 @@ img.footer-logo {
 
 .footer .footer-menu-wrap h6 > span {
   display: none;
-  @include respond-to('medium-down'){
+  @include respond-to('medium-down') {
     display: inline-block;
     transition: transform 0.3s linear;
     perspective: 1000;
@@ -8734,18 +8761,16 @@ img.footer-logo {
 
 .footer a,
 .footer a:visited {
-  color: {{ settings.sub_footer_link_color }};
-  font-size: {{ settings.footer_font_size }}px;
+  color: $vm-footer-link-color;
 }
 
 .footer a:hover,
 .footer a:active {
-  color: {{ settings.sub_footer_link_color_hover }};
+  color: $vm-footer-link-hover-color;
 }
 
 .footer ul {
-  list-style: none;
-  margin: 0;
+ list-style: none;  margin: 0;
   padding: 15px 0 0 0;
 }
 
@@ -13343,26 +13368,9 @@ p.close{position:absolute;right:6px;top:-2px;cursor:pointer}
   .new-team-bottom .team-member__overlay{position:relative;width:58%;vertical-align:top;}
 }
 
-/*============================================================================
-  # Valerie Madison Styles
-  ==============================================================================*/
+/* #Valerie Madison Styles
+==============================================================================*/
 
-
-/* <link rel="stylesheet" href="https://use.typekit.net/gio1gfe.css"> */
-
-
-
-/* :root {
-  --color-sea-green: #1c4047;
-
-  --body-text-color: var(--color-sea-green);
-  --heading-color: var(--color-sea-green);
-  --subheading-color: var(--color-sea-green);
-  --paragraph-text-color: var(--color-sea-green);
-}
- */
-
-$heading--accent-color: #d3bc73;
 
 /* Typography
   ==============================================================================*/
@@ -13384,7 +13392,6 @@ h3,
   font-family: orpheuspro, serif;
   font-weight: 700;
   font-style: normal;
-  /*   color: var(--heading-color); */
   /* TODO - this is a placeholder value */
   letter-spacing: 0.02em;
   line-height: 1.1;
@@ -13435,14 +13442,14 @@ h3,
   width: 30px;
   margin-top: 10px;
   margin-left: 0;
-  background-color: $heading--accent-color;
+  background-color: $vm-heading-accent-color;
 }  
 
 .page-heading {
   padding: 70px 0;
   
   &.page-heading--with-breadcrumbs {
-	padding: 0 0 70px;
+    padding: 0 0 70px;
   }
   
   @include respond-to('medium-down') {
@@ -13503,7 +13510,7 @@ p,
 .paragraph-2,
 .paragraph-3 {
   font-family: poppins, sans-serif;
-  letter-spacing: 0;
+  letter-spacing: 0.01em;
   margin-bottom: 2em;
 }
 
@@ -13531,11 +13538,12 @@ p,
   
 
 blockquote {
-  border-left: 5px solid #D3BC73;
-  padding: 30px;
+  border: 0;
+  background: $vm-color-cream;
+  padding: 50px;
   
   p:last-child {
-	margin-bottom: 0;
+    margin-bottom: 0;
   }
 }
 
@@ -13557,11 +13565,11 @@ a {
 
 .cta-link {
   font-weight: 600;
-  border-bottom: 2px solid {{ settings.link_color }};
+  border-bottom: 2px solid $vm-link-color;
   letter-spacing: 0.01em;
   
   &:hover {
-    border-bottom-color: {{ settings.link_hover_color }};
+    border-bottom-color: $vm-link-hover-color;
   }
 }
 
@@ -13582,7 +13590,7 @@ a {
   ==============================================================================*/
 
 section.image-list {
-  background: #f9fafb;
+  background: $vm-color-cream;
   
   ul {
     list-style: none;

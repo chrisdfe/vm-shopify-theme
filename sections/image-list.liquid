@@ -16,11 +16,13 @@
       {% for block in section.blocks %} 
         {% if block.type == 'content-image' and block.settings.show_section %}
         <li class="photo-block">
-<!--           {% if block.settings.image_option != blank %}
+          <!--      
+          {% if block.settings.image_option != blank %}
 	          {{ block.settings.image_option | img_url: 'x150' | img_tag }}
           {% else %}
     	      {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
-          {% endif %} -->
+          {% endif %}
+          -->
         
           <h4>{{block.settings.title}}</h4>
           
