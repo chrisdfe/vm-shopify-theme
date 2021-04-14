@@ -495,11 +495,19 @@
   
   /* 3/15 Make Logo Larger  */
 @media (min-width:800px) {
-  .main_nav_wrapper:not(.sticky_nav) .main_nav > div.logo {width: {{ section.settings.logo_display_width_percent }}% !important;}
-  .main_nav_wrapper:not(.sticky_nav) .main_nav > div.logo img {max-width:450px !important;padding-top: 0px;}
-  .main_nav_wrapper:not(.sticky_nav) .main_nav >  .nav {width: {{ section.settings.logo_display_width_percent | times: -1 | plus: 100 }}% !important;padding-top: 11px;padding-bottom:12px;}
+  // .main_nav_wrapper:not(.sticky_nav) .main_nav > div.logo {
+  //   width: {{ section.settings.logo_display_width_percent }}% !important;
+  // }
   
+  // .main_nav_wrapper:not(.sticky_nav) .main_nav > div.logo img {
+  //   max-width:450px !important;padding-top: 0px;
+  // }
 
+  // .main_nav_wrapper:not(.sticky_nav) .main_nav >  .nav {
+  //   width: {{ section.settings.logo_display_width_percent | times: -1 | plus: 100 }}% !important;
+  //   padding-top: 11px;
+  //   padding-bottom:12px;
+  // }
 }
   {% endunless %}
 

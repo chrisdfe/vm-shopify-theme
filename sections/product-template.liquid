@@ -9,6 +9,7 @@
 
 <!-- width values: {{product_width}} {{gallery_width}} -->
 {% endif %}
+
 <a name="pagecontent" id="pagecontent"></a>
 
 <div class="container main content product-name--{{ product.handle }}">
@@ -36,14 +37,14 @@
     {% endif %}
   </div>
 
-  {% comment %}Check to see if sidebar should be enabled{% endcomment %}
+{% comment %}Check to see if sidebar should be enabled{% endcomment %}
 {% if product.tags contains 'Design Your Own Ring' and section.settings.toggle == false %}
-    {% assign sidebar = false %}
-  {% elsif section.settings.toggle == true  and product_width contains "seven" %}
-    {% assign sidebar = true %}
-  {% else %}
-    {% assign sidebar = false %}
-  {% endif %}
+  {% assign sidebar = false %}
+{% elsif section.settings.toggle == true  and product_width contains "seven" %}
+  {% assign sidebar = true %}
+{% else %}
+  {% assign sidebar = false %}
+{% endif %}
 
   <div class="product clearfix">
     {% if sidebar %}
@@ -287,11 +288,20 @@
           </div>
         </section>
     	<style>
-          section.image-list.details-section {padding:30px;}
+          section.image-list.details-section {
+            padding:30px;
+          }
 /*     	  section.image-list.details-section .subheading {color:{{block.settings.color_subheader}};} */
-          section.image-list.details-section .option_grid_2 {display:flex;text-align:initial;}
-          section.image-list.details-section .photo_block {width: 50%;padding: 2%;}
-          section.image-list.details-section {background:{{block.settings.color_background}};}
+          section.image-list.details-section .option_grid_2 {
+            display:flex;text-align:initial;
+          }
+          section.image-list.details-section .photo_block {
+            width: 50%;
+            padding: 2%;
+          }
+          section.image-list.details-section {
+            background: {{block.settings.color_background}};
+          }
 /*     	  section.image-list.details-section h2 {color:{{block.settings.color_header}};} */
 /*           section.image-list.details-section h3 { {% if block.settings.bold_column_headings %}font-weight:bold;{% endif %} color:{{block.settings.color_columnheader}}; display:inline;} */
 /*           section.image-list.details-section .icon_header img {height:40px;vertical-align:middle;margin-right:5px;} */
@@ -336,7 +346,11 @@
     {% endif %}
 {% if section.settings.enable_qty == false %} 
   {% if product.tags contains 'engagement rings' or product.tags contains 'Design Your Own Ring' or  product.tags contains 'engagement' %} 
-  <style>.purchase-details .product-quantity-box {display:none;}</style>
+  <style>
+    .purchase-details .product-quantity-box {
+      display:none;
+    }
+  </style>
   {% endif %}
 {% endif %}
 
