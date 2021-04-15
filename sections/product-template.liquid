@@ -2,6 +2,11 @@
 ** Product - default view **
 - Product template
 {% endcomment %}
+
+{% comment %}
+  Clean all of this up
+{% endcomment %}
+
 {% if default_width != "true" %}
   {% assign width_values 	= section.settings.product_info_width | split: '|' %}
   {% assign product_width 	= width_values | last %}
@@ -13,7 +18,6 @@
 <a name="pagecontent" id="pagecontent"></a>
 
 <div class="container main content product-name--{{ product.handle }}">
-
   <div class="sixteen columns">
     {% if collection.previous_product or collection.next_product or section.settings.product_breadcrumb %}
       <div class="clearfix breadcrumb-collection">
@@ -37,14 +41,14 @@
     {% endif %}
   </div>
 
-{% comment %}Check to see if sidebar should be enabled{% endcomment %}
-{% if product.tags contains 'Design Your Own Ring' and section.settings.toggle == false %}
-  {% assign sidebar = false %}
-{% elsif section.settings.toggle == true  and product_width contains "seven" %}
-  {% assign sidebar = true %}
-{% else %}
-  {% assign sidebar = false %}
-{% endif %}
+  {% comment %}Check to see if sidebar should be enabled{% endcomment %}
+  {% if product.tags contains 'Design Your Own Ring' and section.settings.toggle == false %}
+    {% assign sidebar = false %}
+  {% elsif section.settings.toggle == true  and product_width contains "seven" %}
+    {% assign sidebar = true %}
+  {% else %}
+    {% assign sidebar = false %}
+  {% endif %}
 
   <div class="product clearfix">
     {% if sidebar %}
@@ -247,82 +251,79 @@
   	{% if product.handle == block.settings.product_details_id and count == 0 and block.settings.enable_details == true %}
    		{% assign count = count | plus: 1 %}
         </div></div>
-         <section class="image-list details-section">
+
+        <section class="image-list details-section">
           {% if block.settings.title != blank %}
             <h2>{{ block.settings.title | escape }}</h2>
           {% endif %}
+
           {% if block.settings.subtext != blank %}
             <span class="subheading">
               {{ block.settings.subtext }}
             </span>
           {% endif %}
-          <div class="option_grid_2 option_grid_mobile_1">
+
+          {% assign column_class = "sixteen" %}
+          {% if block.settings.column_details_left and block.settings.column_details_right %}
+            {% assign column_class = "eight" %}
+          {% endif %}
+
+          <div class="container">
             {% if block.settings.column_details_left %}
-            <div class="photo_block">
-              {% if block.settings.column_header_left %}
-              <div class="icon_header">
-            	{% if block.settings.column_icon_left %}
-      				{{ block.settings.column_icon_left | img_url: '80x80' | img_tag:block.settings.column_header_left }}
-                {% endif %}
-                <h3>{{ block.settings.column_header_left | escape }}</h3>
+              <div class="{{ column_class }} columns">
+                <div class="photo_block">
+                  {% if block.settings.column_header_left %}
+                    <div class="icon_header">
+                	    {% if block.settings.column_icon_left %}
+                				{{ block.settings.column_icon_left | img_url: '80x80' | img_tag:block.settings.column_header_left }}
+                      {% endif %}
+
+                      <h3>
+                        {{ block.settings.column_header_left | escape }}
+                      </h3>
+                    </div>
+                  {% endif %}
+
+                  <p>
+                    {{ block.settings.column_details_left }}
+                  </p>
+                </div>
               </div>
-              {% endif %}
-              <p>{{block.settings.column_details_left}}</p>
-            </div>
             {% endif %}
-            
+              
             {% if block.settings.column_details_right %}
-            <div class="photo_block">
-              {% if block.settings.column_header_right %}
-              <div class="icon_header">
-            	{% if block.settings.column_icon_right %}
-      				{{ block.settings.column_icon_right | img_url: '80x80'  | img_tag:block.settings.column_header_right }}
-                {% endif %}
-                <h3>{{ block.settings.column_header_right | escape }}</h3>
+              <div class="{{ column_class }} columns">
+                <div class="photo_block">
+                  {% if block.settings.column_header_right %}
+                    <div class="icon_header">
+                  	 {% if block.settings.column_icon_right %}
+            				    {{ block.settings.column_icon_right | img_url: '80x80'  | img_tag:block.settings.column_header_right }}
+                      {% endif %}
+
+                      <h3>
+                        {{ block.settings.column_header_right | escape }}
+                      </h3>
+                    </div>
+                  {% endif %}
+
+                  <p>
+                    {{ block.settings.column_details_right }}
+                  </p>
+                </div>
               </div>
-              {% endif %}
-              <p>{{block.settings.column_details_right}}</p>
-            </div>
             {% endif %}
-            
           </div>
-        </section>
-    	<style>
-          section.image-list.details-section {
-            padding:30px;
-          }
-/*     	  section.image-list.details-section .subheading {color:{{block.settings.color_subheader}};} */
-          section.image-list.details-section .option_grid_2 {
-            display:flex;text-align:initial;
-          }
-          section.image-list.details-section .photo_block {
-            width: 50%;
-            padding: 2%;
-          }
-          section.image-list.details-section {
-            background: {{block.settings.color_background}};
-          }
-/*     	  section.image-list.details-section h2 {color:{{block.settings.color_header}};} */
-/*           section.image-list.details-section h3 { {% if block.settings.bold_column_headings %}font-weight:bold;{% endif %} color:{{block.settings.color_columnheader}}; display:inline;} */
-/*           section.image-list.details-section .icon_header img {height:40px;vertical-align:middle;margin-right:5px;} */
-
-          @media (max-width:768px) {
-            section.details-section .option_grid_2 {flex-direction:column}
-            section.details-section .option_grid_2 .photo_block {width:100%;}
-            section.details-section .option_grid_2 .icon_header {text-align:center;}
-            section.details-section .option_grid_2 .icon_header {padding-top: 20px;border-top: 1px solid #41454840;}
-          }
-    	</style>
+            
+        </div>
+      </section>
     
-        <div class="container main content product-name--{{ product.handle }}">
-
-  <div class="sixteen columns">
+      <div class="container main content product-name--{{ product.handle }}">
+        <div class="sixteen columns">
     {% endif %}
   {% endfor %}
         
         
     {% if sidebar %}
-
             {% if section.settings.display_recently_viewed %}
               {% render 'include-recently-viewed' %}
             {% endif %}
@@ -331,9 +332,7 @@
           </div>
         </div>
       </div>
-
     {% else %}
-
           </div>
         </div>
       </div>
@@ -341,9 +340,11 @@
       {% if section.settings.display_recently_viewed %}
         {% render 'include-recently-viewed' %}
       {% endif %}
+
       <div data-product-recommendations-container></div>
 
     {% endif %}
+
 {% if section.settings.enable_qty == false %} 
   {% if product.tags contains 'engagement rings' or product.tags contains 'Design Your Own Ring' or  product.tags contains 'engagement' %} 
   <style>

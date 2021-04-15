@@ -29,6 +29,7 @@
                               alt: block.settings.image_top.alt
                       %}
                     {% endif %}
+
                     {% if block.settings.image_caption_top != blank %}
                       <p class="mega-menu__image-caption">{{ block.settings.image_caption_top }}</p>
                     {% endif %}
@@ -41,7 +42,12 @@
                 <div class="dropdown_column__menu">
                   <ul class="dropdown_title">
                     <li>
-                      <a {% if block.settings.menu_1_link %}href="{{ block.settings.menu_1_link }}"{% endif %}>{{ linklists[block.settings.menu_1].title }}</a>
+                      {% if block.settings.menu_1_link != blank %}
+                        <a href="{{ block.settings.menu_1_link }}">{{ linklists[block.settings.menu_1].title }}</a>
+                      }
+                      {% else %}
+                        {{ linklists[block.settings.menu_1].title }}
+                      {% endif %}
                     </li>
                   </ul>
                   {% if linklists[block.settings.menu_1] != empty %}
@@ -61,7 +67,12 @@
                 <div class="dropdown_column__menu">
                   <ul class="dropdown_title">
                     <li>
-                      <a {% if block.settings.menu_2_link %}href="{{ block.settings.menu_2_link }}"{% endif %}>{{ linklists[block.settings.menu_2].title }}</a>
+                      {% if block.settings.menu_2_link != blank %}
+                        <a href="{{ block.settings.menu_2_link }}">{{ linklists[block.settings.menu_1].title }}</a>
+                      }
+                      {% else %}
+                        {{ linklists[block.settings.menu_2].title }}
+                      {% endif %}
                     </li>
                   </ul>
                   {% if linklists[block.settings.menu_2] != empty %}
