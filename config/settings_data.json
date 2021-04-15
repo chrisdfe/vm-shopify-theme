@@ -4564,25 +4564,25 @@
       "1552235156499": {
         "type": "slideshow",
         "blocks": {
-          "a9484219-1f34-4a05-9cd7-97d7d9097e71": {
+          "cd991afb-fe24-4283-9a6d-bf8dc16e4fca": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/DSC_3160.jpg",
-              "pretext": "",
-              "title": "Fresh <br> Flowers",
-              "subtitle": "<p>Vibrant Stones for<br\/>Vibrant Love<\/p>",
+              "image": "shopify:\/\/shop_images\/DSC_4012_copy.jpg",
+              "pretext": "<p>Something New, <\/p>",
+              "title": "Something <br> Blue",
+              "subtitle": "<p>Say &quot;I Do!&quot; to one of these<br\/>Sapphire Heartthrobs!<\/p>",
               "caption_background": true,
               "caption_background_transparency": true,
-              "button1": "Shop the Drop",
+              "button1": "I DO!",
               "button1_link": "shopify:\/\/collections\/new-arrivals",
               "button1_highlight": false,
               "button2": "",
               "button2_highlight": false,
-              "text_position": "left",
+              "text_position": "right",
               "text_align": "center",
               "mobile_image_crop": "none",
               "is_timed_slide": false,
-              "start_datetime": "",
+              "start_datetime": "2021-04-09",
               "end_datetime": ""
             }
           },
@@ -4591,8 +4591,8 @@
             "settings": {
               "image": "shopify:\/\/shop_images\/DSC_0527-2_copy.jpg",
               "pretext": "",
-              "title": "Bijoux Bracelets",
-              "subtitle": "<p>Solid Gold Bracelets: Everyday Luxury, Timeless Style<\/p>",
+              "title": "Bijoux <br> Bracelets",
+              "subtitle": "<p>Solid Gold Bracelets: <br\/>Everyday Luxury, Timeless Style<\/p>",
               "caption_background": true,
               "caption_background_transparency": true,
               "button1": "Shop new bracelets now",
@@ -4635,7 +4635,7 @@
             "settings": {
               "image": "shopify:\/\/shop_images\/Inside-Ring-Engraving-Shopify-Banner.jpg",
               "pretext": "",
-              "title": "Make it Truly Yours",
+              "title": "Make it <br>Truly Yours",
               "subtitle": "<p>Ring engraving is here<\/p>",
               "caption_background": true,
               "caption_background_transparency": true,
@@ -4654,7 +4654,7 @@
           }
         },
         "block_order": [
-          "a9484219-1f34-4a05-9cd7-97d7d9097e71",
+          "cd991afb-fe24-4283-9a6d-bf8dc16e4fca",
           "e80aee0c-2f19-4966-9ed5-f850a1332840",
           "97d33d13-e319-45ba-a204-254bf4d49ac4",
           "bd8c36db-7547-4162-a7ed-25fed40efaf5"
