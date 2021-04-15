@@ -7,14 +7,23 @@
 {% comment %}Is the color set to transparent?{% endcomment %}
 {% assign mobile_text_alpha = section.settings.mobile_text_color | color_extract: 'alpha' %}
 
+{% comment %}Section specific CSS{% endcomment %}
+{% style %}
+  @media only screen and (max-width: 480px) {
+    #shopify-section-{{ section.id }} .pretext,
+    #shopify-section-{{ section.id }} .headline,
+    #shopify-section-{{ section.id }} .subtitle {
+      color: {% if mobile_text_alpha != 0 %}{{ section.settings.mobile_text_color}}{% endif %};
+    }
+  }
+{% endstyle %}
+
 {% if section.settings.wide_display == false %}
 <div class="container">
   <div class="sixteen columns">
 {% endif %}
-
 {% if section.blocks.size > 0 %}
-  <section 
-        id="homepage_slider-{{section.id}}"
+  <section  id="homepage_slider-{{section.id}}"
         class="banner homepage-slideshow js-homepage-slideshow slideshow_animation--{{ section.settings.slideshow_animation }} {% if section.settings.slideshow_text_animation != '' %}text-animation--true{% else %}text-animation--false{% endif %} transparentBackground--{{settings.slideshow_button_style}}
         full-width--{{ section.settings.wide_display }}"
         data-slider-id="homepage_slider-{{section.id}}"
@@ -26,32 +35,31 @@
 
       {% assign mobile_crop = 'mobile-banner--crop-' | append: block.settings.mobile_image_crop %}
     
-      {% if block.settings.is_timed_slide %} 
-        {% assign start_dt_str = block.settings.start_datetime %}
+{% if block.settings.is_timed_slide %} 
+  {% assign start_dt_str = block.settings.start_datetime %}
 
-        {% assign end_dt_str = block.settings.end_datetime %}
+  {% assign end_dt_str = block.settings.end_datetime %}
 
-        {% assign nowDate = "now" | date: "%s" %}
-        {% assign startChk = start_dt_str | date: "%s" | minus: nowDate | divided_by: 3600 | divided_by: 24 | round %}
+  {% assign nowDate = "now" | date: "%s" %}
+  {% assign startChk = start_dt_str | date: "%s" | minus: nowDate | divided_by: 3600 | divided_by: 24 | round %}
 
-        {% assign endChk = end_dt_str | date: "%s" | minus: nowDate | divided_by: 3600 | divided_by: 24 | round %}
+  {% assign endChk = end_dt_str | date: "%s" | minus: nowDate | divided_by: 3600 | divided_by: 24 | round %}
 
-        {% if startChk < 0 %}
-            {% assign start_avl = true %}
-        {% endif %}
-        {% if endChk >= 0 %}
-            {% assign end_avl = true %}
-        {% endif %}
-        {% if collection.id == timed_collection.id %}
-          {% if start_avl == true and end_avl == true %}
+  {% if startChk < 0 %}
+      {% assign start_avl = true %}
+  {% endif %}
+  {% if endChk >= 0 %}
+      {% assign end_avl = true %}
+  {% endif %}
+  {% if collection.id == timed_collection.id %}
+    {% if start_avl == true and end_avl == true %}
 
-          {% else %}
-           {% continue %}
-          {% endif %}
-        {% endif %}
-      {% endif %}
- 
-      <div class="gallery-cell slide-{{ forloop.index }}" {{ block.shopify_attributes }} data-block-id="{{block.id}}">
+    {% else %}
+     {% continue %}
+    {% endif %}
+  {% endif %}
+{% endif %}
+        <div class="gallery-cell slide-{{ forloop.index }}" {{ block.shopify_attributes }} data-block-id="{{block.id}}">
         {% if block.settings.image != nil %}
           {% render 'image-element',
                   image: block.settings.image,
@@ -63,57 +71,52 @@
           {% capture i %}{% cycle "1", "2" %}{% endcapture %}
           {{ 'lifestyle-' | append: i | placeholder_svg_tag: 'placeholder-svg placeholder-svg--slideshow' }}
         {% endif %}
-
-        {% unless block.settings.button1_link != blank and block.settings.button2_link != blank %}
-          {% if block.settings.button1_link != blank and block.settings.button1 == blank %}
-            <a href="{{ block.settings.button1_link }}" class="banner-full-link">
-              {{ block.settings.title }}
-            </a>
-          {% elsif block.settings.button2_link != blank and block.settings.button2 == blank %}
-            <a href="{{ block.settings.button2_link }}" class="banner-full-link">
-              {{ block.settings.title }}
-            </a>
-          {% endif %}
-        {% endunless %}
-
-        {% unless block.settings.pretext == blank and block.settings.title == blank and block.settings.subtitle == blank and block.settings.button1 == blank and block.settings.button2 == blank %}
-          <div class="caption position-{{block.settings.text_position}} js-caption caption--below-{{ section.settings.mobile_text_below_image }}">
-              <div class="caption-content
-                          caption-background-{{block.settings.caption_background}}
-                          caption-transparency-{{ block.settings.caption_background_transparency }}">
-                {% if block.settings.pretext != blank %}
-                  <h4 class="pretext">
-                    {{ block.settings.pretext | strip_html  }}
-                  </h4>
-                {% endif %}
-
-                {% if block.settings.title != blank %}
-                  <h1 class="headline">
-                    {{ block.settings.title }}
-                  </h1>
-                {% endif %}
-
-                {% if block.settings.subtitle != blank %}
-                  <div class="subtitle">
-                    {{ block.settings.subtitle }}
-                  </div>
-                {% endif %}
-
-                {% if block.settings.button1 != blank %}
-                  <a {% if block.settings.button1_link != blank %}href="{{ block.settings.button1_link }}"{% endif %} class="action_button first_button highlight-{{block.settings.button1_highlight}}">
-                    {{ block.settings.button1 }}
-                  </a>
-                {% endif %}
-
-                {% if block.settings.button2 != blank %}
-                  <a {% if block.settings.button2_link != blank %}href="{{ block.settings.button2_link }}"{% endif %} class="action_button second_button highlight-{{block.settings.button2_highlight}}">
-                    {{ block.settings.button2 }}
-                  </a>
-                {% endif %}
+          {% unless block.settings.button1_link != blank and block.settings.button2_link != blank %}
+            {% if block.settings.button1_link != blank and block.settings.button1 == blank %}
+              <a href="{{ block.settings.button1_link }}" class="banner-full-link">
+                {{ block.settings.title }}
+              </a>
+            {% elsif block.settings.button2_link != blank and block.settings.button2 == blank %}
+              <a href="{{ block.settings.button2_link }}" class="banner-full-link">
+                {{ block.settings.title }}
+              </a>
+            {% endif %}
+          {% endunless %}
+          {% unless block.settings.pretext == blank and block.settings.title == blank and block.settings.subtitle == blank and block.settings.button1 == blank and block.settings.button2 == blank %}
+            <div class="caption position-{{block.settings.text_position}} js-caption caption--below-{{ section.settings.mobile_text_below_image }}">
+                <div class="caption-content
+                            caption-background-{{block.settings.caption_background}}
+                            caption-transparency-{{ block.settings.caption_background_transparency }}
+                            align-{{block.settings.text_align}}">
+                  {% if block.settings.pretext != blank %}
+                    <h4 class="pretext">
+                      {{ block.settings.pretext | strip_html  }}
+                    </h4>
+                  {% endif %}
+                  {% if block.settings.title != blank %}
+                    <h1 class="headline">
+                      {{ block.settings.title }}
+                    </h1>
+                  {% endif %}
+                  {% if block.settings.subtitle != blank %}
+                    <div class="subtitle">
+                      {{ block.settings.subtitle }}
+                    </div>
+                  {% endif %}
+                  {% if block.settings.button1 != blank %}
+                    <a {% if block.settings.button1_link != blank %}href="{{ block.settings.button1_link }}"{% endif %} class="action_button first_button highlight-{{block.settings.button1_highlight}}">
+                      {{ block.settings.button1 }}
+                    </a>
+                  {% endif %}
+                  {% if block.settings.button2 != blank %}
+                    <a {% if block.settings.button2_link != blank %}href="{{ block.settings.button2_link }}"{% endif %} class="action_button second_button highlight-{{block.settings.button2_highlight}}">
+                      {{ block.settings.button2 }}
+                    </a>
+                  {% endif %}
+                </div>
               </div>
-            </div>
-        {% endunless %}
-      </div>
+          {% endunless %}
+        </div>
     {% endfor %}
   </section>
 {% endif %}

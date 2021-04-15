@@ -110,16 +110,13 @@
               <span itemprop="sku">{{ variant.sku }}</span>
             </p>
           {% endif %}
-
-          <h1 class="product_name heading-2" itemprop="name">
-            {{ product.title }}
-          </h1>
-
+          <h1 class="product_name" itemprop="name">{{ product.title }}</h1>
           {% if section.settings.enable_shopify_product_badges and settings.enable_shopify_review_comments %}
             <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
           {% endif %}
-
           <div class="feature_divider"></div>
+
+
 
           {% assign product_tags = product.tags | join: ' ' %}
           {% if product_tags contains 'meta-size-chart-' %}

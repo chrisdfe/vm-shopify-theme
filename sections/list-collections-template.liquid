@@ -142,11 +142,9 @@
                   </div>
                 </div>
             {% endif %}
-            <h5>
-              <a class="collection-info__caption {% if settings.thumbnail_hover_enabled %}hidden{% endif %}" href="{{ collection.url }}">
-                <span class="title">{{ collection.title }}</span>
-              </a>
-            </h5>
+            <a class="collection-info__caption {% if settings.thumbnail_hover_enabled %}hidden{% endif %}" href="{{ collection.url }}">
+              <span class="title">{{ collection.title }}</span>
+            </a>
           </div>
         </div>
         {% endunless %}
