@@ -11975,11 +11975,10 @@ $product-media-bg-color: {{ settings.shop_bg_color }};
   }
 
   .caption-content {
-      text-align: left;
+    text-align: left;
 
-    .pretext,
-    .headline,
-    .subtitle {
+    @include respond-to('small-down') {
+      text-align: center;
     }
   }
   
