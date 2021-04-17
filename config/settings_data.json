@@ -4564,16 +4564,16 @@
       "1552235156499": {
         "type": "slideshow",
         "blocks": {
-          "cd991afb-fe24-4283-9a6d-bf8dc16e4fca": {
+          "9eae6c17-f0a4-4b70-b295-eb4d565e853b": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/DSC_4012_copy.jpg",
-              "pretext": "<p>Something New, <\/p>",
-              "title": "Something <br> Blue",
-              "subtitle": "<p>Say &quot;I Do!&quot; to one of these<br\/>Sapphire Heartthrobs!<\/p>",
-              "caption_background": true,
-              "caption_background_transparency": true,
-              "button1": "I DO!",
+              "image": "shopify:\/\/shop_images\/DSC_3875_1.jpg",
+              "pretext": "",
+              "title": "Shine like the Stars",
+              "subtitle": "<p>Open shoulders let the light in on these sapphire stunners. <\/p>",
+              "caption_background": false,
+              "caption_background_transparency": false,
+              "button1": "Shop New Arrivals",
               "button1_link": "shopify:\/\/collections\/new-arrivals",
               "button1_highlight": false,
               "button2": "",
@@ -4582,7 +4582,7 @@
               "text_align": "center",
               "mobile_image_crop": "none",
               "is_timed_slide": false,
-              "start_datetime": "2021-04-09",
+              "start_datetime": "",
               "end_datetime": ""
             }
           },
@@ -4654,7 +4654,7 @@
           }
         },
         "block_order": [
-          "cd991afb-fe24-4283-9a6d-bf8dc16e4fca",
+          "9eae6c17-f0a4-4b70-b295-eb4d565e853b",
           "e80aee0c-2f19-4966-9ed5-f850a1332840",
           "97d33d13-e319-45ba-a204-254bf4d49ac4",
           "bd8c36db-7547-4162-a7ed-25fed40efaf5"
@@ -4665,7 +4665,7 @@
           "slideshow_animation": "slide",
           "slideshow_speed": 5,
           "activate_adaptiveHeight": false,
-          "mobile_text_below_image": false,
+          "mobile_text_below_image": true,
           "mobile_text_color": ""
         }
       },
@@ -5061,7 +5061,7 @@
           "1591661117785": {
             "type": "logo_image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/Allure_Logo.png"
+              "image": "shopify:\/\/shop_images\/Allure_Logo_200x_cropped_a1a21f03-9c1e-4234-a88a-01b6837fe515.png"
             }
           },
           "1591661011742-0": {

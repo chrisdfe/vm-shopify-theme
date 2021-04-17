@@ -106,8 +106,10 @@
   					<a href="{{ article.url }}" title="{{ article.title | escape }}">
                  		<img src="{{ article.image.src | img_url: '500x' }}" alt="{{ article.image.alt }}">
                   	</a>
- 					{% endif %}
-                  <a href="{{ article.url }}" title="{{ article.title | escape }}">{{ article.title }}</a>
+ 					        {% endif %}
+                  <h5>
+                    <a href="{{ article.url }}" title="{{ article.title | escape }}">{{ article.title }}</a>
+                  </h5>
                   {% if settings.blog_date %}
                     <div class="meta">
                       <span class="label">{{ article.published_at | date: format: "month_day_year" }}</span>

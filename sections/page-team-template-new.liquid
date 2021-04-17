@@ -15,6 +15,7 @@
   </div>
 {% endif %}
 {% endcomment %}
+
 {% if section.settings.image != blank or section.settings.text != blank or section.settings.title != blank %}
   <div class="new-team-top">
     <div class="container">
@@ -32,7 +33,7 @@
         </div>
 
           {% if section.settings.text != blank or section.settings.title != blank %}
-            <div class="team-page__text text-align--{{ section.settings.text_position }}">
+            <div class="team-page__text">
               <span class="team-page__container">
                 {% if section.settings.title %}
                   <h2 class="heading--with-accent">{{ section.settings.title }}</h2>
@@ -50,36 +51,16 @@
 {% endif %}
 
 <div class="section">
-  <div class="sixteen columns new-team-bottom">
-    {% if section.settings.image != blank or section.settings.text != blank or section.settings.title != blank %}
-      <hr class="feature_divider">
-    {% endif %}
+  <div class="container">
 
-    <div class="row team-members equal-columns--clear">
     {% for block in section.blocks %}
-        {% capture name %}{{ block.settings.title }}{% endcapture %}
-        {% capture twitter_handle %}{{ block.settings.twitter }}{% endcapture %}
-        {% capture title %}{{ block.settings.job_title }}{% endcapture %}
-        {% capture description %}{{ block.settings.description }}{% endcapture %}
+      {% capture name %}{{ block.settings.title }}{% endcapture %}
+      {% capture twitter_handle %}{{ block.settings.twitter }}{% endcapture %}
+      {% capture title %}{{ block.settings.job_title }}{% endcapture %}
+      {% capture description %}{{ block.settings.description }}{% endcapture %}
 
-        {% if section.settings.employee_per_row == 2 %}
-          {% assign perRow = 'eight columns' %}
-          {% capture alphaOmegaCycle %}
-            {% cycle 'alpha', 'omega' %}
-          {% endcapture %}
-        {% elsif section.settings.employee_per_row == 3 %}
-          {% assign perRow = 'one-third column' %}
-          {% capture alphaOmegaCycle %}
-            {% cycle 'alpha', '', 'omega' %}
-          {% endcapture %}
-        {% else %}
-          {% assign perRow = 'four columns' %}
-          {% capture alphaOmegaCycle %}
-            {% cycle 'alpha', '', '', 'omega' %}
-          {% endcapture %}
-        {% endif %}
-
-        <div class="{{ perRow }} {{ alphaOmegaCycle }} team-member__profile">
+      <div class="eight columns medium-down--sixteen">
+        <div class="team-member__profile">
           <div class="team-member__wrap">
             {% if block.settings.image %}
               {% render 'image-element',
@@ -91,36 +72,31 @@
               {{ 'collection-' | append: i | placeholder_svg_tag: 'placeholder-svg' }}
             {% endif %}
 
-            <div class="team-member__overlay">
-              <div class="team-member__details">
- 
-                <h3 class="team-member__name no_border">{{ name }}</h3>
-                {% if title != blank %}
+            <div class="team-member__details">
+              <h3 class="team-member__name">{{ name }}</h3>
+
+              {% if title != blank %}
                 <h5 class="team-member__title heading--with-accent">{{title}}</h5>
-                {% endif %}
-                
-                {% if description != blank %}
-                  <p class="paragraph-3">{{ description | strip_html }}</p>
-                {% endif %}
-                {% if twitter_handle != blank %}
-                  <a class="team-twitter" href="https://twitter.com/{{twitter_handle}}">
-<!--                     <span class="icon-twitter"></span> -->
-                    @{{twitter_handle}}</a>
-                {% endif %}
-              </div>
+              {% endif %}
+              
+              {% if description != blank %}
+                <p class="paragraph-3">{{ description | strip_html }}</p>
+              {% endif %}
             </div>
           </div>
         </div>
-        {% if section.settings.employee_per_row == 2 %}
-          {% cycle '', '<br class="clear product_clear" />' %}
-        {% elsif section.settings.employee_per_row == 3 %}
-          {% cycle '', '', '<br class="clear product_clear" />' %}
-        {% else %}
-          {% cycle '', '', '', '<br class="clear product_clear" />' %}
-        {% endif %}
+      </div>
+
+      {% if section.settings.employee_per_row == 2 %}
+        {% cycle '', '<br class="clear product_clear" />' %}
+      {% elsif section.settings.employee_per_row == 3 %}
+        {% cycle '', '', '<br class="clear product_clear" />' %}
+      {% else %}
+        {% cycle '', '', '', '<br class="clear product_clear" />' %}
+      {% endif %}
     {% endfor %}
+
   </div>
-</div>
 </div>
 
 {% schema %}
