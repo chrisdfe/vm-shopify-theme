@@ -28,6 +28,7 @@
         <div class="feature_divider"></div>
       </div>
     {% endif %}
+
     {% if blog_widget_select != blank %}
       {% for article in blogs[blog_widget_select].articles limit: home_page_articles %}
         <div class="{% if home_page_articles == 2 %}eight columns{% elsif home_page_articles == 3 %}one-third column{% else %}four columns{% endif %} medium-down--one-whole">
@@ -41,9 +42,9 @@
               </a>
             {% endif %}
 
-            <h4>
+            <h5>
               <a href="{{ article.url }}">{{ article.title }}</a>
-            </h4>
+            </h5>
             
             <p class="blog_meta">
               {% if blog_author %}

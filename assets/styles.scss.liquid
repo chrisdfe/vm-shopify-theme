@@ -62,6 +62,7 @@ Description: Shopify Theme (https://www.shopify.com/&ref=out-of-the-sandbox)
 #Font-Face
 #Custom Styles
 #Valerie Madison Styles
+#Styleguide
 */
 
 /* Loads 2021 VM fonts */
@@ -153,7 +154,7 @@ $vm-link-hover-color: $vm-color-sand;
 
 $vm-heading-1-font-size: 56px;
 $vm-heading-1-letter-spacing: 0.02em;
-$vm-heading-1-line-height: 1.1;
+$vm-heading-1-line-height: 1.2;
 
 $vm-heading-1-mobile-font-size: 40px;
 
@@ -168,7 +169,7 @@ $vm-heading-1-mobile-font-size: 40px;
 
 $vm-heading-2-font-size: 36px;
 $vm-heading-2-letter-spacing: 0.02em;
-$vm-heading-2-line-height: 1.1;
+$vm-heading-2-line-height: 1.2;
 
 $vm-heading-2-mobile-font-size: 30px;
 
@@ -184,7 +185,7 @@ $vm-heading-2-mobile-font-size: 30px;
 
 $vm-heading-3-font-size: 30px;
 $vm-heading-3-letter-spacing: 0.02em;
-$vm-heading-3-line-height: 1.1;
+$vm-heading-3-line-height: 1.2;
 
 $vm-heading-3-mobile-font-size: 26px;
 
@@ -206,16 +207,15 @@ $vm-heading-3-mobile-font-size: 26px;
   text-transform: uppercase;
   font-weight: 700;
   font-style: normal;
-  letter-spacing: 0.08em;
 
   @include respond-to('medium-down') {
     font-size: $mobile-font-size;
   }
 }
 
-$vm-subheading-1-font-size: 15px;
+$vm-subheading-1-font-size: 16px;
 $vm-subheading-1-letter-spacing: 0.08em;
-$vm-subheading-1-line-height: 20px;
+$vm-subheading-1-line-height: 1.4;
 
 $vm-subheading-1-mobile-font-size: 15px;
 
@@ -228,9 +228,9 @@ $vm-subheading-1-mobile-font-size: 15px;
   )
 }
 
-$vm-subheading-2-font-size: 13px;
+$vm-subheading-2-font-size: 14px;
 $vm-subheading-2-letter-spacing: 0.08em;
-$vm-subheading-2-line-height: 20px;
+$vm-subheading-2-line-height: 1.4;
 
 $vm-subheading-2-mobile-font-size: 13px;
 
@@ -244,8 +244,8 @@ $vm-subheading-2-mobile-font-size: 13px;
 }
 
 $vm-subheading-3-font-size: 12px;
-$vm-subheading-3-letter-spacing: 0.15em;
-$vm-subheading-3-line-height: 16px;
+$vm-subheading-3-letter-spacing: 0.08em;
+$vm-subheading-3-line-height: 1.4;
 
 $vm-subheading-3-mobile-font-size: 12px;
 
@@ -272,8 +272,8 @@ $vm-subheading-3-mobile-font-size: 12px;
   }
 }
 
-$vm-paragraph-1-font-size: 18px;
-$vm-paragraph-1-letter-spacing: 0.01em;
+$vm-paragraph-1-font-size: 17px;
+$vm-paragraph-1-letter-spacing: 0.03em;
 $vm-paragraph-1-line-height: 1.6;
 
 $vm-paragraph-1-mobile-font-size: 16px;
@@ -288,7 +288,7 @@ $vm-paragraph-1-mobile-font-size: 16px;
 }
 
 $vm-paragraph-2-font-size: 16px;
-$vm-paragraph-2-letter-spacing: 0.01em;
+$vm-paragraph-2-letter-spacing: 0.03em;
 $vm-paragraph-2-line-height: 1.6;
 
 $vm-paragraph-2-mobile-font-size: 15px;
@@ -303,7 +303,7 @@ $vm-paragraph-2-mobile-font-size: 15px;
 }
 
 $vm-paragraph-3-font-size: 14px;
-$vm-paragraph-3-letter-spacing: 0.04em;
+$vm-paragraph-3-letter-spacing: 0.03em;
 $vm-paragraph-3-line-height: 1.6;
 
 $vm-paragraph-3-mobile-font-size: 13px;
@@ -326,20 +326,20 @@ $vm-navbar-text-hover-color: $vm-color-sand;
 
 // Button
 $vm-button-background-color: $vm-color-sea-green;
-$vm-button-border-color: $vm-color-sea-green;
+$vm-button-border-color: transparent;
 $vm-button-text-color: $vm-color-white;
 
-$vm-button-hover-background-color: $vm-color-plum;
-$vm-button-hover-border-color: $vm-color-plum;
+$vm-button-hover-background-color: rgba($vm-color-sea-green, 0.8);
+$vm-button-hover-border-color: transparent;
 $vm-button-hover-text-color: $vm-color-white;
 
-$vm-button-secondary-text-color: $vm-color-plum;
-$vm-button-secondary-border-color: $vm-color-plum;
+$vm-button-secondary-text-color: $vm-color-sea-green;
+$vm-button-secondary-border-color: $vm-color-sea-green;
 $vm-button-secondary-background-color: transparent;
 
-$vm-button-secondary-hover-text-color: $vm-color-white;
-$vm-button-secondary-hover-border-color: $vm-color-plum;
-$vm-button-secondary-hover-background-color: $vm-color-plum;
+$vm-button-secondary-hover-text-color: rgba($vm-color-sea-green, 0.8);
+$vm-button-secondary-hover-border-color: rgba($vm-color-sea-green, 0.8);
+$vm-button-secondary-hover-background-color: transparent;
 
 // Footer
 $vm-footer-background-color: $vm-color-plum;
@@ -4153,19 +4153,19 @@ input.action_button[type="button"],
 button.shopify-payment-button__button.shopify-payment-button__button--unbranded {
   background: $vm-button-background-color;
   color: $vm-button-text-color;
-  border: 1px solid $vm-button-background-color;
+  border: 1px solid $vm-button-border-color;
   border-radius: 0;
-  padding: 0 20px;
+  padding: 0 2rem;
   text-align: center;
   cursor: pointer;
   min-height: 44px;
-  height: 40px;
+  height: 44px;
   line-height: 1.2;
   vertical-align: top;
-  font-size: 14px;
+  font-size: $vm-subheading-2-font-size;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: $vm-subheading-2-letter-spacing;
   @include inline-flexbox();
   @include align-items(center);
   @include justify-content(center);
@@ -4197,7 +4197,7 @@ input.action_button[type="button"]:hover,
 input.action_button[type="button"]:hover,
 button.shopify-payment-button__button.shopify-payment-button__button--unbranded:hover {
   background-color: $vm-button-hover-background-color;
-  border: 1px solid $vm-button-hover-background-color;
+  border: 1px solid $vm-button-hover-border-color;
   color: $vm-button-hover-text-color;
 }
 
@@ -4237,7 +4237,6 @@ button.action_button {
   color: $vm-button-secondary-text-color;
   box-shadow: none;
   line-height: 1.2;
-  padding: 10px 0;
   min-height: 44px;
   height: 100%;
   @include flex(1 0 100%);
@@ -11014,25 +11013,22 @@ footer .footer-social-icons--mobile.columns {
 footer .social_icons {
   display: block;
   margin-top: 15px;
-  @include respond-to('medium-down'){
+
+  @include respond-to('medium-down') {
     padding-left: 0;
     text-align: center;
   }
 }
 
-footer .social_icons a, footer .social_icons a:visited {
-  color: {{ settings.sub_footer_text_color }};
+footer .social_icons a,
+footer .social_icons a:visited {
   font-size: 22px;
   display: inline-block;
   margin-bottom: 1em;
+
   @include respond-to('small-down') {
     margin-bottom: 0;
   }
-}
-
-footer .social_icons a:active, footer .social_icons a:hover {
-  color: {{ settings.sub_footer_link_color_hover }};
-  font-size: 22px;
 }
 
 /*!
@@ -12166,7 +12162,7 @@ $backgroundTransparency: 0.6;
     margin-bottom: 0;
   }
 
-  h4 {
+  h5 {
     margin: 1rem 0;
   }
 }
@@ -13559,4 +13555,112 @@ section.image-list {
 // TODO - ???
 .product-full-width-images-template .content {
 	margin-top: 50px;
+}
+
+/* Styleguide
+  ==============================================================================*/
+
+.vm-styleguide {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.vm-styleguide__banner {
+  padding: 8rem 3rem;
+  background-color: $vm-color-plum;
+  color: $vm-color-white;
+
+  .page-heading {
+    padding-top: 0;
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+
+    li {}
+
+    a {
+      @include vm-heading-3();
+      position: relative;
+      color: $vm-color-white;
+
+      &:hover {
+        opacity: 0.8;
+      }
+
+      sup {
+        position: absolute;
+        top: 30%;
+        left: -2.2rem;
+        font-size: 0.6em;
+        color: $vm-color-sand;
+      }
+    }
+  }
+}
+
+.vm-styleguide__content-section-title {
+  position: relative;
+
+  sup {
+    position: absolute;
+    top: 30%;
+    left: -3rem;
+    color: $vm-color-sand;
+  }
+}
+
+.vm-styleguide__section {
+  margin: 3rem 0;
+}
+
+.vm-styleguide__subsection {
+  margin: 1.5rem 0;
+}
+
+.vm-styleguide-content__section-subheading {
+  color: $vm-color-sand;
+  margin-top: 3rem;
+}
+
+.vm-styleguide__swatch {
+  display: flex;
+}
+
+.vm-styleguide__swatch-color {
+  padding: ($gutter / 2);
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: 25%;
+  width: 25%;
+
+  h4 {
+    margin: 1rem 0;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .vm-styleguide__swatch-color__color-square {
+    padding-top: 100%;
+  }
+
+  &.vm-styleguide__swatch-color--sea-green .vm-styleguide__swatch-color__color-square {
+    background-color: $vm-color-sea-green;
+  }
+
+  &.vm-styleguide__swatch-color--plum .vm-styleguide__swatch-color__color-square {
+    background-color: $vm-color-plum;
+  }
+
+  &.vm-styleguide__swatch-color--sand .vm-styleguide__swatch-color__color-square {
+    background-color: $vm-color-sand;
+  }
+
+  &.vm-styleguide__swatch-color--cream .vm-styleguide__swatch-color__color-square {
+    background-color: $vm-color-cream;
+  }
 }
