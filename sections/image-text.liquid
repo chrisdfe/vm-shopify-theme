@@ -9,11 +9,11 @@
     <div class="sixteen columns">
 {% endif %}
 
-    <div class="image-with-text
-                featured_collections
-                clearfix across-{{section.settings.featured_links_per_row}} image-align--{{ section.settings.frontpage_image_position }}
-                full-width--{{ section.settings.frontpage_grid_style }}
-                ">
+<div class="image-with-text
+            featured_collections
+            clearfix across-{{section.settings.featured_links_per_row}} image-align--{{ section.settings.frontpage_image_position }}
+            full-width--{{ section.settings.frontpage_grid_style }}
+            ">
       {% if section.blocks.size > 0 %}
         {% for block in section.blocks %}
           <section class="featured-link--section featured-link--image section-{{ forloop.index }}" {{ block.shopify_attributes }}>
@@ -22,9 +22,9 @@
                 <a {% if block.settings.link != blank %}href="{{ block.settings.link }}"{% endif %} title="{{ block.settings.title }}">
                   {% if block.settings.image %}
                     {% render 'image-element',
-                            image: block.settings.image,
-                            alt: block.settings.image.alt,
-                            stretch_width: true
+                      image: block.settings.image,
+                      alt: block.settings.image.alt,
+                      stretch_width: true
                     %}
                   {% else %}
                     {% capture i %}{% cycle "1", "2", "3", "4", "5", "6" %}{% endcapture %}
@@ -33,16 +33,27 @@
                 </a>
               </div>
             </div>
+
             <div class="featured-link--half block--{{ block.id }}">
               <div class="info text-align--{{section.settings.frontpage_text_align}}">
-                <a {% if block.settings.link != blank %}href="{{ block.settings.link }}"{% endif %} class="collection_title">
-                  {{ block.settings.title }}
-                </a>
+                {% if block.settings.link != blank %}
+                  <h2>
+                    <a href="{{ block.settings.link }}" class="collection_title">
+                      {{ block.settings.title }}
+                    </a>
+                  </h2>
+                {% else %}
+                  <h2>
+                    {{ block.settings.title }}
+                  </h2>
+                {% endif %}
+
                 {% if block.settings.text != blank %}
                   <div class="description">{{ block.settings.text }}</div>
                 {% endif %}
-                {% if block.settings.button_label != blank %}
-                  <a {% if block.settings.link != blank %}href="{{ block.settings.link }}"{% endif %} class="button">
+
+                {% if block.settings.button_label != blank and block.settings.link != blank %}
+                  <a href="{{ block.settings.link }}" class="cta-link">
                     {{ block.settings.button_label }}
                   </a>
                 {% endif %}
@@ -62,28 +73,6 @@
 {% assign bg_alpha = block.settings.bg_color | color_extract: 'alpha' %}
 
 <style>
-
-  {% for block in section.blocks %}
-    .block--{{ block.id }} {
-      background-color: {{ block.settings.bg_color }};
-    }
-
-    .block--{{ block.id }} .collection_title,
-    .block--{{ block.id }} p {
-      color: {{ block.settings.text_color }};
-    }
-
-    .block--{{ block.id }} a.button {
-      color: {{ block.settings.text_color }};
-      border-color: {{ block.settings.text_color }};
-    }
-
-    .block--{{ block.id }} a.button:hover {
-      color: {% if bg_alpha != 0 %}{{ block.settings.bg_color }}{% else %}{{ settings.shop_bg_color }}{% endif %};
-      border-color: {{ block.settings.text_color }};
-      background-color: {{ block.settings.text_color }};
-    }
-  {% endfor %}
 
   {% if section.settings.frontpage_grid_style == false and section.settings.featured_links_per_row == '1' %}
       #shopify-section-{{ section.id }} .featured-link--section {

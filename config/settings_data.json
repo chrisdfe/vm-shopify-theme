@@ -3266,28 +3266,6 @@
           "menu_top_padding": 0
         }
       },
-      "1489284533457": {
-        "type": "image-with-text-overlay",
-        "settings": {
-          "wide_display": false,
-          "image": "shopify:\/\/shop_images\/BANDS_birch-vs-hammered-bands_1600x800_fd269993-b0f2-40ed-b6bf-b2fc1960eceb.jpg",
-          "pretext": "",
-          "title": "Environmentally responsible",
-          "subtitle": "<p>We&#x27;re committed to using sustainable materials. Our jewelry is made with recycled gold that requires no mining, Canadian-mined or recycled diamonds whenever possible, and diamond alternatives like Moissanite.<\/p><p>Always 100% transparent.<\/p><p><\/p>",
-          "caption_background": true,
-          "caption_background_transparency": false,
-          "button1": "Read More",
-          "button1_link": "shopify:\/\/pages\/sustainability-practices",
-          "button1_highlight": false,
-          "button2": "",
-          "button2_highlight": false,
-          "text_position": "center",
-          "text_align": "center",
-          "mobile_image_crop": "none",
-          "mobile_text_below_image": true,
-          "mobile_text_color": ""
-        }
-      },
       "1489285524898": {
         "type": "testimonial",
         "blocks": {
@@ -4567,18 +4545,18 @@
           "9eae6c17-f0a4-4b70-b295-eb4d565e853b": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/DSC_3875_1.jpg",
+              "image": "shopify:\/\/shop_images\/juicy_gems_2_copy.jpg",
               "pretext": "",
-              "title": "Shine like the Stars",
-              "subtitle": "<p>Open shoulders let the light in on these sapphire stunners. <\/p>",
+              "title": "",
+              "subtitle": "",
               "caption_background": false,
               "caption_background_transparency": false,
-              "button1": "Shop New Arrivals",
+              "button1": "",
               "button1_link": "shopify:\/\/collections\/new-arrivals",
               "button1_highlight": false,
               "button2": "",
               "button2_highlight": false,
-              "text_position": "right",
+              "text_position": "left",
               "text_align": "center",
               "mobile_image_crop": "none",
               "is_timed_slide": false,
@@ -4629,35 +4607,12 @@
               "start_datetime": "",
               "end_datetime": ""
             }
-          },
-          "bd8c36db-7547-4162-a7ed-25fed40efaf5": {
-            "type": "image",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/Inside-Ring-Engraving-Shopify-Banner.jpg",
-              "pretext": "",
-              "title": "Make it <br>Truly Yours",
-              "subtitle": "<p>Ring engraving is here<\/p>",
-              "caption_background": true,
-              "caption_background_transparency": true,
-              "button1": "What will you engrave?",
-              "button1_link": "https:\/\/www.valeriemadison.com\/products\/ring-engraving-service",
-              "button1_highlight": false,
-              "button2": "",
-              "button2_highlight": false,
-              "text_position": "left",
-              "text_align": "left",
-              "mobile_image_crop": "none",
-              "is_timed_slide": false,
-              "start_datetime": "",
-              "end_datetime": ""
-            }
           }
         },
         "block_order": [
           "9eae6c17-f0a4-4b70-b295-eb4d565e853b",
           "e80aee0c-2f19-4966-9ed5-f850a1332840",
-          "97d33d13-e319-45ba-a204-254bf4d49ac4",
-          "bd8c36db-7547-4162-a7ed-25fed40efaf5"
+          "97d33d13-e319-45ba-a204-254bf4d49ac4"
         ],
         "settings": {
           "wide_display": true,
@@ -5790,12 +5745,53 @@
         "settings": {
           "section_title": ""
         }
+      },
+      "1619300542332dabf8": {
+        "type": "featured-collection",
+        "disabled": true,
+        "settings": {
+          "title": "What's New",
+          "collection_description": true,
+          "collection": "new-arrivals",
+          "collection_style": "grid",
+          "products_per": 3,
+          "products_limit": 9
+        }
+      },
+      "1619300957ab5b6971": {
+        "type": "image-text",
+        "disabled": true,
+        "blocks": {
+          "1619300957791e7496-0": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Group-Photo-White-gold-rings-4x5.jpg",
+              "image_crop": "none",
+              "title": "",
+              "text": "<p>It is our delight to help you with your engagement rings or wedding bands as well as jewelry to celebrate special milestones and momentous occasions. <\/p><p>Our approach to making jewelry includes using recycled precious metals, conflict-free diamonds, and ethically-sourced gemstones to create elegant, sophisticated, and vibrant heirloom-quality pieces. <\/p><p>We are a womxn-operated company founded by a Black Latina and we are based in Seattle, WA.   <\/p>",
+              "button_label": "Learn More",
+              "link": "https:\/\/www.valeriemadison.com\/pages\/about",
+              "bg_color": "",
+              "text_color": ""
+            }
+          }
+        },
+        "block_order": [
+          "1619300957791e7496-0"
+        ],
+        "settings": {
+          "frontpage_grid_style": false,
+          "featured_links_per_row": "1",
+          "frontpage_text_align": "left",
+          "frontpage_image_position": "left"
+        }
       }
     },
     "content_for_index": [
       "1552235156499",
+      "1619300542332dabf8",
       "1578277933549",
-      "1489284533457",
+      "1619300957ab5b6971",
       "1553283236579",
       "1553110251439",
       "1489285524898",
