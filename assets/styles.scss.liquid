@@ -7527,14 +7527,17 @@ a.tag {
 .slider-gallery,
 .list-collections {
 
-  .product-details {
-    // Try to keep aligned with the product image
-    margin-left: 10%;
-    margin-right: 10%;
+  // Slightly hacky solution to try to keep aligned with the product image
+  .one-third.column {
 
-    @include respond-to('large-down') {
-      margin-left: 0;
-      margin-right: 0;
+    .product-details {
+      margin-left: 10%;
+      margin-right: 10%;
+
+      @include respond-to('large-down') {
+        margin-left: 0;
+        margin-right: 0;
+      }
     }
   }
 }
