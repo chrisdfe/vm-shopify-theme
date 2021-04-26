@@ -3240,7 +3240,7 @@
       "header": {
         "type": "header",
         "settings": {
-          "promo_text": "",
+          "promo_text": "<p>Order by 3pm PST on 5\/5 to receive in-stock items before Mother&#x27;s Day<\/p>",
           "ann_font_size": 13,
           "ann_font_spacing": 18,
           "social_icons_header": true,
@@ -5504,8 +5504,8 @@
             "settings": {
               "image": "shopify:\/\/shop_images\/VMFJ-2020-12.jpg",
               "title": "Liz Ferris",
-              "job_title": "Head of Sales, Assistant Store Manager",
-              "description": "<p>I lead our Sales Team and am the Assistant Store Manager for our charming Madrona showroom. I met Valerie in 2017 and joined her as employee #2 just shortly after, it’s been an incredible experience to see the VM brand grow through the years. When I’m not at work I love reading and cuddling my kitties Theodore &amp; Beatrix.<\/p>",
+              "job_title": "Head of Sales, Store Manager",
+              "description": "<p>I lead our Sales Team and am the Store Manager for our charming Madrona showroom. I met Valerie in 2017 and joined her as employee #2 just shortly after, it’s been an incredible experience to see the VM brand grow through the years. When I’m not at work I love reading and cuddling my kitties Theodore &amp; Beatrix.<\/p>",
               "twitter": ""
             }
           },
@@ -5748,7 +5748,6 @@
       },
       "1619300542332dabf8": {
         "type": "featured-collection",
-        "disabled": true,
         "settings": {
           "title": "What's New",
           "collection_description": true,
@@ -5760,7 +5759,6 @@
       },
       "1619300957ab5b6971": {
         "type": "image-text",
-        "disabled": true,
         "blocks": {
           "1619300957791e7496-0": {
             "type": "image",
@@ -5789,8 +5787,8 @@
     },
     "content_for_index": [
       "1552235156499",
-      "1619300542332dabf8",
       "1578277933549",
+      "1619300542332dabf8",
       "1619300957ab5b6971",
       "1553283236579",
       "1553110251439",

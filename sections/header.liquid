@@ -576,21 +576,6 @@
   .dropdown_column ul.dropdown_title a { font-weight:{{section.settings.mega_menu_header_weight}};}
   
   
-/* Announcement Text */
-.promo_banner p {
-  display:block;
-  padding: 10px;
-  line-height: {{ section.settings.ann_font_spacing }}px;
-  font-size:{{ section.settings.ann_font_size }}px;
-}
-  
-@media only screen and (max-width: 798px) {
-  .promo_banner .promo_banner__content {
-      max-height: initial;
-  }
-}
-  
-  
 /* Sticky Nav */
 .sticky_nav ul.menu, .sticky_nav .mini_cart {
     padding-top: 0px !important;
@@ -625,26 +610,6 @@ li.search_container {position:relative !important;}
       "id": "promo_text",
       "label": "Text",
       "info": "Maximum character limit is 170"
-    },
-    {
-      "type": "range",
-      "id": "ann_font_size",
-      "label": "Font Size",
-      "step": 1,
-      "min": 10,
-      "max": 50,
-      "default": 12,
-      "unit": "px"
-    },
-    {
-      "type": "range",
-      "id": "ann_font_spacing",
-      "label": "Text Padding",
-      "step": 1,
-      "min": 0,
-      "max": 50,
-      "default": 12,
-      "unit": "px"
     },
     {
      "type": "header",
