@@ -3241,8 +3241,6 @@
         "type": "header",
         "settings": {
           "promo_text": "<p>Order by 3pm PST on 5\/5 to receive in-stock items before Mother&#x27;s Day<\/p>",
-          "ann_font_size": 13,
-          "ann_font_spacing": 18,
           "social_icons_header": true,
           "phone_number": "(206) 395-6359",
           "top_bar_menu": "",
@@ -4542,44 +4540,66 @@
       "1552235156499": {
         "type": "slideshow",
         "blocks": {
-          "9eae6c17-f0a4-4b70-b295-eb4d565e853b": {
+          "1dd37942-5591-4b2f-9fd9-d919d0d84d09": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/juicy_gems_2_copy.jpg",
+              "image": "shopify:\/\/shop_images\/DSC_7704_copy.jpg",
               "pretext": "",
-              "title": "",
-              "subtitle": "",
+              "title": "Bold Gold",
+              "subtitle": "<p>New Rolo Chains<\/p><p><\/p>",
               "caption_background": false,
               "caption_background_transparency": false,
-              "button1": "",
+              "button1": "Shop the Drop",
               "button1_link": "shopify:\/\/collections\/new-arrivals",
               "button1_highlight": false,
               "button2": "",
               "button2_highlight": false,
               "text_position": "left",
-              "text_align": "center",
+              "text_align": "left",
               "mobile_image_crop": "none",
               "is_timed_slide": false,
               "start_datetime": "",
               "end_datetime": ""
             }
           },
-          "e80aee0c-2f19-4966-9ed5-f850a1332840": {
+          "71bcb0ab-605e-46bc-a644-c613048e60ed": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/DSC_0527-2_copy.jpg",
-              "pretext": "",
-              "title": "Bijoux <br> Bracelets",
-              "subtitle": "<p>Solid Gold Bracelets: <br\/>Everyday Luxury, Timeless Style<\/p>",
-              "caption_background": true,
-              "caption_background_transparency": true,
-              "button1": "Shop new bracelets now",
-              "button1_link": "shopify:\/\/collections\/all-bracelets",
+              "image": "shopify:\/\/shop_images\/Mother_s_Day_Banner.jpg",
+              "pretext": "<p>Through May 9th, 11:59 PST<\/p>",
+              "title": "Mother's Day <br> Sale",
+              "subtitle": "<p>Take 15% off Charms and Bracelets <br\/>with code DEARMOM<\/p>",
+              "caption_background": false,
+              "caption_background_transparency": false,
+              "button1": "Shop Curated Gifts",
+              "button1_link": "shopify:\/\/collections\/for-mom",
               "button1_highlight": false,
               "button2": "",
               "button2_highlight": false,
-              "text_position": "right",
-              "text_align": "center",
+              "text_position": "left",
+              "text_align": "left",
+              "mobile_image_crop": "none",
+              "is_timed_slide": false,
+              "start_datetime": "",
+              "end_datetime": ""
+            }
+          },
+          "ae9c53b1-57b0-4cd1-b606-c7f66e574728": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/signet_banner.jpg",
+              "pretext": "<p>Make Your Mark<\/p>",
+              "title": "New Signet Rings",
+              "subtitle": "",
+              "caption_background": false,
+              "caption_background_transparency": false,
+              "button1": "Shop the Drop",
+              "button1_link": "shopify:\/\/collections\/new-arrivals",
+              "button1_highlight": false,
+              "button2": "",
+              "button2_highlight": false,
+              "text_position": "left",
+              "text_align": "left",
               "mobile_image_crop": "none",
               "is_timed_slide": false,
               "start_datetime": "",
@@ -4610,8 +4630,9 @@
           }
         },
         "block_order": [
-          "9eae6c17-f0a4-4b70-b295-eb4d565e853b",
-          "e80aee0c-2f19-4966-9ed5-f850a1332840",
+          "1dd37942-5591-4b2f-9fd9-d919d0d84d09",
+          "71bcb0ab-605e-46bc-a644-c613048e60ed",
+          "ae9c53b1-57b0-4cd1-b606-c7f66e574728",
           "97d33d13-e319-45ba-a204-254bf4d49ac4"
         ],
         "settings": {
@@ -5769,8 +5790,7 @@
               "text": "<p>It is our delight to help you with your engagement rings or wedding bands as well as jewelry to celebrate special milestones and momentous occasions. <\/p><p>Our approach to making jewelry includes using recycled precious metals, conflict-free diamonds, and ethically-sourced gemstones to create elegant, sophisticated, and vibrant heirloom-quality pieces. <\/p><p>We are a womxn-operated company founded by a Black Latina and we are based in Seattle, WA.   <\/p>",
               "button_label": "Learn More",
               "link": "https:\/\/www.valeriemadison.com\/pages\/about",
-              "bg_color": "",
-              "text_color": ""
+              "color_region": "dark"
             }
           }
         },
@@ -5787,8 +5807,8 @@
     },
     "content_for_index": [
       "1552235156499",
-      "1578277933549",
       "1619300542332dabf8",
+      "1578277933549",
       "1619300957ab5b6971",
       "1553283236579",
       "1553110251439",
