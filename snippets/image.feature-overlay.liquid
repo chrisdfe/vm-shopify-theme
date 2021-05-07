@@ -1,0 +1,21 @@
+<figcaption class="feature-overlay">
+  {% if link != blank %}
+  <a href="{{ link }}" class="link-promo"></a>
+  {% endif %}
+
+  <div class="feature-wrap">
+    {% if title != blank %}
+      <h4>{{ title }}</h4>
+    {% endif %}
+
+    <div class="feature-details">
+      {% if text != blank %}
+        <div class="description">{{ text }}</div>
+      {% endif %}
+
+      {% if button_label != blank %}
+        <div class="button">{{ button_label }}</div>
+      {% endif %}
+    </div>
+  </div>
+</figcaption>
