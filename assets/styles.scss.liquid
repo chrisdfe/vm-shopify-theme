@@ -9278,6 +9278,7 @@ $promoBannerHeight: 30px;
   z-index: 5000;
   overflow: hidden;
   padding: 0.75rem 1.5rem;
+  display: none;
 
   p {
     @include vm-paragraph-3();
@@ -9322,6 +9323,7 @@ $promoBannerHeight: 30px;
 }
 
 .promo_banner-show .promo_banner {
+  display: block;
   @include flexbox();
   @include align-items(center);
 }
