@@ -3240,7 +3240,7 @@
       "header": {
         "type": "header",
         "settings": {
-          "promo_text": "<p>Order by 3pm PST on 5\/5 to receive in-stock items before Mother&#x27;s Day. <br\/>Shop with us in person through Saturday 5\/8  for last-minute gifts!<\/p>",
+          "promo_text": "",
           "social_icons_header": true,
           "phone_number": "(206) 395-6359",
           "top_bar_menu": "",
@@ -4540,6 +4540,50 @@
       "1552235156499": {
         "type": "slideshow",
         "blocks": {
+          "2cb82898-d610-441d-a58d-1b5ad5f9ec0c": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/BANNER.jpg",
+              "pretext": "",
+              "title": "Written in the Stars",
+              "subtitle": "<p>New Zodiac Jewelry<\/p>",
+              "caption_background": false,
+              "caption_background_transparency": false,
+              "button1": "Shop New Styles",
+              "button1_link": "shopify:\/\/collections\/new-arrivals",
+              "button1_highlight": false,
+              "button2": "",
+              "button2_highlight": false,
+              "text_position": "center",
+              "text_align": "center",
+              "mobile_image_crop": "none",
+              "is_timed_slide": false,
+              "start_datetime": "",
+              "end_datetime": ""
+            }
+          },
+          "52ef1f43-2961-4354-83c2-eb1faf9a37b1": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/DSC_7969.jpg",
+              "pretext": "<p>5 fresh rings added to the collection <\/p>",
+              "title": "Diamond Dazzlers",
+              "subtitle": "",
+              "caption_background": false,
+              "caption_background_transparency": false,
+              "button1": "Shop Now",
+              "button1_link": "shopify:\/\/collections\/new-arrivals",
+              "button1_highlight": false,
+              "button2": "",
+              "button2_highlight": false,
+              "text_position": "left",
+              "text_align": "center",
+              "mobile_image_crop": "none",
+              "is_timed_slide": false,
+              "start_datetime": "",
+              "end_datetime": ""
+            }
+          },
           "1dd37942-5591-4b2f-9fd9-d919d0d84d09": {
             "type": "image",
             "settings": {
@@ -4547,50 +4591,6 @@
               "pretext": "",
               "title": "Bold Gold",
               "subtitle": "<p>New Rolo Chains<\/p><p><\/p>",
-              "caption_background": false,
-              "caption_background_transparency": false,
-              "button1": "Shop the Drop",
-              "button1_link": "shopify:\/\/collections\/new-arrivals",
-              "button1_highlight": false,
-              "button2": "",
-              "button2_highlight": false,
-              "text_position": "left",
-              "text_align": "left",
-              "mobile_image_crop": "none",
-              "is_timed_slide": false,
-              "start_datetime": "",
-              "end_datetime": ""
-            }
-          },
-          "71bcb0ab-605e-46bc-a644-c613048e60ed": {
-            "type": "image",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/Mother_s_Day_Banner.jpg",
-              "pretext": "<p>Through May 9th, 11:59 PST<\/p>",
-              "title": "Mother's Day <br> Sale",
-              "subtitle": "<p>Take 15% off Charms and Bracelets <br\/>with code DEARMOM<\/p>",
-              "caption_background": false,
-              "caption_background_transparency": false,
-              "button1": "Shop Curated Gifts",
-              "button1_link": "shopify:\/\/collections\/for-mom",
-              "button1_highlight": false,
-              "button2": "",
-              "button2_highlight": false,
-              "text_position": "left",
-              "text_align": "left",
-              "mobile_image_crop": "none",
-              "is_timed_slide": false,
-              "start_datetime": "",
-              "end_datetime": ""
-            }
-          },
-          "ae9c53b1-57b0-4cd1-b606-c7f66e574728": {
-            "type": "image",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/signet_banner.jpg",
-              "pretext": "<p>Make Your Mark<\/p>",
-              "title": "New Signet Rings",
-              "subtitle": "",
               "caption_background": false,
               "caption_background_transparency": false,
               "button1": "Shop the Drop",
@@ -4630,9 +4630,9 @@
           }
         },
         "block_order": [
+          "2cb82898-d610-441d-a58d-1b5ad5f9ec0c",
+          "52ef1f43-2961-4354-83c2-eb1faf9a37b1",
           "1dd37942-5591-4b2f-9fd9-d919d0d84d09",
-          "71bcb0ab-605e-46bc-a644-c613048e60ed",
-          "ae9c53b1-57b0-4cd1-b606-c7f66e574728",
           "97d33d13-e319-45ba-a204-254bf4d49ac4"
         ],
         "settings": {
@@ -5787,7 +5787,7 @@
               "image": "shopify:\/\/shop_images\/Group-Photo-White-gold-rings-4x5.jpg",
               "image_crop": "none",
               "title": "",
-              "text": "<p>It is our delight to help you with your engagement rings or wedding bands as well as jewelry to celebrate special milestones and momentous occasions. <\/p><p>Our approach to making jewelry includes using recycled precious metals, conflict-free diamonds, and ethically-sourced gemstones to create elegant, sophisticated, and vibrant heirloom-quality pieces. <\/p><p>We are a womxn-operated company founded by a Black Latina and we are based in Seattle, WA.   <\/p>",
+              "text": "<p>Our approach to making jewelry includes using recycled precious metals, conflict-free diamonds, and ethically-sourced gemstones to create elegant, sophisticated, and vibrant heirloom-quality pieces. <\/p><p>We are a womxn-operated company founded by a Black Latina and we are based in Seattle, WA where you can also <strong>shop from <\/strong><a href=\"https:\/\/www.valeriemadison.com\/pages\/visit-us\" target=\"_blank\" title=\"https:\/\/www.valeriemadison.com\/pages\/visit-us\"><\/a><a href=\"https:\/\/www.valeriemadison.com\/pages\/visit-us\" target=\"_blank\" title=\"https:\/\/www.valeriemadison.com\/pages\/visit-us\"><strong> our retail store<\/strong><\/a><strong> in person<\/strong>. <br\/><br\/>We&#x27;re looking forward to helping you discover our unique engagement rings, wedding bands, and fine jewelry to celebrate special milestones or treat yourself. <\/p>",
               "button_label": "Learn More",
               "link": "https:\/\/www.valeriemadison.com\/pages\/about",
               "color_region": "dark"
