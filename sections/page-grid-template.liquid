@@ -72,7 +72,26 @@
           {% endcapture %}
         {% endif %}
 
-        <div class="{{ perRow }} center {{ alphaOmegaCycle }} team-member__profile no_title">
+        <div class="{{ perRow }} {{ alphaOmegaCycle }}">
+          <div class="relative product_image">
+            <div class="image__container center">
+              {% render 'image-element',
+                image: block.settings.image,
+                alt: block.settings.image.alt,
+              %}
+            </div>
+          </div>
+
+          <div class="product-details">
+            <h5 class="title" itemprop="name">{{ block.settings.job_title }}</h5>
+            {% if description != blank %}
+              <p>{{description}}</p>
+            {% endif %}
+            {% if link_title != blank and link_url != blank %}
+              <a href="{{link_url}}">{{link_title}}</a>
+            {% endif %}
+          </div>
+          {% comment %}
           <figure class="team-member__wrap">
             {% if block.settings.image %}
               {% render 'image-element',
@@ -98,16 +117,18 @@
               </div>
             </figcaption>
           </figure>
-          <h3 class="team-member__name no_border">{{ name }}</h3>
+          {% endcomment %}
         </div>
-        {% if section.settings.employee_per_row == 2 %}
+          {% comment %}
+          {% if section.settings.employee_per_row == 2 %}
           {% cycle '', '<br class="clear product_clear" />' %}
-        {% elsif section.settings.employee_per_row == 3 %}
+          {% elsif section.settings.employee_per_row == 3 %}
           {% cycle '', '', '<br class="clear product_clear" />' %}
-        {% else %}
+          {% else %}
           {% cycle '', '', '', '<br class="clear product_clear" />' %}
-        {% endif %}
-    {% endfor %}
+          {% endif %}
+          {% endcomment %}
+        {% endfor %}
   </div>
 </div>
 </div>

@@ -1,0 +1,48 @@
+<a name="pagecontent" id="pagecontent"></a>
+
+<div class="page page--block-text">
+  <div class="vm-styleguide__banner">
+    <div class="container">
+      <div class="fourteen columns offset-by-two">
+        <div class="page-heading">
+          <h1 class="page-heading__title">
+            {{ page.title }}
+          </h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="twelve columns offset-by-four medium-down--sixteen">
+        <ul>
+          <li>
+            <a href="#typography">
+              <sup>01.</sup>
+              <span>Typography</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#colors">
+              <sup>02.</sup>
+              <span>Colors</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#components">
+              <sup>03.</sup>
+              <span>Components</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  {% render 'styleguide.typography-section' %}
+  {% render 'styleguide.colors-section' %}
+  {% render 'styleguide.components-section' %}
+
+
+</div>

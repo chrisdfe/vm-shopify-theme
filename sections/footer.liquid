@@ -128,7 +128,7 @@
                 <div class="toggle_content">
                   <ul>
                     {% for link in linklists[block.settings.menu].links %}
-                      <li><p><a href="{{ link.url }}">{{ link.title }}</a></p></li>
+                      <li><p class="paragraph-3"><a href="{{ link.url }}">{{ link.title }}</a></p></li>
                     {% endfor %}
                   </ul>
                 </div>
@@ -147,6 +147,7 @@
               {% if block.settings.title != blank %}
                 <h6>{{ block.settings.title }}<span class="right icon-down-arrow"></span></h6>
               {% endif %}
+
               {% if block.settings.content %}
                 <div class="toggle_content">
                   {{ block.settings.content }}
@@ -157,11 +158,13 @@
             <div class="footer_content footer-text">
               {% if block.settings.page != blank %}
                 <h6>{{ pages[block.settings.page].title }}<span class="right icon-down-arrow"></span></h6>
+
                 <div class="toggle_content">
                   {{ pages[block.settings.page].content }}
                 </div>
               {% else %}
                 <h6>Page title<span class="right icon-down-arrow"></span></h6>
+
                 <div class="toggle_content">
                   <p>{{ 'homepage.onboarding.no_content' | t }}</p>
                 </div>
@@ -205,14 +208,13 @@
             <!-- Klaviyo Code -->
             <div class="klaviyo-form-X7CxAy"></div>
           {% endif %}
-        <p class="credits">
-
+        <p class="credits paragraph-3">
           &copy; {{ "now" | date: "%Y" }} {{ shop.name | link_to: '/' }}.
           {{ section.settings.copyright_text }}
           {% if section.settings.display_designed_by %}
             {{ 'layout.general.designer_credits_html' | t }}
           {% endif %}
-           </p>
+        </p>
 
         {% if section.settings.display_payment_methods %}
           <div class="payment_methods">

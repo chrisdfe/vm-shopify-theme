@@ -1,49 +1,94 @@
-<section class="image-list">
-  {% if section.settings.title != blank %}
-    <h2>{{ section.settings.title | escape | default: 'general.404.title' }}</h2>
-  {% endif %}
-  {% if section.settings.subtext != blank %}
-    <span class="subheading">
-      {{ section.settings.subtext | default: 'general.404.subtext' }}
-    </span>
-  {% endif %}
-    <form class="search search-404" action="{{ routes.search_url }}">
-      <input type="text" name="q" class="search_box" placeholder="{{ 'general.search.placeholder' | t }}"  value="{{ search.terms }}" />
-    </form>
-      <ul class="option_grid_{{ section.settings.grid_size }} option_grid_mobile_{{ section.settings.grid_size_mobile }}">
-  {% for block in section.blocks %} 
-    {% if block.type == 'content-image' and block.settings.show_section %}
-    <li class="photo_block">
-      <a href="{{block.settings.image_link}}" title="{{block.settings.title}}">
-        {% if block.settings.image_option != blank %}
-          {{block.settings.image_option | img_url: 'x250' | img_tag }}
-        {% else %}
-          {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+{% comment %}TODO - Clean this whole template up.{% endcomment %}
+
+<div class="content">
+  <div class="content-section container">
+    <div class="sixteen columns">
+      <section class="image-list">
+        {% if section.settings.title != blank %}
+          <h2>{{ section.settings.title | escape | default: 'general.404.title' }}</h2>
         {% endif %}
-        <span>{{block.settings.title}}</span>
-        <p>{{block.settings.icon_subtext}}</p>
-      </a>
-    </li>
-    {% endif %}
-  {% endfor %}
-  </ul>  
-</section>
+
+        {% if section.settings.subtext != blank %}
+          <span class="subheading">
+            {{ section.settings.subtext | default: 'general.404.subtext' }}
+          </span>
+        {% endif %}
+
+        <form class="search search-404" action="{{ routes.search_url }}">
+          <input type="text" name="q" class="search_box" placeholder="{{ 'general.search.placeholder' | t }}"  value="{{ search.terms }}" />
+        </form>
+
+        <ul class="option_grid_{{ section.settings.grid_size }} option_grid_mobile_{{ section.settings.grid_size_mobile }}">
+          {% for block in section.blocks %} 
+            {% if block.type == 'content-image' and block.settings.show_section %}
+              <li class="photo_block">
+                <a href="{{block.settings.image_link}}" title="{{block.settings.title}}">
+                  {% if block.settings.image_option != blank %}
+                    {{block.settings.image_option | img_url: 'x250' | img_tag }}
+                  {% else %}
+                    {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+                  {% endif %}
+
+                  <span>
+                    {{block.settings.title}}
+                  </span>
+                  
+                  <p>
+                    {{block.settings.icon_subtext}}
+                  </p>
+                </a>
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ul>  
+      </section>
+    </div>
+  </div>
+</div>
 
 <style>
   section a {color:inherit;}
   
-  section.image-list {background:{{section.settings.color_background}};padding-top:20px;}
-  section.image-list li.photo_block img { opacity: {{ section.settings.image_opacity | times: 0.01 }};width:{{ section.settings.image_size }}%;}
-  section.image-list li.photo_block span {color: {{ section.settings.color_label }};display:block;}
-  section.image-list h2 {font-weight:bold;color: {{ section.settings.color_header }};}
-  section.image-list span.subheading {font-weight:bold;color: {{ section.settings.color_subheader }};}
-  section.image-list {width:100%;text-align:center;}
+  section.image-list {
+    background: {{ section.settings.color_background }};
+    padding-top:20px;
+  }
+  section.image-list li.photo_block img { opacity: {{ section.settings.image_opacity | times: 0.01 }};width:{{ section.settings.image_size }}%;
+}
+  section.image-list li.photo_block span {
+    display:block;
+  }
+  section.image-list h2 {
+    font-weight: bold;
+  }
+
+  section.image-list span.subheading {
+    font-weight:bold;
+    color: {{ section.settings.color_subheader }};
+  }
+
+  section.image-list {
+    width:100%;
+    text-align:center;
+  }
+
   section.image-list ul {list-style:none;display:flex;flex-direction: row;flex-wrap: wrap;padding:40px;margin: 0 auto;align-items: center;justify-content: space-evenly;align-content: center;}
   section.image-list li {padding-top:10px;padding-bottom:10px;}
   section.image-list li.photo_block img {text-align:center;vertical-align:middle;}
-  section.image-list li.photo_block span,   section.image-list li.photo_block a {font-weight:bold;font-size:1.1em;margin-top: 0.8em;display:block;}
-  section.image-list ul {padding-top:initial;}
-  .search-404 {padding: 25px 45px 0px 45px;}
+  section.image-list li.photo_block span,   section.image-list li.photo_block a {
+    /*font-weight:bold;*/
+    /*font-size:1.1em;*/
+    margin-top: 1rem;
+    display:block;
+  }
+
+  section.image-list ul {
+    padding-top:initial;
+  }
+
+  .search-404 {
+    padding: 2rem 3rem;
+  }
   
   @media (min-width:768px) {
     section.image-list ul.option_grid_1 li {width: calc((100% - (5px * 2 ))  / 1);}

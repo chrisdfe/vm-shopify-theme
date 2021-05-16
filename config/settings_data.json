@@ -3241,8 +3241,6 @@
         "type": "header",
         "settings": {
           "promo_text": "",
-          "ann_font_size": 13,
-          "ann_font_spacing": 18,
           "social_icons_header": true,
           "phone_number": "(206) 395-6359",
           "top_bar_menu": "",
@@ -3250,7 +3248,7 @@
           "cart_icon": "bag",
           "logo_display_width": 205,
           "logo_display_width_percent": 45,
-          "logo_mobile": "shopify:\/\/shop_images\/mobile-logo-white_256x256_438f2de4-9e1b-49cd-8902-6d8704b8efdb.png",
+          "logo_mobile": "shopify:\/\/shop_images\/mobile-logo-seagreen_256x256_79182b2b-7668-4862-8b08-f67f60755daf.png",
           "main_linklist": "menu-left-of-logo",
           "main_linklist2": "menu-right-of-logo",
           "vertical_menu": false,
@@ -3264,28 +3262,6 @@
           "menu_alignment": "center",
           "logo_top_padding": 30,
           "menu_top_padding": 0
-        }
-      },
-      "1489284533457": {
-        "type": "image-with-text-overlay",
-        "settings": {
-          "wide_display": false,
-          "image": "shopify:\/\/shop_images\/BANDS_birch-vs-hammered-bands_1600x800_fd269993-b0f2-40ed-b6bf-b2fc1960eceb.jpg",
-          "pretext": "",
-          "title": "Environmentally responsible",
-          "subtitle": "<p>We&#x27;re committed to using sustainable materials. Our jewelry is made with recycled gold that requires no mining, Canadian-mined or recycled diamonds whenever possible, and diamond alternatives like Moissanite.<\/p><p>Always 100% transparent.<\/p><p><\/p>",
-          "caption_background": true,
-          "caption_background_transparency": false,
-          "button1": "Read More",
-          "button1_link": "shopify:\/\/pages\/sustainability-practices",
-          "button1_highlight": false,
-          "button2": "",
-          "button2_highlight": false,
-          "text_position": "center",
-          "text_align": "center",
-          "mobile_image_crop": "none",
-          "mobile_text_below_image": true,
-          "mobile_text_color": ""
         }
       },
       "1489285524898": {
@@ -3416,7 +3392,7 @@
               "richtext_top": "",
               "image_caption_top": "",
               "menu_1": "engagement-rings",
-              "menu_2": "custom-designs",
+              "menu_2": "",
               "menu_3": "",
               "menu_4": "",
               "image_caption_bottom": "",
@@ -3436,12 +3412,12 @@
               "richtext_bottom": ""
             }
           },
-          "1d22e980-000b-46f8-b816-6c1d9aca3a2f": {
+          "8908700f-c81c-47a6-809d-d7c5cf21c961": {
             "type": "column",
             "settings": {
               "richtext_top": "",
               "image_caption_top": "",
-              "menu_1": "fine-jewelry",
+              "menu_1": "bands-for-him-them",
               "menu_2": "",
               "menu_3": "",
               "menu_4": "",
@@ -3449,12 +3425,12 @@
               "richtext_bottom": ""
             }
           },
-          "871c7c34-8db5-4f99-ac36-b075801e27d7": {
+          "d207f029-fbcc-4e64-9a3e-9167438d5c41": {
             "type": "column",
             "settings": {
               "richtext_top": "",
               "image_caption_top": "",
-              "menu_1": "by-occasion",
+              "menu_1": "",
               "menu_2": "",
               "menu_3": "",
               "menu_4": "",
@@ -3466,11 +3442,11 @@
         "block_order": [
           "89c82cf2-e452-4010-a7a2-fc3c9e3d7dd9",
           "396cb187-a7c8-431f-9b50-7c86a37d239b",
-          "1d22e980-000b-46f8-b816-6c1d9aca3a2f",
-          "871c7c34-8db5-4f99-ac36-b075801e27d7"
+          "8908700f-c81c-47a6-809d-d7c5cf21c961",
+          "d207f029-fbcc-4e64-9a3e-9167438d5c41"
         ],
         "settings": {
-          "parent": "Shop All"
+          "parent": "Wedding & Engagement"
         }
       },
       "mega-menu-2": {
@@ -3578,8 +3554,8 @@
           "1587340525519": {
             "type": "filter",
             "settings": {
-              "filter_name": "Occasion & Availability",
-              "filter_tags": "For Mom, Ready to Ship, Made to Order",
+              "filter_name": "Special Occasions",
+              "filter_tags": "Gift ideas for Mom, Ready to Ship, Birthday gift ideas",
               "enable_filter_swatches": false
             }
           }
@@ -4449,6 +4425,38 @@
       },
       "mega-menu-3": {
         "type": "mega-menu-3",
+        "blocks": {
+          "47d145a4-b12b-4e17-860c-625091745268": {
+            "type": "column",
+            "settings": {
+              "richtext_top": "",
+              "image_caption_top": "",
+              "menu_1": "custom-designs",
+              "menu_2": "",
+              "menu_3": "",
+              "menu_4": "",
+              "image_caption_bottom": "",
+              "richtext_bottom": ""
+            }
+          },
+          "532c00fc-0a53-4c3b-9aeb-9e16deb238b8": {
+            "type": "column",
+            "settings": {
+              "richtext_top": "",
+              "image_caption_top": "",
+              "menu_1": "custom-heirloom",
+              "menu_2": "",
+              "menu_3": "",
+              "menu_4": "",
+              "image_caption_bottom": "",
+              "richtext_bottom": ""
+            }
+          }
+        },
+        "block_order": [
+          "47d145a4-b12b-4e17-860c-625091745268",
+          "532c00fc-0a53-4c3b-9aeb-9e16deb238b8"
+        ],
         "settings": {
           "parent": ""
         }
@@ -4522,14 +4530,25 @@
       "mega-menu-4": {
         "type": "mega-menu-4",
         "blocks": {
-          "1589655824560": {
+          "52597529-c975-4d37-a92f-5fc78be6b808": {
             "type": "column",
             "settings": {
               "richtext_top": "",
-              "image_top": "shopify:\/\/shop_images\/Custom.jpg",
-              "image_caption_top": "Custom Engagement Rings",
-              "image_link_top": "shopify:\/\/pages\/custom-engagement-rings",
+              "image_caption_top": "",
               "menu_1": "",
+              "menu_2": "",
+              "menu_3": "",
+              "menu_4": "",
+              "image_caption_bottom": "",
+              "richtext_bottom": ""
+            }
+          },
+          "f29a3256-abfc-41b8-8483-5567a70b7932": {
+            "type": "column",
+            "settings": {
+              "richtext_top": "",
+              "image_caption_top": "",
+              "menu_1": "featured",
               "menu_2": "",
               "menu_3": "",
               "menu_4": "",
@@ -4541,9 +4560,33 @@
             "type": "column",
             "settings": {
               "richtext_top": "",
-              "image_top": "shopify:\/\/shop_images\/DYO.jpg",
-              "image_caption_top": "Design Your Own Ring",
-              "image_link_top": "shopify:\/\/collections\/create-your-own-diamond-or-gemstone-ring",
+              "image_caption_top": "",
+              "menu_1": "shop-by-style",
+              "menu_2": "",
+              "menu_3": "",
+              "menu_4": "",
+              "image_caption_bottom": "",
+              "richtext_bottom": ""
+            }
+          },
+          "dc9e85e4-7eaa-4c57-94db-287c56571bd9": {
+            "type": "column",
+            "settings": {
+              "richtext_top": "",
+              "image_caption_top": "",
+              "menu_1": "by-occasion",
+              "menu_2": "",
+              "menu_3": "",
+              "menu_4": "",
+              "image_caption_bottom": "",
+              "richtext_bottom": ""
+            }
+          },
+          "c2dd3fde-b1ac-4355-b05a-bb6abe677451": {
+            "type": "column",
+            "settings": {
+              "richtext_top": "",
+              "image_caption_top": "",
               "menu_1": "",
               "menu_2": "",
               "menu_3": "",
@@ -4554,53 +4597,56 @@
           }
         },
         "block_order": [
-          "1589655824560",
-          "mega-menu-4-0"
+          "52597529-c975-4d37-a92f-5fc78be6b808",
+          "f29a3256-abfc-41b8-8483-5567a70b7932",
+          "mega-menu-4-0",
+          "dc9e85e4-7eaa-4c57-94db-287c56571bd9",
+          "c2dd3fde-b1ac-4355-b05a-bb6abe677451"
         ],
         "settings": {
-          "parent": "Custom Designs"
+          "parent": "Jewelry"
         }
       },
       "1552235156499": {
         "type": "slideshow",
         "blocks": {
-          "cd991afb-fe24-4283-9a6d-bf8dc16e4fca": {
+          "95de863f-96a4-4d15-80c3-8a9af3a8255a": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/DSC_4012_copy.jpg",
-              "pretext": "<p>Something New, <\/p>",
-              "title": "Something <br> Blue",
-              "subtitle": "<p>Say &quot;I Do!&quot; to one of these<br\/>Sapphire Heartthrobs!<\/p>",
-              "caption_background": true,
-              "caption_background_transparency": true,
-              "button1": "I DO!",
+              "image": "shopify:\/\/shop_images\/DSC_8888-3_1.jpg",
+              "pretext": "<p>Warm up with Terracotta Sapphires<\/p>",
+              "title": "Sunny & Bright",
+              "subtitle": "<p>Fresh rings added every Friday<\/p>",
+              "caption_background": false,
+              "caption_background_transparency": false,
+              "button1": "Shop Now",
+              "button1_link": "https:\/\/www.valeriemadison.com\/collections\/new-arrivals",
+              "button1_highlight": false,
+              "button2": "",
+              "button2_highlight": false,
+              "text_position": "left",
+              "text_align": "left",
+              "mobile_image_crop": "none",
+              "is_timed_slide": false,
+              "start_datetime": "",
+              "end_datetime": ""
+            }
+          },
+          "2cb82898-d610-441d-a58d-1b5ad5f9ec0c": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/BANNER.jpg",
+              "pretext": "",
+              "title": "Written in the Stars",
+              "subtitle": "<p>New Zodiac Jewelry<\/p>",
+              "caption_background": false,
+              "caption_background_transparency": false,
+              "button1": "Shop New Styles",
               "button1_link": "shopify:\/\/collections\/new-arrivals",
               "button1_highlight": false,
               "button2": "",
               "button2_highlight": false,
-              "text_position": "right",
-              "text_align": "center",
-              "mobile_image_crop": "none",
-              "is_timed_slide": false,
-              "start_datetime": "2021-04-09",
-              "end_datetime": ""
-            }
-          },
-          "e80aee0c-2f19-4966-9ed5-f850a1332840": {
-            "type": "image",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/DSC_0527-2_copy.jpg",
-              "pretext": "",
-              "title": "Bijoux <br> Bracelets",
-              "subtitle": "<p>Solid Gold Bracelets: <br\/>Everyday Luxury, Timeless Style<\/p>",
-              "caption_background": true,
-              "caption_background_transparency": true,
-              "button1": "Shop new bracelets now",
-              "button1_link": "shopify:\/\/collections\/all-bracelets",
-              "button1_highlight": false,
-              "button2": "",
-              "button2_highlight": false,
-              "text_position": "right",
+              "text_position": "left",
               "text_align": "center",
               "mobile_image_crop": "none",
               "is_timed_slide": false,
@@ -4608,44 +4654,22 @@
               "end_datetime": ""
             }
           },
-          "97d33d13-e319-45ba-a204-254bf4d49ac4": {
+          "52ef1f43-2961-4354-83c2-eb1faf9a37b1": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/jammy_sapphire_banner_1.jpg",
-              "pretext": "",
-              "title": "One of a Kind",
-              "subtitle": "<p>Begin your search for the perfect engagement ring  <\/p>",
-              "caption_background": true,
-              "caption_background_transparency": true,
-              "button1": "Discover Rings",
-              "button1_link": "shopify:\/\/collections\/engagement-rings",
+              "image": "shopify:\/\/shop_images\/DSC_7969.jpg",
+              "pretext": "<p>5 fresh rings added to the collection <\/p>",
+              "title": "Diamond Dazzlers",
+              "subtitle": "",
+              "caption_background": false,
+              "caption_background_transparency": false,
+              "button1": "Shop Now",
+              "button1_link": "shopify:\/\/collections\/new-arrivals",
               "button1_highlight": false,
               "button2": "",
               "button2_highlight": false,
               "text_position": "left",
-              "text_align": "left",
-              "mobile_image_crop": "none",
-              "is_timed_slide": false,
-              "start_datetime": "",
-              "end_datetime": ""
-            }
-          },
-          "bd8c36db-7547-4162-a7ed-25fed40efaf5": {
-            "type": "image",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/Inside-Ring-Engraving-Shopify-Banner.jpg",
-              "pretext": "",
-              "title": "Make it <br>Truly Yours",
-              "subtitle": "<p>Ring engraving is here<\/p>",
-              "caption_background": true,
-              "caption_background_transparency": true,
-              "button1": "What will you engrave?",
-              "button1_link": "https:\/\/www.valeriemadison.com\/products\/ring-engraving-service",
-              "button1_highlight": false,
-              "button2": "",
-              "button2_highlight": false,
-              "text_position": "left",
-              "text_align": "left",
+              "text_align": "center",
               "mobile_image_crop": "none",
               "is_timed_slide": false,
               "start_datetime": "",
@@ -4654,10 +4678,9 @@
           }
         },
         "block_order": [
-          "cd991afb-fe24-4283-9a6d-bf8dc16e4fca",
-          "e80aee0c-2f19-4966-9ed5-f850a1332840",
-          "97d33d13-e319-45ba-a204-254bf4d49ac4",
-          "bd8c36db-7547-4162-a7ed-25fed40efaf5"
+          "95de863f-96a4-4d15-80c3-8a9af3a8255a",
+          "2cb82898-d610-441d-a58d-1b5ad5f9ec0c",
+          "52ef1f43-2961-4354-83c2-eb1faf9a37b1"
         ],
         "settings": {
           "wide_display": true,
@@ -4665,12 +4688,30 @@
           "slideshow_animation": "slide",
           "slideshow_speed": 5,
           "activate_adaptiveHeight": false,
-          "mobile_text_below_image": false,
+          "mobile_text_below_image": true,
           "mobile_text_color": ""
         }
       },
       "mega-menu-5": {
         "type": "mega-menu-5",
+        "blocks": {
+          "d8715b21-50a3-48ce-8574-f457f22b34b7": {
+            "type": "column",
+            "settings": {
+              "richtext_top": "",
+              "image_caption_top": "",
+              "menu_1": "",
+              "menu_2": "",
+              "menu_3": "",
+              "menu_4": "",
+              "image_caption_bottom": "",
+              "richtext_bottom": ""
+            }
+          }
+        },
+        "block_order": [
+          "d8715b21-50a3-48ce-8574-f457f22b34b7"
+        ],
         "settings": {
           "parent": ""
         }
@@ -5061,7 +5102,7 @@
           "1591661117785": {
             "type": "logo_image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/Allure_Logo.png"
+              "image": "shopify:\/\/shop_images\/Allure_Logo_200x_cropped_a1a21f03-9c1e-4234-a88a-01b6837fe515.png"
             }
           },
           "1591661011742-0": {
@@ -5549,8 +5590,8 @@
             "settings": {
               "image": "shopify:\/\/shop_images\/VMFJ-2020-12.jpg",
               "title": "Liz Ferris",
-              "job_title": "Head of Sales, Assistant Store Manager",
-              "description": "<p>I lead our Sales Team and am the Assistant Store Manager for our charming Madrona showroom. I met Valerie in 2017 and joined her as employee #2 just shortly after, it’s been an incredible experience to see the VM brand grow through the years. When I’m not at work I love reading and cuddling my kitties Theodore &amp; Beatrix.<\/p>",
+              "job_title": "Head of Sales, Store Manager",
+              "description": "<p>I lead our Sales Team and am the Store Manager for our charming Madrona showroom. I met Valerie in 2017 and joined her as employee #2 just shortly after, it’s been an incredible experience to see the VM brand grow through the years. When I’m not at work I love reading and cuddling my kitties Theodore &amp; Beatrix.<\/p>",
               "twitter": ""
             }
           },
@@ -5790,12 +5831,50 @@
         "settings": {
           "section_title": ""
         }
+      },
+      "1619300542332dabf8": {
+        "type": "featured-collection",
+        "settings": {
+          "title": "What's New",
+          "collection_description": true,
+          "collection": "new-arrivals",
+          "collection_style": "grid",
+          "products_per": 3,
+          "products_limit": 9
+        }
+      },
+      "1619300957ab5b6971": {
+        "type": "image-text",
+        "blocks": {
+          "1619300957791e7496-0": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Group-Photo-White-gold-rings-4x5.jpg",
+              "image_crop": "none",
+              "title": "",
+              "text": "<p>Our approach to making jewelry includes using recycled precious metals, conflict-free diamonds, and ethically-sourced gemstones to create elegant, sophisticated, and vibrant heirloom-quality pieces. <\/p><p>We are a womxn-operated company founded by a Black Latina and we are based in Seattle, WA where you can also <strong>shop from <\/strong><a href=\"https:\/\/www.valeriemadison.com\/pages\/visit-us\" target=\"_blank\" title=\"https:\/\/www.valeriemadison.com\/pages\/visit-us\"><\/a><a href=\"https:\/\/www.valeriemadison.com\/pages\/visit-us\" target=\"_blank\" title=\"https:\/\/www.valeriemadison.com\/pages\/visit-us\"><strong> our retail store<\/strong><\/a><strong> in person<\/strong>. <br\/><br\/>We&#x27;re looking forward to helping you discover our unique engagement rings, wedding bands, and fine jewelry to celebrate special milestones or treat yourself. <\/p>",
+              "button_label": "Learn More",
+              "link": "https:\/\/www.valeriemadison.com\/pages\/about",
+              "color_region": "dark"
+            }
+          }
+        },
+        "block_order": [
+          "1619300957791e7496-0"
+        ],
+        "settings": {
+          "frontpage_grid_style": false,
+          "featured_links_per_row": "1",
+          "frontpage_text_align": "left",
+          "frontpage_image_position": "left"
+        }
       }
     },
     "content_for_index": [
       "1552235156499",
+      "1619300542332dabf8",
       "1578277933549",
-      "1489284533457",
+      "1619300957ab5b6971",
       "1553283236579",
       "1553110251439",
       "1489285524898",
