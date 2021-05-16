@@ -2,38 +2,40 @@
 ** Contact page - custom view **
 - Page template
 {% endcomment %}
+<div class="page page--block-text">
+  {% if section.settings.image != nil %}
+    <header class="banner center page-banner dark-overlay-{{ section.settings.image_darken }}">
+      {% render 'image-element',
+              image: section.settings.image,
+              alt: section.settings.image.alt,
+              stretch_width: true,
+              progressive: true
+      %}
+      <div class="caption captionOverlay--true">
+        <h1 class="headline">{{ section.settings.title }}</h1>
+        <p class="subtitle">{{ section.settings.subtitle }}</p>
+      </div>
+    </header>
+  {% endif %}
 
-{% if section.settings.image != nil %}
-  <header class="banner center page-banner dark-overlay-{{ section.settings.image_darken }}">
-    {% render 'image-element',
-            image: section.settings.image,
-            alt: section.settings.image.alt,
-            stretch_width: true,
-            progressive: true
-    %}
-    <div class="caption captionOverlay--true">
-      <h1 class="headline">{{ section.settings.title }}</h1>
-      <p class="subtitle">{{ section.settings.subtitle }}</p>
+  <a name="pagecontent" id="pagecontent"></a>
+
+  <div class="container main content">
+    <div class="ten columns offset-by-three page clearfix equal-columns--outside-trim">
+      <div class="page-heading">
+        <h1 class="page-heading__title">
+          {{ page.title }}
+        </h1>
+      </div>
     </div>
-  </header>
-{% endif %}
 
-<a name="pagecontent" id="pagecontent"></a>
-
-<div class="container main content">
-  <div class="ten columns offset-by-three page clearfix equal-columns--outside-trim">
-    {% if section.settings.image == nil %}
-      <h1>{{ page.title }}</h1>
-      <div class="feature_divider"></div>
-    {% endif %}
+    {% include 'include-contact-form', context: 'contact-template' %}
   </div>
+
+  {% if section.settings.show_map %}
+    {% include 'include-map' %}
+  {% endif %}
 </div>
-
-{% include 'include-contact-form', context: 'contact-template' %}
-
-{% if section.settings.show_map %}
-  {% include 'include-map' %}
-{% endif %}
 
 {% schema %}
 

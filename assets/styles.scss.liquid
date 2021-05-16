@@ -117,7 +117,8 @@ $breakpoints: (
 $vm-color-sea-green: #1c4047;
 $vm-color-plum: #714457;
 $vm-color-sand: #dec1a8;
-$vm-color-cream: #faf8f7;
+// $vm-color-cream: #faf8f7;
+$vm-color-cream: #f4f1ef;
 $vm-color-white: #ffffff;
 
 // Typography
@@ -133,7 +134,8 @@ $vm-paragraph-font: $vm-font-poppins;
 $vm-heading-accent-color: $vm-color-sand;
 
 // $vm-link-color: rgba($vm-color-plum, 0.7);
-$vm-link-color: mix($vm-color-plum, $vm-color-sand, 70%);
+// $vm-link-color: mix($vm-color-plum, $vm-color-sand, 70%);
+$vm-link-color: $vm-color-plum;
 $vm-link-hover-color: $vm-color-sand;
 
 // Headings
@@ -213,8 +215,8 @@ $vm-heading-3-mobile-font-size: 26px;
   }
 }
 
-$vm-subheading-1-font-size: 16px;
-$vm-subheading-1-letter-spacing: 0.08em;
+$vm-subheading-1-font-size: 15px;
+$vm-subheading-1-letter-spacing: 0.1em;
 $vm-subheading-1-line-height: 1.4;
 
 $vm-subheading-1-mobile-font-size: 15px;
@@ -228,8 +230,8 @@ $vm-subheading-1-mobile-font-size: 15px;
   )
 }
 
-$vm-subheading-2-font-size: 14px;
-$vm-subheading-2-letter-spacing: 0.08em;
+$vm-subheading-2-font-size: 13px;
+$vm-subheading-2-letter-spacing: 0.1em;
 $vm-subheading-2-line-height: 1.4;
 
 $vm-subheading-2-mobile-font-size: 13px;
@@ -244,7 +246,7 @@ $vm-subheading-2-mobile-font-size: 13px;
 }
 
 $vm-subheading-3-font-size: 12px;
-$vm-subheading-3-letter-spacing: 0.08em;
+$vm-subheading-3-letter-spacing: 0.12em;
 $vm-subheading-3-line-height: 1.4;
 
 $vm-subheading-3-mobile-font-size: 12px;
@@ -351,7 +353,7 @@ $vm-footer-link-hover-color: $vm-color-sand;
 // Misc
 
 $vm-border-color: $vm-color-sea-green;
-$vm-content-section-padding: 6rem;
+$vm-content-section-padding: 8rem;
 $vm-sale-price-color: $vm-color-plum;
 $vm-was-price-color: $vm-color-sand;
 
@@ -1621,7 +1623,7 @@ h5,
 .subheading-2,
 h6,
 .subheading-3 {
-  margin: 0 0 1.5em;
+  margin: 0 0 1em;
 }
 
 h4,
@@ -3501,18 +3503,15 @@ select.currencies option {
     display: inline-block;
     position: relative;
     margin-left: 0;
-    max-width: 80%;
-    border-left: solid 2px transparent;
+    padding-left: 0.5rem;
+    padding-right: 5rem;
+    border-left: solid 3px transparent;
     transition : border 200ms ease-out;
 
-    a.active {
-      border-left: solid 9px $vm-color-sand;
-    }
 
     &.active,
     &.active--default {
-      padding-left: 8px;
-      border-left: solid 2px $vm-color-sand;
+      border-left-color: $vm-color-sand;
     }
   }
 
@@ -12151,7 +12150,7 @@ $backgroundTransparency: 0.6;
   }
 
   h5 {
-    margin: 1rem 0;
+    margin-top: 1.5rem;
   }
 }
 
