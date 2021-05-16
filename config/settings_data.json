@@ -3392,7 +3392,7 @@
               "richtext_top": "",
               "image_caption_top": "",
               "menu_1": "engagement-rings",
-              "menu_2": "custom-designs",
+              "menu_2": "",
               "menu_3": "",
               "menu_4": "",
               "image_caption_bottom": "",
@@ -3412,12 +3412,12 @@
               "richtext_bottom": ""
             }
           },
-          "1d22e980-000b-46f8-b816-6c1d9aca3a2f": {
+          "8908700f-c81c-47a6-809d-d7c5cf21c961": {
             "type": "column",
             "settings": {
               "richtext_top": "",
               "image_caption_top": "",
-              "menu_1": "fine-jewelry",
+              "menu_1": "bands-for-him-them",
               "menu_2": "",
               "menu_3": "",
               "menu_4": "",
@@ -3425,12 +3425,12 @@
               "richtext_bottom": ""
             }
           },
-          "871c7c34-8db5-4f99-ac36-b075801e27d7": {
+          "d207f029-fbcc-4e64-9a3e-9167438d5c41": {
             "type": "column",
             "settings": {
               "richtext_top": "",
               "image_caption_top": "",
-              "menu_1": "by-occasion",
+              "menu_1": "",
               "menu_2": "",
               "menu_3": "",
               "menu_4": "",
@@ -3442,11 +3442,11 @@
         "block_order": [
           "89c82cf2-e452-4010-a7a2-fc3c9e3d7dd9",
           "396cb187-a7c8-431f-9b50-7c86a37d239b",
-          "1d22e980-000b-46f8-b816-6c1d9aca3a2f",
-          "871c7c34-8db5-4f99-ac36-b075801e27d7"
+          "8908700f-c81c-47a6-809d-d7c5cf21c961",
+          "d207f029-fbcc-4e64-9a3e-9167438d5c41"
         ],
         "settings": {
-          "parent": "Shop All"
+          "parent": "Wedding & Engagement"
         }
       },
       "mega-menu-2": {
@@ -3554,8 +3554,8 @@
           "1587340525519": {
             "type": "filter",
             "settings": {
-              "filter_name": "Occasion & Availability",
-              "filter_tags": "For Mom, Ready to Ship, Made to Order",
+              "filter_name": "Special Occasions",
+              "filter_tags": "Gift ideas for Mom, Ready to Ship, Birthday gift ideas",
               "enable_filter_swatches": false
             }
           }
@@ -4425,6 +4425,38 @@
       },
       "mega-menu-3": {
         "type": "mega-menu-3",
+        "blocks": {
+          "47d145a4-b12b-4e17-860c-625091745268": {
+            "type": "column",
+            "settings": {
+              "richtext_top": "",
+              "image_caption_top": "",
+              "menu_1": "custom-designs",
+              "menu_2": "",
+              "menu_3": "",
+              "menu_4": "",
+              "image_caption_bottom": "",
+              "richtext_bottom": ""
+            }
+          },
+          "532c00fc-0a53-4c3b-9aeb-9e16deb238b8": {
+            "type": "column",
+            "settings": {
+              "richtext_top": "",
+              "image_caption_top": "",
+              "menu_1": "custom-heirloom",
+              "menu_2": "",
+              "menu_3": "",
+              "menu_4": "",
+              "image_caption_bottom": "",
+              "richtext_bottom": ""
+            }
+          }
+        },
+        "block_order": [
+          "47d145a4-b12b-4e17-860c-625091745268",
+          "532c00fc-0a53-4c3b-9aeb-9e16deb238b8"
+        ],
         "settings": {
           "parent": ""
         }
@@ -4498,14 +4530,25 @@
       "mega-menu-4": {
         "type": "mega-menu-4",
         "blocks": {
-          "1589655824560": {
+          "52597529-c975-4d37-a92f-5fc78be6b808": {
             "type": "column",
             "settings": {
               "richtext_top": "",
-              "image_top": "shopify:\/\/shop_images\/Custom.jpg",
-              "image_caption_top": "Custom Engagement Rings",
-              "image_link_top": "shopify:\/\/pages\/custom-engagement-rings",
+              "image_caption_top": "",
               "menu_1": "",
+              "menu_2": "",
+              "menu_3": "",
+              "menu_4": "",
+              "image_caption_bottom": "",
+              "richtext_bottom": ""
+            }
+          },
+          "f29a3256-abfc-41b8-8483-5567a70b7932": {
+            "type": "column",
+            "settings": {
+              "richtext_top": "",
+              "image_caption_top": "",
+              "menu_1": "featured",
               "menu_2": "",
               "menu_3": "",
               "menu_4": "",
@@ -4517,9 +4560,33 @@
             "type": "column",
             "settings": {
               "richtext_top": "",
-              "image_top": "shopify:\/\/shop_images\/DYO.jpg",
-              "image_caption_top": "Design Your Own Ring",
-              "image_link_top": "shopify:\/\/collections\/create-your-own-diamond-or-gemstone-ring",
+              "image_caption_top": "",
+              "menu_1": "shop-by-style",
+              "menu_2": "",
+              "menu_3": "",
+              "menu_4": "",
+              "image_caption_bottom": "",
+              "richtext_bottom": ""
+            }
+          },
+          "dc9e85e4-7eaa-4c57-94db-287c56571bd9": {
+            "type": "column",
+            "settings": {
+              "richtext_top": "",
+              "image_caption_top": "",
+              "menu_1": "by-occasion",
+              "menu_2": "",
+              "menu_3": "",
+              "menu_4": "",
+              "image_caption_bottom": "",
+              "richtext_bottom": ""
+            }
+          },
+          "c2dd3fde-b1ac-4355-b05a-bb6abe677451": {
+            "type": "column",
+            "settings": {
+              "richtext_top": "",
+              "image_caption_top": "",
               "menu_1": "",
               "menu_2": "",
               "menu_3": "",
@@ -4530,16 +4597,20 @@
           }
         },
         "block_order": [
-          "1589655824560",
-          "mega-menu-4-0"
+          "52597529-c975-4d37-a92f-5fc78be6b808",
+          "f29a3256-abfc-41b8-8483-5567a70b7932",
+          "mega-menu-4-0",
+          "dc9e85e4-7eaa-4c57-94db-287c56571bd9",
+          "c2dd3fde-b1ac-4355-b05a-bb6abe677451"
         ],
         "settings": {
-          "parent": "Custom Designs"
+          "parent": "Jewelry"
         }
       },
       "1552235156499": {
         "type": "slideshow",
         "blocks": {
+<<<<<<< HEAD
           "2cb82898-d610-441d-a58d-1b5ad5f9ec0c": {
             "type": "image",
             "settings": {
@@ -4578,12 +4649,31 @@
               "button2_highlight": false,
               "text_position": "left",
               "text_align": "center",
+=======
+          "95de863f-96a4-4d15-80c3-8a9af3a8255a": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/DSC_8888-3_1.jpg",
+              "pretext": "<p>Warm up with Terracotta Sapphires<\/p>",
+              "title": "Sunny & Bright",
+              "subtitle": "<p>Fresh rings added every Friday<\/p>",
+              "caption_background": false,
+              "caption_background_transparency": false,
+              "button1": "Shop Now",
+              "button1_link": "https:\/\/www.valeriemadison.com\/collections\/new-arrivals",
+              "button1_highlight": false,
+              "button2": "",
+              "button2_highlight": false,
+              "text_position": "left",
+              "text_align": "left",
+>>>>>>> current-live-theme
               "mobile_image_crop": "none",
               "is_timed_slide": false,
               "start_datetime": "",
               "end_datetime": ""
             }
           },
+<<<<<<< HEAD
           "1dd37942-5591-4b2f-9fd9-d919d0d84d09": {
             "type": "image",
             "settings": {
@@ -4594,18 +4684,31 @@
               "caption_background": false,
               "caption_background_transparency": false,
               "button1": "Shop the Drop",
+=======
+          "2cb82898-d610-441d-a58d-1b5ad5f9ec0c": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/BANNER.jpg",
+              "pretext": "",
+              "title": "Written in the Stars",
+              "subtitle": "<p>New Zodiac Jewelry<\/p>",
+              "caption_background": false,
+              "caption_background_transparency": false,
+              "button1": "Shop New Styles",
+>>>>>>> current-live-theme
               "button1_link": "shopify:\/\/collections\/new-arrivals",
               "button1_highlight": false,
               "button2": "",
               "button2_highlight": false,
               "text_position": "left",
-              "text_align": "left",
+              "text_align": "center",
               "mobile_image_crop": "none",
               "is_timed_slide": false,
               "start_datetime": "",
               "end_datetime": ""
             }
           },
+<<<<<<< HEAD
           "97d33d13-e319-45ba-a204-254bf4d49ac4": {
             "type": "image",
             "settings": {
@@ -4617,11 +4720,24 @@
               "caption_background_transparency": true,
               "button1": "Discover Rings",
               "button1_link": "shopify:\/\/collections\/engagement-rings",
+=======
+          "52ef1f43-2961-4354-83c2-eb1faf9a37b1": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/DSC_7969.jpg",
+              "pretext": "<p>5 fresh rings added to the collection <\/p>",
+              "title": "Diamond Dazzlers",
+              "subtitle": "",
+              "caption_background": false,
+              "caption_background_transparency": false,
+              "button1": "Shop Now",
+              "button1_link": "shopify:\/\/collections\/new-arrivals",
+>>>>>>> current-live-theme
               "button1_highlight": false,
               "button2": "",
               "button2_highlight": false,
               "text_position": "left",
-              "text_align": "left",
+              "text_align": "center",
               "mobile_image_crop": "none",
               "is_timed_slide": false,
               "start_datetime": "",
@@ -4630,10 +4746,16 @@
           }
         },
         "block_order": [
+<<<<<<< HEAD
           "2cb82898-d610-441d-a58d-1b5ad5f9ec0c",
           "52ef1f43-2961-4354-83c2-eb1faf9a37b1",
           "1dd37942-5591-4b2f-9fd9-d919d0d84d09",
           "97d33d13-e319-45ba-a204-254bf4d49ac4"
+=======
+          "95de863f-96a4-4d15-80c3-8a9af3a8255a",
+          "2cb82898-d610-441d-a58d-1b5ad5f9ec0c",
+          "52ef1f43-2961-4354-83c2-eb1faf9a37b1"
+>>>>>>> current-live-theme
         ],
         "settings": {
           "wide_display": true,
@@ -4647,6 +4769,24 @@
       },
       "mega-menu-5": {
         "type": "mega-menu-5",
+        "blocks": {
+          "d8715b21-50a3-48ce-8574-f457f22b34b7": {
+            "type": "column",
+            "settings": {
+              "richtext_top": "",
+              "image_caption_top": "",
+              "menu_1": "",
+              "menu_2": "",
+              "menu_3": "",
+              "menu_4": "",
+              "image_caption_bottom": "",
+              "richtext_bottom": ""
+            }
+          }
+        },
+        "block_order": [
+          "d8715b21-50a3-48ce-8574-f457f22b34b7"
+        ],
         "settings": {
           "parent": ""
         }
