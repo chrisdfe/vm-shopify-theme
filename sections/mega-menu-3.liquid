@@ -93,7 +93,12 @@
                   <div class="dropdown_column__menu">
                     <ul class="dropdown_title">
                       <li>
-                        <a {% if block.settings.menu_3_link %}href="{{ block.settings.menu_3_link }}"{% endif %}>{{ linklists[block.settings.menu_3].title }}</a>
+                        {% if block.settings.menu_3_link != blank %}
+                          <a href="{{ block.settings.menu_4_link }}">{{ linklists[block.settings.menu_1].title }}</a>
+                        }
+                        {% else %}
+                          {{ linklists[block.settings.menu_4].title }}
+                        {% endif %}
                       </li>
                     </ul>
                     {% if linklists[block.settings.menu_3] != empty %}
@@ -113,7 +118,12 @@
                   <div class="dropdown_column__menu">
                     <ul class="dropdown_title">
                       <li>
-                        <a {% if block.settings.menu_4_link %}href="{{ block.settings.menu_4_link }}"{% endif %}>{{ linklists[block.settings.menu_4].title }}</a>
+                        {% if block.settings.menu_4_link != blank %}
+                          <a href="{{ block.settings.menu_4_link }}">{{ linklists[block.settings.menu_1].title }}</a>
+                        }
+                        {% else %}
+                          {{ linklists[block.settings.menu_4].title }}
+                        {% endif %}
                       </li>
                     </ul>
                     {% if linklists[block.settings.menu_4] != empty %}
@@ -179,6 +189,7 @@
                         alt: block.settings.image_top.alt
                 %}
               {% endif %}
+
               {% if block.settings.image_caption_top != blank %}
                 <p class="mobile-mega-menu__image-caption">{{ block.settings.image_caption_top }}</p>
               {% endif %}
@@ -197,6 +208,7 @@
                 {{ linklists[block.settings.menu_1].title }} <span class="right icon-down-arrow"></span>
               </a>
             {% endif %}
+            
             <ul>
               {% for sublink in linklists[block.settings.menu_1].links %}
                 <li>

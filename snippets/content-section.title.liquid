@@ -1,0 +1,21 @@
+<div class="content-section__heading">
+  
+  <div class="content-section__title-wrapper">
+    {% if title != blank %}
+      <h2 class="content-section__title heading--with-accent">{{ title }}</h2>
+    {% endif %}
+
+    {% if title_link != blank and title_link_text != blank %}
+      <a class="content-section__title-link cta-link cta-link--body-text" href="{{ title_link }}">
+        {{ title_link_text }}
+      </a>
+    {% endif %}
+  </div>
+
+  
+  {% if description != blank %}
+    <p class="content-section__description">
+      {{ description }}
+    </p>
+  {% endif %}
+</div>

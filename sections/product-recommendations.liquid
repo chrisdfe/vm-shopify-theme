@@ -38,7 +38,6 @@
     {% capture product_collections_markup %}
       <div class="recommended-products__title {% unless section.settings.product_recommendations_style == 'slider' %}sixteen columns{% endunless %}" data-recommended-product-count="{% if show_dynamic_collection == true %}{{ recommendations.products_count }}{% else %}{{ collection_size }}{% endif %}">
         <h4 class="title center">{{ section.settings.product_recommendations_heading }}</h4>
-        <div class="feature_divider"></div>
       </div>
       <div class="clear"></div>
 

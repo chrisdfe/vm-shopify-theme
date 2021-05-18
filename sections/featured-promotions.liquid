@@ -12,7 +12,9 @@
     <div class="content-section">
       {% if section.settings.title %}
         <div class="sixteen columns">
-          <h2 class="content-section__title heading--with-accent">{{ section.settings.title }}</h2>
+          {% include "content-section.title" with {
+            title: section.settings.title | escape,
+          } %}
         </div>
       {% endif %}
       

@@ -20,14 +20,11 @@
 
 <div class="container">
   <div class="section content-section clearfix homepage_content">
-    {% if title != blank %}
-      <div class="sixteen columns">
-        <h2 class="content-section__title heading--with-accent">
-          {{ title | escape }}
-        </h2>
-        <div class="feature_divider"></div>
-      </div>
-    {% endif %}
+    <div class="sixteen columns">
+      {% include "content-section.title" with {
+        title: title,
+      } %}
+    </div>
 
     {% if blog_widget_select != blank %}
       {% for article in blogs[blog_widget_select].articles limit: home_page_articles %}
@@ -81,11 +78,11 @@
             {% endif %}
 
             {% if article.excerpt != blank %}
-              <div class="blog_excerpt paragraph-3">{{ article.excerpt | strip_html }}</div>
+              <p class="excerpt paragraph-2">{{ article.excerpt | strip_html }}</p>
             {% endif %}
             
             {% if read_more_link %}
-              <a href="{{ article.url }}" class="paragraph-3 cta-link {% if settings.read_more_style == 'button' %}action_button continue-button read-more-button{% else %}read-more-link{% endif %}">{{ 'blogs.general.continue_reading_html' | t }}</a>
+              <a href="{{ article.url }}" class="cta-link cta-link-3 {% if settings.read_more_style == 'button' %}action_button continue-button read-more-button{% else %}read-more-link{% endif %}">{{ 'blogs.general.continue_reading_html' | t }}</a>
             {% endif %}
           </div>
         </div>

@@ -17,6 +17,7 @@
         <div class="sidebar-block" {{ block.shopify_attributes }}>
           {% if block.type == 'menu' and BYOD == false %}
             {% assign sidebar_menu = linklists[block.settings.custom_menu_linklist] %}
+
             {% if sidebar_menu != blank %}
               <h4 class="toggle">{{ sidebar_menu.title }}<span class="right icon-down-arrow"></span></h4>
               <ul class="toggle_list">
@@ -125,7 +126,6 @@
               {% assign tag_count = collection.all_tags | size %}
               {% if tag_count > 0 %}
                 <h4 class="toggle">{{ 'collections.sidebar.tags' | t }}<span class="right icon-down-arrow"></span></h4>
-
                   Refine By:<span class="right icon-down-arrow"></span></h4>
                 <ul class="toggle_list">
                   <li>
@@ -195,7 +195,7 @@
 
               <div class="sidebar__collection-filter">
 
-                <h4 class="toggle">{{ block.settings.filter_name }}<span class="right icon-down-arrow"></span></h4>
+                <h4 class="toggle subheading-2">{{ block.settings.filter_name }}<span class="right icon-down-arrow"></span></h4>
 
                 {% if block.settings.filter_name != blank and headline_length > 0 %}
                   <ul class="toggle_list" >
@@ -260,7 +260,7 @@
             {% endif %}
 
           {% elsif block.type == 'text' and BYOD == false  %}
-            <h4 class="toggle">{{ block.settings.title }}<span class="right icon-down-arrow"></span></h4>
+            <h4 class="toggle subheading-2">{{ block.settings.title }}<span class="right icon-down-arrow"></span></h4>
             <ul class="toggle_list content_block">
               <li>{{ block.settings.text }}</li>
             </ul>
@@ -269,7 +269,7 @@
                   data-rv-handle="{{ product.handle }}"
                   data-visible-products="{{ block.settings.sidebar_rv_per | plus: 1 }}"
             >
-              <h4 class="toggle">{{ block.settings.sidebar_rv_title }}<span class="right icon-down-arrow"></span></h4>
+              <h4 class="toggle subheading-2">{{ block.settings.sidebar_rv_title }}<span class="right icon-down-arrow"></span></h4>
               <ul class="toggle_list">
                 <li>{% render 'sidebar-recently-viewed' %}</li>
               </ul>

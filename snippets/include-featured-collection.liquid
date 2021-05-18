@@ -25,17 +25,12 @@
 <div class="content-section">
   <div class="container featured_products product-{{ collection_style }}">
     <div class="sixteen columns">
-      {% if title != blank %}
-        <a href="{{ collections[settingCollection].url }}">
-          <h2 class="content-section__title heading--with-accent">{{ title }}</h2>
-        </a>
-      {% endif %}
-
-      {% if collection_description and collections[settingCollection].description != blank %}
-        <div class="section clearfix featured-collection__description">
-          {{ collections[settingCollection].description }}
-        </div>
-      {% endif %}
+      {% include "content-section.title" with {
+        title: title,
+        title_link: collections[settingCollection].url,
+        title_link_text: "shop new arrivals",
+        description: collections[settingCollection].description
+      } %}
     </div>
   </div>
 

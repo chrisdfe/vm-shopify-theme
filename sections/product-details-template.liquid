@@ -161,7 +161,7 @@
               <div class="product_links">
                 {% if section.settings.display_collections %}
                   <p>
-                    <span class="label">{{ 'products.product.collections' | t }}:</span>
+                    <span class="subheading-3">{{ 'products.product.collections' | t }}:</span>
                     <span>
                       {% for col in product.collections %}
                         <a href="{{ col.url }}" title="{{ col.title }}">{{ col.title }}</a>{% unless forloop.last %},{% endunless %}
@@ -172,7 +172,7 @@
 
                 {% if section.settings.display_type %}
                   <p>
-                    <span class="label">{{ 'products.product.product_types' | t }}:</span>
+                    <span class="subheading-3">{{ 'products.product.product_types' | t }}:</span>
                     <span>{{ product.type | link_to_type }}</span>
                   </p>
                 {% endif %}
@@ -181,7 +181,7 @@
                   <p>
                     {% for tag in product.tags %}
                       {% if forloop.first %}
-                        <span class="label">{{ 'products.product.tags' | t }}:</span>
+                        <span class="subheading-3">{{ 'products.product.tags' | t }}:</span>
                       {% endif %}
 
                       {% unless tag contains 'meta-' %}

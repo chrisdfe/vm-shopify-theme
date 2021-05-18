@@ -4610,46 +4610,6 @@
       "1552235156499": {
         "type": "slideshow",
         "blocks": {
-<<<<<<< HEAD
-          "2cb82898-d610-441d-a58d-1b5ad5f9ec0c": {
-            "type": "image",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/BANNER.jpg",
-              "pretext": "",
-              "title": "Written in the Stars",
-              "subtitle": "<p>New Zodiac Jewelry<\/p>",
-              "caption_background": false,
-              "caption_background_transparency": false,
-              "button1": "Shop New Styles",
-              "button1_link": "shopify:\/\/collections\/new-arrivals",
-              "button1_highlight": false,
-              "button2": "",
-              "button2_highlight": false,
-              "text_position": "center",
-              "text_align": "center",
-              "mobile_image_crop": "none",
-              "is_timed_slide": false,
-              "start_datetime": "",
-              "end_datetime": ""
-            }
-          },
-          "52ef1f43-2961-4354-83c2-eb1faf9a37b1": {
-            "type": "image",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/DSC_7969.jpg",
-              "pretext": "<p>5 fresh rings added to the collection <\/p>",
-              "title": "Diamond Dazzlers",
-              "subtitle": "",
-              "caption_background": false,
-              "caption_background_transparency": false,
-              "button1": "Shop Now",
-              "button1_link": "shopify:\/\/collections\/new-arrivals",
-              "button1_highlight": false,
-              "button2": "",
-              "button2_highlight": false,
-              "text_position": "left",
-              "text_align": "center",
-=======
           "95de863f-96a4-4d15-80c3-8a9af3a8255a": {
             "type": "image",
             "settings": {
@@ -4666,25 +4626,12 @@
               "button2_highlight": false,
               "text_position": "left",
               "text_align": "left",
->>>>>>> current-live-theme
               "mobile_image_crop": "none",
               "is_timed_slide": false,
               "start_datetime": "",
               "end_datetime": ""
             }
           },
-<<<<<<< HEAD
-          "1dd37942-5591-4b2f-9fd9-d919d0d84d09": {
-            "type": "image",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/DSC_7704_copy.jpg",
-              "pretext": "",
-              "title": "Bold Gold",
-              "subtitle": "<p>New Rolo Chains<\/p><p><\/p>",
-              "caption_background": false,
-              "caption_background_transparency": false,
-              "button1": "Shop the Drop",
-=======
           "2cb82898-d610-441d-a58d-1b5ad5f9ec0c": {
             "type": "image",
             "settings": {
@@ -4695,7 +4642,6 @@
               "caption_background": false,
               "caption_background_transparency": false,
               "button1": "Shop New Styles",
->>>>>>> current-live-theme
               "button1_link": "shopify:\/\/collections\/new-arrivals",
               "button1_highlight": false,
               "button2": "",
@@ -4708,19 +4654,6 @@
               "end_datetime": ""
             }
           },
-<<<<<<< HEAD
-          "97d33d13-e319-45ba-a204-254bf4d49ac4": {
-            "type": "image",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/jammy_sapphire_banner_1.jpg",
-              "pretext": "",
-              "title": "One of a Kind",
-              "subtitle": "<p>Begin your search for the perfect engagement ring  <\/p>",
-              "caption_background": true,
-              "caption_background_transparency": true,
-              "button1": "Discover Rings",
-              "button1_link": "shopify:\/\/collections\/engagement-rings",
-=======
           "52ef1f43-2961-4354-83c2-eb1faf9a37b1": {
             "type": "image",
             "settings": {
@@ -4732,7 +4665,6 @@
               "caption_background_transparency": false,
               "button1": "Shop Now",
               "button1_link": "shopify:\/\/collections\/new-arrivals",
->>>>>>> current-live-theme
               "button1_highlight": false,
               "button2": "",
               "button2_highlight": false,
@@ -4746,16 +4678,9 @@
           }
         },
         "block_order": [
-<<<<<<< HEAD
-          "2cb82898-d610-441d-a58d-1b5ad5f9ec0c",
-          "52ef1f43-2961-4354-83c2-eb1faf9a37b1",
-          "1dd37942-5591-4b2f-9fd9-d919d0d84d09",
-          "97d33d13-e319-45ba-a204-254bf4d49ac4"
-=======
           "95de863f-96a4-4d15-80c3-8a9af3a8255a",
           "2cb82898-d610-441d-a58d-1b5ad5f9ec0c",
           "52ef1f43-2961-4354-83c2-eb1faf9a37b1"
->>>>>>> current-live-theme
         ],
         "settings": {
           "wide_display": true,

@@ -18,14 +18,14 @@
     <div class="container">
       {% if section.settings.title != blank %}
         <div class="sixteen columns">
-          <h3 class="content-section__title heading--with-accent">
-            {{ section.settings.title | escape }}
-          </h3>
+          {% include "content-section.title" with {
+            title: section.settings.title | escape,
+          } %}
         </div>
       {% endif %}
       
       {% if section.settings.subtext != blank %}
-        <p class="paragraph-2">
+        <p class="paragraph-1">
           {{ section.settings.subtext }}
         </p>
       {% endif %}
@@ -43,11 +43,11 @@
                 {% endif %}
                 -->
                 
-                <h4>
+                <h5>
                   {{block.settings.title}}
-                </h4>
+                </h5>
                 
-                <p>
+                <p class="paragraph-2">
                   {{ block.settings.icon_subtext | strip_html }}
                 </p>
               </div>

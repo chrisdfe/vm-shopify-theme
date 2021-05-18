@@ -9,8 +9,11 @@
     <div class="sixteen columns">
       <div class="section clearfix">
       {% if section.settings.title != blank %}
-          <h4 class="center">{{ section.settings.title | escape }}</h4>
-          <div class="feature_divider no-margin"></div>
+        <div class="content-section__title-wrapper content-section__title-wrapper--centered">
+          <h4 class="content-section__title">
+            {{ section.settings.title | escape }}
+          </h4>
+        </div>
       {% endif %}
 
       {% if section.blocks.size > 0 %}

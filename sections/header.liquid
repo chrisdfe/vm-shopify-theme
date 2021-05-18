@@ -75,6 +75,7 @@
       </div>
       <span class="menu_title">{{ 'layout.general.menu' | t }}</span>
     </a>
+    
     <a href="{{ shop.url }}" title="{{ shop.name | escape }}" class="mobile_logo logo">
       {% if section.settings.logo_mobile != nil %}
         <img src="{{ section.settings.logo_mobile | img_url: '410x' }}" alt="{{ shop.name | escape }}" class="lazyload" />
@@ -84,6 +85,7 @@
         {{ shop.name }}
       {% endif %}
     </a>
+
     <div class="top_bar--right">
       {% if section.settings.search_enabled %}
         <a href="{{ routes.search_url }}" class="icon-search dropdown_link" title="{{ 'general.search.title' | t | escape }}" data-dropdown-rel="search"></a>
@@ -346,7 +348,7 @@
                     {% endif %}
 
                     {% if settings.cart_message != blank %}
-                      <div class="cart_text">
+                      <div class="cart_text paragraph-3">
                         {{ settings.cart_message }}
                       </div>
                     {% endif %}
@@ -390,10 +392,10 @@
           <div class="logo {% if section.settings.logo_home == blank and section.settings.logo == blank %}logo--text{% else %}logo--image{% endif %}">
             <a href="{{ shop.url }}" title="{{ shop.name }}">
               {% if section.settings.logo_home != nil %}
-                <img src="{{ section.settings.logo_home | img_url: '410x' }}" class="secondary_logo" alt="{{ shop.name | escape }}" />
+                <img src="{{ section.settings.logo_home | img_url: '800x' }}" class="secondary_logo" alt="{{ shop.name | escape }}" />
               {% endif %}
               {% if section.settings.logo != nil %}
-                <img src="{{ section.settings.logo | img_url: '410x' }}" class="primary_logo lazyload" alt="{{ shop.name | escape }}" />
+                <img src="{{ section.settings.logo | img_url: '800x' }}" class="primary_logo" alt="{{ shop.name | escape }}" />
               {% else %}
                 {{ shop.name }}
               {% endif %}
@@ -475,42 +477,6 @@
 </header>
 
 <style>
-  .main_nav div.logo,
-  .sticky_nav .main_nav div.logo {
-    padding-top: {{ section.settings.logo_top_padding }}px;
-    padding-bottom: {{ section.settings.logo_top_padding }}px;
-  }
-  
-  .main_nav_wrapper.sticky_nav .main_nav div.logo a {
-    padding-top: {{ section.settings.logo_top_padding  | divided_by: 2 }}px;
-    padding-bottom: {{ section.settings.logo_top_padding  | divided_by: 2 }}px;
-  }
-
-  {% unless section.settings.logo_position == "center" %}
-  @media (max-width:799px) {
-  div.logo img {
-    max-width: {{ section.settings.logo_display_width }}px;
-  }
-  }
-  
-  /* 3/15 Make Logo Larger  */
-@media (min-width:800px) {
-  // .main_nav_wrapper:not(.sticky_nav) .main_nav > div.logo {
-  //   width: {{ section.settings.logo_display_width_percent }}% !important;
-  // }
-  
-  // .main_nav_wrapper:not(.sticky_nav) .main_nav > div.logo img {
-  //   max-width:450px !important;padding-top: 0px;
-  // }
-
-  // .main_nav_wrapper:not(.sticky_nav) .main_nav >  .nav {
-  //   width: {{ section.settings.logo_display_width_percent | times: -1 | plus: 100 }}% !important;
-  //   padding-top: 11px;
-  //   padding-bottom:12px;
-  // }
-}
-  {% endunless %}
-
   .nav {
     {% if section.settings.menu_position == "block" %}
       width: 100%;
@@ -524,11 +490,6 @@
     {% endif %}
   }
 
-  .nav ul.menu {
-    padding-top: {{ section.settings.menu_top_padding }}px;
-    padding-bottom: {{ section.settings.menu_top_padding }}px;
-  }
-
   .search-enabled--true .nav--right ul.menu,
   .search-enabled--true .nav--combined ul.menu {
     padding-right: 210px;
@@ -538,15 +499,6 @@
   .sticky_nav .search-enabled--true  .nav--right ul.menu,
   .sticky_nav .search-enabled--true  .nav--combined ul.menu {
     padding-right: 100px;
-  }
-
-  .menu li.search_container {
-    padding-top: {{ section.settings.menu_top_padding | plus: 3 }}px;
-  }
-
-  .sticky_nav ul.menu {
-    padding-top: {{ section.settings.menu_top_padding | divided_by: 2 }}px;
-    padding-bottom: {{ section.settings.menu_top_padding | divided_by: 2 }}px;
   }
 
   {% unless section.settings.show_cart %}
@@ -566,34 +518,10 @@
     }
   {% endif %}
 
-  /* Add padding to the search wrapper when the header is smaller */
-  {% if section.settings.menu_top_padding <= 10 %}
-    .search-enabled--true .search-wrapper {
-      padding: {{ section.settings.menu_top_padding }}px 10px 10px 10px;
-    }
-  {% endif %}
 /* Adjust Menu Header Font Weight */
   .dropdown_column ul.dropdown_title a { font-weight:{{section.settings.mega_menu_header_weight}};}
   
-  
-/* Sticky Nav */
-.sticky_nav ul.menu, .sticky_nav .mini_cart {
-    padding-top: 0px !important;
-    padding-bottom: 0px !important;
-}
-.main_nav div.logo, .sticky_nav .main_nav div.logo {
-    padding-top: 0px;
-    padding-bottom: 0px;
-}
-li.search_container {position:relative !important;}
-.search-enabled--true .nav--right ul.menu, .search-enabled--true .nav--combined ul.menu {
-  padding:initial;
-}
-
-.sticky_nav a.icon-bag.mini_cart.dropdown_link {
-  padding-top:15px !important;
-}
-</style>
+  </style>
 
 {% schema %}
 
