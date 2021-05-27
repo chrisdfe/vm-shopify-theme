@@ -3248,6 +3248,7 @@
           "cart_icon": "bag",
           "logo_display_width": 205,
           "logo_display_width_percent": 45,
+          "logo": "shopify:\/\/shop_images\/Logo-name-large.png",
           "logo_mobile": "shopify:\/\/shop_images\/mobile-logo-seagreen_256x256_79182b2b-7668-4862-8b08-f67f60755daf.png",
           "main_linklist": "menu-left-of-logo",
           "main_linklist2": "menu-right-of-logo",
@@ -3681,11 +3682,11 @@
         "settings": {
           "title": "Recent blog posts",
           "blog_widget_select": "the-studio-blog",
-          "home_page_articles": 4,
+          "home_page_articles": 3,
           "blog_tags": false,
           "blog_author": false,
           "read_time": false,
-          "blog_date": false,
+          "blog_date": true,
           "blog_comment_count": false,
           "read_more_link": true
         }
