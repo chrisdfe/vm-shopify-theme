@@ -3240,7 +3240,7 @@
       "header": {
         "type": "header",
         "settings": {
-          "promo_text": "",
+          "promo_text": "<p>Use code LOVEISLOVE for 20% off any wedding band! Valid through June 13. <\/p>",
           "social_icons_header": true,
           "phone_number": "(206) 395-6359",
           "top_bar_menu": "",
@@ -3387,6 +3387,19 @@
       "mega-menu-1": {
         "type": "mega-menu-1",
         "blocks": {
+          "a9f09f7d-e1d6-4eee-a98b-6b9172e7eca2": {
+            "type": "column",
+            "settings": {
+              "richtext_top": "",
+              "image_caption_top": "",
+              "menu_1": "",
+              "menu_2": "",
+              "menu_3": "",
+              "menu_4": "",
+              "image_caption_bottom": "",
+              "richtext_bottom": ""
+            }
+          },
           "89c82cf2-e452-4010-a7a2-fc3c9e3d7dd9": {
             "type": "column",
             "settings": {
@@ -3441,6 +3454,7 @@
           }
         },
         "block_order": [
+          "a9f09f7d-e1d6-4eee-a98b-6b9172e7eca2",
           "89c82cf2-e452-4010-a7a2-fc3c9e3d7dd9",
           "396cb187-a7c8-431f-9b50-7c86a37d239b",
           "8908700f-c81c-47a6-809d-d7c5cf21c961",
@@ -3662,7 +3676,7 @@
           "image": "shopify:\/\/shop_images\/Arias-and-Evas.jpg",
           "pretext": "",
           "title": "Customize",
-          "subtitle": "<p>Let&#x27;s create something beautiful together. <\/p>",
+          "subtitle": "<p>Let's create something beautiful together. <\/p>",
           "caption_background": true,
           "caption_background_transparency": false,
           "button1": "Let's Get Started",
@@ -4611,17 +4625,83 @@
       "1552235156499": {
         "type": "slideshow",
         "blocks": {
+          "4a3aadcc-dbcd-4156-80f7-1c64b52db321": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/DSC_2929.jpg",
+              "pretext": "",
+              "title": "Wedding Band Sale",
+              "subtitle": "<p>Take 20% off with the code LOVEISLOVE<\/p>",
+              "caption_background": false,
+              "caption_background_transparency": false,
+              "button1": "Shop the collection",
+              "button1_link": "shopify:\/\/collections\/all-wedding-bands",
+              "button1_highlight": false,
+              "button2": "",
+              "button2_highlight": false,
+              "text_position": "left",
+              "text_align": "left",
+              "mobile_image_crop": "none",
+              "is_timed_slide": true,
+              "start_datetime": "2021-06-04 8:00",
+              "end_datetime": "2021-06-13 23:59"
+            }
+          },
+          "f1ed2854-11c1-4672-8e13-643965b04086": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Brown_Diamond_Engagment_Rings_Banner.jpg",
+              "pretext": "",
+              "title": "Brown Beauties",
+              "subtitle": "<p>Warm cocoa diamonds in one of a kind settings<\/p>",
+              "caption_background": false,
+              "caption_background_transparency": false,
+              "button1": "Shop new rings",
+              "button1_link": "https:\/\/www.valeriemadison.com\/collections\/new-arrivals",
+              "button1_highlight": false,
+              "button2": "",
+              "button2_highlight": false,
+              "text_position": "left",
+              "text_align": "left",
+              "mobile_image_crop": "none",
+              "is_timed_slide": true,
+              "start_datetime": "2021-06-04 8:00",
+              "end_datetime": ""
+            }
+          },
+          "f399f681-ea39-46ba-a3e0-75431a0fd897": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/DSC_0745_copy.jpg",
+              "pretext": "",
+              "title": "Calm Waters",
+              "subtitle": "<p>Dive into Summer with <br\/> Gold and Turquoise<\/p>",
+              "caption_background": false,
+              "caption_background_transparency": false,
+              "button1": "Shop New Arrivals",
+              "button1_link": "shopify:\/\/collections\/new-arrivals",
+              "button1_highlight": false,
+              "button2": "",
+              "button2_highlight": false,
+              "text_position": "left",
+              "text_align": "left",
+              "mobile_image_crop": "none",
+              "is_timed_slide": true,
+              "start_datetime": "",
+              "end_datetime": "2021-06-04 8:00"
+            }
+          },
           "95de863f-96a4-4d15-80c3-8a9af3a8255a": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/DSC_8888-3_1.jpg",
-              "pretext": "<p>Warm up with Terracotta Sapphires<\/p>",
-              "title": "Sunny & Bright",
-              "subtitle": "<p>Fresh rings added every Friday<\/p>",
+              "image": "shopify:\/\/shop_images\/BANNER-ILA-VERA_1.jpg",
+              "pretext": "",
+              "title": "Diamond <br> Dazzlers",
+              "subtitle": "<p>Find Your Perfect Ring<\/p>",
               "caption_background": false,
               "caption_background_transparency": false,
-              "button1": "Shop Now",
-              "button1_link": "https:\/\/www.valeriemadison.com\/collections\/new-arrivals",
+              "button1": "Shop Diamond Rings",
+              "button1_link": "shopify:\/\/collections\/diamond-rings",
               "button1_highlight": false,
               "button2": "",
               "button2_highlight": false,
@@ -4638,34 +4718,12 @@
             "settings": {
               "image": "shopify:\/\/shop_images\/BANNER.jpg",
               "pretext": "",
-              "title": "Written in the Stars",
+              "title": "Starry-Eyed Wonder",
               "subtitle": "<p>New Zodiac Jewelry<\/p>",
               "caption_background": false,
               "caption_background_transparency": false,
-              "button1": "Shop New Styles",
-              "button1_link": "shopify:\/\/collections\/new-arrivals",
-              "button1_highlight": false,
-              "button2": "",
-              "button2_highlight": false,
-              "text_position": "left",
-              "text_align": "center",
-              "mobile_image_crop": "none",
-              "is_timed_slide": false,
-              "start_datetime": "",
-              "end_datetime": ""
-            }
-          },
-          "52ef1f43-2961-4354-83c2-eb1faf9a37b1": {
-            "type": "image",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/DSC_7969.jpg",
-              "pretext": "<p>5 fresh rings added to the collection <\/p>",
-              "title": "Diamond Dazzlers",
-              "subtitle": "",
-              "caption_background": false,
-              "caption_background_transparency": false,
-              "button1": "Shop Now",
-              "button1_link": "shopify:\/\/collections\/new-arrivals",
+              "button1": "Shop the Collection",
+              "button1_link": "shopify:\/\/collections\/zodiac-collection",
               "button1_highlight": false,
               "button2": "",
               "button2_highlight": false,
@@ -4679,9 +4737,11 @@
           }
         },
         "block_order": [
+          "4a3aadcc-dbcd-4156-80f7-1c64b52db321",
+          "f1ed2854-11c1-4672-8e13-643965b04086",
+          "f399f681-ea39-46ba-a3e0-75431a0fd897",
           "95de863f-96a4-4d15-80c3-8a9af3a8255a",
-          "2cb82898-d610-441d-a58d-1b5ad5f9ec0c",
-          "52ef1f43-2961-4354-83c2-eb1faf9a37b1"
+          "2cb82898-d610-441d-a58d-1b5ad5f9ec0c"
         ],
         "settings": {
           "wide_display": true,
@@ -5659,10 +5719,10 @@
           "74b5eb3d-a21e-4489-9df5-45efb4ae385c": {
             "type": "employee",
             "settings": {
-              "image": "shopify:\/\/shop_images\/Sue_Pess_headshot_2_x_3.jpg",
+              "image": "shopify:\/\/shop_images\/Sue_Pess.jpg",
               "title": "Sue Pess",
               "job_title": "Operations Manager",
-              "description": "<p>I am here to keep things running smoothly and in-step with our growth trajectory. My decades long background in jewelry production, retail, and small business operations make this a great place for me to have a positive impact. When I am not here you can find me thrifting, laughing at my cats, and spending time with friends &amp; family.<\/p>",
+              "description": "<p>I am here to keep things running smoothly and in-step with our growth trajectory. My decades long background in jewelry production, retail, and small business operations make this a great place for me to have a positive impact. When I am not here you can find me thrifting, laughing at my cats, and spending time with friends & family.<\/p>",
               "twitter": ""
             }
           },
@@ -5853,7 +5913,7 @@
               "image": "shopify:\/\/shop_images\/Group-Photo-White-gold-rings-4x5.jpg",
               "image_crop": "none",
               "title": "",
-              "text": "<p>Our approach to making jewelry includes using recycled precious metals, conflict-free diamonds, and ethically-sourced gemstones to create elegant, sophisticated, and vibrant heirloom-quality pieces. <\/p><p>We are a womxn-operated company founded by a Black Latina and we are based in Seattle, WA where you can also <strong>shop from <\/strong><a href=\"https:\/\/www.valeriemadison.com\/pages\/visit-us\" target=\"_blank\" title=\"https:\/\/www.valeriemadison.com\/pages\/visit-us\"><\/a><a href=\"https:\/\/www.valeriemadison.com\/pages\/visit-us\" target=\"_blank\" title=\"https:\/\/www.valeriemadison.com\/pages\/visit-us\"><strong> our retail store<\/strong><\/a><strong> in person<\/strong>. <br\/><br\/>We&#x27;re looking forward to helping you discover our unique engagement rings, wedding bands, and fine jewelry to celebrate special milestones or treat yourself. <\/p>",
+              "text": "<p>Our approach to making jewelry includes using recycled precious metals, conflict-free diamonds, and ethically-sourced gemstones to create elegant, sophisticated, and vibrant heirloom-quality pieces. <\/p><p>We are a women-operated company founded by a Black Latina and we are based in Seattle, WA where you can also <strong>shop from <\/strong><a href=\"https:\/\/www.valeriemadison.com\/pages\/visit-us\" target=\"_blank\" title=\"https:\/\/www.valeriemadison.com\/pages\/visit-us\"><strong> our retail store<\/strong><\/a><strong> in person<\/strong>. <br\/><br\/>We're looking forward to helping you discover our unique engagement rings, wedding bands, and fine jewelry to celebrate special milestones or treat yourself. <\/p>",
               "button_label": "Learn More",
               "link": "https:\/\/www.valeriemadison.com\/pages\/about",
               "color_region": "dark"
