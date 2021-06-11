@@ -103,7 +103,7 @@
               }
               {% if current_tags %}
                 {% for tag in current_tags %}
-                  {% unless tag contains 'meta-'  or tag contains 'weeks' or tag contains 'days' %}
+                  {% unless tag contains 'meta-' or tag contains 'store-' or tag contains 'final sale' or tag contains 'Ring Resizing' or tag contains 'days' or tag contains 'weeks' %}
                     ,
                     {
                       "@type": "ListItem",
@@ -131,7 +131,7 @@
           {% if current_tags %}
             {% for tag in current_tags %}
 
-              {% unless tag contains 'meta-'  or tag contains 'weeks' or tag contains 'days'  %}
+              {% unless tag contains 'meta-' or tag contains 'store-' or tag contains 'final sale' or tag contains 'Ring Resizing' or tag contains 'weeks' or tag contains 'days' %}
                 <span class="breadcrumb-divider">/</span>
                 <a href="{{ routes.collections_url }}/{% if collection.handle != blank %}{{ collection.handle }}{% else %}all{% endif %}/{{ tag | handleize }}" title="{{ tag | escape }}">
                   <span>{{ tag }}</span>
@@ -164,7 +164,7 @@
                   <option {% unless current_tags %}selected="selected"{% endunless %} value="{% if collection.handle == "all" %}{{ routes.all_products_collection_url }}{% else %}{{ collection.url }}{% endif %}">{{ 'collections.general.all_collection_title' | t: title: collection.title }}</option>
               {% endif %}
 
-              {% unless tag contains 'meta-'  or tag contains 'weeks' or tag contains 'days' %}
+              {% unless tag contains 'meta-' or tag contains 'store-' or tag contains 'final sale' or tag contains 'Ring Resizing' or tag contains 'days' or tag contains 'weeks' %}
                 <option {% if current_tags contains tag %}selected="selected"{% endif %} value="{{ routes.collections_url }}/{% if collection.handle != blank %}{{ collection.handle }}{% else %}all{% endif %}/{{ tag | handleize }}">{{ tag }}</option>
               {% endunless %}
 

@@ -211,11 +211,11 @@
                      <span class="subheading-3">{{ 'products.product.tags' | t }}:</span>
                    {% endif %}
 
-                   {% unless tag contains 'meta-'  or tag contains 'weeks' or tag contains 'days' %}
+                  {% unless tag contains 'meta-' or tag contains 'store-' or tag contains 'final sale' or tag contains 'Ring Resizing' or tag contains 'weeks' or tag contains 'days' %}
                      <span>
                        <a href="{{ routes.collections_url }}/{% if collection %}{{ collection.handle }}{% else %}all{% endif %}/{{ tag | handle }}" title="{{ 'products.product.products_tagged' | t: tag: tag }}">{{ tag }}</a>{% unless forloop.last %},{% endunless %}
                        </span>
-                   {% endunless %}
+                  {% endunless %}
                  {% endfor %}
                 </p>
               {% endif %}
