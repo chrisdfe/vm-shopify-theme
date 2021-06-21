@@ -1618,7 +1618,7 @@ h3,
   padding: 5rem 0;
   
   &.page-heading--with-breadcrumbs {
-    padding: 0 0 5rem;
+    padding: 3rem 0 5rem;
   }
   
   @include respond-to('medium-down') {
@@ -3947,6 +3947,7 @@ select.currencies option {
 /* Blog Article Styling */
 
 .article {
+  margin-bottom: 3rem;
   
   .icon-slash {
     padding-right: 5px;
@@ -5508,8 +5509,8 @@ input[type="button"].get-rates.action_button {
 .sidebar .sidebar_content {
   .input-row {
     @include flex-direction(column);
-    margin-left: 0px;
-    margin-right: 0px;
+    margin-left: 0;
+    margin-right: 0;
 
     input {
       margin: 5px 0;
@@ -6313,7 +6314,9 @@ $banner-crop-height: 60vh;
   display: flex;
 }
 
-.team-member__title { }
+.team-member__title {
+  margin-bottom: 2rem;
+}
 
 .team-member__details {
   position: relative;
@@ -8419,11 +8422,41 @@ p.meta {
   margin: 10px 0;
 }
 
+
+figure {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+
+  img {
+    margin: 0 !important;
+  }
+
+  figcaption {
+    @include vm-paragraph-3();
+    margin: 0.5rem 0;
+  }
+}
+
+
 .article_content {
   margin-top: 20px;
   
+  figure,
   img {
-     margin: 50px 0;
+    margin: 5rem 0;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  figure {
+    padding: 0 20%;
+
+    @include respond-to('medium-down') {
+      padding: 0;
+    }
   }
 }
 
@@ -13290,7 +13323,7 @@ a.team-twitter {
 
 /* Agreement Description - Build Your Own Ring */
 span.agreement_description {
-  font-size:16px;
+  // font-size:16px;
 }
 
 
