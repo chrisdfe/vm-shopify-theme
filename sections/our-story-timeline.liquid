@@ -1,0 +1,74 @@
+<div class="content-section content-section--our-story--timeline">
+  <div class="container">
+    <div class="row">
+      <div class="twelve columns offset-by-two">
+        {% include "content-section.title" with {
+          title: section.settings.title | escape,
+        } %}
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="twelve columns offset-by-two">
+        {% assign previous_year = null %}
+        {% for block in section.blocks %}
+            {% assign year = block.settings.title | abs %}
+            {% comment %}
+              Work out how much space to put between the previous timeline_event and this one
+            {% endcomment %}
+            {% if previous_year %}
+              {% assign year_diff = year | minus: previous_year | minus: 1 %}
+              {% if year_diff > 0 %}
+                {% for i in (0..year_diff) %}
+                  <div class="our-story__timeline-event__year-spacer">
+                  </div>
+                {% endfor %}
+              {% endif %}
+            {% endif %}
+          <div class="our-story__timeline-event
+            {% cycle 'our-story__timeline-event--odd', 'our-story__timeline-event--even' %}
+            ">
+            <div class="our-story__timeline-event__body">
+              <h4>{{ year }}</h4>
+              <p>{{ block.settings.content }}</p>
+            </div>
+            {% assign previous_year = block.settings.title | abs %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% schema %}
+{
+  "name": "Our History",
+  "settings": [
+    {
+      "id": "title",
+      "label": "Title",
+      "type": "text",
+      "default": "Our History"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "timeline_event",
+      "name": "Timeline Event",
+      "settings": [
+        {
+          "id": "title",
+          "label": "Year",
+          "type": "text"
+        },
+        {
+          "id": "content",
+          "label": "Description",
+          "type": "textarea"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

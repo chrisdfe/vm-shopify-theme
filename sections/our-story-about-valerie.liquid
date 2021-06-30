@@ -1,0 +1,49 @@
+<div class="content-section content-section--our-story--about-valerie">
+  <div class="container">
+    <div class="twelve columns offset-by-two">
+      {% include "content-section.title" with {
+        title: section.settings.title | escape,
+      } %}
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="six columns offset-by-two">  
+      {% if section.settings.content %}
+        <p class="paragraph--block-text">{{ section.settings.content }}</p>
+      {% endif %}
+    </div>
+    
+    <div class="six columns">
+      {% if section.settings.image %}
+        <img src="{{ section.settings.image | img_url: '800x' }}">
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+
+{% schema %}
+{
+  "name": "About Valerie",
+  "settings": [
+    {
+      "id": "title",
+      "label": "Title",
+      "type": "text",
+      "default": "About Valerie"
+    },
+    {
+      "id": "content",
+      "label": "Content",
+      "type": "textarea",
+      "default": "Valerie merges contemporary technology with skillful artistry to create elegant designs inspired by classic styles. With her keen eye for detail and passion for individuality, her designs celebrate not only the beauty of life and love but also the natural world and the stunning gemstones that come from it. A Valerie Madison piece features styles and stones not seen in traditional pieces, such as salt-and-pepper diamonds, rose-cut diamonds, uniquely shaped stones, vibrant hues, and more."
+    },
+    {
+      "id": "image",
+      "label": "Image of Valerie",
+      "type": "image_picker"
+    }
+  ]
+}
+{% endschema %}

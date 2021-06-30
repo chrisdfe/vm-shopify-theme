@@ -1,0 +1,65 @@
+<div class="content-section content-section--our-story--pillars">
+  <div class="container">
+    <div class="twelve columns offset-by-two">
+      {% include "content-section.title" with {
+        title: section.settings.title | escape,
+      } %}
+    </div>
+
+    <div class="container">
+      {% for block in section.blocks %}
+        <div class="four columns {% if forloop.first %}offset-by-two{% endif %}">
+          <div class="our-story__pillar">
+            <div class="our-story__pillar__image-wrapper">
+              <img src="{{ block.settings.image | img_url : "400x" }}">
+            </div>
+
+            <h4>
+              {{ block.settings.title }}
+            </h4>
+
+            <p>
+              {{ block.settings.content }}
+            </p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Our Pillars",
+  "settings": [
+    {
+      "id": "title",
+      "label": "Title",
+      "type": "text",
+      "default": "Our Pillars"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "pillar",
+      "name": "Pillar",
+      "settings": [
+        {
+          "id": "image",
+          "label": "Image",
+          "type": "image_picker"
+        },
+        {
+          "id": "title",
+          "label": "Title",
+          "type": "text"
+        },
+        {
+          "id": "content",
+          "label": "Content",
+          "type": "textarea"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

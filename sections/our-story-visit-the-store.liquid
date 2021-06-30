@@ -1,0 +1,41 @@
+<div class="content-section content-section--our-story--visit-store">
+  <div class="container">
+    <div class="eight columns offset-by-four">
+      {% include "content-section.title" with {
+        title: section.settings.title | escape,
+      } %}
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="eight columns offset-by-four">
+      <div class="our-story__store-map-wrapper">
+        <div class="our-story__store-map-placeholder"></div>
+      </div>
+
+      <div class="our-story__store-body">
+        <p>store info goes here.</p>
+
+        <h5>
+          1411 34th Ave<br />
+          Seattle, WA 98122
+        </h5>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% schema %}
+{
+  "name": "Visit Our Store",
+  "settings": [
+    {
+      "id": "title",
+      "label": "Title",
+      "type": "text",
+      "default": "Visit Our Store"
+    }
+  ]
+}
+{% endschema %}

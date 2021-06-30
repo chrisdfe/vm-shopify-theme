@@ -1,0 +1,28 @@
+<div class="content-section content-section--our-story--intro">
+  <div class="container">
+    <div class="eight columns offset-by-four">
+      <h1>{{ section.settings.title }}</h1>
+      <p class="paragraph--block-text">{{ section.settings.content }}</p>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Intro",
+  "settings": [
+    {
+      "id": "title",
+      "label": "Title",
+      "type": "text",
+      "default": "We're all about your love stories in gold."
+    },
+    {
+      "id": "content",
+      "label": "Content",
+      "type": "textarea",
+      "default": "Whether it’s proposing to the love of your life, marking a special occasion in gold, or truly treating yourself with a gem as amazing as you are, we’re here for it. With an eye for balance, durability, and function, Valerie's inspiration comes from the beautiful spectrum of colors of diamonds and gemstones she sources as well as the geometry and shapes they come in. All jewelry tells a story and we believe in fine jewelry as an expression of the desire to decorate oneself with metals and jewels that reflect the love and style you want to reflect outwards."
+    }
+  ]
+}
+{% endschema %}

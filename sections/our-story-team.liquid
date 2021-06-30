@@ -1,0 +1,90 @@
+<div class="content-section content-section--our-story--team">
+  <div class="container">
+    <div class="eight columns offset-by-four">
+      <div class="our-story__our-team-intro">
+        {% include "content-section.title" with {
+          title: section.settings.title | escape,
+        } %}
+
+        <p>
+          {{ section.settings.description }}
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    {% for block in section.blocks %}
+      <div class="eight columns">
+        <div class="our-story__team-member">
+          <div class="our-story__team-member__image-wrapper">
+            <img src="{{ block.settings.image | img_url : "400x" }}">
+          </div>
+
+          <div class="our-story__team-member__body">
+            <h3>
+              {{ block.settings.title }}
+            </h3>
+            
+            <h5>
+              {{ block.settings.job_title }}
+            </h5>
+
+            <p>
+              {{ block.settings.description }}
+            </p>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+</div>
+
+{% schema %}
+{
+  "name": "Our Team",
+  "settings": [
+    {
+      "id": "title",
+      "label": "Title",
+      "type": "text",
+      "default": "Our Team"
+    },
+    {
+      "id": "description",
+      "label": "Description",
+      "type": "textarea",
+      "default": "These are the lovely folks that make VM a wonderful place to work in and serve our clients."
+    }
+  ],
+  "blocks": [
+  {
+    "type": "team_member",
+    "name": "Team Member",
+    "settings": [
+      {
+        "id": "image",
+        "label": "Image",
+        "type": "image_picker"
+      },
+      {
+        "id": "title",
+        "label": "Name",
+        "type": "text"
+      },
+      {
+        "id": "job_title",
+        "label": "Job Title",
+        "type": "text"
+      },
+      {
+        "id": "description",
+        "label": "Description",
+        "type": "textarea"
+      }
+    ]
+  }
+]
+}
+{% endschema %}

@@ -3273,6 +3273,7 @@
               "testimonial": "<p>Ring was ready ahead of schedule and was absolutely perfect. Love that there&#x27;s a company that does such quality work with eco-friendliness in mind!<\/p>",
               "name": "Evan",
               "store_name": "",
+              "link": "",
               "text_position": "center",
               "text_align": "center",
               "darken_bg": false
@@ -3285,6 +3286,7 @@
               "testimonial": "<p>The &quot;Design Your Own&quot; feature  was brilliant and SO easy to use. Not only was the feature fantastic but the service was EVEN BETTER! The correspondence and back and forth between ordering stages, design, renderings and shipping were perfect. I felt comfortable and felt like I was in great hands with Liz and the team at VM.<\/p>",
               "name": "John",
               "store_name": "",
+              "link": "",
               "text_position": "center",
               "text_align": "center",
               "darken_bg": false
@@ -3297,6 +3299,7 @@
               "testimonial": "<p>I could not be more in love with my engagement ring from Valerie Madison! Liz and Valerie truly made finding the perfect ring such an easy and beautiful process. I couldn’t recommend this business more and we will definitely be returning soon to pick out our wedding bands!<\/p>",
               "name": "Jackie",
               "store_name": "",
+              "link": "",
               "text_position": "center",
               "text_align": "center",
               "darken_bg": false
@@ -3390,11 +3393,17 @@
             "settings": {
               "richtext_top": "",
               "image_caption_top": "",
+              "image_link_top": "",
               "menu_1": "",
+              "menu_1_link": "",
               "menu_2": "",
+              "menu_2_link": "",
               "menu_3": "",
+              "menu_3_link": "",
               "menu_4": "",
+              "menu_4_link": "",
               "image_caption_bottom": "",
+              "image_link_bottom": "",
               "richtext_bottom": ""
             }
           },
@@ -3403,11 +3412,17 @@
             "settings": {
               "richtext_top": "",
               "image_caption_top": "",
+              "image_link_top": "",
               "menu_1": "engagement-rings",
+              "menu_1_link": "",
               "menu_2": "",
+              "menu_2_link": "",
               "menu_3": "",
+              "menu_3_link": "",
               "menu_4": "",
+              "menu_4_link": "",
               "image_caption_bottom": "",
+              "image_link_bottom": "",
               "richtext_bottom": ""
             }
           },
@@ -3416,11 +3431,17 @@
             "settings": {
               "richtext_top": "",
               "image_caption_top": "",
+              "image_link_top": "",
               "menu_1": "wedding-bands",
+              "menu_1_link": "",
               "menu_2": "",
+              "menu_2_link": "",
               "menu_3": "",
+              "menu_3_link": "",
               "menu_4": "",
+              "menu_4_link": "",
               "image_caption_bottom": "",
+              "image_link_bottom": "",
               "richtext_bottom": ""
             }
           },
@@ -3429,11 +3450,17 @@
             "settings": {
               "richtext_top": "",
               "image_caption_top": "",
+              "image_link_top": "",
               "menu_1": "bands-for-him-them",
+              "menu_1_link": "",
               "menu_2": "",
+              "menu_2_link": "",
               "menu_3": "",
+              "menu_3_link": "",
               "menu_4": "",
+              "menu_4_link": "",
               "image_caption_bottom": "",
+              "image_link_bottom": "",
               "richtext_bottom": ""
             }
           },
@@ -3442,11 +3469,17 @@
             "settings": {
               "richtext_top": "",
               "image_caption_top": "",
+              "image_link_top": "",
               "menu_1": "",
+              "menu_1_link": "",
               "menu_2": "",
+              "menu_2_link": "",
               "menu_3": "",
+              "menu_3_link": "",
               "menu_4": "",
+              "menu_4_link": "",
               "image_caption_bottom": "",
+              "image_link_bottom": "",
               "richtext_bottom": ""
             }
           }
@@ -3470,11 +3503,17 @@
             "settings": {
               "richtext_top": "",
               "image_caption_top": "",
+              "image_link_top": "",
               "menu_1": "work-with-us",
+              "menu_1_link": "",
               "menu_2": "",
+              "menu_2_link": "",
               "menu_3": "",
+              "menu_3_link": "",
               "menu_4": "",
+              "menu_4_link": "",
               "image_caption_bottom": "",
+              "image_link_bottom": "",
               "richtext_bottom": ""
             }
           },
@@ -3483,11 +3522,17 @@
             "settings": {
               "richtext_top": "",
               "image_caption_top": "",
+              "image_link_top": "",
               "menu_1": "learn-with-us",
+              "menu_1_link": "",
               "menu_2": "",
+              "menu_2_link": "",
               "menu_3": "",
+              "menu_3_link": "",
               "menu_4": "",
+              "menu_4_link": "",
               "image_caption_bottom": "",
+              "image_link_bottom": "",
               "richtext_bottom": ""
             }
           },
@@ -3496,11 +3541,17 @@
             "settings": {
               "richtext_top": "",
               "image_caption_top": "",
+              "image_link_top": "",
               "menu_1": "visit-us",
+              "menu_1_link": "",
               "menu_2": "",
+              "menu_2_link": "",
               "menu_3": "",
+              "menu_3_link": "",
               "menu_4": "",
+              "menu_4_link": "",
               "image_caption_bottom": "",
+              "image_link_bottom": "",
               "richtext_bottom": ""
             }
           },
@@ -3510,11 +3561,17 @@
               "richtext_top": "",
               "image_top": "shopify:\/\/shop_images\/Madrona-Valerie-Madison.jpg",
               "image_caption_top": "Visit our lovely showroom in Seattle!",
+              "image_link_top": "",
               "menu_1": "",
+              "menu_1_link": "",
               "menu_2": "",
+              "menu_2_link": "",
               "menu_3": "",
+              "menu_3_link": "",
               "menu_4": "",
+              "menu_4_link": "",
               "image_caption_bottom": "",
+              "image_link_bottom": "",
               "richtext_bottom": ""
             }
           }
@@ -3613,6 +3670,7 @@
               "heading_size": "regular_text",
               "text": "",
               "button_label": "",
+              "button_link": "",
               "align_text": "center",
               "border_style": "none"
             }
@@ -3626,6 +3684,7 @@
               "heading_size": "regular_text",
               "text": "",
               "button_label": "",
+              "button_link": "",
               "align_text": "center",
               "border_style": "none"
             }
@@ -3639,6 +3698,7 @@
               "heading_size": "regular_text",
               "text": "",
               "button_label": "",
+              "button_link": "",
               "align_text": "center",
               "border_style": "none"
             }
@@ -3681,6 +3741,7 @@
           "button1_link": "shopify:\/\/pages\/custom",
           "button1_highlight": true,
           "button2": "",
+          "button2_link": "",
           "button2_highlight": false,
           "text_position": "center",
           "text_align": "center",
@@ -4444,11 +4505,17 @@
             "settings": {
               "richtext_top": "",
               "image_caption_top": "",
+              "image_link_top": "",
               "menu_1": "custom-designs",
+              "menu_1_link": "",
               "menu_2": "",
+              "menu_2_link": "",
               "menu_3": "",
+              "menu_3_link": "",
               "menu_4": "",
+              "menu_4_link": "",
               "image_caption_bottom": "",
+              "image_link_bottom": "",
               "richtext_bottom": ""
             }
           },
@@ -4457,11 +4524,17 @@
             "settings": {
               "richtext_top": "",
               "image_caption_top": "",
+              "image_link_top": "",
               "menu_1": "custom-heirloom",
+              "menu_1_link": "",
               "menu_2": "",
+              "menu_2_link": "",
               "menu_3": "",
+              "menu_3_link": "",
               "menu_4": "",
+              "menu_4_link": "",
               "image_caption_bottom": "",
+              "image_link_bottom": "",
               "richtext_bottom": ""
             }
           }
@@ -4548,11 +4621,17 @@
             "settings": {
               "richtext_top": "",
               "image_caption_top": "",
+              "image_link_top": "",
               "menu_1": "",
+              "menu_1_link": "",
               "menu_2": "",
+              "menu_2_link": "",
               "menu_3": "",
+              "menu_3_link": "",
               "menu_4": "",
+              "menu_4_link": "",
               "image_caption_bottom": "",
+              "image_link_bottom": "",
               "richtext_bottom": ""
             }
           },
@@ -4561,11 +4640,17 @@
             "settings": {
               "richtext_top": "",
               "image_caption_top": "",
+              "image_link_top": "",
               "menu_1": "featured",
+              "menu_1_link": "",
               "menu_2": "",
+              "menu_2_link": "",
               "menu_3": "",
+              "menu_3_link": "",
               "menu_4": "",
+              "menu_4_link": "",
               "image_caption_bottom": "",
+              "image_link_bottom": "",
               "richtext_bottom": ""
             }
           },
@@ -4574,11 +4659,17 @@
             "settings": {
               "richtext_top": "",
               "image_caption_top": "",
+              "image_link_top": "",
               "menu_1": "shop-by-style",
+              "menu_1_link": "",
               "menu_2": "",
+              "menu_2_link": "",
               "menu_3": "",
+              "menu_3_link": "",
               "menu_4": "",
+              "menu_4_link": "",
               "image_caption_bottom": "",
+              "image_link_bottom": "",
               "richtext_bottom": ""
             }
           },
@@ -4587,11 +4678,17 @@
             "settings": {
               "richtext_top": "",
               "image_caption_top": "",
+              "image_link_top": "",
               "menu_1": "by-occasion",
+              "menu_1_link": "",
               "menu_2": "",
+              "menu_2_link": "",
               "menu_3": "",
+              "menu_3_link": "",
               "menu_4": "",
+              "menu_4_link": "",
               "image_caption_bottom": "",
+              "image_link_bottom": "",
               "richtext_bottom": ""
             }
           },
@@ -4600,11 +4697,17 @@
             "settings": {
               "richtext_top": "",
               "image_caption_top": "",
+              "image_link_top": "",
               "menu_1": "",
+              "menu_1_link": "",
               "menu_2": "",
+              "menu_2_link": "",
               "menu_3": "",
+              "menu_3_link": "",
               "menu_4": "",
+              "menu_4_link": "",
               "image_caption_bottom": "",
+              "image_link_bottom": "",
               "richtext_bottom": ""
             }
           }
@@ -4628,15 +4731,40 @@
             "settings": {
               "image": "shopify:\/\/shop_images\/Prism_Banner.jpg",
               "pretext": "",
-              "title": "Feeling the love",
+              "title": "Spread the love",
               "subtitle": "",
               "caption_background": false,
               "caption_background_transparency": false,
               "button1": "Wedding Bands for Everyone",
+              "button1_link": "shopify:\/\/collections\/all-wedding-bands",
               "button1_highlight": false,
               "button2": "",
+              "button2_link": "",
               "button2_highlight": false,
               "text_position": "left",
+              "text_align": "center",
+              "mobile_image_crop": "none",
+              "is_timed_slide": false,
+              "start_datetime": "",
+              "end_datetime": ""
+            }
+          },
+          "f0b19f6a-5bbe-48b9-b5ce-017550ab678e": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Turquoise_Rings.jpg",
+              "pretext": "<p>Dip your fingers into<\/p>",
+              "title": "Turquoise Waters",
+              "subtitle": "",
+              "caption_background": false,
+              "caption_background_transparency": false,
+              "button1": "Shop now",
+              "button1_link": "shopify:\/\/collections\/new-arrivals",
+              "button1_highlight": false,
+              "button2": "",
+              "button2_link": "",
+              "button2_highlight": false,
+              "text_position": "right",
               "text_align": "center",
               "mobile_image_crop": "none",
               "is_timed_slide": false,
@@ -4657,6 +4785,7 @@
               "button1_link": "shopify:\/\/collections\/new-arrivals",
               "button1_highlight": false,
               "button2": "",
+              "button2_link": "",
               "button2_highlight": false,
               "text_position": "left",
               "text_align": "right",
@@ -4676,8 +4805,10 @@
               "caption_background": false,
               "caption_background_transparency": false,
               "button1": "New Salt & Pepper Diamonds",
+              "button1_link": "https:\/\/www.valeriemadison.com\/collections\/diamond-rings\/salt-and-pepper-diamond?sort_by=created-descending",
               "button1_highlight": false,
               "button2": "",
+              "button2_link": "",
               "button2_highlight": false,
               "text_position": "right",
               "text_align": "right",
@@ -4690,6 +4821,7 @@
         },
         "block_order": [
           "cc7eade9-7e3b-4a9d-83b9-93ae59499236",
+          "f0b19f6a-5bbe-48b9-b5ce-017550ab678e",
           "1ed12cac-9bf7-47c3-ba50-3b5c4a988477",
           "22db3eda-fa94-416d-8f49-33b0de481bdf"
         ],
@@ -4711,11 +4843,17 @@
             "settings": {
               "richtext_top": "",
               "image_caption_top": "",
+              "image_link_top": "",
               "menu_1": "",
+              "menu_1_link": "",
               "menu_2": "",
+              "menu_2_link": "",
               "menu_3": "",
+              "menu_3_link": "",
               "menu_4": "",
+              "menu_4_link": "",
               "image_caption_bottom": "",
+              "image_link_bottom": "",
               "richtext_bottom": ""
             }
           }
@@ -5107,31 +5245,36 @@
           "1591661011742-3": {
             "type": "logo_image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/popsugar-logo-pink-768x163.jpg"
+              "image": "shopify:\/\/shop_images\/popsugar-logo-pink-768x163.jpg",
+              "link": ""
             }
           },
           "1591661117785": {
             "type": "logo_image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/Allure_Logo_200x_cropped_a1a21f03-9c1e-4234-a88a-01b6837fe515.png"
+              "image": "shopify:\/\/shop_images\/Allure_Logo_200x_cropped_a1a21f03-9c1e-4234-a88a-01b6837fe515.png",
+              "link": ""
             }
           },
           "1591661011742-0": {
             "type": "logo_image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/Forbes_Logo.png"
+              "image": "shopify:\/\/shop_images\/Forbes_Logo.png",
+              "link": ""
             }
           },
           "1593628381419": {
             "type": "logo_image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/instyle-logo-1.png"
+              "image": "shopify:\/\/shop_images\/instyle-logo-1.png",
+              "link": ""
             }
           },
           "c7baa2c9-f1b7-4302-89b6-1f5535ec9558": {
             "type": "logo_image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/vogue_logo.png"
+              "image": "shopify:\/\/shop_images\/vogue_logo.png",
+              "link": ""
             }
           }
         },
@@ -5205,7 +5348,7 @@
             "type": "featured-ring",
             "settings": {
               "image": "shopify:\/\/shop_images\/5601_Cody_Scott.jpg",
-              "job_title": "2.4ct Round Cut Diamond Ella Engagement Ring",
+              "job_title": "2.53ct Round Cut Diamond Ella Engagement Ring",
               "description": "",
               "link_url": "mailto:custom@valeriemadison.com?subject=1.05ct Eva Brown Square Diamond Engagement Ring with Pavé Diamonds&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
               "link_title": "Click here to send this as inspiration for your custom order"
@@ -5657,7 +5800,7 @@
           "35caa73a-11f1-4d08-93a4-0b42716a4a49": {
             "type": "employee",
             "settings": {
-              "image": "shopify:\/\/shop_images\/Adriana_400x600_fc5c45bd-e232-4386-8fd4-18c361c3bb96.jpg",
+              "image": "shopify:\/\/shop_images\/Adriana_Ortiz_Staff_Photo.jpg",
               "title": "Adriana Ortiz",
               "job_title": "Digital Marketing Specialist",
               "description": "<p>I love that my job combines building community through digital media and getting to play with beautiful sparkling things. I’m excited to bring an analytic and strategic mindset to Valerie Madison Jewelry’s digital presence while working alongside such kind humans. Outside of work you’ll find me probably on my couch watching something sappy, reading, scrolling TikTok and\/or shopping for shoes online.<\/p>",
