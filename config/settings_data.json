@@ -4150,8 +4150,10 @@
               "text_position": "left",
               "text_align": "left",
               "button1": "",
+              "button1_link": "",
               "button1_highlight": false,
               "button2": "",
+              "button2_link": "",
               "button2_highlight": false
             }
           }
@@ -4162,7 +4164,7 @@
         "settings": {
           "show_banner": true,
           "default_page_width": 90,
-          "image": "shopify:\/\/shop_images\/IMG_3425.JPG",
+          "image": "shopify:\/\/shop_images\/Storefront_3.jpg",
           "pretext": "",
           "title": "",
           "subtitle": "",
@@ -4171,8 +4173,10 @@
           "text_position": "center",
           "text_align": "center",
           "button1": "",
+          "button1_link": "",
           "button1_highlight": false,
           "button2": "",
+          "button2_link": "",
           "button2_highlight": false
         }
       },
@@ -4726,17 +4730,40 @@
       "1552235156499": {
         "type": "slideshow",
         "blocks": {
-          "cc7eade9-7e3b-4a9d-83b9-93ae59499236": {
+          "64437903-428d-4f4e-96b3-7ced4c3a99f5": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/Prism_Banner.jpg",
-              "pretext": "",
-              "title": "Feeling the love",
+              "image": "shopify:\/\/shop_images\/DSC_7020.jpg",
+              "pretext": "<p>Shades of refreshing teal <\/p>",
+              "title": "Sapphire Summer",
               "subtitle": "",
               "caption_background": false,
               "caption_background_transparency": false,
-              "button1": "Wedding Bands for Everyone",
-              "button1_link": "",
+              "button1": "Shop now",
+              "button1_link": "shopify:\/\/collections\/new-arrivals",
+              "button1_highlight": false,
+              "button2": "",
+              "button2_link": "",
+              "button2_highlight": false,
+              "text_position": "left",
+              "text_align": "left",
+              "mobile_image_crop": "none",
+              "is_timed_slide": false,
+              "start_datetime": "",
+              "end_datetime": ""
+            }
+          },
+          "5ee03ec4-ab57-4a98-a96a-5c779998b5fa": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Gemstones---teal-in-tray.jpg",
+              "pretext": "<p>Design Your Own Ring with Our<\/p>",
+              "title": "Vibrant New Gems",
+              "subtitle": "",
+              "caption_background": false,
+              "caption_background_transparency": false,
+              "button1": "Choose your gem",
+              "button1_link": "https:\/\/www.valeriemadison.com\/collections\/create-your-own-diamond-or-gemstone-ring",
               "button1_highlight": false,
               "button2": "",
               "button2_link": "",
@@ -4753,9 +4780,9 @@
             "type": "image",
             "settings": {
               "image": "shopify:\/\/shop_images\/Juicy_Gemstones_copy.jpg",
-              "pretext": "",
+              "pretext": "<p>Vibrant colorful stones<\/p>",
               "title": "Juicy Gems",
-              "subtitle": "<p>Vibrant colorful stones<\/p>",
+              "subtitle": "",
               "caption_background": false,
               "caption_background_transparency": false,
               "button1": "Shop now",
@@ -4771,35 +4798,12 @@
               "start_datetime": "",
               "end_datetime": ""
             }
-          },
-          "22db3eda-fa94-416d-8f49-33b0de481bdf": {
-            "type": "image",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/FRF_-_Salt_and_Pepper_Diamond_Engagement_Rings.jpg",
-              "pretext": "",
-              "title": "Fresh off the bench",
-              "subtitle": "",
-              "caption_background": false,
-              "caption_background_transparency": false,
-              "button1": "New Salt & Pepper Diamonds",
-              "button1_link": "",
-              "button1_highlight": false,
-              "button2": "",
-              "button2_link": "",
-              "button2_highlight": false,
-              "text_position": "right",
-              "text_align": "right",
-              "mobile_image_crop": "none",
-              "is_timed_slide": false,
-              "start_datetime": "",
-              "end_datetime": ""
-            }
           }
         },
         "block_order": [
-          "cc7eade9-7e3b-4a9d-83b9-93ae59499236",
-          "1ed12cac-9bf7-47c3-ba50-3b5c4a988477",
-          "22db3eda-fa94-416d-8f49-33b0de481bdf"
+          "64437903-428d-4f4e-96b3-7ced4c3a99f5",
+          "5ee03ec4-ab57-4a98-a96a-5c779998b5fa",
+          "1ed12cac-9bf7-47c3-ba50-3b5c4a988477"
         ],
         "settings": {
           "wide_display": true,
@@ -4807,7 +4811,7 @@
           "slideshow_animation": "slide",
           "slideshow_speed": 5,
           "activate_adaptiveHeight": false,
-          "mobile_text_below_image": true,
+          "mobile_text_below_image": false,
           "mobile_text_color": ""
         }
       },
@@ -5324,7 +5328,7 @@
             "type": "featured-ring",
             "settings": {
               "image": "shopify:\/\/shop_images\/5601_Cody_Scott.jpg",
-              "job_title": "2.4ct Round Cut Diamond Ella Engagement Ring",
+              "job_title": "2.53ct Round Cut Diamond Ella Engagement Ring",
               "description": "",
               "link_url": "mailto:custom@valeriemadison.com?subject=1.05ct Eva Brown Square Diamond Engagement Ring with Pavé Diamonds&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
               "link_title": "Click here to send this as inspiration for your custom order"
@@ -5776,7 +5780,7 @@
           "35caa73a-11f1-4d08-93a4-0b42716a4a49": {
             "type": "employee",
             "settings": {
-              "image": "shopify:\/\/shop_images\/Adriana_400x600_fc5c45bd-e232-4386-8fd4-18c361c3bb96.jpg",
+              "image": "shopify:\/\/shop_images\/Adriana_Ortiz_Staff_Photo.jpg",
               "title": "Adriana Ortiz",
               "job_title": "Digital Marketing Specialist",
               "description": "<p>I love that my job combines building community through digital media and getting to play with beautiful sparkling things. I’m excited to bring an analytic and strategic mindset to Valerie Madison Jewelry’s digital presence while working alongside such kind humans. Outside of work you’ll find me probably on my couch watching something sappy, reading, scrolling TikTok and\/or shopping for shoes online.<\/p>",
