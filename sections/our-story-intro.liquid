@@ -1,8 +1,13 @@
 <div class="content-section content-section--our-story--intro">
   <div class="container">
-    <div class="eight columns offset-by-four">
+    <div class="eight columns offset-by-four medium-down--one-whole medium-down--offset-by-zero">
       <h1>{{ section.settings.title }}</h1>
+      
       <p class="paragraph--block-text">{{ section.settings.content }}</p>
+
+      <div class="icon-wrapper">
+        <img src="{{ section.settings.icon | img_url : "300x" }}">
+      </div>
     </div>
   </div>
 </div>
@@ -22,6 +27,11 @@
       "label": "Content",
       "type": "textarea",
       "default": "Whether it’s proposing to the love of your life, marking a special occasion in gold, or truly treating yourself with a gem as amazing as you are, we’re here for it. With an eye for balance, durability, and function, Valerie's inspiration comes from the beautiful spectrum of colors of diamonds and gemstones she sources as well as the geometry and shapes they come in. All jewelry tells a story and we believe in fine jewelry as an expression of the desire to decorate oneself with metals and jewels that reflect the love and style you want to reflect outwards."
+    },
+    {
+      "id": "icon",
+      "label": "Icon",
+      "type": "image_picker"
     }
   ]
 }

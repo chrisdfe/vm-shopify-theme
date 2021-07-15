@@ -1,6 +1,6 @@
 <div class="content-section content-section--our-story--team">
   <div class="container">
-    <div class="eight columns offset-by-four">
+    <div class="eight columns offset-by-four medium-down--one-whole medium-down--offset-by-zero">
       <div class="our-story__our-team-intro">
         {% include "content-section.title" with {
           title: section.settings.title | escape,
@@ -15,7 +15,7 @@
 
   <div class="container">
     {% for block in section.blocks %}
-      <div class="eight columns">
+      <div class="eight columns medium-down--one-whole">
         <div class="our-story__team-member">
           <div class="our-story__team-member__image-wrapper">
             <img src="{{ block.settings.image | img_url : "400x" }}">
@@ -30,12 +30,14 @@
               {{ block.settings.job_title }}
             </h5>
 
-            <p>
+            <p class="paragraph-3">
               {{ block.settings.description }}
             </p>
           </div>
         </div>
       </div>
+
+      {% cycle '', '<br class="clear product_clear" />' %}
     {% endfor %}
   </div>
 

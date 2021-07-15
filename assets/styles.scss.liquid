@@ -970,7 +970,6 @@ img[data-sizes="100vw"] {
 }
 
 @mixin container-column-generator($breakpoint: '') {
-
     /* Base Grid */
     .#{$breakpoint}one                      { width: calc(#{percentage(1 / 16)} - #{$gutter});}
     .#{$breakpoint}two                     { width: calc(#{percentage(2 / 16)} - #{$gutter});}
@@ -1155,7 +1154,6 @@ img[data-sizes="100vw"] {
           }
         }
       }
-
     }
 
     .equal-columns--outside-trim {
@@ -1329,6 +1327,29 @@ img[data-sizes="100vw"] {
     }
 }
 
+@mixin grid-push-generator($breakpoint: "") {
+  $prefix: "#{$breakpoint}--";
+
+  @include respond-to($breakpoint) {
+    .#{$prefix}offset-by-zero                  { margin-left: calc(#{$gutter} / 2); }
+    .#{$prefix}offset-by-one                   { margin-left: calc(#{percentage(1 / 16)}); }
+    .#{$prefix}offset-by-two                   { margin-left: calc(#{percentage(2 / 16)}); }
+    .#{$prefix}offset-by-three                 { margin-left: calc(#{percentage(3 / 16)}); }
+    .#{$prefix}offset-by-four                  { margin-left: calc(#{percentage(4 / 16)}); }
+    .#{$prefix}offset-by-five                  { margin-left: calc(#{percentage(5 / 16)}); }
+    .#{$prefix}offset-by-six                   { margin-left: calc(#{percentage(6 / 16)}); }
+    .#{$prefix}offset-by-seven                 { margin-left: calc(#{percentage(7 / 16)}); }
+    .#{$prefix}offset-by-eight                 { margin-left: calc(#{percentage(8 / 16)}); }
+    .#{$prefix}offset-by-nine                  { margin-left: calc(#{percentage(9 / 16)}); }
+    .#{$prefix}offset-by-ten                   { margin-left: calc(#{percentage(10 / 16)}); }
+    .#{$prefix}offset-by-eleven                { margin-left: calc(#{percentage(11 / 16)}); }
+    .#{$prefix}offset-by-twelve                { margin-left: calc(#{percentage(12 / 16)}); }
+    .#{$prefix}offset-by-thirteen              { margin-left: calc(#{percentage(13 / 16)}); }
+    .#{$prefix}offset-by-fourteen              { margin-left: calc(#{percentage(14 / 16)}); }
+    .#{$prefix}offset-by-fifteen               { margin-left: calc(#{percentage(15 / 16)}); }
+  }
+}
+
 /*================ Build Base Grid Classes ================*/
 @include container-column-generator();
 @include responsive-display-helper();
@@ -1341,7 +1362,7 @@ img[data-sizes="100vw"] {
     - Will not work if `styles/global/grid.scss` is removed
 ==============================================================================*/
 $breakpoint-has-widths: ($large-down, $medium-down, $small-down);
-$breakpoint-has-push: ();
+$breakpoint-has-push: ($medium-down);
 
 // /*================ Build Responsive Grid Classes ================*/
 @each $breakpoint in $breakpoint-has-widths {
@@ -1349,13 +1370,6 @@ $breakpoint-has-push: ();
     @include container-column-generator('#{$breakpoint}--');
     @include responsive-display-helper('#{$breakpoint}--');
     @include responsive-text-align-helper('#{$breakpoint}--');
-  }
-}
-
-// /*================ Build Grid Push Classes ================*/
-@each $breakpoint in $breakpoint-has-push {
-  @include respond-to($breakpoint) {
-    @include grid-push-generator('#{$breakpoint}--');
   }
 }
 
@@ -1509,8 +1523,34 @@ $breakpoint-has-push: ();
   }
 }
 
+// //Styles applied only on larger screen sizes
+// @include respond-to('small-up'){
+//   /* Nested Column Classes */
+//   .column.alpha, .columns.alpha               { margin-left: 0; }
+//   .column.omega, .columns.omega               { margin-right: 0; }
+
+//   /* Offsets */
+//   .offset-by-one                   { margin-left: calc(#{percentage(1 / 16)});}
+//   .offset-by-two                   { margin-left: calc(#{percentage(2 / 16)});}
+//   .offset-by-three                 { margin-left: calc(#{percentage(3 / 16)});}
+//   .offset-by-four                  { margin-left: calc(#{percentage(4 / 16)});}
+//   .offset-by-five                  { margin-left: calc(#{percentage(5 / 16)});}
+//   .offset-by-six                   { margin-left: calc(#{percentage(6 / 16)});}
+//   .offset-by-seven                 { margin-left: calc(#{percentage(7 / 16)});}
+//   .offset-by-eight                 { margin-left: calc(#{percentage(8 / 16)});}
+//   .offset-by-nine                  { margin-left: calc(#{percentage(9 / 16)});}
+//   .offset-by-ten                   { margin-left: calc(#{percentage(10 / 16)});}
+//   .offset-by-eleven                { margin-left: calc(#{percentage(11 / 16)});}
+//   .offset-by-twelve                { margin-left: calc(#{percentage(12 / 16)});}
+//   .offset-by-thirteen              { margin-left: calc(#{percentage(13 / 16)});}
+//   .offset-by-fourteen              { margin-left: calc(#{percentage(14 / 16)});}
+//   .offset-by-fifteen               { margin-left: calc(#{percentage(15 / 16)});}
+// }
+
+// /*================ Build Grid Push Classes ================*/
+
 //Styles applied only on larger screen sizes
-@include respond-to('small-up'){
+@include respond-to('small-up') {
   /* Nested Column Classes */
   .column.alpha, .columns.alpha               { margin-left: 0; }
   .column.omega, .columns.omega               { margin-right: 0; }
@@ -1531,6 +1571,12 @@ $breakpoint-has-push: ();
   .offset-by-thirteen              { margin-left: calc(#{percentage(13 / 16)});}
   .offset-by-fourteen              { margin-left: calc(#{percentage(14 / 16)});}
   .offset-by-fifteen               { margin-left: calc(#{percentage(15 / 16)});}
+}
+
+@each $breakpoint in $breakpoint-has-push {
+  @include respond-to($breakpoint) {
+    @include grid-push-generator($breakpoint);
+  }
 }
 
 /* #Typography
@@ -1591,6 +1637,35 @@ h3,
     width: 30px;
     background-color: $vm-heading-accent-color;
   } 
+
+  &.heading--with-accent--align-center {
+    text-align: center;
+    
+    &:after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  @include respond-to("small-down") {
+    &.heading--with-accent--mobile-align-left {
+      text-align: left;
+
+      &:after {
+        left: 0.25rem;
+        transform: translateX(0);
+      }
+    }
+
+    &.heading--with-accent--mobile-align-center {
+      text-align: center;
+
+      &:after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
 }
  
 
@@ -13512,7 +13587,6 @@ p.close{position:absolute;right:6px;top:-2px;cursor:pointer}
 }
 
 .content-section__title-wrapper {
-  // @include clearfix();
   display: flex;
   align-items: baseline;
   justify-content: space-between;
@@ -13542,24 +13616,31 @@ p.close{position:absolute;right:6px;top:-2px;cursor:pointer}
     }
   }
 
-  
   @include respond-to('medium-down') {
-    // flex-direction: column;
-
-    // .content-section__title {
-    //   margin-bottom: 3rem;
-    // }
 
     .content-section__title-link {
       @include vm-subheading-3();
     }
   }
   
-
-  &.content-section__title-wrapper--centered {
+  &.content-section__title-wrapper--align-center {
     text-align: center;
     align-items: center;
     justify-content: center;
+  }
+
+  @include respond-to("small-down") {
+    &.content-section__title-wrapper--mobile-align-left {
+      text-align: left;
+      align-items: baseline;
+      justify-content: space-between;
+    }
+
+    &.content-section__title-wrapper--mobile-align-center {
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+    }
   }
 }
 
@@ -13781,76 +13862,234 @@ section.image-list {
 /* # VM page - Our Story
 ================================================== */
 
-.page-our-story {}
+.page-our-story {
+
+  .content-section {
+    padding: 7rem 0;
+    
+    @include respond-to('small-down') {
+      padding: 5rem 0;
+    }
+  }
+}
 
 .content-section.content-section--our-story--intro {
   background-color: $vm-color-cream;
+  // padding: 9rem 0;
+  
+  .icon-wrapper {
+    padding: 3rem 0 0;
+    text-align: center;
+    
+    img {
+      height: 150px;
+    }
+  }
+  
+  @include respond-to("small-down") {
+    padding-top: $vm-content-section-padding;
+    padding-bottom: $vm-content-section-padding;
+
+    .icon-wrapper {
+      // padding: 1rem 0 0;
+      
+      img {
+        height: 100px;
+      }
+    }
+  }
 }
 
-.content-section.content-section--our-story--timeline {
-  background-color: $vm-color-cream;
+.content-section.content-section--our-story--our-history {
+
 }
 
-.content-section.content-section--our-story--team {
-  background-color: $vm-color-cream;
-}
-
-.our-story__team-member {
+.our-story__timeline {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
+
+$our-story-timeline-border-width: 2px;
+$our-story-timeline-border-color: $vm-color-sand;
+$our-story-timeline-event-line-width: 3.5rem;
+$our-story-timeline-event-line-top: 3.5rem;
 
 .our-story__timeline-event {
   position: relative;
-  width: 50%;
-  border-right: 2px solid $vm-color-sand;
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+  width: calc(50% + #{$our-story-timeline-border-width});
+  border-right: $our-story-timeline-border-width solid $our-story-timeline-border-color;
+  flex-grow: 0;
+  flex-shrink: 0;
+  text-align: right;
 
-  &:after {
+  // event line
+  &:before {
     content: "";
     position: absolute;
-    top: 50%;
+    top: $our-story-timeline-event-line-top;
     right: 0;
-    border-bottom: 2px solid $vm-color-sand;
-    width: 1rem;
+    border-bottom: $our-story-timeline-border-width solid $our-story-timeline-border-color;
+    width: $our-story-timeline-event-line-width;
   }
 
-  h4 {
-    margin-bottom: 0;
+  // circle
+  &:after {
+    content: "";
+    $circle-size: 7px;
+    position: absolute;
+    top: calc(#{$our-story-timeline-event-line-top} - #{($circle-size / 2) - ($our-story-timeline-border-width / 2)});
+    right: $our-story-timeline-event-line-width;
+    width: $circle-size;
+    height: $circle-size;
+    border-radius: $circle-size;
+    background-color: $our-story-timeline-border-color;
   }
   
-  &.our-story__timeline-event--odd {
-    margin-left: calc(50% - 2px);
-    border-right: 0;
-    border-left: 2px solid $vm-color-sand;
+  &.our-story__timeline-event--even {
+    margin-left: 50%;
+    border-right: 0 solid transparent;
+    border-left: $our-story-timeline-border-width solid $our-story-timeline-border-color;
+    text-align: left;
+
+    &:before {
+      right: auto;
+      left: 0;
+    }
 
     &:after {
       right: auto;
-      left: 0;
+      left: $our-story-timeline-event-line-width;
+    }
+
+    .our-story__timeline-event__body {
+      margin-right: 0;
+      margin-left: 3rem;
     }
   }
   
   .our-story__timeline-event__body {
     padding: 2rem;
+    margin-right: 3rem;
   }
 
   .our-story__timeline-event__year-spacer {
     height: 3rem;
   }
+
+  @include respond-to("small-down") {
+    &.our-story__timeline-event {
+      width: auto;
+      text-align: left;
+      border-left: $our-story-timeline-border-width solid $our-story-timeline-border-color;
+      border-right: 0 solid transparent;
+      margin: 0;
+  
+      &:before {
+        right: auto;
+        left: 0;
+        width: #{$our-story-timeline-event-line-width - 1rem};
+      }
+      
+      &:after {
+        right: auto;
+        left: #{$our-story-timeline-event-line-width - 1rem};
+      }
+  
+      .our-story__timeline-event__body {
+        padding: 2rem 0 2rem 3rem;
+        margin: 0 0 0 1rem;
+      }
+    }
+  }
+}
+
+.our-story__timeline-past-dots,
+.our-story__timeline-future-dots {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  .our-story__timeline-past-dots__dot,
+  .our-story__timeline-future-dots__dot {
+    margin: 0.5rem 0 0;
+    width: $our-story-timeline-border-width;
+    height: $our-story-timeline-border-width;
+    border-radius: $our-story-timeline-border-width;
+    background-color: $our-story-timeline-border-color;
+    transform: translateX(#{$our-story-timeline-border-width / 2});
+  }
+
+  .our-story__timeline-past-dots__dot {
+    margin: 0 0 0.5rem;
+  }
+
+  .our-story__timeline-future-dots__dot {
+    margin: 0.5rem 0 0;
+  }
+
+  @include respond-to("small-down") {
+    align-items: flex-start;
+
+    .our-story__timeline-past-dots__dot,
+    .our-story__timeline-future-dots__dot {
+      transform: translateX(0);
+    }
+  }
+}
+
+.content-section.content-section--our-story--pillars {
+  background-color: $vm-color-cream;
 }
 
 .our-story__pillar {
+  padding: 0 0.5rem;
 
   .our-story__pillar__image-wrapper {
-
+    text-align: center;
+    margin-bottom: 1.5rem;
+    
+    img {
+      height: 150px;
+    }
   }
   
   h4 {
     margin: 1rem 0;
   }
+
+  @include respond-to("small-down") {
+    padding: 0;
+    margin-bottom: 5rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    img {
+      height: 100px;
+    }
+  }
 }
+
+.content-section.content-section--our-story--team {
+  // background-color: $vm-color-cream;
+}
+
 
 .our-story__our-team-intro {
   margin-bottom: 7rem;
+
+  @include respond-to("small-down") {
+    margin-bottom: $vm-content-section-mobile-padding;
+  }
+}
+
+.our-story__team-member {
+  display: flex;
+  flex-direction: row;
 }
 
 .our-story__team-member {
@@ -13874,8 +14113,24 @@ section.image-list {
   padding-top: 60%;
 }
 
+.content-section.content-section--our-story--visit-store {
+  background-color: $vm-color-cream;
+
+  .container {
+    padding: 0 10%;
+    
+    @include respond-to('small-down') {
+      padding: 0;
+    }
+  }
+}
+
 .our-story__store-map-wrapper {
   margin-bottom: 5rem;
+  
+  @include respond-to("small-down") {
+    margin-bottom: 2rem;
+  }
 }
 
 .our-story__store-map-body {

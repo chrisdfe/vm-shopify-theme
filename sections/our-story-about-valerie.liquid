@@ -1,6 +1,6 @@
 <div class="content-section content-section--our-story--about-valerie">
   <div class="container">
-    <div class="twelve columns offset-by-two">
+    <div class="twelve columns offset-by-two medium-down--one-whole medium-down--offset-by-zero">
       {% include "content-section.title" with {
         title: section.settings.title | escape,
       } %}
@@ -8,13 +8,13 @@
   </div>
 
   <div class="container">
-    <div class="six columns offset-by-two">  
+    <div class="six columns offset-by-two medium-down--eight medium-down--offset-by-zero">  
       {% if section.settings.content %}
         <p class="paragraph--block-text">{{ section.settings.content }}</p>
       {% endif %}
     </div>
     
-    <div class="six columns">
+    <div class="six medium-down--eight columns">
       {% if section.settings.image %}
         <img src="{{ section.settings.image | img_url: '800x' }}">
       {% endif %}
