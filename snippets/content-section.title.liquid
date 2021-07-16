@@ -1,11 +1,8 @@
-{% assign heading_align = heading_align | default: "left" %}
-{% assign mobile_heading_align = mobile_heading_align | default: "left" %}
-
 <div class="content-section__heading">
   
-  <div class="content-section__title-wrapper content-section__title-wrapper--align-{{ heading_align }} content-section__title-wrapper--mobile-align-{{ mobile_heading_align }}">
+  <div class="content-section__title-wrapper">
     {% if title != blank %}
-      <h2 class="content-section__title heading--with-accent heading--with-accent--align-{{ heading_align }} heading--with-accent--mobile-align-{{ mobile_heading_align }}">{{ title }}</h2>
+      <h2 class="content-section__title heading--with-accent">{{ title }}</h2>
     {% endif %}
 
     {% if title_link != blank and title_link_text != blank %}
