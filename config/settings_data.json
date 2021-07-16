@@ -3273,6 +3273,7 @@
               "testimonial": "<p>Ring was ready ahead of schedule and was absolutely perfect. Love that there&#x27;s a company that does such quality work with eco-friendliness in mind!<\/p>",
               "name": "Evan",
               "store_name": "",
+              "link": "",
               "text_position": "center",
               "text_align": "center",
               "darken_bg": false
@@ -3285,6 +3286,7 @@
               "testimonial": "<p>The &quot;Design Your Own&quot; feature  was brilliant and SO easy to use. Not only was the feature fantastic but the service was EVEN BETTER! The correspondence and back and forth between ordering stages, design, renderings and shipping were perfect. I felt comfortable and felt like I was in great hands with Liz and the team at VM.<\/p>",
               "name": "John",
               "store_name": "",
+              "link": "",
               "text_position": "center",
               "text_align": "center",
               "darken_bg": false
@@ -3297,6 +3299,7 @@
               "testimonial": "<p>I could not be more in love with my engagement ring from Valerie Madison! Liz and Valerie truly made finding the perfect ring such an easy and beautiful process. I couldn’t recommend this business more and we will definitely be returning soon to pick out our wedding bands!<\/p>",
               "name": "Jackie",
               "store_name": "",
+              "link": "",
               "text_position": "center",
               "text_align": "center",
               "darken_bg": false
@@ -3390,11 +3393,17 @@
             "settings": {
               "richtext_top": "",
               "image_caption_top": "",
+              "image_link_top": "",
               "menu_1": "",
+              "menu_1_link": "",
               "menu_2": "",
+              "menu_2_link": "",
               "menu_3": "",
+              "menu_3_link": "",
               "menu_4": "",
+              "menu_4_link": "",
               "image_caption_bottom": "",
+              "image_link_bottom": "",
               "richtext_bottom": ""
             }
           },
@@ -3403,11 +3412,17 @@
             "settings": {
               "richtext_top": "",
               "image_caption_top": "",
+              "image_link_top": "",
               "menu_1": "engagement-rings",
+              "menu_1_link": "",
               "menu_2": "",
+              "menu_2_link": "",
               "menu_3": "",
+              "menu_3_link": "",
               "menu_4": "",
+              "menu_4_link": "",
               "image_caption_bottom": "",
+              "image_link_bottom": "",
               "richtext_bottom": ""
             }
           },
@@ -3416,11 +3431,17 @@
             "settings": {
               "richtext_top": "",
               "image_caption_top": "",
+              "image_link_top": "",
               "menu_1": "wedding-bands",
+              "menu_1_link": "",
               "menu_2": "",
+              "menu_2_link": "",
               "menu_3": "",
+              "menu_3_link": "",
               "menu_4": "",
+              "menu_4_link": "",
               "image_caption_bottom": "",
+              "image_link_bottom": "",
               "richtext_bottom": ""
             }
           },
@@ -3429,11 +3450,17 @@
             "settings": {
               "richtext_top": "",
               "image_caption_top": "",
+              "image_link_top": "",
               "menu_1": "bands-for-him-them",
+              "menu_1_link": "",
               "menu_2": "",
+              "menu_2_link": "",
               "menu_3": "",
+              "menu_3_link": "",
               "menu_4": "",
+              "menu_4_link": "",
               "image_caption_bottom": "",
+              "image_link_bottom": "",
               "richtext_bottom": ""
             }
           },
@@ -3442,11 +3469,17 @@
             "settings": {
               "richtext_top": "",
               "image_caption_top": "",
+              "image_link_top": "",
               "menu_1": "",
+              "menu_1_link": "",
               "menu_2": "",
+              "menu_2_link": "",
               "menu_3": "",
+              "menu_3_link": "",
               "menu_4": "",
+              "menu_4_link": "",
               "image_caption_bottom": "",
+              "image_link_bottom": "",
               "richtext_bottom": ""
             }
           }
@@ -3470,11 +3503,17 @@
             "settings": {
               "richtext_top": "",
               "image_caption_top": "",
-              "menu_1": "work-with-us",
+              "image_link_top": "",
+              "menu_1": "",
+              "menu_1_link": "",
               "menu_2": "",
+              "menu_2_link": "",
               "menu_3": "",
+              "menu_3_link": "",
               "menu_4": "",
+              "menu_4_link": "",
               "image_caption_bottom": "",
+              "image_link_bottom": "",
               "richtext_bottom": ""
             }
           },
@@ -3483,11 +3522,17 @@
             "settings": {
               "richtext_top": "",
               "image_caption_top": "",
+              "image_link_top": "",
               "menu_1": "learn-with-us",
+              "menu_1_link": "",
               "menu_2": "",
+              "menu_2_link": "",
               "menu_3": "",
+              "menu_3_link": "",
               "menu_4": "",
+              "menu_4_link": "",
               "image_caption_bottom": "",
+              "image_link_bottom": "",
               "richtext_bottom": ""
             }
           },
@@ -3496,11 +3541,17 @@
             "settings": {
               "richtext_top": "",
               "image_caption_top": "",
+              "image_link_top": "",
               "menu_1": "visit-us",
+              "menu_1_link": "",
               "menu_2": "",
+              "menu_2_link": "",
               "menu_3": "",
+              "menu_3_link": "",
               "menu_4": "",
+              "menu_4_link": "",
               "image_caption_bottom": "",
+              "image_link_bottom": "",
               "richtext_bottom": ""
             }
           },
@@ -3509,12 +3560,37 @@
             "settings": {
               "richtext_top": "",
               "image_top": "shopify:\/\/shop_images\/Madrona-Valerie-Madison.jpg",
-              "image_caption_top": "Visit our lovely showroom in Seattle!",
+              "image_caption_top": "Visit our lovely store in Seattle!",
+              "image_link_top": "https:\/\/www.valeriemadison.com\/pages\/visit-us",
               "menu_1": "",
+              "menu_1_link": "",
               "menu_2": "",
+              "menu_2_link": "",
               "menu_3": "",
+              "menu_3_link": "",
               "menu_4": "",
+              "menu_4_link": "",
               "image_caption_bottom": "",
+              "image_link_bottom": "",
+              "richtext_bottom": ""
+            }
+          },
+          "04dff2d5-62f9-432d-904f-320a85a8fdfe": {
+            "type": "column",
+            "settings": {
+              "richtext_top": "",
+              "image_caption_top": "",
+              "image_link_top": "",
+              "menu_1": "",
+              "menu_1_link": "",
+              "menu_2": "",
+              "menu_2_link": "",
+              "menu_3": "",
+              "menu_3_link": "",
+              "menu_4": "",
+              "menu_4_link": "",
+              "image_caption_bottom": "",
+              "image_link_bottom": "",
               "richtext_bottom": ""
             }
           }
@@ -3523,10 +3599,11 @@
           "9c9b6135-be0a-4019-a52d-b273b37d4333",
           "19c77f33-dbcb-4e88-b872-3ac4c5d10492",
           "e448e39a-faf3-4b3f-89df-aab55b306142",
-          "6624135a-a3ae-458d-8675-b13b0d6fa01c"
+          "6624135a-a3ae-458d-8675-b13b0d6fa01c",
+          "04dff2d5-62f9-432d-904f-320a85a8fdfe"
         ],
         "settings": {
-          "parent": "Explore"
+          "parent": "Learn More"
         }
       },
       "collection-template": {
@@ -3613,6 +3690,7 @@
               "heading_size": "regular_text",
               "text": "",
               "button_label": "",
+              "button_link": "",
               "align_text": "center",
               "border_style": "none"
             }
@@ -3626,6 +3704,7 @@
               "heading_size": "regular_text",
               "text": "",
               "button_label": "",
+              "button_link": "",
               "align_text": "center",
               "border_style": "none"
             }
@@ -3639,6 +3718,7 @@
               "heading_size": "regular_text",
               "text": "",
               "button_label": "",
+              "button_link": "",
               "align_text": "center",
               "border_style": "none"
             }
@@ -3681,6 +3761,7 @@
           "button1_link": "shopify:\/\/pages\/custom",
           "button1_highlight": true,
           "button2": "",
+          "button2_link": "",
           "button2_highlight": false,
           "text_position": "center",
           "text_align": "center",
@@ -4089,8 +4170,10 @@
               "text_position": "left",
               "text_align": "left",
               "button1": "",
+              "button1_link": "",
               "button1_highlight": false,
               "button2": "",
+              "button2_link": "",
               "button2_highlight": false
             }
           }
@@ -4101,7 +4184,7 @@
         "settings": {
           "show_banner": true,
           "default_page_width": 90,
-          "image": "shopify:\/\/shop_images\/IMG_3425.JPG",
+          "image": "shopify:\/\/shop_images\/Storefront_3.jpg",
           "pretext": "",
           "title": "",
           "subtitle": "",
@@ -4110,8 +4193,10 @@
           "text_position": "center",
           "text_align": "center",
           "button1": "",
+          "button1_link": "",
           "button1_highlight": false,
           "button2": "",
+          "button2_link": "",
           "button2_highlight": false
         }
       },
@@ -4444,11 +4529,17 @@
             "settings": {
               "richtext_top": "",
               "image_caption_top": "",
+              "image_link_top": "",
               "menu_1": "custom-designs",
+              "menu_1_link": "",
               "menu_2": "",
+              "menu_2_link": "",
               "menu_3": "",
+              "menu_3_link": "",
               "menu_4": "",
+              "menu_4_link": "",
               "image_caption_bottom": "",
+              "image_link_bottom": "",
               "richtext_bottom": ""
             }
           },
@@ -4457,11 +4548,17 @@
             "settings": {
               "richtext_top": "",
               "image_caption_top": "",
+              "image_link_top": "",
               "menu_1": "custom-heirloom",
+              "menu_1_link": "",
               "menu_2": "",
+              "menu_2_link": "",
               "menu_3": "",
+              "menu_3_link": "",
               "menu_4": "",
+              "menu_4_link": "",
               "image_caption_bottom": "",
+              "image_link_bottom": "",
               "richtext_bottom": ""
             }
           }
@@ -4548,11 +4645,17 @@
             "settings": {
               "richtext_top": "",
               "image_caption_top": "",
+              "image_link_top": "",
               "menu_1": "",
+              "menu_1_link": "",
               "menu_2": "",
+              "menu_2_link": "",
               "menu_3": "",
+              "menu_3_link": "",
               "menu_4": "",
+              "menu_4_link": "",
               "image_caption_bottom": "",
+              "image_link_bottom": "",
               "richtext_bottom": ""
             }
           },
@@ -4561,11 +4664,17 @@
             "settings": {
               "richtext_top": "",
               "image_caption_top": "",
+              "image_link_top": "",
               "menu_1": "featured",
+              "menu_1_link": "",
               "menu_2": "",
+              "menu_2_link": "",
               "menu_3": "",
+              "menu_3_link": "",
               "menu_4": "",
+              "menu_4_link": "",
               "image_caption_bottom": "",
+              "image_link_bottom": "",
               "richtext_bottom": ""
             }
           },
@@ -4574,11 +4683,17 @@
             "settings": {
               "richtext_top": "",
               "image_caption_top": "",
+              "image_link_top": "",
               "menu_1": "shop-by-style",
+              "menu_1_link": "",
               "menu_2": "",
+              "menu_2_link": "",
               "menu_3": "",
+              "menu_3_link": "",
               "menu_4": "",
+              "menu_4_link": "",
               "image_caption_bottom": "",
+              "image_link_bottom": "",
               "richtext_bottom": ""
             }
           },
@@ -4587,11 +4702,17 @@
             "settings": {
               "richtext_top": "",
               "image_caption_top": "",
+              "image_link_top": "",
               "menu_1": "by-occasion",
+              "menu_1_link": "",
               "menu_2": "",
+              "menu_2_link": "",
               "menu_3": "",
+              "menu_3_link": "",
               "menu_4": "",
+              "menu_4_link": "",
               "image_caption_bottom": "",
+              "image_link_bottom": "",
               "richtext_bottom": ""
             }
           },
@@ -4600,11 +4721,17 @@
             "settings": {
               "richtext_top": "",
               "image_caption_top": "",
+              "image_link_top": "",
               "menu_1": "",
+              "menu_1_link": "",
               "menu_2": "",
+              "menu_2_link": "",
               "menu_3": "",
+              "menu_3_link": "",
               "menu_4": "",
+              "menu_4_link": "",
               "image_caption_bottom": "",
+              "image_link_bottom": "",
               "richtext_bottom": ""
             }
           }
@@ -4623,19 +4750,66 @@
       "1552235156499": {
         "type": "slideshow",
         "blocks": {
-          "cc7eade9-7e3b-4a9d-83b9-93ae59499236": {
+          "9fa93401-9486-4195-b141-9c2af3b48d8c": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/Prism_Banner.jpg",
-              "pretext": "",
-              "title": "Feeling the love",
+              "image": "shopify:\/\/shop_images\/Bella_Lilac_Sapphire_Fancy_Gray_Diamond_Engagement_Ring_88b89aa3-b1a0-4c9c-b010-32a0300255dc.jpg",
+              "pretext": "<p>Stand out from the crowd with <\/p>",
+              "title": "Alternative Engagement Rings",
               "subtitle": "",
               "caption_background": false,
               "caption_background_transparency": false,
-              "button1": "Wedding Bands for Everyone",
-              "button1_link": "shopify:\/\/collections\/all-wedding-bands",
+              "button1": "Ready to ship Rings",
+              "button1_link": "https:\/\/www.valeriemadison.com\/collections\/ready-to-ship-engagement-rings",
               "button1_highlight": false,
               "button2": "",
+              "button2_link": "",
+              "button2_highlight": false,
+              "text_position": "right",
+              "text_align": "center",
+              "mobile_image_crop": "none",
+              "is_timed_slide": false,
+              "start_datetime": "",
+              "end_datetime": ""
+            }
+          },
+          "64437903-428d-4f4e-96b3-7ced4c3a99f5": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/DSC_7020.jpg",
+              "pretext": "<p>Shades of refreshing teal <\/p>",
+              "title": "Sapphire Summer",
+              "subtitle": "",
+              "caption_background": false,
+              "caption_background_transparency": false,
+              "button1": "Shop now",
+              "button1_link": "shopify:\/\/collections\/new-arrivals",
+              "button1_highlight": false,
+              "button2": "",
+              "button2_link": "",
+              "button2_highlight": false,
+              "text_position": "left",
+              "text_align": "left",
+              "mobile_image_crop": "none",
+              "is_timed_slide": false,
+              "start_datetime": "",
+              "end_datetime": ""
+            }
+          },
+          "5ee03ec4-ab57-4a98-a96a-5c779998b5fa": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Gemstones---teal-in-tray.jpg",
+              "pretext": "<p>Design Your Own Ring with Our<\/p>",
+              "title": "Vibrant New Gems",
+              "subtitle": "",
+              "caption_background": false,
+              "caption_background_transparency": false,
+              "button1": "Choose your gem",
+              "button1_link": "https:\/\/www.valeriemadison.com\/collections\/create-your-own-diamond-or-gemstone-ring",
+              "button1_highlight": false,
+              "button2": "",
+              "button2_link": "",
               "button2_highlight": false,
               "text_position": "left",
               "text_align": "center",
@@ -4649,39 +4823,18 @@
             "type": "image",
             "settings": {
               "image": "shopify:\/\/shop_images\/Juicy_Gemstones_copy.jpg",
-              "pretext": "",
+              "pretext": "<p>Vibrant colorful stones<\/p>",
               "title": "Juicy Gems",
-              "subtitle": "<p>Vibrant colorful stones<\/p>",
+              "subtitle": "",
               "caption_background": false,
               "caption_background_transparency": false,
               "button1": "Shop now",
               "button1_link": "shopify:\/\/collections\/new-arrivals",
               "button1_highlight": false,
               "button2": "",
+              "button2_link": "",
               "button2_highlight": false,
               "text_position": "left",
-              "text_align": "right",
-              "mobile_image_crop": "none",
-              "is_timed_slide": false,
-              "start_datetime": "",
-              "end_datetime": ""
-            }
-          },
-          "22db3eda-fa94-416d-8f49-33b0de481bdf": {
-            "type": "image",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/FRF_-_Salt_and_Pepper_Diamond_Engagement_Rings.jpg",
-              "pretext": "",
-              "title": "Fresh off the bench",
-              "subtitle": "",
-              "caption_background": false,
-              "caption_background_transparency": false,
-              "button1": "New Salt & Pepper Diamonds",
-              "button1_link": "https:\/\/www.valeriemadison.com\/collections\/diamond-rings\/salt-and-pepper-diamond?sort_by=created-descending",
-              "button1_highlight": false,
-              "button2": "",
-              "button2_highlight": false,
-              "text_position": "right",
               "text_align": "right",
               "mobile_image_crop": "none",
               "is_timed_slide": false,
@@ -4691,9 +4844,10 @@
           }
         },
         "block_order": [
-          "cc7eade9-7e3b-4a9d-83b9-93ae59499236",
-          "1ed12cac-9bf7-47c3-ba50-3b5c4a988477",
-          "22db3eda-fa94-416d-8f49-33b0de481bdf"
+          "9fa93401-9486-4195-b141-9c2af3b48d8c",
+          "64437903-428d-4f4e-96b3-7ced4c3a99f5",
+          "5ee03ec4-ab57-4a98-a96a-5c779998b5fa",
+          "1ed12cac-9bf7-47c3-ba50-3b5c4a988477"
         ],
         "settings": {
           "wide_display": true,
@@ -4701,7 +4855,7 @@
           "slideshow_animation": "slide",
           "slideshow_speed": 5,
           "activate_adaptiveHeight": false,
-          "mobile_text_below_image": true,
+          "mobile_text_below_image": false,
           "mobile_text_color": ""
         }
       },
@@ -4713,11 +4867,17 @@
             "settings": {
               "richtext_top": "",
               "image_caption_top": "",
+              "image_link_top": "",
               "menu_1": "",
+              "menu_1_link": "",
               "menu_2": "",
+              "menu_2_link": "",
               "menu_3": "",
+              "menu_3_link": "",
               "menu_4": "",
+              "menu_4_link": "",
               "image_caption_bottom": "",
+              "image_link_bottom": "",
               "richtext_bottom": ""
             }
           }
@@ -5109,31 +5269,36 @@
           "1591661011742-3": {
             "type": "logo_image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/popsugar-logo-pink-768x163.jpg"
+              "image": "shopify:\/\/shop_images\/popsugar-logo-pink-768x163.jpg",
+              "link": ""
             }
           },
           "1591661117785": {
             "type": "logo_image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/Allure_Logo_200x_cropped_a1a21f03-9c1e-4234-a88a-01b6837fe515.png"
+              "image": "shopify:\/\/shop_images\/Allure_Logo_200x_cropped_a1a21f03-9c1e-4234-a88a-01b6837fe515.png",
+              "link": ""
             }
           },
           "1591661011742-0": {
             "type": "logo_image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/Forbes_Logo.png"
+              "image": "shopify:\/\/shop_images\/Forbes_Logo.png",
+              "link": ""
             }
           },
           "1593628381419": {
             "type": "logo_image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/instyle-logo-1.png"
+              "image": "shopify:\/\/shop_images\/instyle-logo-1.png",
+              "link": ""
             }
           },
           "c7baa2c9-f1b7-4302-89b6-1f5535ec9558": {
             "type": "logo_image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/vogue_logo.png"
+              "image": "shopify:\/\/shop_images\/vogue_logo.png",
+              "link": ""
             }
           }
         },
@@ -5207,7 +5372,7 @@
             "type": "featured-ring",
             "settings": {
               "image": "shopify:\/\/shop_images\/5601_Cody_Scott.jpg",
-              "job_title": "2.4ct Round Cut Diamond Ella Engagement Ring",
+              "job_title": "2.53ct Round Cut Diamond Ella Engagement Ring",
               "description": "",
               "link_url": "mailto:custom@valeriemadison.com?subject=1.05ct Eva Brown Square Diamond Engagement Ring with Pavé Diamonds&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
               "link_title": "Click here to send this as inspiration for your custom order"
@@ -5659,7 +5824,7 @@
           "35caa73a-11f1-4d08-93a4-0b42716a4a49": {
             "type": "employee",
             "settings": {
-              "image": "shopify:\/\/shop_images\/Adriana_400x600_fc5c45bd-e232-4386-8fd4-18c361c3bb96.jpg",
+              "image": "shopify:\/\/shop_images\/Adriana_Ortiz_Staff_Photo.jpg",
               "title": "Adriana Ortiz",
               "job_title": "Digital Marketing Specialist",
               "description": "<p>I love that my job combines building community through digital media and getting to play with beautiful sparkling things. I’m excited to bring an analytic and strategic mindset to Valerie Madison Jewelry’s digital presence while working alongside such kind humans. Outside of work you’ll find me probably on my couch watching something sappy, reading, scrolling TikTok and\/or shopping for shoes online.<\/p>",
@@ -5858,6 +6023,300 @@
           "featured_links_per_row": "1",
           "frontpage_text_align": "left",
           "frontpage_image_position": "left"
+        }
+      },
+      "our-story-intro": {
+        "type": "our-story-intro",
+        "settings": {
+          "title": "Celebrating your<br>Love Stories in Gold.",
+          "content": "Whether it’s proposing to the love of your life, marking a special occasion in gold, or truly treating yourself with a gem as amazing as you are, we’re here for it. With an eye for balance, durability, and function, Valerie's inspiration comes from the beautiful spectrum of colors of diamonds and gemstones she sources as well as the geometry and shapes they come in. All jewelry tells a story and we believe in fine jewelry as an expression of the desire to decorate oneself with metals and jewels that reflect the love and style you want to reflect outwards.",
+          "icon": "shopify:\/\/shop_images\/illustrations_ring2.png"
+        }
+      },
+      "our-story-about-valerie": {
+        "type": "our-story-about-valerie",
+        "settings": {
+          "title": "About Valerie",
+          "content": "Valerie merges contemporary technology with skillful artistry to create elegant designs inspired by classic styles. With her keen eye for detail and passion for individuality, her designs celebrate not only the beauty of life and love but also the natural world and the stunning gemstones that come from it. A Valerie Madison piece features styles and stones not seen in traditional pieces, such as salt-and-pepper diamonds, rose-cut diamonds, uniquely shaped stones, vibrant hues, and more.",
+          "image": "shopify:\/\/shop_images\/DSC_9603-2_copy.jpg"
+        }
+      },
+      "our-story-timeline": {
+        "type": "our-story-timeline",
+        "blocks": {
+          "24487601-2992-4101-b2b1-c3b00bfcd7fc": {
+            "type": "timeline_event",
+            "settings": {
+              "title": "2009",
+              "content": "Valerie begins making beaded jewelry for fun and selling on Etsy and farmers' markets."
+            }
+          },
+          "50e63e82-5bc1-4c97-9eee-def04a5ef6ad": {
+            "type": "timeline_event",
+            "settings": {
+              "title": "2011",
+              "content": "Valerie takes her first class to learn how to be a metalsmith."
+            }
+          },
+          "88f961b3-405c-4721-9f12-d5b70aa4a9d5": {
+            "type": "timeline_event",
+            "settings": {
+              "title": "2014",
+              "content": "Valerie takes the leap to become a full-time jewelry designer and changes the business name to Valerie Madison Fine Jewelry"
+            }
+          },
+          "8ce3413e-7348-46f0-8307-bb32d17d2e84": {
+            "type": "timeline_event",
+            "settings": {
+              "title": "2015",
+              "content": "Valerie moves her business into her first jewelry studio"
+            }
+          },
+          "0f17e824-fc9d-431b-8fe2-c760c15ce94b": {
+            "type": "timeline_event",
+            "settings": {
+              "title": "2016",
+              "content": "Valerie hires her first assistant bench jeweler."
+            }
+          },
+          "c1a2b65c-9c7e-4c72-b932-85cf92e6011a": {
+            "type": "timeline_event",
+            "settings": {
+              "title": "2017",
+              "content": "Valerie sells her first engagement ring."
+            }
+          },
+          "98b9d4f1-bae0-496e-bec2-5c6b1fdcc73d": {
+            "type": "timeline_event",
+            "settings": {
+              "title": "2019",
+              "content": "Valerie moves into a cozy private showroom with a studio loft for herself and her studio assistant, Liz."
+            }
+          },
+          "58c4f64f-6ab9-436e-a3ac-a61ea079327c": {
+            "type": "timeline_event",
+            "settings": {
+              "title": "2020",
+              "content": "Valerie signs the lease for her first retail store and begins renovating while maintaining the e-commerce business. In June, after the murder of George Floyd, Valerie's online store saw quadrupled sales and national exposure as a Black-owned business. Valerie opened Washington's only Latina Black-owned fine jewelry store in October 2020 with 7 employees."
+            }
+          },
+          "7b181316-a61c-4e8b-a2c9-2dd731649529": {
+            "type": "timeline_event",
+            "settings": {
+              "title": "2021",
+              "content": "Valerie Madison Fine Jewelry has 12 employees and continues to grow."
+            }
+          }
+        },
+        "block_order": [
+          "24487601-2992-4101-b2b1-c3b00bfcd7fc",
+          "50e63e82-5bc1-4c97-9eee-def04a5ef6ad",
+          "88f961b3-405c-4721-9f12-d5b70aa4a9d5",
+          "8ce3413e-7348-46f0-8307-bb32d17d2e84",
+          "0f17e824-fc9d-431b-8fe2-c760c15ce94b",
+          "c1a2b65c-9c7e-4c72-b932-85cf92e6011a",
+          "98b9d4f1-bae0-496e-bec2-5c6b1fdcc73d",
+          "58c4f64f-6ab9-436e-a3ac-a61ea079327c",
+          "7b181316-a61c-4e8b-a2c9-2dd731649529"
+        ],
+        "settings": {
+          "title": "Our History"
+        }
+      },
+      "our-story-pillars": {
+        "type": "our-story-pillars",
+        "blocks": {
+          "c5e009bd-709e-430e-9ef1-643e02edc3b7": {
+            "type": "pillar",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/illustrations_community3.png",
+              "title": "Community",
+              "content": "We believe in kindness, diversity, and fresh perspectives for our customers who seek to celebrate life’s big moments and commemorate all kinds of love. Our sparkling customer service"
+            }
+          },
+          "ebb41583-d046-4464-baf1-86585cfbdf8a": {
+            "type": "pillar",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/illustrations_craft2.png",
+              "title": "Craft",
+              "content": "We create vibrant, elegant, and novel designs that are desirable not only because of how different and individualistic they are, but also because they are made with high quality materials and designed to ensure they can be worn for generations. We have an eye for detail that won’t be surpassed."
+            }
+          },
+          "5ccb46ed-b5e7-49e9-9f50-4b0efdf5fa5e": {
+            "type": "pillar",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/illustrations_community2.png",
+              "title": "Conscience",
+              "content": "Valerie graduated from the University of Washington with a B.S. in Environmental Science & Resource Management. A love of the Earth is in our DNA! We use recycled metals, conflict-free diamonds, Australian & Montana sapphires, and more, sourced through reputable and trustworthy vendors."
+            }
+          }
+        },
+        "block_order": [
+          "c5e009bd-709e-430e-9ef1-643e02edc3b7",
+          "ebb41583-d046-4464-baf1-86585cfbdf8a",
+          "5ccb46ed-b5e7-49e9-9f50-4b0efdf5fa5e"
+        ],
+        "settings": {
+          "title": "Our Pillars"
+        }
+      },
+      "our-story-team": {
+        "type": "our-story-team",
+        "blocks": {
+          "1b8dc7aa-f7bd-480a-8337-863ec34683f4": {
+            "type": "team_member",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/VMFJ-2020-5.jpg",
+              "title": "Valerie Madison",
+              "job_title": "Owner & Designer",
+              "description": "I love my job, especially when choosing gemstones! I hand-select every stone you see in our designs with beauty and quality being my top considerations. I have a degree in Environmental Science & Resource Management making me a great advocate for our planet. I also enjoy shopping for leopard-print tops, collecting fossils and crystals, practicing my Spanish, and tending to my indoor jungle at home."
+            }
+          },
+          "3a6eca3c-c1d0-4897-a323-7a083d69f370": {
+            "type": "team_member",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/VMFJ-2020-12.jpg",
+              "title": "Liz Ferris",
+              "job_title": "Head of Sales, Store Manager",
+              "description": "I lead our Sales Team and am the Store Manager for our charming Madrona showroom. I met Valerie in 2017 and joined her as employee #2 just shortly after, it’s been an incredible experience to see the VM brand grow through the years. When I’m not at work I love reading and cuddling my kitties Theodore & Beatrix."
+            }
+          },
+          "9c18c131-7a70-41c9-986f-0b5bb41916b5": {
+            "type": "team_member",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/VMFJ-2020-17.jpg",
+              "title": "Lauren Forbes",
+              "job_title": "GEMOLOGIST, SALES ASSOCIATE",
+              "description": "I am the staff gemologist (aka gem nerd) and sales associate who can help answer all your jewelry questions, write your appraisal, or source the perfect stone for your ring.  When I’m not in the studio you can find me teaching fitness classes, making Spotify playlists, writing, or watching the newest episode of Dateline."
+            }
+          },
+          "c95ab9d1-1311-4c9b-959d-9ac15d6603c6": {
+            "type": "team_member",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/DSC_4217-8.jpg",
+              "title": "Amara Palmer",
+              "job_title": "SALES ASSOCIATE",
+              "description": "I fell in love with vintage and ethically made fine jewelry in college. To adorn yourself in it marries the stunning beauty our planet provides us with a sentimental meaning you attach. As a sales associate, I am excited to share the craftsmanship at VM. When not at work, you can find me practicing minimalism with maximalist design, lounging with my cat Miss Cleo, collecting tea, and learning how to parallel park!"
+            }
+          },
+          "4362dbc0-cab4-4110-afd2-e469c7319d14": {
+            "type": "team_member",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/VMFJ-2020-1.jpg",
+              "title": "Nina Hartman",
+              "job_title": "BENCH JEWELER",
+              "description": "I am quiet, dedicated, and passionate about working with my hands. I wake up every day excited to put all my love and positivity into the things I make. I’ve lived in Seattle most of my life, except for the 4 years I spent at the Rhode Island School of Design. When I’m not making jewelry, I run, bike, knit, play piano, and drink caffeinated beverages. Sometimes I’m a little too serious."
+            }
+          },
+          "e6c1bdfc-589c-4d27-86fb-b4511eed9b80": {
+            "type": "team_member",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/VMFJ-2020-23.jpg",
+              "title": "Saraya Ittidecharchoti",
+              "job_title": "OPERATIONS COORDINATOR",
+              "description": "I keep track of inventory and ship your orders! A few things I enjoy include curating my wardrobe, making clothes and plant care. You can find me cutting up my old bed sheet to sew into pants or rotating my begonia collection for maximum sun!"
+            }
+          },
+          "97a96a55-9052-47a8-83df-1f5e01539e7d": {
+            "type": "team_member",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/VMFJ-2020-3.jpg",
+              "title": "Charlotte Muller",
+              "job_title": "BENCH JEWELER",
+              "description": "I make the shiny stuff. When I’m not goldsmithing for Valerie Madison or working in my own jewelry studio, I’m either DIY renovating my mid-mod dream house or in my kitchen testing new recipes. I couldn’t remain at the top of my game in every way without the support of my handsome cat, clever dachshund puppy and my amazing husband to be."
+            }
+          },
+          "b9bb3a8d-56e2-4b2f-99d5-7c1ddde5cba5": {
+            "type": "team_member",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/VMFJ-2020-15.jpg",
+              "title": "Laura O'Clair",
+              "job_title": "CONTENT CREATOR",
+              "description": "I get to take pictures of sparkly things for a living! Each day I wake up feeling blessed, with the intention of bringing more beauty into the world through my work at VM. I focus on contributing in creative and playful ways that add value to the company. After hours, my time is spent going on spontaneous adventures and decorating unconventional cakes for friends and family."
+            }
+          },
+          "cf3bd9f0-e995-42ed-a2e9-527e40187beb": {
+            "type": "team_member",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Sue_Pess.jpg",
+              "title": "Sue Pess",
+              "job_title": "OPERATIONS MANAGER",
+              "description": "I am here to keep things running smoothly and in-step with our growth trajectory. My decades long background in jewelry production, retail, and small business operations make this a great place for me to have a positive impact. When I am not here you can find me thrifting, laughing at my cats, and spending time with friends & family."
+            }
+          },
+          "7b3b1866-850a-4e2b-bbb2-b5be4f9d5bb0": {
+            "type": "team_member",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Adriana_Ortiz.jpg",
+              "title": "Adriana Ortiz",
+              "job_title": "DIGITAL MARKETING SPECIALIST",
+              "description": "I love that my job combines building community through digital media and getting to play with beautiful sparkling things. I’m excited to bring an analytic and strategic mindset to Valerie Madison Jewelry’s digital presence while working alongside such kind humans. Outside of work you’ll find me probably on my couch watching something sappy, reading, scrolling TikTok and\/or shopping for shoes online."
+            }
+          },
+          "403aa6d2-005e-4604-a369-5efa4062f6ab": {
+            "type": "team_member",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Megan_Headshot.jpg",
+              "title": "Megan Cosgrove",
+              "job_title": "CUSTOMER SERVICE SPECIALIST",
+              "description": "As the face of VM’s Customer Service Department, I strive to make your experience unforgettable. My sense of humor and colorful personality helps ensure that you will be taken care of no matter what! I love to help individuals find lifelong custom rings or commemorate milestones in gold. When I am away from work, you can find me hunting for vintage clothing, obsessing over my dog or impulsively dying my hair."
+            }
+          },
+          "f41d0541-dc50-4627-be73-bb5bc0d48a67": {
+            "type": "team_member",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Danielle_Nielsen_Staff_Photo.jpg",
+              "title": "Danielle Nielsen",
+              "job_title": "SALES ASSOCIATE",
+              "description": "I love that my job is a combination of connecting with our customers and getting to show case such beautiful, ethically sourced and unique jewelry. Before working for VM, I never pictured myself in the jewelry sales world but I am so grateful that life has brought me to where I am. Working alongside this wonderful group of women has taught me so much in just a few short months. When I’m not selling sparkly pieces of gold, I am either discovering new restaurants to add to my “foodie lovers list”, taking walks to catch the sunset or getting new tattoos."
+            }
+          },
+          "6fbd4270-d7b7-4a6f-9bf1-0e7a9e8c2eef": {
+            "type": "team_member",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Omar_4ee53a79-155e-4cb6-b349-5d1140450b70.jpg",
+              "title": "Omar Little",
+              "job_title": "CHIEF MORALE BOOSTER",
+              "description": "I like to visit the office and zoom around looking for snacks and butt scratches. Everyone is always so excited to see me when I visit so I'm happy that I'm able to please!"
+            }
+          }
+        },
+        "block_order": [
+          "1b8dc7aa-f7bd-480a-8337-863ec34683f4",
+          "3a6eca3c-c1d0-4897-a323-7a083d69f370",
+          "9c18c131-7a70-41c9-986f-0b5bb41916b5",
+          "c95ab9d1-1311-4c9b-959d-9ac15d6603c6",
+          "4362dbc0-cab4-4110-afd2-e469c7319d14",
+          "e6c1bdfc-589c-4d27-86fb-b4511eed9b80",
+          "97a96a55-9052-47a8-83df-1f5e01539e7d",
+          "b9bb3a8d-56e2-4b2f-99d5-7c1ddde5cba5",
+          "cf3bd9f0-e995-42ed-a2e9-527e40187beb",
+          "7b3b1866-850a-4e2b-bbb2-b5be4f9d5bb0",
+          "403aa6d2-005e-4604-a369-5efa4062f6ab",
+          "f41d0541-dc50-4627-be73-bb5bc0d48a67",
+          "6fbd4270-d7b7-4a6f-9bf1-0e7a9e8c2eef"
+        ],
+        "settings": {
+          "title": "Our Team",
+          "description": "These are the lovely folks that make VM a wonderful place to work in and serve our clients."
+        }
+      },
+      "our-story-visit-the-store": {
+        "type": "our-story-visit-the-store",
+        "settings": {
+          "title": "Visit Our Store",
+          "content": "<p>We offer both walk-in and priority appointment-based shopping.<\/p>",
+          "address": "<p>1411 34th Ave<br\/>Seattle, WA 98122<\/p>",
+          "store_hours": "<p>Thursday-Friday <strong>12pm-6pm<\/strong><br\/>Saturday <strong>10am-4pm<\/strong><\/p>",
+          "calendly_embed": "",
+          "map_image": "shopify:\/\/shop_images\/illustrations_map_c61a3f4f-1071-46f9-8719-6524af819d8c.png",
+          "mobile_map_image": "shopify:\/\/shop_images\/illustrations_map_mobile.png"
+        }
+      },
+      "page-sidebar-template": {
+        "type": "page-sidebar-template",
+        "settings": {
+          "toggle": false
         }
       }
     },
