@@ -8,49 +8,34 @@
   </div>
 
   <div class="container">
-    <div class="row">
-
-      <div class="sixteen columns">
-        <div class="our-story__store-mobile-map-wrapper">
-          <img
-          src="{{ section.settings.mobile_map_image | img_url : "2000x" }}"
-          />
-        </div>
-      </div>
-
-      <div class="six columns">
-        <div class="our-story__store-body">
-          {{ section.settings.content }}
-          
-          {% if section.settings.address %}
-            <h4>Our Address</h4>
-            
-            {{ section.settings.address }}
-          {% endif %}
-          
-          {% if section.settings.store_hours %}
-            <h4>Hours</h4>
-            
-            {{ section.settings.store_hours }}
-          {% endif %}
-          
-          {% if section.settings.calendly_embed != blank %}
-            <h4>Book an appointment</h4>
-
-            {{ section.settings.calendly_embed }}
-          {% endif %}
-
-        </div>
-      </div>
-
-      <div class="ten columns">
-        <div class="our-story__store-map-wrapper">
-          <img
+    <div class="sixteen columns">
+      <div class="our-story__store-map-wrapper">
+        <img
           src="{{ section.settings.map_image | img_url : "2000x" }}"
-          />
-        </div>
+        />
       </div>
 
+      <div class="our-story__store-body">
+        <p>
+          We offer both walk-in and appointment-based shopping but give priority to appointments. You can book one below.
+        </p>
+        
+        <h5>
+          1411 34th Ave<br />
+          Seattle, WA 98122<br/>
+        </h5>
+        <br/>
+        
+        <h4>
+          Virtual Consultations
+        </h4>
+
+        <p>
+          Thursday-Friday <strong>12pm-6pm</strong><br/>
+          Saturday <strong>10am-4pm</strong>
+        </p>
+
+      </div>
     </div>
   </div>
 </div>
@@ -65,29 +50,6 @@
       "label": "Title",
       "type": "text",
       "default": "Visit Our Store"
-    },
-    {
-      "id": "content",
-      "label": "Content",
-      "type": "richtext",
-      "default": "<p>We offer both walk-in and appointment-based shopping but give priority to appointments.</p>"
-    },
-    {
-      "id": "address",
-      "label": "Address",
-      "type": "richtext",
-      "default": "<p>1411 34th Ave<br />Seattle, WA 98122</p>"
-    },
-    {
-      "id": "store_hours",
-      "label": "Store Hours",
-      "type": "richtext",
-      "default": "<p>Thursday-Friday <strong>12pm-6pm</strong><br/>Saturday <strong>10am-4pm</strong></p>"
-    },
-    {
-      "id": "calendly_embed",
-      "label": "Calendly Embed code",
-      "type": "html"
     },
     {
       "id": "map_image",
