@@ -1,6 +1,7 @@
 <div class="content-section content-section--our-story--visit-store">
+  <div id="visit-the-store" class="content-section__anchor"></div>
   <div class="container">
-    <div class="sixteen columns">
+    <div class="twelve columns offset-by-two medium-down--one-whole medium-down--offset-by-zero">
       {% include "content-section.title" with {
         title: section.settings.title | escape,
       } %}
@@ -10,7 +11,16 @@
   <div class="container">
     <div class="row">
 
-      <div class="sixteen columns">
+
+      <div class="twelve columns offset-by-two medium-down--one-whole medium-down--offset-by-zero">
+        <div class="our-story__store-map-wrapper">
+          <img
+          src="{{ section.settings.map_image | img_url : "2000x" }}"
+          />
+        </div>
+      </div>
+
+      <div class="twelve columns offset-by-two medium-down--one-whole medium-down--offset-by-zero">
         <div class="our-story__store-mobile-map-wrapper">
           <img
           src="{{ section.settings.mobile_map_image | img_url : "2000x" }}"
@@ -18,36 +28,39 @@
         </div>
       </div>
 
-      <div class="six columns">
-        <div class="our-story__store-body">
+      <div class="twelve columns offset-by-two medium-down--one-whole medium-down--offset-by-zero">
+        <div class="our-story__store-map-content">
           {{ section.settings.content }}
-          
-          {% if section.settings.address %}
-            <h4>Our Address</h4>
+        </div>
+
+        <div class="our-story__store-location-hours">
+          <div class="row">
+            <div class="eight columns medium-down--one-whole">
+              {% if section.settings.address %}
+                <h4>Location</h4>
+                
+                {{ section.settings.address }}
+              {% endif %}
+            </div>
             
-            {{ section.settings.address }}
-          {% endif %}
+            <div class="eight columns medium-down--one-whole">
+              {% if section.settings.store_hours %}
+                <h4>Hours</h4>
+                
+                {{ section.settings.store_hours }}
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
           
-          {% if section.settings.store_hours %}
-            <h4>Hours</h4>
-            
-            {{ section.settings.store_hours }}
-          {% endif %}
-          
+      <div class="twelve columns offset-by-two medium-down--one-whole medium-down--offset-by-zero">
+        <div class="our-story__store-calendly-embed">
           {% if section.settings.calendly_embed != blank %}
             <h4>Book an appointment</h4>
 
             {{ section.settings.calendly_embed }}
           {% endif %}
-
-        </div>
-      </div>
-
-      <div class="ten columns">
-        <div class="our-story__store-map-wrapper">
-          <img
-          src="{{ section.settings.map_image | img_url : "2000x" }}"
-          />
         </div>
       </div>
 

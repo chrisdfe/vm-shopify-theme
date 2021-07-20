@@ -6308,7 +6308,7 @@
           "content": "<p>We offer both walk-in and priority appointment-based shopping.<\/p>",
           "address": "<p>1411 34th Ave<br\/>Seattle, WA 98122<\/p>",
           "store_hours": "<p>Thursday-Friday <strong>12pm-6pm<\/strong><br\/>Saturday <strong>10am-4pm<\/strong><\/p>",
-          "calendly_embed": "",
+          "calendly_embed": "<!-- Calendly inline widget begin -->\n<div class=\"calendly-inline-widget\" data-url=\"https:\/\/calendly.com\/valeriemadison?text_color=1c4047&amp;primary_color=714457\" style=\"min-width:320px;height:630px;\"><\/div>\n<script type=\"text\/javascript\" src=\"https:\/\/assets.calendly.com\/assets\/external\/widget.js\" async><\/script>\n<!-- Calendly inline widget end -->",
           "map_image": "shopify:\/\/shop_images\/illustrations_map_c61a3f4f-1071-46f9-8719-6524af819d8c.png",
           "mobile_map_image": "shopify:\/\/shop_images\/illustrations_map_mobile.png"
         }

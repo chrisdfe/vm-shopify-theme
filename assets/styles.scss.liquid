@@ -13572,9 +13572,20 @@ p.close{position:absolute;right:6px;top:-2px;cursor:pointer}
   
 .content-section {
   padding: $vm-content-section-padding 0;
+
+  // Compensate for the sticky nav
+  .content-section__anchor {      
+    position: relative;
+    top: -$vm-content-section-padding;
+  }
   
   @include respond-to('medium-down') {
     padding: $vm-content-section-mobile-padding 0;
+
+    .content-section__anchor {      
+      position: relative;
+      top: -$vm-content-section-mobile-padding;
+    }
   }
 }
 
@@ -13866,9 +13877,19 @@ section.image-list {
 
   .content-section {
     padding: 7rem 0;
+
+    .content-section__anchor {      
+      position: relative;
+      top: -8rem;
+    }
     
     @include respond-to('small-down') {
       padding: 5rem 0;
+
+      .content-section__anchor {      
+        position: relative;
+        top: -6rem;
+      }
     }
   }
 }
@@ -13876,6 +13897,7 @@ section.image-list {
 .content-section.content-section--our-story--intro {
   background-color: $vm-color-cream;
   // padding: 9rem 0;
+  
   
   .icon-wrapper {
     padding: 3rem 0 0;
@@ -14154,10 +14176,30 @@ $our-story-timeline-event-line-top: 3.5rem;
   }
 }
 
-.our-story__store-map-body {
+.our-story__store-map-content {
+  padding: 3rem 3rem 1.5rem;
 
+  @include respond-to("medium-down") {
+    padding: 1rem 0;
+  }
 }
 
-.our-story__store__address {
-  margin: 3rem 0;
+.our-story__store-location-hours  {
+  padding: 1.5rem 3rem 3rem;
+  // You'd think the grid system would handle this but it doesn't
+  margin: 0 -($gutter / 2);
+  
+  @include respond-to("medium-down") {
+    padding: 1rem 0;
+    margin: 0;
+  }
+}
+
+.our-story__store-calendly-embed {
+
+  // match the calendly embed internal styles
+  h4 {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
 }
