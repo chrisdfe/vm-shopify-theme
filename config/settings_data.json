@@ -6305,11 +6305,11 @@
         "type": "our-story-visit-the-store",
         "settings": {
           "title": "Visit Our Store",
-          "content": "<p>We offer both walk-in and priority appointment-based shopping.<\/p>",
+          "content": "<p>Walk-ins welcome! We have a variety of everyday fine jewelry, wedding bands, engagement rings, and lovely gifts available in store available for you to browse!<br\/><\/p><p>We recommend booking an appointment if you are seeking an Engagement Ring or Wedding Band(s) so our team can be available to assist you - book one (or two) below! <\/p><p><\/p><p>*Per CDC guidelines, fully vaccinated guests are not required to wear a mask. Our team is fully vaccinated and invites you to follow at your discretion.*<\/p>",
           "address": "<p>1411 34th Ave<br\/>Seattle, WA 98122<\/p>",
           "store_hours": "<p>Thursday-Friday <strong>12pm-6pm<\/strong><br\/>Saturday <strong>10am-4pm<\/strong><\/p>",
           "calendly_embed": "<!-- Calendly inline widget begin -->\n<div class=\"calendly-inline-widget\" data-url=\"https:\/\/calendly.com\/valeriemadison?text_color=1c4047&amp;primary_color=714457\" style=\"min-width:320px;height:630px;\"><\/div>\n<script type=\"text\/javascript\" src=\"https:\/\/assets.calendly.com\/assets\/external\/widget.js\" async><\/script>\n<!-- Calendly inline widget end -->",
-          "map_image": "shopify:\/\/shop_images\/illustrations_map_c61a3f4f-1071-46f9-8719-6524af819d8c.png",
+          "map_image": "shopify:\/\/shop_images\/illustrations_map_-_wide_357bb6ce-a3d7-4bfc-a229-2581a31e345d.png",
           "mobile_map_image": "shopify:\/\/shop_images\/illustrations_map_mobile.png"
         }
       },
