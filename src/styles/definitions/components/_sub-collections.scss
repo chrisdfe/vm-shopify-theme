@@ -1,0 +1,84 @@
+/* Components - Sub Collections
+// TODO - what are these
+================================================== */
+
+.featured_collections.sub-collection {
+  margin-bottom: 10px;
+
+  .thumbnail {
+    margin-bottom: 10px;
+
+    @include respond-to('medium-down') {
+      width: 100%;
+    }
+  }
+}
+
+.sub-collection--2 {
+  .thumbnail {
+    width: calc(50% - 20px);
+
+    &:nth-child(2n + 1) {
+      clear: both;
+    }
+  }
+}
+
+.sub-collection--3 {
+  .thumbnail {
+    width: calc(33.33333% - 20px);
+
+    &:nth-child(3n + 1) {
+      clear: both;
+    }
+  }
+}
+
+.sub-collection--4 {
+  .thumbnail {
+    width: calc(25% - 20px);
+
+    &:nth-child(4n + 1) {
+      clear: both;
+    }
+  }
+}
+
+.list-collection-wrapper {
+  //no image available
+  img[src*='/no-image'] {
+    opacity: 0;
+  }
+
+  img[src*='/no-image'] ~ .thumbnail-overlay {
+    opacity: 1 !important;
+    .collection-details {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  img[src*='/no-image'] ~ .collection-info__caption {
+    @include respond-to('medium-down') {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+    }
+  }
+
+  .img {
+    width: 100%;
+  }
+
+  .collection-info__caption {
+    margin-top: 20px;
+
+    @include respond-to('medium-down') {
+      display: block;
+      position: static;
+    }
+  }
+}

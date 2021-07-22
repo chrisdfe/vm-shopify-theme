@@ -1,11 +1,22 @@
+const fs = require("fs/promises");
 const sass = require("sass");
 
-sass.render({
-  file: "src/styles/styles.scss",
-}, function(err, result) {
-  if (err) {
-    throw err;
-  }
+const util = require('util');
 
-  console.log('result', result.length);
-});
+const render = util.promisify(sass.render);
+
+const sourceFile = "src/styles/styles.scss";
+const outputFile ="assets/styles.css";
+
+async function main() {
+  const compiled = sass.renderSync({
+    file: sourceFile,
+    outFile: outputFile,
+  })
+  
+  await fs.writeFile(outputFile, compiled.css);
+
+  console.log('done.');
+}
+
+main();

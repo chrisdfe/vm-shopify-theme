@@ -1,0 +1,123 @@
+/* Definitions - Reset & Basics
+================================================== */
+
+body {
+  color: $vm-body-text-color;
+  line-height: 1.6em;
+  overflow: auto;
+  // background-color: {{ settings.shop_bg_color }};
+}
+
+::placeholder {
+  // color: rgba($vm-body-text-color, 0.3);
+  color: $vm-color-sand;
+}
+
+body.blocked-scroll {
+  position: absolute;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+body.blocked-overflow {
+  overflow: hidden;
+}
+
+::-moz-selection {
+  background: $vm-color-plum;
+  color: $vm-color-white;
+}
+
+::selection {
+  background: $vm-color-plum;
+  color: $vm-color-white;
+}
+
+abbr {
+  border-bottom: 1px dotted $vm-border-color;
+}
+
+/* Theme editor */
+
+.editor-visible--true {
+  display: block !important;
+}
+
+/* Lazyloading styles */
+
+.transition--appear {
+  opacity: 0;
+  //important is to override the fade-in transition on product img
+  transition: opacity 0s !important;
+  &.lazyloaded {
+    opacity: 1;
+  }
+}
+
+.transition--fade-in {
+  opacity: 0;
+  transition: opacity 0.2s ease-in;
+  &.lazyloaded {
+    opacity: 1;
+  }
+}
+
+.transition--blur-up {
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  -webkit-filter: blur(5px);
+  filter: blur(5px);
+  transform: translate3d(0, 0, 0);
+  transition: filter 200ms, -webkit-filter 200ms;
+  &.lazyloaded {
+    -webkit-filter: blur(0px);
+    filter: none;
+    transform: scale(1);
+  }
+}
+
+.transition--color {
+  opacity: 0;
+  transition: opacity 0.2s ease-in;
+  &.lazyloaded {
+    opacity: 1;
+  }
+}
+
+.image-element__wrap[style*='.png'] {
+  background: transparent !important; //Prevents background showing on pngs that might have transparency
+}
+
+img[data-sizes='auto'].lazyloaded {
+  height: auto;
+}
+
+img[data-sizes='auto'],
+img[data-sizes='100vw'] {
+  display: block;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+//Ensures that small images are not stretched larger
+.image__container {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.image-element__wrap {
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+}
+
+.image-element__wrap img {
+  height: auto;
+}

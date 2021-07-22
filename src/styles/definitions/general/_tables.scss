@@ -1,0 +1,21 @@
+/* General - Tables
+================================================== */
+
+table tr.order_summary td.label {
+  text-align: right;
+}
+
+table {
+  @include table-with-borders;
+  margin-bottom: 20px;
+
+  th {
+    font-weight: 700;
+    text-align: left;
+  }
+}
+
+#order_details,
+#customer_orders table {
+  @include table-with-borders;
+}

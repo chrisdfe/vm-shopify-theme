@@ -1,0 +1,74 @@
+/* General - Links
+================================================== */
+
+a,
+a:visited {
+  color: $vm-link-color;
+  text-decoration: none;
+  position: relative;
+  transition: color $vm-link-transition-speed;
+}
+
+a:hover,
+a:focus {
+  color: $vm-link-hover-color;
+}
+
+.content {
+  a {
+    text-decoration: underline;
+  }
+
+  #pagecontent {
+    border-bottom: 0;
+  }
+}
+
+a,
+button,
+input,
+select,
+textarea,
+label,
+summary {
+  touch-action: manipulation;
+}
+
+a.cta-link {
+  font-weight: 700;
+  border-bottom: 2px solid $vm-link-color;
+  text-transform: uppercase;
+
+  &:hover {
+    border-bottom-color: $vm-link-hover-color;
+  }
+
+  &.cta-link-3 {
+    font-size: $vm-subheading-3-font-size;
+    letter-spacing: $vm-subheading-3-letter-spacing;
+  }
+
+  &.cta-link--inverted {
+    color: $vm-color-white;
+    border-bottom-color: $vm-color-white;
+
+    &:hover {
+      color: $vm-color-sand;
+      border-bottom-color: $vm-color-sand;
+    }
+  }
+
+  &.cta-link--body-text {
+    color: $vm-body-text-color;
+    border-bottom-color: $vm-body-text-color;
+
+    &:hover {
+      color: $vm-color-sand;
+      border-bottom-color: $vm-color-sand;
+    }
+  }
+
+  .content & {
+    text-decoration: none;
+  }
+}

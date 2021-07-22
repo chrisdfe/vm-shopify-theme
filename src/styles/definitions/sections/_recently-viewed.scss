@@ -1,0 +1,29 @@
+/* Sections - Recently Viewed
+================================================== */
+
+.rv-container {
+  display: block;
+
+  .thumbnail:empty {
+    margin-bottom: 0;
+  }
+}
+
+.rv-main .flickity-page-dots {
+  bottom: 25px;
+
+  @include respond-to('medium-down') {
+    display: none;
+  }
+}
+
+//Description bottom styles
+.product-description-bottom .js-recently-viewed.rv-main {
+  clear: both;
+}
+
+//Hide duplicates
+.rv-box-element .js-recently-viewed-product:nth-child(2),
+.rv-sidebar-element .js-recently-viewed-product:nth-child(2) {
+  display: none;
+}

@@ -1,0 +1,134 @@
+/* Sections - Search
+================================================== */
+
+.search-bgr-true {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.search-section {
+  // background-color: {{ settings.search_section_bg_color }};
+  width: 100%;
+  display: inline-block;
+
+  h2 {
+    margin-bottom: 0.25em;
+  }
+
+  h2,
+  p {
+    // color: {{ settings.search_section_color }};
+  }
+
+  .container {
+    padding: 40px 0;
+  }
+}
+
+.text-align--center .search__container {
+  @include justify-content(center);
+}
+
+.text-align--left .search__container {
+  @include justify-content(flex-start);
+}
+
+.text-align--right .search__container {
+  @include justify-content(flex-end);
+}
+
+.search__container {
+  position: relative;
+  width: 100%;
+  @include flexbox();
+  .search__wrapper {
+    display: inline-block;
+    position: relative;
+    max-width: 650px;
+    width: 100%;
+  }
+
+  input[type='text'] {
+    // font-size: {{ settings.regular_font_size }}px;
+    display: inline-block;
+    // border: 1px solid #000;
+    min-height: 50px;
+    height: 50px;
+    margin-bottom: 0;
+
+    &:active,
+    &:focus {
+      // border: 1px solid #000;
+    }
+  }
+}
+
+.search__form {
+  width: 100%;
+  max-width: 650px;
+  position: relative;
+  @include flex(0 0 auto);
+}
+
+.search__results {
+  top: 100%;
+  // width: 100%;
+
+  li {
+    border-left: 1px solid $vm-border-color;
+    border-right: 1px solid $vm-border-color;
+  }
+
+  .all-results {
+    border: 0;
+    // background-color: {{ settings.btn_color }};
+    width: 100%;
+    margin: 0;
+
+    span {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding-left: 0;
+    }
+
+    span.item-pricing {
+      // color: {{ settings.link_color }};
+    }
+
+    a,
+    a:active {
+      // color: {{ settings.btn_text_color }};
+      padding: 20px;
+      text-align: center;
+      display: block;
+      line-height: 1;
+    }
+
+    &:hover {
+      // background-color: {{ settings.btn_hover_color }};
+    }
+  }
+}
+
+.search__button {
+  position: absolute;
+  margin-top: 0;
+  top: 0;
+  height: 50px;
+  width: 50px;
+  right: 0px;
+  padding: 0;
+  // background-color: #000;
+  border-color: transparent;
+  // color: white;
+  // font-size: 24px;
+
+  &:hover {
+    color: white;
+    // background-color: darken($vm-border-color, 20%);
+    border: 1px solid #000;
+    border-left: 0px;
+  }
+}

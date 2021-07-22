@@ -1,0 +1,143 @@
+/* Mixins - typography
+================================================== */
+
+// Headings
+@mixin vm-heading(
+  $font-size,
+  $letter-spacing,
+  $line-height,
+  $mobile-font-size
+) {
+  font-family: $vm-heading-font;
+  font-size: $font-size;
+  letter-spacing: $letter-spacing;
+  line-height: $line-height;
+  font-weight: 700;
+  font-style: normal;
+  padding: 0;
+  text-transform: none;
+
+  @include respond-to('medium-down') {
+    font-size: $mobile-font-size;
+  }
+}
+
+@mixin vm-heading-1() {
+  @include vm-heading(
+    $vm-heading-1-font-size,
+    $vm-heading-1-letter-spacing,
+    $vm-heading-1-line-height,
+    $vm-heading-1-mobile-font-size
+  );
+}
+
+@mixin vm-heading-2() {
+  @include vm-heading(
+    $vm-heading-2-font-size,
+    $vm-heading-2-letter-spacing,
+    $vm-heading-2-line-height,
+    $vm-heading-2-mobile-font-size
+  );
+}
+
+@mixin vm-heading-3() {
+  @include vm-heading(
+    $vm-heading-3-font-size,
+    $vm-heading-3-letter-spacing,
+    $vm-heading-3-line-height,
+    $vm-heading-3-mobile-font-size
+  );
+}
+
+// Subheadings
+@mixin vm-subheading(
+  $font-size,
+  $letter-spacing,
+  $line-height,
+  $mobile-font-size
+) {
+  font-family: $vm-subheading-font;
+  font-size: $font-size;
+  letter-spacing: $letter-spacing;
+  line-height: $line-height;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-style: normal;
+
+  @include respond-to('medium-down') {
+    font-size: $mobile-font-size;
+  }
+}
+
+@mixin vm-subheading-1() {
+  @include vm-subheading(
+    $vm-subheading-1-font-size,
+    $vm-subheading-1-letter-spacing,
+    $vm-subheading-1-line-height,
+    $vm-subheading-1-mobile-font-size
+  );
+}
+
+@mixin vm-subheading-2() {
+  @include vm-subheading(
+    $vm-subheading-2-font-size,
+    $vm-subheading-2-letter-spacing,
+    $vm-subheading-2-line-height,
+    $vm-subheading-2-mobile-font-size
+  );
+}
+
+@mixin vm-subheading-3() {
+  @include vm-subheading(
+    $vm-subheading-3-font-size,
+    $vm-subheading-3-letter-spacing,
+    $vm-subheading-3-line-height,
+    $vm-subheading-3-mobile-font-size
+  );
+}
+
+// Paragraph text
+@mixin vm-paragraph(
+  $font-size,
+  $letter-spacing,
+  $line-height,
+  $mobile-font-size
+) {
+  font-family: $vm-paragraph-font;
+  font-size: $font-size;
+  font-weight: 400;
+  letter-spacing: $letter-spacing;
+  line-height: $line-height;
+  text-transform: none;
+
+  @include respond-to('medium-down') {
+    font-size: $mobile-font-size;
+  }
+}
+
+@mixin vm-paragraph-1() {
+  @include vm-paragraph(
+    $vm-paragraph-1-font-size,
+    $vm-paragraph-1-letter-spacing,
+    $vm-paragraph-1-line-height,
+    $vm-paragraph-1-mobile-font-size
+  );
+}
+
+@mixin vm-paragraph-2() {
+  @include vm-paragraph(
+    $vm-paragraph-2-font-size,
+    $vm-paragraph-2-letter-spacing,
+    $vm-paragraph-2-line-height,
+    $vm-paragraph-2-mobile-font-size
+  );
+}
+
+@mixin vm-paragraph-3() {
+  @include vm-paragraph(
+    $vm-paragraph-3-font-size,
+    $vm-paragraph-3-letter-spacing,
+    $vm-paragraph-3-line-height,
+    $vm-paragraph-3-mobile-font-size
+  );
+}

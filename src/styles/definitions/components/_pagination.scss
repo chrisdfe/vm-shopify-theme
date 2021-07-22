@@ -1,0 +1,111 @@
+/* Components - Pagination
+================================================== */
+
+.paginate,
+.load-more {
+  text-align: center;
+  margin: 50px 0;
+}
+
+.paginate {
+  .page {
+    border: solid 1px $vm-link-color;
+    margin: 1rem 0.2rem;
+    padding: 0.5rem 1rem;
+    display: inline-block;
+
+    &:hover {
+      color: $vm-color-white;
+      background-color: $vm-link-hover-color;
+      border: solid 1px $vm-link-hover-color;
+      cursor: pointer;
+
+      a {
+        color: $vm-color-white;
+      }
+    }
+
+    &.current {
+      color: $vm-color-white;
+      background-color: $vm-link-hover-color;
+      border: solid 1px $vm-link-hover-color;
+    }
+  }
+
+  .next,
+  .prev {
+    display: inline-block;
+    margin: 10px 0;
+    padding: 0.5rem 1rem;
+
+    .icon-left-arrow,
+    .icon-right-arrow {
+      &:before {
+        font-size: 11px;
+      }
+    }
+
+    a:hover {
+      .icon-left-arrow,
+      .icon-right-arrow {
+        color: $vm-link-hover-color;
+      }
+    }
+  }
+}
+
+a.tag {
+  border: solid 1px $vm-link-color;
+  margin: 10px 5px;
+  padding: 0.5rem 1rem;
+  display: inline-block;
+
+  &:hover {
+    color: #fff;
+    background-color: $vm-link-hover-color;
+    border: solid 1px $vm-link-hover-color;
+  }
+}
+
+.load-more {
+  display: none;
+  width: 100%;
+}
+
+.collection-template-section .load-more,
+.search-template-section .load-more {
+  display: block;
+  clear: both;
+}
+
+.load-more__icon {
+  opacity: 0;
+  height: 0;
+  width: 0;
+  transition: all 0.3s linear;
+  background: url('loader.gif') center center no-repeat;
+  background-size: 32px 32px;
+  margin: 0 auto;
+}
+
+.collection-matrix.loading-in-progress.filter-loading,
+.search-matrix.loading-in-progress.filter-loading {
+  height: 0;
+}
+
+.collection-matrix.loading-in-progress + .load-more__icon,
+.search-matrix.loading-in-progress + .load-more__icon {
+  width: 44px;
+  height: 44px;
+  opacity: 1;
+}
+
+a.tag {
+  font-size: smaller;
+  padding: 4px 6px;
+  margin: 5px 2px 5px 0;
+}
+
+.paginate .deco {
+  border: none;
+}

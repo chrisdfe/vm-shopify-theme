@@ -1,0 +1,112 @@
+/* Sections - Testimonials
+================================================== */
+
+.testimonial-section {
+  position: relative;
+  // TODO - don't hardcode
+  background: $vm-color-cream;
+
+  .set-static {
+    @include flexbox();
+
+    .caption {
+      position: static;
+      @include prefix(transform, translateY(0), ms webkit spec);
+      padding: 40px;
+      margin: auto;
+
+      @include respond-to('medium-down') {
+        padding: 20px;
+      }
+    }
+  }
+
+  .set-testimonial-height {
+    height: 95%;
+  }
+
+  .darken-bg {
+    @include respond-to('medium-up') {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      background: rgba(0, 0, 0, 0.6);
+    }
+  }
+
+  .use-mobile-color {
+    .animated {
+      -webkit-animation-delay: 0.25s;
+      animation-delay: 0.25s;
+    }
+  }
+}
+
+$banner-crop-height: 60vh;
+
+.mobile-banner--crop-left {
+  @include respond-to('small-down') {
+    @include object-fit(cover, left);
+    min-height: $banner-crop-height;
+  }
+}
+
+.mobile-banner--crop-right {
+  @include respond-to('small-down') {
+    @include object-fit(cover, right);
+    min-height: $banner-crop-height;
+  }
+}
+
+.mobile-banner--crop-center {
+  @include respond-to('small-down') {
+    @include object-fit(cover, center);
+    min-height: $banner-crop-height;
+  }
+}
+
+.caption-content.testimonial-text {
+  width: 80%;
+
+  .subtitle {
+    p {
+      font-style: italic;
+
+      // Usually the testimonial name
+      &:last-child {
+        font-style: normal;
+      }
+    }
+
+    @include respond-to('small-down') {
+      font-weight: normal;
+      font-size: 14px;
+    }
+  }
+}
+
+.caption-content.testimonial-text-mobile h2,
+.caption-content.testimonial-text-mobile .subtitle,
+.caption-content.testimonial-text-mobile p.headline {
+  @include respond-to('small-down') {
+    // color: {{ settings.regular_color }};
+  }
+}
+
+.testimonial-block {
+  .caption {
+    @include respond-to('small-down') {
+      margin: auto;
+      padding-top: 5%;
+      padding-bottom: 5%;
+    }
+  }
+}
+
+.testimonial-slideshow,
+.testimonial-block.gallery-cell {
+  background-color: transparent;
+}

@@ -1,0 +1,61 @@
+/* General - Lists
+================================================== */
+
+ul,
+ol {
+  margin-bottom: 20px;
+
+  li {
+    margin-bottom: 12px;
+  }
+
+  ul,
+  ol {
+    margin: 4px 0 5px 30px;
+
+    li {
+      margin-bottom: 6px;
+    }
+  }
+}
+
+ul {
+  list-style: disc outside;
+
+  &.square {
+    list-style: square outside;
+  }
+
+  &.circle {
+    list-style: circle outside;
+  }
+
+  &.disc {
+    list-style: disc outside;
+  }
+
+  &.large li {
+    line-height: 21px;
+  }
+
+  &.none {
+    list-style: none outside;
+    margin-left: 0;
+  }
+
+  &.border {
+    list-style: none outside;
+    line-height: 26px;
+
+    li {
+      border-bottom: 1px solid $vm-border-color;
+      list-style: none outside none;
+      padding: 12px 0;
+      margin-bottom: 0;
+    }
+  }
+}
+
+ol {
+  list-style: decimal;
+}

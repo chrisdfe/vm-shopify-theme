@@ -1,0 +1,33 @@
+/* Pages - Search
+================================================== */
+
+.search-template-section {
+  form {
+    position: relative;
+  }
+
+  .search_container {
+    position: relative;
+
+    .search-submit {
+      z-index: 900;
+    }
+  }
+}
+
+.search-matrix .product_row {
+  padding: 20px 0;
+  border-bottom: 1px solid $vm-border-color;
+
+  .sub_title {
+    margin-top: 1rem;
+  }
+}
+
+.search-matrix .product_row:last-child {
+  border-bottom: none;
+}
+
+.search_page {
+  padding: 100px 0;
+}

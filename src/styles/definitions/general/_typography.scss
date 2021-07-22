@@ -1,0 +1,236 @@
+/* General - Typography
+================================================== */
+
+body {
+  font-family: $vm-paragraph-font;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Headings */
+h1,
+.heading-1,
+h2,
+.heading-2,
+h3,
+.heading-3 {
+  margin: 0 0 0.75em;
+}
+
+h1,
+.heading-1 {
+  @include vm-heading-1();
+}
+
+h2,
+.heading-2 {
+  @include vm-heading-2();
+}
+
+h3,
+.heading-3 {
+  @include vm-heading-3();
+}
+
+/* Heading states */
+.heading--page-heading {
+  margin: 5rem 0;
+}
+
+.heading--with-accent {
+  position: relative;
+}
+
+// TODO - mixin
+.page-heading__title,
+.heading--with-accent {
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: -0.75rem;
+    left: 0.25rem;
+    display: block;
+    height: 3px;
+    width: 30px;
+    background-color: $vm-heading-accent-color;
+  }
+
+  &.heading--with-accent--align-center {
+    text-align: center;
+
+    &:after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  @include respond-to('small-down') {
+    &.heading--with-accent--mobile-align-left {
+      text-align: left;
+
+      &:after {
+        left: 0.25rem;
+        transform: translateX(0);
+      }
+    }
+
+    &.heading--with-accent--mobile-align-center {
+      text-align: center;
+
+      &:after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+}
+
+.page-heading {
+  padding: 5rem 0;
+
+  &.page-heading--with-breadcrumbs {
+    padding: 3rem 0 5rem;
+  }
+
+  @include respond-to('medium-down') {
+    padding: 5rem 0;
+
+    &.page-heading--with-breadcrumbs {
+      padding: 0 0 5rem;
+    }
+  }
+}
+
+.page-heading__title {
+  padding: 0;
+  margin: 0;
+}
+
+h4,
+.subheading-1,
+h5,
+.subheading-2,
+h6,
+.subheading-3 {
+  margin: 0 0 1em;
+}
+
+h4,
+.subheading-1 {
+  @include vm-subheading-1();
+}
+
+h5,
+.subheading-2 {
+  @include vm-subheading-2();
+}
+
+h6,
+.subheading-3 {
+  @include vm-subheading-3();
+}
+
+p,
+.paragraph-1,
+.paragraph-2,
+.paragraph-3 {
+  margin-bottom: 2em;
+}
+
+.paragraph-1,
+.paragraph-1 p {
+  @include vm-paragraph-1();
+}
+
+p,
+.paragraph-2,
+.paragraph-2 p {
+  @include vm-paragraph-2();
+}
+
+.paragraph-3,
+.paragraph-3 p {
+  @include vm-paragraph-3();
+}
+
+p {
+  &:empty {
+    margin: 0;
+  }
+}
+
+/* Content text */
+.page--block-text p,
+.content--block-text p,
+.paragraph--block-text,
+.text-block p {
+  line-height: 2;
+}
+
+p {
+  margin: 0 0 1.6rem;
+  font-style: normal;
+  line-height: 1.6;
+
+  img {
+    margin: 0;
+  }
+}
+
+sub {
+  font-size: 60%;
+}
+
+em,
+i {
+  font-style: italic;
+}
+
+strong,
+b {
+  font-weight: 600;
+}
+
+small {
+  font-size: 90%;
+}
+
+/*  Blockquotes  */
+blockquote,
+blockquote p {
+  @include vm-paragraph-2();
+  font-style: italic;
+}
+
+blockquote {
+  border: 0;
+  background: $vm-color-cream;
+  padding: 3rem;
+  margin: 0;
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  cite {
+    @include vm-paragraph-3();
+    display: block;
+
+    a,
+    a:visited {
+      color: #555;
+    }
+
+    &:before {
+      content: '\2014 \0020';
+    }
+  }
+}
+
+hr {
+  clear: both;
+  margin: 12px 0;
+  height: 0;
+}

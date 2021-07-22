@@ -1,0 +1,133 @@
+/* Components - Search autocomplete
+================================================== */
+
+.dropdown .header_search_form,
+.main_nav {
+  background: $vm-navbar-background-color;
+
+  .search__results .item-result {
+    left: 0;
+    // width: 100%;
+    background: $vm-navbar-background-color;
+    border-left: 0;
+    border-right: 0;
+  }
+}
+
+.nav .search__results {
+  width: 350px;
+  right: 0;
+  left: auto;
+
+  li a:active {
+    transition: ease-in-out 0s all;
+  }
+}
+
+.search_container input {
+  z-index: 29;
+}
+
+.search__results {
+  z-index: 30;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  overflow: hidden;
+  position: absolute;
+
+  li {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    // border-top: 1px {{ settings.divider_style }} $vm-border-color;
+    overflow: hidden;
+
+    &:first-child {
+      border-top: none;
+    }
+
+    a,
+    a:active {
+      width: 100%;
+      transition: ease-in-out 0.3s all;
+      @include flexbox();
+      @include align-items(center);
+      padding: 15px 20px;
+    }
+
+    a:hover {
+      // background-color: {{settings.link_color | color_modify: 'alpha', 0.1 }};
+    }
+
+    a:active {
+      // background-color: {{settings.link_color | color_modify: 'alpha', 0.3 }};
+    }
+
+    img {
+      display: block;
+    }
+  }
+
+  .title {
+    text-transform: none;
+    padding-left: 8px;
+    text-align: left;
+    // font-size: {{ settings.nav_font_size }}px;
+  }
+
+  .thumbnail {
+    padding: 0;
+    text-align: center;
+
+    img {
+      max-width: 70px;
+      max-height: 70px;
+    }
+  }
+
+  .result--page .title {
+    padding-left: 0;
+  }
+
+  .result--page span.item-pricing {
+    text-transform: none;
+    font-weight: lighter;
+    font-size: 0.8rem;
+  }
+}
+
+.menu a span.item-pricing,
+span.item-pricing {
+  padding: 0;
+
+  span {
+    padding: 0;
+  }
+}
+
+.all-results {
+  width: 100%;
+  margin: 0;
+
+  span {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  span.item-pricing {
+    // color: {{ settings.link_color }};
+  }
+
+  a {
+    // color: {{ settings.btn_text_color }};
+    // background-color: {{ settings.btn_color }};
+
+    &:hover {
+      // background-color: {{ settings.btn_hover_color }};
+    }
+  }
+}

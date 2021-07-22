@@ -1,0 +1,77 @@
+/* Pages - Team
+================================================== */
+
+.team-page__text,
+.team-page__image,
+.team-page__image img {
+  width: 100%;
+}
+
+.team-page__content--multiple .team-page__text,
+.team-page__content--multiple .team-page__image {
+  max-width: 50%;
+  width: 100%;
+
+  &:first-child {
+    margin-right: 20px;
+  }
+
+  @include respond-to('medium-down') {
+    max-width: 100%;
+  }
+}
+
+.team-page__text {
+  @include flexbox();
+  @include align-items(center);
+  @include justify-content(center);
+}
+
+.team-page__container {
+  max-width: 70%;
+  margin: 5rem;
+
+  @include respond-to('medium-down') {
+    max-width: 100%;
+    margin: 2rem 0;
+  }
+}
+
+.team-member__profile {
+  margin-bottom: 2rem;
+
+  .image-element__wrap {
+    overflow: hidden;
+    max-width: 100%;
+    width: 50%;
+    display: inline-block;
+
+    @include respond-to('medium-down') {
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+.team-member__name {
+  padding: 0;
+  margin: 0 0 0.7rem;
+}
+
+.team-member__wrap {
+  position: relative;
+  display: flex;
+}
+
+.team-member__title {
+  margin-bottom: 2rem;
+}
+
+.team-member__details {
+  position: relative;
+  width: 100%;
+  padding-left: 2rem;
+
+  img {
+    display: block;
+  }
+}

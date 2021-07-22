@@ -1,0 +1,83 @@
+/* Components - Social buttons
+================================================== */
+
+.social_buttons {
+  border-top: 1px solid $vm-border-color;
+  padding-top: 20px;
+  font-size: 1em;
+  margin-bottom: 25px;
+
+  @include respond-to('medium-down') {
+    text-align: center;
+  }
+}
+
+.share_article .social_buttons {
+  border-top: none;
+  padding-top: 0;
+
+  @include respond-to('medium-down') {
+    padding-top: 15px;
+  }
+}
+
+.share-btn {
+  display: inline-block;
+  text-align: center;
+  font-size: 1.2em;
+  margin-right: 6px;
+  margin-bottom: 10px;
+
+  a {
+    color: #fff;
+    padding: 10px 10px 8px 10px;
+    border: solid 1px #e2e2e2;
+    display: inline-block;
+    transition: all 500ms ease 0s;
+  }
+}
+
+.icon-twitter-share:before {
+  color: #09aeec;
+}
+.icon-twitter-share:hover {
+  background-color: #09aeec;
+  border-color: #09aeec;
+  color: #fff;
+}
+.icon-twitter-share:hover:before {
+  color: #fff;
+}
+.icon-facebook-share:before {
+  color: #49659d;
+}
+.icon-facebook-share:hover {
+  background-color: #49659d;
+  border-color: #49659d;
+  color: #fff;
+}
+.icon-facebook-share:hover:before {
+  color: #fff;
+}
+.icon-pinterest-share:before {
+  color: #cb1f2a;
+}
+.icon-pinterest-share:hover {
+  background-color: #cb1f2a;
+  border-color: #cb1f2a;
+  color: #fff;
+}
+.icon-pinterest-share:hover:before {
+  color: #fff;
+}
+.icon-mail-share:before {
+  color: #888;
+}
+.icon-mail-share:hover {
+  background-color: #888;
+  border-color: #888;
+  color: #fff;
+}
+.icon-mail-share:hover:before {
+  color: #fff;
+}

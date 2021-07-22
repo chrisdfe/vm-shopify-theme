@@ -1,0 +1,134 @@
+/* Components - Currency / Language switcher
+================================================== */
+
+.selectors-form__wrap,
+.selectors-form,
+.selectors-form__item {
+  margin: 0;
+}
+
+.selectors-form__wrap {
+  @include flexbox();
+  @include justify-content(flex-end);
+}
+
+.disclosure {
+  position: relative;
+}
+
+// fix for capitalization issue in cross border
+.disclosure-text-style-none {
+  button.disclosure__toggle,
+  button.disclosure__button {
+    text-transform: capitalize;
+  }
+}
+
+.disclosure-text-style-uppercase {
+  button.disclosure__toggle,
+  button.disclosure__button {
+    text-transform: uppercase;
+  }
+}
+
+.disclosure-text-style-lowercase {
+  button.disclosure__toggle,
+  button.disclosure__button {
+    text-transform: lowercase;
+  }
+}
+
+.disclosure__toggle {
+  // color: {{ settings.top_bar_color }};
+  // font-size: {{ settings.top_bar_font_size }}px;
+  // font-family: {{ settings.nav__font.family }}, {{ settings.nav__font.fallback_families }};
+  // font-weight: {{ settings.nav__font.weight }};
+  // font-style: {{settings.nav__font.style }};
+  // text-transform: {{ settings.nav_font_style }};
+  border: 1px solid $vm-border-color;
+  background-color: transparent;
+  margin-right: 20px;
+  min-height: 0;
+  transition: color 0.1s linear;
+
+  &:hover,
+  &:focus {
+    opacity: 1;
+  }
+
+  &.is-clicked {
+    // color: {{ settings.top_bar_color_hover }};
+
+    // &:focus {
+    //   color: {{ settings.nav_color_hover }};
+    // }
+  }
+
+  &.is-clicked + .disclosure__list-wrap {
+    visibility: visible;
+    opacity: 1;
+
+    .disclosure-list {
+      display: block;
+    }
+  }
+
+  .icon-down-arrow {
+    margin-left: 8px;
+  }
+}
+
+.disclosure__list-wrap {
+  // background-color: {{ settings.top_bar_bg_color }};
+  border: 1px solid $vm-border-color;
+  bottom: 100%;
+  visibility: hidden;
+  position: absolute;
+  z-index: 1001;
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+
+  &.disclosure--left {
+    left: auto;
+    right: 0;
+  }
+
+  .disclosure-list {
+    list-style: none;
+    white-space: nowrap;
+    margin-left: 0;
+    margin-bottom: 0;
+    padding: 0;
+    margin-top: 0;
+    display: none;
+  }
+}
+
+.disclosure-list__item {
+  background-color: inherit;
+  color: inherit;
+  line-height: 1;
+}
+
+button.disclosure__button {
+  background-color: inherit;
+  // color: {{ settings.top_bar_color }};
+  // font-size: {{ settings.top_bar_font_size }}px;
+  // letter-spacing: {{ settings.top_bar_letter_spacing }}px;
+  // font-family: {{ settings.nav__font.family }}, {{ settings.nav__font.fallback_families }};
+  // font-weight: {{ settings.nav__font.weight }};
+  // text-transform: {{ settings.nav_font_style }};
+  // letter-spacing: {{ settings.nav_letter_spacing }}px;
+  text-align: left;
+  transition: color 0.1s linear;
+  opacity: 1;
+
+  &:hover,
+  &[aria-current='true'] {
+    // color: {{ settings.top_bar_color_hover }};
+  }
+
+  &:focus {
+    // color: {{ settings.nav_color_hover }};
+  }
+}

@@ -1,0 +1,30 @@
+/* Components - Placeholders
+================================================== */
+
+$color-blankstate: $vm-color-sea-green;
+$color-blankstate-background: $vm-color-cream;
+
+.placeholder-svg {
+  fill: $color-blankstate;
+  background-color: $color-blankstate-background;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  box-sizing: border-box;
+  display: block;
+}
+
+.placeholder-svg--banner,
+.placeholder-svg--slideshow,
+.placeholder-svg--video {
+  height: 500px;
+
+  @include respond-to('medium') {
+    height: 350px;
+  }
+
+  @include respond-to('small') {
+    height: 250px;
+  }
+}

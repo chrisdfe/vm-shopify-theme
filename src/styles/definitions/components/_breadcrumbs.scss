@@ -1,0 +1,49 @@
+/* Components - Breadcrumbs
+================================================== */
+
+.breadcrumb-collection {
+  margin: 2rem 0;
+
+  & + div.section {
+    margin-top: 0;
+  }
+}
+
+.nav_arrows {
+  @include respond-to('medium-down') {
+    margin: 2rem 0;
+  }
+}
+
+// TODO - consolidate all these different breadcrumbs
+.breadcrumb_text,
+.article-pagination {
+  @include vm-subheading-3();
+
+  @include respond-to('medium-down') {
+    margin-top: 0;
+  }
+
+  .breadcrumb-divider {
+    color: $vm-color-sand;
+    margin: 0 0.2rem;
+  }
+}
+
+.breadcrumb {
+  margin: 2rem 0;
+
+  a {
+    border-width: 0 !important;
+  }
+
+  .icon-slash {
+    color: $vm-color-sand;
+    margin: 0 0.2rem;
+  }
+}
+
+.content .breadcrumb_link,
+.content .breadcrumb a {
+  text-decoration: none;
+}
