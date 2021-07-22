@@ -1,0 +1,14 @@
+{
+  "name": "vm-shopify-theme",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "styles:compile": "node scripts/compile-styles.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.35.2"
+  }
+}
