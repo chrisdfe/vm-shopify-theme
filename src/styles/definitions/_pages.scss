@@ -2,6 +2,8 @@
 ================================================== */
 
 // TODO - make separate entrypoints for each page group
+@import 'pages/_general.scss';
+
 @import 'pages/_blog.scss';
 @import 'pages/_product.scss';
 @import 'pages/_product-list.scss';
@@ -14,12 +16,3 @@
 @import 'pages/_policy.scss';
 @import 'pages/_styleguide.scss';
 @import 'pages/_our-story.scss';
-
-.page-banner .container.content {
-  margin-top: $vm-content-section-padding;
-  margin-bottom: $vm-content-section-padding;
-}
-
-.page-narrow .container.content {
-  margin-bottom: $vm-content-section-padding;
-}

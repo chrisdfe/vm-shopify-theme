@@ -7461,17 +7461,15 @@ body.is-active #header {
   align-items: center;
   z-index: 1;
 }
-#header .top_bar > a,
-#header .top_bar > a:visited,
-#header .top_bar > a:active {
-  display: block;
-  font-size: 25px;
-  outline: 0;
-}
 #header .top_bar a span {
   display: inline-block;
   padding-left: 4px;
   position: relative;
+}
+@media only screen and (max-width: 798px) {
+  #header {
+    display: block;
+  }
 }
 
 #header .top_bar a.icon-bag:before,
@@ -7581,6 +7579,7 @@ li > a.url-deadlink {
   width: 25%;
 }
 #header .mobile_nav.dropdown_link span.menu_title {
+  display: none;
   position: absolute;
   top: 1px;
   left: 40px;
@@ -8812,7 +8811,6 @@ header.secondary_logo--true:not(.feature_image) img.primary_logo {
 
 /* Adjust link text size on mobile */
 @media only screen and (max-width: 798px) {
-  /*#header .top_bar a.mobile_logo.no_menu_title {top:5px;}*/
   a.mobile_nav.dropdown_link.no_menu {
     margin-right: 35px;
   }
@@ -13809,6 +13807,17 @@ form.search_form,
 
 /* Definitions - Typography
 ================================================== */
+/* Pages - general styles
+================================================== */
+.page-banner .container.content {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+.page-narrow .container.content {
+  margin-bottom: 5rem;
+}
+
 /* Pages - Blog
 ================================================== */
 .blog-header {
@@ -16203,6 +16212,9 @@ button.update {
   right: 0;
   bottom: 0;
   transition: background-color 0.25s linear;
+  background: #1c4047;
+  background: rgba(28, 64, 71, 0);
+  margin: 0;
 }
 .featured-promotions .feature-section .feature-wrap {
   position: relative;
@@ -16267,6 +16279,15 @@ button.update {
 }
 .featured-promotions .feature-section.title-overlay-false .feature-wrap .title {
   display: none;
+}
+.featured-promotions .feature-section:hover .feature-overlay {
+  background: #714457;
+  background: rgba(113, 68, 87, 0.5);
+}
+@media only screen and (max-width: 798px) {
+  .featured-promotions .feature-section:hover .feature-overlay {
+    background: transparent;
+  }
 }
 .featured-promotions .feature-section.title-overlay-true:hover .title:after {
   width: 50%;
@@ -17056,13 +17077,4 @@ button.update {
 .our-story__store-calendly-embed h4 {
   text-align: center;
   margin-bottom: 1rem;
-}
-
-.page-banner .container.content {
-  margin-top: 5rem;
-  margin-bottom: 5rem;
-}
-
-.page-narrow .container.content {
-  margin-bottom: 5rem;
 }

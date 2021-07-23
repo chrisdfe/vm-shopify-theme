@@ -848,10 +848,9 @@ $backgroundTransparency: 0.6;
       right: 0;
       bottom: 0;
       transition: background-color 0.25s linear;
-      // @include respond-to('medium-down'){
-      //   {% if settings.featured_promotions_mobile_background %}
-      //     @include background-opacity({{ settings.featured_promotions_background }}, 0.5);
-      //   {% endif %}
+      @include background-opacity($vm-color-sea-green, 0);
+      margin: 0;
+      // @include respond-to('medium-down') {
       // }
     }
 
@@ -927,30 +926,18 @@ $backgroundTransparency: 0.6;
       }
     }
 
-    &:hover .feature-overlay {
-      // @include background-opacity({{ settings.featured_promotions_background }}, 0.5);
-      // @include respond-to('medium-down'){
-      //   {% unless settings.featured_promotions_mobile_background %}
-      //     background: transparent;
-      //   {% endunless %}
-      // }
+    &:hover {
+      .feature-overlay {
+        @include background-opacity($vm-color-plum, 0.5);
+
+        @include respond-to('medium-down') {
+          background: transparent;
+        }
+      }
     }
 
     &.title-overlay-true:hover .title:after {
       width: 50%;
-      // background: {{ settings.featured_promotions_color_hover }};
-    }
-
-    &.title-overlay-true:hover .title {
-      // color: {{ settings.featured_promotions_color_hover }};
-    }
-
-    &.title-overlay-true:hover .description {
-      // color: {{ settings.featured_promotions_color_hover }};
-    }
-
-    &.title-overlay-false:hover .description {
-      // color: {{ settings.featured_promotions_color_hover }};
     }
 
     img {
