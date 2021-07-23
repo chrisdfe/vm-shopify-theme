@@ -1,25 +1,29 @@
-<!-- Sales Rep -->
-<link rel="stylesheet" href="https://sdks.shopifycdn.com/polaris/latest/polaris.css" />
 
 {% if customer.tags contains "sales_rep" or customer.tags contains "pro_rep" %}
+  <!-- Sales Rep -->
+  <link rel="stylesheet" href="https://sdks.shopifycdn.com/polaris/latest/polaris.css" />
 
-<div class="sr_account" style="padding-top: 0;margin: inherit;">
-{%include'SR_Dashboard'%}
-{%include'SR_PagesScriptCode'%}
-</div>
+  <div class="sr_account" style="padding-top: 0;margin: inherit;">
+  {%include'SR_Dashboard'%}
+  {%include'SR_PagesScriptCode'%}
+  </div>
+  <!-- End of Sales Rep -->
 {% else %}
-<!-- End of Sales Rep -->{% paginate customer.orders by 20 %}
+{% paginate customer.orders by 20 %}
+<div class="page">
   <a name="pagecontent" id="pagecontent"></a>
 
-  <header class="account-header clearfix">
+  <header class="account-header page-heading clearfix">
     <div class="eight columns account-header-title">
-      <h1>{{ 'customer.account.details' | t }}</h1>
+      <h1 class="page-heading__title">{{ 'customer.account.details' | t }}</h1>
     </div>
+
     <div class="eight columns account-header-logout">
-      <span><a href="{{ routes.account_logout_url }}" id="customer_logout_link">{{ 'layout.customer.log_out' | t }}</a></span>
+      <span>
+        <a href="{{ routes.account_logout_url }}" id="customer_logout_link">{{ 'layout.customer.log_out' | t }}</a>
+      </span>
     </div>
   </header>
-  <div class="feature_divider"></div>
 
   <div class="section clearfix">
     <aside class="five columns account-sidebar">
@@ -77,6 +81,7 @@
         {% render 'pagination', paginate: paginate %}
       </div>
     </main>
+  </div>
   </div>
 {% endpaginate %}
 <!-- Sales Rep Closing -->{% endif %}<!-- End Sales Rep Closing -->

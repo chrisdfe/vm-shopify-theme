@@ -3150,7 +3150,7 @@
     "houzz_link": "",
     "linkedin_link": "",
     "email_link": "hello@valeriemadison.com",
-    "og_image_fallback": "shopify:\/\/shop_images\/Shopify-Salt-and-pepper-diamond-rings-1600x600.jpg",
+    "og_image_fallback": "shopify:\/\/shop_images\/Shopify-preview-sapphire-rings.jpg",
     "favicon": "shopify:\/\/shop_images\/Favicon_0b1daf50-6879-43a7-8cf2-ed929203f703.png",
     "disqus_enabled": false,
     "disqus_shortname": "",
@@ -3561,7 +3561,7 @@
               "richtext_top": "",
               "image_top": "shopify:\/\/shop_images\/Madrona-Valerie-Madison.jpg",
               "image_caption_top": "Visit our lovely store in Seattle!",
-              "image_link_top": "https:\/\/www.valeriemadison.com\/pages\/visit-us",
+              "image_link_top": "https:\/\/www.valeriemadison.com\/pages\/our-story#visit-the-store",
               "menu_1": "",
               "menu_1_link": "",
               "menu_2": "",
@@ -4750,6 +4750,29 @@
       "1552235156499": {
         "type": "slideshow",
         "blocks": {
+          "4a86dbf8-f788-4955-9577-055e1259a1a3": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/DSC_9446.jpg",
+              "pretext": "",
+              "title": "Platinum is here",
+              "subtitle": "",
+              "caption_background": false,
+              "caption_background_transparency": false,
+              "button1": "Shop Bands",
+              "button1_link": "shopify:\/\/collections\/new-arrivals",
+              "button1_highlight": false,
+              "button2": "",
+              "button2_link": "",
+              "button2_highlight": false,
+              "text_position": "right",
+              "text_align": "center",
+              "mobile_image_crop": "none",
+              "is_timed_slide": false,
+              "start_datetime": "",
+              "end_datetime": ""
+            }
+          },
           "9fa93401-9486-4195-b141-9c2af3b48d8c": {
             "type": "image",
             "settings": {
@@ -4844,6 +4867,7 @@
           }
         },
         "block_order": [
+          "4a86dbf8-f788-4955-9577-055e1259a1a3",
           "9fa93401-9486-4195-b141-9c2af3b48d8c",
           "64437903-428d-4f4e-96b3-7ced4c3a99f5",
           "5ee03ec4-ab57-4a98-a96a-5c779998b5fa",
@@ -4855,7 +4879,7 @@
           "slideshow_animation": "slide",
           "slideshow_speed": 5,
           "activate_adaptiveHeight": false,
-          "mobile_text_below_image": false,
+          "mobile_text_below_image": true,
           "mobile_text_color": ""
         }
       },

@@ -5,7 +5,7 @@ body {
   color: $vm-body-text-color;
   line-height: 1.6em;
   overflow: auto;
-  // background-color: {{ settings.shop_bg_color }};
+  background-color: $vm-color-white;
 }
 
 ::placeholder {

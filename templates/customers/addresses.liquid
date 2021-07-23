@@ -1,14 +1,13 @@
 <a name="pagecontent" id="pagecontent"></a>
 
-<header class="account-header clearfix">
+<header class="account-header page-heading clearfix">
   <div class="eight columns account-header-title">
-    <h1>{{ 'customer.addresses.title' | t }}</h1>
+    <h1 class="page-heading__title">{{ 'customer.addresses.title' | t }}</h1>
   </div>
   <div class="eight columns account-header-logout">
     <a href="{{ routes.account_url }}">{{ 'customer.account.return' | t }}</a> / <span><a href="{{ routes.account_logout_url }}" id="customer_logout_link">{{ 'layout.customer.log_out' | t }}</a></span>
   </div>
 </header>
-<div class="feature_divider"></div>
 
 <div class="section clearfix">
   <aside class="five columns account-sidebar">

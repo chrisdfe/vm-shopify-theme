@@ -271,6 +271,7 @@ body {
   color: #1c4047;
   line-height: 1.6em;
   overflow: auto;
+  background-color: #ffffff;
 }
 
 ::placeholder {
