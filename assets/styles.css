@@ -16281,8 +16281,8 @@ button.update {
   display: none;
 }
 .featured-promotions .feature-section:hover .feature-overlay {
-  background: #714457;
-  background: rgba(113, 68, 87, 0.5);
+  background: #1c4047;
+  background: rgba(28, 64, 71, 0.5);
 }
 @media only screen and (max-width: 798px) {
   .featured-promotions .feature-section:hover .feature-overlay {
@@ -16673,6 +16673,26 @@ button.update {
 .address_title {
   margin-bottom: 0;
   padding-bottom: 0;
+}
+
+.action_edit,
+.action_delete {
+  background-color: #1c4047;
+  border-color: transparent;
+}
+.action_edit a,
+.action_delete a {
+  color: #ffffff;
+  text-decoration: none;
+}
+.action_edit:hover,
+.action_delete:hover {
+  background-color: #dec1a8;
+  border-color: transparent;
+}
+.action_edit:hover a,
+.action_delete:hover a {
+  color: #ffffff;
 }
 
 .order-details__discount {

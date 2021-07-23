@@ -928,7 +928,7 @@ $backgroundTransparency: 0.6;
 
     &:hover {
       .feature-overlay {
-        @include background-opacity($vm-color-plum, 0.5);
+        @include background-opacity($vm-color-sea-green, 0.5);
 
         @include respond-to('medium-down') {
           background: transparent;

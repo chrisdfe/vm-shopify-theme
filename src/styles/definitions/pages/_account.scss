@@ -44,37 +44,25 @@
   padding-bottom: 0;
 }
 
-.action_edit {
-  // background-color: {{ settings.btn_color }};
-  // border-color: {{ settings.btn_color }};
-
-  // a {
-  //   color: {{ settings.btn_text_color }};
-  // }
-
-  // &:hover {
-  //   background-color: {{ settings.btn_color }};
-  //   border-color: {{ settings.btn_color }};
-
-  //   a {
-  //     color: {{ settings.btn_text_color }};
-  //   }
-  // }
-}
-
+// TODO - why aren't these just buttons
+.action_edit,
 .action_delete {
-  // background-color: {{ settings.btn_text_color }};
-  // border-color: {{ settings.btn_color }};
-  // a {
-  //   color: {{ settings.btn_color }};
-  // }
-  // &:hover {
-  //   background-color: {{ settings.btn_color }};
-  //   border-color: {{ settings.btn_color }};
-  //   a {
-  //     color: {{ settings.btn_text_color }};
-  //   }
-  // }
+  background-color: $vm-button-background-color;
+  border-color: $vm-button-border-color;
+
+  a {
+    color: $vm-button-text-color;
+    text-decoration: none;
+  }
+
+  &:hover {
+    background-color: $vm-button-hover-background-color;
+    border-color: $vm-button-hover-border-color;
+
+    a {
+      color: $vm-button-hover-text-color;
+    }
+  }
 }
 
 .order-details__discount {
