@@ -1,0 +1,39 @@
+/* #Color regions
+================================================== */
+
+.color-region,
+.color-region--light {
+  background-color: $vm-color-white;
+  color: $vm-color-sea-green;
+}
+
+.color-region--light_alt {
+  background-color: $vm-color-cream;
+}
+
+.color-region--dark,
+.color-region--dark_alt {
+  color: $vm-color-white;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    color: $vm-color-white;
+  }
+
+  a {
+    color: $vm-color-white;
+  }
+}
+
+.color-region--dark {
+  background-color: $vm-color-plum;
+}
+
+.color-region--dark_alt {
+  background-color: $vm-color-sea-green;
+}

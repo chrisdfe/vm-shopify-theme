@@ -458,3 +458,265 @@ div.container {
     }
   }
 }
+
+/* #Custom Styles
+================================================== */
+
+.left-none {
+  left: 0 !important;
+}
+
+.color .one-half.grid__item {
+  padding: 20px 50px;
+}
+
+.newsletter-text p {
+  font-size: 13px;
+}
+
+.newsletter_section h2 {
+  font-size: 33px;
+  text-transform: none !important;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 767px) {
+  .color .one-half {
+    width: 100% !important;
+  }
+
+  .color .one-half.grid__item {
+    padding: 0;
+  }
+
+  .newsletter_section h2 {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .newsletter_section .newsletter-text p {
+    text-align: center;
+  }
+  p.close {
+    right: 6px !important;
+  }
+  .news .one-half {
+    width: 100% !important;
+  }
+  .mobile_padding {
+    padding-bottom: 0;
+  }
+}
+
+// TODO - ???
+@media only screen and (min-device-width: 768px) and (max-device-width: 1023px) {
+  .color .one-half {
+    width: 75%;
+    margin: 0 auto;
+    float: none;
+    display: block;
+  }
+  .color .one-half.grid__item {
+    padding: 10px;
+  }
+  p.close {
+    right: 6px !important;
+  }
+  .news .one-half {
+    width: 75%;
+    margin: 0 auto;
+    float: none;
+    display: block;
+  }
+  .news h2 {
+    font-size: 33px;
+    text-transform: none !important;
+  }
+  .news .newsletter-text p {
+    font-size: 17px;
+  }
+  .mobile_padding {
+    padding-bottom: 0;
+  }
+}
+
+// TODO - ??? what is this
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1100px) {
+  .color .input-row {
+    width: 85%;
+  }
+  p.close {
+    right: 6px !important;
+  }
+  .news h2 {
+    font-size: 23px;
+  }
+  .mobile_padding {
+    padding-bottom: 0;
+  }
+}
+.news {
+  width: 100% !important;
+}
+.newsletter-section {
+  position: fixed;
+  z-index: 99;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+}
+div#shopify-section-footer {
+  z-index: 999;
+  width: 100%;
+  float: left;
+  position: relative;
+}
+p.close {
+  position: absolute;
+  right: 6px;
+  top: -2px;
+  cursor: pointer;
+}
+.stacktable {
+  width: 100%;
+}
+.st-head-row {
+  padding-top: 1em;
+}
+.st-head-row.st-head-row-main {
+  font-size: 1.5em;
+  padding-top: 0;
+}
+.st-key {
+  width: 49%;
+  text-align: right;
+  padding-right: 1%;
+}
+.st-val {
+  width: 49%;
+  padding-left: 1%;
+}
+.stacktable.large-only {
+  display: table;
+}
+.stacktable.small-only {
+  display: none;
+}
+
+.authorsec {
+  padding: 30px 0;
+}
+.authorsec h5.title5new1 {
+  border-bottom: none;
+  font-weight: 900;
+  font-size: 22px;
+}
+
+.authorlist {
+}
+.authorlist .listingdiv h4 {
+  color: #686767;
+  font-size: 18px;
+  font-weight: 900;
+}
+.authorlist .listingdiv .img img {
+  width: auto;
+  max-width: 100%;
+}
+.authorlist {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.authorlist .listingdiv {
+  width: 23%;
+  margin-right: 12px;
+}
+.authorlist .listingdiv:nth-child(4n) {
+  margin-right: 0;
+}
+
+.listingdiv .side {
+  color: #dfd3c3;
+}
+
+@media (max-width: 800px) {
+  .stacktable.large-only {
+    display: none;
+  }
+  .stacktable.small-only {
+    display: table;
+  }
+}
+
+@media (max-width: 568px) {
+  .newsletter_section {
+    max-height: 75vh;
+    position: fixed;
+    bottom: 0;
+  }
+  .newsletter_section .close {
+    font-size: 30px;
+  }
+  .newsletter_section h2 {
+    font-size: 1.35em !important;
+    text-align: center;
+  }
+  .newsletter_section .one-half.grid__item {
+    width: 100%;
+    padding: 4vw;
+  }
+}
+
+.link-promo {
+  z-index: 1;
+}
+
+.sold-out {
+  font-weight: 700;
+}
+
+@media only screen and (max-width: 600px) {
+  .caption-content a.action_button.first_button {
+    // width:45%!important;
+  }
+
+  .caption-content a.action_button.second_button {
+    // width:45%!important;
+    // font-size:15px
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .menu .mega-menu__image-caption-link .image-element__wrap img {
+    max-width: calc((100vw / 5) - 60px);
+  }
+  .mega-menu:last-child
+    .mega-menu__image-caption-link
+    .image-element__wrap
+    img {
+    max-width: initial;
+  }
+}
+
+@media (max-width: 767px) {
+  .gallerynewsec h2.title {
+    font-size: 20px;
+  }
+  .gallerynewsec {
+    font-size: 15px;
+  }
+  .gallerynewsec p {
+    margin: 0 0 15px;
+  }
+  .gallerylist {
+    flex-wrap: wrap;
+  }
+  .gallerylist li {
+    width: 100%;
+    margin: 0 0 20px;
+  }
+  .gallerylist li:last-child {
+    margin: 0;
+  }
+}

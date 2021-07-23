@@ -1,0 +1,54 @@
+/* Image List Section
+  ==============================================================================*/
+
+section.image-list {
+  // TODO - don't hardcode this
+  background: $vm-color-cream;
+
+  ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 30px auto;
+    align-items: center;
+    justify-content: space-evenly;
+    align-content: center;
+    padding-top: initial;
+  }
+
+  .image-list__item {
+    align-self: flex-start;
+
+    p {
+      margin-bottom: 0;
+    }
+
+    img {
+      text-align: center;
+      vertical-align: middle;
+    }
+  }
+
+  @include respond-to('medium-down') {
+    .image-list__column {
+      margin-bottom: 2rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+// TODO - ???
+.details-section {
+  margin-top: 3rem;
+  padding: 3rem;
+}
+
+// TODO - ???
+.product-full-width-images-template .content {
+  margin-top: 50px;
+}

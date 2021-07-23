@@ -1,0 +1,118 @@
+/* Styleguide
+  ==============================================================================*/
+
+.vm-styleguide {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.vm-styleguide__banner {
+  padding: 8rem 3rem;
+  background-color: $vm-color-plum;
+  color: $vm-color-white;
+
+  .page-heading {
+    padding-top: 0;
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+
+    li {
+    }
+
+    a {
+      @include vm-heading-3();
+      position: relative;
+      color: $vm-color-white;
+
+      &:hover {
+        opacity: 0.8;
+      }
+
+      sup {
+        position: absolute;
+        top: 30%;
+        left: -2.2rem;
+        font-size: 0.6em;
+        color: $vm-color-sand;
+      }
+    }
+  }
+}
+
+.vm-styleguide__content-section-title {
+  position: relative;
+
+  sup {
+    position: absolute;
+    top: 30%;
+    left: -3rem;
+    color: $vm-color-sand;
+  }
+
+  // Compensate for the sticky nav
+  .anchor {
+    position: absolute;
+    top: -5rem;
+  }
+}
+
+.vm-styleguide__section {
+  margin: 3rem 0;
+}
+
+.vm-styleguide__subsection {
+  margin: 1.5rem 0;
+}
+
+.vm-styleguide-content__section-subheading {
+  color: $vm-color-sand;
+  margin-top: 3rem;
+}
+
+.vm-styleguide__swatch {
+  display: flex;
+}
+
+.vm-styleguide__swatch-color {
+  padding: ($gutter * 0.5);
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: 25%;
+  width: 25%;
+
+  h4 {
+    margin: 1rem 0;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .vm-styleguide__swatch-color__color-square {
+    padding-top: 100%;
+  }
+
+  &.vm-styleguide__swatch-color--sea-green
+    .vm-styleguide__swatch-color__color-square {
+    background-color: $vm-color-sea-green;
+  }
+
+  &.vm-styleguide__swatch-color--plum
+    .vm-styleguide__swatch-color__color-square {
+    background-color: $vm-color-plum;
+  }
+
+  &.vm-styleguide__swatch-color--sand
+    .vm-styleguide__swatch-color__color-square {
+    background-color: $vm-color-sand;
+  }
+
+  &.vm-styleguide__swatch-color--cream
+    .vm-styleguide__swatch-color__color-square {
+    background-color: $vm-color-cream;
+  }
+}

@@ -1,0 +1,20 @@
+/* Section - Page Details
+================================================== */
+
+.page-details-section {
+  .article {
+    padding-bottom: 0;
+  }
+
+  div.container .featured_products {
+    padding-top: 0;
+  }
+
+  @include respond-to('small-down') {
+    .caption.position-center,
+    .caption.position-left,
+    .caption.position-right {
+      margin: 5% 0 0 0;
+    }
+  }
+}

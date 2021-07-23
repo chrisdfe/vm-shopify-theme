@@ -200,3 +200,94 @@ div {
     border-right: solid 1px $vm-border-color;
   }
 }
+
+.product-price-wrapper {
+  margin: 30px 0;
+}
+
+.notify_form #contact_form .action_button {
+  width: 100%;
+}
+
+.product_image_col {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.count {
+  font-style: normal;
+  font-size: 13px;
+}
+
+.checkout {
+  display: block;
+  float: right;
+  margin-top: 0px;
+}
+
+.additional-checkout-buttons {
+  text-align: center;
+  margin-top: 0;
+
+  & > *:not(script) {
+    padding: 10px 0 0 10px;
+    vertical-align: top;
+    line-height: 1;
+
+    @include respond-to('small-down') {
+      padding: 10px 0 0 5px;
+    }
+
+    &:first-child,
+    &:empty {
+      padding-left: 0px;
+    }
+  }
+}
+
+.or {
+  line-height: 40px;
+  font-style: normal;
+  font-size: 14px;
+  padding: 0 10px;
+  text-align: center;
+
+  @include respond-to('small-down') {
+    line-height: initial;
+    text-align: left;
+  }
+}
+
+/* Shipping Estimate */
+.shipping_estimate {
+  display: block;
+  /*   font-size: 16px; */
+  font-style: italic;
+  padding-bottom: 15px;
+  margin: 50px 0;
+}
+
+/* Shipping Estimate Box */
+span.shipping_estimate,
+.product .description .retailer_box {
+  // background: {{ settings.estimate_box_color }};
+  background: $vm-color-white;
+  border: none;
+  padding: 5% 10%;
+  display: block;
+}
+
+span.shipping_estimate #fromDate,
+span.shipping_estimate #toDate,
+.product .description h6 em a {
+  // color: {{settings.estimate_box_shipping_color}};
+  font-weight: 600;
+}
+
+/* SM - Hide Paypal Button */
+.product .shopify-payment-button__more-options,
+.product .shopify-payment-button__button--branded,
+.quick-shop .shopify-payment-button__more-options,
+.quick-shop .shopify-payment-button__button--branded {
+  visibility: hidden;
+}

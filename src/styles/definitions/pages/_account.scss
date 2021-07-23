@@ -1,0 +1,82 @@
+/* #Account
+================================================== */
+
+.account-header-logout {
+  text-align: right;
+  text-transform: uppercase;
+}
+
+.account-sidebar {
+  // border-right: 1px solid {{ settings.headline_border_color }};
+  box-sizing: border-box;
+  padding-right: 10px;
+
+  @include respond-to('medium-down') {
+    border: 0;
+    padding-right: 0;
+  }
+}
+
+.customers-addresses {
+  .account-sidebar {
+    border-right: 0;
+    padding-right: 0;
+  }
+
+  .account-main {
+    box-sizing: border-box;
+    // border-left: 1px solid {{ settings.headline_border_color }};
+    padding-left: 20px;
+    @include respond-to('medium-down') {
+      border: 0;
+      padding-left: 0;
+    }
+  }
+}
+
+.action_bottom .note {
+  vertical-align: middle;
+  line-height: 40px;
+}
+
+.address_title {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.action_edit {
+  // background-color: {{ settings.btn_color }};
+  // border-color: {{ settings.btn_color }};
+
+  // a {
+  //   color: {{ settings.btn_text_color }};
+  // }
+
+  // &:hover {
+  //   background-color: {{ settings.btn_color }};
+  //   border-color: {{ settings.btn_color }};
+
+  //   a {
+  //     color: {{ settings.btn_text_color }};
+  //   }
+  // }
+}
+
+.action_delete {
+  // background-color: {{ settings.btn_text_color }};
+  // border-color: {{ settings.btn_color }};
+  // a {
+  //   color: {{ settings.btn_color }};
+  // }
+  // &:hover {
+  //   background-color: {{ settings.btn_color }};
+  //   border-color: {{ settings.btn_color }};
+  //   a {
+  //     color: {{ settings.btn_text_color }};
+  //   }
+  // }
+}
+
+.order-details__discount {
+  display: block;
+}

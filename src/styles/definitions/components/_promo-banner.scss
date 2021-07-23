@@ -1,0 +1,151 @@
+/* #Promo banner
+================================================== */
+// TODO - put in #header section
+
+$promoBannerHeight: 30px;
+
+.promo_banner {
+  background-color: $vm-color-plum;
+  text-align: center;
+  color: $vm-color-white;
+  width: 100%;
+  z-index: 5000;
+  overflow: hidden;
+  padding: 0.75rem 1.5rem;
+  display: none;
+
+  p {
+    @include vm-paragraph-3();
+    margin-bottom: 0;
+  }
+
+  .promo_banner__content {
+    margin: 0 auto;
+  }
+
+  .promo_banner-close {
+    $size: 35px;
+    position: absolute;
+    top: 0.75rem;
+    right: 0;
+    display: block;
+    overflow: visible;
+    width: $size;
+    height: $size;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    text-decoration: none;
+    color: $vm-color-white;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    z-index: 1000;
+
+    &:before {
+      font-family: Arial, 'Helvetica CY', 'Nimbus Sans L', sans-serif !important;
+      font-size: 20px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      width: $size;
+      content: '\00d7';
+      text-align: center;
+    }
+  }
+}
+
+.promo_banner-show .promo_banner {
+  display: block;
+  @include flexbox();
+  @include align-items(center);
+}
+
+.top_bar {
+  padding-top: 0;
+  position: relative;
+  transition: padding-top 0.3s linear;
+
+  @include respond-to('small-down') {
+    padding-top: 0;
+  }
+}
+
+$topMenuHeight: 40px;
+
+.page-banner + #pagecontent {
+  padding-bottom: 0;
+}
+
+.promo_banner-show {
+  .page-banner {
+    margin-top: calc(#{$topMenuHeight} + #{$promoBannerHeight});
+  }
+
+  // .page-banner + #pagecontent {
+  //   padding-bottom: 0;
+  // }
+}
+
+// .index-sections .under-menu:nth-child(1) {
+//   margin-top: $topMenuHeight;
+// }
+
+// .page-details-section .under-menu:nth-child(1) {
+//   margin-top: $topMenuHeight;
+// }
+
+.index.promo_banner-show {
+  // #pagecontent {
+  //   display: block;
+  //   padding-bottom: #{$promoBannerHeight};
+  // }
+}
+
+@include respond-to('medium-down') {
+  .mobile_nav-fixed--true,
+  .mobile_nav-fixed--false {
+    #pagecontent {
+      display: block;
+      padding-bottom: $topMenuHeight;
+    }
+
+    //page banner is visible
+    .page-banner {
+      margin-top: $topMenuHeight;
+    }
+
+    .page-banner + #pagecontent {
+      padding-bottom: 0;
+    }
+  }
+
+  .index-sections .under-menu:nth-child(1) {
+    margin-top: 0;
+  }
+
+  .page-details-section .under-menu:nth-child(1) {
+    margin-top: 0;
+  }
+
+  .page-banner .under-menu:nth-child(1) {
+    margin-top: 0;
+  }
+
+  //recalculate values if promo banner is visible
+  .promo_banner-show.mobile_nav-fixed--true,
+  .promo_banner-show.mobile_nav-fixed--false {
+    // #pagecontent {
+    //   padding-bottom: calc(#{$topMenuHeight} + #{$promoBannerHeight});
+    // }
+
+    .page-banner {
+      margin-top: calc(#{$topMenuHeight} + #{$promoBannerHeight});
+    }
+
+    .page-banner + #pagecontent {
+      padding-bottom: 0;
+    }
+  }
+}

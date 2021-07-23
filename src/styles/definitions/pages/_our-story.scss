@@ -1,0 +1,333 @@
+/* # VM page - Our Story
+================================================== */
+
+.page-our-story {
+  .content-section {
+    padding: 7rem 0;
+
+    .content-section__anchor {
+      position: relative;
+      top: -8rem;
+    }
+
+    @include respond-to('small-down') {
+      padding: 5rem 0;
+
+      .content-section__anchor {
+        position: relative;
+        top: -6rem;
+      }
+    }
+  }
+}
+
+.content-section.content-section--our-story--intro {
+  background-color: $vm-color-cream;
+  // padding: 9rem 0;
+
+  .icon-wrapper {
+    padding: 3rem 0 0;
+    text-align: center;
+
+    img {
+      height: 150px;
+    }
+  }
+
+  @include respond-to('small-down') {
+    padding-top: $vm-content-section-padding;
+    padding-bottom: $vm-content-section-padding;
+
+    .icon-wrapper {
+      // padding: 1rem 0 0;
+
+      img {
+        height: 100px;
+      }
+    }
+  }
+}
+
+.content-section.content-section--our-story--about-valerie {
+  p {
+    margin-right: 1rem;
+
+    &:first-child {
+      margin-top: 1rem;
+    }
+  }
+
+  @include respond-to('small-down') {
+    &.content-section {
+      p {
+        margin-right: 0;
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+.content-section.content-section--our-story--our-history {
+}
+
+.our-story__timeline {
+  display: flex;
+  flex-direction: column;
+}
+
+$our-story-timeline-border-width: 2px;
+$our-story-timeline-border-color: $vm-color-sand;
+$our-story-timeline-event-line-width: 3.5rem;
+$our-story-timeline-event-line-top: 3.5rem;
+
+.our-story__timeline-event {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+  width: calc(50% + #{$our-story-timeline-border-width});
+  border-right: $our-story-timeline-border-width solid
+    $our-story-timeline-border-color;
+  flex-grow: 0;
+  flex-shrink: 0;
+  text-align: right;
+
+  // event line
+  &:before {
+    content: '';
+    position: absolute;
+    top: $our-story-timeline-event-line-top;
+    right: 0;
+    border-bottom: $our-story-timeline-border-width solid
+      $our-story-timeline-border-color;
+    width: $our-story-timeline-event-line-width;
+  }
+
+  // circle
+  &:after {
+    content: '';
+    $circle-size: 7px;
+    position: absolute;
+    top: calc(
+      #{$our-story-timeline-event-line-top} - #{($circle-size * 0.5) -
+        ($our-story-timeline-border-width * 0.5)}
+    );
+    right: $our-story-timeline-event-line-width;
+    width: $circle-size;
+    height: $circle-size;
+    border-radius: $circle-size;
+    background-color: $our-story-timeline-border-color;
+  }
+
+  &.our-story__timeline-event--even {
+    margin-left: 50%;
+    border-right: 0 solid transparent;
+    border-left: $our-story-timeline-border-width solid
+      $our-story-timeline-border-color;
+    text-align: left;
+
+    &:before {
+      right: auto;
+      left: 0;
+    }
+
+    &:after {
+      right: auto;
+      left: $our-story-timeline-event-line-width;
+    }
+
+    .our-story__timeline-event__body {
+      margin-right: 0;
+      margin-left: 3rem;
+    }
+  }
+
+  .our-story__timeline-event__body {
+    padding: 3rem 2rem;
+    margin-right: 3rem;
+  }
+
+  .our-story__timeline-event__year-spacer {
+    height: 3rem;
+  }
+
+  @include respond-to('small-down') {
+    &.our-story__timeline-event {
+      width: auto;
+      text-align: left;
+      border-left: $our-story-timeline-border-width solid
+        $our-story-timeline-border-color;
+      border-right: 0 solid transparent;
+      margin: 0;
+
+      &:before {
+        right: auto;
+        left: 0;
+        width: #{$our-story-timeline-event-line-width - 1rem};
+      }
+
+      &:after {
+        right: auto;
+        left: #{$our-story-timeline-event-line-width - 1rem};
+      }
+
+      .our-story__timeline-event__body {
+        padding: 3rem 0 3rem 3rem;
+        margin: 0 0 0 1rem;
+      }
+    }
+  }
+}
+
+.our-story__timeline-past-dots,
+.our-story__timeline-future-dots {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  .our-story__timeline-past-dots__dot,
+  .our-story__timeline-future-dots__dot {
+    margin: 0.5rem 0 0;
+    width: $our-story-timeline-border-width;
+    height: $our-story-timeline-border-width;
+    border-radius: $our-story-timeline-border-width;
+    background-color: $our-story-timeline-border-color;
+    transform: translateX(#{$our-story-timeline-border-width * 0.5});
+  }
+
+  .our-story__timeline-past-dots__dot {
+    margin: 0 0 0.5rem;
+  }
+
+  .our-story__timeline-future-dots__dot {
+    margin: 0.5rem 0 0;
+  }
+
+  @include respond-to('small-down') {
+    align-items: flex-start;
+
+    .our-story__timeline-past-dots__dot,
+    .our-story__timeline-future-dots__dot {
+      transform: translateX(0);
+    }
+  }
+}
+
+.content-section.content-section--our-story--pillars {
+  background-color: $vm-color-cream;
+}
+
+.our-story__pillar {
+  padding: 0 0.5rem;
+
+  .our-story__pillar__image-wrapper {
+    text-align: center;
+    margin-bottom: 1.5rem;
+
+    img {
+      height: 150px;
+    }
+  }
+
+  h4 {
+    margin: 1rem 0;
+  }
+
+  @include respond-to('small-down') {
+    padding: 0;
+    margin-bottom: 5rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    img {
+      height: 100px;
+    }
+  }
+}
+
+.content-section.content-section--our-story--team {
+  // background-color: $vm-color-cream;
+}
+
+.our-story__our-team-intro {
+  margin-bottom: 7rem;
+
+  @include respond-to('small-down') {
+    margin-bottom: $vm-content-section-mobile-padding;
+  }
+}
+
+.our-story__team-member {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 2rem;
+}
+
+.our-story__team-member {
+  .our-story__team-member__image-wrapper {
+    flex-basis: 40%;
+  }
+
+  .our-story__team-member__body {
+    flex-basis: 60%;
+    margin-top: 1rem;
+    margin-left: 2rem;
+
+    h3 {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.content-section.content-section--our-story--visit-store {
+  background-color: $vm-color-cream;
+
+  p:first-child {
+    margin-top: 1rem;
+  }
+}
+
+.our-story__store-mobile-map-wrapper {
+  margin-bottom: 1rem;
+
+  @include respond-to('medium-up') {
+    display: none;
+  }
+}
+
+.our-story__store-map-wrapper {
+  margin-right: 1rem;
+
+  @include respond-to('medium-down') {
+    display: none;
+  }
+}
+
+.our-story__store-map-content {
+  padding: 3rem 3rem 1.5rem;
+
+  @include respond-to('medium-down') {
+    padding: 1rem 0;
+  }
+}
+
+.our-story__store-location-hours {
+  padding: 1.5rem 3rem 3rem;
+  // You'd think the grid system would handle this but it doesn't
+  margin: 0 - ($gutter * 0.5);
+
+  @include respond-to('medium-down') {
+    padding: 1rem 0;
+    margin: 0;
+  }
+}
+
+.our-story__store-calendly-embed {
+  // match the calendly embed internal styles
+  h4 {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+}

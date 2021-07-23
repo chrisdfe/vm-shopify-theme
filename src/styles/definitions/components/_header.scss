@@ -1518,3 +1518,38 @@ header.secondary_logo--true:not(.feature_image) {
     display: inline !important;
   }
 }
+
+/* Adjust link text size on mobile */
+@media only screen and (max-width: 798px) {
+  /*#header .top_bar a.mobile_logo.no_menu_title {top:5px;}*/
+  a.mobile_nav.dropdown_link.no_menu {
+    margin-right: 35px;
+  }
+}
+
+@media (max-width: 400px) {
+  #header .top_bar a.mobile_logo.no_menu_title {
+    position: initial;
+    width: 60%;
+    font-size: 4.5vw !important;
+    top: initial;
+    line-height: 45px;
+  }
+
+  #header .mobile_nav.dropdown_link.no_menu {
+    width: 10%;
+  }
+}
+
+/* Add Custom Order Cart */
+#cart_note_container {
+  padding: 5px 30px 0 30px;
+}
+
+#cart_note_container textarea {
+  margin: 0;
+}
+
+#cart_note_container hr {
+  border-top: 1px solid #d6d6d6;
+}
