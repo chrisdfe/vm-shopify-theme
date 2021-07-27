@@ -1,8 +1,38 @@
 /* Eternity Bracelets Page
 ================================================== */
 
+@use "sass:math";
+
 @import '../_variables.scss';
 @import '../_mixins.scss';
 
 // .page-eternity-bracelets {
 // }
+
+.eternity-bracelets__banner-wrapper {
+  height: 25rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: stretch;
+}
+
+.eternity-braclets__banner-photo {
+  background-color: $vm-color-plum;
+  flex: 1;
+
+  &.eternity-braclets__banner-photo--large {
+    $width: 100% * (math.div(1, 3) * 2);
+    width: $width;
+    flex-basis: $width;
+    height: 100%;
+    margin-right: math.div($gutter, 2);
+  }
+
+  &.eternity-braclets__banner-photo--small {
+    $width: 100% * math.div(1, 3);
+    width: $width;
+    flex-basis: $width;
+    height: 15rem;
+    margin-left: math.div($gutter, 2);
+  }
+}

@@ -4,11 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "styles:compile": "node scripts/compile-styles.js"
+    "styles:compile": "node scripts/compile-styles.js",
+    "styles:watch": "node scripts/watch-styles.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "node-watch": "^0.7.1",
     "sass": "^1.35.2",
     "yargs": "^17.0.1"
   }

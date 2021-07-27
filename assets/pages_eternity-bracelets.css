@@ -41,3 +41,26 @@
 */
 /* Mixins - typography
 ================================================== */
+.eternity-bracelets__banner-wrapper {
+  height: 25rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: stretch;
+}
+
+.eternity-braclets__banner-photo {
+  background-color: #714457;
+  flex: 1;
+}
+.eternity-braclets__banner-photo.eternity-braclets__banner-photo--large {
+  width: 66.6666666667%;
+  flex-basis: 66.6666666667%;
+  height: 100%;
+  margin-right: 10px;
+}
+.eternity-braclets__banner-photo.eternity-braclets__banner-photo--small {
+  width: 33.3333333333%;
+  flex-basis: 33.3333333333%;
+  height: 15rem;
+  margin-left: 10px;
+}
