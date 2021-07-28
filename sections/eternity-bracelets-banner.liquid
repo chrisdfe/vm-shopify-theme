@@ -1,8 +1,52 @@
 <div class="content-section content-section--eternity-bracelets-banner">
-  <h1>Eternity Bracelets</h1>
+  <div class="container">
+    <div class="sixteen columns">
+      <h1>{{ section.settings.title }}</h1>
 
-  <div class="eternity-bracelets__banner-wrapper">
-    <div class="eternity-braclets__banner-photo eternity-braclets__banner-photo--large"></div>
-    <div class="eternity-braclets__banner-photo eternity-braclets__banner-photo--small"></div>
+      <div class="eternity-bracelets__banner-wrapper">
+        <div class="eternity-bracelets__banner-row">
+          <div class="eternity-braclets__banner-photo eternity-braclets__banner-photo--large">
+            <img src="{{ section.settings.image_1 }}">
+          </div>
+          <div class="eternity-braclets__banner-photo eternity-braclets__banner-photo--small">
+            <img src="{{ section.settings.image_2 }}">
+          </div>
+        </div>
+        <div class="eternity-bracelets__banner-row">
+          <div class="eternity-braclets__banner-photo eternity-braclets__banner-photo--centered">
+            <img src="{{ section.settings.image_3 }}">
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
+
+{% schema %}
+{
+  "name": "Banner",
+  "settings": [
+    {
+      "id": "title",
+      "label": "Title",
+      "type": "text",
+      "default": "Eternity Bracelets"
+    },
+    {
+      "id": "image_1",
+      "label": "Image 1",
+      "type": "image_picker"
+    },
+    {
+      "id": "image_2",
+      "label": "Image 2",
+      "type": "image_picker"
+    },
+    {
+      "id": "image_3",
+      "label": "Image 3",
+      "type": "image_picker"
+    }
+  ]
+}
+{% endschema %}

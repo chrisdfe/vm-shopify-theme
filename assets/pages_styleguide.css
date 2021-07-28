@@ -1,0 +1,148 @@
+/* Styleguide
+  ==============================================================================*/
+/* #Variables
+================================================== */
+/* Variables - General
+================================================== */
+/* Variables - Colors
+================================================== */
+/* Variables - Typography
+================================================== */
+/* Variables - Components
+================================================== */
+/* Variables - Misc
+================================================== */
+/* Mixins
+================================================== */
+/* Mixins - general
+================================================== */
+/*
+  This mixin can be used to set the object-fit:
+  @include object-fit(contain);
+   or object-fit and object-position:
+  @include object-fit(cover, top);
+*/
+/*
+  Prefix mixin for generating vendor prefixes.
+  Based on https://github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/addons/_prefixer.scss
+
+  Usage:
+    // Input:
+    .element {
+      @include prefix(transform, scale(1), ms webkit spec);
+    }
+
+    // Output:
+    .element {
+      -ms-transform: scale(1);
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+*/
+/* Mixins - typography
+================================================== */
+.vm-styleguide {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.vm-styleguide__banner {
+  padding: 8rem 3rem;
+  background-color: #714457;
+  color: #ffffff;
+}
+.vm-styleguide__banner .page-heading {
+  padding-top: 0;
+}
+.vm-styleguide__banner ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+.vm-styleguide__banner ul a {
+  font-family: orpheuspro, serif;
+  font-size: 30px;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  font-weight: 700;
+  font-style: normal;
+  padding: 0;
+  text-transform: none;
+  position: relative;
+  color: #ffffff;
+}
+@media only screen and (max-width: 798px) {
+  .vm-styleguide__banner ul a {
+    font-size: 26px;
+  }
+}
+.vm-styleguide__banner ul a:hover {
+  opacity: 0.8;
+}
+.vm-styleguide__banner ul a sup {
+  position: absolute;
+  top: 30%;
+  left: -2.2rem;
+  font-size: 0.6em;
+  color: #dec1a8;
+}
+
+.vm-styleguide__content-section-title {
+  position: relative;
+}
+.vm-styleguide__content-section-title sup {
+  position: absolute;
+  top: 30%;
+  left: -3rem;
+  color: #dec1a8;
+}
+.vm-styleguide__content-section-title .anchor {
+  position: absolute;
+  top: -5rem;
+}
+
+.vm-styleguide__section {
+  margin: 3rem 0;
+}
+
+.vm-styleguide__subsection {
+  margin: 1.5rem 0;
+}
+
+.vm-styleguide-content__section-subheading {
+  color: #dec1a8;
+  margin-top: 3rem;
+}
+
+.vm-styleguide__swatch {
+  display: flex;
+}
+
+.vm-styleguide__swatch-color {
+  padding: 20px;
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: 25%;
+  width: 25%;
+}
+.vm-styleguide__swatch-color h4 {
+  margin: 1rem 0;
+}
+.vm-styleguide__swatch-color p {
+  margin: 0;
+}
+.vm-styleguide__swatch-color .vm-styleguide__swatch-color__color-square {
+  padding-top: 100%;
+}
+.vm-styleguide__swatch-color.vm-styleguide__swatch-color--sea-green .vm-styleguide__swatch-color__color-square {
+  background-color: #1c4047;
+}
+.vm-styleguide__swatch-color.vm-styleguide__swatch-color--plum .vm-styleguide__swatch-color__color-square {
+  background-color: #714457;
+}
+.vm-styleguide__swatch-color.vm-styleguide__swatch-color--sand .vm-styleguide__swatch-color__color-square {
+  background-color: #dec1a8;
+}
+.vm-styleguide__swatch-color.vm-styleguide__swatch-color--cream .vm-styleguide__swatch-color__color-square {
+  background-color: #f8f4f4;
+}

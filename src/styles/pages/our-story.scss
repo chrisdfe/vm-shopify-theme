@@ -1,6 +1,9 @@
 /* # VM page - Our Story
 ================================================== */
 
+@import '../_variables.scss';
+@import '../_mixins.scss';
+
 .page-our-story {
   .content-section {
     padding: 7rem 0;
@@ -23,7 +26,6 @@
 
 .content-section.content-section--our-story--intro {
   background-color: $vm-color-cream;
-  // padding: 9rem 0;
 
   .icon-wrapper {
     padding: 3rem 0 0;
@@ -218,11 +220,9 @@ $our-story-timeline-event-line-top: 3.5rem;
 }
 
 .our-story__pillar {
-  padding: 0 0.5rem;
-
   .our-story__pillar__image-wrapper {
     text-align: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
 
     img {
       height: 150px;
@@ -287,6 +287,16 @@ $our-story-timeline-event-line-top: 3.5rem;
   p:first-child {
     margin-top: 1rem;
   }
+
+  .content-section__title-wrapper {
+    padding-right: 3rem;
+    padding-left: 3rem;
+
+    @include respond-to('medium-down') {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
 }
 
 .our-story__store-mobile-map-wrapper {
@@ -298,8 +308,6 @@ $our-story-timeline-event-line-top: 3.5rem;
 }
 
 .our-story__store-map-wrapper {
-  margin-right: 1rem;
-
   @include respond-to('medium-down') {
     display: none;
   }
@@ -315,7 +323,8 @@ $our-story-timeline-event-line-top: 3.5rem;
 
 .our-story__store-location-hours {
   padding: 1.5rem 3rem 3rem;
-  // You'd think the grid system would handle this but it doesn't
+
+  // You'd think the grid system would handle nested rows but it doesn't
   margin: 0 - ($gutter * 0.5);
 
   @include respond-to('medium-down') {

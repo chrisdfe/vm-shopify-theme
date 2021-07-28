@@ -1,0 +1,75 @@
+<div class="content-section content-section--eternity-bracelets-how-it-works">
+  <div class="container">
+    <div class="six columns offset-by-five">
+      <h2 class="content-section__title heading--with-accent">
+        {{ section.settings.title }}
+      </h2>
+
+      <ol class="eternity-bracelets__how-it-works__list">
+        {% for block in section.blocks %}
+          <li>
+            {{ block.settings.text }}
+          </li>
+        {% endfor %}
+      </ol>
+
+      <div class="eternity-bracelets__purchase-cta-wrapper">
+        <div class="eternity-bracelets__graphic-placeholder">
+        </div>
+
+        <p class="paragraph-1">
+          {{ section.settings.cta_lead_text }}
+        </p>
+
+        <a class="button" href="{{ section.settings.cta_link }}">
+          {{ section.settings.cta_text }}
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "How it works",
+  "settings": [
+    {
+      "id": "title",
+      "label": "Title",
+      "type": "text",
+      "default": "How does it work?"
+    },
+    {
+      "id": "cta_lead_text",
+      "label": "CTA lead-in text",
+      "type": "text",
+      "default": "Interested?"
+    },
+    {
+      "id": "cta_text",
+      "label": "CTA Button text",
+      "type": "text",
+      "default": "Purchase your permanent jewelry"
+    },
+    {
+      "id": "cta_link",
+      "label": "CTA Button link",
+      "type": "text",
+      "default": "#"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "how_it_works_item",
+      "name": "How it works item",
+      "settings": [
+        {
+          "id": "text",
+          "label": "Text",
+          "type": "textarea"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

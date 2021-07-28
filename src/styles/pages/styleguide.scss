@@ -1,6 +1,9 @@
 /* Styleguide
   ==============================================================================*/
 
+@import '../_variables.scss';
+@import '../_mixins.scss';
+
 .vm-styleguide {
   max-width: 700px;
   margin: 0 auto;

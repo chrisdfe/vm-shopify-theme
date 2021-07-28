@@ -1,0 +1,43 @@
+<div class="content-section content-section--eternity-bracelets-overview">
+  <div class="container">
+    <div class="eight columns offset-by-two">
+      <h2 class="content-section__title heading--with-accent">
+        {{ section.settings.title }}
+      </h2>
+      
+      <p class="paragraph--block-text">
+        {{ section.settings.content }}
+      </p>
+    </div>
+    <div class="four columns">
+      <div class="eternity-bracelets__graphic-placeholder">
+        <!-- {{ section.settings.image | img_url: 'x500' | img_tag }} -->
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Overview",
+  "settings": [
+    {
+      "id": "title",
+      "label": "Title",
+      "type": "text",
+      "default": "What does \"permanent jewelry\" mean?"
+    },
+    {
+      "id": "content",
+      "label": "Content",
+      "type": "textarea",
+      "default": "Our skilled bench jewelers will weld on a custom fit bracelet to your wrist using a painless, quick, and easy process. Because the bracelet is welded on, it does not have a clasp and therefore will “permanently” stay on (until you decide to remove it)."
+    },
+    {
+      "id": "image",
+      "label": "Image",
+      "type": "image_picker"
+    }
+  ]
+}
+{% endschema %}

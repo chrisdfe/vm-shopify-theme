@@ -1,0 +1,58 @@
+<div class="content-section content-section--eternity-bracelets-faq">
+  <div class="container">
+    <div class="eight columns offset-by-four">
+      <div class="content-section__heading">
+        <div class="content-section__title-wrapper">
+          <h2 class="content-section__title heading--with-accent">
+            {{ section.settings.title }}
+          </h2>
+        </div>
+      </div>
+      
+      {% for block in section.blocks %}
+        <div class="eternity-bracelets__faq-item">
+          <h4 class="eternity-bracelets__faq-item__question">
+          {{ block.settings.title }}
+          </h4>
+
+          <p class="paragraph--block-text">
+            {{ block.settings.answer }}
+          </p>
+        </div>
+      {% endfor %}
+
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "FAQ",
+  "settings": [
+    {
+      "id": "title",
+      "label": "Title",
+      "type": "text",
+      "default": "FAQs"
+    }
+  ],
+  "blocks": [
+  {
+    "type": "faq_item",
+    "name": "Frequently Asked Question",
+    "settings": [
+      {
+        "id": "title",
+        "label": "Question",
+        "type": "text"
+      },
+      {
+        "id": "answer",
+        "label": "Answer",
+        "type": "textarea"
+      }
+    ]
+  }
+]
+}
+{% endschema %}

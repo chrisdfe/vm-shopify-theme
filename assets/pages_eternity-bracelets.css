@@ -41,26 +41,123 @@
 */
 /* Mixins - typography
 ================================================== */
-.eternity-bracelets__banner-wrapper {
+.page-eternity-bracelets h2 {
+  margin-bottom: 3rem;
+}
+.page-eternity-bracelets .content-section {
+  padding: 7rem 0;
+}
+.page-eternity-bracelets .content-section .content-section__anchor {
+  position: relative;
+  top: -8rem;
+}
+@media only screen and (max-width: 480px) {
+  .page-eternity-bracelets .content-section {
+    padding: 5rem 0;
+  }
+  .page-eternity-bracelets .content-section .content-section__anchor {
+    position: relative;
+    top: -6rem;
+  }
+}
+
+.content-section.content-section--eternity-bracelets-banner h1 {
+  text-align: center;
+  margin: 1rem 0 7rem;
+}
+.content-section.content-section--eternity-bracelets-banner h2 {
+  margin-bottom: 3rem;
+}
+
+.eternity-bracelets__banner-row {
   height: 25rem;
+  margin-bottom: 40px;
   display: flex;
   align-items: flex-end;
   justify-content: stretch;
+}
+.eternity-bracelets__banner-row:last-child {
+  margin-bottom: 0;
 }
 
 .eternity-braclets__banner-photo {
   background-color: #714457;
   flex: 1;
+  object-fit: fill;
+}
+@media only screen and (max-width: 798px) {
+  .eternity-braclets__banner-photo {
+    width: 100%;
+    flex-basis: 100%;
+    margin: 0;
+  }
 }
 .eternity-braclets__banner-photo.eternity-braclets__banner-photo--large {
   width: 66.6666666667%;
   flex-basis: 66.6666666667%;
   height: 100%;
-  margin-right: 10px;
+  margin-right: 20px;
 }
 .eternity-braclets__banner-photo.eternity-braclets__banner-photo--small {
   width: 33.3333333333%;
   flex-basis: 33.3333333333%;
   height: 15rem;
-  margin-left: 10px;
+  margin-left: 20px;
+}
+.eternity-braclets__banner-photo.eternity-braclets__banner-photo--centered {
+  margin-left: 25%;
+  margin-right: 25%;
+  height: 100%;
+}
+
+.content-section.content-section--eternity-bracelets-overview .eternity-bracelets__graphic-placeholder {
+  display: flex;
+  margin-top: 2rem;
+  margin-left: 2rem;
+}
+.content-section.content-section--eternity-bracelets-overview .eternity-bracelets__graphic-placeholder img {
+  object-fit: cover;
+}
+
+.eternity-bracelets__graphic-placeholder {
+  background-color: #714457;
+  height: 15rem;
+}
+
+.eternity-bracelets__how-it-works__list {
+  list-style: none;
+  counter-reset: how-it-works-counter;
+  padding-left: 0;
+}
+.eternity-bracelets__how-it-works__list li {
+  position: relative;
+  counter-increment: how-it-works-counter;
+  line-height: 2;
+  margin-bottom: 1rem;
+}
+.eternity-bracelets__how-it-works__list li:before {
+  content: counter(how-it-works-counter) ". ";
+  position: absolute;
+  left: calc(-1em - 20px);
+  top: -6px;
+  color: #dec1a8;
+  font-size: 30px;
+  font-family: orpheuspro, serif;
+  font-weight: bold;
+  text-align: right;
+}
+
+.eternity-bracelets__purchase-cta-wrapper {
+  margin: 3rem 0;
+}
+.eternity-bracelets__purchase-cta-wrapper .eternity-bracelets__graphic-placeholder {
+  margin-bottom: 3rem;
+}
+
+.content-section.content-section--eternity-bracelets-faq {
+  background: #f8f4f4;
+}
+
+.eternity-bracelets__faq-item {
+  margin-bottom: 2rem;
 }

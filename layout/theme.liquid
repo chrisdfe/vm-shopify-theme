@@ -124,9 +124,12 @@
     {% assign feature_image = true %}
   {% elsif template contains "our-story" %}
     {% assign feature_image = true %}
+  {% elsif template contains "eternity-bracelets" %}
+    {% assign feature_image = true %}
   {% else %}
     {% assign feature_image = false %}
   {% endif %}
+  
   <noscript>
     <style>
       .product_section .product_form,
