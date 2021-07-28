@@ -6342,6 +6342,96 @@
         "settings": {
           "toggle": false
         }
+      },
+      "eternity-bracelets-banner": {
+        "type": "eternity-bracelets-banner",
+        "settings": {
+          "title": "Eternity Bracelets"
+        }
+      },
+      "eternity-bracelets-overview": {
+        "type": "eternity-bracelets-overview",
+        "settings": {
+          "title": "What does \"permanent jewelry\" mean?",
+          "content": "Our skilled bench jewelers will weld on a custom fit bracelet to your wrist using a painless, quick, and easy process. Because the bracelet is welded on, it does not have a clasp and therefore will “permanently” stay on (until you decide to remove it).",
+          "image": "shopify:\/\/shop_images\/IMG_4947.jpg"
+        }
+      },
+      "eternity-bracelets-how-it-works": {
+        "type": "eternity-bracelets-how-it-works",
+        "blocks": {
+          "c6d20408-8168-4ef6-b7ce-0d0e58a9501d": {
+            "type": "how_it_works_item",
+            "settings": {
+              "text": "Our skilled bench jewelers will weld on a custom fit bracelet to your wrist using a painless, quick, and easy process."
+            }
+          },
+          "ee204f9d-248d-46ff-8ae3-3f57a40c9376": {
+            "type": "how_it_works_item",
+            "settings": {
+              "text": "Because the bracelet is welded on, it does not have a clasp and therefore will “permanently” stay on"
+            }
+          },
+          "71660cd9-c922-41ff-a2ff-49af53d04549": {
+            "type": "how_it_works_item",
+            "settings": {
+              "text": "(until you decide to remove it)."
+            }
+          }
+        },
+        "block_order": [
+          "c6d20408-8168-4ef6-b7ce-0d0e58a9501d",
+          "ee204f9d-248d-46ff-8ae3-3f57a40c9376",
+          "71660cd9-c922-41ff-a2ff-49af53d04549"
+        ],
+        "settings": {
+          "title": "How does it work?",
+          "cta_lead_text": "Interested?",
+          "cta_text": "Purchase your permanent jewelry",
+          "cta_link": "#"
+        }
+      },
+      "eternity-bracelets-faq": {
+        "type": "eternity-bracelets-faq",
+        "blocks": {
+          "b9d0c49c-721c-4fd4-8533-5d9062afba4d": {
+            "type": "faq_item",
+            "settings": {
+              "title": "Does it hurt?",
+              "answer": "You may feel a bit of warmth for a moment. This process involves a laser welder being in close proximity with your hand. Your skin will be shielded with a section of leather as a precaution against the unlikely possibility of machine malfunction or human error. Our technician has over 120 hours of training and experience on this machine, and we take pride in our commitment to the health and safety of both our clients and staff!"
+            }
+          },
+          "f2eb3a92-53dc-4eda-8a2e-c2514c908fb6": {
+            "type": "faq_item",
+            "settings": {
+              "title": "What if I need to get an MRI?",
+              "answer": "Consult your doctor to know if you will be required to remove your permanent jewelry during your MRI appointment. It can easily be cut off with scissors if needed. Contact us if you need to have it reconnected."
+            }
+          },
+          "dfd302f2-3042-41aa-a181-736ab8e66295": {
+            "type": "faq_item",
+            "settings": {
+              "title": "Can you take your permanent bracelet through airport security?",
+              "answer": "Yes! TSA does not ask you to remove fine jewelry when going through security."
+            }
+          },
+          "14eb645c-7e12-41c5-8e44-4d3d1955b647": {
+            "type": "faq_item",
+            "settings": {
+              "title": "What if I need to remove it or it breaks?",
+              "answer": "We ensure the integrity of our weld before your appointment is complete and have been testing them on our staff for over 6 months. However, accidents happen! If you need to remove or your welded jewelry comes off for any reason, please contact us."
+            }
+          }
+        },
+        "block_order": [
+          "b9d0c49c-721c-4fd4-8533-5d9062afba4d",
+          "f2eb3a92-53dc-4eda-8a2e-c2514c908fb6",
+          "dfd302f2-3042-41aa-a181-736ab8e66295",
+          "14eb645c-7e12-41c5-8e44-4d3d1955b647"
+        ],
+        "settings": {
+          "title": "FAQs"
+        }
       }
     },
     "content_for_index": [
