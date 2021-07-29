@@ -271,3 +271,26 @@ $backgroundTransparency: 0.6;
   left: 0;
   right: 0;
 }
+
+$banner-crop-height: 60vh;
+
+.mobile-banner--crop-left {
+  @include respond-to('small-down') {
+    @include object-fit(cover, left);
+    min-height: $banner-crop-height;
+  }
+}
+
+.mobile-banner--crop-right {
+  @include respond-to('small-down') {
+    @include object-fit(cover, right);
+    min-height: $banner-crop-height;
+  }
+}
+
+.mobile-banner--crop-center {
+  @include respond-to('small-down') {
+    @include object-fit(cover, center);
+    min-height: $banner-crop-height;
+  }
+}

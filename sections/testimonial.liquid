@@ -1,19 +1,20 @@
-{% if section.blocks.size > 0 %}
-  <div class="content-section content-section--vm-testimonials">
-    <div class="container">
-      <div class="row">
-        <div class="six columns">
-          {% for block in section.blocks %}
-          <h2 class="vm-testimonials__slide-title-link js-testimonial-slide-title-link" data-slide-index="{{ forloop.index }}">
-            {{ block.settings.title }}
-          </h2>
-          {% endfor %}
-        </div>
-        <div class="ten columns">
-          {% for block in section.blocks %}
-            <div class="vm-testimonial-slide vm-testimonial-slide--index-{{ index }}" data-slide-index="{{ index }}">
-              <h2 class="vm-testimonial-slide__title">
-                {{ block.settings.title }}
+<div class="content-section content-section--vm-testimonials vm-testimonials">
+  <div class="container">
+    <div class="row">
+      <div class="six columns">
+        {% for block in section.blocks %}
+        <h3 class="vm-testimonials__slide-title-link js-testimonial-slide-title-link {% if forloop.first %}is-active{% endif %}" data-slide-index="{{ forloop.index }}">
+          &ldquo;{{ block.settings.title }}&rdquo;
+        </h3>
+        {% endfor %}
+      </div>
+
+      <div class="eight columns">
+        {% for block in section.blocks %}
+          <div class="vm-testimonial-slide vm-testimonial-slide--index-{{ index }} js-testimonial-slide {% if forloop.first %}is-active{% endif %}" data-slide-index="{{ forloop.index }}">
+            <div class="vm-testimonial-slide__content">
+              <h2 class="vm-testimonial-slide__title heading-1">
+                &ldquo;{{ block.settings.title }}&rdquo;
               </h2>
               
               <p class="vm-testimonial-slide__testimonial paragraph--block-text">
@@ -21,33 +22,109 @@
               </p>
               
               {% if block.settings.name != blank %}
-                <p class="vm-testimonial-slide__name paragraph--block-text">
+                <h4 class="vm-testimonial-slide__name paragraph--block-text">
                   - {{ block.settings.name }}
-                </p>
+                </h4>
               {% endif %}
             </div>
-          {% endfor %}
-        </div>
+          </div>
+        {% endfor %}
       </div>
     </div>
   </div>
-{% endif %}
+</div>
 
 <script>
 (function() {
-  console.log('hello');
+  const SLIDE_INDEX_ATTR = "data-slide-index";
+  const IS_ACTIVE_CLASS = "is-active";
+  const IS_HIDDEN_CLASS = "is-hidden";
+  const NO_TRANSITION_CLASS = "no-transition";
+  const HIDE_TRANSITION_TIME = 700;
+  
+  let currentActiveSlideIndex = 1;
+  let fadeOutTimeout = null;
+  let fadeInTimeout = null;
+  
+  const slideLinkElements = document.querySelectorAll('.js-testimonial-slide-title-link');
+  const slideElements = document.querySelectorAll('.js-testimonial-slide');
 
-  function onTitleLinkClick(event) {
-    const element = event.target;
-    console.log(element);
+  function getElementSlideIndex(element) {
+    const indexAsString = element.getAttribute(SLIDE_INDEX_ATTR);
+    
+    if (!indexAsString) {
+      return -1;
+    }
+
+    const index = parseInt(indexAsString, 10);
+    return index;
   }
 
-  document
-    .querySelectorAll('.js-testimonial-slide-title-link')
+  function getElementBySlideIndex(elements, targetSlideIndex) {
+    for (let i = 0; i < elements.length; i++) {
+      const currentElement = elements[i];
+      const slideIndex = getElementSlideIndex(currentElement);
+      
+      if (slideIndex === targetSlideIndex) {
+        return currentElement;
+      }
+    }
+  }
+  
+  function getCurrentActiveTitleLink() {
+    return getElementBySlideIndex(slideLinkElements, currentActiveSlideIndex);
+  }
+
+  function getCurrentActiveSlide() {
+    return getElementBySlideIndex(slideElements, currentActiveSlideIndex);
+  }
+
+  function setIsActive(element, isActive) {
+    element.classList.toggle(IS_ACTIVE_CLASS, isActive);
+  }
+
+  function onTitleLinkClick(event) {
+    const targetTitleLink = event.target;
+    
+    const newSlideIndex = getElementSlideIndex(targetTitleLink);
+    
+    const currentActiveTitleLink = getCurrentActiveTitleLink();
+    const currentActiveTitleLinkIndex = getElementSlideIndex(currentActiveTitleLink);
+    
+    // Don't do anything when the user clicks on the already active slide
+    if (newSlideIndex === currentActiveTitleLinkIndex) {
+      return;
+    }
+    
+    const currentActiveSlide = getCurrentActiveSlide();
+    const targetSlide = getElementBySlideIndex(slideElements, newSlideIndex);
+
+    setIsActive(currentActiveTitleLink, false);
+    setIsActive(targetTitleLink, true);
+
+    currentActiveSlide.classList.add(IS_HIDDEN_CLASS);
+
+    currentActiveSlideIndex = newSlideIndex;
+    
+    fadeOutTimeout = setTimeout(function() {
+      setIsActive(currentActiveSlide, false);
+
+      targetSlide.classList.add(NO_TRANSITION_CLASS);
+      targetSlide.classList.add(IS_HIDDEN_CLASS);
+      targetSlide.classList.remove(NO_TRANSITION_CLASS);
+      setIsActive(targetSlide, true);
+
+      fadeInTimeout = setTimeout(function() {
+        targetSlide.classList.remove(IS_HIDDEN_CLASS);
+      }, 100)
+    }, HIDE_TRANSITION_TIME);
+  }
+
+  slideLinkElements
     .forEach(function(element) {
       element.addEventListener('click', onTitleLinkClick);
     });
-})()
+})();
 </script>
 
 {% schema %}

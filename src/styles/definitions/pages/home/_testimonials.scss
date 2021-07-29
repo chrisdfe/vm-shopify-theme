@@ -1,0 +1,53 @@
+/* #Home page - testimonials
+================================================== */
+
+.content-section.content-section--vm-testimonials {
+}
+
+.vm-testimonials {
+}
+
+.vm-testimonials__slide-title-link {
+  opacity: 0.5;
+  transform: translateX(-1rem);
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  margin-bottom: 2rem;
+
+  &:hover {
+    transform: translateX(-0.5rem);
+    opacity: 0.75;
+  }
+
+  &.is-active {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.vm-testimonial-slide {
+  display: none;
+  min-height: 20rem;
+  transition: all 700ms ease;
+
+  &.is-hidden {
+    opacity: 0;
+    transform: translateX(-2rem);
+  }
+
+  &.no-transition {
+    transition: all 0;
+  }
+
+  &.is-active {
+    display: block;
+  }
+
+  .vm-testimonial-slide__content {
+    padding: 0 0 0 2rem;
+  }
+
+  .vm-testimonial-slide__testimonial {
+    margin: 2rem 0 3rem;
+  }
+}
