@@ -1,0 +1,137 @@
+/* #Home page - video
+================================================== */
+
+.block__featured_video,
+.video-section {
+  .caption {
+    z-index: 30;
+    pointer-events: none;
+  }
+
+  @include respond-to('small-down') {
+    .caption {
+      margin: 0;
+      height: auto;
+    }
+  }
+
+  .video-text--outside-video {
+    height: auto;
+  }
+}
+
+.showPosterImage--true[data-ratio='16:9'] {
+  padding-top: 56.25%;
+}
+
+.showPosterImage--true[data-ratio='4:3'] {
+  padding-top: 75%;
+}
+
+.homepage-video {
+  position: relative;
+  overflow: hidden;
+  transition: height 0.3s ease-in-out;
+  // {% if settings.image_loading_style != 'color' %}
+  //   background-color: {{ settings.banner_placeholder_background_color }};
+  // {% endif %}
+
+  @include respond-to('small-down') {
+    background-color: transparent;
+  }
+
+  img {
+    width: 100%;
+    display: block;
+  }
+
+  iframe {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+  }
+
+  // video {
+  //   background-color: {{ settings.shop_bg_color }};
+  // }
+
+  video[poster] {
+    object-fit: cover;
+  }
+
+  video.video-autoplay--true.html-video {
+    display: none;
+  }
+
+  .homepage-video--media {
+    width: 100%;
+    height: auto;
+    padding-top: 0;
+  }
+
+  .placeholder-image--true a.video__play-button {
+    pointer-events: none;
+  }
+
+  .caption.text-on-video {
+    pointer-events: none;
+  }
+
+  @include respond-to('small-down') {
+    .caption.text-on-video {
+      position: absolute;
+      height: auto;
+      @include prefix(transform, translateY(-50%), ms webkit spec);
+      margin: 0;
+
+      a.highlight-false {
+        color: white;
+        border-color: white;
+      }
+    }
+  }
+}
+
+.homepage-video .mobile-video__buttons {
+  display: block;
+  text-align: center;
+  top: 55%;
+  @include prefix(transform, translateY(-50%), ms webkit spec);
+  width: 100%;
+  position: absolute;
+
+  &.text-on-video {
+    z-index: 20;
+  }
+
+  a.highlight-false {
+    background-color: rgba(255, 255, 255, 0);
+  }
+
+  a.highlight-true {
+  }
+
+  .action_button {
+    margin: 5px;
+  }
+
+  @include respond-to('small-up') {
+    display: none;
+  }
+}
+
+.darken-video {
+  display: block;
+  background: rgba(0, 0, 0, 0.3);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  pointer-events: none;
+  z-index: 20;
+}

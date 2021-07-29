@@ -1,0 +1,129 @@
+.homepage-product-slider {
+  margin: 0 10px;
+
+  object.placeholder-image {
+    width: 100%;
+    display: block;
+    height: auto;
+    position: relative;
+    padding-top: 100%;
+  }
+
+  .placeholder-svg--product {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.homepage-product-slider.even-num-slides {
+  padding-left: 10px;
+  width: calc(100% - 20px);
+
+  @include respond-to('medium-down') {
+    padding-left: 0;
+    width: 100%;
+  }
+}
+
+.products-slider.slider-gallery {
+  &.products-length-6 {
+    .gallery-cell {
+      width: calc(16.6% - 10px);
+
+      @include respond-to('medium-down') {
+        width: calc(40% - 10px);
+      }
+    }
+  }
+  &.products-length-5 {
+    .gallery-cell {
+      width: calc(20% - 10px);
+      @include respond-to('medium-down') {
+        width: calc(40% - 10px);
+      }
+    }
+  }
+  &.products-length-4 {
+    .gallery-cell {
+      width: calc(25% - 10px);
+      @include respond-to('medium-down') {
+        width: calc(40% - 10px);
+      }
+    }
+  }
+  &.products-length-3,
+  &.products-length-2,
+  &.products-length-1 {
+    .gallery-cell {
+      width: calc(33.33% - 10px);
+    }
+  }
+}
+
+.products-slider.slider-gallery {
+  .gallery-cell {
+    &.visible-2 {
+      width: calc(50% - 10px);
+      @include respond-to('medium-down') {
+        width: calc(50% - 10px);
+      }
+    }
+    &.visible-3 {
+      width: calc(33.33% - 10px);
+      @include respond-to('medium-down') {
+        width: calc(40% - 10px);
+      }
+    }
+    &.visible-4 {
+      width: calc(25% - 10px);
+      @include respond-to('medium-down') {
+        width: calc(40% - 10px);
+      }
+    }
+    &.visible-5 {
+      width: calc(20% - 10px);
+      @include respond-to('medium-down') {
+        width: calc(40% - 10px);
+      }
+    }
+    &.visible-6 {
+      width: calc(16.666% - 10px);
+      @include respond-to('medium-down') {
+        width: calc(40% - 10px);
+      }
+    }
+    &.visible-7 {
+      width: calc(14.2% - 10px);
+      @include respond-to('medium-down') {
+        width: calc(40% - 10px);
+      }
+      .product-details {
+        font-size: 0.7rem;
+      }
+    }
+  }
+}
+
+// Text below overlay on larger screens
+@include respond-to('max-width: 985px') {
+  @for $i from 7 through 16 {
+    .products-length-#{$i} {
+      .product-info__caption {
+        display: block;
+      }
+      .thumbnail-overlay {
+        display: none;
+      }
+    }
+  }
+}
+
+.featured_products.product-slider {
+  padding-bottom: 0;
+  .columns {
+    padding-bottom: 0;
+  }
+}
