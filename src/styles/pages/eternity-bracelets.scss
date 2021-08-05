@@ -99,7 +99,7 @@
 
   &.eternity-braclets__banner-image--medium {
     padding-bottom: $gutter;
-    margin-bottom: -7px;
+    margin-bottom: -3px;
 
     @include respond-to('medium-down') {
       padding-bottom: 0;
