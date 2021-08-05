@@ -1,82 +1,179 @@
-{% comment %}
-** Testimonial - homepage partial **
-- Draggable section
-- Uses blocks
-{% endcomment %}
-
-{% if section.settings.wide_display == false %}
-<div class="container">
-  <div class="sixteen columns">
-{% endif %}
-
-{% if section.blocks.size > 0 %}
-  <div  id="testimonial-{{section.id}}"
-        class="content-section
-        testimonial-slideshow
-        js-testimonial
-        {% if section.settings.testimonial_text_animation != '' %}text-animation--true{% endif %}
-        transparentBackground--{{settings.slideshow_button_style}}
-        full-width--{{ section.settings.wide_display }}"
-        data-slider-id="testimonial-{{section.id}}"
-        data-slideshow-speed="{{section.settings.testimonial_speed}}"
-        data-slideshow-text-animation="{{section.settings.testimonial_text_animation}}"
-        >
-    {% for block in section.blocks %}
-        <div class="testimonial-block gallery-cell slide-{{ forloop.index }} {% if block.settings.image == nil %}set-static use-mobile-color{% endif %}" {{ block.shopify_attributes }} data-block-id="{{block.id}}">
-            {% assign image = block.settings.image %}
-            
-          	{% if image != nil %}
-              {% render 'image-element',
-                      image: image,
-                      alt: image.alt,
-                      stretch_width: true,
-                      additional_classes: 'testimonial-image'
-              %}
-              {% if block.settings.darken_bg %}
-                <div class="darken-bg"></div>
-              {% endif %}
-            {% endif %}
-          
-            <div class="caption position-{{block.settings.text_position}} js-caption">
-                <div class="caption-content testimonial-text {% if image != nil %}testimonial-text-mobile{% endif %} align-{{block.settings.text_align}}">
-                  {% if block.settings.title != blank %}
-                    <h2>
-                      {{ block.settings.title }}
-                    </h2>
-                  {% endif %}
-                  
-                  <div class="subtitle">
-                    <p class="paragraph--block-text">
-                      &ldquo;{{ block.settings.testimonial | strip_html }}&rdquo;
-                    </p>
-                    
-                      {% if block.settings.name != blank %}
-	                    <p class="paragraph--block-text">
-                          <strong>- {{ block.settings.name }}</strong>
-	                    </p>
-                      {% endif %}
-
-                      {% if block.settings.store_name != blank %}
-                        {% if block.settings.link != blank %}<a href="{{ block.settings.link }}">{% endif %}
-                          <p>
-                            <strong>{{ block.settings.store_name }}</strong>
-                          </p>
-                        {% if block.settings.link != blank %}</a>{% endif %}
-                      {% endif %}
-                    </p>
-                  </div>
-                </div>
-              </div>
-
+<div class="content-section content-section--vm-testimonials vm-testimonials js-vm-testimonials">
+  <div class="container">
+    <div class="row">
+      <!-- <div class="six columns medium-down--sixteen">
+        <div class="vm-testimonials__slide-title-links">
+          {% for block in section.blocks %}
+            <h3 class="vm-testimonials__slide-title-link js-testimonial-slide-title-link {% if forloop.first %}is-active{% endif %}" data-slide-index="{{ forloop.index }}">
+              &ldquo;{{ block.settings.title }}&rdquo;
+            </h3>
+          {% endfor %}
         </div>
-    {% endfor %}
-  </div>
-{% endif %}
+      </div> -->
 
-{% if section.settings.wide_display == false %}
+      <div class="twelve columns offset-by-two medium-down--sixteen">
+        {% for block in section.blocks %}
+          <div class="vm-testimonial-slide vm-testimonial-slide--index-{{ index }} js-testimonial-slide {% if forloop.first %}is-active{% endif %}" data-slide-index="{{ forloop.index }}">
+            <div class="vm-testimonial-slide__content">
+              <h2 class="vm-testimonial-slide__title heading-1">
+                &ldquo;{{ block.settings.title }}&rdquo;
+              </h2>
+              
+              <p class="vm-testimonial-slide__testimonial paragraph--block-text">
+                &ldquo;{{ block.settings.testimonial | strip_html }}&rdquo;
+              </p>
+              
+              {% if block.settings.name != blank %}
+                <h4 class="vm-testimonial-slide__name subheading-2">
+                  - {{ block.settings.name }}
+                </h4>
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+
+        <div class="vm-testimonial__buttons-wrapper">
+          <button class="vm-testimonial__slide-button vm-testimonial__slide-button--prev js-testimonials-prev-button">
+            <svg id="RightArrow" data-name="RightArrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35.26 8.52"><polygon points="35.26 4.26 29.7 0 29.7 3.26 0 3.26 0 5.26 29.7 5.26 29.7 8.52 35.26 4.26"/></svg>
+          </button>
+
+          <h6 class="vm-testimonial__slide-index-indicator">
+            <span class="js-testimonials-slide-index">1</span>
+            <span class="divider">/</span>
+            <span>{{ section.blocks.size }}</span>
+          </h6>
+          
+          <button class="vm-testimonial__slide-button vm-testimonial__slide-button--next js-testimonials-next-button">
+            <svg id="RightArrow" data-name="RightArrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35.26 8.52"><polygon points="35.26 4.26 29.7 0 29.7 3.26 0 3.26 0 5.26 29.7 5.26 29.7 8.52 35.26 4.26"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
-{% endif %}
+
+<script>
+(function() {
+  // Constants
+  const SLIDE_INDEX_ATTR = "data-slide-index";
+  const IS_ACTIVE_CLASS = "is-active";
+  const IS_HIDDEN_CLASS = "is-hidden";
+  const NO_TRANSITION_CLASS = "no-transition";
+  const HIDE_TRANSITION_TIME = 500;
+  
+  // State
+  let currentActiveSlideIndex = 1;
+  let fadeOutTimeout = null;
+  let fadeInTimeout = null;
+  let isAnimating = false;
+  
+  // DOM Elements
+  const testimonialsRoot = document.querySelector('.js-vm-testimonials');
+  const slideElements = testimonialsRoot.querySelectorAll('.js-testimonial-slide');
+  const prevButton = testimonialsRoot.querySelector('.js-testimonials-prev-button');
+  const nextButton = testimonialsRoot.querySelector('.js-testimonials-next-button');
+  const slideIndicator = testimonialsRoot.querySelector('.js-testimonials-slide-index');
+
+  function getElementSlideIndex(element) {
+    const indexAsString = element.getAttribute(SLIDE_INDEX_ATTR);
+    
+    if (!indexAsString) {
+      return -1;
+    }
+
+    const index = parseInt(indexAsString, 10);
+    return index;
+  }
+
+  function getElementBySlideIndex(elements, targetSlideIndex) {
+    for (let i = 0; i < elements.length; i++) {
+      const currentElement = elements[i];
+      const slideIndex = getElementSlideIndex(currentElement);
+      
+      if (slideIndex === targetSlideIndex) {
+        return currentElement;
+      }
+    }
+  }
+  
+  function getCurrentActiveSlide() {
+    return getElementBySlideIndex(slideElements, currentActiveSlideIndex);
+  }
+
+  function getPreviousSlideIndex() {
+    let prevSlideIndex = currentActiveSlideIndex - 1;
+
+    // Wrap around to the end
+    if (prevSlideIndex < 1) {
+      prevSlideIndex = slideElements.length;
+    }
+
+    return prevSlideIndex;
+  }
+  
+  function getNextSlideIndex() {
+    let nextSlideIndex = currentActiveSlideIndex + 1;
+
+    // Wrap around to the beginning
+    if (nextSlideIndex > slideElements.length) {
+      nextSlideIndex = 1;
+    }
+
+    return nextSlideIndex;
+  }
+
+  function transitionToSlideIndex(newSlideIndex) {
+    if (newSlideIndex === currentActiveSlideIndex) {
+      return;
+    }
+
+    isAnimating = true;
+
+    const currentActiveSlide = getCurrentActiveSlide();
+    const targetSlide = getElementBySlideIndex(slideElements, newSlideIndex);
+    
+    currentActiveSlide.classList.add(IS_HIDDEN_CLASS);
+    
+    currentActiveSlideIndex = newSlideIndex;
+
+    slideIndicator.innerHTML = currentActiveSlideIndex;
+    
+    fadeOutTimeout = setTimeout(function() {
+      currentActiveSlide.classList.remove(IS_ACTIVE_CLASS);
+
+      targetSlide.classList.add(NO_TRANSITION_CLASS);
+      targetSlide.classList.add(IS_HIDDEN_CLASS);
+      targetSlide.classList.remove(NO_TRANSITION_CLASS);
+
+      targetSlide.classList.add(IS_ACTIVE_CLASS);
+
+      fadeInTimeout = setTimeout(function() {
+        targetSlide.classList.remove(IS_HIDDEN_CLASS);
+        isAnimating = false;
+      }, 100)
+    }, HIDE_TRANSITION_TIME);
+  }
+
+  // Event handlers
+  prevButton.addEventListener('click', function onPrevButtonClicked() {
+    if (isAnimating) {
+      return;
+    }
+    
+    const slideIndex = getPreviousSlideIndex();
+    transitionToSlideIndex(slideIndex);
+  });
+  
+  nextButton.addEventListener('click', function onNextButtonClicked() {
+    if (isAnimating) {
+      return;
+    }
+
+    const slideIndex = getNextSlideIndex();
+    transitionToSlideIndex(slideIndex);
+  });
+})();
+</script>
 
 {% schema %}
 

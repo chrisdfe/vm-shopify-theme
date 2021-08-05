@@ -6344,13 +6344,13 @@
           "c6d20408-8168-4ef6-b7ce-0d0e58a9501d": {
             "type": "how_it_works_item",
             "settings": {
-              "text": "Review our available chain styles and pricing. (Please pre-order fancy chain styles.)"
+              "text": "Review our available chain styles and pricing. (Please pre-order luxe chain styles.)"
             }
           },
           "ee204f9d-248d-46ff-8ae3-3f57a40c9376": {
             "type": "how_it_works_item",
             "settings": {
-              "text": "Schedule an appointment and pay a $25 deposit to confirm your booking. One appointment per person, contact us for group"
+              "text": "Schedule an appointment and pay a $25 deposit to confirm your booking. One appointment per person, contact us for groups of 4 or more."
             }
           },
           "71660cd9-c922-41ff-a2ff-49af53d04549": {
@@ -6414,13 +6414,37 @@
               "title": "What if I need to get an MRI?",
               "answer": "Consult your doctor to know if you will be required to remove your permanent jewelry during your MRI appointment. It can easily be cut off with scissors if needed. Contact us if you need to have it reconnected."
             }
+          },
+          "4446eb51-ae82-454d-94ee-821ddca646cd": {
+            "type": "faq_item",
+            "settings": {
+              "title": "Can my child get one?",
+              "answer": "Minimum welding age is 10. Anyone under 14 must be accompanied by an adult."
+            }
+          },
+          "996f8590-f28b-4332-95c3-31609b239a0c": {
+            "type": "faq_item",
+            "settings": {
+              "title": "What if I change my mind?",
+              "answer": "All sales are final. Please ensure you are ready to commit to this everyday luxury!"
+            }
+          },
+          "fd200a3a-0eb7-4c63-bf37-050398ca6b95": {
+            "type": "faq_item",
+            "settings": {
+              "title": "Which metals types are offered?",
+              "answer": "Cable Chain is available in all metal colors (solid 14k Yellow, White, and Rose gold) luxe chain styles must be pre-ordered, contact us!"
+            }
           }
         },
         "block_order": [
           "b9d0c49c-721c-4fd4-8533-5d9062afba4d",
           "14eb645c-7e12-41c5-8e44-4d3d1955b647",
           "dfd302f2-3042-41aa-a181-736ab8e66295",
-          "f2eb3a92-53dc-4eda-8a2e-c2514c908fb6"
+          "f2eb3a92-53dc-4eda-8a2e-c2514c908fb6",
+          "4446eb51-ae82-454d-94ee-821ddca646cd",
+          "996f8590-f28b-4332-95c3-31609b239a0c",
+          "fd200a3a-0eb7-4c63-bf37-050398ca6b95"
         ],
         "settings": {
           "title": "FAQs"
@@ -6529,7 +6553,7 @@
         "type": "eternity-bracelets-cta",
         "settings": {
           "cta_lead_text": "Ready to get yours?",
-          "cta_text": "Book your appointment now",
+          "cta_text": "Book your appointment",
           "cta_link": "https:\/\/calendly.com\/valeriemadison\/eternitybracelet"
         }
       }
