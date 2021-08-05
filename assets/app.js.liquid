@@ -258,7 +258,6 @@ $(function() {
 
   utils.initializeTabs();
   utils.resizeActionButtons();
-  faqAccordion.init();
 
   $(window).on('resize', function() {
     utils.resizeActionButtons();
@@ -958,10 +957,6 @@ $(document)
 
     if ($parentSection.hasClass('image-gallery-section')){
       gallery.init($parentSection);
-    }
-
-    if ($parentSection.hasClass('faq-section')){
-      faqAccordion.init();
     }
 
     if ($parentSection.hasClass('cart-section')){

@@ -1,0 +1,45 @@
+<div class="container">
+  {% for block in section.blocks %}
+    <div class="row">
+      <div class="six columns">
+        {{ block.settings.image | img_url: "x600" | img_tag }}
+      </div>
+
+      <div class="ten columns">
+        <h3>{{ forloop.index }}. {{ block.settings.title }}</h3>
+
+        <p>{{ block.settings.content }}</p>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+{% schema %}
+{
+  "name": "Steps",
+  "settings": [],
+  "blocks": [
+    {
+      "name": "Step",
+      "type": "step",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

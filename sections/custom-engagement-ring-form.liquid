@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+  
+    <div class="twelve columns offset-by-two">
+      <h4 class="center">{{ section.settings.cta_text }}</h4>
+      <br />
+      <div>
+        {{ section.settings.form_html }}
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Form",
+  "settings": [
+    {
+      "label": "CTA Text",
+      "id": "cta_text",
+      "type": "text",
+      "default": "Let’s get started! Either sign up for a virtual consultation or send us a message below."
+    },
+    {
+      "label": "Form HTML",
+      "id": "form_html",
+      "type": "html"
+    }
+  ]
+}
+{% endschema %}

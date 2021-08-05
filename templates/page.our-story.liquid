@@ -1,11 +1,10 @@
 <div class="page page--our-story">
-  <!-- <a href="#visit-the-store">visit</a> -->
+  {{ 'pages_our-story.css' | asset_url | stylesheet_tag }}
+
   {% section 'our-story-intro' %}
   {% section 'our-story-about-valerie' %}
   {% section 'our-story-timeline' %}
   {% section 'our-story-pillars' %}
   {% section 'our-story-team' %}
   {% section 'our-story-visit-the-store' %}
-
-  {{ 'pages_our-story.css' | asset_url | stylesheet_tag }}
 </div>
