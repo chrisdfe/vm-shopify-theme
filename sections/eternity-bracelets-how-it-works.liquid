@@ -1,30 +1,30 @@
 <div class="content-section content-section--eternity-bracelets-how-it-works">
   <div class="container">
-    <div class="six columns offset-by-five">
-      <h2 class="content-section__title heading--with-accent">
-        {{ section.settings.title }}
-      </h2>
+    <div class="row row--mobile-flip">
 
-      <ol class="eternity-bracelets__how-it-works__list">
-        {% for block in section.blocks %}
-          <li>
-            {{ block.settings.text }}
-          </li>
-        {% endfor %}
-      </ol>
-
-      <div class="eternity-bracelets__purchase-cta-wrapper">
-        <div class="eternity-bracelets__graphic-placeholder">
+      <div class="six columns medium-down--one-whole">
+        <div class="eternity-bracelets__image-wrapper">
+          {{ section.settings.image | img_url: 'x500' | img_tag }}
         </div>
-
-        <p class="paragraph-1">
-          {{ section.settings.cta_lead_text }}
-        </p>
-
-        <a class="button" href="{{ section.settings.cta_link }}">
-          {{ section.settings.cta_text }}
-        </a>
       </div>
+  
+      <div class="ten columns medium-down--one-whole">
+        <div class="eternity-bracelets__content-wrapper">
+          {% include "content-section.title" with {
+            title: section.settings.title | escape,
+          } %}
+      
+          <ol class="eternity-bracelets__how-it-works__list">
+            {% for block in section.blocks %}
+              <li>
+                {{ block.settings.text }}
+              </li>
+            {% endfor %}
+          </ol>
+    
+        </div>
+      </div>
+
     </div>
   </div>
 </div>
@@ -40,22 +40,9 @@
       "default": "How does it work?"
     },
     {
-      "id": "cta_lead_text",
-      "label": "CTA lead-in text",
-      "type": "text",
-      "default": "Interested?"
-    },
-    {
-      "id": "cta_text",
-      "label": "CTA Button text",
-      "type": "text",
-      "default": "Purchase your permanent jewelry"
-    },
-    {
-      "id": "cta_link",
-      "label": "CTA Button link",
-      "type": "text",
-      "default": "#"
+      "id": "image",
+      "label": "Image",
+      "type": "image_picker"
     }
   ],
   "blocks": [

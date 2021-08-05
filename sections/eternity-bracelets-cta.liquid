@@ -1,0 +1,39 @@
+<div class="content-section content-section--eternity-bracelets-cta">
+  <div class="container">
+    <div class="eight columns offset-by-four medium-down--one-whole medium-down--offset-by-zero">
+      <p class="paragraph--block-text paragraph-1">
+        {{ section.settings.cta_lead_text }}
+      </p>
+
+      <div>
+        <a class="button" href="{{ section.settings.cta_link }}">{{ section.settings.cta_text }}</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "CTA",
+  "settings": [
+    {
+      "id": "cta_lead_text",
+      "label": "CTA lead-in text",
+      "type": "text",
+      "default": "Interested?"
+    },
+    {
+      "id": "cta_text",
+      "label": "CTA Button text",
+      "type": "text",
+      "default": "Purchase your permanent jewelry"
+    },
+    {
+      "id": "cta_link",
+      "label": "CTA Button link",
+      "type": "text",
+      "default": "#"
+    }
+  ]
+}
+{% endschema %}

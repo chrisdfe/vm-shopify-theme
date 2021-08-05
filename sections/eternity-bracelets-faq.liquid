@@ -1,13 +1,9 @@
 <div class="content-section content-section--eternity-bracelets-faq">
   <div class="container">
-    <div class="eight columns offset-by-four">
-      <div class="content-section__heading">
-        <div class="content-section__title-wrapper">
-          <h2 class="content-section__title heading--with-accent">
-            {{ section.settings.title }}
-          </h2>
-        </div>
-      </div>
+    <div class="eight columns offset-by-four medium-down--one-whole medium-down--offset-by-zero">
+      {% include "content-section.title" with {
+        title: section.settings.title | escape,
+      } %}
       
       {% for block in section.blocks %}
         <div class="eternity-bracelets__faq-item">

@@ -1,18 +1,25 @@
 <div class="content-section content-section--eternity-bracelets-overview">
   <div class="container">
-    <div class="eight columns offset-by-two">
-      <h2 class="content-section__title heading--with-accent">
-        {{ section.settings.title }}
-      </h2>
-      
-      <p class="paragraph--block-text">
-        {{ section.settings.content }}
-      </p>
-    </div>
-    <div class="four columns">
-      <div class="eternity-bracelets__graphic-placeholder">
-        <!-- {{ section.settings.image | img_url: 'x500' | img_tag }} -->
+    <div class="row">
+
+      <div class="ten columns medium-down--one-whole">
+        <div class="eternity-bracelets__content-wrapper">
+          {% include "content-section.title" with {
+            title: section.settings.title | escape,
+          } %}
+          
+          <p class="paragraph--block-text">
+            {{ section.settings.content }}
+          </p>
+        </div>
       </div>
+      
+      <div class="six columns medium-down--one-whole">
+        <div class="eternity-bracelets__image-wrapper">
+          {{ section.settings.image | img_url: 'x500' | img_tag }}
+        </div>
+      </div>
+
     </div>
   </div>
 </div>

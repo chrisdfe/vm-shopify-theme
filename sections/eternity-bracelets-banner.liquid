@@ -1,23 +1,35 @@
 <div class="content-section content-section--eternity-bracelets-banner">
   <div class="container">
-    <div class="sixteen columns">
-      <h1>{{ section.settings.title }}</h1>
-
-      <div class="eternity-bracelets__banner-wrapper">
-        <div class="eternity-bracelets__banner-row">
-          <div class="eternity-braclets__banner-photo eternity-braclets__banner-photo--large">
-            <img src="{{ section.settings.image_1 }}">
-          </div>
-          <div class="eternity-braclets__banner-photo eternity-braclets__banner-photo--small">
-            <img src="{{ section.settings.image_2 }}">
-          </div>
+    <div class="row">
+      <div class="sixteen columns">
+        
+        <div class="page-heading">
+          <h1 class="page-heading__title page-heading__title--no-accent">
+            {{ section.settings.title }}
+          </h1>
         </div>
-        <div class="eternity-bracelets__banner-row">
-          <div class="eternity-braclets__banner-photo eternity-braclets__banner-photo--centered">
-            <img src="{{ section.settings.image_3 }}">
-          </div>
+
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="eight columns medium-down--one-whole">
+        <div class="eternity-braclets__banner-image eternity-braclets__banner-image--large">
+          <img src="{{ section.settings.image_1 | img_url: 'x1200' }}" />
+        </div>
+        
+      </div>
+      
+      <div class="eight columns medium-down--one-whole">
+        <div class="eternity-braclets__banner-image eternity-braclets__banner-image--medium">
+          <img src="{{ section.settings.image_2 | img_url: 'x900' }}"" />
+        </div>
+
+        <div class="eternity-braclets__banner-image eternity-braclets__banner-image--small">
+          <img src="{{ section.settings.image_3 | img_url: 'x900' }}" />
         </div>
       </div>
+
     </div>
   </div>
 </div>
