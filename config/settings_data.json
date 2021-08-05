@@ -6324,7 +6324,10 @@
       "eternity-bracelets-banner": {
         "type": "eternity-bracelets-banner",
         "settings": {
-          "title": "Eternity Bracelets"
+          "title": "Eternity Bracelets",
+          "image_1": "shopify:\/\/shop_images\/bracelet_arms.png",
+          "image_2": "shopify:\/\/shop_images\/Insta_pinky_promise.png",
+          "image_3": "shopify:\/\/shop_images\/Gold_Eternity_Chain.png"
         }
       },
       "eternity-bracelets-overview": {
@@ -6332,7 +6335,7 @@
         "settings": {
           "title": "What does \"permanent jewelry\" mean?",
           "content": "Our skilled bench jewelers will weld on a custom fit bracelet to your wrist using a painless, quick, and easy process. Because the bracelet is welded on, it does not have a clasp and therefore will “permanently” stay on (until you decide to remove it).",
-          "image": "shopify:\/\/shop_images\/IMG_4947.jpg"
+          "image": "shopify:\/\/shop_images\/IMG_4947_crop.jpg"
         }
       },
       "eternity-bracelets-how-it-works": {
@@ -6341,32 +6344,44 @@
           "c6d20408-8168-4ef6-b7ce-0d0e58a9501d": {
             "type": "how_it_works_item",
             "settings": {
-              "text": "Our skilled bench jewelers will weld on a custom fit bracelet to your wrist using a painless, quick, and easy process."
+              "text": "Review our available chain styles and pricing. (Please pre-order fancy chain styles.)"
             }
           },
           "ee204f9d-248d-46ff-8ae3-3f57a40c9376": {
             "type": "how_it_works_item",
             "settings": {
-              "text": "Because the bracelet is welded on, it does not have a clasp and therefore will “permanently” stay on"
+              "text": "Schedule an appointment and pay a $25 deposit to confirm your booking. One appointment per person, contact us for group"
             }
           },
           "71660cd9-c922-41ff-a2ff-49af53d04549": {
             "type": "how_it_works_item",
             "settings": {
-              "text": "(until you decide to remove it)."
+              "text": "Select your chain(s) and get the exact length measured and cut for your wrist."
+            }
+          },
+          "32776007-dd09-40d5-9e44-e14c8e6fccd0": {
+            "type": "how_it_works_item",
+            "settings": {
+              "text": "Our bench jewelers will weld the chain(s) together onto your wrist using our laser welder."
+            }
+          },
+          "e0255cbd-c210-44d0-bd3b-e0e02a865366": {
+            "type": "how_it_works_item",
+            "settings": {
+              "text": "Pay the remaining balance for your bracelet(s) and enjoy!"
             }
           }
         },
         "block_order": [
           "c6d20408-8168-4ef6-b7ce-0d0e58a9501d",
           "ee204f9d-248d-46ff-8ae3-3f57a40c9376",
-          "71660cd9-c922-41ff-a2ff-49af53d04549"
+          "71660cd9-c922-41ff-a2ff-49af53d04549",
+          "32776007-dd09-40d5-9e44-e14c8e6fccd0",
+          "e0255cbd-c210-44d0-bd3b-e0e02a865366"
         ],
         "settings": {
           "title": "How does it work?",
-          "cta_lead_text": "Interested?",
-          "cta_text": "Purchase your permanent jewelry",
-          "cta_link": "#"
+          "image": "shopify:\/\/shop_images\/IMG_4297_crop.jpg"
         }
       },
       "eternity-bracelets-faq": {
@@ -6379,11 +6394,11 @@
               "answer": "You may feel a bit of warmth for a moment. This process involves a laser welder being in close proximity with your hand. Your skin will be shielded with a section of leather as a precaution against the unlikely possibility of machine malfunction or human error. Our technician has over 120 hours of training and experience on this machine, and we take pride in our commitment to the health and safety of both our clients and staff!"
             }
           },
-          "f2eb3a92-53dc-4eda-8a2e-c2514c908fb6": {
+          "14eb645c-7e12-41c5-8e44-4d3d1955b647": {
             "type": "faq_item",
             "settings": {
-              "title": "What if I need to get an MRI?",
-              "answer": "Consult your doctor to know if you will be required to remove your permanent jewelry during your MRI appointment. It can easily be cut off with scissors if needed. Contact us if you need to have it reconnected."
+              "title": "What if I need to remove it or it breaks?",
+              "answer": "We ensure the integrity of our weld before your appointment is complete and have been testing them on our staff for over 6 months. However, accidents happen! If you need to remove or your welded jewelry comes off for any reason, please contact us."
             }
           },
           "dfd302f2-3042-41aa-a181-736ab8e66295": {
@@ -6393,19 +6408,19 @@
               "answer": "Yes! TSA does not ask you to remove fine jewelry when going through security."
             }
           },
-          "14eb645c-7e12-41c5-8e44-4d3d1955b647": {
+          "f2eb3a92-53dc-4eda-8a2e-c2514c908fb6": {
             "type": "faq_item",
             "settings": {
-              "title": "What if I need to remove it or it breaks?",
-              "answer": "We ensure the integrity of our weld before your appointment is complete and have been testing them on our staff for over 6 months. However, accidents happen! If you need to remove or your welded jewelry comes off for any reason, please contact us."
+              "title": "What if I need to get an MRI?",
+              "answer": "Consult your doctor to know if you will be required to remove your permanent jewelry during your MRI appointment. It can easily be cut off with scissors if needed. Contact us if you need to have it reconnected."
             }
           }
         },
         "block_order": [
           "b9d0c49c-721c-4fd4-8533-5d9062afba4d",
-          "f2eb3a92-53dc-4eda-8a2e-c2514c908fb6",
+          "14eb645c-7e12-41c5-8e44-4d3d1955b647",
           "dfd302f2-3042-41aa-a181-736ab8e66295",
-          "14eb645c-7e12-41c5-8e44-4d3d1955b647"
+          "f2eb3a92-53dc-4eda-8a2e-c2514c908fb6"
         ],
         "settings": {
           "title": "FAQs"
@@ -6460,6 +6475,62 @@
         "settings": {
           "cta_text": "Let’s get started! Send us a message.",
           "form_html": "<div style=\"margin: 0 auto;\" class=\"pxFormGenerator\" id=\"WS-z1dA2hkOxb-PQ9g8l4Q\"><\/div>"
+        }
+      },
+      "eternity-bracelets-chain-styles": {
+        "type": "eternity-bracelets-chain-styles",
+        "blocks": {
+          "b90aeb01-8a3b-4cb8-a85d-ab83b50cd623": {
+            "type": "chain_style",
+            "settings": {
+              "title": "Cable Chain",
+              "price": "95",
+              "is_fancy": false
+            }
+          },
+          "97b2cc81-f4f6-484e-80ad-96367d59d941": {
+            "type": "chain_style",
+            "settings": {
+              "title": "Baby Flat Chain",
+              "price": "145",
+              "is_fancy": true
+            }
+          },
+          "b72f41c7-a9e8-4d13-81cc-88ab223d13c8": {
+            "type": "chain_style",
+            "settings": {
+              "title": "Flat Chain",
+              "price": "205",
+              "is_fancy": true
+            }
+          },
+          "46712439-6d72-49fb-8d13-17054a5b5b63": {
+            "type": "chain_style",
+            "settings": {
+              "title": "Rolo Chain",
+              "price": "325",
+              "is_fancy": true
+            }
+          }
+        },
+        "block_order": [
+          "b90aeb01-8a3b-4cb8-a85d-ab83b50cd623",
+          "97b2cc81-f4f6-484e-80ad-96367d59d941",
+          "b72f41c7-a9e8-4d13-81cc-88ab223d13c8",
+          "46712439-6d72-49fb-8d13-17054a5b5b63"
+        ],
+        "settings": {
+          "title": "Available Chain Styles",
+          "content": "Cable Chain is available in all metal colors. Luxe styles (indicated with a *) must be pre-ordered, contact us!",
+          "image": "shopify:\/\/shop_images\/Eternity_Bracelets_1.jpg"
+        }
+      },
+      "eternity-bracelets-cta": {
+        "type": "eternity-bracelets-cta",
+        "settings": {
+          "cta_lead_text": "Ready to get yours?",
+          "cta_text": "Book your appointment now",
+          "cta_link": "https:\/\/calendly.com\/valeriemadison\/eternitybracelet"
         }
       }
     },
