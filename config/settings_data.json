@@ -4738,6 +4738,29 @@
       "1552235156499": {
         "type": "slideshow",
         "blocks": {
+          "c7f5ce56-5063-4e4e-9858-937135472704": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Peaks_and_Valleys_Banner.jpg",
+              "pretext": "",
+              "title": "Peaks and Valleys",
+              "subtitle": "",
+              "caption_background": false,
+              "caption_background_transparency": false,
+              "button1": "Shop Now",
+              "button1_link": "",
+              "button1_highlight": true,
+              "button2": "",
+              "button2_link": "",
+              "button2_highlight": false,
+              "text_position": "left",
+              "text_align": "center",
+              "mobile_image_crop": "none",
+              "is_timed_slide": false,
+              "start_datetime": "",
+              "end_datetime": ""
+            }
+          },
           "8a66aa23-1f05-48d5-93d1-91fe8c2256f8": {
             "type": "image",
             "settings": {
@@ -4832,6 +4855,7 @@
           }
         },
         "block_order": [
+          "c7f5ce56-5063-4e4e-9858-937135472704",
           "8a66aa23-1f05-48d5-93d1-91fe8c2256f8",
           "4a86dbf8-f788-4955-9577-055e1259a1a3",
           "64437903-428d-4f4e-96b3-7ced4c3a99f5",
@@ -5396,6 +5420,16 @@
               "link_title": "Click here to send this as inspiration for your custom order"
             }
           },
+          "e03d56ae-aca9-49b5-a1c6-a36830ac6550": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Screen_Shot_2021-08-06_at_11.02.43_AM.png",
+              "job_title": "1.50CT ROSE CUT CUSHION COLORLESS DIAMOND SELENA ENGAGEMENT RING",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com",
+              "link_title": "Click here to send this as inspiration for your custom order"
+            }
+          },
           "1600971534671": {
             "type": "featured-ring",
             "settings": {
@@ -5431,7 +5465,7 @@
             "settings": {
               "image": "shopify:\/\/shop_images\/Screen_Shot_2021-08-03_at_1.14.54_PM.png",
               "job_title": "1.91CT OVAL CUT NEAR COLORLESS DIAMOND ZARA ENGAGEMENT RING",
-              "description": "<p>Your Item Description.<\/p>",
+              "description": "",
               "link_url": "mailto:custom@valeriemadison.com",
               "link_title": "Click here to send this as inspiration for your custom order"
             }
@@ -5549,8 +5583,8 @@
           "1601324394662": {
             "type": "featured-ring",
             "settings": {
-              "image": "shopify:\/\/shop_images\/VAL_5604-sq.jpg",
-              "job_title": "1.8ct Oval Cut Gray Sapphire Zara Engagement Ring",
+              "image": "shopify:\/\/shop_images\/Screen_Shot_2021-08-06_at_10.56.27_AM.png",
+              "job_title": "1.76ct Pear Cut Blue\/Gray Sapphire & Diamond Zara Engagement Ring",
               "description": "",
               "link_url": "mailto:custom@valeriemadison.com?subject=1.8ct Zara Gray Sapphire Three Stone Engagement Ring&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
               "link_title": "Click here to send this as inspiration for your custom order"
@@ -5640,7 +5674,7 @@
             "type": "featured-ring",
             "settings": {
               "image": "shopify:\/\/shop_images\/Screen_Shot_2021-08-03_at_1.15.59_PM.png",
-              "job_title": "2.53ct Teal EMERALD CUT Sapphire BEZEL Ring",
+              "job_title": "2.53ct EMERALD CUT Teal Sapphire BEZEL Ring",
               "description": "",
               "link_url": "mailto:custom@valeriemadison.com?subject=0.90ct Eva Teal Montana Sapphire and Diamond Pavé Engagement Ring&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
               "link_title": "Click here to send this as inspiration for your custom order"
@@ -5692,6 +5726,7 @@
           "f733facd-ec19-4e0f-bb9b-ecfbaadd5594",
           "1600971535955",
           "da4aa41c-8ee2-4602-8af2-cd0ab9e118da",
+          "e03d56ae-aca9-49b5-a1c6-a36830ac6550",
           "1600971534671",
           "1600972211218",
           "page-grid-template-2",
@@ -6334,7 +6369,7 @@
         "type": "eternity-bracelets-overview",
         "settings": {
           "title": "What does \"permanent jewelry\" mean?",
-          "content": "Our skilled bench jewelers will weld on a custom fit bracelet to your wrist using a painless, quick, and easy process. Because the bracelet is welded on, it does not have a clasp and therefore will “permanently” stay on (until you decide to remove it).",
+          "content": "Our skilled bench jewelers will weld on a custom fit bracelet to your wrist using a painless, quick, and easy process. Because the bracelet is welded on, it does not have a clasp and therefore will “permanently” stay on for infinity! (Or until you decide to remove it).",
           "image": "shopify:\/\/shop_images\/IMG_4947_crop.jpg"
         }
       },
@@ -6532,7 +6567,7 @@
             "type": "chain_style",
             "settings": {
               "title": "Rolo Chain",
-              "price": "325",
+              "price": "375",
               "is_fancy": true
             }
           }
