@@ -2458,7 +2458,7 @@ h1,
 h2,
 .heading-2 {
   font-family: orpheuspro, serif;
-  font-size: 36px;
+  font-size: 38px;
   letter-spacing: 0.02em;
   line-height: 1.2;
   font-weight: 700;
@@ -2578,7 +2578,7 @@ h4,
 .subheading-1 {
   font-family: poppins, sans-serif;
   font-size: 16px;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.05em;
   line-height: 1.4;
   text-transform: uppercase;
   font-weight: 700;
@@ -2587,7 +2587,7 @@ h4,
 @media only screen and (max-width: 798px) {
   h4,
 .subheading-1 {
-    font-size: 15px;
+    font-size: 16px;
   }
 }
 
@@ -2595,7 +2595,7 @@ h5,
 .subheading-2 {
   font-family: poppins, sans-serif;
   font-size: 14px;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.05em;
   line-height: 1.4;
   text-transform: uppercase;
   font-weight: 700;
@@ -2604,7 +2604,7 @@ h5,
 @media only screen and (max-width: 798px) {
   h5,
 .subheading-2 {
-    font-size: 13px;
+    font-size: 14px;
   }
 }
 
@@ -2612,7 +2612,7 @@ h6,
 .subheading-3 {
   font-family: poppins, sans-serif;
   font-size: 12px;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.05em;
   line-height: 1.4;
   text-transform: uppercase;
   font-weight: 700;
@@ -2635,7 +2635,7 @@ p,
 .paragraph-1,
 .paragraph-1 p {
   font-family: poppins, sans-serif;
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 400;
   letter-spacing: 0.01em;
   line-height: 1.6;
@@ -2870,13 +2870,15 @@ a.cta-link {
   font-weight: 700;
   border-bottom: 2px solid #714457;
   text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 0.05em;
 }
 a.cta-link:hover {
   border-bottom-color: #dec1a8;
 }
 a.cta-link.cta-link-3 {
   font-size: 12px;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.05em;
 }
 a.cta-link.cta-link--inverted {
   color: #ffffff;
@@ -3130,7 +3132,7 @@ legend,
   margin-bottom: 8px;
   font-family: poppins, sans-serif;
   font-size: 12px;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.05em;
   line-height: 1.4;
   text-transform: uppercase;
   font-weight: 700;
@@ -8644,7 +8646,7 @@ input[type=button].guest_button {
 .dropdown_column ul.dropdown_title a {
   font-family: poppins, sans-serif;
   font-size: 14px;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.05em;
   line-height: 1.4;
   text-transform: uppercase;
   font-weight: 700;
@@ -8652,7 +8654,7 @@ input[type=button].guest_button {
 }
 @media only screen and (max-width: 798px) {
   .dropdown_column ul.dropdown_title a {
-    font-size: 13px;
+    font-size: 14px;
   }
 }
 .dropdown_column ul.dropdown_item {
@@ -9652,7 +9654,7 @@ footer .social_icons a:visited {
 .article-pagination {
   font-family: poppins, sans-serif;
   font-size: 12px;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.05em;
   line-height: 1.4;
   text-transform: uppercase;
   font-weight: 700;
@@ -9854,7 +9856,7 @@ button.shopify-payment-button__button.shopify-payment-button__button--unbranded 
   font-weight: 600;
   text-transform: uppercase;
   text-decoration: none;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.05em;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -moz-inline-flex;
@@ -11352,7 +11354,7 @@ button.shopify-payment-button__button.shopify-payment-button__button--unbranded 
   font-weight: 600;
   text-transform: uppercase;
   text-decoration: none;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.05em;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -moz-inline-flex;
@@ -13282,7 +13284,7 @@ div.container.gallery-content {
   .content-section__title-wrapper .content-section__title-link {
     font-family: poppins, sans-serif;
     font-size: 12px;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.05em;
     line-height: 1.4;
     text-transform: uppercase;
     font-weight: 700;
@@ -16405,42 +16407,79 @@ button.update {
 
 /* #Home page - testimonials
 ================================================== */
-.vm-testimonials__slide-title-link {
-  opacity: 0.5;
-  transform: translateX(-1rem);
-  transition: all 0.2s ease-in-out;
-  cursor: pointer;
-  margin-bottom: 2rem;
-}
-.vm-testimonials__slide-title-link:hover {
-  transform: translateX(-0.5rem);
-  opacity: 0.75;
-}
-.vm-testimonials__slide-title-link.is-active {
-  transform: translateX(0);
-  opacity: 1;
-}
-
 .vm-testimonial-slide {
   display: none;
-  min-height: 20rem;
-  transition: all 700ms ease;
+  min-height: 370px;
+  transition: all 500ms ease;
+}
+.vm-testimonial-slide .vm-testimonial-slide__content {
+  padding: 0 2rem;
+}
+.vm-testimonial-slide .vm-testimonial-slide__testimonial {
+  margin: 2rem 0 3rem;
 }
 .vm-testimonial-slide.is-hidden {
   opacity: 0;
-  transform: translateX(-2rem);
-}
-.vm-testimonial-slide.no-transition {
-  transition: all 0;
 }
 .vm-testimonial-slide.is-active {
   display: block;
 }
-.vm-testimonial-slide .vm-testimonial-slide__content {
-  padding: 0 0 0 2rem;
+@media only screen and (max-width: 798px) {
+  .vm-testimonial-slide .vm-testimonial-slide__title {
+    font-family: orpheuspro, serif;
+    font-size: 38px;
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+    font-weight: 700;
+    font-style: normal;
+    padding: 0;
+    text-transform: none;
+  }
 }
-.vm-testimonial-slide .vm-testimonial-slide__testimonial {
-  margin: 2rem 0 3rem;
+@media only screen and (max-width: 798px) and (max-width: 798px) {
+  .vm-testimonial-slide .vm-testimonial-slide__title {
+    font-size: 30px;
+  }
+}
+@media only screen and (max-width: 798px) {
+  .vm-testimonial-slide .vm-testimonial-slide__testimonial {
+    line-height: 1.6;
+  }
+}
+@media only screen and (max-width: 798px) {
+  .vm-testimonial-slide .vm-testimonial-slide__content {
+    padding: 0;
+  }
+}
+
+.vm-testimonial__buttons-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.vm-testimonial__slide-index-indicator {
+  margin: 0;
+}
+.vm-testimonial__slide-index-indicator .divider {
+  color: #dec1a8;
+}
+
+.vm-testimonial__slide-button {
+  background: transparent;
+}
+.vm-testimonial__slide-button svg {
+  display: block;
+  width: 2.4rem;
+  fill: #1c4047;
+  transition: all 0.2s;
+}
+.vm-testimonial__slide-button:hover svg {
+  transform: translateX(0.5rem);
+  fill: #dec1a8;
+}
+.vm-testimonial__slide-button.vm-testimonial__slide-button--prev {
+  transform: rotate(180deg);
 }
 
 /* #Account
