@@ -2515,11 +2515,6 @@ h3,
   width: 30px;
   background-color: #dec1a8;
 }
-.page-heading__title.page-heading__title--no-accent:after,
-.heading--with-accent.page-heading__title--no-accent:after {
-  height: 0;
-  width: 0;
-}
 .page-heading__title.heading--with-accent--align-center,
 .heading--with-accent.heading--with-accent--align-center {
   text-align: center;
@@ -2599,7 +2594,7 @@ h4,
 h5,
 .subheading-2 {
   font-family: poppins, sans-serif;
-  font-size: 15px;
+  font-size: 14px;
   letter-spacing: 0.08em;
   line-height: 1.4;
   text-transform: uppercase;
@@ -2616,7 +2611,7 @@ h5,
 h6,
 .subheading-3 {
   font-family: poppins, sans-serif;
-  font-size: 13px;
+  font-size: 12px;
   letter-spacing: 0.08em;
   line-height: 1.4;
   text-transform: uppercase;
@@ -2880,7 +2875,7 @@ a.cta-link:hover {
   border-bottom-color: #dec1a8;
 }
 a.cta-link.cta-link-3 {
-  font-size: 13px;
+  font-size: 12px;
   letter-spacing: 0.08em;
 }
 a.cta-link.cta-link--inverted {
@@ -2907,27 +2902,23 @@ a.cta-link.cta-link--body-text:hover {
 ================================================== */
 ul,
 ol {
-  margin-bottom: 2rem;
+  margin-bottom: 20px;
 }
 ul li,
 ol li {
-  margin-bottom: 1rem;
+  margin-bottom: 12px;
 }
 ul ul,
 ul ol,
 ol ul,
 ol ol {
-  margin: 0.5rem 0 0.5rem 2rem;
+  margin: 4px 0 5px 30px;
 }
 ul ul li,
 ul ol li,
 ol ul li,
 ol ol li {
-  margin-bottom: 0.5rem;
-}
-
-li::marker {
-  color: #dec1a8;
+  margin-bottom: 6px;
 }
 
 ul {
@@ -2942,9 +2933,22 @@ ul.circle {
 ul.disc {
   list-style: disc outside;
 }
+ul.large li {
+  line-height: 21px;
+}
 ul.none {
   list-style: none outside;
   margin-left: 0;
+}
+ul.border {
+  list-style: none outside;
+  line-height: 26px;
+}
+ul.border li {
+  border-bottom: 1px solid #1c4047;
+  list-style: none outside none;
+  padding: 12px 0;
+  margin-bottom: 0;
 }
 
 ol {
@@ -3125,7 +3129,7 @@ legend,
   text-align: left;
   margin-bottom: 8px;
   font-family: poppins, sans-serif;
-  font-size: 13px;
+  font-size: 12px;
   letter-spacing: 0.08em;
   line-height: 1.4;
   text-transform: uppercase;
@@ -8639,7 +8643,7 @@ input[type=button].guest_button {
 }
 .dropdown_column ul.dropdown_title a {
   font-family: poppins, sans-serif;
-  font-size: 15px;
+  font-size: 14px;
   letter-spacing: 0.08em;
   line-height: 1.4;
   text-transform: uppercase;
@@ -9647,7 +9651,7 @@ footer .social_icons a:visited {
 .breadcrumb_text,
 .article-pagination {
   font-family: poppins, sans-serif;
-  font-size: 13px;
+  font-size: 12px;
   letter-spacing: 0.08em;
   line-height: 1.4;
   text-transform: uppercase;
@@ -9846,7 +9850,7 @@ button.shopify-payment-button__button.shopify-payment-button__button--unbranded 
   height: 44px;
   line-height: 1.2;
   vertical-align: top;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 600;
   text-transform: uppercase;
   text-decoration: none;
@@ -11344,7 +11348,7 @@ button.shopify-payment-button__button.shopify-payment-button__button--unbranded 
   height: 44px;
   line-height: 1.2;
   vertical-align: top;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 600;
   text-transform: uppercase;
   text-decoration: none;
@@ -13277,7 +13281,7 @@ div.container.gallery-content {
 @media only screen and (max-width: 798px) {
   .content-section__title-wrapper .content-section__title-link {
     font-family: poppins, sans-serif;
-    font-size: 13px;
+    font-size: 12px;
     letter-spacing: 0.08em;
     line-height: 1.4;
     text-transform: uppercase;
@@ -14558,24 +14562,6 @@ button.update {
 .thumbnails a {
   display: block;
   margin-bottom: 1em;
-}
-
-/* Pages - FAQ
-================================================== */
-.page-faq .faq--heading {
-  padding-top: 50px;
-}
-.page-faq .faq--heading:first-child {
-  padding-top: initial;
-}
-.page-faq .container.main.content {
-  width: 70%;
-}
-@media only screen and (max-width: 798px) {
-  .page-faq .container.main.content {
-    padding: 0 20px;
-    width: 100%;
-  }
 }
 
 /* Pages - Team
@@ -16419,22 +16405,12 @@ button.update {
 
 /* #Home page - testimonials
 ================================================== */
-.content-section.content-section--vm-testimonials {
-  background-color: #f8f4f4;
-}
-
-@media only screen and (max-width: 798px) {
-  .vm-testimonials__slide-title-links {
-    display: none;
-  }
-}
-
 .vm-testimonials__slide-title-link {
   opacity: 0.5;
   transform: translateX(-1rem);
   transition: all 0.2s ease-in-out;
   cursor: pointer;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 .vm-testimonials__slide-title-link:hover {
   transform: translateX(-0.5rem);
@@ -16447,41 +16423,8 @@ button.update {
 
 .vm-testimonial-slide {
   display: none;
-  min-height: 370px;
-  transition: all 500ms ease;
-}
-.vm-testimonial-slide .vm-testimonial-slide__content {
-  padding: 0 2rem;
-}
-.vm-testimonial-slide .vm-testimonial-slide__testimonial {
-  margin: 2rem 0 3rem;
-}
-@media only screen and (max-width: 798px) {
-  .vm-testimonial-slide .vm-testimonial-slide__title {
-    font-family: orpheuspro, serif;
-    font-size: 36px;
-    letter-spacing: 0.02em;
-    line-height: 1.2;
-    font-weight: 700;
-    font-style: normal;
-    padding: 0;
-    text-transform: none;
-  }
-}
-@media only screen and (max-width: 798px) and (max-width: 798px) {
-  .vm-testimonial-slide .vm-testimonial-slide__title {
-    font-size: 30px;
-  }
-}
-@media only screen and (max-width: 798px) {
-  .vm-testimonial-slide .vm-testimonial-slide__testimonial {
-    line-height: 1.6;
-  }
-}
-@media only screen and (max-width: 798px) {
-  .vm-testimonial-slide .vm-testimonial-slide__content {
-    padding: 0;
-  }
+  min-height: 20rem;
+  transition: all 700ms ease;
 }
 .vm-testimonial-slide.is-hidden {
   opacity: 0;
@@ -16493,35 +16436,11 @@ button.update {
 .vm-testimonial-slide.is-active {
   display: block;
 }
-
-.vm-testimonial__buttons-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.vm-testimonial-slide .vm-testimonial-slide__content {
+  padding: 0 0 0 2rem;
 }
-
-.vm-testimonial__slide-index-indicator {
-  margin: 0;
-}
-.vm-testimonial__slide-index-indicator .divider {
-  color: #dec1a8;
-}
-
-.vm-testimonial__slide-button {
-  background: transparent;
-}
-.vm-testimonial__slide-button svg {
-  display: block;
-  width: 2.4rem;
-  fill: #1c4047;
-  transition: all 0.2s;
-}
-.vm-testimonial__slide-button:hover svg {
-  transform: translateX(0.5rem);
-  fill: #dec1a8;
-}
-.vm-testimonial__slide-button.vm-testimonial__slide-button--prev {
-  transform: rotate(180deg);
+.vm-testimonial-slide .vm-testimonial-slide__testimonial {
+  margin: 2rem 0 3rem;
 }
 
 /* #Account

@@ -1,0 +1,50 @@
+/* # VM page - FAQ
+================================================== */
+
+@import '../_variables.scss';
+@import '../_mixins.scss';
+
+.page-faq {
+  .page-heading {
+    padding: 10rem 0;
+  }
+
+  .page-heading__title {
+    text-align: center;
+  }
+
+  .row {
+    margin-bottom: 0;
+  }
+
+  @include respond-to('medium-down') {
+    .page-heading {
+      padding: 5rem 0;
+    }
+  }
+}
+
+.content-section.content-section--faq {
+  padding-top: 0;
+  padding-bottom: 7rem;
+
+  @include respond-to('medium-down') {
+    padding-bottom: 3rem;
+  }
+}
+
+.content-section.content-section--faq .content-section__heading {
+  margin-bottom: 5rem;
+}
+
+.row.faq__item {
+  margin-bottom: 1rem;
+
+  a {
+    text-decoration: underline;
+  }
+
+  h4 {
+    margin-top: 7px;
+  }
+}
