@@ -272,15 +272,3 @@
 {% endcapture %}
 {% assign content = content | replace_first: '<!DOCTYPE', '!DOCTYPE' | split: ' <' %}
 {% for html in content %}{% assign htmlblock = html | strip | prepend: ' <' %}{{htmlblock | replace: ' </', '</'}}{% endfor %}
-{% comment %}
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/stacktable.js/1.0.3/stacktable.min.js"></script>
-  <script>
-    (function($){
-        $(function(){ 
-            $('.page-no-title table').stacktable();
-        });
-    })(jQuery);
-  </script>
-{% endcomment %}
-{{ "stacktable.min.js" | asset_url | script_tag }}
-<script>!function(t){t(function(){t(".page-no-title table").stacktable()})}(jQuery);</script>

@@ -49,10 +49,6 @@
     opacity: 1;
   }
 
-  img {
-    // background-color: {{ settings.shop_bg_color }};
-  }
-
   &.show-gallery-arrows--false {
     .flickity-prev-next-button {
       display: none;
@@ -188,31 +184,9 @@
 
 /** 3 Col gallery page **/
 .gallerynewsec {
-  font-family: Madera, sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  color: #545454;
-  line-height: 25px;
   text-align: center;
 }
-.gallerynewsec h2.title,
-.gallerynewsec h1.title {
-  font-family: Madera, sans-serif;
-  font-weight: 400;
-  font-size: 24px;
-  text-transform: uppercase;
-  line-height: 35px;
-  color: #545454;
-  display: block;
-  margin: 0 0 15px;
-}
 
-.gallerynewsec p {
-  margin: 0 0 20px;
-}
-.gallerynewsec p:last-child {
-  margin: 0;
-}
 .galcommon {
   padding: 10px 0;
 }

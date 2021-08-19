@@ -11,8 +11,8 @@ input[type='button'],
 a.action_button,
 input.action_button[type='submit'],
 input.action_button[type='button'],
-input.action_button[type='button'],
 button.shopify-payment-button__button.shopify-payment-button__button--unbranded {
+  display: inline-block;
   background: $vm-button-background-color;
   color: $vm-button-text-color;
   border: 1px solid $vm-button-border-color;
@@ -33,64 +33,22 @@ button.shopify-payment-button__button.shopify-payment-button__button--unbranded 
   @include align-items(center);
   @include justify-content(center);
   transition: all 0.1s linear;
-}
 
-.ie {
-  a.button,
-  .button,
-  button,
-  input[type='submit'],
-  input[type='reset'],
-  input[type='button'],
-  .action_button,
-  a.action_button,
-  input.action_button[type='submit'],
-  input.action_button[type='button'] {
-    line-height: 40px;
+  &:hover {
+    background-color: $vm-button-hover-background-color;
+    border: 1px solid $vm-button-hover-border-color;
+    color: $vm-button-hover-text-color;
   }
-}
 
-a.button:hover,
-input[type='submit']:hover,
-input[type='reset']:hover,
-input[type='button']:hover,
-.action_button:hover,
-input.action_button[type='submit']:hover,
-input.action_button[type='button']:hover,
-input.action_button[type='button']:hover,
-button.shopify-payment-button__button.shopify-payment-button__button--unbranded:hover {
-  background-color: $vm-button-hover-background-color;
-  border: 1px solid $vm-button-hover-border-color;
-  color: $vm-button-hover-text-color;
-}
-
-a.button:active,
-button:active,
-input[type='submit']:active,
-input[type='reset']:active,
-input[type='button']:active,
-.action_button:active,
-input.action_button[type='submit']:active,
-input.action_button[type='button']:active,
-input.action_button[type='button']:active,
-button.shopify-payment-button__button.shopify-payment-button__button--unbranded:active {
-  // box-shadow: inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);
-  outline: 0;
+  &:active {
+    outline: 0;
+  }
 }
 
 .add_to_cart,
 .product_form input.add_to_cart {
   width: 100%;
   margin-bottom: 0px;
-}
-
-input[type='submit'],
-input[type='reset'],
-input[type='button'],
-input.action_button[type='submit'],
-input.action_button[type='button'],
-button.action_button {
-  display: inline-block;
 }
 
 .button.button--secondary,
@@ -143,9 +101,9 @@ button .checkmark {
   path {
     stroke-dasharray: 19.79 19.79;
     stroke-dashoffset: 19.79;
-    // stroke: {{ settings.btn_text_color }};
     opacity: 0;
   }
+
   &.checkmark-active path {
     -webkit-animation: drawCheckmark 0.5s linear alternate forwards;
     animation: drawCheckmark 0.5s linear alternate forwards;
@@ -171,17 +129,6 @@ button .checkmark {
   to {
     stroke-dashoffset: 0;
     opacity: 1;
-  }
-}
-
-.ie button .checkmark {
-  path {
-    stroke-dashoffset: 0;
-    opacity: 0;
-  }
-  &.checkmark-active path {
-    -webkit-animation: fadeCheckmark 0.5s linear alternate forwards;
-    animation: fadeCheckmark 0.5s linear alternate forwards;
   }
 }
 
@@ -262,17 +209,17 @@ label.tos_label {
 .shopify-payment-button {
   position: relative;
   height: 44px;
-}
 
-.shopify-payment-button div {
-  height: 100%;
-}
+  div {
+    height: 100%;
+  }
 
-.shopify-payment-button button {
-  line-height: 1.2;
-  padding-top: 11px;
-  padding-bottom: 11px;
-  margin-bottom: 0;
+  button {
+    line-height: 1.2;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    margin-bottom: 0;
+  }
 }
 
 button.shopify-payment-button__button.shopify-payment-button__button--unbranded {
@@ -290,7 +237,6 @@ div.shopify-payment-button__button {
 }
 
 button.shopify-payment-button__more-options {
-  // color: {{ settings.regular_color }};
   box-shadow: none;
   text-transform: none;
   font-size: 0.8rem;
@@ -302,8 +248,6 @@ button.shopify-payment-button__more-options {
   top: 100%;
   left: 50%;
   font-weight: normal;
-  // font-family: {{ settings.regular__font.family }}, {{ settings.regular__font.fallback_families }};
-  // font-style: {{ settings.regular__font.style }};
   @include prefix(transform, translateX(-50%), ms webkit spec);
 
   &:hover {
@@ -335,7 +279,6 @@ button.shopify-payment-button__more-options {
 }
 
 .smart-payment-button--true button .checkmark path {
-  // stroke: {{ settings.btn_color }};
   stroke: $vm-color-sea-green;
 }
 

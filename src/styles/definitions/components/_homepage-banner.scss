@@ -1,0 +1,270 @@
+/* Components - Homepage Banner
+================================================== */
+
+$vm-homepage-banner-height-desktop: 800px;
+$vm-homepage-banner-height-mobile: 800px;
+
+.homepage-banner-wrapper {
+  padding: 4rem;
+  background-color: $vm-color-white;
+
+  &.homepage-banner-wrapper--background-color-light {
+    background-color: $vm-color-white;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  &.homepage-banner-wrapper--background-color-light-alt {
+    background-color: $vm-color-cream;
+  }
+
+  @include respond-to('medium-down') {
+    padding: 0;
+  }
+}
+
+.homepage-banner {
+  position: relative;
+  display: flex;
+
+  // height: $vm-homepage-banner-height-desktop;
+  max-width: 1600px;
+  margin: 0 auto;
+  object-fit: cover;
+  aspect-ratio: 2 / 1;
+  color: $vm-color-white;
+
+  @include respond-to('widescreen-down') {
+    // height: 600px;
+    max-width: 1200px;
+  }
+
+  picture {
+    display: flex;
+  }
+
+  img {
+    max-width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .cta-link {
+    transition: all 0.2s;
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+
+  .homepage-banner__content-wrapper {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .homepage-banner__pretext {
+    margin-bottom: 1rem;
+  }
+
+  .homepage-banner__title {
+    margin-bottom: 3rem;
+  }
+
+  // Text color
+  &.homepage-banner--text-color-light {
+    color: $vm-color-white;
+
+    .cta-link {
+      color: $vm-color-white;
+      border-color: $vm-color-white;
+
+      &:hover {
+        color: $vm-color-white;
+        border-color: $vm-color-white;
+      }
+    }
+  }
+
+  &.homepage-banner--text-color-dark {
+    color: $vm-color-plum;
+
+    .cta-link {
+      color: $vm-color-plum;
+      border-color: $vm-color-plum;
+
+      &:hover {
+        color: $vm-color-plum;
+        border-color: $vm-color-plum;
+      }
+    }
+  }
+
+  &.homepage-banner--text-color-dark-alt {
+    color: $vm-color-sea-green;
+
+    .cta-link {
+      color: $vm-color-sea-green;
+      border-color: $vm-color-sea-green;
+
+      &:hover {
+        color: $vm-color-sea-green;
+        border-color: $vm-color-sea-green;
+      }
+    }
+  }
+
+  // Text position
+  &.homepage-banner--text-position-center {
+    .homepage-banner__content-wrapper {
+      right: 0;
+      bottom: 2rem;
+      left: 0;
+    }
+  }
+
+  &.homepage-banner--text-position-left-block {
+    .homepage-banner__content-wrapper {
+      top: 0;
+      right: 50%;
+      bottom: 0;
+      left: 0;
+    }
+  }
+
+  &.homepage-banner--text-position-right-block {
+    .homepage-banner__content-wrapper {
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 50%;
+    }
+  }
+
+  @include respond-to('medium-down') {
+    flex-direction: column;
+    height: auto;
+
+    .homepage-banner__content-wrapper,
+    &.homepage-banner--text-position-right-block
+      .homepage-banner__content-wrapper,
+    &.homepage-banner--text-position-left-block
+      .homepage-banner__content-wrapper {
+      position: static;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      padding: 2rem;
+    }
+
+    .homepage-banner__pretext {
+      margin-bottom: 0.5rem;
+    }
+
+    .homepage-banner__title {
+      margin-bottom: 1rem;
+    }
+
+    &.homepage-banner--mobile-text-color-light {
+      color: $vm-color-white;
+
+      .cta-link {
+        color: $vm-color-white;
+        border-color: $vm-color-white;
+
+        &:hover {
+          color: $vm-color-white;
+          border-color: $vm-color-white;
+        }
+      }
+    }
+
+    &.homepage-banner--mobile-text-color-dark {
+      color: $vm-color-plum;
+
+      .cta-link {
+        color: $vm-color-plum;
+        border-color: $vm-color-plum;
+
+        &:hover {
+          color: $vm-color-plum;
+          border-color: $vm-color-plum;
+        }
+      }
+    }
+
+    &.homepage-banner--mobile-text-color-dark-alt {
+      color: $vm-color-sea-green;
+
+      .cta-link {
+        color: $vm-color-sea-green;
+        border-color: $vm-color-sea-green;
+
+        &:hover {
+          color: $vm-color-sea-green;
+          border-color: $vm-color-sea-green;
+        }
+      }
+    }
+
+    &.homepage-banner--mobile-background-color-light {
+      background-color: $vm-color-white;
+    }
+
+    &.homepage-banner--mobile-background-color-light-alt {
+      background-color: $vm-color-cream;
+    }
+
+    &.homepage-banner--mobile-background-color-dark {
+      background-color: $vm-color-plum;
+    }
+
+    &.homepage-banner--mobile-background-color-dark-alt {
+      background-color: $vm-color-sea-green;
+    }
+  }
+}
+
+.homepage-banner__block {
+  display: flex;
+  flex-basis: 100%;
+  size: 100%;
+
+  &.homepage-banner__block--background-color-light {
+    background-color: $vm-color-white;
+  }
+
+  &.homepage-banner__block--background-color-light-alt {
+    background-color: $vm-color-cream;
+  }
+
+  &.homepage-banner__block--background-color-dark {
+    background-color: $vm-color-plum;
+  }
+
+  &.homepage-banner__block--background-color-dark-alt {
+    background-color: $vm-color-sea-green;
+  }
+
+  &.homepage-banner__block--mobile {
+    display: none;
+    height: $vm-homepage-banner-height-mobile;
+  }
+
+  @include respond-to('medium-down') {
+    display: none;
+
+    &.homepage-banner__block--mobile {
+      display: flex;
+    }
+  }
+}
+
+.homepage-banner.homepage-banner--block-count-2 .homepage-banner__block {
+  flex-basis: 50%;
+  size: 50%;
+}

@@ -1,4 +1,3 @@
-//document ready
 $(function() {
   utils.enableDisclosure();
   var oldFlickityCreate = window.Flickity.prototype._create;
@@ -24,8 +23,6 @@ $(function() {
     searchAutocomplete.init();
   }
   utils.pageBannerCheck();
-  slideshow.init();
-  testimonial.init();
   videoSection.init();
   gallery.init();
   videoFeature.setupVideoPlayer();
@@ -224,21 +221,6 @@ $(function() {
     $(this).parent().submit();
   });
 
-  if ($(window).width() > 798) {
-    $(".animate_right").waypoint(function() {
-      $(this.element).addClass("animated fadeInRight");
-    }, { offset: '70%' });
-    $(".animate_left").waypoint(function() {
-      $(this.element).addClass("animated fadeInLeft");
-    }, { offset: '70%' });
-    $(".animate_up").waypoint(function() {
-      $(this.element).addClass("animated fadeInUp");
-    }, { offset: '70%' });
-    $(".animate_down").waypoint(function() {
-      $(this.element).addClass("animated fadeInDown");
-    }, { offset: '70%' });
-  }
-
   //backwards compatibility with flexslider
   $('.slider, .flexslider').find('li').unwrap();
   $('.slider, .flexslider').flickity({
@@ -257,11 +239,6 @@ $(function() {
   utils.mobileAccordion('#mobile_menu', 'li.sublink > a.parent-link--false', 'li.sublink ul');
 
   utils.initializeTabs();
-  utils.resizeActionButtons();
-
-  $(window).on('resize', function() {
-    utils.resizeActionButtons();
-  });
 
   //Sidebar toggle check
   if ($(window).width() <= 798) {
@@ -921,9 +898,6 @@ $(document)
         }
       }
     }
-
-    utils.resizeActionButtons();
-
 });
 
 $(document)
@@ -978,10 +952,6 @@ $(document)
       if ($parentSection.hasClass('search-section')){
         searchAutocomplete.init();
       }
-    }
-
-    if ($parentSection.hasClass('testimonial-section')){
-      testimonial.init();
     }
 
     if ($parentSection.hasClass('featured-products-section')){
@@ -1106,10 +1076,6 @@ $(document)
 
     if ($parentSection.hasClass('slideshow-section')){
       slideshow.unload($target);
-    }
-
-    if ($parentSection.hasClass('testimonial-section')){
-      testimonial.unload($target);
     }
 
     if ($parentSection.hasClass('search-section')){

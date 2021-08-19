@@ -71,7 +71,7 @@
   position: relative;
   color: #ffffff;
 }
-@media only screen and (max-width: 798px) {
+@media only screen and (max-width: 800px) {
   .vm-styleguide__banner ul a {
     font-size: 26px;
   }

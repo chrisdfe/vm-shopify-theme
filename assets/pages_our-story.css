@@ -70,8 +70,8 @@
 }
 @media only screen and (max-width: 480px) {
   .content-section.content-section--our-story--intro {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
   }
   .content-section.content-section--our-story--intro .icon-wrapper img {
     height: 100px;
@@ -275,7 +275,7 @@
   padding-right: 3rem;
   padding-left: 3rem;
 }
-@media only screen and (max-width: 798px) {
+@media only screen and (max-width: 800px) {
   .content-section.content-section--our-story--visit-store .content-section__title-wrapper {
     padding-right: 0;
     padding-left: 0;
@@ -285,13 +285,13 @@
 .our-story__store-mobile-map-wrapper {
   margin-bottom: 1rem;
 }
-@media only screen and (min-width: 799px) {
+@media only screen and (min-width: 801px) {
   .our-story__store-mobile-map-wrapper {
     display: none;
   }
 }
 
-@media only screen and (max-width: 798px) {
+@media only screen and (max-width: 800px) {
   .our-story__store-map-wrapper {
     display: none;
   }
@@ -300,7 +300,7 @@
 .our-story__store-map-content {
   padding: 3rem 3rem 1.5rem;
 }
-@media only screen and (max-width: 798px) {
+@media only screen and (max-width: 800px) {
   .our-story__store-map-content {
     padding: 1rem 0;
   }
@@ -310,7 +310,7 @@
   padding: 1.5rem 3rem 3rem;
   margin: -20px;
 }
-@media only screen and (max-width: 798px) {
+@media only screen and (max-width: 800px) {
   .our-story__store-location-hours {
     padding: 1rem 0;
     margin: 0;

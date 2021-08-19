@@ -50,7 +50,7 @@
 .page-faq .row {
   margin-bottom: 0;
 }
-@media only screen and (max-width: 798px) {
+@media only screen and (max-width: 800px) {
   .page-faq .page-heading {
     padding: 5rem 0;
   }
@@ -60,7 +60,7 @@
   padding-top: 0;
   padding-bottom: 7rem;
 }
-@media only screen and (max-width: 798px) {
+@media only screen and (max-width: 800px) {
   .content-section.content-section--faq {
     padding-bottom: 3rem;
   }

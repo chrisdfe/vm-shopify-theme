@@ -221,10 +221,10 @@
       {% else %}
         {% assign products_per_row = section.settings.products_per_row %}
         {% render 'product-loop',
-                paginate: paginate,
-                products: products,
-                products_per_row: products_per_row,
-                sidebar: sidebar
+          paginate: paginate,
+          products: products,
+          products_per_row: products_per_row,
+          sidebar: sidebar
         %}
       {% endif %}
 

@@ -105,32 +105,6 @@ var featuredCollectionSection = {
   }
 }
 
-/*============================================================================
-  Featured promotions
-==============================================================================*/
-var featuredPromotions = {
-  init: function(){
-    if ($(window).width() > 798 || $(window).width() == 0) {
-      $('.feature-overlay').hover(function(){
-        $(this).find('.feature-details').slideDown('100', function(){
-          $(this).addClass('reveal-details');
-        });
-      }, function(){
-        $(this).find('.feature-details').removeClass('reveal-details');
-        $(this).find('.feature-details').slideUp('100');
-      });
-
-      $('.js-featured-promotions').each(function (index, value){
-        var $promos = $(this);
-        var animationStyle = $(this).data('promo-animation');
-
-        $promos.waypoint(function() {
-          $(this.element).find(".feature-section").addClass("animated " + animationStyle);
-        }, { offset: '80%' });
-      });
-    }
-  }
-}
 
 /*============================================================================
   Slideshow

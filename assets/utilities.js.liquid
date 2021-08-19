@@ -586,7 +586,7 @@ var quickFilter = {
     quickFilter.processUrl(path, currentTags, query);
   },
   updateView: function(filterURL) {
-
+    console.log("filterUrl", filterURL)
     $.ajax({
       type: 'GET',
       url: filterURL,
@@ -1048,18 +1048,6 @@ var utils = {
         $('.secondary_logo--true').find('.primary_logo').show();
       }
     }
-  },
-  resizeActionButtons: function(){
-    $('.js-caption:visible').each(function(){
-      var buttonWidth = 0;
-      $(this).find('.action_button').each(function(){
-        $button = $(this);
-        if($(this).width() > buttonWidth){
-            buttonWidth = $(this).width();
-        }
-      });
-      $(this).find('.action_button').width(buttonWidth);
-    });
   },
   enableDisclosure: function() {
 

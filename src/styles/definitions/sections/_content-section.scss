@@ -21,7 +21,7 @@
 }
 
 .content-section__heading {
-  margin-bottom: $vm-content-section-padding;
+  // margin-bottom: 2rem;
 
   @include respond-to('medium-down') {
     margin-bottom: $vm-content-section-mobile-padding;
@@ -34,7 +34,11 @@
   justify-content: space-between;
 
   .content-section__title {
-    margin-bottom: 0;
+    margin-bottom: 2rem;
+
+    &.heading--with-accent {
+      margin-bottom: 4rem;
+    }
   }
 
   h4.content-section__title {

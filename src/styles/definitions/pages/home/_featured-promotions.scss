@@ -1,21 +1,21 @@
 /* #Home page - featured promotions
 ================================================== */
 
+@use "sass:math";
+
 .promo-animation--true {
   opacity: 0;
 }
 
 .featured-promotions-section {
-  background-color: $vm-color-cream;
+  // background-color: $vm-color-cream;
 }
 
 .featured-promotions {
   .feature-section {
     text-align: center;
-    float: left;
-    margin: 0 10px 20px;
+    margin: 0 0 $gutter;
     position: relative;
-    // color: {{ settings.featured_promotions_color }};
 
     @include respond-to('medium-down') {
       opacity: 1;
@@ -184,8 +184,17 @@ $delay: 0;
   }
 
   .promo-per-row-3 {
+    display: flex;
+    // justify-content: space-between;
+    // padding: 0 ($gutter / 2);
+
     .feature-section {
-      width: calc(33.3333% - 20px);
+      // width: calc(100% / 3);
+      flex-basis: math.div(100%, 3);
+      flex-grow: 1;
+      flex-shrink: 0;
+      padding: 0 ($gutter / 2);
+
       @include respond-to('medium-down') {
         width: 100%;
         margin: 0 0 10px;

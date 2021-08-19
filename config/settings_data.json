@@ -4735,142 +4735,6 @@
           "parent": "Jewelry"
         }
       },
-      "1552235156499": {
-        "type": "slideshow",
-        "blocks": {
-          "c7f5ce56-5063-4e4e-9858-937135472704": {
-            "type": "image",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/Peaks_and_Valleys_Banner.jpg",
-              "pretext": "",
-              "title": "Peaks and Valleys",
-              "subtitle": "",
-              "caption_background": false,
-              "caption_background_transparency": false,
-              "button1": "Shop Now",
-              "button1_link": "",
-              "button1_highlight": true,
-              "button2": "",
-              "button2_link": "",
-              "button2_highlight": false,
-              "text_position": "left",
-              "text_align": "center",
-              "mobile_image_crop": "none",
-              "is_timed_slide": false,
-              "start_datetime": "",
-              "end_datetime": ""
-            }
-          },
-          "8a66aa23-1f05-48d5-93d1-91fe8c2256f8": {
-            "type": "image",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/20200705-DSC_0079.jpg",
-              "pretext": "",
-              "title": "Ravishing Ruby",
-              "subtitle": "",
-              "caption_background": false,
-              "caption_background_transparency": false,
-              "button1": "Shop New Arrivals",
-              "button1_link": "shopify:\/\/collections\/new-arrivals",
-              "button1_highlight": false,
-              "button2": "",
-              "button2_link": "",
-              "button2_highlight": false,
-              "text_position": "left",
-              "text_align": "center",
-              "mobile_image_crop": "none",
-              "is_timed_slide": false,
-              "start_datetime": "",
-              "end_datetime": ""
-            }
-          },
-          "4a86dbf8-f788-4955-9577-055e1259a1a3": {
-            "type": "image",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/DSC_9446.jpg",
-              "pretext": "",
-              "title": "Platinum is here",
-              "subtitle": "",
-              "caption_background": false,
-              "caption_background_transparency": false,
-              "button1": "Shop Bands",
-              "button1_link": "shopify:\/\/collections\/new-arrivals",
-              "button1_highlight": false,
-              "button2": "",
-              "button2_link": "",
-              "button2_highlight": false,
-              "text_position": "right",
-              "text_align": "center",
-              "mobile_image_crop": "none",
-              "is_timed_slide": false,
-              "start_datetime": "",
-              "end_datetime": ""
-            }
-          },
-          "64437903-428d-4f4e-96b3-7ced4c3a99f5": {
-            "type": "image",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/DSC_7020.jpg",
-              "pretext": "<p>Shades of refreshing teal <\/p>",
-              "title": "Sapphire Summer",
-              "subtitle": "",
-              "caption_background": false,
-              "caption_background_transparency": false,
-              "button1": "Shop now",
-              "button1_link": "shopify:\/\/collections\/new-arrivals",
-              "button1_highlight": false,
-              "button2": "",
-              "button2_link": "",
-              "button2_highlight": false,
-              "text_position": "left",
-              "text_align": "left",
-              "mobile_image_crop": "none",
-              "is_timed_slide": false,
-              "start_datetime": "",
-              "end_datetime": ""
-            }
-          },
-          "5ee03ec4-ab57-4a98-a96a-5c779998b5fa": {
-            "type": "image",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/Gemstones---teal-in-tray.jpg",
-              "pretext": "<p>Design Your Own Ring with Our<\/p>",
-              "title": "Vibrant New Gems",
-              "subtitle": "",
-              "caption_background": false,
-              "caption_background_transparency": false,
-              "button1": "Choose your gem",
-              "button1_link": "https:\/\/www.valeriemadison.com\/collections\/create-your-own-diamond-or-gemstone-ring",
-              "button1_highlight": false,
-              "button2": "",
-              "button2_link": "",
-              "button2_highlight": false,
-              "text_position": "left",
-              "text_align": "center",
-              "mobile_image_crop": "none",
-              "is_timed_slide": false,
-              "start_datetime": "",
-              "end_datetime": ""
-            }
-          }
-        },
-        "block_order": [
-          "c7f5ce56-5063-4e4e-9858-937135472704",
-          "8a66aa23-1f05-48d5-93d1-91fe8c2256f8",
-          "4a86dbf8-f788-4955-9577-055e1259a1a3",
-          "64437903-428d-4f4e-96b3-7ced4c3a99f5",
-          "5ee03ec4-ab57-4a98-a96a-5c779998b5fa"
-        ],
-        "settings": {
-          "wide_display": true,
-          "slideshow_text_animation": "",
-          "slideshow_animation": "slide",
-          "slideshow_speed": 5,
-          "activate_adaptiveHeight": false,
-          "mobile_text_below_image": true,
-          "mobile_text_color": ""
-        }
-      },
       "mega-menu-5": {
         "type": "mega-menu-5",
         "blocks": {
@@ -6591,10 +6455,36 @@
           "cta_text": "Book your appointment",
           "cta_link": "https:\/\/calendly.com\/valeriemadison\/eternitybracelet"
         }
+      },
+      "1628706536fb34ccc5": {
+        "type": "homepage-banner",
+        "blocks": {
+          "b3922aab-3e6c-427d-b15d-86a598fa98d7": {
+            "type": "background_block",
+            "settings": {
+              "background_color": "light",
+              "banner_image_desktop": "shopify:\/\/shop_images\/bg_606b0935-a7ff-43ad-9dba-3b7735cfad1f.png"
+            }
+          }
+        },
+        "block_order": [
+          "b3922aab-3e6c-427d-b15d-86a598fa98d7"
+        ],
+        "settings": {
+          "banner_wrapper_background_color": "light-alt",
+          "pretext": "peaks and valleys",
+          "heading": "Sapphire Summer",
+          "cta_link": "#",
+          "cta_text": "",
+          "text_position": "center",
+          "text_color": "light",
+          "banner_image_mobile": "shopify:\/\/shop_images\/bg_606b0935-a7ff-43ad-9dba-3b7735cfad1f.png",
+          "text_color_mobile": "light"
+        }
       }
     },
     "content_for_index": [
-      "1552235156499",
+      "1628706536fb34ccc5",
       "1619300542332dabf8",
       "1578277933549",
       "1619300957ab5b6971",

@@ -63,13 +63,17 @@
   svg {
     display: block;
     width: 2.4rem;
-    fill: #1c4047;
+    fill: $vm-color-sea-green;
     transition: all 0.2s;
   }
 
-  &:hover svg {
-    transform: translateX(0.5rem);
-    fill: #dec1a8;
+  &:hover {
+    background: transparent;
+
+    svg {
+      transform: translateX(0.5rem);
+      fill: $vm-color-sand;
+    }
   }
 
   &.vm-testimonial__slide-button--prev {

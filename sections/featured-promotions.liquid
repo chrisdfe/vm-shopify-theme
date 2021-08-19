@@ -7,72 +7,81 @@
 {% assign featured_promos_per_row = section.settings.featured_promos_per_row | minus: 0 %}
 {% assign title_on_image = section.settings.promo_text_on_image_enabled %}
 
-{% if section.blocks.size > 0 %}
-  <div class="featured-promotions container full-width--{{ section.settings.featured_promos_grid }}">
-    <div class="content-section">
-      {% if section.settings.title %}
-        <div class="sixteen columns">
-          {% include "content-section.title" with {
-            title: section.settings.title | escape,
-          } %}
-        </div>
-      {% endif %}
-      
-   	  <div class="js-featured-promotions promo-per-row-{{ featured_promos_per_row }} clearfix"
-          data-promo-animation="{{ section.settings.featured_links_animation }}">
-        {% for block in section.blocks %}
-          <figure class="feature-section section-{{ forloop.index }}
-                         promo-{{ forloop.index }}
-                         title-overlay-{{ title_on_image }}
-                         {% if section.settings.featured_links_animation != blank %}promo-animation--true{% endif %}"
-                         {{ block.shopify_attributes }}>
-              <div class="feature-inner feature-style--{{ section.settings.feature_style }} ">
-                {% if block.settings.image != nil %}
-                  {% render 'image-element',
-                          image: block.settings.image,
-                          alt: block.settings.image.alt,
-                          stretch_width: true
-                  %}
-                {% else %}
-                  {% capture i %}{% cycle "1", "2", "3", "4", "5", "6" %}{% endcapture %}
-                  {{ 'collection-' | append: i | placeholder_svg_tag: 'placeholder-svg placeholder-svg--promotions' }}
-                {% endif %}
-                
-                {% if block.settings.text != blank or block.settings.button_label != blank or block.settings.title != blank and title_on_image != blank %}
-                  <figcaption class="feature-overlay">
-                    <a {% if block.settings.link != blank %}href="{{ block.settings.link }}"{% endif %}class="link-promo"></a>
-                      <div class="feature-wrap">
-                        {% if block.settings.title != blank %}
-                          <h4>{{ block.settings.title }}</h4>
-                        {% endif %}
-                        <div class="feature-details">
-                          {% if block.settings.text != blank %}
-                            <div class="description">{{ block.settings.text }}</div>
-                          {% endif %}
+<div class="featured-promotions">
+  <div class="content-section">
+    {% if section.settings.title %}
+      <div class="container">
+        <div class="row">
+          <div class="sixteen columns">
 
-                          {% if block.settings.button_label != blank %}
-                            <div class="button">{{ block.settings.button_label }}</div>
+            {% include "content-section.title" with {
+              title: section.settings.title | escape,
+              with_accent: false
+            } %}
+
+          </div>
+        </div>
+      </div>
+    {% endif %}
+    
+    <div class="container">
+      <div class="row">
+        
+        {% for block in section.blocks %}
+          <div class="one-third columns">
+            <figure class="feature-section section-{{ forloop.index }}
+                          promo-{{ forloop.index }}
+                          title-overlay-{{ title_on_image }}"
+                          {{ block.shopify_attributes }}>
+                <div class="feature-inner feature-style--{{ section.settings.feature_style }} ">
+                  {% if block.settings.image != nil %}
+                    {% render 'image-element',
+                            image: block.settings.image,
+                            alt: block.settings.image.alt,
+                            stretch_width: true
+                    %}
+                  {% else %}
+                    {% capture i %}{% cycle "1", "2", "3", "4", "5", "6" %}{% endcapture %}
+                    {{ 'collection-' | append: i | placeholder_svg_tag: 'placeholder-svg placeholder-svg--promotions' }}
+                  {% endif %}
+                  
+                  {% if block.settings.text != blank or block.settings.button_label != blank or block.settings.title != blank and title_on_image != blank %}
+                    <figcaption class="feature-overlay">
+                      <a {% if block.settings.link != blank %}href="{{ block.settings.link }}"{% endif %}class="link-promo"></a>
+                        <div class="feature-wrap">
+                          {% if block.settings.title != blank %}
+                            <h4>{{ block.settings.title }}</h4>
                           {% endif %}
+                          <div class="feature-details">
+                            {% if block.settings.text != blank %}
+                              <div class="description">{{ block.settings.text }}</div>
+                            {% endif %}
+
+                            {% if block.settings.button_label != blank %}
+                              <div class="button">{{ block.settings.button_label }}</div>
+                            {% endif %}
+                          </div>
                         </div>
-                      </div>
-                  </figcaption>
-                {% elsif block.settings.link != blank %}
-                  <a {% if block.settings.link != blank %}href="{{ block.settings.link }}"{% endif %}class="link-promo"></a>
+                    </figcaption>
+                  {% elsif block.settings.link != blank %}
+                    <a {% if block.settings.link != blank %}href="{{ block.settings.link }}"{% endif %}class="link-promo"></a>
+                  {% endif %}
+                </div>
+              {% if title_on_image == blank %}
+                {% if block.settings.title != blank %}
+                  <a {% if block.settings.link != blank %}href="{{ block.settings.link }}"{% endif %}>
+                    <h2 class="title title-below">{{ block.settings.title }}</h2>
+                  </a>
                 {% endif %}
-              </div>
-            {% if title_on_image == blank %}
-              {% if block.settings.title != blank %}
-                <a {% if block.settings.link != blank %}href="{{ block.settings.link }}"{% endif %}>
-                  <h2 class="title title-below">{{ block.settings.title }}</h2>
-                </a>
               {% endif %}
-            {% endif %}
-          </figure>
+            </figure>
+          </div>
         {% endfor %}
+
       </div>
     </div>
   </div>
-{% endif %}
+</div>
 
 {% schema %}
 {
