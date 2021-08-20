@@ -1,7 +1,6 @@
 {% unless template.name != "index" and section.settings.hide_section_list == true %}
 
 {% assign column_count = section.blocks | size %}
-{% assign column_count = 3 %}
 
 {% if column_count == 1 %}
   {% assign column_class = "sixteen" %}
@@ -15,47 +14,53 @@
 
 <section class="image-list">
   <div class="content-section">
-    <div class="container">
-      {% if section.settings.title != blank %}
-        <div class="sixteen columns">
-          {% include "content-section.title" with {
-            title: section.settings.title | escape,
-          } %}
-        </div>
-      {% endif %}
-      
-      {% if section.settings.subtext != blank %}
-        <p class="paragraph-1">
-          {{ section.settings.subtext }}
-        </p>
-      {% endif %}
 
+    {% if section.settings.title != blank %}
       <div class="container">
+        <div class="row">
+          <div class="sixteen columns">
+            {% include "content-section.title" with {
+              title: section.settings.title | escape
+            } %}
+          </div>
+        </div>
+      </div>
+    {% endif %}
+
+    <div class="container">
+      <div class="row">
+
         {% for block in section.blocks %} 
           {% if block.type == 'content-image' and block.settings.show_section %}
-            <div class="{{ column_class }} columns medium-down--one-whole image-list__column">
-              <div class="image-list__item">
-                <!--      
+            <div class="{{ column_class }} columns medium-down--one-whole">
+              <div class="image-card image-list__item">
+
+                <!--
                 {% if block.settings.image_option != blank %}
-      	          {{ block.settings.image_option | img_url: 'x150' | img_tag }}
+                  {{ block.settings.image_option | img_url: 'x150' | img_tag }}
                 {% else %}
-          	      {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+                  {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
                 {% endif %}
                 -->
+
                 
-                <h5>
-                  {{block.settings.title}}
-                </h5>
-                
-                <p class="paragraph-2">
-                  {{ block.settings.icon_subtext | strip_html }}
-                </p>
+                <div class="image-list__content">
+                  <h5 class="image-list__title">
+                    {{ block.settings.title }}
+                  </h5>
+                  
+                  <p class="paragraph-2">
+                    {{ block.settings.icon_subtext | strip_html }}
+                  </p>
+                </div>
               </div>
             </div>
           {% endif %}
         {% endfor %}
+
       </div>
     </div>
+
   </div>
 </section>
 {% endunless %}
@@ -75,12 +80,6 @@
       "id": "title",
       "label": "Heading",
       "default": "Image List Header"
-      },
-      {
-      "type": "richtext",
-      "id": "subtext",
-      "label": "Sub Heading",
-      "default": "<p>Sub header description</p>"
       },
       {
         "type": "header",

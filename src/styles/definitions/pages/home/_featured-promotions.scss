@@ -3,264 +3,38 @@
 
 @use "sass:math";
 
-.promo-animation--true {
-  opacity: 0;
-}
+.collection-card {
+  text-align: left;
+  margin: 0 0 3rem;
+  overflow: hidden;
 
-.featured-promotions-section {
-  // background-color: $vm-color-cream;
-}
+  figcaption {
+    margin: 1rem 0 0;
+  }
 
-.featured-promotions {
-  .feature-section {
-    text-align: center;
-    margin: 0 0 $gutter;
-    position: relative;
+  a,
+  img {
+    transition: all 0.4s;
+  }
 
-    @include respond-to('medium-down') {
-      opacity: 1;
-    }
+  h4 {
+    margin-bottom: 0;
+  }
 
-    .link-promo {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      display: block;
-    }
-
-    .feature-inner {
-      display: block;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .feature-style--circle {
-      border-radius: 50%;
-
-      img {
-        border-radius: 50%;
-      }
-    }
-
-    .feature-style--rounded {
-      border-radius: 10px;
-      img {
-        border-radius: 10px;
-      }
-    }
-
-    .feature-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      transition: background-color 0.25s linear;
-      @include background-opacity($vm-color-sea-green, 0);
-      margin: 0;
-      // @include respond-to('medium-down') {
-      // }
-    }
-
-    .feature-wrap {
-      @include vertical-alignment;
-      position: absolute;
-      width: 80%;
-      margin: 0 auto;
-      left: 0;
-      right: 0;
-      pointer-events: none;
-      color: $vm-color-white;
-    }
-
-    .feature-details {
-      display: none;
-      opacity: 0;
-      transition: opacity 0.3s linear;
-      color: $vm-color-white;
-
-      @include respond-to('medium-down') {
-        opacity: 1;
-        display: block !important;
-      }
-
-      &.reveal-details {
-        opacity: 1;
-      }
-
-      .button {
-        margin-top: 15px;
-      }
-    }
-
-    .description {
-      // color: {{ settings.featured_promotions_color }};
-      transition: all 0.3s linear;
-      margin-bottom: 0;
-    }
-
-    .description a {
-      pointer-events: auto;
-    }
-
-    &.title-overlay-true {
-      .title {
-        transition: all 0.3s linear;
-        // color: {{ settings.featured_promotions_color }};
-
-        @include respond-to('medium-down') {
-          margin-bottom: 10px;
-        }
-
-        &:after {
-          content: '';
-          display: block;
-          height: 1px;
-          width: 0;
-          // background: {{ settings.featured_promotions_color }};
-          transition: width 0.5s ease, background-color 0.5s ease;
-          margin: 10px auto auto auto;
-
-          @include respond-to('medium-down') {
-            display: none;
-          }
-        }
-      }
-    }
-
-    &.title-overlay-false {
-      .feature-wrap .title {
-        display: none;
-      }
-    }
+  a {
+    color: $vm-color-sea-green;
 
     &:hover {
-      .feature-overlay {
-        @include background-opacity($vm-color-sea-green, 0.5);
+      color: $vm-color-sand;
 
-        @include respond-to('medium-down') {
-          background: transparent;
-        }
-      }
-    }
-
-    &.title-overlay-true:hover .title:after {
-      width: 50%;
-    }
-
-    img {
-      width: 100%;
-      display: block;
-      box-shadow: 0 0 1px rgba(0, 0, 0, 0.05);
-    }
-  }
-}
-
-$i: 1;
-$delay: 0;
-@while $i < 13 {
-  .promo-#{$i} {
-    -webkit-animation-delay: $delay + s;
-    animation-delay: $delay + s;
-  }
-  $i: $i + 1;
-  $delay: $delay + 0.3;
-}
-
-.featured-promotions.full-width--false {
-  .promo-per-row-2 {
-    .feature-section {
-      width: calc(50% - 20px);
-      @include respond-to('medium-down') {
-        width: 100%;
-        margin: 0 0 10px;
-      }
-      &:nth-child(2n + 1) {
-        clear: both;
+      img {
+        // opacity: 0.8;
+        transform: scale(1.02) translateX(2px);
       }
     }
   }
 
-  .promo-per-row-3 {
-    display: flex;
-    // justify-content: space-between;
-    // padding: 0 ($gutter / 2);
-
-    .feature-section {
-      // width: calc(100% / 3);
-      flex-basis: math.div(100%, 3);
-      flex-grow: 1;
-      flex-shrink: 0;
-      padding: 0 ($gutter / 2);
-
-      @include respond-to('medium-down') {
-        width: 100%;
-        margin: 0 0 10px;
-      }
-      &:nth-child(3n + 1) {
-        clear: both;
-      }
-    }
-  }
-
-  .promo-per-row-4 {
-    .feature-section {
-      width: calc(25% - 20px);
-      &:nth-child(4n + 1) {
-        clear: both;
-      }
-
-      @include respond-to('medium-down') {
-        width: calc(50% - 20px);
-        &:nth-child(2n + 1) {
-          clear: both;
-        }
-      }
-
-      @include respond-to('small-down') {
-        width: 100%;
-        margin: 0 0 10px;
-      }
-    }
-  }
-}
-
-.featured-promotions.full-width--true {
-  padding-top: 0;
-  .js-featured-promotions {
-    @include flexbox();
-    @include flex-wrap(wrap);
-  }
-  .promo-per-row-2 {
-    .feature-section {
-      width: 50%;
-      margin: 0;
-      @include respond-to('small-down') {
-        width: 100%;
-      }
-    }
-  }
-  .promo-per-row-3 {
-    .feature-section {
-      width: 33.333333%;
-      margin: 0;
-      @include respond-to('medium-down') {
-        width: 100%;
-      }
-    }
-  }
-  .promo-per-row-4 {
-    .feature-section {
-      width: 25%;
-      margin: 0;
-      @include respond-to('medium-down') {
-        width: 50%;
-      }
-      @include respond-to('small-down') {
-        width: 100%;
-      }
-    }
+  @include respond-to('medium-down') {
+    margin-bottom: 2rem;
   }
 }

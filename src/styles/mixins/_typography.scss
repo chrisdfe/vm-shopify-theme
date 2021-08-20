@@ -61,7 +61,7 @@
   letter-spacing: $letter-spacing;
   line-height: $line-height;
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 600;
   font-style: normal;
 
   @include respond-to('medium-down') {

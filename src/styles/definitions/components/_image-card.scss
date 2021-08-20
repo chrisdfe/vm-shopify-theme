@@ -1,0 +1,28 @@
+/* Components - Homepage Banner
+================================================== */
+
+.image-card {
+  margin-bottom: 2rem;
+
+  .image-card__image {
+  }
+
+  .image-card__content {
+    margin-top: 1rem;
+  }
+
+  .image-card__title {
+    margin-top: 0;
+  }
+}
+
+// TODO - this doesn't go here
+.image-card--blog-post {
+  .image-card__title {
+    margin-bottom: 0;
+  }
+
+  .image-card--blog-post__timestamp {
+    margin-bottom: 1rem;
+  }
+}

@@ -1,55 +1,51 @@
-<div class="content-section content-section--vm-testimonials vm-testimonials js-vm-testimonials">
+<div class="content-section content-section--vm-testimonials content-section--2x-padding">
+
   <div class="container">
     <div class="row">
-      <!-- <div class="six columns medium-down--sixteen">
-        <div class="vm-testimonials__slide-title-links">
-          {% for block in section.blocks %}
-            <h3 class="vm-testimonials__slide-title-link js-testimonial-slide-title-link {% if forloop.first %}is-active{% endif %}" data-slide-index="{{ forloop.index }}">
-              &ldquo;{{ block.settings.title }}&rdquo;
-            </h3>
-          {% endfor %}
-        </div>
-      </div> -->
-
       <div class="twelve columns offset-by-two medium-down--sixteen">
-        {% for block in section.blocks %}
-          <div class="vm-testimonial-slide vm-testimonial-slide--index-{{ index }} js-testimonial-slide {% if forloop.first %}is-active{% endif %}" data-slide-index="{{ forloop.index }}">
-            <div class="vm-testimonial-slide__content">
-              <h2 class="vm-testimonial-slide__title heading-1">
-                &ldquo;{{ block.settings.title }}&rdquo;
-              </h2>
-              
-              <p class="vm-testimonial-slide__testimonial paragraph--block-text">
-                &ldquo;{{ block.settings.testimonial | strip_html }}&rdquo;
-              </p>
-              
-              {% if block.settings.name != blank %}
-                <h4 class="vm-testimonial-slide__name subheading-2">
-                  - {{ block.settings.name }}
-                </h4>
-              {% endif %}
+
+        <div class="vm-testimonials js-vm-testimonials">
+          {% for block in section.blocks %}
+            <div class="vm-testimonial-slide vm-testimonial-slide--index-{{ index }} js-testimonial-slide {% if forloop.first %}is-active{% endif %}" data-slide-index="{{ forloop.index }}">
+              <div class="vm-testimonial-slide__content">
+                <h2 class="vm-testimonial-slide__title heading-1">
+                  &ldquo;{{ block.settings.title }}&rdquo;
+                </h2>
+                
+                <p class="vm-testimonial-slide__testimonial paragraph--block-text">
+                  &ldquo;{{ block.settings.testimonial | strip_html }}&rdquo;
+                </p>
+                
+                {% if block.settings.name != blank %}
+                  <h4 class="vm-testimonial-slide__name subheading-2">
+                    - {{ block.settings.name }}
+                  </h4>
+                {% endif %}
+              </div>
             </div>
+          {% endfor %}
+
+          <div class="vm-testimonial__buttons-wrapper">
+            <button class="vm-testimonial__slide-button vm-testimonial__slide-button--prev js-testimonials-prev-button">
+              {% include "icon-right-arrow" %}
+            </button>
+
+            <h6 class="vm-testimonial__slide-index-indicator">
+              <span class="js-testimonials-slide-index">1</span>
+              <span class="divider">/</span>
+              <span>{{ section.blocks.size }}</span>
+            </h6>
+            
+            <button class="vm-testimonial__slide-button vm-testimonial__slide-button--next js-testimonials-next-button">
+              {% include "icon-right-arrow" %}
+            </button>
           </div>
-        {% endfor %}
-
-        <div class="vm-testimonial__buttons-wrapper">
-          <button class="vm-testimonial__slide-button vm-testimonial__slide-button--prev js-testimonials-prev-button">
-            {% include "icon-right-arrow" %}
-          </button>
-
-          <h6 class="vm-testimonial__slide-index-indicator">
-            <span class="js-testimonials-slide-index">1</span>
-            <span class="divider">/</span>
-            <span>{{ section.blocks.size }}</span>
-          </h6>
-          
-          <button class="vm-testimonial__slide-button vm-testimonial__slide-button--next js-testimonials-next-button">
-            {% include "icon-right-arrow" %}
-          </button>
         </div>
+
       </div>
     </div>
   </div>
+
 </div>
 
 <script>

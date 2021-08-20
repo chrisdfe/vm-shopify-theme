@@ -45,20 +45,6 @@
 {% comment %}Is the color set to transparent?{% endcomment %}
 {% assign mobile_text_alpha = mobile_text_color | color_extract: 'alpha' %}
 
-{% comment %}Section specific CSS{% endcomment %}
-{% style %}
-  @media only screen and (max-width: 480px) {
-    #shopify-section-{{ id }} .pretext,
-    #shopify-section-{{ id }} .headline,
-    #shopify-section-{{ id }} .subtitle,
-    .block__{{ id }} .pretext,
-    .block__{{ id }} .headline,
-    .block__{{ id }} .subtitle {
-      color: {% if mobile_text_alpha != 0 %}{{ mobile_text_color}}{% endif %};
-    }
-  }
-{% endstyle %}
-
 
 {% if wide_display == false %}
 <div class="container">

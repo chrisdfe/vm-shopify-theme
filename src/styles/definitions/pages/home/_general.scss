@@ -1,0 +1,20 @@
+/* Home page - general
+================================================== */
+
+// TODO - make global
+.homepage {
+  .row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 0;
+  }
+
+  .column,
+  .columns {
+    display: block;
+    float: none;
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+}

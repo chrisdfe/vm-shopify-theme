@@ -23,15 +23,19 @@
 {% endif %}
 
 <div class="content-section">
-  <div class="container featured_products product-{{ collection_style }}">
-    <div class="sixteen columns">
-      {% include "content-section.title" with {
-        title: title,
-        with_accent: false,
-        title_link: collections[settingCollection].url,
-        title_link_text: "shop new arrivals",
-        description: collections[settingCollection].description
-      } %}
+  <div class="container featured_products">
+    <div class="row">
+      <div class="sixteen columns">
+
+        {% include "content-section.title" with {
+          title: title,
+          with_accent: false,
+          title_link: collections[settingCollection].url,
+          title_link_text: "shop new arrivals",
+          description: collections[settingCollection].description
+        } %}
+
+      </div>
     </div>
   </div>
 
@@ -41,10 +45,12 @@
   {% assign products_per_row = products_per %}
 
   <div class="container featured-collection__products">
-    {% render 'product-loop',
-        limit: limit,
-        products: products,
-        products_per_row: products_per_row
-    %}
+    <div class="row">
+      {% render 'product-loop',
+          limit: limit,
+          products: products,
+          products_per_row: products_per_row
+      %}
+    </div>
   </div>
 </div>

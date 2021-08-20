@@ -26,7 +26,6 @@ $(function() {
   videoSection.init();
   gallery.init();
   videoFeature.setupVideoPlayer();
-  featuredPromotions.init();
   featuredCollectionSection.init();
   collectionSidebarFilter.init();
   cart.init();
@@ -938,10 +937,6 @@ $(document)
       if ($('.block__featured_collection').length){
         featuredCollectionSection.init();
       }
-    }
-
-    if ($parentSection.hasClass('featured-promotions-section')){
-      featuredPromotions.init();
     }
 
     if ($parentSection.hasClass('slideshow-section')){

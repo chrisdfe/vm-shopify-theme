@@ -57,6 +57,12 @@ h3,
     background-color: $vm-heading-accent-color;
   }
 
+  &.page-heading__title--no-accent {
+    &:after {
+      display: none;
+    }
+  }
+
   &.heading--with-accent--align-center {
     text-align: center;
 

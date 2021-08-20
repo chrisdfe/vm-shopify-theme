@@ -29,15 +29,9 @@ section.image-list {
       text-align: center;
       vertical-align: middle;
     }
-  }
 
-  @include respond-to('medium-down') {
-    .image-list__column {
+    @include respond-to('medium-down') {
       margin-bottom: 2rem;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
     }
   }
 }

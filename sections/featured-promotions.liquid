@@ -1,14 +1,9 @@
-{% comment %}
-** Featured promotions - homepage partial **
-- Draggable section
-- Uses blocks
-{% endcomment %}
-
 {% assign featured_promos_per_row = section.settings.featured_promos_per_row | minus: 0 %}
 {% assign title_on_image = section.settings.promo_text_on_image_enabled %}
 
 <div class="featured-promotions">
-  <div class="content-section">
+  <div class="content-section content-section--no-padding-top">
+
     {% if section.settings.title %}
       <div class="container">
         <div class="row">
@@ -29,57 +24,31 @@
         
         {% for block in section.blocks %}
           <div class="one-third columns">
-            <figure class="feature-section section-{{ forloop.index }}
-                          promo-{{ forloop.index }}
-                          title-overlay-{{ title_on_image }}"
-                          {{ block.shopify_attributes }}>
-                <div class="feature-inner feature-style--{{ section.settings.feature_style }} ">
-                  {% if block.settings.image != nil %}
-                    {% render 'image-element',
-                            image: block.settings.image,
-                            alt: block.settings.image.alt,
-                            stretch_width: true
-                    %}
-                  {% else %}
-                    {% capture i %}{% cycle "1", "2", "3", "4", "5", "6" %}{% endcapture %}
-                    {{ 'collection-' | append: i | placeholder_svg_tag: 'placeholder-svg placeholder-svg--promotions' }}
-                  {% endif %}
-                  
-                  {% if block.settings.text != blank or block.settings.button_label != blank or block.settings.title != blank and title_on_image != blank %}
-                    <figcaption class="feature-overlay">
-                      <a {% if block.settings.link != blank %}href="{{ block.settings.link }}"{% endif %}class="link-promo"></a>
-                        <div class="feature-wrap">
-                          {% if block.settings.title != blank %}
-                            <h4>{{ block.settings.title }}</h4>
-                          {% endif %}
-                          <div class="feature-details">
-                            {% if block.settings.text != blank %}
-                              <div class="description">{{ block.settings.text }}</div>
-                            {% endif %}
-
-                            {% if block.settings.button_label != blank %}
-                              <div class="button">{{ block.settings.button_label }}</div>
-                            {% endif %}
-                          </div>
-                        </div>
-                    </figcaption>
-                  {% elsif block.settings.link != blank %}
-                    <a {% if block.settings.link != blank %}href="{{ block.settings.link }}"{% endif %}class="link-promo"></a>
-                  {% endif %}
+            <div class="image-card image-card--collection collection-card" {{ block.shopify_attributes }}>
+              <a href="{{ block.settings.link }}">
+                <div class="image-card__image">
+                  {% render 'image-element',
+                    image: block.settings.image,
+                    alt: block.settings.image.alt,
+                    stretch_width: true
+                  %}
                 </div>
-              {% if title_on_image == blank %}
-                {% if block.settings.title != blank %}
-                  <a {% if block.settings.link != blank %}href="{{ block.settings.link }}"{% endif %}>
-                    <h2 class="title title-below">{{ block.settings.title }}</h2>
-                  </a>
-                {% endif %}
-              {% endif %}
-            </figure>
+              
+                <div class="image-card__content">
+                  <h4 class="image-card__title">{{ block.settings.title | strip_html }}</h4>
+                
+                  <!-- {% if block.settings.text != blank %}
+                    <div class="description">{{ block.settings.text }}</div>
+                  {% endif %} -->
+                </div>
+              </a>
+            </div>
           </div>
         {% endfor %}
 
       </div>
     </div>
+
   </div>
 </div>
 
@@ -90,9 +59,9 @@
   "max_blocks": 12,
   "settings": [
 	{
-       "type": "text",
-       "id": "title",
-	   "label": "Title"
+    "type": "text",
+    "id": "title",
+	  "label": "Title"
 	},
     {
       "type": "checkbox",

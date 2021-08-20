@@ -5,23 +5,23 @@
 @import '../_mixins.scss';
 
 .page-our-story {
-  .content-section {
-    padding: 7rem 0;
+  // .content-section {
+  //   // padding: 7rem 0;
 
-    .content-section__anchor {
-      position: relative;
-      top: -8rem;
-    }
+  //   .content-section__anchor {
+  //     position: relative;
+  //     top: -8rem;
+  //   }
 
-    @include respond-to('small-down') {
-      padding: 5rem 0;
+  //   @include respond-to('small-down') {
+  //     padding: 5rem 0;
 
-      .content-section__anchor {
-        position: relative;
-        top: -6rem;
-      }
-    }
-  }
+  //     .content-section__anchor {
+  //       position: relative;
+  //       top: -6rem;
+  //     }
+  //   }
+  // }
 }
 
 .content-section.content-section--our-story--intro {

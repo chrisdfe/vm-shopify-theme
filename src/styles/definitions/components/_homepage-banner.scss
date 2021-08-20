@@ -5,7 +5,7 @@ $vm-homepage-banner-height-desktop: 800px;
 $vm-homepage-banner-height-mobile: 800px;
 
 .homepage-banner-wrapper {
-  padding: 4rem;
+  padding: 2rem;
   background-color: $vm-color-white;
 
   &.homepage-banner-wrapper--background-color-light {
@@ -31,20 +31,22 @@ $vm-homepage-banner-height-mobile: 800px;
   max-width: 1600px;
   margin: 0 auto;
   object-fit: cover;
-  aspect-ratio: 2 / 1;
+  // aspect-ratio: 2 / 1;
   color: $vm-color-white;
+  max-height: 80vh;
 
-  @include respond-to('widescreen-down') {
-    // height: 600px;
-    max-width: 1200px;
-  }
+  // @include respond-to('widescreen-down') {
+  //   // height: 600px;
+  //   max-width: 1200px;
+  // }
 
   picture {
     display: flex;
   }
 
   img {
-    max-width: 100%;
+    width: 100%;
+    // height: 100%;
     object-fit: cover;
     object-position: center;
   }
@@ -64,6 +66,7 @@ $vm-homepage-banner-height-mobile: 800px;
     align-items: center;
     justify-content: center;
     text-align: center;
+    padding: 2rem;
   }
 
   .homepage-banner__pretext {
@@ -147,6 +150,7 @@ $vm-homepage-banner-height-mobile: 800px;
   @include respond-to('medium-down') {
     flex-direction: column;
     height: auto;
+    max-height: none;
 
     .homepage-banner__content-wrapper,
     &.homepage-banner--text-position-right-block

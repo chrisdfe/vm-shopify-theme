@@ -1,0 +1,8 @@
+/* Definitions - Utilities
+================================================== */
+
+.u-hidden-medium-down {
+  @include respond-to('medium-down') {
+    display: none;
+  }
+}

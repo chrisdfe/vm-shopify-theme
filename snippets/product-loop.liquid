@@ -38,18 +38,25 @@
   {% endif %}
 {% endfor %}
 
-<div itemtype="http://schema.org/ItemList" class="product-list {{ matrixType }} clearfix equal-columns--clear equal-columns--outside-trim">
-  {% for product in products limit: limit %}
-    {% if product.id != skip_product.id %}
-      {% render 'product-thumbnail',
-              product: product,
-              products_per_row: products_per_row,
-              collection_group_thumb: collection_group_thumb,
-              collection_group_mobile: collection_group_mobile,
-              sidebar: sidebar
-      %}
-    {% endif %}
-  {% endfor %}
+<div
+  itemtype="http://schema.org/ItemList" 
+  class="product-list {{ matrixType }} clearfix equal-columns--clear equal-columns--outside-trim">
+  <div class="container">
+    <div class="row">
+      {% for product in products limit: limit %}
+        {% if product.id != skip_product.id %}
+          {% render 'product-thumbnail',
+                  product: product,
+                  products_per_row: products_per_row,
+                  collection_group_thumb: collection_group_thumb,
+                  collection_group_mobile: collection_group_mobile,
+                  sidebar: sidebar
+          %}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+
   {% if template contains 'collection' %}
     {% if settings.pagination_type == 'load_more' or settings.pagination_type == 'infinite_scroll' %}
       {% if paginate.next.url %}

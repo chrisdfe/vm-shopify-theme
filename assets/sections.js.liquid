@@ -20,24 +20,6 @@ var featuredCollectionSection = {
     t.hasClass("flickity-enabled") && t.flickity("destroy");
   },
 },
-featuredPromotions = {
-  init: function () {
-    (798 < $(window).width() || 0 == $(window).width()) &&
-      ($(".feature-overlay").hover(
-        function () {
-          $(this)
-            .find(".feature-details")
-            .slideDown("100", function () {
-              $(this).addClass("reveal-details");
-            });
-        },
-        function () {
-          $(this).find(".feature-details").removeClass("reveal-details"), $(this).find(".feature-details").slideUp("100");
-        }
-      )
-      );
-  },
-},
 gallery = {
   init: function () {
     $(".gallery-horizontal")
