@@ -2,18 +2,33 @@
 {% assign mobile_heading_align = mobile_heading_align | default: "left" %}
 {% assign with_accent = with_accent | default: true %}
 
-<div class="content-section__heading">
+{% if anchor == blank %}
+  {% assign anchor = title | lowercase | handleize %}
+{% endif %}
+
+<div
+  class="content-section__heading
+         content-section__heading--align-{{ heading_align }}
+         content-section__heading--mobile-align-{{ mobile_heading_align }}">
+  <div id="{{ anchor }}" class="content-section__anchor"></div>
+
+  {% if pretext != blank %}
+    <h5 class="content-section__heading__pretext u-margin-bottom-0">
+      pretext
+    </h5>
+  {% endif %}
   
-  <div class="content-section__title-wrapper content-section__title-wrapper--align-{{ heading_align }} content-section__title-wrapper--mobile-align-{{ mobile_heading_align }}">
+  <div class="content-section__heading__title-wrapper">
     {% if title != blank %}
-      <h2 class="content-section__title
-                {% if with_accent %}heading--with-accent heading--with-accent--align-{{ heading_align }} heading--with-accent--mobile-align-{{ mobile_heading_align }}{% endif %}">
+      <h2
+        class="content-section__heading__title
+               {% if with_accent %}heading--with-accent heading--with-accent--align-{{ heading_align }} heading--with-accent--mobile-align-{{ mobile_heading_align }}{% endif %}">
         {{ title }}
       </h2>
     {% endif %}
 
     {% if title_link != blank and title_link_text != blank %}
-      <a class="content-section__title-link cta-link cta-link--body-text" href="{{ title_link }}">
+      <a class="content-section__heading__title-link cta-link cta-link--body-text" href="{{ title_link }}">
         {{ title_link_text }}
       </a>
     {% endif %}
@@ -21,8 +36,8 @@
 
   
   {% if description != blank %}
-    <p class="content-section__description">
-      {{ description }}
+    <p class="content-section__heading__description">
+      description
     </p>
   {% endif %}
 </div>

@@ -1,0 +1,50 @@
+{% capture text_content %}
+  <ol class="how-it-works-list">
+    {% for block in section.blocks %}
+      <li class="how-it-works-list__item">
+        {{ block.settings.text }}
+      </li>
+    {% endfor %}
+  </ol>
+{% endcapture %}
+
+{% include "content-section.image-with-text" with {
+  id: "eternity-bracelets-how-it-works",
+  extra_classes: "u-padding-top-0"
+  title: section.settings.title,
+  text_content: text_content,
+  image: section.settings.image,
+  image_position: "right"
+} %}
+
+{% schema %}
+{
+  "name": "How it works",
+  "settings": [
+    {
+      "id": "title",
+      "label": "Title",
+      "type": "text",
+      "default": "How does it work?"
+    },
+    {
+      "id": "image",
+      "label": "Image",
+      "type": "image_picker"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "how_it_works_item",
+      "name": "How it works item",
+      "settings": [
+        {
+          "id": "text",
+          "label": "Text",
+          "type": "textarea"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

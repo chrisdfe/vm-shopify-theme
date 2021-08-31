@@ -1,45 +1,35 @@
-{% comment %}
-** Logos - homepage partial **
-- Draggable section
-- Uses blocks
-{% endcomment %}
-
 <div class="logo-bar-section content-section">
   <div class="container">
     <div class="sixteen columns">
-      <div class="section clearfix">
-      {% if section.settings.title != blank %}
-        <div class="content-section__title-wrapper content-section__title-wrapper--align-center">
-          <h4 class="content-section__title">
-            {{ section.settings.title | escape }}
-          </h4>
-        </div>
-      {% endif %}
 
-      {% if section.blocks.size > 0 %}
-        <div class="logo-bar">
-          {% for block in section.blocks %}
-            <div class="logo-bar__item" {{ block.shopify_attributes }}>
-              {% if block.settings.link != blank %}
-                <a href="{{ block.settings.link }}" class="logo-bar__link">
-              {% endif %}
-              {% if block.settings.image != blank %}
-                {% render 'image-element',
-                        image: block.settings.image,
-                        alt: block.settings.image.alt
-                %}
-              {% else %}
-                {{ 'logo' | placeholder_svg_tag: 'placeholder-svg' }}
-              {% endif %}
-              {% if block.settings.link != blank %}
-                </a>
-              {% endif %}
-            </div>
-          {% endfor %}
-        </div>
-      {% endif %}
+      {% include "content-section.title" with {
+        title: section.settings.title,
+        heading_align: "center"
+      } %}
 
+      <div class="logo-bar">
+        {% for block in section.blocks %}
+          <div class="logo-bar__item" {{ block.shopify_attributes }}>
+            {% if block.settings.link != blank %}
+              <a href="{{ block.settings.link }}" class="logo-bar__link">
+            {% endif %}
+
+            {% if block.settings.image != blank %}
+              {% render 'image-element',
+                      image: block.settings.image,
+                      alt: block.settings.image.alt
+              %}
+            {% else %}
+              {{ 'logo' | placeholder_svg_tag: 'placeholder-svg' }}
+            {% endif %}
+
+            {% if block.settings.link != blank %}
+              </a>
+            {% endif %}
+          </div>
+        {% endfor %}
       </div>
+
     </div>
   </div>
 </div>

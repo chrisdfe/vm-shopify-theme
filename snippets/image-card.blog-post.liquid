@@ -1,24 +1,16 @@
-<div class="image-card image-card--blog-post">
-  <div class="image-card__image">
-    <a href="{{ blog_post.url }}">
-      {% render 'image-element',
-      image: blog_post.image,
-      alt: image.alt
-      %}
-    </a>
-  </div>
+{% capture card_content %}
+  <p class="image-card--blog-post__timestamp paragraph-3">
+    {{ blog_post.published_at | date: format: "month_day_year" }}
+  </p>
 
-  <div class="image-card__content">
-    <h5 class="image-card__title">
-      <a href="{{ blog_post.url }}">{{ blog_post.title }}</a>
-    </h5>
-    
-    <p class="image-card--blog-post__timestamp paragraph-3">
-      {{ blog_post.published_at | date: format: "month_day_year" }}
-    </p>
+  <p>{{ blog_post.excerpt | strip_html }}</p>
 
-    <p>{{ blog_post.excerpt | strip_html }}</p>
-    
-    <a href="{{ blog_post.url }}" class="cta-link cta-link-3">{{ 'blogs.general.continue_reading_html' | t }}</a>
-  </div>
-</div>
+  <a href="{{ blog_post.url }}" class="cta-link cta-link-3">{{ 'blogs.general.continue_reading_html' | t }}</a>
+{% endcapture %}
+
+{% include "image-card" with {
+  title: blog_post.title,
+  url: blog_post.url,
+  image: blog_post.image,
+  card_content: card_content,
+} %}

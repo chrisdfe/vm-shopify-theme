@@ -20,7 +20,8 @@
         <div class="row">
           <div class="sixteen columns">
             {% include "content-section.title" with {
-              title: section.settings.title | escape
+              title: section.settings.title | escape,
+              with_accent: false
             } %}
           </div>
         </div>

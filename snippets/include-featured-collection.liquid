@@ -1,29 +1,12 @@
-{% if type == 'block' %}
-  {% assign title = block.settings.title %}
-  {% assign settingCollection = block.settings.collection %}
-  {% assign collection_style = block.settings.collection_style %}
-  {% assign collection_description = block.settings.collection_description %}
-  {% assign products_per = block.settings.products_per %}
-  {% assign products_limit = block.settings.products_limit %}
-{% else %}
-  {% assign title = section.settings.title %}
-  {% assign settingCollection = section.settings.collection %}
-  {% assign collection_style = section.settings.collection_style %}
-  {% assign collection_description = section.settings.collection_description %}
-  {% assign products_per = section.settings.products_per %}
-  {% assign products_limit = section.settings.products_limit %}
-{% endif %}
+{% assign title = section.settings.title %}
+{% assign settingCollection = section.settings.collection %}
+{% assign collection_style = section.settings.collection_style %}
+{% assign collection_description = section.settings.collection_description %}
+{% assign products_per = section.settings.products_per %}
+{% assign products_limit = section.settings.products_limit %}
 
-{% if settingCollection == blank %}
-  {%- assign section_onboarding = true -%}
-  {% comment %}assign product length to be selected limit for onboarding{% endcomment %}
-  {% assign products_length = products_limit | plus: 0 %}
-{% else %}
-  {%- assign section_onboarding = false -%}
-{% endif %}
-
-<div class="content-section">
-  <div class="container featured_products">
+{% capture content %}
+  <div class="container">
     <div class="row">
       <div class="sixteen columns">
 
@@ -44,7 +27,7 @@
   {% assign products = collections[settingCollection].products %}
   {% assign products_per_row = products_per %}
 
-  <div class="container featured-collection__products">
+  <div class="container">
     <div class="row">
       {% render 'product-loop',
           limit: limit,
@@ -53,4 +36,9 @@
       %}
     </div>
   </div>
-</div>
+{% endcapture %}
+
+{% include "content-section" with {
+  title: title,
+  content: content
+} %}

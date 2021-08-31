@@ -1,5 +1,6 @@
-<div class="content-section content-section--eternity-bracelets-cta">
-  <div class="container">
+{% capture content %}
+<div class="container">
+  <div class="row">
     <div class="eight columns offset-by-four medium-down--one-whole medium-down--offset-by-zero">
       <p class="paragraph--block-text paragraph-1">
         {{ section.settings.cta_lead_text }}
@@ -11,6 +12,14 @@
     </div>
   </div>
 </div>
+{% endcapture %}
+
+
+{% include "content-section" with {
+  id: "eternity-bracelets-cta",
+  color_region: "light",
+  content: content
+} %}
 
 {% schema %}
 {

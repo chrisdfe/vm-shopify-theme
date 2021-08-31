@@ -3,7 +3,7 @@
   {{ section.settings.content }}
 </p>
 
-<div class="u-margin-horizontal-3 u-medium-down-m-horizontal-1">
+<div class="u-margin-horizontal-3 u-medium-down-margin-horizontal-1">
   {% include 'price-list' with {
     blocks: section.blocks
   } %}
@@ -11,21 +11,22 @@
 {% endcapture %}
 
 {% include "content-section.image-with-text" with {
-  title: "price-list",
+  id: "eternity-bracelets-chain-styles",
+  extra_classes: "u-padding-top-0",
+  title: section.settings.title,
   text_content: text_content,
-  heading: section.settings.title,
   image: section.settings.image,
 } %}
 
 {% schema %}
 {
-  "name": "Image/Text - Price List",
+  "name": "Chain Styles",
   "settings": [
     {
       "id": "title",
       "label": "Title",
       "type": "text",
-      "default": "Image/Text Columns - Price List"
+      "default": "Available Chain Styles"
     },
     {
       "id": "content",
@@ -40,8 +41,8 @@
   ],
   "blocks": [
     {
-      "type": "price_list_item",
-      "name": "Price List Item",
+      "type": "chain_style",
+      "name": "Chain Style",
       "settings": [
         {
           "id": "title",

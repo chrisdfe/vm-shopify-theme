@@ -1,14 +1,22 @@
 {% assign color_region = section.settings.color_region | default: "light-alt" %}
-{% assign title_classes = titles | split: ", " %}
-{% assign modifier_classes = modifiers | split: ", " %}
+
+{% assign id_class_list = ids | split: ", " %}
+{% assign modifier_class_list = modifier_classes | split: ", " %}
+{% assign extra_class_list = extra_classes | split: ", " %}
+
+{% if id == blank %}
+  {% assign id = title | downcase | handleize %}
+{% endif %}
 
 <div
   class="content-section
-    {% if title != blank %}content-section--{{ title }}{% endif %}
-    {% if title_classes.size > 0 %}{% for title in title_classes %}content-section--{{ title }}
-    {% endfor %}{% endif %}
-    {% if modifier_classes.size > 0 %}{% for modifier in modifier_classes %}{{ modifier }}
-    {% endfor %}{% endif %}
+    content-section--{{ id }}
+    {% for id_class in id_class_list %}content-section--{{ id_class }}
+    {% endfor %}
+    {% for modifier in modifier_classes %}content-section--{{ modifier }}
+    {% endfor %}
+    {% for extra_class in extra_classes %}{{ extra_class }}
+    {% endfor %}
     color-region--{{ color_region }}">
   {{ content }}
 </div>

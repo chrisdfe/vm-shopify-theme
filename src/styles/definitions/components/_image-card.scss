@@ -2,17 +2,33 @@
 ================================================== */
 
 .image-card {
-  margin-bottom: 2rem;
+  margin-bottom: get-vm-spacer(3);
+
+  .image-card__link,
+  img {
+    transition: all 0.4s;
+  }
+
+  .image-card__link {
+    color: $vm-color-sea-green;
+
+    &:hover {
+      color: $vm-color-sand;
+
+      img {
+        transform: scale(1.02) translateX(2px);
+      }
+    }
+  }
 
   .image-card__image {
   }
 
-  .image-card__content {
-    margin-top: 1rem;
+  .image-card__title {
+    margin: get-vm-spacer(1) 0 0;
   }
 
-  .image-card__title {
-    margin-top: 0;
+  .image-card__content {
   }
 }
 

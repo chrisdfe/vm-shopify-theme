@@ -18,32 +18,36 @@
   {% assign read_more_link = section.settings.read_more_link %}
 {% endif %}
 
-<div class="content-section content-section--no-padding-top">
-  
-  <div class="container">
-    <div class="row">
-      <div class="sixteen columns">
+{% capture content %}
+<div class="container">
+  <div class="row">
+    <div class="sixteen columns">
 
-        {% include "content-section.title" with {
-          title: title,
-          with_accent: false
-        } %}
+      {% include "content-section.title" with {
+        title: title,
+        with_accent: false
+      } %}
 
-      </div>
     </div>
   </div>
-
-  <div class="container">
-    <div class="row">
-      {% for blog_post in blogs[blog_widget_select].articles limit: home_page_articles %}
-        <div class="{% if home_page_articles == 2 %}eight columns{% elsif home_page_articles == 3 %}one-third column{% else %}four columns{% endif %} medium-down--one-whole">
-          {% include "image-card.blog-post" with {
-            blog_post: blog_post
-          } %}
-        </div>
-      {% endfor %}
-    </div>
-  </div>
-  
 </div>
+
+<div class="container">
+  <div class="row">
+    {% for blog_post in blogs[blog_widget_select].articles limit: home_page_articles %}
+      <div class="{% if home_page_articles == 2 %}eight columns{% elsif home_page_articles == 3 %}one-third column{% else %}four columns{% endif %} medium-down--one-whole">
+        {% include "image-card.blog-post" with {
+          blog_post: blog_post
+        } %}
+      </div>
+    {% endfor %}
+  </div>
+</div>
+{% endcapture %}
+
+{% include "content-section" with {
+  title: title,
+  content: content,
+  extra_classes: "u-margin-top-0"
+} %}
 

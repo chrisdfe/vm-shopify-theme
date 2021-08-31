@@ -1,13 +1,13 @@
 {% assign color_region = section.settings.color_region | default: "light-alt" %}
 
 <div class="content-section content-section--our-story--visit-store color-region--{{ color_region }}">
-  <div id="visit-the-store" class="content-section__anchor"></div>
   <div class="container">
     <div class="row">
       <div class="twelve columns offset-by-two medium-down--one-whole medium-down--offset-by-zero">
         {% include "content-section.title" with {
           title: section.settings.title | escape,
-          heading_align: "center"
+          heading_align: "center",
+          anchor: "visit-the-store"
         } %}
       </div>
     </div>

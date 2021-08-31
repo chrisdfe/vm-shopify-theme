@@ -11,7 +11,7 @@
   padding: 0 1rem;
 
   @include respond-to('medium-down') {
-    padding: 2rem 2rem 0;
+    padding: 0 2rem 2rem;
   }
 }
 

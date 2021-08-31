@@ -1,56 +1,46 @@
 {% assign featured_promos_per_row = section.settings.featured_promos_per_row | minus: 0 %}
 {% assign title_on_image = section.settings.promo_text_on_image_enabled %}
 
-<div class="featured-promotions">
-  <div class="content-section content-section--no-padding-top">
-
-    {% if section.settings.title %}
-      <div class="container">
-        <div class="row">
-          <div class="sixteen columns">
-
-            {% include "content-section.title" with {
-              title: section.settings.title | escape,
-              with_accent: false
-            } %}
-
-          </div>
-        </div>
-      </div>
-    {% endif %}
-    
+{% capture content %}
+  {% if section.settings.title %}
     <div class="container">
       <div class="row">
-        
-        {% for block in section.blocks %}
-          <div class="one-third columns">
-            <div class="image-card image-card--collection collection-card" {{ block.shopify_attributes }}>
-              <a href="{{ block.settings.link }}">
-                <div class="image-card__image">
-                  {% render 'image-element',
-                    image: block.settings.image,
-                    alt: block.settings.image.alt,
-                    stretch_width: true
-                  %}
-                </div>
-              
-                <div class="image-card__content">
-                  <h4 class="image-card__title">{{ block.settings.title | strip_html }}</h4>
-                
-                  <!-- {% if block.settings.text != blank %}
-                    <div class="description">{{ block.settings.text }}</div>
-                  {% endif %} -->
-                </div>
-              </a>
-            </div>
-          </div>
-        {% endfor %}
+        <div class="sixteen columns">
 
+          {% include "content-section.title" with {
+            title: section.settings.title | escape,
+            with_accent: false
+          } %}
+
+        </div>
       </div>
     </div>
+  {% endif %}
+  
+  <div class="container">
+    <div class="row">
+      
+      {% for block in section.blocks %}
+        <div class="one-third columns">
+          {% include "image-card" with {
+            url: block.settings.link,
+            image: block.settings.image,
+            title: block.settings.title | strip_html
+          } %}
+        </div>
+      {% endfor %}
 
+    </div>
   </div>
+
 </div>
+{% endcapture %}
+
+{% include "content-section" with {
+  title: section.settings.title,
+  content: content,
+  color_region: "light"
+} %}
 
 {% schema %}
 {
