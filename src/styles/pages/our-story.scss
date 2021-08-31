@@ -4,29 +4,7 @@
 @import '../_variables.scss';
 @import '../_mixins.scss';
 
-.page-our-story {
-  // .content-section {
-  //   // padding: 7rem 0;
-
-  //   .content-section__anchor {
-  //     position: relative;
-  //     top: -8rem;
-  //   }
-
-  //   @include respond-to('small-down') {
-  //     padding: 5rem 0;
-
-  //     .content-section__anchor {
-  //       position: relative;
-  //       top: -6rem;
-  //     }
-  //   }
-  // }
-}
-
 .content-section.content-section--our-story--intro {
-  background-color: $vm-color-cream;
-
   .icon-wrapper {
     padding: 3rem 0 0;
     text-align: center;
@@ -215,10 +193,6 @@ $our-story-timeline-event-line-top: 3.5rem;
   }
 }
 
-.content-section.content-section--our-story--pillars {
-  background-color: $vm-color-cream;
-}
-
 .our-story__pillar {
   .our-story__pillar__image-wrapper {
     text-align: center;
@@ -287,21 +261,9 @@ $our-story-timeline-event-line-top: 3.5rem;
   p:first-child {
     margin-top: 1rem;
   }
-
-  .content-section__title-wrapper {
-    padding-right: 3rem;
-    padding-left: 3rem;
-
-    @include respond-to('medium-down') {
-      padding-right: 0;
-      padding-left: 0;
-    }
-  }
 }
 
 .our-story__store-mobile-map-wrapper {
-  margin-bottom: 1rem;
-
   @include respond-to('medium-up') {
     display: none;
   }
@@ -313,24 +275,7 @@ $our-story-timeline-event-line-top: 3.5rem;
   }
 }
 
-.our-story__store-map-content {
-  padding: 3rem 3rem 1.5rem;
-
-  @include respond-to('medium-down') {
-    padding: 1rem 0;
-  }
-}
-
 .our-story__store-location-hours {
-  padding: 1.5rem 3rem 3rem;
-
-  // You'd think the grid system would handle nested rows but it doesn't
-  margin: 0 - ($gutter * 0.5);
-
-  @include respond-to('medium-down') {
-    padding: 1rem 0;
-    margin: 0;
-  }
 }
 
 .our-story__store-calendly-embed {

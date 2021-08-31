@@ -1,0 +1,24 @@
+/* Content Section - Image Text columns
+================================================== */
+
+.content-section.content-section--image-text-columns {
+}
+
+.content-section--image-text-columns__image-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+
+  @include respond-to('medium-down') {
+    padding: 2rem 2rem 0;
+  }
+}
+
+.content-section--image-text-columns__text-wrapper {
+  padding: 0 1rem;
+
+  @include respond-to('medium-down') {
+    padding: 0;
+  }
+}

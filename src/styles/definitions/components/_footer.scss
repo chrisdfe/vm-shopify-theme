@@ -21,16 +21,16 @@
     list-style: none;
     margin: 0;
     padding: 15px 0 0 0;
-  }
 
-  ul li {
-    margin-bottom: 1em;
-    line-height: 1.1;
-  }
+    li {
+      margin-bottom: 1em;
+      line-height: 1.1;
 
-  ul li p {
-    padding: 0;
-    margin: 0;
+      p {
+        padding: 0;
+        margin: 0;
+      }
+    }
   }
 
   form {
@@ -103,33 +103,6 @@
       display: block;
       padding-top: 20px;
     }
-  }
-}
-
-/* If no shop logo used, apply text styling as per theme settings */
-.footer .logo {
-  // color: {{ settings.logo_color }} !important;
-  // font-size: {{ settings.footer_logo_font_size }}px;
-  margin: 0 0 1rem;
-  line-height: 1;
-  width: 100%;
-  word-wrap: break-word;
-  float: none;
-
-  @include respond-to('medium-down') {
-    text-align: center;
-  }
-}
-
-img.footer-logo {
-  width: 75%;
-  max-width: 250px;
-  margin-bottom: 10px;
-  display: inline-block;
-
-  @include respond-to('medium-down') {
-    max-width: 50% !important;
-    margin: 0 25% 25px;
   }
 }
 
@@ -207,11 +180,6 @@ img.footer-logo {
 
   .disclosure__toggle {
     background-color: white;
-    // color: {{ settings.regular_color }};
-    // font-size: {{ settings.regular_font_size }}px;
-    // font-family: {{ settings.regular__font.family }}, {{ settings.regular__font.fallback_families }};
-    // font-weight: {{ settings.regular__font.weight }};
-    // font-style: {{settings.regular__font.style }};
     text-transform: uppercase;
     padding: 0 10px;
   }
@@ -226,11 +194,6 @@ img.footer-logo {
   }
 
   button.disclosure__button {
-    // color: {{ settings.regular_color }};
-    // font-size: {{ settings.regular_font_size }}px;
-    // font-family: {{ settings.regular__font.family }}, {{ settings.regular__font.fallback_families }};
-    // font-weight: {{ settings.regular__font.weight }};
-    // font-style: {{settings.regular__font.style }};
     text-transform: uppercase;
 
     &:hover,
@@ -330,11 +293,11 @@ h4 span,
 .social_icons {
   margin-left: 0;
   margin-top: 0;
-}
 
-.social_icons li {
-  display: inline;
-  padding-right: 2px;
+  li {
+    display: inline;
+    padding-right: 2px;
+  }
 }
 
 footer .footer-social-icons {
@@ -361,19 +324,18 @@ footer .social_icons {
   display: block;
   margin-top: 15px;
 
+  a {
+    font-size: 22px;
+    display: inline-block;
+    margin-bottom: 1em;
+
+    @include respond-to('small-down') {
+      margin-bottom: 0;
+    }
+  }
+
   @include respond-to('medium-down') {
     padding-left: 0;
     text-align: center;
-  }
-}
-
-footer .social_icons a,
-footer .social_icons a:visited {
-  font-size: 22px;
-  display: inline-block;
-  margin-bottom: 1em;
-
-  @include respond-to('small-down') {
-    margin-bottom: 0;
   }
 }

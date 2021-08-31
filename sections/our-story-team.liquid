@@ -1,44 +1,51 @@
-<div class="content-section content-section--our-story--team">
-  <div class="container">
-    <div class="eight columns offset-by-four medium-down--one-whole medium-down--offset-by-zero">
-      <div class="our-story__our-team-intro">
-        {% include "content-section.title" with {
-          title: section.settings.title | escape,
-        } %}
+{% assign color_region = section.settings.color_region | default: "light-alt" %}
 
-        <p>
-          {{ section.settings.description }}
-        </p>
+<div class="content-section content-section--our-story--team color-region--{{ color_region }} u-padding-vertical-0">
+  <div class="container">
+    <div class="row">
+
+      <div class="eight columns offset-by-four medium-down--one-whole medium-down--offset-by-zero">
+        <div class="our-story__our-team-intro">
+          {% include "content-section.title" with {
+            title: section.settings.title | escape,
+            heading_align: "center"
+          } %}
+
+          <p style="text-align: center">
+            {{ section.settings.description }}
+          </p>
+        </div>
       </div>
+
     </div>
   </div>
 
   <div class="container">
-    {% for block in section.blocks %}
-      <div class="eight columns medium-down--one-whole">
-        <div class="our-story__team-member">
-          <div class="our-story__team-member__image-wrapper">
-            <img src="{{ block.settings.image | img_url : "400x" }}">
-          </div>
+    <div class="row">
+      {% for block in section.blocks %}
+        <div class="eight columns medium-down--one-whole">
+          <div class="our-story__team-member">
+            <div class="our-story__team-member__image-wrapper">
+              <img src="{{ block.settings.image | img_url : "400x" }}">
+            </div>
 
-          <div class="our-story__team-member__body">
-            <h3>
-              {{ block.settings.title }}
-            </h3>
-            
-            <h5>
-              {{ block.settings.job_title }}
-            </h5>
+            <div class="our-story__team-member__body">
+              <h3>
+                {{ block.settings.title }}
+              </h3>
+              
+              <h5>
+                {{ block.settings.job_title }}
+              </h5>
 
-            <p class="paragraph-3">
-              {{ block.settings.description }}
-            </p>
+              <p class="paragraph-3">
+                {{ block.settings.description }}
+              </p>
+            </div>
           </div>
         </div>
-      </div>
-
-      {% cycle '', '<br class="clear product_clear" />' %}
-    {% endfor %}
+      {% endfor %}
+    </div>
   </div>
 
 </div>

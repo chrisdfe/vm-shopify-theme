@@ -29,7 +29,7 @@
 }
 
 .image-with-text__text {
-  padding: $vm-content-section-padding;
+  padding: get-vm-spacer(4);
 
   @include respond-to('medium-down') {
     padding: 2rem;

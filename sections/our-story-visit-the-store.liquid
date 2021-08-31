@@ -1,18 +1,22 @@
-<div class="content-section content-section--our-story--visit-store">
+{% assign color_region = section.settings.color_region | default: "light-alt" %}
+
+<div class="content-section content-section--our-story--visit-store color-region--{{ color_region }}">
   <div id="visit-the-store" class="content-section__anchor"></div>
   <div class="container">
-    <div class="twelve columns offset-by-two medium-down--one-whole medium-down--offset-by-zero">
-      {% include "content-section.title" with {
-        title: section.settings.title | escape,
-      } %}
+    <div class="row">
+      <div class="twelve columns offset-by-two medium-down--one-whole medium-down--offset-by-zero">
+        {% include "content-section.title" with {
+          title: section.settings.title | escape,
+          heading_align: "center"
+        } %}
+      </div>
     </div>
   </div>
 
   <div class="container">
     <div class="row">
 
-
-      <div class="twelve columns offset-by-two medium-down--one-whole medium-down--offset-by-zero">
+      <div class="sixteen columns">
         <div class="our-story__store-map-wrapper">
           <img
           src="{{ section.settings.map_image | img_url : "2000x" }}"
@@ -20,7 +24,7 @@
         </div>
       </div>
 
-      <div class="twelve columns offset-by-two medium-down--one-whole medium-down--offset-by-zero">
+      <div class="sixteen columns">
         <div class="our-story__store-mobile-map-wrapper">
           <img
           src="{{ section.settings.mobile_map_image | img_url : "2000x" }}"
@@ -29,26 +33,28 @@
       </div>
 
       <div class="twelve columns offset-by-two medium-down--one-whole medium-down--offset-by-zero">
-        <div class="our-story__store-map-content">
+        <div class="our-story__store-map-content u-margin-top-3">
           {{ section.settings.content }}
         </div>
 
-        <div class="our-story__store-location-hours">
-          <div class="row">
-            <div class="eight columns medium-down--one-whole">
-              {% if section.settings.address %}
-                <h4>Location</h4>
-                
-                {{ section.settings.address }}
-              {% endif %}
-            </div>
-            
-            <div class="eight columns medium-down--one-whole">
-              {% if section.settings.store_hours %}
-                <h4>Hours</h4>
-                
-                {{ section.settings.store_hours }}
-              {% endif %}
+        <div class="our-story__store-location-hours u-margin-vertical-3 u-medium-down-m-0">
+          <div class="container">
+            <div class="row">
+              <div class="eight columns medium-down--one-whole">
+                {% if section.settings.address %}
+                  <h4>Location</h4>
+                  
+                  {{ section.settings.address }}
+                {% endif %}
+              </div>
+              
+              <div class="eight columns medium-down--one-whole">
+                {% if section.settings.store_hours %}
+                  <h4>Hours</h4>
+                  
+                  {{ section.settings.store_hours }}
+                {% endif %}
+              </div>
             </div>
           </div>
         </div>

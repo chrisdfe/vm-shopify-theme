@@ -1,12 +1,16 @@
-<div class="content-section content-section--our-story--intro">
-  <div class="container">
-    <div class="eight columns offset-by-four medium-down--one-whole medium-down--offset-by-zero">
-      <h1>{{ section.settings.title }}</h1>
-      
-      <p class="paragraph--block-text">{{ section.settings.content }}</p>
+{% assign color_region = section.settings.color_region | default: "dark" %}
 
-      <div class="icon-wrapper">
-        <img src="{{ section.settings.icon | img_url : "300x" }}">
+<div class="content-section content-section--our-story--intro color-region--{{ color_region }}">
+  <div class="container">
+    <div class="row">
+      <div class="twelve columns medium-down--one-whole medium-down--offset-by-zero">
+        <h1 class="heading--with-accent u-margin-bottom-5">{{ section.settings.title }}</h1>
+
+        <p class="paragraph--block-text">{{ section.settings.content }}</p>
+
+        <!-- <div class="icon-wrapper">
+          <img src="{{ section.settings.icon | img_url : "300x" }}">
+        </div> -->
       </div>
     </div>
   </div>

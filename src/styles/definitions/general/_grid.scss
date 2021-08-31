@@ -42,51 +42,67 @@
   /* Base Grid */
   .#{$breakpoint}one {
     width: calc(#{percentage(math.div(1, 16))} - #{$gutter});
+    flex-basis: calc(#{percentage(math.div(1, 16))} - #{$gutter});
   }
   .#{$breakpoint}two {
     width: calc(#{percentage(math.div(2, 16))} - #{$gutter});
+    flex-basis: calc(#{percentage(math.div(2, 16))} - #{$gutter});
   }
   .#{$breakpoint}three {
     width: calc(#{percentage(math.div(3, 16))} - #{$gutter});
+    flex-basis: calc(#{percentage(math.div(3, 16))} - #{$gutter});
   }
   .#{$breakpoint}four {
     width: calc(#{percentage(math.div(4, 16))} - #{$gutter});
+    flex-basis: calc(#{percentage(math.div(4, 16))} - #{$gutter});
   }
   .#{$breakpoint}five {
     width: calc(#{percentage(math.div(5, 16))} - #{$gutter});
+    flex-basis: calc(#{percentage(math.div(5, 16))} - #{$gutter});
   }
   .#{$breakpoint}six {
     width: calc(#{percentage(math.div(6, 16))} - #{$gutter});
+    flex-basis: calc(#{percentage(math.div(6, 16))} - #{$gutter});
   }
   .#{$breakpoint}seven {
     width: calc(#{percentage(math.div(7, 16))} - #{$gutter});
+    flex-basis: calc(#{percentage(math.div(7, 16))} - #{$gutter});
   }
   .#{$breakpoint}eight {
     width: calc(#{percentage(math.div(8, 16))} - #{$gutter});
+    flex-basis: calc(#{percentage(math.div(8, 16))} - #{$gutter});
   }
   .#{$breakpoint}nine {
     width: calc(#{percentage(math.div(9, 16))} - #{$gutter});
+    flex-basis: calc(#{percentage(math.div(9, 16))} - #{$gutter});
   }
   .#{$breakpoint}ten {
     width: calc(#{percentage(math.div(10, 16))} - #{$gutter});
+    flex-basis: calc(#{percentage(math.div(10, 16))} - #{$gutter});
   }
   .#{$breakpoint}eleven {
     width: calc(#{percentage(math.div(11, 16))} - #{$gutter});
+    flex-basis: calc(#{percentage(math.div(11, 16))} - #{$gutter});
   }
   .#{$breakpoint}twelve {
     width: calc(#{percentage(math.div(12, 16))} - #{$gutter});
+    flex-basis: calc(#{percentage(math.div(12, 16))} - #{$gutter});
   }
   .#{$breakpoint}thirteen {
     width: calc(#{percentage(math.div(13, 16))} - #{$gutter});
+    flex-basis: calc(#{percentage(math.div(13, 16))} - #{$gutter});
   }
   .#{$breakpoint}fourteen {
     width: calc(#{percentage(math.div(14, 16))} - #{$gutter});
+    flex-basis: calc(#{percentage(math.div(14, 16))} - #{$gutter});
   }
   .#{$breakpoint}fifteen {
     width: calc(#{percentage(math.div(15, 16))} - #{$gutter});
+    flex-basis: calc(#{percentage(math.div(15, 16))} - #{$gutter});
   }
   .#{$breakpoint}sixteen {
     width: calc(#{percentage(math.div(16, 16))} - #{$gutter});
+    flex-basis: calc(#{percentage(math.div(16, 16))} - #{$gutter});
   }
 
   /** Whole */
@@ -131,127 +147,6 @@
   }
   .#{$breakpoint}four-fifths {
     width: calc(#{percentage(4 * 0.2)} - #{$gutter});
-  }
-
-  /* Sixths */
-  .#{$breakpoint}one-sixth {
-    width: calc(#{percentage(math.div(1, 6))} - #{$gutter});
-  }
-  .#{$breakpoint}two-sixths {
-    width: calc(#{percentage(math.div(2, 6))} - #{$gutter});
-  }
-  .#{$breakpoint}three-sixths {
-    width: calc(#{percentage(math.div(3, 6))} - #{$gutter});
-  }
-  .#{$breakpoint}four-sixths {
-    width: calc(#{percentage(math.div(4, 6))} - #{$gutter});
-  }
-  .#{$breakpoint}five-sixths {
-    width: calc(#{percentage(math.div(5, 6))} - #{$gutter});
-  }
-
-  /* Sevenths */
-  .#{$breakpoint}one-seventh {
-    width: calc(#{percentage(math.div(1, 7))} - #{$gutter});
-  }
-  .#{$breakpoint}two-sevenths {
-    width: calc(#{percentage(math.div(2, 7))} - #{$gutter});
-  }
-  .#{$breakpoint}three-sevenths {
-    width: calc(#{percentage(math.div(3, 7))} - #{$gutter});
-  }
-  .#{$breakpoint}four-sevenths {
-    width: calc(#{percentage(math.div(4, 7))} - #{$gutter});
-  }
-  .#{$breakpoint}five-sevenths {
-    width: calc(#{percentage(math.div(5, 7))} - #{$gutter});
-  }
-
-  /* Eighths */
-  .#{$breakpoint}one-eighth {
-    width: calc(#{percentage(1 * 0.125)} - #{$gutter});
-  }
-  .#{$breakpoint}two-eighths {
-    width: calc(#{percentage(2 * 0.125)} - #{$gutter});
-  }
-  .#{$breakpoint}three-eighths {
-    width: calc(#{percentage(3 * 0.125)} - #{$gutter});
-  }
-  .#{$breakpoint}four-eighths {
-    width: calc(#{percentage(4 * 0.125)} - #{$gutter});
-  }
-  .#{$breakpoint}five-eighths {
-    width: calc(#{percentage(5 * 0.125)} - #{$gutter});
-  }
-  .#{$breakpoint}six-eighths {
-    width: calc(#{percentage(6 * 0.125)} - #{$gutter});
-  }
-  .#{$breakpoint}seven-eighths {
-    width: calc(#{percentage(7 * 0.125)} - #{$gutter});
-  }
-
-  /* Tenths */
-  .#{$breakpoint}one-tenth {
-    width: calc(#{percentage(1 * 0.1)} - #{$gutter});
-  }
-  .#{$breakpoint}two-tenths {
-    width: calc(#{percentage(2 * 0.1)} - #{$gutter});
-  }
-  .#{$breakpoint}three-tenths {
-    width: calc(#{percentage(3 * 0.1)} - #{$gutter});
-  }
-  .#{$breakpoint}four-tenths {
-    width: calc(#{percentage(4 * 0.1)} - #{$gutter});
-  }
-  .#{$breakpoint}five-tenths {
-    width: calc(#{percentage(5 * 0.1)} - #{$gutter});
-  }
-  .#{$breakpoint}six-tenths {
-    width: calc(#{percentage(6 * 0.1)} - #{$gutter});
-  }
-  .#{$breakpoint}seven-tenths {
-    width: calc(#{percentage(7 * 0.1)} - #{$gutter});
-  }
-  .#{$breakpoint}eight-tenths {
-    width: calc(#{percentage(8 * 0.1)} - #{$gutter});
-  }
-  .#{$breakpoint}nine-tenths {
-    width: calc(#{percentage(9 * 0.1)} - #{$gutter});
-  }
-
-  /* Twelfths */
-  .#{$breakpoint}one-twelfth {
-    width: calc(#{percentage(math.div(1, 12))} - #{$gutter});
-  }
-  .#{$breakpoint}two-twelfths {
-    width: calc(#{percentage(math.div(2, 12))} - #{$gutter});
-  }
-  .#{$breakpoint}three-twelfths {
-    width: calc(#{percentage(math.div(3, 12))} - #{$gutter});
-  }
-  .#{$breakpoint}four-twelfths {
-    width: calc(#{percentage(math.div(4, 12))} - #{$gutter});
-  }
-  .#{$breakpoint}five-twelfths {
-    width: calc(#{percentage(math.div(5, 12))} - #{$gutter});
-  }
-  .#{$breakpoint}six-twelfths {
-    width: calc(#{percentage(math.div(6, 12))} - #{$gutter});
-  }
-  .#{$breakpoint}seven-twelfths {
-    width: calc(#{percentage(math.div(7, 12))} - #{$gutter});
-  }
-  .#{$breakpoint}eight-twelfths {
-    width: calc(#{percentage(math.div(8, 12))} - #{$gutter});
-  }
-  .#{$breakpoint}nine-twelfths {
-    width: calc(#{percentage(math.div(9, 12))} - #{$gutter});
-  }
-  .#{$breakpoint}ten-twelfths {
-    width: calc(#{percentage(math.div(10, 12))} - #{$gutter});
-  }
-  .#{$breakpoint}eleven-twelfths {
-    width: calc(#{percentage(math.div(11, 12))} - #{$gutter});
   }
 
   .equal-columns--clear {
@@ -703,28 +598,26 @@ $breakpoint-has-push: ($medium-down);
 
 .flex-container {
   @include flexbox();
-}
 
-.flex-container:after {
-  visibility: hidden;
-  display: none;
-  font-size: 0;
-  content: ' ';
-  clear: both;
-  height: 0;
+  &:after {
+    visibility: hidden;
+    display: none;
+    font-size: 0;
+    content: ' ';
+    clear: both;
+    height: 0;
+  }
 }
 
 .row {
-  // margin-bottom: $gutter;
-}
-
-.row:after {
-  visibility: hidden;
-  display: block;
-  font-size: 0;
-  content: ' ';
-  clear: both;
-  height: 0;
+  &:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: ' ';
+    clear: both;
+    height: 0;
+  }
 }
 
 //Can be used on inner div inside container element to apply borders (that maintain the same width as columns)
@@ -784,30 +677,6 @@ $breakpoint-has-push: ($medium-down);
     max-width: 100%;
   }
 }
-
-// //Styles applied only on larger screen sizes
-// @include respond-to('small-up'){
-//   /* Nested Column Classes */
-//   .column.alpha, .columns.alpha               { margin-left: 0; }
-//   .column.omega, .columns.omega               { margin-right: 0; }
-
-//   /* Offsets */
-//   .offset-by-one                   { margin-left: calc(#{percentage(1 / 16)});}
-//   .offset-by-two                   { margin-left: calc(#{percentage(2 / 16)});}
-//   .offset-by-three                 { margin-left: calc(#{percentage(3 / 16)});}
-//   .offset-by-four                  { margin-left: calc(#{percentage(4 / 16)});}
-//   .offset-by-five                  { margin-left: calc(#{percentage(5 / 16)});}
-//   .offset-by-six                   { margin-left: calc(#{percentage(6 / 16)});}
-//   .offset-by-seven                 { margin-left: calc(#{percentage(7 / 16)});}
-//   .offset-by-eight                 { margin-left: calc(#{percentage(8 / 16)});}
-//   .offset-by-nine                  { margin-left: calc(#{percentage(9 / 16)});}
-//   .offset-by-ten                   { margin-left: calc(#{percentage(10 / 16)});}
-//   .offset-by-eleven                { margin-left: calc(#{percentage(11 / 16)});}
-//   .offset-by-twelve                { margin-left: calc(#{percentage(12 / 16)});}
-//   .offset-by-thirteen              { margin-left: calc(#{percentage(13 / 16)});}
-//   .offset-by-fourteen              { margin-left: calc(#{percentage(14 / 16)});}
-//   .offset-by-fifteen               { margin-left: calc(#{percentage(15 / 16)});}
-// }
 
 // /*================ Build Grid Push Classes ================*/
 
@@ -877,26 +746,47 @@ $breakpoint-has-push: ($medium-down);
   }
 }
 
-#grid .column,
-#grid .columns {
-  background: #ddd;
-  height: 25px;
-  line-height: 25px;
-  margin-bottom: 10px;
-  text-align: center;
-  text-transform: uppercase;
-  color: #555;
-  font-size: 12px;
-  font-weight: bold;
-  border-radius: 2px;
+.use-narrow-grid-rows {
+  .row {
+    margin: 0 get-vm-spacer(5);
+  }
 }
 
-#grid .column:hover,
-#grid .columns:hover {
-  background: #bbb;
-  color: #333;
-}
+.use-flex-grid {
+  .row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 0;
 
-#grid .example-grid {
-  overflow: hidden;
+    .row {
+      margin: 0 (-$gutter * 0.5);
+    }
+
+    &.row--reverse {
+      flex-direction: row-reverse;
+    }
+  }
+
+  .column,
+  .columns {
+    display: block;
+    float: none;
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+
+  @include respond-to('medium-down') {
+    .row {
+      padding: 0;
+    }
+
+    .row.row--mobile-collapse {
+      flex-direction: column;
+
+      &.row--mobile-flip {
+        flex-direction: column-reverse;
+      }
+    }
+  }
 }

@@ -12,6 +12,8 @@
 ================================================== */
 /* Variables - Misc
 ================================================== */
+/* Variables - Misc
+================================================== */
 /* Mixins
 ================================================== */
 /* Mixins - general
@@ -41,6 +43,8 @@
 */
 /* Mixins - typography
 ================================================== */
+/* Mixins - typography
+================================================== */
 .page-faq .page-heading {
   padding: 10rem 0;
 }
@@ -64,14 +68,4 @@
   .content-section.content-section--faq {
     padding-bottom: 3rem;
   }
-}
-
-.row.faq__item {
-  margin-bottom: 1rem;
-}
-.row.faq__item a {
-  text-decoration: underline;
-}
-.row.faq__item h4 {
-  margin-top: 7px;
 }

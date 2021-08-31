@@ -1,0 +1,14 @@
+{% assign color_region = section.settings.color_region | default: "light-alt" %}
+{% assign title_classes = titles | split: ", " %}
+{% assign modifier_classes = modifiers | split: ", " %}
+
+<div
+  class="content-section
+    {% if title != blank %}content-section--{{ title }}{% endif %}
+    {% if title_classes.size > 0 %}{% for title in title_classes %}content-section--{{ title }}
+    {% endfor %}{% endif %}
+    {% if modifier_classes.size > 0 %}{% for modifier in modifier_classes %}{{ modifier }}
+    {% endfor %}{% endif %}
+    color-region--{{ color_region }}">
+  {{ content }}
+</div>

@@ -3,33 +3,43 @@
 {% paginate blog.articles by section.settings.blog_posts_per_page %}
   <div class="blog-header clearfix">
     {% unless section.settings.image != nil %}
-      <div class="eight columns">
-          {% if current_tags %}
-            <h1 class="blog-title blog-tags--true">
-              <a href="/blogs/{{ blog.handle }}/tagged/{{ current_tags | handleize }}" title="{{ blog.title | escape }}">{{ current_tags }}</a>
-            </h1>
-          {% else %}
-            <div class="page-heading">
-              <h1 class="page-heading__title">
-                {{ blog.title }}
-              </h1>
-            </div>
-        
-            {% if section.settings.subtitle and section.settings.subtitle != blank %}
-              <p class="subtitle">{{ section.settings.subtitle }}</p>
-            {% endif %}
-          {% endif %}
-        </h1>
 
+      <div class="container">
+        <div class="row">
+          <div class="sixteen columns">
+    
+            {% if current_tags %}
+              <h1 class="blog-title blog-tags--true">
+                <a href="/blogs/{{ blog.handle }}/tagged/{{ current_tags | handleize }}" title="{{ blog.title | escape }}">{{ current_tags }}</a>
+              </h1>
+            {% else %}
+              <div class="page-heading">
+                <h1 class="page-heading__title">
+                  {{ blog.title }}
+                </h1>
+              </div>
+          
+              {% if section.settings.subtitle and section.settings.subtitle != blank %}
+                <p class="subtitle">{{ section.settings.subtitle }}</p>
+              {% endif %}
+            {% endif %}
+            
+          </div>
+        </div>
       </div>
     {% endunless %}
 
     <div class="eight columns section_select medium-down--one-whole">
       {% if section.settings.blog_tags %}
         <select name="tag_filter" id="blog_filter" class="blog_filter">
-          <option {% unless current_tags %}selected="selected"{% endunless %} value="{{ blog.url }}">{{ 'blogs.general.view_all' | t }}</option>
+          <option
+            {% unless current_tags %}selected="selected"{% endunless %}
+            value="{{ blog.url }}">{{ 'blogs.general.view_all' | t }}</option>
+
           {% for tag in blog.all_tags %}
-            <option {% if current_tags contains tag %}selected="selected"{% endif %} value="/blogs/{{ blog.handle }}/tagged/{{ tag | handleize }}">{{ tag }}</option>
+            <option
+              {% if current_tags contains tag %}selected="selected"{% endif %}
+              value="/blogs/{{ blog.handle }}/tagged/{{ tag | handleize }}">{{ tag }}</option>
           {% endfor %}
         </select>
       {% endif %}

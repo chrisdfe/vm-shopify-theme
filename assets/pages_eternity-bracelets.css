@@ -12,6 +12,8 @@
 ================================================== */
 /* Variables - Misc
 ================================================== */
+/* Variables - Misc
+================================================== */
 /* Mixins
 ================================================== */
 /* Mixins - general
@@ -41,29 +43,11 @@
 */
 /* Mixins - typography
 ================================================== */
-.page-eternity-bracelets .row {
-  display: flex;
-  flex-direction: row;
-  padding: 0 5rem;
-  margin-bottom: 0;
-}
-.page-eternity-bracelets .column,
-.page-eternity-bracelets .columns {
-  flex-grow: 1;
-}
-@media only screen and (max-width: 800px) {
-  .page-eternity-bracelets .row {
-    padding: 0;
-    flex-direction: column;
-  }
-  .page-eternity-bracelets .row.row--mobile-flip {
-    flex-direction: column-reverse;
-  }
-}
-
+/* Mixins - typography
+================================================== */
 .eternity-bracelets__image-wrapper {
   display: flex;
-  padding: 0 1rem 0;
+  padding: 0 2rem 0;
   align-items: center;
   justify-content: center;
 }
@@ -74,7 +58,7 @@
 }
 
 .eternity-bracelets__content-wrapper {
-  padding: 2rem 1rem 0;
+  padding: 2rem;
 }
 @media only screen and (max-width: 800px) {
   .eternity-bracelets__content-wrapper {
@@ -144,62 +128,6 @@
   }
 }
 
-.eternity-bracelets__graphic-placeholder {
-  background-color: #714457;
-  height: 15rem;
-}
-
-.eternity-bracelets__how-it-works__list {
-  list-style: none;
-  counter-reset: how-it-works-counter;
-  padding-left: 3rem;
-}
-.eternity-bracelets__how-it-works__list li {
-  position: relative;
-  counter-increment: how-it-works-counter;
-  margin-bottom: 2rem;
-}
-.eternity-bracelets__how-it-works__list li:before {
-  content: counter(how-it-works-counter) ". ";
-  position: absolute;
-  left: -2rem;
-  top: -3px;
-  color: #dec1a8;
-  font-size: 30px;
-  font-family: orpheuspro, serif;
-  font-weight: bold;
-  text-align: right;
-}
-
-.eternity-bracelets__chain-style-list {
-  padding: 0 7rem;
-  margin-top: 3rem;
-}
-@media only screen and (max-width: 800px) {
-  .eternity-bracelets__chain-style-list {
-    padding: 0;
-    margin: 3rem 0 2rem;
-  }
-}
-
-.eternity-bracelets__chain-style {
-  display: flex;
-  margin-bottom: 0.5rem;
-}
-.eternity-bracelets__chain-style .dots-spacer {
-  flex-grow: 1;
-  margin: 0 0.5rem 3px;
-  border-bottom: 1px dotted rgba(28, 64, 71, 0.6);
-}
-.eternity-bracelets__chain-style h3,
-.eternity-bracelets__chain-style h4 {
-  flex: 0 0 auto;
-  margin: auto 0 0;
-}
-.eternity-bracelets__chain-style h3 {
-  margin-bottom: -4px;
-}
-
 .content-section.content-section--eternity-bracelets-cta {
   text-align: center;
   padding-top: 0;
@@ -208,12 +136,4 @@
   .content-section.content-section--eternity-bracelets-cta {
     padding: 0 0 3rem;
   }
-}
-
-.content-section.content-section--eternity-bracelets-faq {
-  background: #f8f4f4;
-}
-
-.eternity-bracelets__faq-item {
-  margin-bottom: 2rem;
 }

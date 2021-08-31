@@ -1,0 +1,6 @@
+/* Mixins - typography
+================================================== */
+
+@function get-vm-spacer($amount: 1) {
+  @return $vm-spacer * $amount;
+}

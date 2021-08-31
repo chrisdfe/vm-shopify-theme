@@ -1,8 +1,10 @@
 {{ 'pages_eternity-bracelets.css' | asset_url | stylesheet_tag }}
 
-{% section "eternity-bracelets-banner" %}
-{% section "eternity-bracelets-overview" %}
-{% section "eternity-bracelets-how-it-works" %}
-{% section "eternity-bracelets-chain-styles" %}
-{% section "eternity-bracelets-cta" %}
-{% section "eternity-bracelets-faq" %}
+<div class="use-flex-grid use-narrow-grid-rows">
+  {% section "eternity-bracelets-banner" %}
+  {% section "content-section--image-with-text" %}
+  {% section "content-section--image-with-text--how-it-works" %}
+  {% section "content-section--image-with-text--price-list" %}
+  {% section "eternity-bracelets-cta" %}
+  {% section "content-section--faq" %}
+</div>

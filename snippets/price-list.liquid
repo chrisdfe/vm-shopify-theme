@@ -1,0 +1,11 @@
+<div class="price-list">
+  {% for block in blocks %}
+    <div class="price-list__item">
+      <h4 class="price-list__item-title">
+        {{ block.settings.title }}{% if block.settings.has_asterisk %}*{% else %}{% endif %}
+      </h4>
+      <div class="price-list__dots-spacer"></div>
+      <h3 class="price-list__price">${{ block.settings.price }}</h3>
+    </div>
+  {% endfor %}
+</div>

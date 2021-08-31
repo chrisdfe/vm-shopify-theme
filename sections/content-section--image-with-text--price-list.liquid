@@ -1,0 +1,65 @@
+{% capture text_content %}
+<p class="paragraph--block-text">
+  {{ section.settings.content }}
+</p>
+
+<div class="u-margin-horizontal-3 u-medium-down-m-horizontal-1">
+  {% include 'price-list' with {
+    blocks: section.blocks
+  } %}
+</div>
+{% endcapture %}
+
+{% include "content-section.image-with-text" with {
+  title: "price-list",
+  text_content: text_content,
+  heading: section.settings.title,
+  image: section.settings.image,
+} %}
+
+{% schema %}
+{
+  "name": "Image/Text - Price List",
+  "settings": [
+    {
+      "id": "title",
+      "label": "Title",
+      "type": "text",
+      "default": "Image/Text Columns - Price List"
+    },
+    {
+      "id": "content",
+      "label": "Content",
+      "type": "textarea"
+    },
+    {
+      "id": "image",
+      "label": "Image",
+      "type": "image_picker"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "price_list_item",
+      "name": "Price List Item",
+      "settings": [
+        {
+          "id": "title",
+          "label": "Name",
+          "type": "text"
+        },
+        {
+          "id": "price",
+          "label": "Price (in dollars)",
+          "type": "text"
+        },
+        {
+          "id": "has_asterisk",
+          "label": "Mark with a *",
+          "type": "checkbox"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

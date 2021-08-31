@@ -1,15 +1,21 @@
-<div class="content-section content-section--our-story--pillars">
-  <div class="container">
-    <div class="twelve columns offset-by-two medium-down--one-whole medium-down--offset-by-zero">
-      {% include "content-section.title" with {
-        title: section.settings.title | escape,
-        heading_align: "center"
-      } %}
-    </div>
+{% assign color_region = section.settings.color_region | default: "light-alt" %}
 
-    <div class="container">
+<div class="content-section content-section--our-story--pillars color-region--{{ color_region }}">
+  <div class="container">
+    
+    <div class="row">
+      <div class="sixteen columns">
+        {% include "content-section.title" with {
+          title: section.settings.title | escape,
+          heading_align: "center"
+        } %}
+      </div>
+    </div>
+    
+
+    <div class="row">
       {% for block in section.blocks %}
-        <div class="four columns medium-down--one-third {% if forloop.first %}offset-by-two medium-down--offset-by-zero{% endif %}">
+        <div class="one-third columns">
           <div class="our-story__pillar">
             <div class="our-story__pillar__image-wrapper">
               <img src="{{ block.settings.image | img_url : "300x" }}">
@@ -26,6 +32,7 @@
         </div>
       {% endfor %}
     </div>
+
   </div>
 </div>
 {% schema %}

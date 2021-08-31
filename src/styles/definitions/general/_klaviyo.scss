@@ -1,0 +1,31 @@
+/* General - Klaviyo
+================================================== */
+
+// Hacky overrides for klaviyo forms
+*[class^='klaviyo-form'] {
+  .ql-font-verdana {
+    font-family: $vm-heading-font !important;
+    letter-spacing: $vm-heading-3-letter-spacing !important;
+  }
+
+  input,
+  button {
+    font-family: $vm-paragraph-font !important;
+    font-size: $vm-subheading-3-font-size !important;
+    letter-spacing: $vm-subheading-letter-spacing !important;
+  }
+
+  input {
+    border-radius: 0 !important;
+  }
+
+  button {
+    transition: all 0.2s;
+
+    &:hover {
+      background-color: transparent !important;
+      border: 1px solid $vm-color-sand !important;
+      color: $vm-color-sand !important;
+    }
+  }
+}

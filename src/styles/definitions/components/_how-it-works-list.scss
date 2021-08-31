@@ -1,0 +1,26 @@
+/* Components - How It Works List
+================================================== */
+
+.how-it-works-list {
+  list-style: none;
+  counter-reset: how-it-works-counter;
+  padding-left: 2rem;
+
+  .how-it-works-list__item {
+    position: relative;
+    counter-increment: how-it-works-counter;
+    margin-bottom: 2rem;
+
+    &:before {
+      content: counter(how-it-works-counter) '. ';
+      position: absolute;
+      left: -2rem;
+      top: -3px;
+      color: $vm-color-sand;
+      font-size: 30px;
+      font-family: $vm-font-orpheus;
+      font-weight: bold;
+      text-align: right;
+    }
+  }
+}

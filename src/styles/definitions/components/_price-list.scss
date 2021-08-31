@@ -1,0 +1,26 @@
+/* Pages - Product
+================================================== */
+
+.price-list {
+}
+
+.price-list__item {
+  display: flex;
+  margin-bottom: 0.5rem;
+
+  .price-list__item-title,
+  .price-list__price {
+    flex: 0 0 auto;
+    margin: auto 0 0;
+  }
+
+  .price-list__price {
+    margin-bottom: -4px;
+  }
+}
+
+.price-list__dots-spacer {
+  flex-grow: 1;
+  margin: 0 0.5rem 3px;
+  border-bottom: 1px dotted rgba($vm-color-sea-green, 0.6);
+}

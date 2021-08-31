@@ -281,57 +281,6 @@
             "products_limit": 24
           }
         },
-        "1489284011497": {
-          "type": "slideshow",
-          "blocks": {
-            "1489284011497-0": {
-              "type": "image",
-              "settings": {
-                "image": "",
-                "pretext": "",
-                "title": "Turbo Shopify Theme",
-                "subtitle": "",
-                "caption_background": false,
-                "caption_background_transparency": false,
-                "button1": "Primary Button",
-                "button1_link": "",
-                "button1_highlight": true,
-                "button2": "Secondary Button",
-                "button2_link": "",
-                "button2_highlight": false,
-                "text_position": "center",
-                "text_align": "center"
-              }
-            },
-            "1489284011497-1": {
-              "type": "image",
-              "settings": {
-                "image": "",
-                "pretext": "<p>Short text that precedes the headline<\/p>",
-                "title": "Your headline here",
-                "subtitle": "<p>This is a short subheading for your slideshow image<\/p>",
-                "caption_background": false,
-                "caption_background_transparency": false,
-                "button1": "",
-                "button1_link": "",
-                "button1_highlight": false,
-                "button2": "",
-                "button2_link": "",
-                "button2_highlight": false,
-                "text_position": "center",
-                "text_align": "center"
-              }
-            }
-          },
-          "block_order": [
-            "1489284011497-0",
-            "1489284011497-1"
-          ],
-          "settings": {
-            "slideshow_text_animation": "fadeInDown",
-            "slideshow_animation": "slide"
-          }
-        },
         "1489284503681": {
           "type": "image-text",
           "blocks": {
@@ -361,8 +310,7 @@
             "1489284503681-1"
           ],
           "settings": {
-            "featured_links_per_row": "1",
-            "frontpage_text_align": "left"
+            "featured_links_per_row": "1"
           }
         },
         "1489284533457": {
@@ -558,7 +506,6 @@
         "1489283660007",
         "1489283737905",
         "1489283919239",
-        "1489284011497",
         "1489284503681",
         "1489284533457",
         "1489285116594",
@@ -906,57 +853,6 @@
             "products_limit": 24
           }
         },
-        "1489284011497": {
-          "type": "slideshow",
-          "blocks": {
-            "1489284011497-0": {
-              "type": "image",
-              "settings": {
-                "image": "",
-                "pretext": "",
-                "title": "Turbo Shopify Theme",
-                "subtitle": "",
-                "caption_background": false,
-                "caption_background_transparency": false,
-                "button1": "Primary Button",
-                "button1_link": "",
-                "button1_highlight": true,
-                "button2": "Secondary Button",
-                "button2_link": "",
-                "button2_highlight": false,
-                "text_position": "center",
-                "text_align": "center"
-              }
-            },
-            "1489284011497-1": {
-              "type": "image",
-              "settings": {
-                "image": "",
-                "pretext": "<p>Short text that precedes the headline<\/p>",
-                "title": "Your headline here",
-                "subtitle": "<p>This is a short subheading for your slideshow image<\/p>",
-                "caption_background": false,
-                "caption_background_transparency": false,
-                "button1": "",
-                "button1_link": "",
-                "button1_highlight": false,
-                "button2": "",
-                "button2_link": "",
-                "button2_highlight": false,
-                "text_position": "center",
-                "text_align": "center"
-              }
-            }
-          },
-          "block_order": [
-            "1489284011497-0",
-            "1489284011497-1"
-          ],
-          "settings": {
-            "slideshow_text_animation": "fadeInDown",
-            "slideshow_animation": "slide"
-          }
-        },
         "1489284503681": {
           "type": "image-text",
           "blocks": {
@@ -986,8 +882,7 @@
             "1489284503681-1"
           ],
           "settings": {
-            "featured_links_per_row": "1",
-            "frontpage_text_align": "left"
+            "featured_links_per_row": "1"
           }
         },
         "1489284533457": {
@@ -1183,7 +1078,6 @@
         "1489283660007",
         "1489283737905",
         "1489283919239",
-        "1489284011497",
         "1489284503681",
         "1489284533457",
         "1489285116594",
@@ -1480,57 +1374,6 @@
             "products_limit": 24
           }
         },
-        "1489284011497": {
-          "type": "slideshow",
-          "blocks": {
-            "1489284011497-0": {
-              "type": "image",
-              "settings": {
-                "image": "",
-                "pretext": "",
-                "title": "Turbo Shopify Theme",
-                "subtitle": "",
-                "caption_background": false,
-                "caption_background_transparency": false,
-                "button1": "Primary Button",
-                "button1_link": "",
-                "button1_highlight": true,
-                "button2": "Secondary Button",
-                "button2_link": "",
-                "button2_highlight": false,
-                "text_position": "center",
-                "text_align": "center"
-              }
-            },
-            "1489284011497-1": {
-              "type": "image",
-              "settings": {
-                "image": "",
-                "pretext": "<p>Short text that precedes the headline<\/p>",
-                "title": "Your headline here",
-                "subtitle": "<p>This is a short subheading for your slideshow image<\/p>",
-                "caption_background": false,
-                "caption_background_transparency": false,
-                "button1": "",
-                "button1_link": "",
-                "button1_highlight": false,
-                "button2": "",
-                "button2_link": "",
-                "button2_highlight": false,
-                "text_position": "center",
-                "text_align": "center"
-              }
-            }
-          },
-          "block_order": [
-            "1489284011497-0",
-            "1489284011497-1"
-          ],
-          "settings": {
-            "slideshow_text_animation": "fadeInDown",
-            "slideshow_animation": "slide"
-          }
-        },
         "1489284503681": {
           "type": "image-text",
           "blocks": {
@@ -1560,8 +1403,7 @@
             "1489284503681-1"
           ],
           "settings": {
-            "featured_links_per_row": "1",
-            "frontpage_text_align": "left"
+            "featured_links_per_row": "1"
           }
         },
         "1489284533457": {
@@ -1757,7 +1599,6 @@
         "1489283660007",
         "1489283737905",
         "1489283919239",
-        "1489284011497",
         "1489284503681",
         "1489284533457",
         "1489285116594",
@@ -2056,57 +1897,6 @@
             "products_limit": 24
           }
         },
-        "1489284011497": {
-          "type": "slideshow",
-          "blocks": {
-            "1489284011497-0": {
-              "type": "image",
-              "settings": {
-                "image": "",
-                "pretext": "",
-                "title": "Turbo Shopify Theme",
-                "subtitle": "",
-                "caption_background": false,
-                "caption_background_transparency": false,
-                "button1": "Primary Button",
-                "button1_link": "",
-                "button1_highlight": true,
-                "button2": "Secondary Button",
-                "button2_link": "",
-                "button2_highlight": false,
-                "text_position": "center",
-                "text_align": "center"
-              }
-            },
-            "1489284011497-1": {
-              "type": "image",
-              "settings": {
-                "image": "",
-                "pretext": "<p>Short text that precedes the headline<\/p>",
-                "title": "Your headline here",
-                "subtitle": "<p>This is a short subheading for your slideshow image<\/p>",
-                "caption_background": false,
-                "caption_background_transparency": false,
-                "button1": "",
-                "button1_link": "",
-                "button1_highlight": false,
-                "button2": "",
-                "button2_link": "",
-                "button2_highlight": false,
-                "text_position": "center",
-                "text_align": "center"
-              }
-            }
-          },
-          "block_order": [
-            "1489284011497-0",
-            "1489284011497-1"
-          ],
-          "settings": {
-            "slideshow_text_animation": "fadeInDown",
-            "slideshow_animation": "slide"
-          }
-        },
         "1489284503681": {
           "type": "image-text",
           "blocks": {
@@ -2136,8 +1926,7 @@
             "1489284503681-1"
           ],
           "settings": {
-            "featured_links_per_row": "1",
-            "frontpage_text_align": "left"
+            "featured_links_per_row": "1"
           }
         },
         "1489284533457": {
@@ -2333,7 +2122,6 @@
         "1489283660007",
         "1489283737905",
         "1489283919239",
-        "1489284011497",
         "1489284503681",
         "1489284533457",
         "1489285116594",
@@ -2639,57 +2427,6 @@
             "products_limit": 24
           }
         },
-        "1489284011497": {
-          "type": "slideshow",
-          "blocks": {
-            "1489284011497-0": {
-              "type": "image",
-              "settings": {
-                "image": "",
-                "pretext": "",
-                "title": "Turbo Shopify Theme",
-                "subtitle": "",
-                "caption_background": false,
-                "caption_background_transparency": false,
-                "button1": "Primary Button",
-                "button1_link": "",
-                "button1_highlight": true,
-                "button2": "Secondary Button",
-                "button2_link": "",
-                "button2_highlight": false,
-                "text_position": "center",
-                "text_align": "center"
-              }
-            },
-            "1489284011497-1": {
-              "type": "image",
-              "settings": {
-                "image": "",
-                "pretext": "<p>Short text that precedes the headline<\/p>",
-                "title": "Your headline here",
-                "subtitle": "<p>This is a short subheading for your slideshow image<\/p>",
-                "caption_background": false,
-                "caption_background_transparency": false,
-                "button1": "",
-                "button1_link": "",
-                "button1_highlight": false,
-                "button2": "",
-                "button2_link": "",
-                "button2_highlight": false,
-                "text_position": "center",
-                "text_align": "center"
-              }
-            }
-          },
-          "block_order": [
-            "1489284011497-0",
-            "1489284011497-1"
-          ],
-          "settings": {
-            "slideshow_text_animation": "fadeInDown",
-            "slideshow_animation": "slide"
-          }
-        },
         "1489284503681": {
           "type": "image-text",
           "blocks": {
@@ -2719,8 +2456,7 @@
             "1489284503681-1"
           ],
           "settings": {
-            "featured_links_per_row": "1",
-            "frontpage_text_align": "left"
+            "featured_links_per_row": "1"
           }
         },
         "1489284533457": {
@@ -2916,7 +2652,6 @@
         "1489283660007",
         "1489283737905",
         "1489283919239",
-        "1489284011497",
         "1489284503681",
         "1489284533457",
         "1489285116594",
@@ -3049,7 +2784,7 @@
     "mega_menu_2": true,
     "mega_menu_3": true,
     "mega_menu_4": true,
-    "mega_menu_5": true,
+    "mega_menu_5": false,
     "search_option": "everything",
     "search_pagination_type": "infinite_scroll",
     "enable_autocomplete": true,
@@ -3151,22 +2886,22 @@
     "linkedin_link": "",
     "email_link": "hello@valeriemadison.com",
     "og_image_fallback": "shopify:\/\/shop_images\/Shopify-preview-sapphire-rings.jpg",
-    "favicon": "shopify:\/\/shop_images\/Favicon_0b1daf50-6879-43a7-8cf2-ed929203f703.png",
+    "favicon": "shopify:\/\/shop_images\/VM-plum-favicon-white.png",
     "disqus_enabled": false,
     "disqus_shortname": "",
     "checkout_header_image": "",
-    "checkout_logo_image": "shopify:\/\/shop_images\/Logo_Rectangle.png",
+    "checkout_logo_image": "shopify:\/\/shop_images\/Valerie-Madison-on-pinkish-cream.png",
     "checkout_logo_position": "center",
     "checkout_logo_size": "medium",
     "checkout_body_background_image": "",
-    "checkout_body_background_color": "#ffffff",
+    "checkout_body_background_color": "#f8f4f4",
     "checkout_input_background_color_mode": "white",
     "checkout_sidebar_background_image": "",
-    "checkout_sidebar_background_color": "#ececec",
+    "checkout_sidebar_background_color": "#f8f4f4",
     "checkout_heading_font": "Open Sans",
     "checkout_body_font": "Open Sans",
-    "checkout_accent_color": "#95adb1",
-    "checkout_button_color": "#d3bc73",
+    "checkout_accent_color": "#dec1a8",
+    "checkout_button_color": "#1c4047",
     "checkout_error_color": "#f15829",
     "mega_text_font_style": "none",
     "mega_text_font_weight": "normal",
@@ -3498,13 +3233,32 @@
       "mega-menu-2": {
         "type": "mega-menu-2",
         "blocks": {
-          "9c9b6135-be0a-4019-a52d-b273b37d4333": {
+          "04dff2d5-62f9-432d-904f-320a85a8fdfe": {
             "type": "column",
             "settings": {
               "richtext_top": "",
               "image_caption_top": "",
               "image_link_top": "",
               "menu_1": "",
+              "menu_1_link": "",
+              "menu_2": "",
+              "menu_2_link": "",
+              "menu_3": "",
+              "menu_3_link": "",
+              "menu_4": "",
+              "menu_4_link": "",
+              "image_caption_bottom": "",
+              "image_link_bottom": "",
+              "richtext_bottom": ""
+            }
+          },
+          "9c9b6135-be0a-4019-a52d-b273b37d4333": {
+            "type": "column",
+            "settings": {
+              "richtext_top": "",
+              "image_caption_top": "",
+              "image_link_top": "",
+              "menu_1": "about-vm",
               "menu_1_link": "",
               "menu_2": "",
               "menu_2_link": "",
@@ -3524,25 +3278,6 @@
               "image_caption_top": "",
               "image_link_top": "",
               "menu_1": "learn-with-us",
-              "menu_1_link": "",
-              "menu_2": "",
-              "menu_2_link": "",
-              "menu_3": "",
-              "menu_3_link": "",
-              "menu_4": "",
-              "menu_4_link": "",
-              "image_caption_bottom": "",
-              "image_link_bottom": "",
-              "richtext_bottom": ""
-            }
-          },
-          "e448e39a-faf3-4b3f-89df-aab55b306142": {
-            "type": "column",
-            "settings": {
-              "richtext_top": "",
-              "image_caption_top": "",
-              "image_link_top": "",
-              "menu_1": "visit-us",
               "menu_1_link": "",
               "menu_2": "",
               "menu_2_link": "",
@@ -3575,7 +3310,7 @@
               "richtext_bottom": ""
             }
           },
-          "04dff2d5-62f9-432d-904f-320a85a8fdfe": {
+          "24ad7f8a-bc8b-489a-ba06-8b3936322547": {
             "type": "column",
             "settings": {
               "richtext_top": "",
@@ -3596,14 +3331,14 @@
           }
         },
         "block_order": [
+          "04dff2d5-62f9-432d-904f-320a85a8fdfe",
           "9c9b6135-be0a-4019-a52d-b273b37d4333",
           "19c77f33-dbcb-4e88-b872-3ac4c5d10492",
-          "e448e39a-faf3-4b3f-89df-aab55b306142",
           "6624135a-a3ae-458d-8675-b13b0d6fa01c",
-          "04dff2d5-62f9-432d-904f-320a85a8fdfe"
+          "24ad7f8a-bc8b-489a-ba06-8b3936322547"
         ],
         "settings": {
-          "parent": "Learn More"
+          "parent": "About Us"
         }
       },
       "collection-template": {
@@ -4666,13 +4401,13 @@
               "richtext_bottom": ""
             }
           },
-          "mega-menu-4-0": {
+          "315c2351-f1af-4594-ae6e-ad566613dae4": {
             "type": "column",
             "settings": {
               "richtext_top": "",
               "image_caption_top": "",
               "image_link_top": "",
-              "menu_1": "shop-by-style",
+              "menu_1": "",
               "menu_1_link": "",
               "menu_2": "",
               "menu_2_link": "",
@@ -4685,13 +4420,13 @@
               "richtext_bottom": ""
             }
           },
-          "dc9e85e4-7eaa-4c57-94db-287c56571bd9": {
+          "mega-menu-4-0": {
             "type": "column",
             "settings": {
               "richtext_top": "",
               "image_caption_top": "",
               "image_link_top": "",
-              "menu_1": "by-occasion",
+              "menu_1": "shop-by-style",
               "menu_1_link": "",
               "menu_2": "",
               "menu_2_link": "",
@@ -4727,8 +4462,8 @@
         "block_order": [
           "52597529-c975-4d37-a92f-5fc78be6b808",
           "f29a3256-abfc-41b8-8483-5567a70b7932",
+          "315c2351-f1af-4594-ae6e-ad566613dae4",
           "mega-menu-4-0",
-          "dc9e85e4-7eaa-4c57-94db-287c56571bd9",
           "c2dd3fde-b1ac-4355-b05a-bb6abe677451"
         ],
         "settings": {
@@ -4885,7 +4620,6 @@
         "settings": {
           "hide_section_list": false,
           "title": "What makes Valerie Madison Jewelry different?",
-          "subtext": "",
           "grid_size": 3,
           "grid_size_mobile": 1,
           "image_size": 35,
@@ -4935,7 +4669,6 @@
         "settings": {
           "hide_section_list": false,
           "title": "What makes Valerie Madison Jewelry different?",
-          "subtext": "",
           "grid_size": 3,
           "grid_size_mobile": 1,
           "image_size": 90,
@@ -5912,7 +5645,7 @@
               "text": "<p>Our approach to making jewelry includes using recycled precious metals, conflict-free diamonds, and ethically-sourced gemstones to create elegant, sophisticated, and vibrant heirloom-quality pieces. <\/p><p>We are a women-operated company founded by a Black Latina and we are based in Seattle, WA where you can also <strong>shop from <\/strong><a href=\"https:\/\/www.valeriemadison.com\/pages\/visit-us\" target=\"_blank\" title=\"https:\/\/www.valeriemadison.com\/pages\/visit-us\"><strong> our retail store<\/strong><\/a><strong> in person<\/strong>. <br\/><br\/>We're looking forward to helping you discover our unique engagement rings, wedding bands, and fine jewelry to celebrate special milestones or treat yourself. <\/p>",
               "button_label": "Learn More",
               "link": "https:\/\/www.valeriemadison.com\/pages\/about",
-              "color_region": "dark"
+              "color_region": "light_alt"
             }
           }
         },
@@ -5920,9 +5653,7 @@
           "1619300957791e7496-0"
         ],
         "settings": {
-          "frontpage_grid_style": false,
           "featured_links_per_row": "1",
-          "frontpage_text_align": "left",
           "frontpage_image_position": "left"
         }
       },
@@ -6456,35 +6187,43 @@
           "cta_link": "https:\/\/calendly.com\/valeriemadison\/eternitybracelet"
         }
       },
-      "1628706536fb34ccc5": {
+      "1629483439e1253581": {
         "type": "homepage-banner",
         "blocks": {
-          "b3922aab-3e6c-427d-b15d-86a598fa98d7": {
+          "95beecd3-2bab-4b22-b737-ed9a5c1dbf17": {
+            "type": "background_block",
+            "settings": {
+              "background_color": "light"
+            }
+          },
+          "fcd1e1d8-f0cf-40a1-8187-70e1d60e192e": {
             "type": "background_block",
             "settings": {
               "background_color": "light",
-              "banner_image_desktop": "shopify:\/\/shop_images\/bg_606b0935-a7ff-43ad-9dba-3b7735cfad1f.png"
+              "banner_image_desktop": "shopify:\/\/shop_images\/OOAK503-Double-Halo-Teal-Sapphire.png"
             }
           }
         },
         "block_order": [
-          "b3922aab-3e6c-427d-b15d-86a598fa98d7"
+          "95beecd3-2bab-4b22-b737-ed9a5c1dbf17",
+          "fcd1e1d8-f0cf-40a1-8187-70e1d60e192e"
         ],
         "settings": {
           "banner_wrapper_background_color": "light-alt",
-          "pretext": "peaks and valleys",
-          "heading": "Sapphire Summer",
-          "cta_link": "#",
-          "cta_text": "",
-          "text_position": "center",
-          "text_color": "light",
-          "banner_image_mobile": "shopify:\/\/shop_images\/bg_606b0935-a7ff-43ad-9dba-3b7735cfad1f.png",
-          "text_color_mobile": "light"
+          "pretext": "",
+          "heading": "The New <br class=\"u-hidden-medium-down\">Marisol Double Halo Ring",
+          "cta_link": "shopify:\/\/collections\/new-arrivals",
+          "cta_text": "Shop All New Rings",
+          "text_position": "left-block",
+          "text_color": "dark",
+          "banner_image_mobile": "shopify:\/\/shop_images\/OOAK503-Double-Halo-Teal-Sapphire.png",
+          "text_color_mobile": "dark",
+          "content_background_color_mobile": "light-alt"
         }
       }
     },
     "content_for_index": [
-      "1628706536fb34ccc5",
+      "1629483439e1253581",
       "1619300542332dabf8",
       "1578277933549",
       "1619300957ab5b6971",

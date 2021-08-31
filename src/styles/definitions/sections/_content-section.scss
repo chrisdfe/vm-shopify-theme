@@ -58,10 +58,6 @@
 
 .content-section__heading {
   margin-bottom: 2rem;
-
-  // @include respond-to('medium-down') {
-  //   margin-bottom: 1rem;
-  // }
 }
 
 .content-section__title-wrapper {
@@ -86,7 +82,6 @@
     // Slight adjustment to bring up to the actual title baseline
     bottom: 1px;
 
-    // margin: 0 0 0 auto;
     color: $vm-body-text-color;
 
     .icon-right-arrow {

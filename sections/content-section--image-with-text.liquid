@@ -1,0 +1,53 @@
+{% capture text_content %}
+<p class="paragraph--block-text">
+  {{ section.settings.text }}
+</p>
+{% endcapture %}
+
+{% include 'content-section.image-with-text' with {
+  image_position: section.settings.image_position
+  image: section.settings.image
+  heading: section.settings.title,
+  text_content: text_content
+} %}
+
+{% schema %}
+{
+  "name": "Image/Text Columns",
+  "settings": [
+    {
+      "id": "title",
+      "label": "Title",
+      "type": "text",
+      "default": "Title"
+    },
+    {
+      "id": "text",
+      "label": "Text",
+      "type": "textarea",
+      "default": "text goes here"
+    },
+    {
+      "id": "image",
+      "label": "Image",
+      "type": "image_picker"
+    },
+    {
+      "id": "image_position",
+      "label": "Image Position",
+      "type": "select",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
+    }
+  ]
+}
+{% endschema %}
