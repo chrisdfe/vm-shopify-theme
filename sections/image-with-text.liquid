@@ -1,0 +1,89 @@
+{% capture text_content %}
+  {% if section.settings.text != blank %}
+    {{ section.settings.text }}
+  {% endif %}
+
+  {% if section.settings.cta_link != blank %}
+    <a href="{{ section.settings.cta_link }}"
+        class="cta-link {% if section.settings.color_region =='dark' or section.settings.color_region == 'dark_alt' %}cta-link--inverted{% endif %}">
+      {{ section.settings.cta_text | default: "Read More" }}
+    </a>
+  {% endif %}
+{% endcapture %}
+
+<!-- extra_classes: "u-padding-top-0", -->
+
+{% include "content-section.image-with-text" with {
+  title: section.settings.title,
+  title_tag: "h1",
+  with_accent: true,
+  text_content: text_content,
+  image: section.settings.image,
+  color_region: "light-alt",
+} %}
+
+{% schema %}
+{
+  "name": "Image with Text",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image",
+      "info": "1024 x 1024px recommended"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>Promotion description appears here.</p>"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA Text",
+      "default": "Read more"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "CTA Link"
+    },
+    {
+      "type": "select",
+      "id": "color_region",
+      "label": "Color Region",
+      "options": [
+        {
+          "value": "light",
+          "label": "Light"
+        },
+        {
+          "value": "light_alt",
+          "label": "Light - alternative"
+        },
+        {
+          "value": "dark",
+          "label": "Dark"
+        },
+        {
+          "value": "dark_alt",
+          "label": "Dark - alternative"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image with Text",
+      "category": "Text"
+    }
+  ]
+}
+{% endschema %}

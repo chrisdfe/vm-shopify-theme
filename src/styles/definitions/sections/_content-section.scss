@@ -80,6 +80,10 @@
     text-align: center;
     align-items: center;
     justify-content: center;
+
+    .content-section__heading__title-wrapper {
+      width: auto;
+    }
   }
 
   @include respond-to('medium-down') {
@@ -102,6 +106,7 @@
   align-items: flex-end;
   justify-content: space-between;
   margin-bottom: get-vm-spacer(2);
+  width: 100%;
 
   @include respond-to('medium-down') {
     .content-section__heading__title-link {
@@ -115,6 +120,20 @@
 
   &.heading--with-accent {
     margin-bottom: get-vm-spacer(2);
+  }
+
+  &.content-section__heading__title--align-center {
+    text-align: center;
+  }
+
+  @include respond-to('medium-down') {
+    &.content-section__heading__title--align-left {
+      text-align: left;
+    }
+
+    &.content-section__heading__title--align-center {
+      text-align: center;
+    }
   }
 }
 

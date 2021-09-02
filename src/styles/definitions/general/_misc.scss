@@ -27,19 +27,6 @@
   font-size: smaller;
 }
 
-#featured_links {
-  padding: 20px 0;
-
-  h2 {
-    padding-top: 15px;
-  }
-}
-
-// #featured_links .column,
-// #featured_links .columns {
-//   opacity: 1;
-// }
-
 //Add default spacing to allow room for stars (from Shopify review app)
 .slider-gallery .shopify-product-reviews-badge {
   height: 30px;
@@ -61,26 +48,6 @@
 
 div#shopry-review-photos a {
   display: block !important;
-}
-
-//Feature divider variables
-// $borderWidth: {{ settings.headline_border }}px;
-$borderWidth: 0;
-$borderWidthHr: 4px;
-$borderStyle: solid;
-
-.feature_divider {
-  width: 100%;
-  height: 0;
-  display: block;
-  border: 0;
-  border-color: $vm-color-sea-green;
-  border-bottom-width: $borderWidth;
-  border-bottom-style: $borderStyle;
-
-  &.no-margin {
-    margin-bottom: 0px;
-  }
 }
 
 div.container.bottom-fix {
@@ -251,15 +218,19 @@ input[type='button'].get-rates.action_button {
 .align_left {
   text-align: left;
 }
+
 .text-align--center {
   text-align: center;
 }
+
 .text-align--left {
   text-align: left;
 }
+
 .text-align--right {
   text-align: right;
 }
+
 p.warning {
   text-align: center;
   font-weight: bold;
@@ -344,10 +315,6 @@ div.is-absolute {
   display: none;
 }
 
-div.container {
-  margin: 0 auto;
-}
-
 .featured_text {
   font-size: 18px;
   line-height: 36px;
@@ -361,20 +328,6 @@ div.container {
 // Page content
 .container.content {
   margin-bottom: $vm-content-section-padding;
-}
-
-.featured_content,
-.featured_content h1,
-.featured_content h2,
-.featured_content h3,
-.featured_content h4,
-.featured_content h5,
-.featured_content h6 {
-  // color: {{ settings.shop_home_page_content_text_color }};
-}
-
-.featured_content {
-  // background-color: {{ settings.shop_home_page_content_bg_color }};
 }
 
 .nav_arrows {

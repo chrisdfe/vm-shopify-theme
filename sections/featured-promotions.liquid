@@ -8,7 +8,7 @@
         <div class="sixteen columns">
 
           {% include "content-section.title" with {
-            title: section.settings.title | escape,
+            title: section.settings.title,
             with_accent: false
           } %}
 
@@ -19,9 +19,8 @@
   
   <div class="container">
     <div class="row">
-      
       {% for block in section.blocks %}
-        <div class="one-third columns">
+        <div class="one-third columns medium-down--one-half">
           {% include "image-card" with {
             url: block.settings.link,
             image: block.settings.image,
@@ -39,7 +38,8 @@
 {% include "content-section" with {
   title: section.settings.title,
   content: content,
-  color_region: "light"
+  color_region: "light-alt",
+  extra_classes: "u-padding-top-0"
 } %}
 
 {% schema %}
@@ -139,18 +139,7 @@
           "type": "text",
           "id": "title",
           "label": "Header",
-          "default": "Feature"
-        },
-        {
-          "type": "richtext",
-          "id": "text",
-          "label": "Text",
-          "default": "<p>Promotion description details.</p>"
-        },
-        {
-          "type": "text",
-          "id": "button_label",
-          "label": "Button label"
+          "default": "Header"
         }
       ]
     }

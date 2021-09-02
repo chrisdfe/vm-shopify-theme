@@ -1,38 +1,13 @@
-{% assign color_region = section.settings.color_region | default: "light-alt" %}
+{% capture text_content %}
+<p class="paragraph--block-text">{{ section.settings.content }}</p>
+{% endcapture %}
 
-<div class="content-section content-section--our-story--about-valerie color-region--{{ color_region }}">
-  <div class="container">
-    <div class="row">
-      <div class="sixteen columns medium-down--one-whole medium-down--offset-by-zero">
-        
-      </div>
-    </div>
-  </div>
-  
-  <div class="container">
-    <div class="row">
-      <div class="eight medium-down--eight columns">
-        {% if section.settings.image %}
-          <div class="u-margin-right-2">
-            <img src="{{ section.settings.image | img_url: '800x' }}">
-          </div>
-        {% endif %}
-      </div>
-
-      <div class="eight columns medium-down--eight medium-down--offset-by-zero">  
-        {% include "content-section.title" with {
-          title: section.settings.title | escape,
-        } %}
-
-        {% if section.settings.content %}
-          <p class="paragraph--block-text">{{ section.settings.content }}</p>
-        {% endif %}
-      </div>
-    
-    </div>
-  </div>
-</div>
-
+{% include "content-section.image-with-text" with {
+  id: "our-story--about-valerie",
+  title: section.settings.title,
+  image: section.settings.image,
+  color_region: "light-alt",
+} %}
 
 {% schema %}
 {

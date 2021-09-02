@@ -4,19 +4,22 @@
 .content-section.content-section--image-text-columns {
 }
 
-.content-section--image-text-columns__image-wrapper {
+.content-section--image-text-columns__image-wrapper,
+.content-section--image-text-columns__text-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 1rem;
+  min-height: 100%;
+}
 
+.content-section--image-text-columns__image-wrapper {
   @include respond-to('medium-down') {
-    padding: 0 2rem 2rem;
+    padding: 0 0 2rem;
   }
 }
 
 .content-section--image-text-columns__text-wrapper {
-  padding: 0 1rem;
+  flex-direction: column;
 
   @include respond-to('medium-down') {
     padding: 0;

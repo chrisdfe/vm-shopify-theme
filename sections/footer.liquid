@@ -14,40 +14,45 @@
 {%- if section.settings.show_locale_selector and shop.published_locales.size > 1 -%}
   {%- assign locale_selector = true -%}
 {%- endif -%}
-{% if section.settings.newsletter_hide_show_footer %}
 
+{% if section.settings.newsletter_hide_show_footer %}
 <div class="one-whole news">
    <div class="container">
-<div class="one-half grid__item">
-              <h2 class="title">{{ section.settings.newsletter_title1 }}</h2>
-           
-  </div>
-  <div class="one-half grid__item">
-    <div class="newsletter-text"><p>{{ section.settings.newsletter_text1 }}</p></div>
-  <form action="{{ settings.mailchimp_link }}" method="post" name="mc-embedded-subscribe-form" id="contact_form" target="_blank">
-                <div class="input-row">
-                  {% if display_first_name %}
-                    <input type="text" value="" class="firstName" name="FNAME" placeholder="{{ 'general.newsletter_form.subscriber_first_name' | t }}">
-                  {% endif %}
-                  {% if display_last_name %}
-                    <input type="text" value="" name="LNAME" placeholder="{{ 'general.newsletter_form.subscriber_last_name' | t }}">
-                  {% endif %}
-                </div>
+      <div class="one-half grid__item">
+        <h2 class="title">{{ section.settings.newsletter_title1 }}</h2>
+      </div>
+      
+      <div class="one-half grid__item">
+        <div class="newsletter-text">
+          <p>{{ section.settings.newsletter_text1 }}</p>
+        </div>
 
-                <div class="input-row">
-                  <input type="email" value="" name="EMAIL" class="contact_email" placeholder="{{ 'general.newsletter_form.placeholder' | t }}">
-                  <input type="submit" value="{{ 'general.newsletter_form.submit' | t }}" class="action_button sign_up" name="subscribe" />
-                </div>
-              </form>
-  </div>
+        <form action="{{ settings.mailchimp_link }}" method="post" name="mc-embedded-subscribe-form" id="contact_form" target="_blank">
+          <div class="input-row">
+            {% if display_first_name %}
+              <input type="text" value="" class="firstName" name="FNAME" placeholder="{{ 'general.newsletter_form.subscriber_first_name' | t }}">
+            {% endif %}
+            {% if display_last_name %}
+              <input type="text" value="" name="LNAME" placeholder="{{ 'general.newsletter_form.subscriber_last_name' | t }}">
+            {% endif %}
+          </div>
+
+          <div class="input-row">
+            <input type="email" value="" name="EMAIL" class="contact_email" placeholder="{{ 'general.newsletter_form.placeholder' | t }}">
+            <input type="submit" value="{{ 'general.newsletter_form.submit' | t }}" class="action_button sign_up" name="subscribe" />
+          </div>
+        </form>
+    </div>
   </div>
 </div>
-    {% endif %}
+{% endif %}
+
 <footer class="footer">
   <div class="container footer-menu-wrap">
- 
+    <div class="row">
       {% for block in section.blocks %}
-        <div class="{% if forloop.length >= 5 %}one-fifth column{% elsif forloop.length == 4 %}one-fourth column{% elsif forloop.length == 3 %}one-third column{% elsif forloop.length == 2 %}one-half column{% endif %} medium-down--one-whole" {{ block.shopify_attributes }}>
+        <div
+          class="{% if forloop.length >= 5 %}one-fifth column{% elsif forloop.length == 4 %}one-fourth column{% elsif forloop.length == 3 %}one-third column{% elsif forloop.length == 2 %}one-half column{% endif %} medium-down--one-whole" {{ block.shopify_attributes }}>
           {% if block.type == 'logo' %}
             <div class="text-align--{{block.settings.text_align}}">
               {% if block.settings.image %}
@@ -67,64 +72,72 @@
                 <div class="logo">{{ shop.name }}</div>
               {% endif %}
             </div>
-
           {% elsif block.type == 'newsletter' %}
+            <div class="newsletter_section">
+              {% if block.settings.title != blank %}
+                <h6>{{ block.settings.title }}</h6>
+              {% endif %}
 
-          <div class="newsletter_section">
+              {% if block.settings.newsletter_text != blank %}
+                {{ block.settings.newsletter_text }}
+              {% endif %}
 
-            {% if block.settings.title != blank %}
-              <h6>{{ block.settings.title }}</h6>
-            {% endif %}
-            {% if block.settings.newsletter_text != blank %}
-              {{ block.settings.newsletter_text }}
-            {% endif %}
+              <div class="newsletter">
+                <span class="message"></span>
+                {% if settings.mailchimp_link != blank %}
+                  <form
+                    action="{{ settings.mailchimp_link }}"
+                    method="post"
+                    name="mc-embedded-subscribe-form"
+                    id="contact_form"
+                    target="_blank">
+                    {% if block.settings.show_firstname %}
+                      <input type="text" value="" class="firstName" name="FNAME" placeholder="{{ 'general.newsletter_form.subscriber_first_name' | t }}">
+                    {% endif %}
+                    {% if block.settings.show_lastname %}
+                      <input type="text" value="" name="LNAME" placeholder="{{ 'general.newsletter_form.subscriber_last_name' | t }}">
+                    {% endif %}
+                    <input type="email" value="" name="EMAIL" class="contact_email" placeholder="{{ 'general.newsletter_form.placeholder' | t }}">
+                    <input type="submit" value="{{ 'general.newsletter_form.submit' | t }}" class="action_button sign_up" name="subscribe" />
+                  </form>
+                {% else %}
+                  {% form 'customer' %}
+                    {% if form.posted_successfully? %}
+                      <p><em>{{ 'general.newsletter_form.success_text' | t }}</em></p>
+                    {% elsif form.errors %}
+                      {% for field in form.errors %}
+                        <p><em>{{ field }} - {{ form.errors.messages[field] }}</em></p>
+                      {% endfor %}
+                    {% endif %}
 
-            <div class="newsletter">
-              <span class="message"></span>
-              {% if settings.mailchimp_link != blank %}
-                <form action="{{ settings.mailchimp_link }}" method="post" name="mc-embedded-subscribe-form" id="contact_form" target="_blank">
-                  {% if block.settings.show_firstname %}
-                    <input type="text" value="" class="firstName" name="FNAME" placeholder="{{ 'general.newsletter_form.subscriber_first_name' | t }}">
-                  {% endif %}
-                  {% if block.settings.show_lastname %}
-                    <input type="text" value="" name="LNAME" placeholder="{{ 'general.newsletter_form.subscriber_last_name' | t }}">
-                  {% endif %}
-                  <input type="email" value="" name="EMAIL" class="contact_email" placeholder="{{ 'general.newsletter_form.placeholder' | t }}">
-                  <input type="submit" value="{{ 'general.newsletter_form.submit' | t }}" class="action_button sign_up" name="subscribe" />
-                </form>
-              {% else %}
-                {% form 'customer' %}
-                  {% if form.posted_successfully? %}
-                    <p><em>{{ 'general.newsletter_form.success_text' | t }}</em></p>
-                  {% elsif form.errors %}
-                    {% for field in form.errors %}
-                      <p><em>{{ field }} - {{ form.errors.messages[field] }}</em></p>
-                    {% endfor %}
-                  {% endif %}
+                    <input type="hidden" name="contact[tags]" value="prospect,newsletter"/>
 
-                  <input type="hidden" name="contact[tags]" value="prospect,newsletter"/>
-                  {% if block.settings.show_firstname %}
-                    <input type="text" class="firstName" name="contact[first_name]" placeholder="{{ 'general.newsletter_form.subscriber_first_name' | t }}" />
-                  {% endif %}
-                  {% if block.settings.show_lastname %}
-                    <input type="text" name="contact[last_name]" placeholder="{{ 'general.newsletter_form.subscriber_last_name' | t }}" />
-                  {% endif %}
+                    {% if block.settings.show_firstname %}
+                      <input type="text" class="firstName" name="contact[first_name]" placeholder="{{ 'general.newsletter_form.subscriber_first_name' | t }}" />
+                    {% endif %}
 
-                  <input type="hidden" name="challenge" value="false" />
-                  <input type="email" class="contact_email" name="contact[email]" required placeholder="{{ 'general.newsletter_form.placeholder' | t }}" />
-                  <input type='submit' class="action_button sign_up" value="{{ 'general.newsletter_form.submit' | t }}" />
-                {% endform %}
+                    {% if block.settings.show_lastname %}
+                      <input type="text" name="contact[last_name]" placeholder="{{ 'general.newsletter_form.subscriber_last_name' | t }}" />
+                    {% endif %}
+
+                    <input type="hidden" name="challenge" value="false" />
+                    <input type="email" class="contact_email" name="contact[email]" required placeholder="{{ 'general.newsletter_form.placeholder' | t }}" />
+                    <input type='submit' class="action_button sign_up" value="{{ 'general.newsletter_form.submit' | t }}" />
+                  {% endform %}
+                {% endif %}
+              </div>
+
+              {% if block.settings.show_social %}
+                {% render 'social-icons' %}
               {% endif %}
             </div>
-            {% if block.settings.show_social %}
-              {% render 'social-icons' %}
-            {% endif %}
-          </div>
-
           {% elsif block.type == 'link_list' %}
             <div class="footer_menu">
               {% if block.settings.menu != blank %}
-                <h6>{{ linklists[block.settings.menu].title }}<span class="right icon-down-arrow"></span></h6>
+                <h6>
+                  {{ linklists[block.settings.menu].title }}<span class="right icon-down-arrow"></span>
+                </h6>
+
                 <div class="toggle_content">
                   <ul>
                     {% for link in linklists[block.settings.menu].links %}
@@ -133,7 +146,10 @@
                   </ul>
                 </div>
               {% else %}
-                <h6>Menu title<span class="right icon-down-arrow"></span></h6>
+                <h6>
+                  Menu title<span class="right icon-down-arrow"></span>
+                </h6>
+
                 <div class="toggle_content">
                   <ul>
                     <li><p>{{ 'homepage.onboarding.no_content' | t }}</p></li>
@@ -141,7 +157,6 @@
                 </div>
               {% endif %}
             </div>
-
           {% elsif block.type == 'text' %}
             <div class="footer_content footer-text {% if block.settings.title == blank %}no-footer-title{% endif %}">
               {% if block.settings.title != blank %}
@@ -157,7 +172,9 @@
           {% elsif block.type == 'page' %}
             <div class="footer_content footer-text">
               {% if block.settings.page != blank %}
-                <h6>{{ pages[block.settings.page].title }}<span class="right icon-down-arrow"></span></h6>
+                <h6>
+                  {{ pages[block.settings.page].title }}<span class="right icon-down-arrow"></span>
+                </h6>
 
                 <div class="toggle_content">
                   {{ pages[block.settings.page].content }}
@@ -170,13 +187,8 @@
                 </div>
               {% endif %}
             </div>
-
-          {% elsif block.type == 'html' %}
-            {% comment %}@TODO - Add HTML section for maps, widgets, embedding, etc{% endcomment %}
-
           {% elsif block.type == 'empty' %}
             <div class="empty-column"></div>
-
           {% endif %}
 
           {% if block.settings.social_icons_footer %}
@@ -185,48 +197,56 @@
               {% render 'social-icons' %}
             </div>
           {% endif %}
-
         </div>
+
         {% if forloop.last and social_icons %}
           <div class="footer-social-icons--mobile sixteen columns">
             {% render 'social-icons' %}
           </div>
         {% endif %}
       {% endfor %}
+    </div>
 
-      <div class="sixteen columns row footer_credits">
-        <div class="localization-wrap">
-          {% render 'localization-switcher',
-            additional_classes: 'footer-menu__disclosure',
-            id: 'footer__selector-form',
-            currency_selector: currency_selector,
-            locale_selector: locale_selector,
-            show_currency: section.settings.show_currency_selector
-          %}
-        </div>
+      <div class="row u-margin-top-1">
+        <div class="sixteen columns">
+
+          <div class="localization-wrap">
+            {% render 'localization-switcher',
+              additional_classes: 'footer-menu__disclosure',
+              id: 'footer__selector-form',
+              currency_selector: currency_selector,
+              locale_selector: locale_selector,
+              show_currency: section.settings.show_currency_selector
+            %}
+          </div>
+          
           {% if section.settings.enable_klaviyo == true %}
             <!-- Klaviyo Code -->
             <div class="klaviyo-form-X7CxAy"></div>
           {% endif %}
-        <p class="credits paragraph-3">
-          &copy; {{ "now" | date: "%Y" }} {{ shop.name | link_to: '/' }}.
-          {{ section.settings.copyright_text }}
-          {% if section.settings.display_designed_by %}
-            {{ 'layout.general.designer_credits_html' | t }}
-          {% endif %}
-        </p>
 
-        {% if section.settings.display_payment_methods %}
-          <div class="payment_methods">
-            {% for type in shop.enabled_payment_types %}
-              {{ type | payment_type_svg_tag: class:'payment-icon' }}
-            {% endfor %}
-          </div>
-        {% endif %}
-      </div><!--end footer_credits-->
+          <p class="credits paragraph-3 u-margin-top-1">
+            &copy; {{ "now" | date: "%Y" }} {{ shop.name | link_to: '/' }}.
+            {{ section.settings.copyright_text }}
+            {% if section.settings.display_designed_by %}
+              {{ 'layout.general.designer_credits_html' | t }}
+            {% endif %}
+          </p>
+
+          {% if section.settings.display_payment_methods %}
+            <div class="payment_methods">
+              {% for type in shop.enabled_payment_types %}
+                {{ type | payment_type_svg_tag: class:'payment-icon' }}
+              {% endfor %}
+            </div>
+          {% endif %}
+
+        </div>
+      </div>
     </div>
   </div>
 </footer>
+
 <style>
   .news {background: {{  section.settings.background-color_newsletter}};}
   .news h2 {color: {{  section.settings.text-color}};}

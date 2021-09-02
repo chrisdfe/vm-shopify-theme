@@ -1,6 +1,4 @@
-{% assign color_region = section.settings.color_region | default: "light-alt" %}
-
-<div class="content-section content-section--our-story--team color-region--{{ color_region }} u-padding-vertical-0">
+{% capture content %}
   <div class="container">
     <div class="row">
 
@@ -22,6 +20,7 @@
 
   <div class="container">
     <div class="row">
+
       {% for block in section.blocks %}
         <div class="eight columns medium-down--one-whole">
           <div class="our-story__team-member">
@@ -45,10 +44,16 @@
           </div>
         </div>
       {% endfor %}
+      
     </div>
   </div>
+{% endcapture %}
 
-</div>
+{% include "content-section" with {
+  id: "our-story--team",
+  color_region: "light-alt",
+  extra_classes: "u-padding-top-0"
+} %}
 
 {% schema %}
 {

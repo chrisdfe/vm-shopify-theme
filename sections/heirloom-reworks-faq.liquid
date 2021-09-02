@@ -1,0 +1,56 @@
+{% capture content %}
+<div class="container">
+  <div class="row">
+    <div class="sixteen columns">
+      {% include "content-section.title" with {
+        title: section.settings.title | escape,
+      } %}
+    </div>
+  </div>
+  
+  {% for block in section.blocks %}
+    {% include "faq--item-row" with {
+      question: block.settings.title,
+      answer: block.settings.answer
+    } %}
+  {% endfor %}
+</div>
+{% endcapture %}
+
+{% include "content-section" with {
+  id: "faq",
+  title: "faq",
+  content: content 
+} %}
+
+{% schema %}
+{
+  "name": "FAQ",
+  "settings": [
+    {
+      "id": "title",
+      "label": "Title",
+      "type": "text",
+      "default": "FAQs"
+    }
+  ],
+  "blocks": [
+  {
+    "type": "faq_item",
+    "name": "Frequently Asked Question",
+    "settings": [
+      {
+        "id": "title",
+        "label": "Question",
+        "type": "text"
+      },
+      {
+        "id": "answer",
+        "label": "Answer",
+        "type": "textarea"
+      }
+    ]
+  }
+]
+}
+{% endschema %}

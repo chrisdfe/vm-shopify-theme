@@ -122,11 +122,23 @@
     {% endfor %}
   
   {% if section.settings.enable_agreement == true %}
-    <p class="line-item-property__field">
-      <input type="hidden" name="properties[{{section.settings.agreement_label | strip }}]" value="No">
-      <label for="{{section.settings.agreement_label | strip | replace: ' ', '-'}}"><input id="{{section.settings.agreement_label | strip | replace: ' ', '-'}}" type="checkbox" name="properties[{{section.settings.agreement_label | strip }}]" value="Yes" required="Yes"> {{section.settings.agreement_label | strip }}</label>
-      <span class="agreement_description paragraph-3">{{section.settings.agreement_description | strip }}</span>
-    </p>
+    <div class="line-item-property__field">
+      <input
+        type="hidden"
+        name="properties[{{section.settings.agreement_label | strip }}]"
+        value="No">
+      <label
+        for="{{section.settings.agreement_label | strip | replace: ' ', '-'}}">
+        <input
+          id="{{section.settings.agreement_label | strip | replace: ' ', '-'}}" type="checkbox"
+          name="properties[{{section.settings.agreement_label | strip }}]"
+          value="Yes"
+          required="Yes"> {{section.settings.agreement_label | strip_html }}</label>
+
+      <p class="agreement_description paragraph-3">
+        {{ section.settings.agreement_description | strip_html }}
+      </p>
+    </div>
   	{% endif %}
    <input type="hidden" id="buildring" name="buildring" value="false" />
   {% endif %}
@@ -134,11 +146,23 @@
    
     {% if product.tags contains section.settings.final_sale_tag %}
       <!-- Final Sale Agreement -->
-      <p class="line-item-property__field">
-        <input type="hidden" name="properties[{{section.settings.final_sale_label | strip_html | strip | remove: "*" }}]" value="No">
-        <label for="{{section.settings.final_sale_label | strip | replace: ' ', '-' | remove: "*"}}"><input id="{{section.settings.final_sale_label | strip | replace: ' ', '-' | remove: "*"}}" type="checkbox" name="properties[{{section.settings.final_sale_label | strip | remove: "*" }}]" value="Yes" required="Yes"> {{section.settings.final_sale_label | strip }}</label>
-        <span class="agreement_description paragraph-3">{{section.settings.final_sale_description | strip | strip_html }}</span>
-      </p>
+      <div class="line-item-property__field">
+        <input
+          type="hidden"
+          name="properties[{{section.settings.final_sale_label | strip_html | strip | remove: "*" }}]"
+          value="No">
+        <label
+          for="{{section.settings.final_sale_label | strip | replace: ' ', '-' | remove: "*"}}">
+            <input
+              id="{{section.settings.final_sale_label | strip | replace: ' ', '-' | remove: "*"}}"
+              type="checkbox"
+              name="properties[{{section.settings.final_sale_label | strip | remove: "*" }}]"
+              value="Yes"
+              required="Yes"> {{section.settings.final_sale_label | strip }}</label>
+        <p class="agreement_description paragraph-3">
+          {{section.settings.final_sale_description | strip | strip_html }}
+        </p>
+      </div>
       <!-- End Final Sale Agreement -->
   	{% endif %}
   

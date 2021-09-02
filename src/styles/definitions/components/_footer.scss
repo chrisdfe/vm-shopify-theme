@@ -10,6 +10,7 @@
   a,
   a:visited {
     color: $vm-footer-link-color;
+    text-decoration: none;
   }
 
   a:hover,
@@ -150,15 +151,6 @@
 
   &:last-of-type {
     padding-right: 0px;
-  }
-}
-
-.credits {
-  text-align: left;
-  padding-top: 20px;
-
-  @include respond-to('medium-up') {
-    float: left;
   }
 }
 

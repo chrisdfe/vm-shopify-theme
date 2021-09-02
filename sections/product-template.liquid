@@ -18,9 +18,10 @@
 <a name="pagecontent" id="pagecontent"></a>
 
 <div class="container main content product-name--{{ product.handle }}">
+  <div class="row">
   <div class="sixteen columns">
     {% if collection.previous_product or collection.next_product or section.settings.product_breadcrumb %}
-      <div class="clearfix breadcrumb-collection">
+      <div class="breadcrumb-collection clearfix">
         {% if collection.previous_product or collection.next_product %}
           <div class="nav_arrows breadcrumb_text">
             {% if collection.previous_product %}
@@ -58,18 +59,21 @@
       <div class="sixteen columns product__container">
     {% endif %}
 
-    <div  class="product-{{ product.id }}"
-          data-free-text="{{ settings.free_price_text }}"
-          >
-      <div class="section product_section clearfix js-product_section {% if section.settings.product_images_position == 'right' %}align_right--images{% endif %}" data-rv-handle="{{ product.handle }}">
+    <div 
+      class="product-{{ product.id }}"
+      data-free-text="{{ settings.free_price_text }}"
+    >
+      <div class="section product_section clearfix js-product_section {% if section.settings.product_images_position == 'right' %}align_right--images{% endif %}"
+      data-rv-handle="{{ product.handle }}">
 
         <div class="{% if gallery_width != blank %}{{gallery_width}}{% else %}nine{% endif %} columns medium-down--one-whole {% if section.settings.product_images_position == 'left' %}alpha{% else %}omega{% endif %}">
           {% render 'product-images',
-                  video_looping: section.settings.video_looping,
-                  set_product_height: section.settings.set_product_height
+            video_looping: section.settings.video_looping,
+            set_product_height: section.settings.set_product_height
           %}
         </div>
-<div class="{% if product_width != blank %}{{product_width}}{% else %}seven{% endif %} columns medium-down--one-whole  {% if section.settings.product_images_position == 'left' %}omega{% else %}alpha{% endif %}">
+        
+        <div class="{% if product_width != blank %}{{product_width}}{% else %}seven{% endif %} columns medium-down--one-whole {% if section.settings.product_images_position == 'left' %}omega{% else %}alpha{% endif %}">
           {% assign collection_handles = product.collections | map: 'handle' %}
           {% assign variant = product.selected_or_first_available_variant %}
 
@@ -101,7 +105,7 @@
   
           <h1 class="product_name heading-2">{{ product.title }}</h1>
           
-  		  {% if section.settings.enable_shopify_product_badges and settings.enable_shopify_review_comments %}
+  		    {% if section.settings.enable_shopify_product_badges and settings.enable_shopify_review_comments %}
             <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
           {% endif %}
 
@@ -114,7 +118,13 @@
               {% endif %}
             {% endfor %}
           {% elsif settings.size_chart != blank %}
-            <a href="javascript:;" class="size_chart" data-fancybox data-src="#size-chart{{product.id}}" data-type="inline" data-no-instant>{{ 'products.product.size_chart' | t }} <span class="icon-right-arrow"></span></a>
+            <a
+              href="javascript:;"
+              class="size_chart"
+              data-fancybox
+              data-src="#size-chart{{product.id}}"
+              data-type="inline"
+              data-no-instant>{{ 'products.product.size_chart' | t }} <span class="icon-right-arrow"></span></a>
           {% endif %}
 
           {% if collection_handles contains 'coming-soon' %}
@@ -133,11 +143,13 @@
                         {% endif %}
                       </span>
                     </span>
+
                     <span class="was_price">
                       {% if variant.price < variant.compare_at_price %}
                         <span class="money">{% render 'price-element', price: variant.compare_at_price %}</span>
                       {% endif %}
                     </span>
+
                     {% if section.settings.display_savings %}
                       <span class="sale savings">
                         {% if variant.price < variant.compare_at_price %}
@@ -147,13 +159,18 @@
                   {% endif %}
                   </div>
                 {% endunless %}
+                
                 <div class="sold-out__container">
                   <span class="sold_out">{% if variant.available == false %}{{ settings.sold_out_text }}{% endif %}</span>
                 </div>
               </div>
             {% endif %}
 
-            <p class="affirm-as-low-as paragraph-3" data-page-type="product" data-amount="{{variant.price}}"></p>
+            <p
+              class="affirm-as-low-as paragraph-3"
+              data-page-type="product"
+              data-amount="{{variant.price}}">
+            </p>
           </div>
 
           {% if section.settings.product_description_position == "top" %}
@@ -250,7 +267,9 @@
   {% for block in section.blocks %}
   	{% if product.handle == block.settings.product_details_id and count == 0 and block.settings.enable_details == true %}
    		{% assign count = count | plus: 1 %}
-        </div></div>
+          </div>
+        </div>
+      </div>
 
         <section class="image-list details-section">
           {% if block.settings.title != blank %}
@@ -318,32 +337,32 @@
       </section>
     
       <div class="container main content product-name--{{ product.handle }}">
-        <div class="sixteen columns">
+        <div class="row">
+          <div class="sixteen columns">
     {% endif %}
   {% endfor %}
         
-        
-    {% if sidebar %}
-            {% if section.settings.display_recently_viewed %}
-              {% render 'include-recently-viewed' %}
-            {% endif %}
+  {% if sidebar %}
+          {% if section.settings.display_recently_viewed %}
+            {% render 'include-recently-viewed' %}
+          {% endif %}
 
-            <div data-product-recommendations-container></div>
-          </div>
+          <div data-product-recommendations-container></div>
         </div>
       </div>
-    {% else %}
-          </div>
+    </div>
+  {% else %}
         </div>
       </div>
+    </div>
 
-      {% if section.settings.display_recently_viewed %}
-        {% render 'include-recently-viewed' %}
-      {% endif %}
-
-      <div data-product-recommendations-container></div>
-
+    {% if section.settings.display_recently_viewed %}
+      {% render 'include-recently-viewed' %}
     {% endif %}
+
+    <div data-product-recommendations-container></div>
+
+  {% endif %}
 
 {% if section.settings.enable_qty == false %} 
   {% if product.tags contains 'engagement rings' or product.tags contains 'Design Your Own Ring' or  product.tags contains 'engagement' %} 
@@ -371,8 +390,16 @@
 
 {% if section.settings.enable_gift == true %}
   {% style %}
-  .gift_option {background:{{section.settings.gift_bg}};display:inline-flex;padding:2px 17px 2px 7px;color:{{section.settings.gift_text_color}};}
-  #this-is-a-gift {margin:8px;}
+  .gift_option {
+    background:{{section.settings.gift_bg}};
+    display:inline-flex;
+    padding:2px 17px 2px 7px;
+    color:{{section.settings.gift_text_color}};
+  }
+  
+  #this-is-a-gift {
+    margin:8px;
+  }
   {% endstyle %}
 {% endif %}
 
@@ -382,6 +409,7 @@
     {% assign models = product.media | where: 'media_type', 'model' | json %}
     ShopifyXR('addModels', {{ models }});
 </script>
+
 {% schema %}
 {
   "name": "Product",
@@ -527,7 +555,7 @@
       "label": "Show price savings",
       "default": true
     },
-{
+    {
         "type": "select",
         "id": "product_info_width",
         "label": "Product Info - Column Width",

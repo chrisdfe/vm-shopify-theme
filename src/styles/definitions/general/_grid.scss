@@ -244,212 +244,6 @@
       }
     }
   }
-
-  .equal-columns--outside-trim {
-    .#{$breakpoint}one-half:nth-of-type(2n),
-    .#{$breakpoint}eight:nth-of-type(2n),
-    .#{$breakpoint}one-third:nth-of-type(3n),
-    .#{$breakpoint}one-fourth:nth-of-type(4n),
-    .#{$breakpoint}four:nth-of-type(4n),
-    .#{$breakpoint}one-fifth:nth-of-type(5n),
-    .#{$breakpoint}one-sixth:nth-of-type(6n),
-    .#{$breakpoint}one-seventh:nth-of-type(7n),
-    .#{$breakpoint}two:nth-of-type(8n) {
-      margin-right: 0;
-    }
-    .#{$breakpoint}one-half:nth-of-type(2n + 1),
-    .#{$breakpoint}eight:nth-of-type(2n + 1),
-    .#{$breakpoint}one-third:nth-of-type(3n + 1),
-    .#{$breakpoint}one-fourth:nth-of-type(4n + 1),
-    .#{$breakpoint}four:nth-of-type(4n + 1),
-    .#{$breakpoint}one-fifth:nth-of-type(5n + 1),
-    .#{$breakpoint}one-sixth:nth-of-type(6n + 1),
-    .#{$breakpoint}one-seventh:nth-of-type(7n + 1),
-    .#{$breakpoint}two:nth-of-type(8n + 1) {
-      margin-left: 0;
-    }
-
-    @if $breakpoint == 'large-down--' {
-      @include respond-to('large-down') {
-        //Reset previous margins
-        .#{$breakpoint}one-half.#{$breakpoint}one-half,
-        .#{$breakpoint}eight.#{$breakpoint}eight,
-        .#{$breakpoint}one-third.#{$breakpoint}one-third,
-        .#{$breakpoint}one-fourth.#{$breakpoint}one-fourth,
-        .#{$breakpoint}four.#{$breakpoint}four,
-        .#{$breakpoint}one-fifth.#{$breakpoint}one-fifth,
-        .#{$breakpoint}one-sixth.#{$breakpoint}one-sixth,
-        .#{$breakpoint}one-seventh.#{$breakpoint}one-seventh,
-        .#{$breakpoint}two.#{$breakpoint}two {
-          margin-right: 10px;
-          margin-left: 10px;
-        }
-        //Set new margins on right
-        .#{$breakpoint}one-half:nth-of-type(2n),
-        .#{$breakpoint}eight:nth-of-type(2n),
-        .#{$breakpoint}one-third:nth-of-type(3n),
-        .#{$breakpoint}one-fourth:nth-of-type(4n),
-        .#{$breakpoint}four:nth-of-type(4n),
-        .#{$breakpoint}one-fifth:nth-of-type(5n),
-        .#{$breakpoint}one-sixth:nth-of-type(6n),
-        .#{$breakpoint}one-seventh:nth-of-type(7n),
-        .#{$breakpoint}two:nth-of-type(8n) {
-          margin-right: 0;
-        }
-        //Set new margins on left
-        .#{$breakpoint}one-half:nth-of-type(2n + 1),
-        .#{$breakpoint}eight:nth-of-type(2n + 1),
-        .#{$breakpoint}one-third:nth-of-type(3n + 1),
-        .#{$breakpoint}one-fourth:nth-of-type(4n + 1),
-        .#{$breakpoint}four:nth-of-type(4n + 1),
-        .#{$breakpoint}one-fifth:nth-of-type(5n + 1),
-        .#{$breakpoint}one-sixth:nth-of-type(6n + 1),
-        .#{$breakpoint}one-seventh:nth-of-type(7n + 1),
-        .#{$breakpoint}two:nth-of-type(8n + 1) {
-          margin-left: 0;
-        }
-      }
-    }
-
-    @if $breakpoint == 'medium-down--' {
-      @include respond-to('medium-down') {
-        //Reset previous margins
-        .#{$breakpoint}one-half.#{$breakpoint}one-half,
-        .#{$breakpoint}eight.#{$breakpoint}eight,
-        .#{$breakpoint}one-third.#{$breakpoint}one-third,
-        .#{$breakpoint}one-fourth.#{$breakpoint}one-fourth,
-        .#{$breakpoint}four.#{$breakpoint}four,
-        .#{$breakpoint}one-fifth.#{$breakpoint}one-fifth,
-        .#{$breakpoint}one-sixth.#{$breakpoint}one-sixth,
-        .#{$breakpoint}one-seventh.#{$breakpoint}one-seventh,
-        .#{$breakpoint}two.#{$breakpoint}two {
-          margin-right: 10px;
-          margin-left: 10px;
-        }
-        //Set new margins on right
-        .#{$breakpoint}one-half:nth-of-type(2n),
-        .#{$breakpoint}eight:nth-of-type(2n),
-        .#{$breakpoint}one-third:nth-of-type(3n),
-        .#{$breakpoint}one-fourth:nth-of-type(4n),
-        .#{$breakpoint}four:nth-of-type(4n),
-        .#{$breakpoint}one-fifth:nth-of-type(5n),
-        .#{$breakpoint}one-sixth:nth-of-type(6n),
-        .#{$breakpoint}one-seventh:nth-of-type(7n),
-        .#{$breakpoint}two:nth-of-type(8n) {
-          margin-right: 0;
-        }
-        //Set new margins on left
-        .#{$breakpoint}one-half:nth-of-type(2n + 1),
-        .#{$breakpoint}eight:nth-of-type(2n + 1),
-        .#{$breakpoint}one-third:nth-of-type(3n + 1),
-        .#{$breakpoint}one-fourth:nth-of-type(4n + 1),
-        .#{$breakpoint}four:nth-of-type(4n + 1),
-        .#{$breakpoint}one-fifth:nth-of-type(5n + 1),
-        .#{$breakpoint}one-sixth:nth-of-type(6n + 1),
-        .#{$breakpoint}one-seventh:nth-of-type(7n + 1),
-        .#{$breakpoint}two:nth-of-type(8n + 1) {
-          margin-left: 0;
-        }
-      }
-    }
-
-    @if $breakpoint == 'small-down--' {
-      @include respond-to('small-down') {
-        //Reset previous margins
-        .#{$breakpoint}one-half.#{$breakpoint}one-half,
-        .#{$breakpoint}eight.#{$breakpoint}eight,
-        .#{$breakpoint}one-third.#{$breakpoint}one-third,
-        .#{$breakpoint}one-fourth.#{$breakpoint}one-fourth,
-        .#{$breakpoint}four.#{$breakpoint}four,
-        .#{$breakpoint}one-fifth.#{$breakpoint}one-fifth,
-        .#{$breakpoint}one-sixth.#{$breakpoint}one-sixth,
-        .#{$breakpoint}one-seventh.#{$breakpoint}one-seventh,
-        .#{$breakpoint}two.#{$breakpoint}two {
-          margin-right: 10px;
-          margin-left: 10px;
-        }
-        //Set new margins on right
-        .#{$breakpoint}one-half:nth-of-type(2n),
-        .#{$breakpoint}eight:nth-of-type(2n),
-        .#{$breakpoint}one-third:nth-of-type(3n),
-        .#{$breakpoint}one-fourth:nth-of-type(4n),
-        .#{$breakpoint}four:nth-of-type(4n),
-        .#{$breakpoint}one-fifth:nth-of-type(5n),
-        .#{$breakpoint}one-sixth:nth-of-type(6n),
-        .#{$breakpoint}one-seventh:nth-of-type(7n),
-        .#{$breakpoint}two:nth-of-type(8n) {
-          margin-right: 0;
-        }
-        //Set new margins on left
-        .#{$breakpoint}one-half:nth-of-type(2n + 1),
-        .#{$breakpoint}eight:nth-of-type(2n + 1),
-        .#{$breakpoint}one-third:nth-of-type(3n + 1),
-        .#{$breakpoint}one-fourth:nth-of-type(4n + 1),
-        .#{$breakpoint}four:nth-of-type(4n + 1),
-        .#{$breakpoint}one-fifth:nth-of-type(5n + 1),
-        .#{$breakpoint}one-sixth:nth-of-type(6n + 1),
-        .#{$breakpoint}one-seventh:nth-of-type(7n + 1),
-        .#{$breakpoint}two:nth-of-type(8n + 1) {
-          margin-left: 0;
-        }
-      }
-    }
-
-    .#{$breakpoint}one-whole:nth-of-type(1n + 1) {
-      width: 100%;
-      margin-right: 0;
-      margin-left: 0;
-    }
-
-    .#{$breakpoint}one-half {
-      width: calc(#{percentage(1 * 0.5)} - (#{$gutter} - (#{$gutter} / 2)));
-    }
-    .#{$breakpoint}one-third {
-      width: calc(
-        #{percentage(math.div(1, 3))} - (#{$gutter} - (#{$gutter} / 3))
-      );
-    }
-    .#{$breakpoint}one-fifth {
-      width: calc(#{percentage(1 * 0.2)} - (#{$gutter} - (#{$gutter} / 5)));
-    }
-    .#{$breakpoint}one-fourth {
-      width: calc(#{percentage(1 * 0.25)} - (#{$gutter} - (#{$gutter} / 4)));
-    }
-    .#{$breakpoint}one-sixth {
-      width: calc(
-        #{percentage(math.div(1, 6))} - (#{$gutter} - (#{$gutter} / 6))
-      );
-    }
-    .#{$breakpoint}one-seventh {
-      width: calc(
-        #{percentage(math.div(1, 7))} - (#{$gutter} - (#{$gutter} / 7))
-      );
-    }
-
-    .#{$breakpoint}two {
-      width: calc(
-        #{percentage(math.div(2, 16))} - (#{$gutter} - (#{$gutter} / 8))
-      );
-    }
-    .#{$breakpoint}four {
-      width: calc(
-        #{percentage(math.div(4, 16))} - (#{$gutter} - (#{$gutter} / 4))
-      );
-    }
-    .#{$breakpoint}seven {
-      width: calc(
-        #{percentage(math.div(7, 16))} - (#{$gutter} - (#{$gutter} / 2))
-      );
-    }
-    .#{$breakpoint}eight {
-      width: calc(#{percentage(math.div(8, 16))} - (#{$gutter} / 2));
-    }
-    .#{$breakpoint}nine {
-      width: calc(
-        #{percentage(math.div(9, 16))} - (#{$gutter} - (#{$gutter} / 2))
-      );
-    }
-  }
 }
 
 @mixin grid-push-generator($breakpoint: '') {
@@ -536,34 +330,20 @@ $breakpoint-has-push: ($medium-down);
   position: relative;
   max-width: $site-width;
   margin: 0 auto;
+  padding: 0 ($gutter / 2);
 
-  @include respond-to('large-down') {
-    width: calc(90% + #{$gutter});
+  .container {
+    padding: 0;
   }
 
-  @include respond-to('small-down') {
-    width: calc(100% - 40px);
+  &:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: ' ';
+    clear: both;
+    height: 0;
   }
-}
-
-.container .container {
-  width: 100%;
-}
-
-[class*='offset-by'] {
-  position: relative;
-  @include respond-to('small-down') {
-    position: static;
-  }
-}
-
-.container:after {
-  visibility: hidden;
-  display: block;
-  font-size: 0;
-  content: ' ';
-  clear: both;
-  height: 0;
 }
 
 .column,
@@ -573,27 +353,6 @@ $breakpoint-has-push: ($medium-down);
   margin-left: calc(#{$gutter} / 2);
   margin-right: calc(#{$gutter} / 2);
   box-sizing: border-box;
-}
-
-.column:not([class*='small-down--one-half']),
-.columns:not([class*='small-down--one-half']) {
-  @include respond-to('small-down') {
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0;
-  }
-}
-
-.even {
-  @include respond-to('small-down') {
-    margin-left: 0;
-  }
-}
-
-.odd {
-  @include respond-to('small-down') {
-    margin-right: 0;
-  }
 }
 
 .flex-container {
@@ -610,6 +369,11 @@ $breakpoint-has-push: ($medium-down);
 }
 
 .row {
+  .row {
+    margin-right: -$gutter / 2;
+    margin-left: -$gutter / 2;
+  }
+
   &:after {
     visibility: hidden;
     display: block;
@@ -617,41 +381,6 @@ $breakpoint-has-push: ($medium-down);
     content: ' ';
     clear: both;
     height: 0;
-  }
-}
-
-//Can be used on inner div inside container element to apply borders (that maintain the same width as columns)
-.container-border--top::before {
-  display: block;
-  content: '';
-  height: 0;
-  width: calc(100% - #{$gutter});
-  border-top: thin solid $vm-border-color;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  float: left;
-  @include respond-to('small-down') {
-    width: 100%;
-  }
-}
-
-.container-border--bottom::after {
-  display: block;
-  content: '';
-  height: 0;
-  width: calc(100% - #{$gutter});
-  border-top: thin solid $vm-border-color;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  clear: both;
-  @include respond-to('small-down') {
-    width: 100%;
   }
 }
 

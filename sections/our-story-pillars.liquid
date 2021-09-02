@@ -1,40 +1,45 @@
-{% assign color_region = section.settings.color_region | default: "light-alt" %}
-
-<div class="content-section content-section--our-story--pillars color-region--{{ color_region }}">
-  <div class="container">
-    
-    <div class="row">
-      <div class="sixteen columns">
-        {% include "content-section.title" with {
-          title: section.settings.title | escape,
-          heading_align: "center"
-        } %}
-      </div>
+{% capture content %}
+<div class="container">
+  
+  <div class="row">
+    <div class="sixteen columns">
+      {% include "content-section.title" with {
+        title: section.settings.title,
+        heading_align: "center"
+      } %}
     </div>
-    
-
-    <div class="row">
-      {% for block in section.blocks %}
-        <div class="one-third columns">
-          <div class="our-story__pillar">
-            <div class="our-story__pillar__image-wrapper">
-              <img src="{{ block.settings.image | img_url : "300x" }}">
-            </div>
-
-            <h4>
-              {{ block.settings.title }}
-            </h4>
-
-            <p>
-              {{ block.settings.content }}
-            </p>
-          </div>
-        </div>
-      {% endfor %}
-    </div>
-
   </div>
+  
+
+  <div class="row">
+    {% for block in section.blocks %}
+      <div class="one-third columns">
+        <div class="our-story__pillar">
+          <div class="our-story__pillar__image-wrapper">
+            <img src="{{ block.settings.image | img_url : "300x" }}">
+          </div>
+
+          <h4>
+            {{ block.settings.title }}
+          </h4>
+
+          <p>
+            {{ block.settings.content }}
+          </p>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
 </div>
+{% encapture %}
+
+{% include "content-section" with {
+  content: content,
+  id: "our-story--pillars",
+  color_region: "light-alt"
+} %}
+
 {% schema %}
 {
   "name": "Our Pillars",

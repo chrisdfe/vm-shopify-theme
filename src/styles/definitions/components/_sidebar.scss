@@ -31,7 +31,7 @@
 
   @include respond-to('medium-down') {
     padding-right: 0;
-    margin: 0;
+    margin: 0 0 get-vm-spacer(3);
   }
 }
 

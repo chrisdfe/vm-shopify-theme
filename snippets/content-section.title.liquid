@@ -1,5 +1,5 @@
 {% assign heading_align = heading_align | default: "left" %}
-{% assign mobile_heading_align = mobile_heading_align | default: "left" %}
+{% assign mobile_heading_align = mobile_heading_align | default: heading_align %}
 {% assign with_accent = with_accent | default: true %}
 
 {% if anchor == blank %}
@@ -9,22 +9,35 @@
 <div
   class="content-section__heading
          content-section__heading--align-{{ heading_align }}
-         content-section__heading--mobile-align-{{ mobile_heading_align }}">
+         content-section__heading--mobile-align-{{ mobile_heading_align }}
+         {{ extra_classes }}">
   <div id="{{ anchor }}" class="content-section__anchor"></div>
 
   {% if pretext != blank %}
     <h5 class="content-section__heading__pretext u-margin-bottom-0">
-      pretext
+      {{ pretext }}
     </h5>
   {% endif %}
   
   <div class="content-section__heading__title-wrapper">
-    {% if title != blank %}
-      <h2
+    {% capture title_classes %}
+    content-section__heading__title
+    {% if with_accent %}heading--with-accent heading--with-accent--align-{{ heading_align }} heading--with-accent--mobile-align-{{ mobile_heading_align }}{% endif %}
+    {% endcapture %}
+
+    {% if title_tag == "h1" %}
+      <h1 class="{{ title_classes }}">{{ title }}</h1>
+    {% elsif title_tag == "h3" %}
+      <h3 class="{{ title_classes }}">{{ title }}</h3>
+    {% elsif title_tag == "h4" %}
+      <h4
         class="content-section__heading__title
-               {% if with_accent %}heading--with-accent heading--with-accent--align-{{ heading_align }} heading--with-accent--mobile-align-{{ mobile_heading_align }}{% endif %}">
+        content-section__heading__title--align-{{ heading_align }} 
+        content-section__heading__title--mobile-align-{{ mobile_heading_align }}">
         {{ title }}
-      </h2>
+      </h4>
+    {% else %}
+      <h2 class="{{ title_classes }}">{{ title }}</h2>
     {% endif %}
 
     {% if title_link != blank and title_link_text != blank %}
@@ -37,7 +50,7 @@
   
   {% if description != blank %}
     <p class="content-section__heading__description">
-      description
+      {{ description }}
     </p>
   {% endif %}
 </div>

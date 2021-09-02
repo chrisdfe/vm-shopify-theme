@@ -70,6 +70,7 @@
 <a name="pagecontent" id="pagecontent"></a>
 
 <div class="container">
+<div class="row">
    {% if collection.id == 35159113751 %}
  	 	{% comment %}<!-- Design Your Ring Pagination--> {% endcomment %}
         {% assign page_limit =  section.settings.pagination_limit_build %}
@@ -148,7 +149,7 @@
     </div>
     <div class="section clearfix">
       {% if section.settings.display_collection_title and section.settings.featured_collection_image == false %}
-        <div class="twelve columns">
+        <div class="twelve columns medium-down--one-whole">
           <div class="page-heading page-heading--with-breadcrumbs">
           	<h1 class="page-heading__title">{{ collection.title }}</h1>
           </div>
@@ -235,6 +236,7 @@
     </div>
   {% endpaginate %}
 
+  </div>
 </div>
 
 {% comment %} Shopify-XR {% endcomment %}

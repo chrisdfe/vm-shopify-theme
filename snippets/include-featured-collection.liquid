@@ -1,44 +1,35 @@
-{% assign title = section.settings.title %}
 {% assign settingCollection = section.settings.collection %}
-{% assign collection_style = section.settings.collection_style %}
-{% assign collection_description = section.settings.collection_description %}
 {% assign products_per = section.settings.products_per %}
 {% assign products_limit = section.settings.products_limit %}
 
 {% capture content %}
   <div class="container">
     <div class="row">
-      <div class="sixteen columns">
 
+      <div class="sixteen columns">
         {% include "content-section.title" with {
-          title: title,
+          title: section.settings.title,
           with_accent: false,
           title_link: collections[settingCollection].url,
-          title_link_text: "shop new arrivals",
+          title_link_text: "Shop New Arrivals",
           description: collections[settingCollection].description
         } %}
-
       </div>
+
     </div>
   </div>
 
-  {% assign limit = products_limit %}
-  {% assign collection = collections[settingCollection] %}
   {% assign products = collections[settingCollection].products %}
-  {% assign products_per_row = products_per %}
 
-  <div class="container">
-    <div class="row">
-      {% render 'product-loop',
-          limit: limit,
-          products: products,
-          products_per_row: products_per_row
-      %}
-    </div>
-  </div>
+  {% render 'product-loop',
+      limit: section.settings.products_limit,
+      products: products,
+      products_per_row: section.settings.products_per
+  %}
 {% endcapture %}
 
 {% include "content-section" with {
-  title: title,
-  content: content
+  title: section.settings.title,
+  content: content,
+  color_region: "light-alt"
 } %}

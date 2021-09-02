@@ -10,13 +10,17 @@
 
     <div class="eight columns medium-down--one-whole">
       <div class="content-section--image-text-columns__text-wrapper">
-        {% if title != blank %}
-        {% include "content-section.title" with {
-          title: title | escape,
-        } %}
-        {% endif %}
+        <div class="content-section--image-text-columns__text">
+          {% if title != blank %}
+            {% include "content-section.title" with {
+              title: title | escape,
+              id: id,
+              title_tag: title_tag
+            } %}
+          {% endif %}
 
-        {{ text_content }}
+          {{ text_content }}
+        </div>
       </div>
     </div>
 

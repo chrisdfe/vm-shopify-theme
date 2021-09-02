@@ -50,6 +50,10 @@
   // background: {{ settings.new_banner_color }};
 }
 
+.recommended-products__title {
+  margin-top: get-vm-spacer(3);
+}
+
 .product_links {
   @include vm-paragraph-3();
   border-top: 1px solid $vm-border-color;

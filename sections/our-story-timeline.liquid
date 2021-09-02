@@ -1,62 +1,68 @@
-<div class="content-section content-section--our-story--timeline color-region--dark">
-  <div class="container">
-    <div class="row">
-      <div class="twelve columns offset-by-two">
-        {% include "content-section.title" with {
-          title: section.settings.title | escape,
-          heading_align: "center",
-          mobile_heading_align: "left"
-        } %}
-      </div>
+{% capture content %}
+<div class="container">
+  <div class="row">
+    <div class="twelve columns offset-by-two">
+      {% include "content-section.title" with {
+        title: section.settings.title | escape,
+        heading_align: "center",
+        mobile_heading_align: "left"
+      } %}
     </div>
-    
-    <div class="row">
-      <div class="twelve columns offset-by-two">
-        <div class="our-story__timeline">
-          <div class="our-story__timeline-past-dots">
-            <div class="our-story__timeline-past-dots__dot"></div>
-            <div class="our-story__timeline-past-dots__dot"></div>
-            <div class="our-story__timeline-past-dots__dot"></div>
-          </div>
+  </div>
+  
+  <div class="row">
+    <div class="twelve columns offset-by-two">
+      <div class="our-story__timeline">
+        <div class="our-story__timeline-past-dots">
+          <div class="our-story__timeline-past-dots__dot"></div>
+          <div class="our-story__timeline-past-dots__dot"></div>
+          <div class="our-story__timeline-past-dots__dot"></div>
+        </div>
 
-          {% assign previous_year = null %}
-          {% for block in section.blocks %}
-            {% assign year = block.settings.title | abs %}
-            {% comment %}
-              Work out how much space to put between the previous timeline_event and this one
-            {% endcomment %}
+        {% assign previous_year = null %}
+        {% for block in section.blocks %}
+          {% assign year = block.settings.title | abs %}
+          {% comment %}
+            Work out how much space to put between the previous timeline_event and this one
+          {% endcomment %}
 
-            <div class="our-story__timeline-event
-              {% cycle 'our-story__timeline-event--odd', 'our-story__timeline-event--even' %}
-              ">
-              {% if previous_year %}
-              {% assign year_diff = year | minus: previous_year | minus: 1 %}
-              {% if year_diff > 0 %}
-                {% for i in (0..year_diff) %}
-                  <div class="our-story__timeline-event__year-spacer">
-                  </div>
-                {% endfor %}
-              {% endif %}
+          <div class="our-story__timeline-event
+            {% cycle 'our-story__timeline-event--odd', 'our-story__timeline-event--even' %}
+            ">
+            {% if previous_year %}
+            {% assign year_diff = year | minus: previous_year | minus: 1 %}
+            {% if year_diff > 0 %}
+              {% for i in (0..year_diff) %}
+                <div class="our-story__timeline-event__year-spacer">
+                </div>
+              {% endfor %}
             {% endif %}
-              <div class="our-story__timeline-event__body">
-                <h4 class="subheading-2">{{ year }}</h4>
-                <p class="paragraph-3">{{ block.settings.content }}</p>
-              </div>
+          {% endif %}
+            <div class="our-story__timeline-event__body">
+              <h4 class="subheading-2">{{ year }}</h4>
+              <p class="paragraph-3">{{ block.settings.content }}</p>
             </div>
-
-            {% assign previous_year = block.settings.title | abs %}
-          {% endfor %}
-
-          <div class="our-story__timeline-future-dots">
-            <div class="our-story__timeline-future-dots__dot"></div>
-            <div class="our-story__timeline-future-dots__dot"></div>
-            <div class="our-story__timeline-future-dots__dot"></div>
           </div>
+
+          {% assign previous_year = block.settings.title | abs %}
+        {% endfor %}
+
+        <div class="our-story__timeline-future-dots">
+          <div class="our-story__timeline-future-dots__dot"></div>
+          <div class="our-story__timeline-future-dots__dot"></div>
+          <div class="our-story__timeline-future-dots__dot"></div>
         </div>
       </div>
     </div>
   </div>
 </div>
+{% endcapture %}
+
+{% include "content-section" with {
+  id: "timeline",
+  content: content,
+  color_region: "dark",
+} %}
 
 
 {% schema %}

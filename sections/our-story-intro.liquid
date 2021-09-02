@@ -1,20 +1,28 @@
-{% assign color_region = section.settings.color_region | default: "dark" %}
+{% capture content %}
+<div class="container">
+  <div class="row">
 
-<div class="content-section content-section--our-story--intro color-region--{{ color_region }}">
-  <div class="container">
-    <div class="row">
-      <div class="twelve columns medium-down--one-whole medium-down--offset-by-zero">
-        <h1 class="heading--with-accent u-margin-bottom-5">{{ section.settings.title }}</h1>
+    <div class="ten columns medium-down--one-whole medium-down--offset-by-zero">
+      {% include "content-section.title", with {
+        title: section.settings.title,
+        title_tag: "h1",
+      } %}
 
-        <p class="paragraph--block-text">{{ section.settings.content }}</p>
+      <p class="paragraph--block-text">{{ section.settings.content }}</p>
 
-        <!-- <div class="icon-wrapper">
-          <img src="{{ section.settings.icon | img_url : "300x" }}">
-        </div> -->
-      </div>
+      <!-- <div class="icon-wrapper">
+        <img src="{{ section.settings.icon | img_url : "300x" }}">
+      </div> -->
     </div>
   </div>
 </div>
+{% endcapture %}
+
+{% include "content-section" with {
+  content: content,
+  id: "our-story--intro",
+  color_region: "dark"
+} %}
 
 {% schema %}
 {

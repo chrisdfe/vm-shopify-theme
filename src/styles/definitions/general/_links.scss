@@ -14,14 +14,8 @@ a:focus {
   color: $vm-link-hover-color;
 }
 
-.content {
-  a {
-    text-decoration: underline;
-  }
-
-  #pagecontent {
-    border-bottom: 0;
-  }
+p a {
+  text-decoration: underline;
 }
 
 a,
