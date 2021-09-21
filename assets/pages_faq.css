@@ -45,21 +45,6 @@
 ================================================== */
 /* Mixins - typography
 ================================================== */
-.page-faq .page-heading {
-  padding: 10rem 0;
-}
-.page-faq .page-heading__title {
-  text-align: center;
-}
-.page-faq .row {
-  margin-bottom: 0;
-}
-@media only screen and (max-width: 800px) {
-  .page-faq .page-heading {
-    padding: 5rem 0;
-  }
-}
-
 .content-section.content-section--faq {
   padding-top: 0;
   padding-bottom: 5rem;

@@ -1365,7 +1365,7 @@ h5,
 h6,
 .subheading-3 {
   font-family: poppins, sans-serif;
-  font-size: 12px;
+  font-size: 13px;
   letter-spacing: 0.06em;
   line-height: 1.4;
   text-transform: uppercase;
@@ -1676,7 +1676,7 @@ a.cta-link:hover {
   border-bottom-color: #dec1a8;
 }
 a.cta-link.cta-link-3 {
-  font-size: 12px;
+  font-size: 13px;
   letter-spacing: 0.06em;
 }
 a.cta-link.cta-link--inverted {
@@ -1962,7 +1962,7 @@ legend,
   text-align: left;
   margin-bottom: 8px;
   font-family: poppins, sans-serif;
-  font-size: 12px;
+  font-size: 13px;
   letter-spacing: 0.06em;
   line-height: 1.4;
   text-transform: uppercase;
@@ -2574,7 +2574,7 @@ span.icon-down-arrow {
 *[class^=klaviyo-form] input,
 *[class^=klaviyo-form] button {
   font-family: poppins, sans-serif !important;
-  font-size: 12px !important;
+  font-size: 13px !important;
   letter-spacing: 0.06em !important;
 }
 *[class^=klaviyo-form] input {
@@ -8405,7 +8405,7 @@ footer .social_icons a {
 .breadcrumb_text,
 .article-pagination {
   font-family: poppins, sans-serif;
-  font-size: 12px;
+  font-size: 13px;
   letter-spacing: 0.06em;
   line-height: 1.4;
   text-transform: uppercase;
@@ -12298,7 +12298,7 @@ div.container.gallery-content {
   }
   .content-section__heading__title-wrapper .content-section__heading__title-link {
     font-family: poppins, sans-serif;
-    font-size: 12px;
+    font-size: 13px;
     letter-spacing: 0.06em;
     line-height: 1.4;
     text-transform: uppercase;

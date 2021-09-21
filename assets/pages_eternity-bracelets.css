@@ -127,3 +127,10 @@
     display: none;
   }
 }
+
+.content-section.content-section--upcoming-dates table {
+  table-layout: fixed;
+}
+.content-section.content-section--upcoming-dates table td {
+  vertical-align: top;
+}

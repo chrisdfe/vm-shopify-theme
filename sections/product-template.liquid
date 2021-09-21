@@ -288,49 +288,51 @@
           {% endif %}
 
           <div class="container">
-            {% if block.settings.column_details_left %}
-              <div class="{{ column_class }} columns">
-                <div class="photo_block">
-                  {% if block.settings.column_header_left %}
-                    <div class="icon_header">
-                	    {% if block.settings.column_icon_left %}
-                				{{ block.settings.column_icon_left | img_url: '80x80' | img_tag:block.settings.column_header_left }}
-                      {% endif %}
+            <div class="row">
+              {% if block.settings.column_details_left %}
+                <div class="{{ column_class }} columns">
+                  <div class="photo_block">
+                    {% if block.settings.column_header_left %}
+                      <div class="icon_header">
+                        {% if block.settings.column_icon_left %}
+                          {{ block.settings.column_icon_left | img_url: '80x80' | img_tag:block.settings.column_header_left }}
+                        {% endif %}
 
-                      <h3>
-                        {{ block.settings.column_header_left | escape }}
-                      </h3>
-                    </div>
-                  {% endif %}
+                        <h3>
+                          {{ block.settings.column_header_left | escape }}
+                        </h3>
+                      </div>
+                    {% endif %}
 
-                  <p>
-                    {{ block.settings.column_details_left }}
-                  </p>
+                    <p>
+                      {{ block.settings.column_details_left }}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            {% endif %}
-              
-            {% if block.settings.column_details_right %}
-              <div class="{{ column_class }} columns">
-                <div class="photo_block">
-                  {% if block.settings.column_header_right %}
-                    <div class="icon_header">
-                  	 {% if block.settings.column_icon_right %}
-            				    {{ block.settings.column_icon_right | img_url: '80x80'  | img_tag:block.settings.column_header_right }}
-                      {% endif %}
+              {% endif %}
+                
+              {% if block.settings.column_details_right %}
+                <div class="{{ column_class }} columns">
+                  <div class="photo_block">
+                    {% if block.settings.column_header_right %}
+                      <div class="icon_header">
+                      {% if block.settings.column_icon_right %}
+                          {{ block.settings.column_icon_right | img_url: '80x80'  | img_tag:block.settings.column_header_right }}
+                        {% endif %}
 
-                      <h3>
-                        {{ block.settings.column_header_right | escape }}
-                      </h3>
-                    </div>
-                  {% endif %}
+                        <h3>
+                          {{ block.settings.column_header_right | escape }}
+                        </h3>
+                      </div>
+                    {% endif %}
 
-                  <p>
-                    {{ block.settings.column_details_right }}
-                  </p>
+                    <p>
+                      {{ block.settings.column_details_right }}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            {% endif %}
+              {% endif %}
+            </div>
           </div>
             
         </div>

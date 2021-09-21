@@ -4,26 +4,6 @@
 @import '../_variables.scss';
 @import '../_mixins.scss';
 
-.page-faq {
-  .page-heading {
-    padding: 10rem 0;
-  }
-
-  .page-heading__title {
-    text-align: center;
-  }
-
-  .row {
-    margin-bottom: 0;
-  }
-
-  @include respond-to('medium-down') {
-    .page-heading {
-      padding: 5rem 0;
-    }
-  }
-}
-
 .content-section.content-section--faq {
   padding-top: 0;
   padding-bottom: 5rem;

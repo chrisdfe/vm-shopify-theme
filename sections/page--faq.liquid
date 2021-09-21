@@ -35,11 +35,11 @@
     <div class="row">
       <div class="sixteen columns">
 
-        <div class="page-heading">
-          <h1 class="page-heading__title page-heading__title--no-accent">
-            {{ page.title }}
-          </h1>
-        </div>
+        {% render "page-heading" with {
+          title: page.title,
+          align: "center",
+          with_banner_padding: true
+        } %}
 
       </div>
     </div>

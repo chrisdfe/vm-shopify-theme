@@ -4,16 +4,17 @@
     <div class="eight columns offset-by-four medium-down--one-whole medium-down--offset-by-zero">
       {% render "content-section.title" with {
         title: section.settings.title,
+        heading_align: "center"
       } %}
       
-      <p class="paragraph--block-text">
+      <p class="paragraph--block-text u-text-align-center">
         {{ section.settings.description }}
       </p>
     </div>
 
     <div class="eight columns offset-by-four medium-down--one-whole medium-down--offset-by-zero">
 
-        <table>
+        <table class="upcoming-dates-table">
           {% for block in section.blocks %}
           <tr>
             <td>

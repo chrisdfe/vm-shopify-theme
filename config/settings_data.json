@@ -182,25 +182,6 @@
             "menu_top_padding": 10
           }
         },
-        "1489283389016": {
-          "type": "image-with-text-overlay",
-          "settings": {
-            "image": "",
-            "pretext": "<p>Introducing the<\/p>",
-            "title": "Turbo Shopify Theme",
-            "subtitle": "<p>From Out of the Sandbox<\/p>",
-            "caption_background": false,
-            "caption_background_transparency": false,
-            "button1": "",
-            "button1_link": "",
-            "button1_highlight": false,
-            "button2": "",
-            "button2_link": "",
-            "button2_highlight": false,
-            "text_position": "center",
-            "text_align": "center"
-          }
-        },
         "1489283660007": {
           "type": "featured-text",
           "settings": {
@@ -221,9 +202,7 @@
               "settings": {
                 "image": "",
                 "link": "",
-                "title": "Feature",
-                "text": "<p>Promotion description details.<\/p>",
-                "button_label": ""
+                "title": "Feature"
               }
             },
             "1489283737905-1": {
@@ -231,9 +210,7 @@
               "settings": {
                 "image": "",
                 "link": "",
-                "title": "Feature",
-                "text": "<p>Promotion description details.<\/p>",
-                "button_label": ""
+                "title": "Feature"
               }
             },
             "1489283737905-2": {
@@ -241,9 +218,7 @@
               "settings": {
                 "image": "",
                 "link": "",
-                "title": "Feature",
-                "text": "<p>Promotion description details.<\/p>",
-                "button_label": ""
+                "title": "Feature"
               }
             },
             "1489283758712": {
@@ -251,9 +226,7 @@
               "settings": {
                 "image": "",
                 "link": "",
-                "title": "Feature",
-                "text": "<p>Promotion description details.<\/p>",
-                "button_label": ""
+                "title": "Feature"
               }
             }
           },
@@ -279,57 +252,6 @@
             "collection_style": "slider",
             "products_per": 4,
             "products_limit": 24
-          }
-        },
-        "1489284503681": {
-          "type": "image-text",
-          "blocks": {
-            "1489284503681-0": {
-              "type": "image",
-              "settings": {
-                "image": "",
-                "title": "Your headline",
-                "text": "<p>Promotion description appears here.<\/p>",
-                "button_label": "View all",
-                "link": ""
-              }
-            },
-            "1489284503681-1": {
-              "type": "image",
-              "settings": {
-                "image": "",
-                "title": "Your headline",
-                "text": "<p>Promotion description appears here.<\/p>",
-                "button_label": "View all",
-                "link": ""
-              }
-            }
-          },
-          "block_order": [
-            "1489284503681-0",
-            "1489284503681-1"
-          ],
-          "settings": {
-            "featured_links_per_row": "1"
-          }
-        },
-        "1489284533457": {
-          "type": "image-with-text-overlay",
-          "settings": {
-            "image": "",
-            "pretext": "",
-            "title": "Your Headline",
-            "subtitle": "",
-            "caption_background": false,
-            "caption_background_transparency": false,
-            "button1": "",
-            "button1_link": "",
-            "button1_highlight": false,
-            "button2": "",
-            "button2_link": "",
-            "button2_highlight": false,
-            "text_position": "center",
-            "text_align": "center"
           }
         },
         "1489285116594": {
@@ -502,12 +424,9 @@
         }
       },
       "content_for_index": [
-        "1489283389016",
         "1489283660007",
         "1489283737905",
         "1489283919239",
-        "1489284503681",
-        "1489284533457",
         "1489285116594",
         "1489285524898",
         "1489285174583",
@@ -754,25 +673,6 @@
             "menu_top_padding": 12
           }
         },
-        "1489283389016": {
-          "type": "image-with-text-overlay",
-          "settings": {
-            "image": "",
-            "pretext": "<p>Introducing the<\/p>",
-            "title": "Turbo Shopify Theme",
-            "subtitle": "<p>From Out of the Sandbox<\/p>",
-            "caption_background": false,
-            "caption_background_transparency": false,
-            "button1": "",
-            "button1_link": "",
-            "button1_highlight": false,
-            "button2": "",
-            "button2_link": "",
-            "button2_highlight": false,
-            "text_position": "center",
-            "text_align": "center"
-          }
-        },
         "1489283660007": {
           "type": "featured-text",
           "settings": {
@@ -793,9 +693,7 @@
               "settings": {
                 "image": "",
                 "link": "",
-                "title": "Feature",
-                "text": "<p>Promotion description details.<\/p>",
-                "button_label": ""
+                "title": "Feature"
               }
             },
             "1489283737905-1": {
@@ -803,9 +701,7 @@
               "settings": {
                 "image": "",
                 "link": "",
-                "title": "Feature",
-                "text": "<p>Promotion description details.<\/p>",
-                "button_label": ""
+                "title": "Feature"
               }
             },
             "1489283737905-2": {
@@ -813,9 +709,7 @@
               "settings": {
                 "image": "",
                 "link": "",
-                "title": "Feature",
-                "text": "<p>Promotion description details.<\/p>",
-                "button_label": ""
+                "title": "Feature"
               }
             },
             "1489283758712": {
@@ -823,9 +717,7 @@
               "settings": {
                 "image": "",
                 "link": "",
-                "title": "Feature",
-                "text": "<p>Promotion description details.<\/p>",
-                "button_label": ""
+                "title": "Feature"
               }
             }
           },
@@ -851,57 +743,6 @@
             "collection_style": "slider",
             "products_per": 4,
             "products_limit": 24
-          }
-        },
-        "1489284503681": {
-          "type": "image-text",
-          "blocks": {
-            "1489284503681-0": {
-              "type": "image",
-              "settings": {
-                "image": "",
-                "title": "Your headline",
-                "text": "<p>Promotion description appears here.<\/p>",
-                "button_label": "View all",
-                "link": ""
-              }
-            },
-            "1489284503681-1": {
-              "type": "image",
-              "settings": {
-                "image": "",
-                "title": "Your headline",
-                "text": "<p>Promotion description appears here.<\/p>",
-                "button_label": "View all",
-                "link": ""
-              }
-            }
-          },
-          "block_order": [
-            "1489284503681-0",
-            "1489284503681-1"
-          ],
-          "settings": {
-            "featured_links_per_row": "1"
-          }
-        },
-        "1489284533457": {
-          "type": "image-with-text-overlay",
-          "settings": {
-            "image": "",
-            "pretext": "",
-            "title": "Your Headline",
-            "subtitle": "",
-            "caption_background": false,
-            "caption_background_transparency": false,
-            "button1": "",
-            "button1_link": "",
-            "button1_highlight": false,
-            "button2": "",
-            "button2_link": "",
-            "button2_highlight": false,
-            "text_position": "center",
-            "text_align": "center"
           }
         },
         "1489285116594": {
@@ -1074,12 +915,9 @@
         }
       },
       "content_for_index": [
-        "1489283389016",
         "1489283660007",
         "1489283737905",
         "1489283919239",
-        "1489284503681",
-        "1489284533457",
         "1489285116594",
         "1489285524898",
         "1489285174583",
@@ -1275,25 +1113,6 @@
             "menu_top_padding": 12
           }
         },
-        "1489283389016": {
-          "type": "image-with-text-overlay",
-          "settings": {
-            "image": "",
-            "pretext": "<p>Introducing the<\/p>",
-            "title": "Turbo Shopify Theme",
-            "subtitle": "<p>From Out of the Sandbox<\/p>",
-            "caption_background": false,
-            "caption_background_transparency": false,
-            "button1": "",
-            "button1_link": "",
-            "button1_highlight": false,
-            "button2": "",
-            "button2_link": "",
-            "button2_highlight": false,
-            "text_position": "center",
-            "text_align": "center"
-          }
-        },
         "1489283660007": {
           "type": "featured-text",
           "settings": {
@@ -1314,9 +1133,7 @@
               "settings": {
                 "image": "",
                 "link": "",
-                "title": "Feature",
-                "text": "<p>Promotion description details.<\/p>",
-                "button_label": ""
+                "title": "Feature"
               }
             },
             "1489283737905-1": {
@@ -1324,9 +1141,7 @@
               "settings": {
                 "image": "",
                 "link": "",
-                "title": "Feature",
-                "text": "<p>Promotion description details.<\/p>",
-                "button_label": ""
+                "title": "Feature"
               }
             },
             "1489283737905-2": {
@@ -1334,9 +1149,7 @@
               "settings": {
                 "image": "",
                 "link": "",
-                "title": "Feature",
-                "text": "<p>Promotion description details.<\/p>",
-                "button_label": ""
+                "title": "Feature"
               }
             },
             "1489283758712": {
@@ -1344,9 +1157,7 @@
               "settings": {
                 "image": "",
                 "link": "",
-                "title": "Feature",
-                "text": "<p>Promotion description details.<\/p>",
-                "button_label": ""
+                "title": "Feature"
               }
             }
           },
@@ -1372,57 +1183,6 @@
             "collection_style": "slider",
             "products_per": 4,
             "products_limit": 24
-          }
-        },
-        "1489284503681": {
-          "type": "image-text",
-          "blocks": {
-            "1489284503681-0": {
-              "type": "image",
-              "settings": {
-                "image": "",
-                "title": "Your headline",
-                "text": "<p>Promotion description appears here.<\/p>",
-                "button_label": "View all",
-                "link": ""
-              }
-            },
-            "1489284503681-1": {
-              "type": "image",
-              "settings": {
-                "image": "",
-                "title": "Your headline",
-                "text": "<p>Promotion description appears here.<\/p>",
-                "button_label": "View all",
-                "link": ""
-              }
-            }
-          },
-          "block_order": [
-            "1489284503681-0",
-            "1489284503681-1"
-          ],
-          "settings": {
-            "featured_links_per_row": "1"
-          }
-        },
-        "1489284533457": {
-          "type": "image-with-text-overlay",
-          "settings": {
-            "image": "",
-            "pretext": "",
-            "title": "Your Headline",
-            "subtitle": "",
-            "caption_background": false,
-            "caption_background_transparency": false,
-            "button1": "",
-            "button1_link": "",
-            "button1_highlight": false,
-            "button2": "",
-            "button2_link": "",
-            "button2_highlight": false,
-            "text_position": "center",
-            "text_align": "center"
           }
         },
         "1489285116594": {
@@ -1595,12 +1355,9 @@
         }
       },
       "content_for_index": [
-        "1489283389016",
         "1489283660007",
         "1489283737905",
         "1489283919239",
-        "1489284503681",
-        "1489284533457",
         "1489285116594",
         "1489285524898",
         "1489285174583",
@@ -1798,25 +1555,6 @@
             "menu_top_padding": 10
           }
         },
-        "1489283389016": {
-          "type": "image-with-text-overlay",
-          "settings": {
-            "image": "",
-            "pretext": "<p>Introducing the<\/p>",
-            "title": "Turbo Shopify Theme",
-            "subtitle": "<p>From Out of the Sandbox<\/p>",
-            "caption_background": false,
-            "caption_background_transparency": false,
-            "button1": "",
-            "button1_link": "",
-            "button1_highlight": false,
-            "button2": "",
-            "button2_link": "",
-            "button2_highlight": false,
-            "text_position": "center",
-            "text_align": "center"
-          }
-        },
         "1489283660007": {
           "type": "featured-text",
           "settings": {
@@ -1837,9 +1575,7 @@
               "settings": {
                 "image": "",
                 "link": "",
-                "title": "Feature",
-                "text": "<p>Promotion description details.<\/p>",
-                "button_label": ""
+                "title": "Feature"
               }
             },
             "1489283737905-1": {
@@ -1847,9 +1583,7 @@
               "settings": {
                 "image": "",
                 "link": "",
-                "title": "Feature",
-                "text": "<p>Promotion description details.<\/p>",
-                "button_label": ""
+                "title": "Feature"
               }
             },
             "1489283737905-2": {
@@ -1857,9 +1591,7 @@
               "settings": {
                 "image": "",
                 "link": "",
-                "title": "Feature",
-                "text": "<p>Promotion description details.<\/p>",
-                "button_label": ""
+                "title": "Feature"
               }
             },
             "1489283758712": {
@@ -1867,9 +1599,7 @@
               "settings": {
                 "image": "",
                 "link": "",
-                "title": "Feature",
-                "text": "<p>Promotion description details.<\/p>",
-                "button_label": ""
+                "title": "Feature"
               }
             }
           },
@@ -1895,57 +1625,6 @@
             "collection_style": "slider",
             "products_per": 4,
             "products_limit": 24
-          }
-        },
-        "1489284503681": {
-          "type": "image-text",
-          "blocks": {
-            "1489284503681-0": {
-              "type": "image",
-              "settings": {
-                "image": "",
-                "title": "Your headline",
-                "text": "<p>Promotion description appears here.<\/p>",
-                "button_label": "View all",
-                "link": ""
-              }
-            },
-            "1489284503681-1": {
-              "type": "image",
-              "settings": {
-                "image": "",
-                "title": "Your headline",
-                "text": "<p>Promotion description appears here.<\/p>",
-                "button_label": "View all",
-                "link": ""
-              }
-            }
-          },
-          "block_order": [
-            "1489284503681-0",
-            "1489284503681-1"
-          ],
-          "settings": {
-            "featured_links_per_row": "1"
-          }
-        },
-        "1489284533457": {
-          "type": "image-with-text-overlay",
-          "settings": {
-            "image": "",
-            "pretext": "",
-            "title": "Your Headline",
-            "subtitle": "",
-            "caption_background": false,
-            "caption_background_transparency": false,
-            "button1": "",
-            "button1_link": "",
-            "button1_highlight": false,
-            "button2": "",
-            "button2_link": "",
-            "button2_highlight": false,
-            "text_position": "center",
-            "text_align": "center"
           }
         },
         "1489285116594": {
@@ -2118,12 +1797,9 @@
         }
       },
       "content_for_index": [
-        "1489283389016",
         "1489283660007",
         "1489283737905",
         "1489283919239",
-        "1489284503681",
-        "1489284533457",
         "1489285116594",
         "1489285524898",
         "1489285174583",
@@ -2328,25 +2004,6 @@
             "menu_top_padding": 10
           }
         },
-        "1489283389016": {
-          "type": "image-with-text-overlay",
-          "settings": {
-            "image": "",
-            "pretext": "<p>Introducing the<\/p>",
-            "title": "Turbo Shopify Theme",
-            "subtitle": "<p>From Out of the Sandbox<\/p>",
-            "caption_background": false,
-            "caption_background_transparency": false,
-            "button1": "",
-            "button1_link": "",
-            "button1_highlight": false,
-            "button2": "",
-            "button2_link": "",
-            "button2_highlight": false,
-            "text_position": "center",
-            "text_align": "center"
-          }
-        },
         "1489283660007": {
           "type": "featured-text",
           "settings": {
@@ -2367,9 +2024,7 @@
               "settings": {
                 "image": "",
                 "link": "",
-                "title": "Feature",
-                "text": "<p>Promotion description details.<\/p>",
-                "button_label": ""
+                "title": "Feature"
               }
             },
             "1489283737905-1": {
@@ -2377,9 +2032,7 @@
               "settings": {
                 "image": "",
                 "link": "",
-                "title": "Feature",
-                "text": "<p>Promotion description details.<\/p>",
-                "button_label": ""
+                "title": "Feature"
               }
             },
             "1489283737905-2": {
@@ -2387,9 +2040,7 @@
               "settings": {
                 "image": "",
                 "link": "",
-                "title": "Feature",
-                "text": "<p>Promotion description details.<\/p>",
-                "button_label": ""
+                "title": "Feature"
               }
             },
             "1489283758712": {
@@ -2397,9 +2048,7 @@
               "settings": {
                 "image": "",
                 "link": "",
-                "title": "Feature",
-                "text": "<p>Promotion description details.<\/p>",
-                "button_label": ""
+                "title": "Feature"
               }
             }
           },
@@ -2425,57 +2074,6 @@
             "collection_style": "slider",
             "products_per": 4,
             "products_limit": 24
-          }
-        },
-        "1489284503681": {
-          "type": "image-text",
-          "blocks": {
-            "1489284503681-0": {
-              "type": "image",
-              "settings": {
-                "image": "",
-                "title": "Your headline",
-                "text": "<p>Promotion description appears here.<\/p>",
-                "button_label": "View all",
-                "link": ""
-              }
-            },
-            "1489284503681-1": {
-              "type": "image",
-              "settings": {
-                "image": "",
-                "title": "Your headline",
-                "text": "<p>Promotion description appears here.<\/p>",
-                "button_label": "View all",
-                "link": ""
-              }
-            }
-          },
-          "block_order": [
-            "1489284503681-0",
-            "1489284503681-1"
-          ],
-          "settings": {
-            "featured_links_per_row": "1"
-          }
-        },
-        "1489284533457": {
-          "type": "image-with-text-overlay",
-          "settings": {
-            "image": "",
-            "pretext": "",
-            "title": "Your Headline",
-            "subtitle": "",
-            "caption_background": false,
-            "caption_background_transparency": false,
-            "button1": "",
-            "button1_link": "",
-            "button1_highlight": false,
-            "button2": "",
-            "button2_link": "",
-            "button2_highlight": false,
-            "text_position": "center",
-            "text_align": "center"
           }
         },
         "1489285116594": {
@@ -2648,12 +2246,9 @@
         }
       },
       "content_for_index": [
-        "1489283389016",
         "1489283660007",
         "1489283737905",
         "1489283919239",
-        "1489284503681",
-        "1489284533457",
         "1489285116594",
         "1489285524898",
         "1489285174583",
@@ -3419,43 +3014,31 @@
           "1553110251439-0": {
             "type": "text_block",
             "settings": {
-              "enable_image": true,
               "image": "shopify:\/\/shop_images\/Malaya_Garnet.jpeg",
               "title": "Ipsum Lorem ring",
-              "heading_size": "regular_text",
               "text": "",
-              "button_label": "",
-              "button_link": "",
-              "align_text": "center",
-              "border_style": "none"
+              "cta_link": "",
+              "cta_text": "Read More"
             }
           },
           "1553110251439-1": {
             "type": "text_block",
             "settings": {
-              "enable_image": true,
               "image": "shopify:\/\/shop_images\/VAL_4334.JPG",
               "title": "ipsum lorem ring",
-              "heading_size": "regular_text",
               "text": "",
-              "button_label": "",
-              "button_link": "",
-              "align_text": "center",
-              "border_style": "none"
+              "cta_link": "",
+              "cta_text": "Read More"
             }
           },
           "1553299988957": {
             "type": "text_block",
             "settings": {
-              "enable_image": true,
               "image": "shopify:\/\/shop_images\/Tiny-open-circle-studs-yellow-gold.jpg",
               "title": "ipsum lorem earrings",
-              "heading_size": "regular_text",
               "text": "",
-              "button_label": "",
-              "button_link": "",
-              "align_text": "center",
-              "border_style": "none"
+              "cta_link": "",
+              "cta_text": "Read More"
             }
           }
         },
@@ -3465,7 +3048,8 @@
           "1553299988957"
         ],
         "settings": {
-          "title": "New Favorites"
+          "title": "New Favorites",
+          "column_width": 3
         }
       },
       "list-collections-template": {
@@ -3479,30 +3063,6 @@
           "collections_per_row": 3,
           "pagination_limit": 18,
           "toggle": false
-        }
-      },
-      "1553283236579": {
-        "type": "image-with-text-overlay",
-        "disabled": true,
-        "settings": {
-          "wide_display": true,
-          "image": "shopify:\/\/shop_images\/Arias-and-Evas.jpg",
-          "pretext": "",
-          "title": "Customize",
-          "subtitle": "<p>Let's create something beautiful together. <\/p>",
-          "caption_background": true,
-          "caption_background_transparency": false,
-          "button1": "Let's Get Started",
-          "button1_link": "shopify:\/\/pages\/custom",
-          "button1_highlight": true,
-          "button2": "",
-          "button2_link": "",
-          "button2_highlight": false,
-          "text_position": "center",
-          "text_align": "center",
-          "mobile_image_crop": "none",
-          "mobile_text_below_image": true,
-          "mobile_text_color": ""
         }
       },
       "1553466079804": {
@@ -3603,216 +3163,6 @@
           "gallery_type": "horizontal",
           "grid-size": 4,
           "enable_lightbox": true
-        }
-      },
-      "page-faq-template": {
-        "type": "page-faq-template",
-        "blocks": {
-          "page-faq-template-0": {
-            "type": "heading",
-            "settings": {
-              "heading": "Order Information"
-            }
-          },
-          "1563310564266": {
-            "type": "Content",
-            "settings": {
-              "title": "Do you offer financing?",
-              "subtitle": "<p>Yes, we <a href=\"\/pages\/financing-and-payment-plans\" title=\"Financing and Payment Plans\">partner with Affirm<\/a> to provide 3, 6, or 12 month financing options on items listed on the website.&nbsp;<\/p>"
-            }
-          },
-          "page-faq-template-2": {
-            "type": "Content",
-            "settings": {
-              "title": "When will my order ship?",
-              "subtitle": "<p>Every item in our shop has current production times listed within the description. These dates are an accurate time frame for when to expect your order to be&nbsp;shipped by based on the day you purchase. The shipping speed depends on the option you select during checkout. If you require your item to be delivered by a specific day, we recommend letting us know in the order notes or reach out to us via email at hello@valeriemadison.com<\/p>"
-            }
-          },
-          "page-faq-template-1": {
-            "type": "Content",
-            "settings": {
-              "title": "How do I know if my order has been shipped?",
-              "subtitle": "<p>A shipping email confirmation will be sent when your order has shipped. This confirmation will include the tracking number for your package. Please allow up to 48 hours for the tracking information to be updated in the tracking link provided.<\/p>"
-            }
-          },
-          "1553476721297": {
-            "type": "Content",
-            "settings": {
-              "title": "I live in the Seattle area; can I pick up my order when it's finished?",
-              "subtitle": "<p>Yes! You can choose in-store pickup at checkout. You'll be asked to choose a pick-up time when your order is complete.<\/p>"
-            }
-          },
-          "page-faq-template-3": {
-            "type": "Content",
-            "settings": {
-              "title": "Can I modify my order?",
-              "subtitle": "<p>Please contact us immediately to see if we can change your order.&nbsp;<\/p>"
-            }
-          },
-          "page-faq-template-5": {
-            "type": "Content",
-            "settings": {
-              "title": "What is the return policy?",
-              "subtitle": "<p>View our full return policy&nbsp;<a href=\"https:\/\/www.valeriemadison.com\/pages\/returns-exchanges\" title=\"https:\/\/www.valeriemadison.com\/pages\/returns-exchanges\">here<\/a>.<\/p>"
-            }
-          },
-          "page-faq-template-4": {
-            "type": "heading",
-            "settings": {
-              "heading": "General"
-            }
-          },
-          "1555605714275": {
-            "type": "Content",
-            "settings": {
-              "title": "Do you have a store front?",
-              "subtitle": "<p>We are opening a store in the Seattle neighborhood of Madrona very soon!&nbsp;<\/p>"
-            }
-          },
-          "1553475582583": {
-            "type": "Content",
-            "settings": {
-              "title": "How do I find out my ring size?",
-              "subtitle": "<p>For the most accurate size, <a href=\"\/pages\/visit-us\" title=\"Studio Appointments\">visit our studio<\/a>. If you're unable to visit we&nbsp;sell the second closest thing: the same <a href=\"\/products\/ring-sizers\" title=\"Ring Sizers\">ring sizers<\/a> we use in-house.&nbsp;<\/p>"
-            }
-          },
-          "1555604150230": {
-            "type": "Content",
-            "settings": {
-              "title": "Do you offer resizing?",
-              "subtitle": "<p><strong>We offer resizing for VM rings only.<\/strong> Resizing may not be available for all styles and a fee&nbsp;may be charged (usually between $25-$75). Contact us&nbsp;before purchasing one-of-a-kind rings if you think you may need resizing later and we're happy to&nbsp;let you know what's possible.<\/p>"
-            }
-          },
-          "1555604280355": {
-            "type": "Content",
-            "settings": {
-              "title": "What if I don't see my ring size listed?",
-              "subtitle": "<p>Please don't hesitate to reach out if you don't see your ring size available. We can&nbsp;certainly accommodate most sizes as a custom order.&nbsp;<\/p>"
-            }
-          },
-          "1553476112327": {
-            "type": "Content",
-            "settings": {
-              "title": "Do you offer appraisals?",
-              "subtitle": "<p>Appraisals are available for $150. They are conducted by <a href=\"http:\/\/gemcsi.com\/\" title=\"http:\/\/gemcsi.com\/\">Seattle's top independent jewelry appraiser<\/a>. Let us know if you would like your ring appraised and we can do this for you on your behalf and&nbsp;will send an invoice.&nbsp;<\/p>"
-            }
-          },
-          "1553476539291": {
-            "type": "Content",
-            "settings": {
-              "title": "Do you offer a warranty?",
-              "subtitle": "<p>Of course!&nbsp;You can read more information <a href=\"https:\/\/www.valeriemadison.com\/pages\/jewelry-care-warranty\" title=\"https:\/\/www.valeriemadison.com\/pages\/jewelry-care-warranty\">here<\/a>.<\/p>"
-            }
-          },
-          "1555894478330": {
-            "type": "Content",
-            "settings": {
-              "title": "I have my own stone; can I purchase your ring as a setting?",
-              "subtitle": "<p>We do not sell our rings unset.&nbsp;<\/p>"
-            }
-          },
-          "1561910704734": {
-            "type": "Content",
-            "settings": {
-              "title": "Can I pick your brain about starting a jewelry business?",
-              "subtitle": "<p>Sorry, not at this time.&nbsp;As much as we want to encourage others to hone in on&nbsp;their talents and take that leap of faith, we must spend&nbsp;our limited time prioritizing the clients we serve.&nbsp;<\/p>"
-            }
-          },
-          "1599597504050": {
-            "type": "Content",
-            "settings": {
-              "title": "Are your metals recycled?",
-              "subtitle": "<p>Our recycled metals have been certified by third party SCS Global Services as 100% recycled. The only exception is our chains, which we (and most jewelers) are unable to verify as recycled.<\/p>"
-            }
-          },
-          "1595005171209": {
-            "type": "Content",
-            "settings": {
-              "title": "Are items solid gold?",
-              "subtitle": "<p>Yes, all Valerie Madison pieces exclusively use solid gold. Products are never dipped, plated, or filled. All components including chains, earring posts and backs are solid gold.<\/p>"
-            }
-          },
-          "1553476291335": {
-            "type": "heading",
-            "settings": {
-              "heading": "Custom Orders"
-            }
-          },
-          "page-faq-template-6": {
-            "type": "Content",
-            "settings": {
-              "title": "Do you accept custom orders?",
-              "subtitle": "<p>Yes, we do accept&nbsp;custom orders fir engagement rings only, so long as they fall within our design aesthetic. More info on that <a href=\"\/pages\/custom-engagement-rings\" title=\"Custom Engagement Rings\">here<\/a>.<\/p>"
-            }
-          },
-          "1561956775991": {
-            "type": "Content",
-            "settings": {
-              "title": "What is the minimum cost for a custom order?",
-              "subtitle": "<p>$2,500. Orders are frequently in the $3,000 - $5,000 range&nbsp;but often run higher.&nbsp;<\/p>"
-            }
-          },
-          "1553476312333": {
-            "type": "Content",
-            "settings": {
-              "title": "What's the turnaround time for custom orders?",
-              "subtitle": "<p>Currently, about 6-8 weeks. It depends on a few factors including how complex of a gem search we have to do and intricacy of the design.&nbsp;<\/p>"
-            }
-          },
-          "page-faq-template-7": {
-            "type": "Content",
-            "settings": {
-              "title": "Can you create something with my gold and gemstones or diamonds?",
-              "subtitle": "<p>We offer limited reworks with client provided diamonds which you can <a href=\"\/pages\/heirloom-diamond-reworks\" title=\"Heirloom Diamond Reworks\">read about here<\/a>. We are unable to use client provided metals at this time.&nbsp;<\/p>"
-            }
-          },
-          "1553475854545": {
-            "type": "Content",
-            "settings": {
-              "title": "Can you make me something in platinum?",
-              "subtitle": "<p>Absolutely! Let us know which style in particular you're interested in and we'll get back to you with pricing. It's generally $300-$500 additional for platinum.&nbsp;<\/p>"
-            }
-          },
-          "1598652527546": {
-            "type": "Content",
-            "settings": {
-              "title": "Can you make engagement rings out of moonstone, opal, etc?",
-              "subtitle": "<p>We only work with diamonds, sapphires, spinels, emeralds, and rubies owing to their durability. You can read more about our stone choices <a href=\"\/blogs\/the-studio-blog\/7-stones-to-avoid-in-an-engagement-ring-what-to-buy-instead\" title=\"7 Stones to Avoid in an Engagement Ring (And What to Buy Instead!)\">here<\/a>.&nbsp;<\/p>"
-            }
-          }
-        },
-        "block_order": [
-          "page-faq-template-0",
-          "1563310564266",
-          "page-faq-template-2",
-          "page-faq-template-1",
-          "1553476721297",
-          "page-faq-template-3",
-          "page-faq-template-5",
-          "page-faq-template-4",
-          "1555605714275",
-          "1553475582583",
-          "1555604150230",
-          "1555604280355",
-          "1553476112327",
-          "1553476539291",
-          "1555894478330",
-          "1561910704734",
-          "1599597504050",
-          "1595005171209",
-          "1553476291335",
-          "page-faq-template-6",
-          "1561956775991",
-          "1553476312333",
-          "page-faq-template-7",
-          "1553475854545",
-          "1598652527546"
-        ],
-        "settings": {
-          "image": "",
-          "pretext": "",
-          "title": "Page FAQ Template",
-          "subtitle": ""
         }
       },
       "search-template": {
@@ -4508,9 +3858,7 @@
             "settings": {
               "image": "shopify:\/\/shop_images\/4_eng_rings.jpg",
               "link": "shopify:\/\/collections\/engagement-rings",
-              "title": "<b>Engagement Rings<\/b>",
-              "text": "<p>Classic &amp; alternative styles<\/p>",
-              "button_label": "Shop Now"
+              "title": "<b>Engagement Rings<\/b>"
             }
           },
           "1578277933549-2": {
@@ -4518,9 +3866,7 @@
             "settings": {
               "image": "shopify:\/\/shop_images\/5_hammered_bands.jpg",
               "link": "shopify:\/\/collections\/masculine-wedding-bands",
-              "title": "<b>Men's Wedding Bands<\/b>",
-              "text": "<p>Catering to a masculine style<\/p>",
-              "button_label": "Shop Now"
+              "title": "<b>Men's Wedding Bands<\/b>"
             }
           },
           "1578277933549-1": {
@@ -4528,9 +3874,7 @@
             "settings": {
               "image": "shopify:\/\/shop_images\/3_bands.jpg",
               "link": "shopify:\/\/collections\/womens-wedding-bands",
-              "title": "<b>Women's Wedding Bands<\/b>",
-              "text": "<p>Create a unique stack<\/p>",
-              "button_label": "Shop Now"
+              "title": "<b>Women's Wedding Bands<\/b>"
             }
           },
           "1578277944089": {
@@ -4538,9 +3882,7 @@
             "settings": {
               "image": "shopify:\/\/shop_images\/2_Chains.jpg",
               "link": "shopify:\/\/collections\/all-necklaces",
-              "title": "<b>Necklaces<\/b>",
-              "text": "<p>Everyday styles and more<\/p>",
-              "button_label": "Shop Now"
+              "title": "<b>Necklaces<\/b>"
             }
           },
           "1578278006036": {
@@ -4548,9 +3890,7 @@
             "settings": {
               "image": "shopify:\/\/shop_images\/Hoop_Test_.736_Sat.jpg",
               "link": "shopify:\/\/collections\/earrings",
-              "title": "<b>Earrings<\/b>",
-              "text": "<p>Hoops, studs, and dangles<\/p>",
-              "button_label": "Shop Now"
+              "title": "<b>Earrings<\/b>"
             }
           },
           "1578278048532": {
@@ -4558,9 +3898,7 @@
             "settings": {
               "image": "shopify:\/\/shop_images\/1_Bangles.jpg",
               "link": "shopify:\/\/collections\/all-bracelets",
-              "title": "<b>Bracelets<\/b>",
-              "text": "<p>Bangles in custom sizes<\/p>",
-              "button_label": "Shop Now"
+              "title": "<b>Bracelets<\/b>"
             }
           }
         },
@@ -5633,30 +4971,6 @@
           "products_limit": 9
         }
       },
-      "1619300957ab5b6971": {
-        "type": "image-text",
-        "blocks": {
-          "1619300957791e7496-0": {
-            "type": "image",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/Group-Photo-White-gold-rings-4x5.jpg",
-              "image_crop": "none",
-              "title": "",
-              "text": "<p>Our approach to making jewelry includes using recycled precious metals, conflict-free diamonds, and ethically-sourced gemstones to create elegant, sophisticated, and vibrant heirloom-quality pieces. <\/p><p>We are a women-operated company founded by a Black Latina and we are based in Seattle, WA where you can also <strong>shop from <\/strong><a href=\"https:\/\/www.valeriemadison.com\/pages\/visit-us\" target=\"_blank\" title=\"https:\/\/www.valeriemadison.com\/pages\/visit-us\"><strong> our retail store<\/strong><\/a><strong> in person<\/strong>. <br\/><br\/>We're looking forward to helping you discover our unique engagement rings, wedding bands, and fine jewelry to celebrate special milestones or treat yourself. <\/p>",
-              "button_label": "Learn More",
-              "link": "https:\/\/www.valeriemadison.com\/pages\/about",
-              "color_region": "light_alt"
-            }
-          }
-        },
-        "block_order": [
-          "1619300957791e7496-0"
-        ],
-        "settings": {
-          "featured_links_per_row": "1",
-          "frontpage_image_position": "left"
-        }
-      },
       "our-story-intro": {
         "type": "our-story-intro",
         "settings": {
@@ -6040,7 +5354,7 @@
             "type": "background_block",
             "settings": {
               "background_color": "light",
-              "banner_image_desktop": "shopify:\/\/shop_images\/OOAK503-Double-Halo-Teal-Sapphire.png"
+              "banner_image_desktop": "shopify:\/\/shop_images\/Sapphires_copy.jpg"
             }
           }
         },
@@ -6050,72 +5364,353 @@
         ],
         "settings": {
           "banner_wrapper_background_color": "light-alt",
-          "pretext": "",
-          "heading": "The New <br class=\"u-hidden-medium-down\">Marisol Double Halo Ring",
+          "pretext": "Be Unique",
+          "heading": "Heirloom Sapphire Engagement Rings",
           "cta_link": "shopify:\/\/collections\/new-arrivals",
-          "cta_text": "Shop All New Rings",
+          "cta_text": "Shop New Rings",
           "text_position": "left-block",
           "text_color": "dark",
-          "banner_image_mobile": "shopify:\/\/shop_images\/OOAK503-Double-Halo-Teal-Sapphire.png",
+          "banner_image_mobile": "shopify:\/\/shop_images\/Sapphires_copy.jpg",
           "text_color_mobile": "dark",
           "content_background_color_mobile": "light-alt"
         }
       },
-      "content-section--image-with-text": {
-        "type": "content-section--image-with-text",
+      "1630687320cad1aa82": {
+        "type": "image-with-text",
         "settings": {
-          "title": "What does \"permanent jewelry\" mean?",
-          "text": "Our skilled bench jewelers will weld on a custom fit bracelet to your wrist using a painless, quick, and easy process. Because the bracelet is welded on, it does not have a clasp and therefore will “permanently” stay on for infinity! (Or until you decide to remove it).",
-          "image": "shopify:\/\/shop_images\/IMG_4947_crop.jpg",
-          "image_position": "right"
+          "image": "shopify:\/\/shop_images\/Rosy_Vibes.jpg",
+          "title": "Environmentally Conscious",
+          "text": "<p>Our approach to making jewelry includes using recycled precious metals, conflict-free diamonds, and ethically-sourced gemstones to create elegant, sophisticated, and vibrant heirloom-quality pieces.<br\/><\/p><p>We are a women-operated company founded by a Black Latina and we are based in Seattle, WA where you can also shop from our retail store in person.<br\/><br\/>We're looking forward to helping you discover our unique engagement rings, wedding bands, and fine jewelry to celebrate special milestones or treat yourself.<\/p>",
+          "cta_text": "Read more",
+          "cta_link": "shopify:\/\/pages\/our-story",
+          "color_region": "light"
         }
       },
-      "content-section--faq": {
-        "type": "content-section--faq",
+      "heirloom-reworks-banner": {
+        "type": "heirloom-reworks-banner",
+        "settings": {
+          "title": "Heirloom Reworks"
+        }
+      },
+      "heirloom-reworks-intro": {
+        "type": "heirloom-reworks-intro",
+        "settings": {
+          "title": "Heirloom Reworks",
+          "content": "placeholder content",
+          "image": "shopify:\/\/shop_images\/7D898549-D0C0-4BA0-9484-D1870CCB05E8.jpg"
+        }
+      },
+      "heirloom-reworks-how-it-works": {
+        "type": "heirloom-reworks-how-it-works",
         "blocks": {
-          "5084476e-2740-40f9-a063-c043acf4eb79": {
-            "type": "faq_item",
+          "c241fcb3-159d-43f0-a2f0-08402f159fba": {
+            "type": "how_it_works_item",
             "settings": {
-              "title": "Does it hurt?",
-              "answer": "You may feel a bit of warmth for a moment. This process involves a laser welder being in close proximity with your hand. Your skin will be shielded with a section of leather as a precaution against the unlikely possibility of machine malfunction or human error. Our technician has over 120 hours of training and experience on this machine, and we take pride in our commitment to the health and safety of both our clients and staff!"
+              "text": "how it works item 1"
+            }
+          },
+          "e49040a0-c202-4afc-acb5-0418346de965": {
+            "type": "how_it_works_item",
+            "settings": {
+              "text": "how it works item 2"
+            }
+          },
+          "7feffcc8-b4e3-4b0d-b006-edc67cbc84b0": {
+            "type": "how_it_works_item",
+            "settings": {
+              "text": "how it works item 3"
             }
           }
         },
         "block_order": [
-          "5084476e-2740-40f9-a063-c043acf4eb79"
+          "c241fcb3-159d-43f0-a2f0-08402f159fba",
+          "e49040a0-c202-4afc-acb5-0418346de965",
+          "7feffcc8-b4e3-4b0d-b006-edc67cbc84b0"
+        ],
+        "settings": {
+          "title": "How does it work?",
+          "image": "shopify:\/\/shop_images\/DSC_6608.jpg"
+        }
+      },
+      "heirloom-reworks-cta": {
+        "type": "heirloom-reworks-cta",
+        "settings": {
+          "cta_lead_text": "Interested?",
+          "cta_text": "Get started",
+          "cta_link": "#"
+        }
+      },
+      "heirloom-reworks-faq": {
+        "type": "heirloom-reworks-faq",
+        "blocks": {
+          "696187bc-79e4-4e07-b27d-a3ec56c8916b": {
+            "type": "faq_item",
+            "settings": {
+              "title": "Here is the question",
+              "answer": "Here is the answer"
+            }
+          },
+          "c2aaf9f9-313f-4c0b-87a6-6d519e7a4eb2": {
+            "type": "faq_item",
+            "settings": {
+              "title": "Here is another question",
+              "answer": "Here is another answer"
+            }
+          },
+          "2636d102-1f7f-4652-bfb8-5b213d9c3588": {
+            "type": "faq_item",
+            "settings": {
+              "title": "Here is a 3rd question",
+              "answer": "Here is yet another answer. Here is yet another answer. Here is yet another answer. Here is yet another answer. Here is yet another answer. Here is yet another answer."
+            }
+          }
+        },
+        "block_order": [
+          "696187bc-79e4-4e07-b27d-a3ec56c8916b",
+          "c2aaf9f9-313f-4c0b-87a6-6d519e7a4eb2",
+          "2636d102-1f7f-4652-bfb8-5b213d9c3588"
         ],
         "settings": {
           "title": "FAQs"
         }
       },
-      "content-section--image-with-text--how-it-works": {
-        "type": "content-section--image-with-text--how-it-works",
+      "page--faq": {
+        "type": "page--faq",
         "blocks": {
-          "57063684-2cf4-4661-ae84-9b5a9e3fd094": {
+          "page--faq-0": {
+            "type": "heading",
+            "settings": {
+              "heading": "Order Information"
+            }
+          },
+          "page--faq-1": {
+            "type": "Content",
+            "settings": {
+              "title": "DO YOU OFFER FINANCING?",
+              "subtitle": "<p>Yes, we <a href=\"https:\/\/www.valeriemadison.com\/pages\/financing-and-payment-plans\" title=\"Financing and Payment Plans\">partner with Affirm<\/a> to provide 3, 6, or 12 month financing options on items listed on the website. <\/p>"
+            }
+          },
+          "page--faq-2": {
+            "type": "Content",
+            "settings": {
+              "title": "WHEN WILL MY ORDER SHIP?",
+              "subtitle": "<p><br\/>Every item in our shop has current production times listed within the description. These dates are an accurate time frame for when to expect your order to be shipped by based on the day you purchase. The shipping speed depends on the option you select during checkout. If you require your item to be delivered by a specific day, we recommend letting us know in the order notes or reach out to us via email at hello@valeriemadison.com<\/p>"
+            }
+          },
+          "page--faq-3": {
+            "type": "Content",
+            "settings": {
+              "title": "HOW DO I KNOW IF MY ORDER HAS BEEN SHIPPED?",
+              "subtitle": "<p>A shipping email confirmation will be sent when your order has shipped. This confirmation will include the tracking number for your package. Please allow up to 48 hours for the tracking information to be updated in the tracking link provided.<\/p>"
+            }
+          },
+          "1a98022f-d7d0-418d-8a43-454ce2e890ab": {
+            "type": "Content",
+            "settings": {
+              "title": "I LIVE IN THE SEATTLE AREA; CAN I PICK UP MY ORDER WHEN IT'S FINISHED?",
+              "subtitle": "<p>Yes! You can choose in-store pickup at checkout. You'll be asked to choose a pick-up time when your order is complete.<\/p>"
+            }
+          },
+          "page--faq-5": {
+            "type": "Content",
+            "settings": {
+              "title": "CAN I MODIFY MY ORDER?",
+              "subtitle": "<p>Please contact us immediately to see if we can change your order. <\/p>"
+            }
+          },
+          "page--faq-6": {
+            "type": "Content",
+            "settings": {
+              "title": "WHAT IS THE RETURN POLICY?",
+              "subtitle": "<p>View our full return policy <a href=\"https:\/\/www.valeriemadison.com\/pages\/returns-exchanges\" title=\"https:\/\/www.valeriemadison.com\/pages\/returns-exchanges\">here<\/a>.<\/p>"
+            }
+          },
+          "page--faq-4": {
+            "type": "heading",
+            "settings": {
+              "heading": "General"
+            }
+          },
+          "page--faq-7": {
+            "type": "Content",
+            "settings": {
+              "title": "DO YOU HAVE A STORE FRONT?",
+              "subtitle": "<p>We are opening a store in the Seattle neighborhood of Madrona very soon! <\/p>"
+            }
+          },
+          "9d0ad352-40cb-4f0b-a9ee-cab49156a19f": {
+            "type": "Content",
+            "settings": {
+              "title": "HOW DO I FIND OUT MY RING SIZE?",
+              "subtitle": "<p>For the most accurate size, <a href=\"https:\/\/www.valeriemadison.com\/pages\/visit-us\" title=\"Studio Appointments\">visit our studio<\/a>. If you're unable to visit we sell the second closest thing: the same <a href=\"https:\/\/www.valeriemadison.com\/products\/ring-sizers\" title=\"Ring Sizers\">ring sizers<\/a> we use in-house. <\/p>"
+            }
+          },
+          "87ceb8a3-5a76-440b-acd2-4f327a183b39": {
+            "type": "Content",
+            "settings": {
+              "title": "DO YOU OFFER RESIZING?",
+              "subtitle": "<p>Include a helpful and informative answer to the frequently asked question here.<\/p>"
+            }
+          },
+          "d188b4d3-557f-4e61-a0b1-3102326f5259": {
+            "type": "Content",
+            "settings": {
+              "title": "WHAT IF I DON'T SEE MY RING SIZE LISTED?",
+              "subtitle": "<p>Please don't hesitate to reach out if you don't see your ring size available. We can certainly accommodate most sizes as a custom order. <\/p>"
+            }
+          },
+          "33bcc53e-1366-4283-bb1d-4f6e3918514b": {
+            "type": "Content",
+            "settings": {
+              "title": "DO YOU OFFER APPRAISALS?",
+              "subtitle": "<p>Appraisals are available for $150. They are conducted by <a href=\"http:\/\/gemcsi.com\/\" title=\"http:\/\/gemcsi.com\/\">Seattle's top independent jewelry appraiser<\/a>. Let us know if you would like your ring appraised and we can do this for you on your behalf and will send an invoice. <\/p>"
+            }
+          },
+          "8df1886f-4ad6-4fae-b0bc-4d702cc5d325": {
+            "type": "Content",
+            "settings": {
+              "title": "DO YOU OFFER A WARRANTY?",
+              "subtitle": "<p>Of course! You can read more information <a href=\"https:\/\/www.valeriemadison.com\/pages\/jewelry-care-warranty\" title=\"https:\/\/www.valeriemadison.com\/pages\/jewelry-care-warranty\">here<\/a>.<\/p>"
+            }
+          },
+          "b2065c9e-1b60-4ac4-a70d-465bd4280513": {
+            "type": "Content",
+            "settings": {
+              "title": "I HAVE MY OWN STONE; CAN I PURCHASE YOUR RING AS A SETTING?",
+              "subtitle": "<p>We do not sell our rings unset. <\/p>"
+            }
+          },
+          "6761ab79-f621-4a22-b7fe-78a0de37728b": {
+            "type": "Content",
+            "settings": {
+              "title": "CAN I PICK YOUR BRAIN ABOUT STARTING A JEWELRY BUSINESS?",
+              "subtitle": "<p>Sorry, not at this time. As much as we want to encourage others to hone in on their talents and take that leap of faith, we must spend our limited time prioritizing the clients we serve. <\/p>"
+            }
+          },
+          "c574ea94-77f6-42f2-95b3-9f1ec95cdf55": {
+            "type": "Content",
+            "settings": {
+              "title": "ARE YOUR METALS RECYCLED?",
+              "subtitle": "<p>Our recycled metals have been certified by third party SCS Global Services as 100% recycled. The only exception is our chains, which we (and most jewelers) are unable to verify as recycled.<\/p>"
+            }
+          },
+          "281ad49d-42b4-4fc5-ac7c-170e629726f2": {
+            "type": "Content",
+            "settings": {
+              "title": "ARE ITEMS SOLID GOLD?",
+              "subtitle": "<p>Yes, all Valerie Madison pieces exclusively use solid gold. Products are never dipped, plated, or filled. All components including chains, earring posts and backs are solid gold.<\/p>"
+            }
+          },
+          "bb77e51d-d30d-4970-ad77-a66468f2b758": {
+            "type": "heading",
+            "settings": {
+              "heading": "Custom Orders"
+            }
+          },
+          "2f284c27-fb92-4081-bacd-3698fa47df95": {
+            "type": "Content",
+            "settings": {
+              "title": "DO YOU ACCEPT CUSTOM ORDERS?",
+              "subtitle": "<p>Yes, we do accept custom orders fir engagement rings only, so long as they fall within our design aesthetic. More info on that <a href=\"https:\/\/www.valeriemadison.com\/pages\/custom-engagement-rings\" title=\"Custom Engagement Rings\">here<\/a>.<\/p>"
+            }
+          },
+          "7a46589c-c8bb-4031-a054-c226fa297461": {
+            "type": "Content",
+            "settings": {
+              "title": "WHAT IS THE MINIMUM COST FOR A CUSTOM ORDER?",
+              "subtitle": "<p>$2,500. Orders are frequently in the $3,000 - $5,000 range but often run higher. <\/p>"
+            }
+          },
+          "675cf9ee-fa0a-46a1-acfa-65c9dd906f37": {
+            "type": "Content",
+            "settings": {
+              "title": "WHAT'S THE TURNAROUND TIME FOR CUSTOM ORDERS?",
+              "subtitle": "<p>Currently, about 6-8 weeks. It depends on a few factors including how complex of a gem search we have to do and intricacy of the design. <\/p>"
+            }
+          },
+          "b9451238-6c8e-4e59-9dee-d02fd3e39ad4": {
+            "type": "Content",
+            "settings": {
+              "title": "CAN YOU CREATE SOMETHING WITH MY GOLD AND GEMSTONES OR DIAMONDS?",
+              "subtitle": "<p>We offer limited reworks with client provided diamonds which you can <a href=\"https:\/\/www.valeriemadison.com\/pages\/heirloom-diamond-reworks\" title=\"Heirloom Diamond Reworks\">read about here<\/a>. We are unable to use client provided metals at this time. <\/p>"
+            }
+          },
+          "3cb395ea-0110-4753-a4a4-e5617ed3f417": {
+            "type": "Content",
+            "settings": {
+              "title": "CAN YOU MAKE ME SOMETHING IN PLATINUM?",
+              "subtitle": "<p>Absolutely! Let us know which style in particular you're interested in and we'll get back to you with pricing. It's generally $300-$500 additional for platinum.<\/p>"
+            }
+          },
+          "0f51ab15-e4c4-4772-a4ac-bd1b7950b7d2": {
+            "type": "Content",
+            "settings": {
+              "title": "CAN YOU MAKE ENGAGEMENT RINGS OUT OF MOONSTONE, OPAL, ETC?",
+              "subtitle": "<p>We only work with diamonds, sapphires, spinels, emeralds, and rubies owing to their durability. You can read more about our stone choices <a href=\"https:\/\/www.valeriemadison.com\/blogs\/the-studio-blog\/7-stones-to-avoid-in-an-engagement-ring-what-to-buy-instead\" title=\"7 Stones to Avoid in an Engagement Ring (And What to Buy Instead!)\">here<\/a>. <\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "page--faq-0",
+          "page--faq-1",
+          "page--faq-2",
+          "page--faq-3",
+          "1a98022f-d7d0-418d-8a43-454ce2e890ab",
+          "page--faq-5",
+          "page--faq-6",
+          "page--faq-4",
+          "page--faq-7",
+          "9d0ad352-40cb-4f0b-a9ee-cab49156a19f",
+          "87ceb8a3-5a76-440b-acd2-4f327a183b39",
+          "d188b4d3-557f-4e61-a0b1-3102326f5259",
+          "33bcc53e-1366-4283-bb1d-4f6e3918514b",
+          "8df1886f-4ad6-4fae-b0bc-4d702cc5d325",
+          "b2065c9e-1b60-4ac4-a70d-465bd4280513",
+          "6761ab79-f621-4a22-b7fe-78a0de37728b",
+          "c574ea94-77f6-42f2-95b3-9f1ec95cdf55",
+          "281ad49d-42b4-4fc5-ac7c-170e629726f2",
+          "bb77e51d-d30d-4970-ad77-a66468f2b758",
+          "2f284c27-fb92-4081-bacd-3698fa47df95",
+          "7a46589c-c8bb-4031-a054-c226fa297461",
+          "675cf9ee-fa0a-46a1-acfa-65c9dd906f37",
+          "b9451238-6c8e-4e59-9dee-d02fd3e39ad4",
+          "3cb395ea-0110-4753-a4a4-e5617ed3f417",
+          "0f51ab15-e4c4-4772-a4ac-bd1b7950b7d2"
+        ],
+        "settings": {
+          "pretext": "",
+          "title": "FAQ",
+          "subtitle": ""
+        }
+      },
+      "eternity-bracelets-how-it-works": {
+        "type": "eternity-bracelets-how-it-works",
+        "blocks": {
+          "b7975580-c6f0-4101-aaea-432a3c56f6e6": {
             "type": "how_it_works_item",
             "settings": {
               "text": "Review our available chain styles and pricing. (Please pre-order luxe chain styles.)"
             }
           },
-          "d5293d81-812d-4b7a-be3b-2fadcc8578f1": {
+          "2f24f9a7-c329-4ffa-8a9e-da8ecebd3e15": {
             "type": "how_it_works_item",
             "settings": {
               "text": "Schedule an appointment and pay a $25 deposit to confirm your booking. One appointment per person, contact us for groups of 4 or more."
             }
           },
-          "7df77378-e4a7-432c-be60-737389bdadd6": {
+          "a76a74cf-6042-4f4c-9924-644f19ad7150": {
             "type": "how_it_works_item",
             "settings": {
               "text": "Select your chain(s) and get the exact length measured and cut for your wrist."
             }
           },
-          "c80fe70a-ef3b-4567-bcc9-4e3d3003487c": {
+          "537b4667-28d3-4b27-9e52-06d851219776": {
             "type": "how_it_works_item",
             "settings": {
               "text": "Our bench jewelers will weld the chain(s) together onto your wrist using our laser welder."
             }
           },
-          "31c42c97-1d7e-47de-a13e-1f602af5cba4": {
+          "5a2b1cca-409f-4e92-9769-049d948a4724": {
             "type": "how_it_works_item",
             "settings": {
               "text": "Pay the remaining balance for your bracelet(s) and enjoy!"
@@ -6123,46 +5718,46 @@
           }
         },
         "block_order": [
-          "57063684-2cf4-4661-ae84-9b5a9e3fd094",
-          "d5293d81-812d-4b7a-be3b-2fadcc8578f1",
-          "7df77378-e4a7-432c-be60-737389bdadd6",
-          "c80fe70a-ef3b-4567-bcc9-4e3d3003487c",
-          "31c42c97-1d7e-47de-a13e-1f602af5cba4"
+          "b7975580-c6f0-4101-aaea-432a3c56f6e6",
+          "2f24f9a7-c329-4ffa-8a9e-da8ecebd3e15",
+          "a76a74cf-6042-4f4c-9924-644f19ad7150",
+          "537b4667-28d3-4b27-9e52-06d851219776",
+          "5a2b1cca-409f-4e92-9769-049d948a4724"
         ],
         "settings": {
           "title": "How does it work?",
           "image": "shopify:\/\/shop_images\/IMG_4297_crop.jpg"
         }
       },
-      "content-section--image-with-text--price-list": {
-        "type": "content-section--image-with-text--price-list",
+      "eternity-bracelets-chain-styles": {
+        "type": "eternity-bracelets-chain-styles",
         "blocks": {
-          "6de2a705-2926-4523-b402-db2368849fbe": {
-            "type": "price_list_item",
+          "c8a9841e-6e45-4a5e-8a5e-308a38ddcefe": {
+            "type": "chain_style",
             "settings": {
               "title": "Cable Chain",
               "price": "95",
               "has_asterisk": false
             }
           },
-          "7ecbbdf4-2cb1-4157-bc7a-b652391be9fb": {
-            "type": "price_list_item",
+          "4bd03a84-d9c1-4e98-a939-443f8a52c4e4": {
+            "type": "chain_style",
             "settings": {
               "title": "Baby Flat Chain",
               "price": "145",
               "has_asterisk": true
             }
           },
-          "aa7d77bc-5c0c-47e6-9168-2c2453f8bbd1": {
-            "type": "price_list_item",
+          "08338bc0-8637-41fa-b7a2-88cb5e3650ea": {
+            "type": "chain_style",
             "settings": {
               "title": "Flat Chain",
               "price": "205",
               "has_asterisk": true
             }
           },
-          "293be40f-bb0a-4804-b33b-fc8708f31a28": {
-            "type": "price_list_item",
+          "d1a26eab-2a0f-4107-9657-405fc1b62646": {
+            "type": "chain_style",
             "settings": {
               "title": "Rolo Chain",
               "price": "375",
@@ -6171,15 +5766,132 @@
           }
         },
         "block_order": [
-          "6de2a705-2926-4523-b402-db2368849fbe",
-          "7ecbbdf4-2cb1-4157-bc7a-b652391be9fb",
-          "aa7d77bc-5c0c-47e6-9168-2c2453f8bbd1",
-          "293be40f-bb0a-4804-b33b-fc8708f31a28"
+          "c8a9841e-6e45-4a5e-8a5e-308a38ddcefe",
+          "4bd03a84-d9c1-4e98-a939-443f8a52c4e4",
+          "08338bc0-8637-41fa-b7a2-88cb5e3650ea",
+          "d1a26eab-2a0f-4107-9657-405fc1b62646"
         ],
         "settings": {
           "title": "Available Chain Styles",
-          "content": "1mm Cable Chain is available in all metal colors, fancy styles must be pre-ordered - contact us!",
+          "content": "Cable Chain is available in all metal colors. Luxe styles (indicated with a *) must be pre-ordered, contact us!",
           "image": "shopify:\/\/shop_images\/Eternity_Bracelets_1.jpg"
+        }
+      },
+      "eternity-bracelets-faq": {
+        "type": "eternity-bracelets-faq",
+        "blocks": {
+          "71e7612b-9656-4e5b-9d34-d231a7713258": {
+            "type": "faq_item",
+            "settings": {
+              "title": "DOES IT HURT?",
+              "answer": "You may feel a bit of warmth for a moment. This process involves a laser welder being in close proximity with your hand. Your skin will be shielded with a section of leather as a precaution against the unlikely possibility of machine malfunction or human error. Our technician has over 120 hours of training and experience on this machine, and we take pride in our commitment to the health and safety of both our clients and staff!"
+            }
+          },
+          "aef2af61-bda0-4ab4-a6e2-1c1cebff3641": {
+            "type": "faq_item",
+            "settings": {
+              "title": "WHAT IF I NEED TO REMOVE IT OR IT BREAKS?",
+              "answer": "We ensure the integrity of our weld before your appointment is complete and have been testing them on our staff for over 6 months. However, accidents happen! If you need to remove or your welded jewelry comes off for any reason, please contact us."
+            }
+          },
+          "a0505a76-c1c1-4d41-9cbf-e341af8e729b": {
+            "type": "faq_item",
+            "settings": {
+              "title": "CAN YOU TAKE YOUR PERMANENT BRACELET THROUGH AIRPORT SECURITY?",
+              "answer": "Yes! TSA does not ask you to remove fine jewelry when going through security."
+            }
+          },
+          "d3892bf0-ac66-43a2-be06-9e21f9f664f7": {
+            "type": "faq_item",
+            "settings": {
+              "title": "WHAT IF I NEED TO GET AN MRI?",
+              "answer": "Consult your doctor to know if you will be required to remove your permanent jewelry during your MRI appointment. It can easily be cut off with scissors if needed. Contact us if you need to have it reconnected."
+            }
+          },
+          "9cf3c7e0-808e-4b49-905a-a4f60242f8e9": {
+            "type": "faq_item",
+            "settings": {
+              "title": "CAN MY CHILD GET ONE?",
+              "answer": "Minimum welding age is 10. Anyone under 14 must be accompanied by an adult."
+            }
+          },
+          "d80d2312-36b8-41b7-95e9-9822d42c09ea": {
+            "type": "faq_item",
+            "settings": {
+              "title": "WHAT IF I CHANGE MY MIND?",
+              "answer": "All sales are final. Please ensure you are ready to commit to this everyday luxury!"
+            }
+          },
+          "2244c8aa-ae1e-4d63-a9db-4b5d2608d67f": {
+            "type": "faq_item",
+            "settings": {
+              "title": "WHICH METALS TYPES ARE OFFERED?",
+              "answer": "Cable Chain is available in all metal colors (solid 14k Yellow, White, and Rose gold) luxe chain styles must be pre-ordered, contact us!"
+            }
+          }
+        },
+        "block_order": [
+          "71e7612b-9656-4e5b-9d34-d231a7713258",
+          "aef2af61-bda0-4ab4-a6e2-1c1cebff3641",
+          "a0505a76-c1c1-4d41-9cbf-e341af8e729b",
+          "d3892bf0-ac66-43a2-be06-9e21f9f664f7",
+          "9cf3c7e0-808e-4b49-905a-a4f60242f8e9",
+          "d80d2312-36b8-41b7-95e9-9822d42c09ea",
+          "2244c8aa-ae1e-4d63-a9db-4b5d2608d67f"
+        ],
+        "settings": {
+          "title": "FAQs"
+        }
+      },
+      "eternity-bracelets-upcoming-dates": {
+        "type": "eternity-bracelets-upcoming-dates",
+        "blocks": {
+          "8b575212-654b-45f4-8b1f-98e5416377c1": {
+            "type": "upcoming-date",
+            "settings": {
+              "date": "Friday, September 24th",
+              "time": "SOLD OUT for luxe chain styles. Walk-ins are welcome for cable chain only."
+            }
+          },
+          "d09a56a0-771b-4fb8-9c28-5ac1a5aa872c": {
+            "type": "upcoming-date",
+            "settings": {
+              "date": "Friday, October 15th",
+              "time": "3-5:30pm"
+            }
+          },
+          "e9a0b393-5714-4253-bde7-503a0110c85f": {
+            "type": "upcoming-date",
+            "settings": {
+              "date": "Friday, November 15th",
+              "time": "3-5:30pm"
+            }
+          },
+          "6b9bb5f1-1501-4ac6-844b-ad89f683138e": {
+            "type": "upcoming-date",
+            "settings": {
+              "date": "Friday, December 3rd",
+              "time": "3-5:30pm"
+            }
+          },
+          "e93b78c8-dd13-4603-9e6e-777c703f9bbc": {
+            "type": "upcoming-date",
+            "settings": {
+              "date": "Wednesday, December 22nd",
+              "time": "3-5:30pm"
+            }
+          }
+        },
+        "block_order": [
+          "8b575212-654b-45f4-8b1f-98e5416377c1",
+          "d09a56a0-771b-4fb8-9c28-5ac1a5aa872c",
+          "e9a0b393-5714-4253-bde7-503a0110c85f",
+          "6b9bb5f1-1501-4ac6-844b-ad89f683138e",
+          "e93b78c8-dd13-4603-9e6e-777c703f9bbc"
+        ],
+        "settings": {
+          "title": "Upcoming dates",
+          "description": "<a href=\"https:\/\/calendly.com\/valeriemadison\/eternitybracelet?month=2021-10\">Appointments are encouraged<\/a>. Walk-ins will be accommodated to the best of our ability."
         }
       }
     },
@@ -6187,9 +5899,8 @@
       "1629483439e1253581",
       "1619300542332dabf8",
       "1578277933549",
-      "1619300957ab5b6971",
-      "1553283236579",
       "1553110251439",
+      "1630687320cad1aa82",
       "1489285524898",
       "1553466079804",
       "1584247981998",

@@ -93,3 +93,13 @@
 // CTA
 .content-section.content-section--eternity-bracelets-cta {
 }
+
+.content-section.content-section--upcoming-dates {
+  table {
+    table-layout: fixed;
+
+    td {
+      vertical-align: top;
+    }
+  }
+}
