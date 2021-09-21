@@ -11,15 +11,14 @@
   {% endif %}
 {% endcapture %}
 
-<!-- extra_classes: "u-padding-top-0", -->
-
 {% include "content-section.image-with-text" with {
   title: section.settings.title,
   title_tag: "h1",
   with_accent: true,
   text_content: text_content,
   image: section.settings.image,
-  color_region: "light-alt",
+  color_region: "light",
+  extra_classes: "u-padding-bottom-0"
 } %}
 
 {% schema %}

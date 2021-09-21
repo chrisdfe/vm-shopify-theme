@@ -306,37 +306,6 @@
   word-break: break-word;
 }
 
-@mixin table-with-borders {
-  width: 100%;
-
-  th {
-    background: #f9f9f9;
-  }
-
-  th,
-  td {
-    padding: 4px;
-    border-right: 1px solid #dcdcdc;
-  }
-
-  th:first-child,
-  td:first-child {
-    border-left: 1px solid #dcdcdc;
-  }
-
-  tr {
-    border-bottom: 1px solid #dcdcdc;
-  }
-
-  tr:first-child {
-    border-top: 1px solid #dcdcdc;
-  }
-
-  .em {
-    font-weight: 700;
-  }
-}
-
 @mixin vm-dropdown-menu-boxshadow() {
   box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.2);
 }

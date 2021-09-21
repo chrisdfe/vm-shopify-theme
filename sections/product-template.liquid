@@ -63,7 +63,7 @@
       class="product-{{ product.id }}"
       data-free-text="{{ settings.free_price_text }}"
     >
-      <div class="section product_section clearfix js-product_section {% if section.settings.product_images_position == 'right' %}align_right--images{% endif %}"
+      <div class="row section product_section js-product_section {% if section.settings.product_images_position == 'right' %}align_right--images{% endif %}"
       data-rv-handle="{{ product.handle }}">
 
         <div class="{% if gallery_width != blank %}{{gallery_width}}{% else %}nine{% endif %} columns medium-down--one-whole {% if section.settings.product_images_position == 'left' %}alpha{% else %}omega{% endif %}">

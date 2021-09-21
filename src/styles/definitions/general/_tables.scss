@@ -1,21 +1,53 @@
 /* General - Tables
 ================================================== */
 
+// TODO- put this elseehwere
 table tr.order_summary td.label {
   text-align: right;
 }
 
 table {
-  @include table-with-borders;
-  margin-bottom: 20px;
+  $border-color: #dcdcdc;
+  width: 100%;
+  margin-bottom: get-vm-spacer(1);
 
   th {
-    font-weight: 700;
     text-align: left;
+  }
+
+  th,
+  td {
+    padding: get-vm-spacer(0.5);
+    // border-right: 1px solid $border-color;
+
+    &:first-child,
+    &:first-child {
+      // border-left: 1px solid $border-color;
+    }
+  }
+
+  tr {
+    // border-bottom: 1px solid $border-color;
+
+    // &:first-child {
+    //   border-top: 1px solid $border-color;
+    // }
+
+    &:nth-child(odd) {
+      background-color: $vm-color-cream;
+    }
   }
 }
 
-#order_details,
-#customer_orders table {
-  @include table-with-borders;
+table.table--blank {
+  th,
+  td {
+    border-right: 0 none;
+    border-left: 0 none;
+  }
+
+  tr {
+    border-top: 0 none;
+    border-bottom: 0 none;
+  }
 }

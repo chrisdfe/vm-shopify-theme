@@ -1,1 +1,28 @@
-<h1>Banner</h1>
+<div class="container">
+  <div class="row">
+    <div class="one-whole columns">
+
+      {% include "page-heading" with {
+        title: section.settings.title,
+        align: "center",
+        with_banner_padding: true,
+        with_accent: false
+      } %}
+
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Banner",
+  "settings": [
+    {
+      "id": "title",
+      "label": "Title",
+      "type": "text",
+      "default": "Heirloom Reworks"
+    }
+  ]
+}
+{% endschema %}

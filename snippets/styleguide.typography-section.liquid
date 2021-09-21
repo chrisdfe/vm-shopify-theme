@@ -1,152 +1,173 @@
 {% assign lorem="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." %}
 
-<div class="vm-styleguide__section">
+{% assign quick_brown_fox="The quick brown fox jumps over the lazy dog" %}
+
+{% capture font_example %}
+ABCDEFGHIJKLMNOPQRSTUVWXYZ<br/>
+abcdefghijklmnopqrstuvwxyz<br/>
+01 02 03 04 05 06 07 08 09
+{% endcapture %}
+
+<div
+  class="content-section content-section--vm-styleguide js-styleguide-section"
+  data-section="#typography">
   <div class="container">
-    <div class="twelve columns offset-by-four">
-      <div class="content-section">
-        <h2 class="vm-styleguide__content-section-title">
-          <sup>01.</sup>
-          <span>Typography</span>
-          <span class="anchor" id="typography"></span>
-        </h2>
+    {% render "styleguide.section-title" with {
+      number: "01.",
+      title: "Typography"
+    } %}
+
+    {% render "styleguide.subsection-title" with {
+      number: "01a.",
+      title: "Fonts"
+    } %}
+
+    {% capture subsection_row_content %}
+      <div class="vm-styleguide__font-example vm-styleguide__font-example--orpheus">
+        {{ font_example }}
       </div>
-    </div>
-  </div>
+    {% endcapture %}
 
-  <div class="container">
-    <div class="four columns">
-      <h4 class="vm-styleguide-content__section-subheading">
-        Headings
-      </h4>
-    </div>
-    <div class="twelve columns">
-      <div class="vm-styleguide__section">
-        <h1>Heading 1</h1>
-        <h2>Heading 2</h2>
-        <h3>Heading 3</h3>
+    {% render "styleguide.subsection-row" with {
+      heading: "Orpheus Pro",
+      content: subsection_row_content
+    } %}
+
+    {% capture subsection_row_content %}
+      <div class="vm-styleguide__font-example vm-styleguide__font-example--poppins">
+        {{ font_example }}
       </div>
-    </div>
+    {% endcapture %}
 
-    <div class="four columns">
-      <h4 class="vm-styleguide-content__section-subheading">
-        Subheadings
-      </h4>
-    </div>
-    <div class="twelve columns">
-      <div class="vm-styleguide__section">
-        <h4>Subheading 4</h4>
-        <h5>Subheading 5</h5>
-        <h6>Subheading 6</h6>
-      </div>
-    </div>
+    {% render "styleguide.subsection-row" with {
+      heading: "Poppins",
+      content: subsection_row_content
+    } %}
 
-    <div class="four columns">
-      <h4 class="vm-styleguide-content__section-subheading">
-        Paragraphs
-      </h4>
-    </div>
+    {% capture section_title_description %}
+      <p>Headings are used for page and esction titles.</p>
+      <p>All Headings use <b>Orpheus Pro Bold.</b></p>
+    {% endcapture %}
 
-    <div class="twelve columns">
-      <div class="vm-styleguide__section">
-        <p class="paragraph-1">Paragraph 1</p>
-        <p class="paragraph-1">{{ lorem }}</p>
-        <p class="paragraph-1">{{ lorem }}</p>
+    {% render "styleguide.subsection-title" with {
+      number: "01b.",
+      title: "Headings",
+      description: section_title_description
+    } %}
 
-        <p>Paragraph 2</p>
-        <p>{{ lorem }}</p>
-        <p>{{ lorem }}</p>
+    {% capture subsection_row_content %}
+      <h1>{{ quick_brown_fox }}</h1>
+    {% endcapture %}
 
-        <p class="paragraph-3">Paragraph 3</p>
-        <p class="paragraph-3">{{ lorem }}</p>
-        <p class="paragraph-3">{{ lorem }}</p>
-      </div>
-    </div>
+    {% render "styleguide.subsection-row" with {
+      heading: "Heading 1",
+      content: subsection_row_content
+    } %}
 
-    <div class="four columns">
-      <h4 class="vm-styleguide-content__section-subheading">
-        Examples
-      </h4>
-    </div>
+    {% capture subsection_row_content %}
+      <h2>{{ quick_brown_fox }}</h2>
+    {% endcapture %}
 
-    <div class="twelve columns">
-      <div class="vm-styleguide__section">
-        <div class="vm-styleguide__subsection">
-          <div class="container">
-            <div class="eight columns">
-              <h1>Heading 1</h1>
-              <h4>Subheading 1</h4>
-              <p class="paragraph-1">Paragraph 1. {{ lorem }}</p>
-            </div>
+    {% render "styleguide.subsection-row" with {
+      heading: "Heading 2",
+      content: subsection_row_content
+    } %}
 
-            <div class="eight columns">
-              <h1>Heading 2</h1>
-              <h4>Subheading 1</h4>
-              <p class="paragraph-1">Paragraph 1. {{ lorem }}</p>
-            </div>
-          </div>
-        </div>
+    {% capture subsection_row_content %}
+      <h3>{{ quick_brown_fox }}</h3>
+    {% endcapture %}
 
-        <div class="vm-styleguide__subsection">
-          <div class="container">
-            <div class="eight columns">
-              <h2>Heading 2</h2>
-              <h5>Subheading 2</h5>
-              <p>Paragraph 2. {{ lorem }}</p>
-            </div>
+    {% render "styleguide.subsection-row" with {
+      heading: "Heading 3",
+      content: subsection_row_content
+    } %}
 
-            <div class="eight columns">
-              <h2>Heading 2</h2>
-              <h5>Subheading 2</h5>
-              <p>Paragraph 2. {{ lorem }}</p>
-            </div>
+    {% capture subsection_description_content %}
+    <p>
+      Subheadings are the next tier down from headings. They are also used for button text and labels (see <b>03. Components</b> for more details
+    </p>
 
-          </div>
-        </div>
+    <p>
+      All subheadings use <b>Poppins Semibold</b> and are in <b>all Caps</b>.
+    </p>
+    {% endcapture %}
 
-        <div class="vm-styleguide__subsection">
-          <div class="container">
-            <div class="eight columns">
-              <h3>Heading 3</h3>
-              <h6>Subheading 3</h6>
-              <p class="paragraph-3">Paragraph 3. {{ lorem }}</p>
-            </div>
-            
-            <div class="eight columns">
-              <h3>Heading 3</h3>
-              <h6>Subheading 3</h6>
-              <p class="paragraph-3">Paragraph 3. {{ lorem }}</p>
-            </div>
-          </div>
-        </div>
+    {% render "styleguide.subsection-title" with {
+      number: "01.c",
+      title: "Subheadings",
+      description: subsection_description_content
+    } %}
 
-        <div class="vm-styleguide__subsection">
-          <div class="container">
-            <div class="ten columns offset-by-three">
-              <h3>Heading 3</h3>
-              <p>Paragraph 2. {{ lorem }}</p>
-              <h3>Heading 3</h3>
-              <p>Paragraph 2. {{ lorem }}</p>
-              <h4>Subheading 1</h4>
-              <p class="paragraph-3">Paragraph 3. {{ lorem }}</p>
-            </div>
-          </div>
-        </div>
+    {% capture subsection_row_content %}
+      <h4>{{ quick_brown_fox }}</h4>
+    {% endcapture %}
 
-        <div class="vm-styleguide__subsection">
-          <div class="container">
-            <div class="eight columns">
-              <h6>Subheading 3</h6>
-              <p class="paragraph-3">Paragraph 3. {{ lorem }}</p>
-            </div>
+    {% render "styleguide.subsection-row" with {
+      heading: "Subheading 1",
+      content: subsection_row_content
+    } %}
 
-            <div class="eight columns">
-              <h6>Subheading 3</h6>
-              <p class="paragraph-3">Paragraph 3. {{ lorem }}</p>
-            </div>
-          </div>
-        </div>
-      </div>
+    {% capture subsection_row_content %}
+      <h5>{{ quick_brown_fox }}</h5>
+    {% endcapture %}
 
-    </div>
+    
+    {% render "styleguide.subsection-row" with {
+      heading: "Subheading 2",
+      content: subsection_row_content
+    } %}
+
+    {% capture subsection_row_content %}
+      <h6>{{ quick_brown_fox }}</h6>
+    {% endcapture %}
+
+    {% render "styleguide.subsection-row" with {
+      heading: "Subheading 3",
+      content: subsection_row_content
+    } %}
+
+    {% capture subsection_description_content %}
+    <p>
+      Anything that is not a <b>heading</b> or a <b>subheading</b> is a paragraph.
+    </p>
+
+    <p>
+      All paragraph text uses <b>Poppins Regular</b> and <b>bold</b>.
+    </p>
+    {% endcapture %}
+
+    {% render "styleguide.subsection-title" with {
+      number: "01.d",
+      title: "Paragraph Text",
+      description: subsection_description_content
+    } %}
+
+    {% capture subsection_row_content %}
+      <p class="paragraph-1">{{ lorem }}</p>
+    {% endcapture %}
+
+    {% render "styleguide.subsection-row" with {
+      heading: "Paragraph 1",
+      content: subsection_row_content
+    } %}
+
+    {% capture subsection_row_content %}
+      <p class="paragraph-2">{{ lorem }}</p>
+    {% endcapture %}
+
+    {% render "styleguide.subsection-row" with {
+      heading: "Paragraph 2",
+      content: subsection_row_content
+    } %}
+
+    {% capture subsection_row_content %}
+      <p class="paragraph-3">{{ lorem }}</p>
+    {% endcapture %}
+
+    {% render "styleguide.subsection-row" with {
+      heading: "Paragraph 3",
+      content: subsection_row_content
+    } %}
+
   </div>
 </div>

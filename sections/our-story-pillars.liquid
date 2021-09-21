@@ -13,7 +13,7 @@
 
   <div class="row">
     {% for block in section.blocks %}
-      <div class="one-third columns">
+      <div class="one-third columns medium-down--one-whole">
         <div class="our-story__pillar">
           <div class="our-story__pillar__image-wrapper">
             <img src="{{ block.settings.image | img_url : "300x" }}">
@@ -32,7 +32,7 @@
   </div>
 
 </div>
-{% encapture %}
+{% endcapture %}
 
 {% include "content-section" with {
   content: content,

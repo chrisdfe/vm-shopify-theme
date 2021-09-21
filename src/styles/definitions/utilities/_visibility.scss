@@ -1,0 +1,12 @@
+/* utilities/visibility
+================================================== */
+
+.u-hidden {
+  display: none;
+}
+
+.u-hidden-medium-down {
+  @include respond-to('medium-down') {
+    display: none;
+  }
+}

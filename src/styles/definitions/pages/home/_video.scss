@@ -32,9 +32,6 @@
   position: relative;
   overflow: hidden;
   transition: height 0.3s ease-in-out;
-  // {% if settings.image_loading_style != 'color' %}
-  //   background-color: {{ settings.banner_placeholder_background_color }};
-  // {% endif %}
 
   @include respond-to('small-down') {
     background-color: transparent;
@@ -54,10 +51,6 @@
     height: 100%;
     width: 100%;
   }
-
-  // video {
-  //   background-color: {{ settings.shop_bg_color }};
-  // }
 
   video[poster] {
     object-fit: cover;

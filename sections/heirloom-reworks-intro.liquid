@@ -1,0 +1,38 @@
+{% capture text_content %}
+<p class="paragraph--block-text">
+  {{ section.settings.content }}
+</p>
+{% endcapture %}
+
+{% include 'content-section.image-with-text' with {
+  id: "heirloom-reworks-intro",
+  title: section.settings.title,
+  image_position: section.settings.image_position
+  image: section.settings.image
+  text_content: text_content
+} %}
+
+{% schema %}
+{
+  "name": "Overview",
+  "settings": [
+    {
+      "id": "title",
+      "label": "Title",
+      "type": "text",
+      "default": "Heirloom Reworks"
+    },
+    {
+      "id": "content",
+      "label": "Content",
+      "type": "textarea",
+      "default": "placeholder content"
+    },
+    {
+      "id": "image",
+      "label": "Image",
+      "type": "image_picker"
+    }
+  ]
+}
+{% endschema %}

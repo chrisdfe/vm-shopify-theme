@@ -2,7 +2,7 @@
   ==============================================================================*/
 /* #Variables
 ================================================== */
-/* Variables - General
+/* variables/general
 ================================================== */
 /* Variables - Colors
 ================================================== */
@@ -50,8 +50,20 @@
   margin: 0 auto;
 }
 
+.vm-styleguide__font-example {
+  font-size: 41px;
+  line-height: 1.2;
+}
+.vm-styleguide__font-example.vm-styleguide__font-example--poppins {
+  font-family: poppins, sans-serif;
+}
+.vm-styleguide__font-example.vm-styleguide__font-example--orpheus {
+  font-family: orpheuspro, serif;
+  font-weight: 700;
+}
+
 .vm-styleguide__banner {
-  padding: 8rem 3rem;
+  padding: 5rem 0;
   background-color: #714457;
   color: #ffffff;
 }
@@ -62,6 +74,9 @@
   padding: 0;
   margin: 0;
   list-style-type: none;
+}
+.vm-styleguide__banner ul ul {
+  padding: 2rem 0 2rem 4rem;
 }
 .vm-styleguide__banner ul a {
   font-family: orpheuspro, serif;
@@ -74,6 +89,8 @@
   text-transform: none;
   position: relative;
   color: #ffffff;
+  padding: 0 0.2rem;
+  transition: all 0.2s;
 }
 @media only screen and (max-width: 800px) {
   .vm-styleguide__banner ul a {
@@ -81,7 +98,7 @@
   }
 }
 .vm-styleguide__banner ul a:hover {
-  opacity: 0.8;
+  opacity: 0.6;
 }
 .vm-styleguide__banner ul a sup {
   position: absolute;
@@ -91,31 +108,49 @@
   color: #dec1a8;
 }
 
-.vm-styleguide__content-section-title {
+.vm-styleguide__section-title,
+.vm-styleguide__subsection-title {
   position: relative;
 }
-.vm-styleguide__content-section-title sup {
+.vm-styleguide__section-title sup,
+.vm-styleguide__subsection-title sup {
   position: absolute;
-  top: 30%;
-  left: -3rem;
+  top: 50%;
+  transform: translateY(-1rem);
+  left: -4rem;
   color: #dec1a8;
 }
-.vm-styleguide__content-section-title .anchor {
+.vm-styleguide__section-title .anchor,
+.vm-styleguide__subsection-title .anchor {
   position: absolute;
   top: -5rem;
 }
 
-.vm-styleguide__section {
-  margin: 3rem 0;
+.vm-styleguide__section-title {
+  padding-bottom: 2rem;
+  border-bottom: 7px solid #f8f4f4;
+  margin-bottom: 2rem;
+}
+
+.vm-styleguide__subsection-title {
+  margin-top: 7rem;
+  margin-bottom: 7rem;
 }
 
 .vm-styleguide__subsection {
-  margin: 1.5rem 0;
+  margin: 2rem 0 3rem;
 }
 
-.vm-styleguide-content__section-subheading {
+.vm-styleguide__content-section-description {
+  margin: 5rem 0;
+}
+
+.vm-styleguide__subsection-row {
+  margin-bottom: 2rem;
+}
+
+.vm-styleguide-content__subsection-row-subheading {
   color: #dec1a8;
-  margin-top: 3rem;
 }
 
 .vm-styleguide__swatch {
@@ -123,7 +158,7 @@
 }
 
 .vm-styleguide__swatch-color {
-  padding: 20px;
+  padding: 15px;
   flex-grow: 1;
   flex-shrink: 0;
   flex-basis: 25%;

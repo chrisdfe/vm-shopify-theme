@@ -13,11 +13,12 @@
                 <a href="/blogs/{{ blog.handle }}/tagged/{{ current_tags | handleize }}" title="{{ blog.title | escape }}">{{ current_tags }}</a>
               </h1>
             {% else %}
-              <div class="page-heading">
-                <h1 class="page-heading__title">
-                  {{ blog.title }}
-                </h1>
-              </div>
+
+            {% include "page-heading" with {
+              title: blog.title
+              with_banner_padding: true,
+              align: "center"
+            } %}
           
               {% if section.settings.subtitle and section.settings.subtitle != blank %}
                 <p class="subtitle">{{ section.settings.subtitle }}</p>
@@ -79,7 +80,7 @@
   <div class="container">
     <div class="row">
       {% for article in blog.articles %}
-        <div class="one-third columns">
+        <div class="one-third columns medium-down--one-whole">
           {% include "image-card.blog-post" with {
             blog_post: article
           } %}

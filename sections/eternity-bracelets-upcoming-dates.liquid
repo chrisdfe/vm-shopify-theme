@@ -1,0 +1,75 @@
+{% capture content %}
+<div class="container">
+  <div class="row">
+    <div class="eight columns offset-by-four medium-down--one-whole medium-down--offset-by-zero">
+      {% render "content-section.title" with {
+        title: section.settings.title,
+      } %}
+      
+      <p class="paragraph--block-text">
+        {{ section.settings.description }}
+      </p>
+    </div>
+
+    <div class="eight columns offset-by-four medium-down--one-whole medium-down--offset-by-zero">
+
+        <table>
+          {% for block in section.blocks %}
+          <tr>
+            <td>
+              <strong>{{ block.settings.date }}</strong>
+            </td>
+            <td>
+              {{ block.settings.time }}
+            </td>
+          </tr>
+          {% endfor %}
+        </table>
+
+    </div>
+  </div>
+</div>
+{% endcapture %}
+
+{% include 'content-section' with {
+  id: "upcoming-dates",
+  title: section.settings.title,
+  content: content
+} %}
+
+{% schema %}
+{
+  "name": "Upcoming Dates",
+  "settings": [
+    {
+      "id": "title",
+      "label": "Title",
+      "type": "text",
+      "default": "Upcoming dates"
+    },
+    {
+      "id": "description",
+      "label": "Description",
+      "type": "text"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "upcoming-date",
+      "name": "Upcoming Date",
+      "settings": [
+        {
+          "id": "date",
+          "label": "Date",
+          "type": "text"
+        },
+        {
+          "id": "time",
+          "label": "Time/Status",
+          "type": "text"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

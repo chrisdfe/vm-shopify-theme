@@ -57,11 +57,7 @@ button.shopify-payment-button__button.shopify-payment-button__button--unbranded 
   border: 1px solid $vm-button-secondary-border-color;
   color: $vm-button-secondary-text-color;
   box-shadow: none;
-  line-height: 1.2;
-  min-height: 44px;
-  height: 100%;
   @include flex(1 0 100%);
-  margin: 0;
   max-width: 100%;
 
   &:hover,

@@ -30,46 +30,54 @@
 <a name="pagecontent" id="pagecontent"></a>
 
 <div class="page faq">
-  <div class="use-flex-grid">
 
-    <div class="container">
-      <div class="row">
-        <div class="sixteen columns">
+  <div class="container">
+    <div class="row">
+      <div class="sixteen columns">
 
-          <div class="page-heading">
-            <h1 class="page-heading__title page-heading__title--no-accent">
-              {{ page.title }}
-            </h1>
-          </div>
-
+        <div class="page-heading">
+          <h1 class="page-heading__title page-heading__title--no-accent">
+            {{ page.title }}
+          </h1>
         </div>
+
       </div>
     </div>
-    <div class="container">
-      {% for block in section.blocks %}
-        {% if block.type == "heading" %}
-          <div
-            id="{{ block.settings.heading | strip | downcase | replace: " ", "-" }}"
-            class="row {% unless forloop.first %}u-margin-top-5{% endunless %}">
-            <div class="sixteen columns">
-              {% include "content-section.title", with {
-                title: block.settings.heading,
-              } %}
-            </div>
-          </div>
-        {% else %}
-          {% if block.settings.title != blank %}
-            <div class="{% if forloop.last %}u-margin-bottom-5{% endif %}">
-              {% include "faq--item-row" with {
-                question: block.settings.title,
-                answer: block.settings.subtitle
-              } %}
-            </div>
-          {% endif %}
-        {% endif %}
-      {% endfor %}
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="twelve columns offset-by-two medium-down--one-whole medium-down--offset-by-zero">
+      
+        <div class="container">
+          {% for block in section.blocks %}
+            {% if block.type == "heading" %}
+              <div
+                id="{{ block.settings.heading | strip | downcase | replace: " ", "-" }}"
+                class="row {% unless forloop.first %}u-margin-top-5{% endunless %}">
+                <div class="sixteen columns">
+                  {% include "content-section.title", with {
+                    title: block.settings.heading,
+                  } %}
+                </div>
+              </div>
+            {% else %}
+              {% if block.settings.title != blank %}
+                <div class="{% if forloop.last %}u-margin-bottom-5{% endif %}">
+                  {% include "faq--item-row" with {
+                    question: block.settings.title,
+                    answer: block.settings.subtitle
+                  } %}
+                </div>
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+        </div>
+
+      </div>
     </div>
   </div>
+
 </div>
 
 {% schema %}

@@ -19,18 +19,6 @@
     }
   }
 
-  &.content-section--no-padding {
-    padding: 0;
-  }
-
-  &.content-section--no-padding-top {
-    padding-top: 0;
-  }
-
-  &.content-section--no-padding-bottom {
-    padding-bottom: 0;
-  }
-
   &.content-section--2x-padding {
     padding: ($vm-content-section-padding * 2) 0;
 
@@ -109,6 +97,8 @@
   width: 100%;
 
   @include respond-to('medium-down') {
+    margin-bottom: get-vm-spacer(1);
+
     .content-section__heading__title-link {
       @include vm-subheading-3();
     }

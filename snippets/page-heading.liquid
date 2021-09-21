@@ -1,0 +1,18 @@
+{% if with_accent == blank %}
+  {% assign with_accent = false %}
+{% endif %}
+
+{% if with_banner_padding == blank %}
+  {% assign with_banner_padding = false %}
+{% endif %}
+
+<div class="page-heading
+    {% if align == "center" %}page-heading--center{% endif %}
+    {% if with_banner_padding %}page-heading--padded{% endif %}
+    {{ extra_classes }}
+  ">
+  <h1 class="page-heading__title
+    {% if with_accent %}heading--with-accent{% endif %}">
+    {{ title }}
+  </h1>
+</div>

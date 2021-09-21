@@ -1,0 +1,33 @@
+/* typography/blockquote
+================================================== */
+
+blockquote,
+blockquote p {
+  @include vm-paragraph-2();
+  font-style: italic;
+}
+
+blockquote {
+  border: 0;
+  background: $vm-color-cream;
+  padding: get-vm-spacer(3);
+  margin: 0;
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  cite {
+    @include vm-paragraph-3();
+    display: block;
+
+    a,
+    a:visited {
+      color: #555;
+    }
+
+    &:before {
+      content: '\2014 \0020';
+    }
+  }
+}

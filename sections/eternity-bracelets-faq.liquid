@@ -1,26 +1,35 @@
 {% capture content %}
 <div class="container">
   <div class="row">
-    <div class="sixteen columns medium-down--one-whole medium-down--offset-by-zero">
-      {% include "content-section.title" with {
-        title: section.settings.title | escape,
-      } %}
+    <div class="twelve columns offset-by-two medium-down--one-whole medium-down--offset-by-zero">
+
+      <div class="container">
+        <div class="row">
+          <div class="sixteen columns medium-down--one-whole medium-down--offset-by-zero">
+            {% include "content-section.title" with {
+              title: section.settings.title | escape,
+            } %}
+          </div>
+        </div>
+        
+        {% for block in section.blocks %}
+          {% include "faq--item-row" with {
+            question: block.settings.title,
+            answer: block.settings.answer
+          } %}
+        {% endfor %}
+      </div>
+
     </div>
   </div>
-  
-  {% for block in section.blocks %}
-    {% include "faq--item-row" with {
-      question: block.settings.title,
-      answer: block.settings.answer
-    } %}
-  {% endfor %}
 </div>
 {% endcapture %}
 
 {% include "content-section" with {
   id: "faq",
   title: "faq",
-  content: content 
+  content: content,
+  color_region: "light-alt"
 } %}
 
 {% schema %}

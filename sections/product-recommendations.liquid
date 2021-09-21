@@ -53,12 +53,16 @@
       {% else %}
         {% comment %} Recommended Products Grid {% endcomment %}
         <div class="container recommended-products--grid">
-          <div class="sixteen columns equal-columns--outside-trim">
-            {% render 'product-loop',
-                    limit: limit,
-                    products: products,
-                    products_per_row: products_per_row,
-            %}
+          <div class="row">
+            
+            <div class="sixteen columns equal-columns--outside-trim">
+              {% render 'product-loop',
+                      limit: limit,
+                      products: products,
+                      products_per_row: products_per_row,
+              %}
+            </div>
+
           </div>
         </div>
 

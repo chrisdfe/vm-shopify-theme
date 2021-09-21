@@ -1,0 +1,12 @@
+/* typography/block-text
+================================================== */
+
+/* Content text */
+.page--block-text p,
+.content--block-text p,
+.paragraph--block-text,
+.block-text p,
+// TODO - get rid of this one
+.text-block p {
+  line-height: 2.2;
+}

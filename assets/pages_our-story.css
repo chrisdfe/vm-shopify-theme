@@ -2,7 +2,7 @@
 ================================================== */
 /* #Variables
 ================================================== */
-/* Variables - General
+/* variables/general
 ================================================== */
 /* Variables - Colors
 ================================================== */
@@ -54,8 +54,8 @@
 }
 @media only screen and (max-width: 480px) {
   .content-section.content-section--our-story--intro {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
   }
   .content-section.content-section--our-story--intro .icon-wrapper img {
     height: 100px;

@@ -1,0 +1,64 @@
+/* utilities/spacing
+================================================== */
+
+$vm-margin-directions: (
+  'top',
+  'right',
+  'bottom',
+  'left',
+  'horizontal',
+  'vertical',
+  'all'
+);
+
+$vm-spacer-sizes: (0, 1, 2, 3, 4, 5);
+
+@each $property in ('margin', 'padding') {
+  @each $direction in $vm-margin-directions {
+    @each $size in $vm-spacer-sizes {
+      @if $direction == 'all' {
+        .u-#{$property}-#{$size} {
+          #{$property}: get-vm-spacer($size);
+        }
+      } @else {
+        .u-#{$property}-#{$direction}-#{$size} {
+          @if $direction == 'horizontal' {
+            #{$property}-right: get-vm-spacer($size);
+            #{$property}-left: get-vm-spacer($size);
+          } @else if $direction == 'vertical' {
+            #{$property}-top: get-vm-spacer($size);
+            #{$property}-bottom: get-vm-spacer($size);
+          } @else {
+            #{"#{$property}-" + $direction}: get-vm-spacer($size);
+          }
+        }
+      }
+    }
+  }
+
+  @include respond-to('medium-down') {
+    @each $property in ('margin', 'padding') {
+      @each $direction in $vm-margin-directions {
+        @each $size in $vm-spacer-sizes {
+          @if $direction == 'all' {
+            .u-medium-down-#{$property}-#{$size} {
+              #{$property}: get-vm-spacer($size);
+            }
+          } @else {
+            .u-medium-down-#{$property}-#{$direction}-#{$size} {
+              @if $direction == 'horizontal' {
+                #{$property}-right: get-vm-spacer($size);
+                #{$property}-left: get-vm-spacer($size);
+              } @else if $direction == 'vertical' {
+                #{$property}-top: get-vm-spacer($size);
+                #{$property}-bottom: get-vm-spacer($size);
+              } @else {
+                #{$property + "-" + $direction}: get-vm-spacer($size);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

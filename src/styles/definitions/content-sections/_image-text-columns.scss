@@ -13,8 +13,20 @@
 }
 
 .content-section--image-text-columns__image-wrapper {
+  padding-right: get-vm-spacer(2);
+  padding-left: 0;
+
   @include respond-to('medium-down') {
-    padding: 0 0 2rem;
+    padding: 0 0 get-vm-spacer(3);
+  }
+
+  .row--reverse & {
+    padding-right: 0;
+    padding-left: get-vm-spacer(2);
+
+    @include respond-to('medium-down') {
+      padding: 0 0 get-vm-spacer(3);
+    }
   }
 }
 

@@ -27,18 +27,11 @@ $vm-homepage-banner-height-mobile: 800px;
   position: relative;
   display: flex;
 
-  // height: $vm-homepage-banner-height-desktop;
   max-width: 1600px;
   margin: 0 auto;
   object-fit: cover;
-  // aspect-ratio: 2 / 1;
   color: $vm-color-white;
   max-height: 80vh;
-
-  // @include respond-to('widescreen-down') {
-  //   // height: 600px;
-  //   max-width: 1200px;
-  // }
 
   picture {
     display: flex;

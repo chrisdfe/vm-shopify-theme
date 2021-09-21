@@ -1,48 +1,76 @@
-<a name="pagecontent" id="pagecontent"></a>
-
 <div class="page page--block-text">
-  <div class="vm-styleguide__banner">
-    <div class="container">
-      <div class="fourteen columns offset-by-two">
-        <div class="page-heading">
-          <h1 class="page-heading__title">
-            {{ page.title }}
-          </h1>
-        </div>
-      </div>
-    </div>
-
-    <div class="container">
-      <div class="twelve columns offset-by-four medium-down--sixteen">
-        <ul>
-          <li>
-            <a href="#typography">
-              <sup>01.</sup>
-              <span>Typography</span>
-            </a>
-          </li>
-
-          <li>
-            <a href="#colors">
-              <sup>02.</sup>
-              <span>Colors</span>
-            </a>
-          </li>
-
-          <li>
-            <a href="#components">
-              <sup>03.</sup>
-              <span>Components</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  {% render 'styleguide.typography-section' %}
-  {% render 'styleguide.colors-section' %}
-  {% render 'styleguide.components-section' %}
-
   {{ 'pages_styleguide.css' | asset_url | stylesheet_tag }}
+
+  {% render 'styleguide.banner' %}
+
+  <div>
+    {% render 'styleguide.typography-section' %}
+    {% render 'styleguide.colors-section' %}
+    {% render 'styleguide.components-section' %}
+  </div>
 </div>
+
+<script>
+(function() {
+  // 
+  const currentHash = window.location.hash;
+  const sectionLinks = document.querySelectorAll(".js-section-link");
+  const subsectionLists = document.querySelectorAll('.js-subsection-list');
+  const sections = document.querySelectorAll(".js-styleguide-section");
+  
+  // Map of [sectionId] -> DOMElement
+  // { "#typography": <div id="typography" /> }
+  const sectionIdMap = {};
+
+  // Map of [subsectionId] -> [parentSectionId]
+  // e.g { "#fonts": "#typography" }
+  // const subsectionParentIdMap = {};
+
+  function showSection(targetSectionId) {
+    sections.forEach((sectionElement) => {
+      const sectionId = sectionElement.getAttribute('data-section');
+      
+      if (sectionId === targetSectionId) {
+        sectionElement.classList.remove('u-hidden');
+      } else {
+        sectionElement.classList.add('u-hidden');
+      }
+    });
+  }
+
+  function onLoad() {
+    showSection(currentHash);
+
+    // Build subsectionParentIdMap map
+    /*
+    subsectionLists.forEach(listElement => {
+      const sectionId = listElement.getAttribute('data-section');
+      const subsectionLinks = listElement.querySelectorAll('a');
+
+      subsectionLinks.forEach(linkElement => {
+        const subsectionId = linkElement.getAttribute('href');
+        subsectionParentIdMap[subsectionId] = sectionId;
+      })
+    })
+    */
+
+    // Build sectionId map
+    sections.forEach((sectionElement) => {
+      const sectionId = sectionElement.getAttribute('data-section');
+      sectionIdMap[sectionId] = sectionElement;
+    });
+
+    // Attach event handlers
+    sectionLinks.forEach((linkElement) => {
+      linkElement.addEventListener("click", (e) => {
+        e.preventDefault();
+        const sectionId = linkElement.getAttribute('href');
+        history.pushState(null, null, sectionId);
+        showSection(sectionId);
+      })
+    });
+  }
+
+  onLoad();
+})();
+</script>

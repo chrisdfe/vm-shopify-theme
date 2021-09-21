@@ -3,7 +3,6 @@
 
 /* Product Page Elements */
 .container .align_right--images > div.columns {
-  float: right;
 }
 
 .vendor {
@@ -265,20 +264,16 @@ div {
 /* Shipping Estimate */
 .shipping_estimate {
   display: block;
-  /*   font-size: 16px; */
   font-style: italic;
-  padding-bottom: 15px;
-  margin: 50px 0;
+  margin: get-vm-spacer(3) get-vm-spacer(1);
 }
 
 /* Shipping Estimate Box */
-span.shipping_estimate,
+.shipping_estimate,
 .product .description .retailer_box {
-  // background: {{ settings.estimate_box_color }};
   background: $vm-color-white;
   border: none;
-  padding: 5% 10%;
-  display: block;
+  padding: get-vm-spacer(3) get-vm-spacer(2);
 }
 
 span.shipping_estimate #fromDate,

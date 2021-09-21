@@ -1,0 +1,21 @@
+{% if id == blank %}
+  {% assign id = title | lowercase | handleize %}
+{% endif %}
+
+<div class="row">
+  <div class="twelve columns offset-by-four">
+
+    <h1 class="vm-styleguide__section-title">
+      <sup>{{ number }}</sup>
+      <span>{{ title }}</span>
+      <span class="anchor" id="{{ id }}"></span>
+    </h2>
+
+    {% if description %}
+      <div class="vm-styleguide__content-section-description">
+        {{ description }}
+      </div>
+    {% endif %}
+
+  </div>
+</div>

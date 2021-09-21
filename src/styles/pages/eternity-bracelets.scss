@@ -7,7 +7,6 @@
 @import '../_mixins.scss';
 
 .eternity-bracelets__image-wrapper {
-  background-color: red;
   display: flex;
   padding: 0 2rem 0;
   align-items: center;
@@ -93,9 +92,4 @@
 
 // CTA
 .content-section.content-section--eternity-bracelets-cta {
-  text-align: center;
-
-  @include respond-to('medium-down') {
-    padding: 0 0 3rem;
-  }
 }

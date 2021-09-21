@@ -3,16 +3,12 @@
   <div class="row">
 
     <div class="ten columns medium-down--one-whole medium-down--offset-by-zero">
-      {% include "content-section.title", with {
+      {% include "page-heading", with {
         title: section.settings.title,
-        title_tag: "h1",
+        extra_classes: "u-margin-top-0"
       } %}
 
       <p class="paragraph--block-text">{{ section.settings.content }}</p>
-
-      <!-- <div class="icon-wrapper">
-        <img src="{{ section.settings.icon | img_url : "300x" }}">
-      </div> -->
     </div>
   </div>
 </div>
