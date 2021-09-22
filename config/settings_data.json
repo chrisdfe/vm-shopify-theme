@@ -5389,47 +5389,68 @@
       "heirloom-reworks-banner": {
         "type": "heirloom-reworks-banner",
         "settings": {
-          "title": "Heirloom Reworks"
+          "title": "Heirloom Diamond Reworks"
         }
       },
       "heirloom-reworks-intro": {
         "type": "heirloom-reworks-intro",
         "settings": {
-          "title": "Heirloom Reworks",
-          "content": "placeholder content",
-          "image": "shopify:\/\/shop_images\/7D898549-D0C0-4BA0-9484-D1870CCB05E8.jpg"
+          "title": "What is it?",
+          "content": "We are excited to offer heirloom diamond reworks to our offerings at Valerie Madison Fine Jewelry. We would love to help you use the diamonds that have been passed down or gifted to you to set them in one of our engagement ring settings, provided they meet certain conditions.",
+          "image": "shopify:\/\/shop_images\/Heirloom-Rework.jpg"
         }
       },
       "heirloom-reworks-how-it-works": {
         "type": "heirloom-reworks-how-it-works",
         "blocks": {
+          "f8a3e4a7-f4a0-45c8-a9a0-8a0c508e2b3b": {
+            "type": "how_it_works_item",
+            "settings": {
+              "text": "Contact us to set-up an appointment to discuss your rework and talk to our Staff Gemologist to see if your stone is a good candidate for a rework."
+            }
+          },
           "c241fcb3-159d-43f0-a2f0-08402f159fba": {
             "type": "how_it_works_item",
             "settings": {
-              "text": "how it works item 1"
+              "text": "If you are a good candidate we will refer you to seek an appraisal, if you do not already have one from the last 5 years."
             }
           },
           "e49040a0-c202-4afc-acb5-0418346de965": {
             "type": "how_it_works_item",
             "settings": {
-              "text": "how it works item 2"
+              "text": "With the recent appraisal, our Staff Gemologist will conduct an In-House Assessment. This step cross-references your appraisal with your desired new setting to ensure it will be safe to proceed."
             }
           },
           "7feffcc8-b4e3-4b0d-b006-edc67cbc84b0": {
             "type": "how_it_works_item",
             "settings": {
-              "text": "how it works item 3"
+              "text": "Once approved, you will pay the deposit for the rework and we will proceed with unsetting your stone (if necessary)."
+            }
+          },
+          "fe24ac6d-36f1-499a-8d7d-a8f01ac318b7": {
+            "type": "how_it_works_item",
+            "settings": {
+              "text": "Once unset, you will receive CAD designs for approval on the new setting!"
+            }
+          },
+          "115a6961-c5a3-4551-a06f-3a8ef525b6a1": {
+            "type": "how_it_works_item",
+            "settings": {
+              "text": "After 6-8 weeks, the ring is completed and ready to enjoy!"
             }
           }
         },
         "block_order": [
+          "f8a3e4a7-f4a0-45c8-a9a0-8a0c508e2b3b",
           "c241fcb3-159d-43f0-a2f0-08402f159fba",
           "e49040a0-c202-4afc-acb5-0418346de965",
-          "7feffcc8-b4e3-4b0d-b006-edc67cbc84b0"
+          "7feffcc8-b4e3-4b0d-b006-edc67cbc84b0",
+          "fe24ac6d-36f1-499a-8d7d-a8f01ac318b7",
+          "115a6961-c5a3-4551-a06f-3a8ef525b6a1"
         ],
         "settings": {
           "title": "How does it work?",
-          "image": "shopify:\/\/shop_images\/DSC_6608.jpg"
+          "image": "shopify:\/\/shop_images\/Heirloom-reworks_569497cb-cd65-45aa-ac2d-bc7142182752.jpg"
         }
       },
       "heirloom-reworks-cta": {
@@ -5446,29 +5467,61 @@
           "696187bc-79e4-4e07-b27d-a3ec56c8916b": {
             "type": "faq_item",
             "settings": {
-              "title": "Here is the question",
-              "answer": "Here is the answer"
+              "title": "How much does it cost?",
+              "answer": "Custom Heirloom Reworks start at $1,600 - most reworks are $2,500-$6,000"
             }
           },
           "c2aaf9f9-313f-4c0b-87a6-6d519e7a4eb2": {
             "type": "faq_item",
             "settings": {
-              "title": "Here is another question",
-              "answer": "Here is another answer"
+              "title": "Is my diamond a good contender?",
+              "answer": "We accept reworks on a limited case-by-case basis. If your diamond meets the criteria listed above it is not a guarantee we will be able to create a rework for you. However, our team will be transparent with you."
             }
           },
           "2636d102-1f7f-4652-bfb8-5b213d9c3588": {
             "type": "faq_item",
             "settings": {
-              "title": "Here is a 3rd question",
-              "answer": "Here is yet another answer. Here is yet another answer. Here is yet another answer. Here is yet another answer. Here is yet another answer. Here is yet another answer."
+              "title": "How long does it take?",
+              "answer": "Heirloom reworks take our standard 6-8 weeks once the invoice is paid. Appraisals will add additional time."
+            }
+          },
+          "1951472a-32c6-481f-96ff-d6e9e6f945ff": {
+            "type": "faq_item",
+            "settings": {
+              "title": "Can you use my accent diamonds or melee?",
+              "answer": "Unfortunately, we are unable to use stones smaller than 0.50ct. Any accent stones will be returned to you."
+            }
+          },
+          "7e0d23f4-a931-452d-a2e8-61e9cb261ea4": {
+            "type": "faq_item",
+            "settings": {
+              "title": "Do you re-use my gold?",
+              "answer": "All original metals will be returned to you. We don't specialize in refining metals - the process of melting them down."
+            }
+          },
+          "5ae3344d-bd32-4720-9f72-2f17cea9ffa6": {
+            "type": "faq_item",
+            "settings": {
+              "title": "Can we do this process if I'm not in Seattle?",
+              "answer": "Yes! We can definitely work with you remotely. You will be responsible for shipping your ring \/ diamond at your cost."
+            }
+          },
+          "d41fcacc-5df8-413b-bfa8-1445e465142d": {
+            "type": "faq_item",
+            "settings": {
+              "title": "",
+              "answer": ""
             }
           }
         },
         "block_order": [
           "696187bc-79e4-4e07-b27d-a3ec56c8916b",
           "c2aaf9f9-313f-4c0b-87a6-6d519e7a4eb2",
-          "2636d102-1f7f-4652-bfb8-5b213d9c3588"
+          "2636d102-1f7f-4652-bfb8-5b213d9c3588",
+          "1951472a-32c6-481f-96ff-d6e9e6f945ff",
+          "7e0d23f4-a931-452d-a2e8-61e9cb261ea4",
+          "5ae3344d-bd32-4720-9f72-2f17cea9ffa6",
+          "d41fcacc-5df8-413b-bfa8-1445e465142d"
         ],
         "settings": {
           "title": "FAQs"
