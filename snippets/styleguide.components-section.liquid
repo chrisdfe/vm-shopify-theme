@@ -1,56 +1,131 @@
 <div
   class="content-section content-section--vm-styleguide js-styleguide-section"
-  data-section="#components">
+  data-section-id="#components">
   <div class="container">
+    <div class="row">
+      <div class="four columns">
+        <div class="vm-styleguide__sidebar-contents">
+          <ul class="vm-styleguide__subsection-list js-subsection-list">
+            <li>
+              <a class="js-smooth-anchor" href="#button">
+                <sup>03.a</sup> Button
+              </a>
+            </li>
+            <li>
+              <a class="js-smooth-anchor" href="#cta-link">
+                <sup>03.b</sup> CTA Link
+              </a>
+            </li>
+            <li>
+              <a class="js-smooth-anchor" href="#table">
+                <sup>03.c</sup> Table
+              </a>
+            </li>
+          </ul>
+
+          <div class="u-margin-top-3">
+            <h6>
+              <a class="js-smooth-anchor" href="#components">back to top</a>
+            </h6>
+          </div>
+        </div>
+      </div>
+
+      <div class="twelve columns">
+        {% render "styleguide.section-title" with {
+          number: "03.",
+          title: "Components"
+        } %}
     
-    {% render "styleguide.section-title" with {
-      number: "03.",
-      title: "Components"
-    } %}
-
-    {% render "styleguide.subsection-title" with {
-      number: "03a.",
-      title: "Button"
-    } %}
-
-    {% capture subsection_row_content %}
-      <button class="button">
-        Primary
-      </button>
-    {% endcapture %}
-
-    <!-- heading: "Default", -->
-    {% render "styleguide.subsection-row" with {
-      heading: "Primary",
-      content: subsection_row_content
-    } %}
-
-    {% capture subsection_row_content %}
-      <button class="button button--secondary">
-        Secondary
-      </button>
-    {% endcapture %}
-
-    {% render "styleguide.subsection-row" with {
-      heading: "Secondary",
-      content: subsection_row_content
-    } %}
-
-    {% render "styleguide.subsection-title" with {
-      number: "03b.",
-      title: "CTA Link"
-    } %}
-
-    {% capture subsection_row_content %}
-      <a class="cta-link" href="#">
-        CTA Link
-      </a>
-    {% endcapture %}
-
-    <!-- heading: "Default", -->
-    {% render "styleguide.subsection-row" with {
-      content: subsection_row_content
-    } %}
-
+        <div class="row">
+          <div class="twelve columns offset-by-four">
+    
+          </div>
+        </div>
+    
+        <!-- Button -->
+        {% render "styleguide.subsection-title" with {
+          number: "03a.",
+          title: "Button",
+        } %}
+    
+        {% capture subsection_row_content %}
+          <button class="button">
+            Primary
+          </button>
+        {% endcapture %}
+    
+    
+        {% render "styleguide.subsection-row" with {
+          heading: "Primary",
+          content: subsection_row_content
+        } %}
+    
+        {% capture subsection_row_content %}
+          <button class="button button--secondary">
+            Secondary
+          </button>
+        {% endcapture %}
+    
+        {% render "styleguide.subsection-row" with {
+          heading: "Secondary",
+          content: subsection_row_content
+        } %}
+    
+    
+        <!-- CTA Link -->
+        {% render "styleguide.subsection-title" with {
+          number: "03b.",
+          title: "CTA Link"
+        } %}
+    
+        {% capture subsection_row_content %}
+          <a class="cta-link" href="#">
+            CTA Link
+          </a>
+        {% endcapture %}
+    
+        {% render "styleguide.subsection-row" with {
+          content: subsection_row_content
+        } %}
+        
+    
+        <!-- Table -->
+        {% render "styleguide.subsection-title" with {
+          number: "03.c",
+          title: "Table"
+        } %}
+    
+        {% capture subsection_row_content %}
+          <table>
+            <thead>
+              <td>column 1</td>
+              <td>column 2</td>
+              <td>column 3</td>
+            </thead>
+            <tr>
+              <td>column 1</td>
+              <td>column 2</td>
+              <td>column 3</td>
+            </tr>
+            <tr>
+              <td>column 1</td>
+              <td>column 2</td>
+              <td>column 3</td>
+            </tr>
+            <tr>
+              <td>column 1</td>
+              <td>column 2</td>
+              <td>column 3</td>
+            </tr>
+          </table>
+        {% endcapture %}
+    
+        <!-- heading: "Default", -->
+        {% render "styleguide.subsection-row" with {
+          content: subsection_row_content
+        } %}
+      </div>
+    </div>
   </div>
 </div>

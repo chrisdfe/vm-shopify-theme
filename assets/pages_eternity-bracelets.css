@@ -6,6 +6,14 @@
 ================================================== */
 /* Variables - Colors
 ================================================== */
+:root {
+  --vm-color-sea-green: #1c4047;
+  --vm-color-plum: #714457;
+  --vm-color-sand: #dec1a8;
+  --vm-color-cream: #f8f4f4;
+  --vm-color-white: #ffffff;
+}
+
 /* Variables - Typography
 ================================================== */
 /* Variables - Components

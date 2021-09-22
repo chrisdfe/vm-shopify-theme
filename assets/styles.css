@@ -13,6 +13,14 @@ Description: Shopify Theme (https://www.shopify.com/&ref=out-of-the-sandbox)
 ================================================== */
 /* Variables - Colors
 ================================================== */
+:root {
+  --vm-color-sea-green: #1c4047;
+  --vm-color-plum: #714457;
+  --vm-color-sand: #dec1a8;
+  --vm-color-cream: #f8f4f4;
+  --vm-color-white: #ffffff;
+}
+
 /* Variables - Typography
 ================================================== */
 /* Variables - Components
@@ -1735,23 +1743,23 @@ a.cta-link.cta-link--body-text:hover {
 ================================================== */
 ul,
 ol {
-  margin-bottom: 20px;
+  margin-bottom: 1rem;
 }
 ul li,
 ol li {
-  margin-bottom: 12px;
+  margin-bottom: 0.5rem;
 }
 ul ul,
 ul ol,
 ol ul,
 ol ol {
-  margin: 4px 0 5px 30px;
+  margin: 0.5rem 0 0.5rem 2rem;
 }
 ul ul li,
 ul ol li,
 ol ul li,
 ol ol li {
-  margin-bottom: 6px;
+  margin-bottom: 0.5rem;
 }
 
 ul {
@@ -2102,15 +2110,18 @@ table {
   width: 100%;
   margin-bottom: 1rem;
 }
-table th {
-  text-align: left;
-}
-table th,
 table td {
+  text-align: left;
   padding: 0.5rem;
 }
 table tr:nth-child(odd) {
   background-color: #f8f4f4;
+}
+table thead {
+  font-weight: 600;
+}
+table thead tr:nth-child(odd) {
+  background-color: #ffffff;
 }
 
 table.table--blank th,

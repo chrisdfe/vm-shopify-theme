@@ -6,6 +6,14 @@
 ================================================== */
 /* Variables - Colors
 ================================================== */
+:root {
+  --vm-color-sea-green: #1c4047;
+  --vm-color-plum: #714457;
+  --vm-color-sand: #dec1a8;
+  --vm-color-cream: #f8f4f4;
+  --vm-color-white: #ffffff;
+}
+
 /* Variables - Typography
 ================================================== */
 /* Variables - Components
@@ -68,7 +76,7 @@
   color: #ffffff;
 }
 .vm-styleguide__banner .page-heading {
-  padding-top: 0;
+  margin-top: 0;
 }
 .vm-styleguide__banner ul {
   padding: 0;
@@ -107,6 +115,9 @@
   font-size: 0.6em;
   color: #dec1a8;
 }
+.vm-styleguide__banner ul a.active {
+  color: #dec1a8;
+}
 
 .vm-styleguide__section-title,
 .vm-styleguide__subsection-title {
@@ -124,6 +135,33 @@
 .vm-styleguide__subsection-title .anchor {
   position: absolute;
   top: -5rem;
+}
+
+.vm-styleguide__sidebar-contents {
+  position: sticky;
+  top: 10rem;
+}
+
+.vm-styleguide__subsection-list {
+  list-style: none;
+  padding-left: 0;
+}
+.vm-styleguide__subsection-list a {
+  font-family: poppins, sans-serif;
+  font-size: 16px;
+  letter-spacing: 0.06em;
+  line-height: 1.4;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-style: normal;
+}
+@media only screen and (max-width: 800px) {
+  .vm-styleguide__subsection-list a {
+    font-size: 16px;
+  }
+}
+.vm-styleguide__subsection-list sup {
+  color: #dec1a8;
 }
 
 .vm-styleguide__section-title {

@@ -7,34 +7,25 @@ table tr.order_summary td.label {
 }
 
 table {
-  $border-color: #dcdcdc;
   width: 100%;
   margin-bottom: get-vm-spacer(1);
 
-  th {
-    text-align: left;
-  }
-
-  th,
   td {
+    text-align: left;
     padding: get-vm-spacer(0.5);
-    // border-right: 1px solid $border-color;
-
-    &:first-child,
-    &:first-child {
-      // border-left: 1px solid $border-color;
-    }
   }
 
   tr {
-    // border-bottom: 1px solid $border-color;
-
-    // &:first-child {
-    //   border-top: 1px solid $border-color;
-    // }
-
     &:nth-child(odd) {
       background-color: $vm-color-cream;
+    }
+  }
+
+  thead {
+    font-weight: 600;
+
+    tr:nth-child(odd) {
+      background-color: $vm-color-white;
     }
   }
 }

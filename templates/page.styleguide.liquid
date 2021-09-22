@@ -17,6 +17,7 @@
   const sectionLinks = document.querySelectorAll(".js-section-link");
   const subsectionLists = document.querySelectorAll('.js-subsection-list');
   const sections = document.querySelectorAll(".js-styleguide-section");
+  const subsectionAnchors = document.querySelectorAll(".js-subsection-anchor");
   
   // Map of [sectionId] -> DOMElement
   // { "#typography": <div id="typography" /> }
@@ -24,41 +25,65 @@
 
   // Map of [subsectionId] -> [parentSectionId]
   // e.g { "#fonts": "#typography" }
-  // const subsectionParentIdMap = {};
+  const subsectionParentIdMap = {};
+
+  function isActiveSectionId(currentId, targetSectionId) {
+    if (currentId === targetSectionId) {
+      return true;
+    }
+
+    // the targetSectionId might be a subsection
+    const targetSubsectionParentId = subsectionParentIdMap[targetSectionId];
+    
+    if (currentId === targetSubsectionParentId) {
+      return true;
+    }
+
+    return false;
+  }
 
   function showSection(targetSectionId) {
     sections.forEach((sectionElement) => {
-      const sectionId = sectionElement.getAttribute('data-section');
+      const sectionId = sectionElement.getAttribute('data-section-id');
       
-      if (sectionId === targetSectionId) {
+      if (isActiveSectionId(sectionId, targetSectionId)) {
         sectionElement.classList.remove('u-hidden');
       } else {
         sectionElement.classList.add('u-hidden');
       }
     });
+
+    // Highlight active link
+    sectionLinks.forEach((sectionLink) => {
+      const sectionId = sectionLink.getAttribute('href');
+
+      if (isActiveSectionId(sectionId, targetSectionId)) {
+        sectionLink.classList.add('active');
+      } else {
+        sectionLink.classList.remove('active');
+      }
+    })
   }
 
   function onLoad() {
-    showSection(currentHash);
-
-    // Build subsectionParentIdMap map
-    /*
-    subsectionLists.forEach(listElement => {
-      const sectionId = listElement.getAttribute('data-section');
-      const subsectionLinks = listElement.querySelectorAll('a');
-
-      subsectionLinks.forEach(linkElement => {
-        const subsectionId = linkElement.getAttribute('href');
-        subsectionParentIdMap[subsectionId] = sectionId;
-      })
-    })
-    */
-
     // Build sectionId map
     sections.forEach((sectionElement) => {
-      const sectionId = sectionElement.getAttribute('data-section');
+      const sectionId = sectionElement.getAttribute('data-section-id');
       sectionIdMap[sectionId] = sectionElement;
     });
+
+    // Build subsectionParentIdMap
+    subsectionAnchors.forEach((subsectionElement) => {
+      const subsectionId = "#" + subsectionElement.getAttribute("id");
+      const sectionId =
+        subsectionElement
+          .closest('.js-styleguide-section')
+          .getAttribute('data-section-id');
+
+      subsectionParentIdMap[subsectionId] = sectionId;
+    });
+
+    showSection(currentHash);
 
     // Attach event handlers
     sectionLinks.forEach((linkElement) => {
@@ -68,6 +93,29 @@
         history.pushState(null, null, sectionId);
         showSection(sectionId);
       })
+    });
+
+    document.querySelectorAll('.js-smooth-anchor').forEach(linkElement => {
+      linkElement.addEventListener('click', (e) => {
+        e.preventDefault();
+        const linkElement = e.target;
+        const subsectionId = linkElement.getAttribute('href');
+
+        const subsectionElement = document.querySelector(subsectionId);
+
+        if (subsectionElement === null) {
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+          });
+        } else {
+          subsectionElement.scrollIntoView({
+            behavior: "smooth"
+          });
+        }    
+              
+        history.pushState(null, null, subsectionId);
+      });
     });
   }
 

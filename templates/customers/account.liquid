@@ -15,7 +15,11 @@
 
   <header class="account-header page-heading clearfix">
     <div class="eight columns account-header-title">
-      <h1 class="page-heading__title">{{ 'customer.account.details' | t }}</h1>
+      {% assign page_title ='customer.account.details' | t %}
+      {% render "page-heading" with {
+        title: page_title
+      } %}
+
     </div>
 
     <div class="eight columns account-header-logout">

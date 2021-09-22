@@ -6,3 +6,11 @@ $vm-color-plum: #714457;
 $vm-color-sand: #dec1a8;
 $vm-color-cream: #f8f4f4;
 $vm-color-white: #ffffff;
+
+:root {
+  --vm-color-sea-green: #{$vm-color-sea-green};
+  --vm-color-plum: #{$vm-color-plum};
+  --vm-color-sand: #{$vm-color-sand};
+  --vm-color-cream: #{$vm-color-cream};
+  --vm-color-white: #{$vm-color-white};
+}

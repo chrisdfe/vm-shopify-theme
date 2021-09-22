@@ -586,7 +586,6 @@ var quickFilter = {
     quickFilter.processUrl(path, currentTags, query);
   },
   updateView: function(filterURL) {
-    console.log("filterUrl", filterURL)
     $.ajax({
       type: 'GET',
       url: filterURL,

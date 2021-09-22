@@ -1,9 +1,11 @@
 <a name="pagecontent" id="pagecontent"></a>
 
-<div class="sixteen columns clearfix collection_nav">
-  <div class="page-heading">
-  	<h1 class="page-heading__title">{{ 'customer.register.title' | t }}</h1>
-  </div>
+<div class="sixteen columns">
+  {% assign page_title ='customer.register.title' | t %}
+  {% render "page-heading" with {
+    title: page_title,
+    align: "center"
+  } %}
 </div>
 
 <div class="section clearfix">

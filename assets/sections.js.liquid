@@ -236,9 +236,7 @@ i && 1 == i.available
     i && !i.available && (n.fadeIn(), r.empty(), r.append(y))),
   Currency.show_multiple_currencies && currencyConverter.convertCurrencies(),
   $(".affirm-as-low-as").attr("data-amount", i.price),
-  $("span[itemprop=price]").attr("content", parseFloat(Math.round(100 * i.price) / 1e4).toFixed(2)),
-  $(".money").attr("data-currency-usd", "$ " + parseFloat(Math.round(100 * i.price) / 1e4).toFixed(2)),
-  $(".money").html("$ " + parseFloat(Math.round(100 * i.price) / 1e4).toFixed(2));
+  $("span[itemprop=price]").attr("content", parseFloat(Math.round(100 * i.price) / 1e4).toFixed(2));
 };
 var productPage = {
   init: function () {

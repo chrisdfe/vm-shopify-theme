@@ -29,7 +29,7 @@
   color: $vm-color-white;
 
   .page-heading {
-    padding-top: 0;
+    margin-top: 0;
   }
 
   ul {
@@ -59,6 +59,10 @@
         font-size: 0.6em;
         color: $vm-color-sand;
       }
+
+      &.active {
+        color: $vm-color-sand;
+      }
     }
   }
 }
@@ -79,6 +83,24 @@
   .anchor {
     position: absolute;
     top: -5rem;
+  }
+}
+
+.vm-styleguide__sidebar-contents {
+  position: sticky;
+  top: 10rem;
+}
+
+.vm-styleguide__subsection-list {
+  list-style: none;
+  padding-left: 0;
+
+  a {
+    @include vm-subheading-1();
+  }
+
+  sup {
+    color: $vm-color-sand;
   }
 }
 
