@@ -15,10 +15,11 @@
 {% endcapture %}
 
 
-{% include "content-section" with {
+{% render "content-section" with {
   id: "heirloom-reworks-cta",
   color_region: "light",
-  content: content
+  content: content,
+  extra_classes: "u-padding-top-0"
 } %}
 
 {% schema %}

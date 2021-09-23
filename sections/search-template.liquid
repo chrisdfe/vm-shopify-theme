@@ -114,7 +114,7 @@
 
       <div class="search-matrix">
         {% for item in search.results %}
-          <div class="product_row clearfix">
+          <div class="row product_row">
             {% assign featured_image = false %}
 
             {% if item.object_type == 'article' and item.featured_media.preview_image %}

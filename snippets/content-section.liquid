@@ -1,4 +1,6 @@
-{% assign color_region = section.settings.color_region | default: "light" %}
+{% if color_region == blank %}
+  {% assign color_region = "light" %}
+{% endif %}
 
 {% assign id_class_list = ids | split: ", " %}
 {% assign modifier_class_list = modifier_classes | split: ", " %}

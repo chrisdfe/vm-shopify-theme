@@ -1,32 +1,39 @@
 {% capture text_content %}
-  <ol class="how-it-works-list">
-    {% for block in section.blocks %}
-      <li class="how-it-works-list__item">
+<ul>
+  {% for block in section.blocks %}
+    <li>
         {{ block.settings.text }}
-      </li>
-    {% endfor %}
-  </ol>
+    </li>
+  {% endfor %}
+</ul>
 {% endcapture %}
 
-<!-- extra_classes: "u-padding-top-0" -->
+{% if section.blocks.size > 0 %}
 {% render "content-section.image-with-text" with {
-  id: "eternity-bracelets-how-it-works",
+  id: "requirements",
+  extra_classes: "u-padding-top-0"
   title: section.settings.title,
   text_content: text_content,
   image: section.settings.image,
-  image_position: "left",
+  image_position: "right",
   extra_classes: "u-padding-top-0"
 } %}
+{% endif %}
 
 {% schema %}
 {
-  "name": "How it works",
+  "name": "Requirements",
   "settings": [
     {
       "id": "title",
       "label": "Title",
       "type": "text",
-      "default": "How does it work?"
+      "default": "Requirements"
+    },
+    {
+      "id": "description",
+      "label": "Description",
+      "type": "text"
     },
     {
       "id": "image",
@@ -36,13 +43,13 @@
   ],
   "blocks": [
     {
-      "type": "how_it_works_item",
-      "name": "How it works item",
+      "type": "requirement",
+      "name": "Requirement",
       "settings": [
         {
           "id": "text",
           "label": "Text",
-          "type": "textarea"
+          "type": "text"
         }
       ]
     }

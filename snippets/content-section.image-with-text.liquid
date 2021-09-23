@@ -12,7 +12,7 @@
       <div class="content-section--image-text-columns__text-wrapper">
         <div class="content-section--image-text-columns__text">
           {% if title != blank %}
-            {% include "content-section.title" with {
+            {% render "content-section.title" with {
               title: title | escape,
               id: id,
               title_tag: title_tag
@@ -28,9 +28,10 @@
 </div>
 {% endcapture %}
 
-{% include 'content-section' with {
+{% render 'content-section' with {
   id: id,
   id_classes: "image-with-text"
   modifiers: modifiers,
-  content: content
+  content: content,
+  extra_classes: extra_classes
 } %}

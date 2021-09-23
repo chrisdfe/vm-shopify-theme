@@ -7,16 +7,17 @@
       <div class="container">
         <div class="row">
           <div class="sixteen columns">
-            {% include "content-section.title" with {
+            {% render "content-section.title" with {
               title: section.settings.title | escape,
             } %}
           </div>
         </div>
         
         {% for block in section.blocks %}
-          {% include "faq--item-row" with {
+          {% render "faq--item-row" with {
             question: block.settings.title,
-            answer: block.settings.answer
+            answer: block.settings.answer,
+            is_last_item: forloop.last == true
           } %}
         {% endfor %}
       </div>
@@ -26,7 +27,7 @@
 </div>
 {% endcapture %}
 
-{% include "content-section" with {
+{% render "content-section" with {
   id: "faq",
   title: "faq",
   content: content,

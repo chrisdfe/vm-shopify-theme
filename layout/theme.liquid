@@ -202,9 +202,7 @@
     {% if settings.size_chart != blank and template contains 'product' %}
       {% render 'popup-size-chart' %}
     {% endif %}
-    {% if settings.newsletter_popup %}
-      {% render 'popup-newsletter' %}
-    {% endif %}
+
     {% if settings.quick_shop_enabled %}
       {% render 'popup-quick-shop' %}
     {% endif %}

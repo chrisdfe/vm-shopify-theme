@@ -4,12 +4,13 @@
 </p>
 {% endcapture %}
 
-{% include 'content-section.image-with-text' with {
+{% render 'content-section.image-with-text' with {
   id: "heirloom-reworks-intro",
   title: section.settings.title,
   image_position: section.settings.image_position
   image: section.settings.image
-  text_content: text_content
+  text_content: text_content,
+  extra_classes: "u-padding-top-0"
 } %}
 
 {% schema %}

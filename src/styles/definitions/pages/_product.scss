@@ -285,8 +285,6 @@ span.shipping_estimate #toDate,
 
 /* SM - Hide Paypal Button */
 .product .shopify-payment-button__more-options,
-.product .shopify-payment-button__button--branded,
-.quick-shop .shopify-payment-button__more-options,
-.quick-shop .shopify-payment-button__button--branded {
+.product .shopify-payment-button__button--branded {
   visibility: hidden;
 }

@@ -6,7 +6,6 @@
 #Search autocomplete
 #Sidebar filter on collection pages
 #Misc
-#Quick shop
 #Newsletter popup
 #Currency converter
 #Product Media Controls
@@ -434,9 +433,7 @@ var enableInfiniteScroll = function(){
           Shopify.PaymentButton.init();
         }
         productPage.init();
-        if (Shopify.theme_settings.quick_shop_enabled){
-          quickShop.init();
-        }
+
         hideNoScript();
 
         videoFeature.init();
@@ -452,7 +449,7 @@ var enableInfiniteScroll = function(){
 
 //Search template
 
-var enableLoadMoreSearch = function(){
+const enableLoadMoreSearch = function(){
   $('body').on('click', '.js-load-more a', function(e){
     enableInfiniteSearchScroll();
     e.stopPropagation();
@@ -460,7 +457,7 @@ var enableLoadMoreSearch = function(){
   });
 }
 
-var enableInfiniteSearchScroll = function(){
+const enableInfiniteSearchScroll = function(){
   if ($('.search-matrix').length) {
     var infiniteSearchScroll = new Waypoint.Infinite({
       element: $('.search-matrix')[0],
@@ -489,9 +486,7 @@ var enableInfiniteSearchScroll = function(){
           Shopify.PaymentButton.init();
         }
         productPage.init();
-        if (Shopify.theme_settings.quick_shop_enabled) {
-          quickShop.init();
-        }
+
         hideNoScript();
 
         videoFeature.init();
@@ -516,15 +511,18 @@ var hideNoScript = function(){
 
 Shopify.queryParams = {};
 if (location.search.length) {
- for (var aKeyValue, i = 0, aCouples = location.search.substr(1).split('&'); i < aCouples.length; i++) {
-    aKeyValue = aCouples[i].split('=');
+  const aCouples = location.search.substr(1).split('&');
+  aCouples.forEach(aCouple => {
+    let aKeyValue = aCouple.split('=');
     if (aKeyValue.length > 1) {
      Shopify.queryParams[decodeURIComponent(aKeyValue[0])] = decodeURIComponent(aKeyValue[1]);
     }
-  }
+  });
 }
 
-var quickFilter = {
+console.log('Shopify.queryParams', Shopify.queryParams)
+
+const quickFilter = {
   init: function(){
     var selectedOptions = [],
         query = '',
@@ -658,7 +656,6 @@ var quickFilter = {
     });
   },
   processUrl: function(path, tags, query){
-
     var query = query.replace(/\page=(\w+)&/, ''),
         urlString = '';
 
@@ -673,149 +670,232 @@ var quickFilter = {
   Search autocomplete
 ==============================================================================*/
 
-var searchAutocomplete = {
-  init: function(){
+function getSearchResultItemPrice(item) {
+  const collectionHandles = item.collections.map(collection => collection.handle);
 
-    var currentAjaxRequest = null;
-    var shopURL = $('body').data('shop-url');
+  if (collectionHandles.includes('coming-soon')) {
+    return Shopify.translation.coming_soon_text;
+  }
 
-    if (Shopify.theme_settings.search_option == 'products'){
-      var searchPath = shopURL + '/search?type=product&q=';
-    } else {
-      var searchPath = shopURL + '/search?q=';
+  if (!item.available) {
+    if (Shopify.theme_settings.display_sold_out_price) {
+      return  `
+        item.price <span class="sold-out-text">${Shopify.theme_settings.sold_out_text}</span>
+      `
     }
 
-    //Submit wildcard searches
-    $(".search_form, .search__form, .header_search_form").on("submit", function(e){
-      var formValue = $(this).find('input[name="q"]').val();
-      var cleanFormValue = encodeURI(formValue);
+    return `<span class="sold-out-text">${Shopify.theme_settings.sold_out_text}</span>`;
+  }
 
-      e.preventDefault();
+  if (item.raw_compare > item.raw_price ) {
+    return `
+      <span class="was_price">${item.compare}</span> ${item.price}
+    `;
+  } 
 
-      if(cleanFormValue == null) {
-        window.location.href = '/search';
-      } else {
-        window.location.href = searchPath + cleanFormValue + '*';
+  if (item.price_varies && item.price_min > 0) {
+    return `${Shopify.translation.from_text} ${item.price}`;
+  }
+
+  if (item.price > 0 || item.raw_price > 0) {
+    return item.price;
+  }
+
+  return Shopify.theme_settings.free_text;
+}
+
+function renderSearchResultThumbnail(item) {
+  if (item.thumbnail !== 'NULL') {
+    return `
+    <div class="thumbnail">
+      <img src="${item.thumbnail}" />
+    </div>
+    `;
+  }
+
+  return '';
+}
+
+const searchAutocomplete = (function(){
+  let currentAjaxRequest = null;
+
+  const searchResultTemplates = {
+    product(item) {
+      const itemPrice = getSearchResultItemPrice(item);
+
+      return `
+        <div class="title">
+          ${item.title}<br>
+          <span class="item-pricing">${itemPrice}</span>
+        </div>
+      `;
+    },
+
+    article(item) {
+      return `
+        <div class="title">
+          ${item.title}<br />
+          <span class="item-pricing">${item.text_content}</span>
+        </div>
+      `;
+    },
+
+    page(item) {
+      return `
+        <div class="title">
+          ${item.title}<br />
+          <span class="item-pricing">${item.text_content}</span>
+        </div>
+      `;
+    },
+  };
+
+  function renderSearchResult(item) {
+    // <h6 class="u-margin-bottom-0">${item.object_type}</h6>
+
+    // Collect collection handles if product
+    const renderFn = searchResultTemplates[item.object_type];
+    
+    const thumbnail = renderSearchResultThumbnail(item);
+    const body = renderFn(item);
+
+    const fullTemplate = `
+      <li class="search-autocomplete__result search-autocomplete__result--type-${item.object_type}">
+        <a href="${item.url}">
+          ${thumbnail}
+
+          <div>
+            <h6 class="u-margin-bottom-0">
+              ${item.object_type}
+            </h6>
+
+            ${body}
+          </div>
+        </a>
+      </li>
+    `;
+
+    return fullTemplate;
+  }
+
+  function onSearchFormSubmit(event) {
+    console.log('onSubmit');
+    event.preventDefault();
+    const searchFormElement = event.target;
+
+    const formValue = searchFormElement.querySelector('input[name="q"]').val;ue;
+    const cleanedFormValue = encodeURI(formValue);
+
+    const newUrl = cleanedFormValue ? `${searchPath}${cleanedFormValue}*` : '/search'
+    window.location.href = newUrl;
+  }
+
+  function onSearchInputKeyup(event, { searchFormElement }) {
+    const inputElement = event.target;
+    const value = inputElement.value;
+
+    const shopURL = document.querySelector('body').getAttribute('data-shop-url');
+    const searchPath = shopURL + '/search?q=';
+
+    const $searchResults = $('.search__results');
+
+    if (value === '') {
+      $searchResults.hide();
+      $searchResults.empty();
+      return;
+    }  
+
+    if (value.length < 3) {
+      return;
+    }
+
+    const cleanedValue = encodeURI(value);
+
+    const formElement = searchFormElement.closest('form');
+    const searchURL =  searchPath + cleanedValue;
+
+    const resultsListElement = formElement.querySelector('.search__results');
+
+    if (currentAjaxRequest !== null) {
+      currentAjaxRequest.abort()
+    };
+
+    currentAjaxRequest = $.getJSON(`${searchURL}*&view=json`, (data) => {
+      resultsListElement.innerHTML = '';
+
+      // If we have no results
+      // TODO - reconsider whether this is the right behavior
+      if (data.results_count === 0) {
+        resultsListElement.hide();
+        return;
       }
-    });
 
-    var searchForms = $('form.search_form, form.search, form.header_search_form').each(function() {
+      const concatenatedResults = data.results.slice(0, Shopify.theme_settings.search_items_to_display);
 
-      var input = $(this).find('input[name="q"]');
+      // If we have results
+      let renderedContents = concatenatedResults.reduce((acc, item, index) => {
+        return acc + renderSearchResult(item);
+      }, '');
 
-      // Adding a list for showing search results.
-      $('<div class="search__results-wrapper"><ul class="search__results"></ul></div>').appendTo($(this));
-      // Listening to keyup and change on the text field within these search forms.
-      input.attr('autocomplete', 'off').bind('keyup change', function() {
+      // The Ajax request will return at the most 5 results.
+      // If there are more than 5, let's link to the search results page.
+      if (data.results_count >= Shopify.theme_settings.search_items_to_display) {
+        renderedContents += `
+          <li class="all-results">
+            <span class="title see-all">
+              <a href="${searchURL}*">${Shopify.translation.all_results} (${data.results_count})</a>
+            </span>
+          </li>
+        `;
+      }
+      
+      resultsListElement.innerHTML = renderedContents;
 
-        if(input.val() == '') {
-          $('.search__results').hide();
-          $('.search__results').empty();
-        }
+      // resultsListElement.fadeIn(200);
+      console.log('show result list');
+    })
+  }
 
-        var term = $(this).val();
-        var cleanTerm = encodeURI(term);
+  return {
+    init() {
+      console.log('searchAutocomplete is initializing')
+      
+      const searchForms = document.querySelectorAll('form.search_form, form.search, form.header_search_form');
 
-        var form = $(this).closest('form');
-        var searchURL =  searchPath + cleanTerm;
+      // Submit wildcard searches
+      searchForms.forEach((searchFormElement, index) => {
+        searchFormElement.addEventListener("submit", onSearchFormSubmit);
+      
+        const inputElement = searchFormElement.querySelector('input[name="q"]');
 
-        var resultsList = form.find('.search__results');
+        // Adding a list for showing search results.
+        $('<div class="search__results-wrapper"><ul class="search__results"></ul></div>').appendTo($(searchFormElement));
+  
+        // Listening to keyup and change on the text field within these search forms.
+        inputElement.setAttribute('autocomplete', 'off');
+        inputElement.addEventListener('keyup', (e) => {
+          onSearchInputKeyup(e, { searchFormElement });
+        });
+      });
+  
+      // Clicking outside makes the results disappear.
+      $(document).on('click', function(e){
+        const container = $('[data-autocomplete-true]');
 
-        if (term.length >= 3) {
-
-          if (currentAjaxRequest != null) currentAjaxRequest.abort();
-
-          currentAjaxRequest = $.getJSON(searchURL +'*&view=json', function(data) {
-            resultsList.empty();
-
-            // If we have no results.
-            if(data.results_count == 0) {
-              resultsList.hide();
-            } else {
-              // If we have results.
-              $.each(data.results, function(index, item) {
-                if(index >= Shopify.theme_settings.search_items_to_display) {
-                  return false;
-                }
-
-                var link = $('<a></a>').attr('href', item.url);
-
-                //Collect collection handles if product
-                if(item.object_type == 'product') {
-
-                  var collectionHandles = [];
-                  for(i=0; i < item.collections.length; i++) {
-                    collectionHandles.push(item.collections[i].handle);
-                  }
-
-                  if($.inArray('coming-soon', collectionHandles) != -1) {
-                    var itemPrice = Shopify.translation.coming_soon_text;
-                  } else {
-                    if(item.available == true) {
-
-                      if(item.raw_compare > item.raw_price ) {
-                        var itemPrice = '<span class="was_price">' + item.compare + '</span> ' + item.price;
-                      } else {
-                        if(item.price_varies && item.price_min > 0) {
-                          var itemPrice = Shopify.translation.from_text + ' ' + item.price;
-                        } else if(item.price > 0 || item.raw_price > 0) {
-                          var itemPrice = item.price;
-                        } else {
-                          var itemPrice = Shopify.theme_settings.free_text;
-                        }
-                      }
-                    } else {
-                      var itemPrice = Shopify.theme_settings.display_sold_out_price ? item.price + ' ' + '<span class="sold-out-text">' + Shopify.theme_settings.sold_out_text + '</span>' : '<span class="sold-out-text">' + Shopify.theme_settings.sold_out_text + '</span>';
-                    }
-                  }
-
-                  if(item.thumbnail != 'NULL') {
-                    link.append('<div class="thumbnail"><img class="lazyload {{ settings.image_loading_style }}" src="' + item.thumbnail + '" /></div>');
-                  }
-                  link.append('<div class="title">' + item.title + '<br><span class="item-pricing">'+ itemPrice +'</span></div>');
-
-
-                } else if(item.object_type == 'article') {
-                  if(item.thumbnail != 'NULL') {
-                    link.append('<div class="thumbnail"><img class="lazyload {{ settings.image_loading_style }}" src="' + item.thumbnail + '" /></div>');
-                  }
-                  link.append('<div class="title">' + item.title + '<br><span class="item-pricing">'+ item.text_content +'</span></div>');
-
-                } else if(item.object_type == 'page') {
-                  link.append('<div class="title">' + item.title + '<br><span class="item-pricing">'+ item.text_content +'</span></div>');
-                }
-
-                link.wrap('<li class="item-result result--' + item.object_type + '"></li>');
-                resultsList.append(link.parent());
-              });
-              // The Ajax request will return at the most 5 results.
-              // If there are more than 5, let's link to the search results page.
-              if(data.results_count >= Shopify.theme_settings.search_items_to_display) {
-                resultsList.append('<li class="all-results"><span class="title see-all"><a href="' + searchURL + '*">' + Shopify.translation.all_results + ' (' + data.results_count + ')</a></span></li>');
-              }
-              resultsList.fadeIn(200);
-            }
-          })
+        if (!container.is(e.target) && container.has(e.target).length === 0) {
+          $('[data-autocomplete-true]').find('.search__results-wrapper').hide();
         }
       });
-    });
-
-    // Clicking outside makes the results disappear.
-    $(document).on('click', function(e){
-      var container = $('[data-autocomplete-true]');
-      if (!container.is(e.target) && container.has(e.target).length === 0) {
-        $('[data-autocomplete-true]').find('.search__results-wrapper').hide();
-      }
-    });
-
-    $('[data-autocomplete-true] input').on('focus', function(){
-      $(this).parents('[data-autocomplete-true]').find('.search__results-wrapper').show();
-    });
-  },
-  unload: function() {
-    $('body').off('focus', '[data-autocomplete-true] input');
+  
+      $('[data-autocomplete-true] input').on('focus', function(){
+        $(this).parents('[data-autocomplete-true]').find('.search__results-wrapper').show();
+      });
+    },
+    unload: function() {
+      $('body').off('focus', '[data-autocomplete-true] input');
+    }
   }
-}
+})();
 
 /*============================================================================
   Sidebar filter on collection pages
@@ -866,40 +946,19 @@ var collectionSidebarFilter = {
   }
 }
 
-
-
-
 /*============================================================================
   Misc
 ==============================================================================*/
-if (Shopify.theme_settings.slideshow_arrow_size == 'bold'){
-  var arrowSize = {
-    x0: 10,
-    x1: 40, y1: 50,
-    x2: 80, y2: 50,
-    x3: 50
-  }
-  var svgArrowSizeLeft = '<svg viewBox="0 0 100 100"><path d="M 10,50 L 40,100 L 80,100 L 50,50  L 80,0 L 40,0 Z" class="arrow"></path></svg>'
-  var svgArrowSizeRight = '<svg viewBox="0 0 100 100"><path d="M 10,50 L 40,100 L 80,100 L 50,50  L 80,0 L 40,0 Z" class="arrow" transform="translate(100, 100) rotate(180) "></path></svg>'
-} else if (Shopify.theme_settings.slideshow_arrow_size == 'light'){
-  var arrowSize = {
-    x0: 10,
-    x1: 60, y1: 50,
-    x2: 62, y2: 40,
-    x3: 22
-  }
-  var svgArrowSizeLeft = '<svg viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 62,90 L 22,50  L 62,10 L 60,0 Z" class="arrow"></path></svg>'
-  var svgArrowSizeRight = '<svg viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 62,90 L 22,50  L 62,10 L 60,0 Z" class="arrow" transform="translate(100, 100) rotate(180) "></path></svg>'
-} else if (Shopify.theme_settings.slideshow_arrow_size == 'regular'){
-  var arrowSize = {
-    x0: 10,
-    x1: 60, y1: 50,
-    x2: 70, y2: 40,
-    x3: 30
-  }
-  var svgArrowSizeLeft = '<svg viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow"></path></svg>'
-  var svgArrowSizeRight = '<svg viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow" transform="translate(100, 100) rotate(180) "></path></svg>'
+
+const arrowSize = {
+  x0: 10,
+  x1: 60, y1: 50,
+  x2: 62, y2: 40,
+  x3: 22
 }
+const svgArrowSizeLeft = '<svg viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 62,90 L 22,50  L 62,10 L 60,0 Z" class="arrow"></path></svg>';
+
+const svgArrowSizeRight = '<svg viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 62,90 L 22,50  L 62,10 L 60,0 Z" class="arrow" transform="translate(100, 100) rotate(180) "></path></svg>';
 
 function isScreenSizeLarge() {
   if ($(window).width() > 1024 ) {
@@ -907,8 +966,8 @@ function isScreenSizeLarge() {
   }
 }
 
-var utils = {
-  createAccordion: function(container, tab, content){
+const utils = {
+  createAccordion: function(container, tab, content) {
     var $container = $(container);
     var $tab = $(container).find(tab);
     var $content = $(container).find(content);
@@ -943,6 +1002,7 @@ var utils = {
       $(this).next().slideToggle();
     });
   },
+
   mobileAccordion: function(container, tab, content){
     $container = $(container);
     $tab = $(container).find(tab);
@@ -956,6 +1016,7 @@ var utils = {
       $(this).next().slideToggle();
     });
   },
+  
   mobileParentActiveAccordion: function(container, tab, content){
     $container = $(container);
     $tab = $(container).find(tab);
@@ -980,73 +1041,6 @@ var utils = {
         $(this).parents('ul.tabs').next().find(contentLocation).show().css({'display': 'block'}).addClass('active').siblings().hide().removeClass('active');
       }
     });
-  },
-  pageBannerCheck: function(){
-    //check for header banner
-    if (!$('.page-banner').length > 0 || $('.header').hasClass('header-background--solid')) {
-      $('.feature_image').removeClass('feature_image');
-      $('.header.is-absolute').removeClass('is-absolute');
-      //hide secondary logo
-      $('.secondary_logo--true').find('.secondary_logo').css('display', 'none');
-      $('.secondary_logo--true').find('.primary_logo').css('display', 'block');
-    } else {
-      if ($('.page-banner').hasClass('full-width--true')) {
-        $('.header').parent().addClass('feature_image');
-        $('.header').addClass('is-absolute');
-        //check for secondary logo
-        if ($('header.feature_image').hasClass('secondary_logo--true')){
-          $('.secondary_logo--true').find('.secondary_logo').css('display', 'block');
-          $('.secondary_logo--true').find('.primary_logo').css('display', 'none');
-        }
-      } else {
-        $('.header').parent().removeClass('feature_image');
-        $('.header').removeClass('is-absolute');
-      }
-    }
-
-    //check for section that uses header banner on home page
-    if ($('.index-sections').children().first('.under-menu').find('.full-width--true').length) {
-      if (!$('.header').hasClass('header-background--solid')) {
-        $('.index .header').parent().addClass('feature_image');
-        $('.index .header').addClass('is-absolute');
-      }
-      //check for secondary logo
-      if ($('header.feature_image').hasClass('secondary_logo--true')){
-        $('.secondary_logo--true').find('.secondary_logo').show();
-        $('.secondary_logo--true').find('.primary_logo').hide();
-      }
-    } else {
-      $('.index .feature_image').removeClass('feature_image');
-      $('.index .header.is-absolute').removeClass('is-absolute');
-      //hide secondary logo
-      if (!$('header.feature_image').hasClass('secondary_logo--true')){
-        $('.secondary_logo--true').find('.secondary_logo').hide();
-        $('.secondary_logo--true').find('.primary_logo').show();
-      }
-    }
-
-    //check for section that uses header banner on the page details template
-    if ($('.detail-sections').children().first().hasClass('under-menu')) {
-      if (!$('.header').hasClass('header-background--solid')) {
-        $('[class^="page-details"] .header').parent().addClass('feature_image');
-        $('[class^="page-details"] .header').addClass('is-absolute');
-      }
-
-      //check for secondary logo
-      if ($('header.feature_image').hasClass('secondary_logo--true')){
-        $('.secondary_logo--true').find('.secondary_logo').show();
-        $('.secondary_logo--true').find('.primary_logo').hide();
-      }
-    } else {
-      $('[class^="page-details"] .feature_image').removeClass('feature_image');
-      $('[class^="page-details"] .header.is-absolute').removeClass('is-absolute');
-
-      //hide secondary logo
-      if (!$('header.feature_image').hasClass('secondary_logo--true')){
-        $('.secondary_logo--true').find('.secondary_logo').hide();
-        $('.secondary_logo--true').find('.primary_logo').show();
-      }
-    }
   },
   enableDisclosure: function() {
 
@@ -1160,506 +1154,6 @@ var sliderBlock = {
 }
 
 /*============================================================================
-  Quick shop
-==============================================================================*/
-
-var globalQuickShopProduct;
-
-var quickShop = {
-  init: function(){
-
-    //EVENT - click on quick-shop
-    $('body').on('click', '.js-quick-shop-link', function(e){
-      e.stopImmediatePropagation();
-      e.preventDefault();
-
-      //Set productData object based on data attributes
-      var productData = {
-        handle: $(this).data('handle'),
-        product_id: $(this).data('id'),
-        single_variant: $(this).attr('data-single-variant'),
-        product_in_collection_url: $(this).data('url'),
-        escaped_title: $(this).data('title').replace('"',""),
-        details_text: $(this).data('details-text'),
-        full_description: $(this).data('full-description'),
-        regular_description: $(this).data('regular-description'),
-        feat_img: $(this).data('feat-img'),
-        image_array: quickShop.createImageObjects($(this).data('images')),
-        thumbnail_array: quickShop.createImageObjects($(this).data('thumbnail-images')),
-        collection_handles: $(this).data('collection-handles').trim(',').split(','),
-        money_format: $('body').data('money-format')
-      }
-
-      //Find current product and notify forms
-      var $notifyForm = $(this).next('.js-quickshop-forms__container').find('.notify_form');
-      var $productForm = $(this).next('.js-quickshop-forms__container').find('.product_form');
-
-      $.fancybox.open($('.js-quick-shop'), {
-        baseClass: 'quick-shop__lightbox product-' + productData.product_id,
-        hash: false,
-        infobar : false,
-        toolbar: false,
-        loop: false,
-        smallBtn : true,
-        video: {
-          autoStart: false
-        },
-        touch: false,
-        mobile: {
-          preventCaptionOverlap: false,
-          toolbar: true,
-          buttons: [
-            "close"
-          ]
-        },
-        beforeLoad: function(){
-          quickShop.beforeOpen(productData);
-        },
-        afterLoad: function(){
-          quickShop.afterContent($productForm, $notifyForm, productData);
-          videoFeature.setupRecommendedVideoPlayer();
-          productMedia.setupMedia();
-        },
-        afterShow: function(){
-
-        },
-        beforeClose: function(){
-          quickShop.beforeClose(productData);
-        }
-      })
-
-    });
-
-    //Swatch toggler
-    $('.swatch_options input').each(function(){
-      if($(this).is(':checked')) {
-        quickShop.toggleSwatchImages($(this));
-      }
-    });
-
-    $('.swatch_options label').on('click', function(){
-      quickShop.toggleSwatchImages($(this));
-    });
-
-  },
-  toggleSwatchImages: function(swatchInput){
-    var swatchImageID = $(swatchInput).data('image');
-    var $quickShopElement = $(swatchInput).parents('.thumbnail').find('.image__container img');
-
-    $quickShopElement.attr('src', swatchImageID);
-    $quickShopElement.attr('srcset', swatchImageID);
-  },
-  createImageObjects: function($images){
-    //split image info
-    var image_paths_alts = $images.split('~');
-
-    //Create new array with image objects
-    var imageArray = image_paths_alts.map(function(image){
-      var imageInfo = image.split('^');
-      return {
-        path: imageInfo[0],
-        alt: imageInfo[1],
-        id: imageInfo[2],
-        mediaType: imageInfo[4]
-      }
-    });
-
-    return imageArray;
-  },
-  beforeOpen: function(productData) {
-
-    //Add image elements before gallery is opened
-    quickShop.populateGallery(productData);
-
-    $('.js-sale-banner, .js-sold-out, .js-current-price, .js-was-price, .js-savings, .js-new-banner, .js-pre-order-banner').empty();
-    $('.modal_price, .js-notify-form').show();
-
-    if (productData.image_array.length > 1) {
-      $('.js-gallery-modal').addClass('multi-image');
-      $('.js-gallery-modal').removeClass('single-image');
-      $('.js-gallery-modal').addClass('is-draggable');
-    } else {
-      $('.js-gallery-modal').addClass('single-image');
-      $('.js-gallery-modal').removeClass('multi-image');
-    }
-
-  },
-  afterContent: function($productForm, $notifyForm, productData) {
-
-    quickShop.retrieveProductInfo(productData);
-
-    videoFeature.setupVideoPlayer();
-
-    var $productGallery =  $('.js-gallery-modal');
-
-    productPage.enableGallery($productGallery);
-
-    //Copy form data to modal
-    $('.quick-shop__lightbox .js-notify-form').append($notifyForm);
-    $('.quick-shop__lightbox .js-product-form').append($productForm);
-
-    //Initiate selectCallback
-    if($productForm.hasClass("product_form_options") && $productForm.hasClass("viewed") == false) {
-      //If form hasn't been viewed previously, run OptionSelectors function
-      new Shopify.OptionSelectors($productForm.data("select-id"),
-      {
-        product: $productForm.data("product"),
-        onVariantSelected: selectCallback,
-        enableHistoryState: $productForm.data("enable-state")
-      });
-    } else {
-      //If form has been previously viewed, just convert currencies
-      if (Currency.show_multiple_currencies) {
-        currencyConverter.convertCurrencies();
-      }
-    }
-
-    //Link sold out options when there is more than one option available (eg. S is selected and Yellow option appears as sold out)
-    if (Shopify.theme_settings.product_form_style == 'swatches'){
-      var JSONData = $productForm.data('product');
-      var productID = productData.section_id;
-      var productSection = '.product-' + productID + ' .js-product_section';
-      var swatchOptions = $productForm.find('.swatch_options .swatch');
-      if (swatchOptions.length > 1){
-        Shopify.linkOptionSelectors(JSONData, productSection);
-      }
-    }
-
-    $('.js-quick-shop select[name="id"]').trigger('change');
-
-    utils.initializeTabs();
-
-    productPage.productSwatches();
-
-  },
-  beforeClose: function(productData) {
-
-    var $insertedNotifyForm = $('.quick-shop__lightbox .notify_form');
-    var $insertedProductForm = $('.quick-shop__lightbox .product_form');
-
-    //Copy form data back to product loop and add .viewed
-    $('.js-quickshop-forms--'+ productData.product_id).append($insertedProductForm);
-    $('.js-quickshop-forms--'+ productData.product_id).append($insertedNotifyForm);
-    $('.js-quickshop-forms--'+ productData.product_id +' .product_form').addClass('viewed');
-    $('.js-quickshop-forms--'+ productData.product_id +' .notify_form').addClass('viewed');
-
-    //Find gallery and carousel
-    var $gallery = $('.js-gallery-modal');
-    var $carousel = $('.js-gallery-carousel');
-
-    $('.js-gallery-carousel .gallery-cell').off('click');
-
-    //Remove image slides from gallery
-    $gallery.flickity( 'remove', $('.gallery-cell', $gallery));
-
-    //Destroy sliders when modal closes
-    $gallery.flickity('destroy');
-    if ($carousel.hasClass('flickity-enabled')){
-      $carousel.flickity( 'remove', $('.gallery-cell', $carousel) );
-      $carousel.flickity('destroy');
-    } else {
-      $carousel.find('.gallery-cell').remove();
-    }
-
-    var variantPrice = $('.js-current-price .money').text();
-    $('.js-quick-shop-link[data-id=' + productData.product_id + ']').attr('data-initial-modal-price', variantPrice);
-    $('.js-current-price, .js-was-price, .js-savings').empty();
-
-  },
-  retrieveProductInfo: function(productData){
-    $.ajax({
-      dataType: "json",
-      async: false,
-      cache: false,
-      url: "/products/" + productData.handle + ".js",
-      success: function(product) {
-        //Create new object combining info
-        product = $.extend({}, product, productData);
-
-        globalQuickShopProduct = product;
-        quickShop.updateVariant(product.variants[0].id.toString(), product);
-
-      }
-    });
-
-  },
-  updateVariant: function(variant){
-
-  if (globalQuickShopProduct != 'undefined'){
-
-    var product = globalQuickShopProduct;
-
-    $('.js-current-price').html('');
-    $('.js-was-price').html('');
-    $('.js-savings').html('');
-
-      //Title and Vendor
-      $('.js-product-title').html('<a href="'+ product.product_in_collection_url +'" title="'+ product.escaped_title +'">'+ product.title +'</a>');
-      $('.js-product-vendor')
-      .html('<a href="/collections/vendors?q=' + product.vendor +'">' + product.vendor + '</a>');
-
-      //Product Description
-      $('.js-full-description').html(product.full_description);
-      $('.js-regular-description').html(product.regular_description);
-      var productDetails = '<a href="'+ product.product_in_collection_url +'" class="secondary_button" title="'+ product.escaped_title +' Details">'+ product.details_text +'</a>';
-      $('.js-product-details').html(productDetails);
-
-      //Collection banners
-      $.each( product.collection_handles, function( value, index ) {
-        if (this.toString() == 'new'){
-          $('.js-new-banner').html(Shopify.translation.new_text);
-        }
-        if (this.toString() == 'pre-order'){
-          $('.js-pre-order-banner').html(Shopify.translation.pre_order_text);
-        }
-        if (this.toString() == 'coming-soon'){
-          product.price = Shopify.translation.coming_soon_text;
-        }
-
-      });
-
-      if (product.single_variant == 'true'){
-
-        //No variants
-        //Sale Banner
-        if (Shopify.theme_settings.sale_banner_enabled){
-          if (product.compare_at_price > product.price){
-            $('.js-sale-banner').html(Shopify.translation.sale_text);
-          }
-        }
-
-        //Sale
-        if (product.compare_at_price > product.price) {
-          $('.js-current-price').addClass('sale');
-        } else {
-          $('.js-current-price').removeClass('sale');
-        }
-
-        //Availability
-        if (product.available == false){
-          if (product.price == Shopify.translation.coming_soon_text) {
-            $('.js-sold-out').html(Shopify.translation.coming_soon_text)
-          } else {
-            $('.js-sold-out').html(Shopify.theme_settings.sold_out_text);
-          }
-        } else {
-          $('.js-sold-out').html('');
-        }
-
-        //Price
-        if (product.available == true || product.available == false && Shopify.theme_settings.display_sold_out_price) {
-          if (product.compare_at_price > product.price) {
-            $('.js-was-price').html('<span class="money">' + Shopify.formatMoney(product.variants[0].compare_at_price, product.money_format)  + '</span>');
-            $('.js-savings').html(Shopify.translation.savings_text + ' ' + parseInt(((product.variants[0].compare_at_price - product.variants[0].price) * 100) / product.variants[0].compare_at_price) + '% (' + '<span class="money">' + Shopify.formatMoney(product.variants[0].compare_at_price - product.variants[0].price, product.money_format) + '</span>)');
-          }
-
-          if (product.price == Shopify.translation.coming_soon_text){
-            $('.js-current-price').html(Shopify.translation.coming_soon_text);
-          } else if (product.price) {
-            $('.js-current-price').html('<span class="money">' + Shopify.formatMoney(product.variants[0].price, product.money_format) + '</span>');
-          } else {
-            $('.js-current-price').html(Shopify.theme_settings.free_text);
-          }
-        }
-                                        
-          
-
-        //Notify Form
-        if (product.available == true) {
-          $('.js-notify-form').hide();
-        } else {
-          $('.js-notify-form').show();
-        }
-
-      } else {
- 
-        //Variant loop
-        for (var i = 0; i < product.variants.length; i++) {
-
-          if (variant == product.variants[i].id.toString()){
-            //Sale Banner
-            if (Shopify.theme_settings.sale_banner_enabled){
-              if (product.variants[i].compare_at_price > product.variants[i].price){
-                $('.js-sale-banner').html(Shopify.translation.sale_text);
-              }
-            }
-
-            //Sale
-            if (product.variants[i].compare_at_price > product.variants[i].price) {
-              $('.js-current-price').addClass('sale');
-            } else {
-              $('.js-current-price').removeClass('sale');
-            }
-
-            //Availability
-            if (product.variants[i].available == false){
-              if (product.price == Shopify.translation.coming_soon_text) {
-                $('.js-sold-out').html(Shopify.translation.coming_soon_text)
-              } else if ($('.js-current-price').parents('.modal_price').hasClass('variant-unavailable')){
-                $('.js-sold-out').html(Shopify.translation.unavailable_text);
-              } else {
-                $('.js-sold-out').html(Shopify.theme_settings.sold_out_text);
-              }
-            } else {
-              $('.js-sold-out').html('');
-            }
-
-            //Extra check to ensure the product is not unavailable
-            if ($('.js-current-price').parents('.modal_price').hasClass('variant-unavailable')){
-              $('.js-sold-out').html(Shopify.translation.unavailable_text);
-            }
-
-            //Notify Form
-            if (product.variants[i].available == true) {
-              $('.js-notify-form').hide();
-            } else {
-              $('.js-notify-form').show();
-            }
-
-            //Price
-            if (product.variants[i].available == true || product.variants[i].available == false && Shopify.theme_settings.display_sold_out_price){
-
-              if (product.variants[i].compare_at_price > product.variants[i].price) {
-                $('.js-was-price').html('<span class="money">' + Shopify.formatMoney(product.variants[i].compare_at_price, product.money_format) + '</span>');
-                $('.js-savings').html(Shopify.translation.savings_text + ' ' + parseInt(((product.variants[i].compare_at_price - product.variants[i].price) * 100) / product.variants[i].compare_at_price) + '% (' + '<span class="money">' + Shopify.formatMoney(product.variants[i].compare_at_price - product.variants[i].price, product.money_format) + '</span>)');
-              }
-
-              if (product.price == Shopify.translation.coming_soon_text){
-                $('.js-current-price').html(Shopify.translation.coming_soon_text);
-              } else if (product.variants[i].price) {
-                $('.js-current-price').html('<span class="money">' + Shopify.formatMoney(product.variants[i].price, product.money_format) + '</span>');
-              } else {
-                $('.js-current-price').html(Shopify.theme_settings.free_text);
-              }
-            }
-        
-          }
-        }
-      }
-    }
-    if (Currency.show_multiple_currencies) {
-      currencyConverter.convertCurrencies();
-    }
-  },
-  populateGallery: function(productData){
-
-    //Find gallery and carousel
-    var $gallery = $('.js-gallery-modal');
-    var $carousel = $('.js-gallery-carousel');
-
-    //Add gallery images based on product info from API
-    function addMainGalleryImages(){
-
-      $.each( productData.image_array, function( i, image ){
-
-        if (image.path == '' || image.id == undefined) {
-          var imgPath = productData.feat_img;
-        } else {
-          var imgPath = image.path;
-        }
-
-        if (image.alt == undefined || image.alt == '') {
-          var alt = "";
-        } else {
-          var alt = image.alt;
-        }
-
-        var img2048x2048 = imgPath.replace(/(\.[^.]*)$/, "_2048x2048$1").replace('http:', '');
-        var cellContent;
-
-        if (image.mediaType.indexOf("image") >= 0) {
-          cellContent = '<div class="image__container" style="max-width:' + image.width + 'px"><img src="' + imgPath + '" alt="${alt}" data-image-id="' + image.id + '" data-index="' + i + '" /></div>';
-        } else {
-          cellContent = unescape(imgPath);
-        }
-
-        var $cellElems = $('<div class="gallery-cell">'+ cellContent +'</div>');
-        $('.js-gallery-modal').append($cellElems);
-      });
-
-    }
-
-    //Add carousel images based on product info from API
-    function addCarouselGalleryImages(){
-
-      $.each( productData.thumbnail_array, function( i, image ){
-        if (image.path != '') {
-          var imgPath = image.path;
-          var carouselSizedImg = imgPath.replace(/(\.[^.]*)$/, "_grande$1").replace('http:', '');
-
-          var mediaBadge = '';
-
-          if (image.alt.indexOf("model") >= 0) {
-            mediaBadge = '<span class="icon media-badge"><svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M1 25H25V1H1V25Z" fill=""/><path class="media-badge__outline" d="M0.5 25V25.5H1H25H25.5V25V1V0.5H25H1H0.5V1V25Z" stroke="" stroke-opacity="0.05"/><g opacity="0.6"><path fill-rule="evenodd" clip-rule="evenodd" d="M13 6L19.0622 9.5V16.5L13 20L6.93782 16.5V9.5L13 6Z" stroke="" stroke-width="1.5"/><path fill-rule="evenodd" clip-rule="evenodd" d="M13 20V12.6024C13.6225 12.2002 13.6225 12.2002 13.6225 12.2002L19 9V16.4082L13 20Z" fill=""/></g></svg></span>';
-          } else if(image.alt.indexOf('external_video') >= 0 || image.alt.indexOf('video') >= 0 ) {
-            mediaBadge = '<span class="icon media-badge"><svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M1 25H25V1H1V25Z" fill=""/><path class="media-badge__outline" d="M0.5 25V25.5H1H25H25.5V25V1V0.5H25H1H0.5V1V25Z" stroke="" stroke-opacity="0.05"/><path fill-rule="evenodd" clip-rule="evenodd" d="M8.19995 5.8V20.2L19.3999 12.5858L8.19995 5.8Z" fill="" fill-opacity="0.6"/></svg></span>';
-          }
-
-          var img = '<img src="'+ carouselSizedImg + '" alt="' + escape(image.alt) + '" />';
-          var $carouselCellElems = $('<div class="gallery-cell">'+ img + mediaBadge +'</div>');
-          $carousel.append($carouselCellElems);
-        }
-      });
-
-      imageFunctions.linkGalleryAndCarousel($gallery, $carousel);
-
-    }
-
-    addMainGalleryImages();
-
-    // Adds carousel images to thumbnail slider if there is more than one slide in main gallery
-    if ($gallery.find('.gallery-cell').length > 1) {
-      addCarouselGalleryImages();
-    }
-
-  }
-}
-
-/*============================================================================
-  Newsletter Popup
-==============================================================================*/
-
-var newsletter_popup = {
-  init: function(){
-    var popup = Cookies.get('popup');
-    var newsletter_popup_days = parseInt(Shopify.theme_settings.newsletter_popup_days);
-    var cookie_enabled = newsletter_popup_days != 0 ? true : false;
-    if (cookie_enabled && popup == 'open') {
-      return false;
-    } else {
-      newsletter_popup.open();
-    }
-    if (cookie_enabled) {
-      Cookies.set('popup', 'open', { expires: newsletter_popup_days });
-    }
-  },
-  open: function(){
-    var newsletter_popup_seconds = parseInt(Shopify.theme_settings.newsletter_popup_seconds);
-
-    if (Shopify.theme_settings.newsletter_popup_mobile || $(window).width() > 798) {
-      setTimeout( function() {
-        $.fancybox.open($('.js-newsletter-popup'), {
-          baseClass: 'newsletter__lightbox',
-          hash: false,
-          infobar : false,
-          toolbar: false,
-          loop: true,
-          smallBtn : true,
-          mobile: {
-            preventCaptionOverlap: false,
-            toolbar: true,
-            buttons: [
-              "close"
-            ]
-          }
-        });
-      },
-      newsletter_popup_seconds * 1000);
-    }
-  }
-}
-
-/*============================================================================
 Product media controls
 ==============================================================================*/
 
@@ -1712,7 +1206,7 @@ var globalVideoPlayers = [];
 var videoPlayers = [];
 var videosInRecommendedProductsPlayer;
 
-videoFeature = {
+const videoFeature = {
   init: function() {
 
     this.setupVideoPlayer();
