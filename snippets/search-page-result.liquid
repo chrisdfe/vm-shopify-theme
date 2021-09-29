@@ -1,0 +1,106 @@
+{% assign collection_handles = "" %}
+{% if item.object_type == "product" %}
+  {%- assign collection_handles = item.collections | map: 'handle' -%}
+{% endif %}
+
+<div class="search-page-result">
+  <a href="{{ item.url }}" title="{{ item.title | escape }}">
+    <div class="container">
+      <div class="row">
+
+        <div class="four columns">
+          {% if item.object_type == 'article' and item.image %}
+            {% render 'image-element',
+              image: item.image,
+              alt: item.title,
+              object_fit: settings.align_height,
+              max_height: settings.collection_height
+            %}
+          {% elsif item.featured_image %}
+            {% render 'image-element',
+              image: item.featured_image,
+              alt: item.title,
+              object_fit: settings.align_height,
+              max_height: settings.collection_height
+            %}
+          {% endif %}
+        </div>
+      
+        <div class="twelve columns">
+          <h6 class="search-page-result__type-heading">
+            {% if item.object_type == "article" %}
+              Blog Post
+            {% elsif item.object_type == "product" %}
+              {% if collection_handles contains "services" %}
+                Service
+              {% else %}
+                {{ item.object_type }}
+              {% endif %}
+            {% else %}
+              {{ item.object_type }}
+            {% endif %}
+          </h6>
+      
+          <h4 class="search-page-result__title u-margin-bottom-1">
+            {{ item.title }}
+          </h4>
+      
+          {% if item.price %}
+            <div class="u-margin-vertical-1">
+              {% unless settings.display_price == false and item.available == false %}
+                <span class="price">
+                  {% if item.compare_at_price_max > item.price %}
+                    <span class="was_price">
+                      <span class="money">
+                        {% render 'price-element', price: item.compare_at_price_max %}
+                      </span>
+                    </span>
+                  {% endif %}
+      
+                  {% if item.price_varies %}
+                    {% if item.compare_at_price_max > item.price %}
+                      <br />
+                    {% endif %}
+                    
+                    <small><em>{{ 'products.general.from' | t }}</em></small>
+                  {% endif %}
+      
+                  <span class="money">
+                    {% render 'price-element', price: item.price_min %}
+                  </span>
+                </span>
+              {% endunless %}
+      
+              {% if item.available == false %}
+                <span class="sold-out-text">{{ settings.sold_out_text }}</span>
+              {% endif %}
+            </div>
+          {% endif %}
+      
+          {% if item.object_type == 'article' %}
+            <p class="paragraph-3 u-margin-vertical-1">
+              {% if section.settings.blog_date %}
+                <span>{{ item.published_at | date: format: "month_day_year" }}</span>
+              {% endif %}
+            </p>
+          {% endif %}
+      
+          {% if item.excerpt %}
+            <div class="paragraph-3">
+              {{ item.excerpt }}
+            </div>
+          {% else %}
+            <p class="paragraph-3 u-hidden-medium-down">
+              {{ item.content | strip_html | truncatewords: 40 | highlight: search.terms | replace: 'Description', '' | replace: 'Specs', '' | replace: 'Shipping', '' | replace: 'Size', '' }}
+            </p>
+
+            <p class="paragraph-3 u-hidden-large-up">
+              {{ item.content | strip_html | truncatewords: 15 | highlight: search.terms | replace: 'Description', '' | replace: 'Specs', '' | replace: 'Shipping', '' | replace: 'Size', '' }}
+            </p>
+          {% endif %}
+        </div>
+        
+      </div>
+    </div>
+  </a>
+</div>

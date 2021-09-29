@@ -127,7 +127,8 @@
 .vm-styleguide__subsection-title sup {
   position: absolute;
   top: 50%;
-  transform: translateY(-1rem);
+  -webkit-transform: translateY(-1rem);
+          transform: translateY(-1rem);
   left: -4rem;
   color: #dec1a8;
 }

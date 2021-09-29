@@ -6,7 +6,13 @@
 }
 
 .u-hidden-medium-down {
-  @include respond-to('medium-down') {
+  @include respond-to("medium-down") {
+    display: none;
+  }
+}
+
+.u-hidden-large-up {
+  @include respond-to("large-up") {
     display: none;
   }
 }

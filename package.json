@@ -5,12 +5,26 @@
   "main": "index.js",
   "scripts": {
     "styles:compile": "node scripts/compile-styles.js",
-    "styles:watch": "node scripts/watch-styles.js"
+    "styles:watch": "node scripts/watch-styles.js",
+    "scripts:compile": "./node_modules/.bin/rollup --config",
+    "scripts:watch": "./node_modules/.bin/rollup --config --watch"
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.15.5",
+    "@babel/preset-env": "^7.15.6",
+    "@csstools/postcss-sass": "^4.0.0",
+    "@rollup/plugin-babel": "^5.3.0",
+    "@rollup/plugin-node-resolve": "^13.0.5",
+    "autoprefixer": "^10.3.6",
+    "core-js": "3",
+    "lodash-es": "^4.17.21",
     "node-watch": "^0.7.1",
+    "postcss": "^8.3.8",
+    "postcss-scss": "^4.0.0",
+    "rollup": "^2.57.0",
     "sass": "^1.35.2",
     "yargs": "^17.0.1"
   }

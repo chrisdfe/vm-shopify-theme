@@ -21,14 +21,15 @@
 </div>
 
 {% if cart.item_count == 0 %}
-  <div class="sixteen columns">
-    <div class="section clearfix">
-      <div class="six columns offset-by-five medium-down--one-whole">
-        <p class="quote">{{ 'cart.general.continue_browsing_html' | t }}</p>
+  <div class="container">
+    <div class="row">
 
-        <a href="{% if cart.items.first.product.collections != blank %}{{ cart.items.first.product.collections.last.url }}{% else %}{{ routes.all_products_collection_url }}{% endif %}" class="action_button continue-button add_to_cart">{{ 'cart.general.continue_shopping_link_html' | t }}</a>
+      <div class="sixteen columns medium-down--one-whole">
+        <p class="u-margin-vertical-3">{{ 'cart.general.continue_browsing_html' | t }}</p>
+  
+        <a href="{% if cart.items.first.product.collections != blank %}{{ cart.items.first.product.collections.last.url }}{% else %}{{ routes.all_products_collection_url }}{% endif %}" class="action_button continue-button">{{ 'cart.general.continue_shopping_link_html' | t }}</a>
       </div>
-      <br class="clear" />
+
     </div>
   </div>
 {% else %}

@@ -3,5 +3,5 @@ const OUTPUT_DIR = "assets/";
 
 module.exports = {
   SOURCE_DIR,
-  OUTPUT_DIR
-}
+  OUTPUT_DIR,
+};

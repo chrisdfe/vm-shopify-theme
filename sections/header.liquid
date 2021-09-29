@@ -65,6 +65,7 @@
       <div class="promo_banner-close"></div>
     </div>
   {% endif %}
+  
   <div class="top_bar clearfix">
     <a class="mobile_nav dropdown_link" data-dropdown-rel="menu" data-no-instant="true">
       <div class="hamburger-menu-icon">
@@ -96,8 +97,8 @@
         </div>
       {% endif %}
     </div>
-
   </div>
+
   {% if section.settings.search_enabled %}
     <div class="dropdown_container center" data-dropdown="search">
       <div class="dropdown">
@@ -111,6 +112,7 @@
       </div>
     </div>
   {% endif %}
+
   <div class="dropdown_container" data-dropdown="menu">
     <div class="dropdown">
       <ul class="menu" id="mobile_menu">
@@ -456,6 +458,7 @@
             </ul>
           </div>
         {% endif %}
+
         {% if section.settings.search_enabled %}
           <div class="dropdown_container center" data-dropdown="search">
             <div class="dropdown" data-autocomplete-{{ settings.enable_autocomplete }}>
@@ -463,12 +466,15 @@
                 {% if settings.search_option != 'everything' %}
                   <input type="hidden" name="type" value="product" />
                 {% endif %}
+
                 <span class="icon-search search-submit"></span>
+
                 <input type="text" name="q" placeholder="{{ 'general.search.title' | t: shop_name: shop.name }}" autocapitalize="off" autocomplete="off" autocorrect="off" class="search-terms" />
               </form>
             </div>
           </div>
         {% endif %}
+
         {% render 'sub-menu', linklist: section.settings.main_linklist %}
         {% render 'sub-menu', linklist: section.settings.main_linklist2 %}
       </div>

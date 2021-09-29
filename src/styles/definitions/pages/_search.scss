@@ -1,33 +1,50 @@
 /* Pages - Search
 ================================================== */
 
-.search-template-section {
-  form {
-    position: relative;
-  }
+.search-page__results-count {
+  padding-bottom: get-vm-spacer(1);
+  border-bottom: 2px solid $vm-color-cream;
+  margin-bottom: 0;
+}
 
-  .search_container {
-    position: relative;
+.search-page-result {
+  a {
+    padding: get-vm-spacer(2);
+    display: block;
+    transition: background-color 0.2s, color 0.2s;
+    color: $vm-color-sea-green;
 
-    .search-submit {
-      z-index: 900;
+    &:hover {
+      background: $vm-color-cream;
     }
   }
-}
 
-.search-matrix .product_row {
-  padding: 20px 0;
-  border-bottom: 1px solid $vm-border-color;
-
-  .sub_title {
-    margin-top: 1rem;
+  p:last-child {
+    margin-bottom: 0;
   }
-}
 
-.search-matrix .product_row:last-child {
-  border-bottom: none;
-}
+  .row {
+    align-items: center;
+  }
 
-.search_page {
-  padding: 100px 0;
+  .search-page-result__type-heading {
+    color: $vm-color-sea-green;
+    opacity: 0.6;
+    margin-bottom: 0;
+  }
+
+  @include respond-to("medium-down") {
+    a {
+      padding: get-vm-spacer(1);
+      margin: 0 (get-vm-spacer(1) * -1);
+    }
+
+    .row {
+      align-items: flex-start;
+    }
+
+    .search-page-result__title {
+      @include vm-subheading-2();
+    }
+  }
 }

@@ -21,11 +21,13 @@
     <div class="row">
       {% for block in section.blocks %}
         <div class="one-third columns medium-down--one-half">
-          {% include "image-card" with {
-            url: block.settings.link,
-            image: block.settings.image,
-            title: block.settings.title | strip_html
-          } %}
+          <div data-on-intersect="appear">
+            {% include "image-card" with {
+              url: block.settings.link,
+              image: block.settings.image,
+              title: block.settings.title | strip_html
+            } %}
+          </div>
         </div>
       {% endfor %}
 

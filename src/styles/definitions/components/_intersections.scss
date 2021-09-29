@@ -1,0 +1,13 @@
+/* Components - Intersections
+================================================== */
+
+.intersection-visibility {
+  opacity: 0;
+  transform: translateY(1rem);
+  transition: transform 0.5s, opacity 0.5s;
+
+  &.intersection-visibility--visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

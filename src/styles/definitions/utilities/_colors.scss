@@ -1,8 +1,8 @@
 /* utilities/colors
 ================================================== */
 
-.u-background-color-sea-greem {
-  background-color: $vm-color-plum;
+.u-background-color-sea-green {
+  background-color: $vm-color-sea-green;
 }
 
 .u-background-color-plum {
@@ -19,4 +19,24 @@
 
 .u-background-color-white {
   background-color: #fff;
+}
+
+.u-text-color-sea-green {
+  color: $vm-color-plum;
+}
+
+.u-text-color-plum {
+  color: $vm-color-plum;
+}
+
+.u-text-color-sand {
+  color: $vm-color-sand;
+}
+
+.u-text-color-cream {
+  color: $vm-color-cream;
+}
+
+.u-text-color-white {
+  color: #fff;
 }
