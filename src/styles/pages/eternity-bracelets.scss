@@ -3,8 +3,8 @@
 
 @use "sass:math";
 
-@import '../_variables.scss';
-@import '../_mixins.scss';
+@import "../_variables.scss";
+@import "../_mixins.scss";
 
 .eternity-bracelets__image-wrapper {
   display: flex;
@@ -12,7 +12,7 @@
   align-items: center;
   justify-content: center;
 
-  @include respond-to('medium-down') {
+  @include respond-to("medium-down") {
     padding: 2rem 2rem 0;
   }
 }
@@ -20,26 +20,13 @@
 .eternity-bracelets__content-wrapper {
   padding: 2rem;
 
-  @include respond-to('medium-down') {
+  @include respond-to("medium-down") {
     padding: 0;
   }
 }
 
 .content-section.content-section--eternity-bracelets-banner {
-  padding-top: 0;
-
-  .page-heading {
-    // Compensate for the floating navbar
-    text-align: center;
-  }
-
-  @include respond-to('medium-down') {
-    padding-bottom: 0;
-
-    .page-heading {
-      padding: 7rem 0 3rem;
-    }
-  }
+  padding: 0;
 }
 
 .eternity-bracelets__banner-row {
@@ -59,14 +46,14 @@
   align-items: center;
   justify-content: center;
 
-  @include respond-to('medium-down') {
+  @include respond-to("medium-down") {
     width: 100%;
     flex-basis: 100%;
     margin: 0;
   }
 
   &.eternity-braclets__banner-image--large {
-    @include respond-to('medium-down') {
+    @include respond-to("medium-down") {
       display: none;
     }
   }
@@ -75,7 +62,7 @@
     padding-bottom: $gutter;
     margin-bottom: -3px;
 
-    @include respond-to('medium-down') {
+    @include respond-to("medium-down") {
       padding-bottom: 0;
       margin-bottom: 0;
     }
@@ -84,7 +71,7 @@
   &.eternity-braclets__banner-image--small {
     margin-right: 20%;
 
-    @include respond-to('medium-down') {
+    @include respond-to("medium-down") {
       display: none;
     }
   }

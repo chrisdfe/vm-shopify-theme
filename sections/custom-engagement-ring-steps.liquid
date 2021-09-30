@@ -1,11 +1,12 @@
 <div class="container">
   {% for block in section.blocks %}
     <div class="row u-margin-vertical-3">
-      <div class="six columns">
+      <div class="six columns medium-down--one-whole">
         {{ block.settings.image | img_url: "x600" | img_tag }}
+        <div class="u-hidden-large-up u-margin-bottom-1"></div>
       </div>
 
-      <div class="ten columns">
+      <div class="ten columns medium-down--one-whole">
         <h3>{{ forloop.index }}. {{ block.settings.title }}</h3>
 
         <p>{{ block.settings.content }}</p>

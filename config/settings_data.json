@@ -1,5 +1,19 @@
 {
   "current": {
+    "checkout_header_image": "",
+    "checkout_logo_image": "shopify:\/\/shop_images\/Valerie-Madison-on-pinkish-cream.png",
+    "checkout_logo_position": "center",
+    "checkout_logo_size": "medium",
+    "checkout_body_background_image": "",
+    "checkout_body_background_color": "#f8f4f4",
+    "checkout_input_background_color_mode": "white",
+    "checkout_sidebar_background_image": "",
+    "checkout_sidebar_background_color": "#f8f4f4",
+    "checkout_heading_font": "Open Sans",
+    "checkout_body_font": "Open Sans",
+    "checkout_accent_color": "#dec1a8",
+    "checkout_button_color": "#1c4047",
+    "checkout_error_color": "#f15829",
     "performance": "sport",
     "image_loading_style": "blur-up",
     "custom_scripts": "",
@@ -226,20 +240,6 @@
     "favicon": "shopify:\/\/shop_images\/VM-plum-favicon-white.png",
     "disqus_enabled": false,
     "disqus_shortname": "",
-    "checkout_header_image": "",
-    "checkout_logo_image": "shopify:\/\/shop_images\/Valerie-Madison-on-pinkish-cream.png",
-    "checkout_logo_position": "center",
-    "checkout_logo_size": "medium",
-    "checkout_body_background_image": "",
-    "checkout_body_background_color": "#f8f4f4",
-    "checkout_input_background_color_mode": "white",
-    "checkout_sidebar_background_image": "",
-    "checkout_sidebar_background_color": "#f8f4f4",
-    "checkout_heading_font": "Open Sans",
-    "checkout_body_font": "Open Sans",
-    "checkout_accent_color": "#dec1a8",
-    "checkout_button_color": "#1c4047",
-    "checkout_error_color": "#f15829",
     "mega_text_font_style": "none",
     "mega_text_font_weight": "normal",
     "hide_paypal_button": true,
@@ -3098,10 +3098,7 @@
       "eternity-bracelets-banner": {
         "type": "eternity-bracelets-banner",
         "settings": {
-          "title": "Eternity Bracelets",
-          "image_1": "shopify:\/\/shop_images\/bracelet_arms.png",
-          "image_2": "shopify:\/\/shop_images\/Insta_pinky_promise.png",
-          "image_3": "shopify:\/\/shop_images\/Gold_Eternity_Chain.png"
+          "title": "Eternity Bracelets"
         }
       },
       "eternity-bracelets-overview": {

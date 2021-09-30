@@ -5,22 +5,6 @@
 - This template can be viewed by going to /collections of the shop.
 {% endcomment %}
 
-{% if section.settings.image %}
-  <header class="banner center page-banner dark-overlay-{{ section.settings.image_darken }}">
-    {% render 'image-element',
-            image: section.settings.image,
-            alt: section.settings.image.alt,
-            stretch_width: true,
-            progressive: true
-    %}
-    {% if section.settings.display_collection_title %}
-      <div class="caption">
-        <h1 class="headline">{{ 'collections.general.title' | t }}</h1>
-      </div>
-    {% endif %}
-  </header>
-{% endif %}
-
 <a name="pagecontent" id="pagecontent"></a>
 
 <div class="container">
@@ -75,6 +59,7 @@
           <h1>{{ 'collections.general.title' | t }}</h1>
         </div>
       {% endif %}
+      
       <div class="sixteen columns">
         <div class="feature_divider"></div>
       </div>
@@ -94,64 +79,56 @@
       <div class="sixteen columns list-collection-wrapper">
     {% endif %}
 
-    <div class="list-collections clearfix equal-columns--clear equal-columns--outside-trim">
+    <div class="list-collections">
+      <div class="container">
+        <div class="row">
 
-      {% for collection in collections %}
-        {% unless collection.handle == 'frontpage' %}
-          {% capture collection_title %}{{ collection.title | escape }}{% endcapture %}
-          <div class="
-          {% if collections_per_row == 2 %}
-            eight columns
-          {% elsif collections_per_row == 3 %}
-            one-third column
-          {% else %}
-            four columns
-          {% endif %}
-          thumbnail {% cycle 'even', 'odd' %}
-          {% if settings.mobile_products_per_row == '1' %}
-            medium-down--one-half
-            small-down--one-whole
-          {% else %}
-            medium-down--one-half
-            small-down--one-half
-          {% endif %}">
-
-        <div class="product-wrap">
-          <div class="image__container">
-            {% if collection.image %}
-              {% assign collection_image = collection.image.src %}
-            {% else %}
-              {% assign collection_image = collection.products.first.featured_image %}
-            {% endif %}
-            {% render 'image-element',
-                    image: collection_image,
-                    alt: collection.title,
-                    object_fit: section.settings.align_height,
-                    max_height: section.settings.collection_height
-            %}
-          </div>
-
-            <a href="{{ collection.url }}" title="{{ collection_title }}" class="hidden-product-link">{{ collection_title }}</a>
-            {% if settings.thumbnail_hover_enabled %}
-                <div class="thumbnail-overlay">
+          {% for collection in collections %}
+            {% unless collection.handle == 'frontpage' %}
+              {% capture collection_title %}{{ collection.title | escape }}{% endcapture %}
+              <div class="eight columns medium-down--one-half">
+    
+            <div class="product-wrap">
+              <div class="image__container">
+                {% if collection.image %}
+                  {% assign collection_image = collection.image.src %}
+                {% else %}
+                  {% assign collection_image = collection.products.first.featured_image %}
+                {% endif %}
+    
+                {% render 'image-element',
+                        image: collection_image,
+                        alt: collection.title,
+                        object_fit: section.settings.align_height,
+                        max_height: section.settings.collection_height
+                %}
+              </div>
+    
                 <a href="{{ collection.url }}" title="{{ collection_title }}" class="hidden-product-link">{{ collection_title }}</a>
-                  <div class="info">
-                      <div class="collection-details">
-                        <span class="title">{{ collection.title }}</span>
+                {% if settings.thumbnail_hover_enabled %}
+                    <div class="thumbnail-overlay">
+                    <a href="{{ collection.url }}" title="{{ collection_title }}" class="hidden-product-link">{{ collection_title }}</a>
+                      <div class="info">
+                          <div class="collection-details">
+                            <span class="title">{{ collection.title }}</span>
+                          </div>
+                          <a href="{{ collection.url }}" title="{{ collection_title }}"><span class="view_all">{{ 'collections.general.view_all' | t }}</span></a>
                       </div>
-                      <a href="{{ collection.url }}" title="{{ collection_title }}"><span class="view_all">{{ 'collections.general.view_all' | t }}</span></a>
-                  </div>
-                </div>
-            {% endif %}
-            <h5>
-              <a class="collection-info__caption {% if settings.thumbnail_hover_enabled %}hidden{% endif %}" href="{{ collection.url }}">
-                <span class="title">{{ collection.title }}</span>
-              </a>
-            </h5>
-          </div>
+                    </div>
+                {% endif %}
+                <h5>
+                  <a class="collection-info__caption {% if settings.thumbnail_hover_enabled %}hidden{% endif %}" href="{{ collection.url }}">
+                    <span class="title">{{ collection.title }}</span>
+                  </a>
+                </h5>
+              </div>
+            </div>
+            {% endunless %}
+          {% endfor %}
+
         </div>
-        {% endunless %}
-      {% endfor %}
+      </div>
+
       </div>
       {% render 'pagination', paginate: paginate %}
     </div>
