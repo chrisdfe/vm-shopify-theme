@@ -32,6 +32,7 @@
       display: flex;
       padding: get-vm-spacer(1);
       transition: all 0.2s;
+      align-items: center;
 
       &:after {
         border-bottom-width: 0;
@@ -100,4 +101,10 @@
       }
     }
   }
+}
+
+// Make the search autocomplete in the sticky nav span the entire width
+.dropdown_container .search-autocomplete {
+  left: 0;
+  width: auto;
 }

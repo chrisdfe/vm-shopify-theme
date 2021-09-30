@@ -23,6 +23,11 @@
               object_fit: settings.align_height,
               max_height: settings.collection_height
             %}
+          {% else %}
+            <img
+              src="{{ 'vm-logo-seagreen.png' | asset_img_url: 'medium' }}"
+              loading="lazy"
+              />
           {% endif %}
         </div>
       

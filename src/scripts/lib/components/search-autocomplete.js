@@ -1,15 +1,29 @@
+import { getSizedImageUrl } from "@shopify/theme-images";
 import debounce from "../utils/debounce";
 
 /*============================================================================
   Search autocomplete
 ==============================================================================*/
 
-function getSearchResultItemPrice(item) {
-  const collectionHandles = item.collections.map(
-    (collection) => collection.handle
-  );
+const CDN_BASE_URL = "//cdn.shopify.com/s/files/1/1077/2230/t/118/";
 
-  if (collectionHandles.includes("coming-soon")) {
+// TODO - move to a more general location
+function getCDNImageUrl(imageUrl, size, version) {
+  const sizedImageUrl = getSizedImageUrl(imageUrl, size);
+  let cdnImageUrl = `${CDN_BASE_URL}assets/${sizedImageUrl}`;
+
+  if (version) {
+    cdnImageUrl += `?v=${version}`;
+  }
+
+  return cdnImageUrl;
+}
+
+const getCollectionHandles = (item) =>
+  item.collections.map((collection) => collection.handle);
+
+function getSearchResultItemPrice(item) {
+  if (getCollectionHandles(item).includes("coming-soon")) {
     return Shopify.translation.coming_soon_text;
   }
 
@@ -41,15 +55,16 @@ function getSearchResultItemPrice(item) {
 }
 
 function renderSearchResultThumbnail(item) {
-  if (item.thumbnail !== "NULL") {
-    return `
-      <div class="search-autocomplete__result__thumbnail">
-        <img src="${item.thumbnail}" />
-      </div>
-    `;
-  }
+  const thumbnailSrc =
+    !!item.thumbnail && item.thumbnail !== "NULL"
+      ? item.thumbnail
+      : getCDNImageUrl("vm-logo-seagreen.png", "small");
 
-  return "";
+  return `
+    <div class="search-autocomplete__result__thumbnail">
+      <img src="${thumbnailSrc}" />
+    </div>
+  `;
 }
 
 const searchResultTemplates = {
@@ -82,9 +97,6 @@ const searchResultTemplates = {
     `;
   },
 };
-
-const getCollectionHandles = (item) =>
-  item.collections.map((collection) => collection.handle);
 
 function getDisplayObjectType(item) {
   if (item.object_type === "article") {

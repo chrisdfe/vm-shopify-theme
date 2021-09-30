@@ -22,6 +22,43 @@
     return obj;
   }
 
+  /**
+   * Image Helper Functions
+   * -----------------------------------------------------------------------------
+   * https://github.com/Shopify/slate.git.
+   *
+   */
+  /**
+   * Adds a Shopify size attribute to a URL
+   *
+   * @param src
+   * @param size
+   * @returns {*}
+   */
+
+  function getSizedImageUrl(src, size) {
+    if (size === null) {
+      return src;
+    }
+
+    if (size === 'master') {
+      return removeProtocol(src);
+    }
+
+    var match = src.match(/\.(jpg|jpeg|gif|png|bmp|bitmap|tiff|tif)(\?v=\d+)?$/i);
+
+    if (match) {
+      var prefix = src.split(match[0]);
+      var suffix = match[0];
+      return removeProtocol("".concat(prefix[0], "_").concat(size).concat(suffix));
+    } else {
+      return null;
+    }
+  }
+  function removeProtocol(path) {
+    return path.replace(/http(s)?:/, '');
+  }
+
   // copied from https://davidwalsh.name/javascript-debounce-function
   function debounce(func, wait) {
     var _arguments = arguments,
@@ -57,12 +94,27 @@
     Search autocomplete
   ==============================================================================*/
 
-  function getSearchResultItemPrice(item) {
-    var collectionHandles = item.collections.map(function (collection) {
+  var CDN_BASE_URL = "//cdn.shopify.com/s/files/1/1077/2230/t/118/"; // TODO - move to a more general location
+
+  function getCDNImageUrl(imageUrl, size, version) {
+    var sizedImageUrl = getSizedImageUrl(imageUrl, size);
+    var cdnImageUrl = "".concat(CDN_BASE_URL, "assets/").concat(sizedImageUrl);
+
+    if (version) {
+      cdnImageUrl += "?v=".concat(version);
+    }
+
+    return cdnImageUrl;
+  }
+
+  var getCollectionHandles = function getCollectionHandles(item) {
+    return item.collections.map(function (collection) {
       return collection.handle;
     });
+  };
 
-    if (collectionHandles.includes("coming-soon")) {
+  function getSearchResultItemPrice(item) {
+    if (getCollectionHandles(item).includes("coming-soon")) {
       return Shopify.translation.coming_soon_text;
     }
 
@@ -90,11 +142,8 @@
   }
 
   function renderSearchResultThumbnail(item) {
-    if (item.thumbnail !== "NULL") {
-      return "\n      <div class=\"search-autocomplete__result__thumbnail\">\n        <img src=\"".concat(item.thumbnail, "\" />\n      </div>\n    ");
-    }
-
-    return "";
+    var thumbnailSrc = !!item.thumbnail && item.thumbnail !== "NULL" ? item.thumbnail : getCDNImageUrl("vm-logo-seagreen.png", "small");
+    return "\n    <div class=\"search-autocomplete__result__thumbnail\">\n      <img src=\"".concat(thumbnailSrc, "\" />\n    </div>\n  ");
   }
 
   var searchResultTemplates = {
@@ -108,12 +157,6 @@
     page: function page(item) {
       return "\n      <h5>".concat(item.title, "</h5>\n      <div class=\"search-autocomplete__result__description\">\n        <p class=\"paragraph-3\">").concat(item.text_content, "</p>\n      </div>\n    ");
     }
-  };
-
-  var getCollectionHandles = function getCollectionHandles(item) {
-    return item.collections.map(function (collection) {
-      return collection.handle;
-    });
   };
 
   function getDisplayObjectType(item) {
@@ -312,7 +355,7 @@
 
   var searchAutocompleteManager = new SearchAutocompleteManager();
 
-  // import "core-js";
+  // import intersections from "../lib/intersections";
   window.searchAutocomplete = searchAutocompleteManager; // intersections.init();
 
 })();

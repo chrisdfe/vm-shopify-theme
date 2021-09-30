@@ -9556,6 +9556,7 @@ ul.tabs {
   display: flex;
   padding: 1rem;
   transition: all 0.2s;
+  align-items: center;
 }
 .search-autocomplete__result.search-autocomplete__result .search-autocomplete__result-link:after {
   border-bottom-width: 0;
@@ -9615,6 +9616,11 @@ ul.tabs {
 }
 .search-autocomplete__result.search-autocomplete__result.search-autocomplete__result--see-all a:hover {
   color: #dec1a8;
+}
+
+.dropdown_container .search-autocomplete {
+  left: 0;
+  width: auto;
 }
 
 /* Components - Swatch
