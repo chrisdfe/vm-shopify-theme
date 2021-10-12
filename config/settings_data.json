@@ -1,19 +1,5 @@
 {
   "current": {
-    "checkout_header_image": "",
-    "checkout_logo_image": "shopify:\/\/shop_images\/Valerie-Madison-on-pinkish-cream.png",
-    "checkout_logo_position": "center",
-    "checkout_logo_size": "medium",
-    "checkout_body_background_image": "",
-    "checkout_body_background_color": "#f8f4f4",
-    "checkout_input_background_color_mode": "white",
-    "checkout_sidebar_background_image": "",
-    "checkout_sidebar_background_color": "#f8f4f4",
-    "checkout_heading_font": "Open Sans",
-    "checkout_body_font": "Open Sans",
-    "checkout_accent_color": "#dec1a8",
-    "checkout_button_color": "#1c4047",
-    "checkout_error_color": "#f15829",
     "performance": "sport",
     "image_loading_style": "blur-up",
     "custom_scripts": "",
@@ -240,6 +226,20 @@
     "favicon": "shopify:\/\/shop_images\/VM-plum-favicon-white.png",
     "disqus_enabled": false,
     "disqus_shortname": "",
+    "checkout_header_image": "",
+    "checkout_logo_image": "shopify:\/\/shop_images\/Valerie-Madison-on-pinkish-cream.png",
+    "checkout_logo_position": "center",
+    "checkout_logo_size": "medium",
+    "checkout_body_background_image": "",
+    "checkout_body_background_color": "#f8f4f4",
+    "checkout_input_background_color_mode": "white",
+    "checkout_sidebar_background_image": "",
+    "checkout_sidebar_background_color": "#f8f4f4",
+    "checkout_heading_font": "Open Sans",
+    "checkout_body_font": "Open Sans",
+    "checkout_accent_color": "#dec1a8",
+    "checkout_button_color": "#1c4047",
+    "checkout_error_color": "#f15829",
     "mega_text_font_style": "none",
     "mega_text_font_weight": "normal",
     "hide_paypal_button": true,
@@ -310,7 +310,7 @@
       "header": {
         "type": "header",
         "settings": {
-          "promo_text": "",
+          "promo_text": "<p>ALL DOMESTIC ORDERS SHIP FREE VIA FEDEX<\/p>",
           "social_icons_header": true,
           "phone_number": "(206) 395-6359",
           "top_bar_menu": "",
@@ -3081,7 +3081,7 @@
         "type": "our-story-visit-the-store",
         "settings": {
           "title": "Visit Our Store",
-          "content": "<p>Walk-ins welcome! We have a variety of everyday fine jewelry, wedding bands, engagement rings, and lovely gifts available in store available for you to browse!<br\/><\/p><p>We recommend booking an appointment if you are seeking an Engagement Ring or Wedding Band(s) so our team can be available to assist you - book one (or two) below! <\/p><p><\/p><p>*Per CDC guidelines, fully vaccinated guests are not required to wear a mask. Our team is fully vaccinated and invites you to follow at your discretion.*<\/p>",
+          "content": "<p>Walk-ins welcome! We have a variety of everyday fine jewelry, wedding bands, engagement rings, and lovely gifts available in store available for you to browse!<br\/><\/p><p>We recommend booking an appointment if you are seeking an Engagement Ring or Wedding Band(s) so our team can be available to assist you - book one (or two) below! <\/p><p><\/p><p>*Per CDC guidelines, masks must be worn indoors. Our team is fully vaccinated for your safety.*<\/p>",
           "address": "<p>1411 34th Ave<br\/>Seattle, WA 98122<\/p>",
           "store_hours": "<p>Thursday-Friday <strong>12pm-6pm<\/strong><br\/>Saturday <strong>10am-4pm<\/strong><\/p>",
           "calendly_embed": "<!-- Calendly inline widget begin -->\n<div class=\"calendly-inline-widget\" data-url=\"https:\/\/calendly.com\/valeriemadison?text_color=1c4047&amp;primary_color=714457\" style=\"min-width:320px;height:630px;\"><\/div>\n<script type=\"text\/javascript\" src=\"https:\/\/assets.calendly.com\/assets\/external\/widget.js\" async><\/script>\n<!-- Calendly inline widget end -->",
@@ -3181,7 +3181,7 @@
             "type": "background_block",
             "settings": {
               "background_color": "light",
-              "banner_image_desktop": "shopify:\/\/shop_images\/OOAK490_Juno_Shield_Icy_Diamond_Engagement_Ring.jpg"
+              "banner_image_desktop": "shopify:\/\/shop_images\/DSC_6367_copy.jpg"
             }
           }
         },
@@ -3191,13 +3191,13 @@
         ],
         "settings": {
           "banner_wrapper_background_color": "light-alt",
-          "pretext": "Cool down with",
-          "heading": "White Gold Rings",
+          "pretext": "Our new two stone and eternity band",
+          "heading": "Toi et Moi Forever",
           "cta_link": "shopify:\/\/collections\/new-arrivals",
           "cta_text": "shop now",
           "text_position": "left-block",
           "text_color": "dark",
-          "banner_image_mobile": "shopify:\/\/shop_images\/OOAK490_Juno_Shield_Icy_Diamond_Engagement_Ring.jpg",
+          "banner_image_mobile": "shopify:\/\/shop_images\/DSC_6367_copy.jpg",
           "text_color_mobile": "dark",
           "content_background_color_mobile": "light-alt"
         }

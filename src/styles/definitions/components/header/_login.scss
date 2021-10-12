@@ -1,0 +1,29 @@
+#customer_login_guest,
+#customer_login {
+  display: inline;
+  @include respond-to("small-down") {
+    display: block;
+  }
+}
+
+input[type="submit"].guest_button,
+input[type="button"].guest_button {
+  // color: {{ settings.link_color }};
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  text-align: left;
+
+  &:hover {
+    background: transparent;
+    border: 0;
+    // color: {{ settings.link_hover_color }};
+  }
+
+  @include respond-to("medium-up") {
+    text-align: center;
+  }
+}
