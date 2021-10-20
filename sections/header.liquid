@@ -56,7 +56,7 @@
 {%- endif -%}
 
 {% comment %}Mobile navigation{% endcomment %}
-<header id="header" class="mobile_nav-fixed--{{ section.settings.fixed_header }}">
+<!-- <header id="header" class="mobile_nav-fixed--{{ section.settings.fixed_header }}">
   {% if section.settings.promo_text != blank %}
     <div class="promo_banner">
       <div class="promo_banner__content">
@@ -91,6 +91,7 @@
       {% if section.settings.search_enabled %}
         <a href="{{ routes.search_url }}" class="icon-search dropdown_link" title="{{ 'general.search.title' | t | escape }}" data-dropdown-rel="search"></a>
       {% endif %}
+
       {% if section.settings.show_cart %}
         <div class="cart_container">
           <a href="{{ routes.cart_url }}" class="{% if section.settings.cart_icon == "cart" %}icon-cart{% else %}icon-bag{% endif %} mini_cart dropdown_link" title="{{ 'layout.general.cart' | t | escape }}" data-no-instant> <span class="cart_count">{{ cart.item_count }}</span></a>
@@ -99,19 +100,17 @@
     </div>
   </div>
 
-  {% if section.settings.search_enabled %}
-    <div class="dropdown_container center" data-dropdown="search">
-      <div class="dropdown">
-        <form action="{{ routes.search_url }}" class="header_search_form">
-          {% if settings.search_option != 'everything' %}
-            <input type="hidden" name="type" value="product" />
-          {% endif %}
-          <span class="icon-search search-submit"></span>
-          <input type="text" name="q" placeholder="{{ 'general.search.title' | t: shop_name: shop.name }}" autocapitalize="off" autocomplete="off" autocorrect="off" class="search-terms" />
-        </form>
-      </div>
+  <div class="dropdown_container center" data-dropdown="search">
+    <div class="dropdown">
+      <form action="{{ routes.search_url }}" class="header_search_form">
+        {% if settings.search_option != 'everything' %}
+          <input type="hidden" name="type" value="product" />
+        {% endif %}
+        <span class="icon-search search-submit"></span>
+        <input type="text" name="q" placeholder="{{ 'general.search.title' | t: shop_name: shop.name }}" autocapitalize="off" autocomplete="off" autocorrect="off" class="search-terms" />
+      </form>
     </div>
-  {% endif %}
+  </div>
 
   <div class="dropdown_container" data-dropdown="menu">
     <div class="dropdown">
@@ -147,387 +146,90 @@
       </ul>
     </div>
   </div>
-</header>
+</header> -->
 
-{% if template contains "index" %}
-  {% assign feature_image = true %}
-{% elsif template contains "collection" %}
-  {% assign feature_image = true %}
-{% elsif template contains "blog" %}
-  {% assign feature_image = true %}
-{% elsif template contains "article" %}
-  {% assign feature_image = true %}
-{% elsif template contains "contact" %}
-  {% assign feature_image = true %}
-{% elsif template contains "product" %}
-  {% assign feature_image = true %}
-{% elsif template contains "gallery" %}
-  {% assign feature_image = true %}
-{% elsif template contains "banner" %}
-  {% assign feature_image = true %}
-{% elsif template contains "details" %}
-  {% assign feature_image = true %}
-{% elsif template contains "faq" %}
-  {% assign feature_image = true %}
-{% elsif template contains "search" %}
-  {% assign feature_image = true %}
-{% elsif template contains "cart" %}
-  {% assign feature_image = true %}
-{% else %}
-  {% assign feature_image = false %}
+{% if section.settings.promo_text != blank %}
+  <div class="promo_banner">
+    <div class="promo_banner__content">
+      {{ section.settings.promo_text }}
+    </div>
+    <div class="promo_banner-close"></div>
+  </div>
 {% endif %}
 
 {% comment %}Main navigation{% endcomment %}
-<header class="{% if feature_image %}feature_image{% endif %} {% if section.settings.logo_home != nil %}secondary_logo--true{% endif %} search-enabled--{{ section.settings.search_enabled }}">
-  <div class="header {% if feature_image and settings.header_background == false %}is-absolute {% endif %} header-fixed--{{ section.settings.fixed_header }} {% if settings.header_background %}header-background--solid{% endif %}">
-    {% if section.settings.promo_text != blank %}
-      <div class="promo_banner">
-        <div class="promo_banner__content">
-          {{ section.settings.promo_text }}
-        </div>
-        <div class="promo_banner-close"></div>
+<div class="header-wrapper">
+  <header class="header">
+    {% capture logo %}
+      <div
+        class="logo">
+        <a href="{{ shop.url }}" title="{{ shop.name }}">
+          <img
+            src="{{ section.settings.logo | img_url: '800x' }}"
+            class="primary_logo"
+            alt="{{ shop.name | escape }}"
+          />
+        </a>
       </div>
-    {% endif %}
-    <div class="top_bar clearfix">
-      {% if section.settings.social_icons_header %}
-        {% render 'social-icons' %}
-      {% endif %}
-      <ul class="menu left">
-        {% if section.settings.phone_number != blank %}
-          <li><a href="tel:{{ section.settings.phone_number | replace: ' ', '' | replace: '+', '' | replace: '-', '' }}">{{ section.settings.phone_number }}</a></li>
-        {% endif %}
-        {% if section.settings.top_bar_menu != blank %}
-          {% for link in linklists[section.settings.top_bar_menu].links %}
-            <li><a href="{{ link.url }}">{{ link.title }}</a></li>
-          {% endfor %}
-        {% endif %}
-      </ul>
-      {% if section.settings.show_cart %}
-        <div class="cart_container clearfix">
-          <a href="{{ routes.cart_url }}" class="{% if section.settings.cart_icon == "cart" %}icon-cart{% else %}icon-bag{% endif %} mini_cart dropdown_link" data-no-instant>
-            <span class="cart_count">{{ cart.item_count }}</span>
-          </a>
-          {% unless settings.cart_action == 'ajax' and template contains 'cart' %}
-            <div class="tos_warning cart_content animated fadeIn">
-              <div class="js-empty-cart__message {% if cart.item_count > 0 %}hidden{% endif %}">
-                <p class="empty_cart">{{ 'layout.general.empty_cart' | t }}</p>
-              </div>
-              <form action="/checkout"
-                    method="post"
-                    class="{% if cart.item_count == 0 %}hidden{% endif %}"
-                    data-total-discount="{{ cart.total_discount }}"
-                    data-money-format="{{ shop.money_format | strip_html }}"
-                    data-shop-currency="{{ shop.currency }}"
-                    data-shop-name="{{ shop.name | escape }}"
-                    data-cart-form="mini-cart">
-                <a class="cart_content__continue-shopping secondary_button">
-                  {{ 'cart.general.continue_shopping_link_html' | t }}
-                </a>
-                <ul class="cart_items js-cart_items clearfix">
-                  {% assign total_saving = 0 %}
-                  {% for item in cart.items %}
-                    {% if item.variant.compare_at_price > item.variant.price %}
-                      {% assign saving = item.variant.compare_at_price | minus: item.variant.price | times: item.quantity %}
-                      {% assign total_saving = saving | plus: total_saving %}
-                    {% endif %}
+    {% endcapture %}
 
-                    <li class="mini-cart__item clearfix" data-cart-item data-line-id="{{ forloop.index }}" data-variant-id="{{ item.id }}">
+    {% capture menu_left %}
+      {% render 'header.menu' with {
+        linklist: section.settings.main_linklist
+      } %}
+    {% endcapture %}
 
-
-                      <a href="{{ item.url }}">
-                        {% if item.image %}
-                          <div class="cart_image mini-cart__item-image">
-                            <img src="{{ item.image | img_url: '320x' }}" alt="{{ item.title | escape }}" class="lazyload" />
-                          </div>
-                        {% endif %}
-                      </a>
-
-                      <div class="mini-cart__item--content">
-                        <div class="mini-cart__item__title">
-                          <div class="item_title">
-                            <a href="{{ item.url }}">
-                              {{ item.product.title }}
-                              {% unless item.product.has_only_default_variant or item.variant.title contains "Title" %}
-                                -
-                                {% for option in item.product.options %}
-                                  {{ item.variant.options[forloop.index0] }} {% unless forloop.last %}/{% endunless %}
-                                {% endfor %}
-                              {% endunless %}
-                              {% if item.properties %}
-                                {% for p in item.properties %}
-                                  {% if p.last != blank %}
-                                    <div class="line-item">
-                                      {{ p.first }}: {{ p.last }}
-                                    </div>
-                                  {% endif %}
-                                {% endfor %}
-                              {% endif %}
-                            </a>
-                          </div>
-                        </div>
-
-                        <strong class="left price">
-                          {% if item.price > 0 %}
-                            <span class="money {% if item.price < item.variant.compare_at_price or item.line_level_discount_allocations.size > 0 %}sale{% endif %}">
-                              {% render 'price-element', price: item.final_price %}
-                            </span>
-                            {% if item.price < item.variant.compare_at_price or item.line_level_discount_allocations.size > 0 %}
-                              <span class="money was_price">
-                                {% render 'price-element', price: item.variant.compare_at_price %}
-                              </span>
-                            {% endif %}
-                          {% else %}
-                              {{ settings.free_price_text }}
-                          {% endif %}
-                        </strong>
-
-                        {% if item.line_level_discount_allocations.size > 0 %}
-                          {% for discount_allocation in item.line_level_discount_allocations %}
-                            <p class="notification-discount meta">
-                              {{ discount_allocation.discount_application.title }}
-                            </p>
-                          {% endfor %}
-                        {% endif %}
-
-                        <div class="left product-quantity-box">
-                          <span class="ss-icon product-minus js-change-quantity" data-func="minus"><span class="icon-minus"></span></span>
-                          <input type="number" min="0" size="2" class="quantity" name="updates[]" id="updates_{{ item.id }}" value="{{ item.quantity }}" data-cart-quantity-input="mini-cart" {% if settings.limit_quantity and item.variant.inventory_management != blank and item.variant.inventory_quantity > 0 and item.variant.inventory_policy == "deny" %}max="{{ item.variant.inventory_quantity }}"{% endif %}/>
-                          <span class="ss-icon product-plus js-change-quantity" data-func="plus"><span class="icon-plus"></span></span>
-                        </div>
-
-                      </div>
-
-                      <a href="{{ routes.cart_change_url }}?line={{ forloop.index }}&amp;quantity=0" class="cart__remove-btn" data-line-id="{{ forloop.index }}" data-remove-item="mini-cart"><span class="remove-icon"></span></a>
-
-                    </li>
-                  {% endfor %}
-                </ul>
-
-                <ul>
-
-                  <li class="cart_discounts js-cart_discounts sale">
-                    {% if cart.cart_level_discount_applications != blank %}
-                      {% for discount_application in cart.cart_level_discount_applications %}
-                        <span class="cart_discounts--title">{{ discount_application.title }}</span>
-                        <span class="cart_discounts--price">
-                          -<span class="money">{% render 'price-element', price: discount_application.total_allocated_amount %}</span>
-                        </span>
-                      {% endfor %}
-                    {% endif %}
-                  </li>
-
-                  <li class="cart_subtotal js-cart_subtotal">
-                    <span class="right">
-                      <span class="money">{% render 'price-element', price: cart.total_price %}</span>
-                    </span>
-                    <span>{{ 'layout.general.subtotal' | t }}</span>
-                  </li>
-
-                  <li class="cart_savings sale js-cart_savings">
-                    {% if settings.display_savings and total_saving > 0 or settings.display_savings and cart.total_discount > 0 %}
-                      <span class="right">
-                        <span class="money">{% assign total_savings = total_saving | plus: cart.total_discount %}{% render 'price-element', price: total_savings %}</span>
-                      </span>
-                      <span>{{ 'layout.general.savings' | t }}</span>
-                    {% endif %}
-                  </li>
-
-                  <li>
-                    {% if settings.display_special_instructions and settings.go_to_checkout %}
-                      <textarea id="note" name="note" rows="2" placeholder="{{ 'layout.general.cart_note' | t }}" class="clearfix">{{ cart.note }}</textarea>
-                    {% endif %}
-
-                    {% if settings.display_tos_checkbox and settings.go_to_checkout %}
-                      <p class="tos">
-                        <input type="checkbox" class="tos_agree" id="sliding_agree" required />
-                          <label class="tos_label">
-                            {{ 'cart.general.agree_to_terms_html' | t }}
-                          </label>
-                          {% if settings.tos_page != blank %}
-                            <a href="{{ pages[settings.tos_page].url }}" target="_blank" class="tos_icon">{{ 'cart.general.view_terms' | t }}</a>
-                          {% endif %}
-                      </p>
-                    {% endif %}
-
-                    {% if settings.cart_message != blank %}
-                      <div class="cart_text paragraph-3">
-                        {{ settings.cart_message }}
-                      </div>
-                    {% endif %}
-
-                    {% if settings.go_to_checkout %}
-                      <button type="submit" class="action_button add_to_cart">{% if settings.show_lock_icon %}<span class="icon-lock"></span>{% endif %}{{ 'layout.general.checkout' | t }}</button>
-                    {% else %}
-                      <button type="submit" class="action_button add_to_cart">{% if settings.show_lock_icon and settings.go_to_checkout %}<span class="icon-lock"></span>{% endif %}{{ 'layout.general.go_to_cart' | t }} </button>
-                    {% endif %}
-                  </li>
-                </ul>
-              </form>
-            </div>
-          {% endunless %}
-        </div>
-      {% endif %}
-
-      <ul class="menu right">
-
-        <li class="localization-wrap">
-          {% render 'localization-switcher',
-            additional_classes: 'header-menu__disclosure',
-            id: 'header__selector-form',
-            currency_selector: currency_selector,
-            locale_selector: locale_selector,
-            show_currency: section.settings.show_currency_selector
-          %}
+    {% capture menu_right %}
+      {% capture extra_links %}
+        <li>
+          <div class="cart_container clearfix">
+            <a href="{{ routes.cart_url }}" class="{% if section.settings.cart_icon == "cart" %}icon-cart{% else %}icon-bag{% endif %} mini_cart dropdown_link" data-no-instant>
+              <span class="cart_count">{{ cart.item_count }}</span>
+            </a>
+    
+            {% render "header.cart-container" %}
+          </div>
+        </li>
+    
+        <li>
+          <a
+            href="{{ routes.account_url }}"
+            class="icon-user"
+            title="{{ 'layout.customer.my_account' | t }} {% if customer %}({{ customer.email }}){% endif %}">
+              <span>{% if customer %}{{ 'layout.customer.my_account' | t }}{% else %}{{ 'layout.customer.log_in' | t }}{% endif %}</span>
+            </a>
         </li>
 
-        {% if shop.customer_accounts_enabled %}
-          <li>
-            <a href="{{ routes.account_url }}" class="icon-user" title="{{ 'layout.customer.my_account' | t }} {% if customer %}({{ customer.email }}){% endif %}"> <span>{% if customer %}{{ 'layout.customer.my_account' | t }}{% else %}{{ 'layout.customer.log_in' | t }}{% endif %}</span></a>
-          </li>
-        {% endif %}
-      </ul>
-    </div>
+        <li class="search_link">
+          <a
+            href="{{ routes.search_url }}"
+            class="icon-search dropdown_link"
+            title="{{ 'general.search.title' | t | escape }}"
+            data-dropdown-rel="search">
+          </a>
+        </li>
+      {% endcapture %}
 
-    <div class="main_nav_wrapper">
-      <div class="main_nav clearfix menu-position--{{ section.settings.menu_position }} logo-align--{{ section.settings.logo_alignment }} logo-position--{{ section.settings.logo_position }} search-enabled--{{ section.settings.search_enabled }}">
-        {% capture logo %}
-          <div class="logo {% if section.settings.logo_home == blank and section.settings.logo == blank %}logo--text{% else %}logo--image{% endif %}">
-            <a href="{{ shop.url }}" title="{{ shop.name }}">
-              {% if section.settings.logo_home != nil %}
-                <img src="{{ section.settings.logo_home | img_url: '800x' }}" class="secondary_logo" alt="{{ shop.name | escape }}" />
-              {% endif %}
-              {% if section.settings.logo != nil %}
-                <img src="{{ section.settings.logo | img_url: '800x' }}" class="primary_logo" alt="{{ shop.name | escape }}" />
-              {% else %}
-                {{ shop.name }}
-              {% endif %}
-            </a>
-          </div>
-        {% endcapture %}
+      {% render 'header.menu' with {
+        linklist: section.settings.main_linklist2,
+        extra_links: extra_links
+      } %}
+    
+    {% endcapture %}
 
-        {% assign vertical_menu = section.settings.vertical_menu %}
+    {{ menu_left }}
 
-        {% capture menu_left %}
-          {% if vertical_menu %}
-            {% render 'vertical-menu', linklist: section.settings.main_linklist %}
-          {% else %}
-            {% render 'menu', linklist: section.settings.main_linklist %}
-          {% endif %}
-        {% endcapture %}
-
-        {% capture menu_right %}
-          {% if vertical_menu %}
-            {% render 'vertical-menu', linklist: section.settings.main_linklist2 %}
-          {% else %}
-            {% render 'menu', linklist: section.settings.main_linklist2 %}
-          {% endif %}
-          {% if section.settings.search_enabled %}
-            <li class="search_container" data-autocomplete-{{ settings.enable_autocomplete }}>
-              <form action="{{ routes.search_url }}" class="search_form">
-                {% if settings.search_option != 'everything' %}
-                  <input type="hidden" name="type" value="product" />
-                {% endif %}
-                <span class="icon-search search-submit"></span>
-                <input type="text" name="q" placeholder="{{ 'general.search.title' | t: shop_name: shop.name }}" value="{% if search and search.results.first.price %}{{ search.terms | replace: '*', '' }}{% endif %}" autocapitalize="off" autocomplete="off" autocorrect="off" />
-              </form>
-            </li>
-            <li class="search_link">
-              <a href="{{ routes.search_url }}" class="icon-search dropdown_link" title="{{ 'general.search.title' | t | escape }}" data-dropdown-rel="search"></a>
-            </li>
-          {% endif %}
-        {% endcapture %}
-
-        {% if section.settings.logo_position == "left" or section.settings.menu_position == "block" %}
-          {{ logo }}
-          <div class="nav nav--combined clearfix">
-            <ul class="menu {{ section.settings.menu_alignment }} clearfix">
-              {{ menu_left }}
-              {{ menu_right }}
-            </ul>
-          </div>
-        {% else %}
-          <div class="nav nav--left clearfix">
-            <ul class="menu {{ section.settings.menu_alignment }} clearfix">
-              {{ menu_left }}
-            </ul>
-          </div>
-          {{ logo }}
-          <div class="nav nav--right clearfix">
-            <ul class="menu {% if section.settings.menu_alignment == 'align_left' %}align_right{% elsif section.settings.menu_alignment == 'align_right' %}align_left{% else %}{{ section.settings.menu_alignment }}{% endif %} clearfix menu-items--right">
-              {{ menu_right }}
-            </ul>
-          </div>
-        {% endif %}
-
-        {% if section.settings.search_enabled %}
-          <div class="dropdown_container center" data-dropdown="search">
-            <div class="dropdown" data-autocomplete-{{ settings.enable_autocomplete }}>
-              <form action="{{ routes.search_url }}" class="header_search_form">
-                {% if settings.search_option != 'everything' %}
-                  <input type="hidden" name="type" value="product" />
-                {% endif %}
-
-                <span class="icon-search search-submit"></span>
-
-                <input type="text" name="q" placeholder="{{ 'general.search.title' | t: shop_name: shop.name }}" autocapitalize="off" autocomplete="off" autocorrect="off" class="search-terms" />
-              </form>
-            </div>
-          </div>
-        {% endif %}
-
-        {% render 'sub-menu', linklist: section.settings.main_linklist %}
-        {% render 'sub-menu', linklist: section.settings.main_linklist2 %}
-      </div>
-    </div>
-  </div>
-</header>
-
-<style>
-  .nav {
-    {% if section.settings.menu_position == "block" %}
-      width: 100%;
-      clear: both;
-    {% elsif section.settings.logo_position == "left" %}
-      width: 84%;
-      float: left;
-    {% else %}
-      width: 42%;
-      float: left;
-    {% endif %}
-  }
-
-  .search-enabled--true .nav--right ul.menu,
-  .search-enabled--true .nav--combined ul.menu {
-    padding-right: 210px;
-    position: relative;
-  }
-
-  .sticky_nav .search-enabled--true  .nav--right ul.menu,
-  .sticky_nav .search-enabled--true  .nav--combined ul.menu {
-    padding-right: 100px;
-  }
-
-  {% unless section.settings.show_cart %}
-    #header .top_bar .icon-search {
-      right: 15px;
-    }
-  {% endunless %}
-
-  {% if section.settings.fixed_header == false %}
-    @media only screen and (max-width: 798px) {
-      .header-section {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-      }
-    }
-  {% endif %}
-
-/* Adjust Menu Header Font Weight */
-  .dropdown_column ul.dropdown_title a { font-weight:{{section.settings.mega_menu_header_weight}};}
+    {{ logo }}
+    
+    {{ menu_right }}
+  </header>
   
-  </style>
+  <div class="dropdown-wrapper">
+    {% render 'sub-menu', linklist: section.settings.main_linklist %}
+    {% render 'sub-menu', linklist: section.settings.main_linklist2 %}
+    {% render "header.search-dropdown" %}
+  </div>
+</div>
 
 {% schema %}
 
