@@ -181,7 +181,8 @@
             {% endif %}
           {% endif %}
 
-  		  {% render 'storemods-shipping-estimate' %}
+  		    {% render 'storemods-shipping-estimate' %}
+          
           {% unless collection_handles contains 'coming-soon' %}
             {% render 'product-form', context: 'product' %}
             {% render 'product-notify-me', product: product %}

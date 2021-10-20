@@ -24,30 +24,34 @@ Allow it to be adjusted by category, or allow for custom override.
   {% for tag in product.tags %}
 	  {% assign tag_n = tag | downcase %}
       {% if tag_n contains "weeks" or tag contains "days" %}
-          {% assign contains_estimate = true %}
-          {% assign text_weeks_time 	= tag_n  | strip | split: 'weeks' | first %}
-          {% assign text_days_time 		= tag_n  | strip | split: 'days' | last %}
+        {% assign contains_estimate = true %}
+        {% assign text_weeks_time 	= tag_n  | strip | split: 'weeks' | first %}
+        {% assign text_days_time 		= tag_n  | strip | split: 'days' | last %}
 
-          {% if text_weeks_time != tag and text_days_time != 0 %}
-
-                {% assign day_start 	= text_weeks_time | strip | split: '-' | first | plus: 0 | times: 7 %}
-                {% assign day_end 		= text_weeks_time | strip | split: '-' | last | plus: 0  | times: 7 %}           
-            {% elsif text_days_time != tag and text_days_time != 0 %}
-
-                {% assign day_start 	= text_days_time | strip | split: '-' | first | plus: 0 %}
-                {% assign day_end 		= text_days_time | strip | split: '-' | last | plus: 0 %}           
-          {% endif %} 
+        {% if text_weeks_time != tag and text_days_time != 0 %}
+          {% assign day_start 	= text_weeks_time | strip | split: '-' | first | plus: 0 | times: 7 %}
+          {% assign day_end 		= text_weeks_time | strip | split: '-' | last | plus: 0  | times: 7 %}           
+        {% elsif text_days_time != tag and text_days_time != 0 %}
+          {% assign day_start 	= text_days_time | strip | split: '-' | first | plus: 0 %}
+          {% assign day_end 		= text_days_time | strip | split: '-' | last | plus: 0 %}           
+        {% endif %} 
       {% endif %}
   {% endfor %}
+
   {% if contains_estimate == true and day_start >= 1 and day_end >= 1 %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/datejs/1.0/date.min.js"></script>
     <span class="shipping_estimate">
-      {{ settings.estimate_text }}
+      {% if product.type == "OOAK and RTS" and product.tags contains "Ring Resizing" %}
+        {{ settings.estimate_text_resizable_rings }}
+      {% else %}
+        {{ settings.estimate_text_other }}
+      {% endif  %}
       
       
-{% if settings.enable_estimate_date %}
-      <span class="estimate" id="fromDate"></span> <span class="estimate" id="toDate"></span><noscript>{{tag}}</noscript>
-    <script>// <![CDATA[
+    {% if settings.enable_estimate_date %}
+      If purchased today, this item will ship between <span class="estimate" id="fromDate"></span> <span class="estimate" id="toDate"></span><noscript>{{tag}}</noscript>
+
+      <script>// <![CDATA[
       var fromDate = Date.today().addDays({{day_start}});
       if (fromDate.is().saturday() || fromDate.is().sunday()) { 
         fromDate = fromDate.next().monday();

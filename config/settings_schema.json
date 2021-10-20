@@ -1396,22 +1396,22 @@
         "default": true
       },
       {
-        "type": "color",
-        "id": "estimate_box_color",
-        "label": "Box Color",
-        "default": "#f7f7f7"
-      },
-      {
-        "type": "color",
-        "id": "estimate_box_shipping_color",
-        "label": "Shipping Text Color",
-        "default": "#d3bc70"
+        "type": "textarea",
+        "id": "estimate_text",
+        "label": "Shipping Estimate Text - Intro blurb",
+        "default": "If ordered today, these earrings will be handcrafted in my Seattle jewelry studio and will ship between "
       },
       {
         "type": "textarea",
-        "id": "estimate_text",
-        "label": "Shipping Estimate Text",
-        "default": "If ordered today, these earrings will be handcrafted in my Seattle jewelry studio and will ship between "
+        "id": "estimate_text_resizable_rings",
+        "label": "Shipping Estimate Text - Resizable rings",
+        "default": "This ring will be resized for you"
+      },
+      {
+        "type": "textarea",
+        "id": "estimate_text_other",
+        "label": "Shipping Estimate Text - Non-ring products",
+        "default": "This item will be made to order for you"
       },
       {
         "type": "header",

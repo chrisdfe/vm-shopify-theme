@@ -1,19 +1,5 @@
 {
   "current": {
-    "checkout_header_image": "",
-    "checkout_logo_image": "shopify:\/\/shop_images\/Valerie-Madison-on-pinkish-cream.png",
-    "checkout_logo_position": "center",
-    "checkout_logo_size": "medium",
-    "checkout_body_background_image": "",
-    "checkout_body_background_color": "#f8f4f4",
-    "checkout_input_background_color_mode": "white",
-    "checkout_sidebar_background_image": "",
-    "checkout_sidebar_background_color": "#f8f4f4",
-    "checkout_heading_font": "Open Sans",
-    "checkout_body_font": "Open Sans",
-    "checkout_accent_color": "#dec1a8",
-    "checkout_button_color": "#1c4047",
-    "checkout_error_color": "#f15829",
     "performance": "sport",
     "image_loading_style": "blur-up",
     "custom_scripts": "",
@@ -163,9 +149,8 @@
     "enable_estimate": true,
     "enable_estimate_date": true,
     "enable_estimate_box": true,
-    "estimate_box_color": "#f7f7f7",
-    "estimate_box_shipping_color": "#9c6783",
-    "estimate_text": "This item will be made to order or resized for you; if purchased today, this item will ship between",
+    "estimate_text_resizable_rings": "This ring will be resized for you.",
+    "estimate_text_other": "This item will be made to order for you.",
     "enable_shopify_review_comments": false,
     "enable_shopify_collection_badges": false,
     "enable_engravement": true,
@@ -240,6 +225,20 @@
     "favicon": "shopify:\/\/shop_images\/VM-plum-favicon-white.png",
     "disqus_enabled": false,
     "disqus_shortname": "",
+    "checkout_header_image": "",
+    "checkout_logo_image": "shopify:\/\/shop_images\/Valerie-Madison-on-pinkish-cream.png",
+    "checkout_logo_position": "center",
+    "checkout_logo_size": "medium",
+    "checkout_body_background_image": "",
+    "checkout_body_background_color": "#f8f4f4",
+    "checkout_input_background_color_mode": "white",
+    "checkout_sidebar_background_image": "",
+    "checkout_sidebar_background_color": "#f8f4f4",
+    "checkout_heading_font": "Open Sans",
+    "checkout_body_font": "Open Sans",
+    "checkout_accent_color": "#dec1a8",
+    "checkout_button_color": "#1c4047",
+    "checkout_error_color": "#f15829",
     "mega_text_font_style": "none",
     "mega_text_font_weight": "normal",
     "hide_paypal_button": true,
@@ -310,7 +309,7 @@
       "header": {
         "type": "header",
         "settings": {
-          "promo_text": "",
+          "promo_text": "<p>ALL DOMESTIC ORDERS SHIP FREE VIA FEDEX<\/p>",
           "social_icons_header": true,
           "phone_number": "(206) 395-6359",
           "top_bar_menu": "",
@@ -2087,6 +2086,16 @@
               "link_title": "Click here to send this as inspiration for your custom order"
             }
           },
+          "f805bfba-2ab8-4ce4-8270-41244082cf2e": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/7463_Longfellow.jpg",
+              "job_title": "0.90CT Round Cut Near Colorless Diamond Selena Engagement Ring",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com",
+              "link_title": "Click here to send this as inspiration for your custom order."
+            }
+          },
           "1600971535955": {
             "type": "featured-ring",
             "settings": {
@@ -2197,16 +2206,6 @@
               "link_title": "Click here to send this as inspiration for your custom order"
             }
           },
-          "1600904795953": {
-            "type": "featured-ring",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/CUSTOM_Bella-Peach-oval-sapphire.jpg",
-              "job_title": "2.0ct Oval Cut Peach Sapphire & Diamond Bella Engagement Ring",
-              "description": "",
-              "link_url": "mailto:custom@valeriemadison.com?subject=1.17ct Marisol Vintage Emerald & Diamond Halo Engagement Ring&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
-              "link_title": "Click here to send this as inspiration for your custom order"
-            }
-          },
           "9e2c28d0-7615-4deb-9820-5254063adafc": {
             "type": "featured-ring",
             "settings": {
@@ -2215,6 +2214,16 @@
               "description": "",
               "link_url": "mailto:custom@valeriemadison.com",
               "link_title": "Click here to send this as inspiration for your custom order."
+            }
+          },
+          "1600904795953": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/CUSTOM_Bella-Peach-oval-sapphire.jpg",
+              "job_title": "2.0ct Oval Cut Peach Sapphire & Diamond Bella Engagement Ring",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com?subject=1.17ct Marisol Vintage Emerald & Diamond Halo Engagement Ring&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
+              "link_title": "Click here to send this as inspiration for your custom order"
             }
           },
           "5da0f710-2539-47b5-a3a1-b1d1ddd98e96": {
@@ -2245,6 +2254,16 @@
               "description": "",
               "link_url": "mailto:custom@valeriemadison.com?subject=0.70ct SuperNova Green Sapphire Engagement Ring&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
               "link_title": "Click here to send this as inspiration for your custom order"
+            }
+          },
+          "c14cdffa-2103-4c5f-8ef4-bebde5c835ac": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Zara-with-baguettes-hexagon-raspberry-sapphire-and-diamond-baguette-ring_0b1b6df6-599d-4631-a056-293d20e0205f.jpg",
+              "job_title": "1.13CT Hexagon Cut Terrecotta Sapphire & diamond zara engagement ring",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com",
+              "link_title": "Click here to send this as inspiration for your custom order."
             }
           },
           "10128707-79bb-4a7a-b34b-da016e30342b": {
@@ -2397,11 +2416,61 @@
               "link_title": "Click here to send this as inspiration for your custom order"
             }
           },
+          "1600971009918": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Green_Sapphire_Semi_Halo_Engagement_Ring.jpg",
+              "job_title": "1.6ct Pear Cut Green Sapphire & Diamond E\/W Luna Engagement Ring",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com?subject=1.6ct Luna Green Pear Sapphire & canadian Diamond Cluster Engagement Ring&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
+              "link_title": "Click here to send this as inspiration for your custom order"
+            }
+          },
+          "25f26937-528f-4fe6-838f-6c939fdcc358": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/6939_Seaks.jpg",
+              "job_title": "1.81CT Hexagon Cut Green Sapphire Selena engagement ring",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com",
+              "link_title": "Click here to send this as inspiration for your custom order."
+            }
+          },
+          "1600904785265": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/5686_Jon_Kauffman.jpg",
+              "job_title": "1.2ct Radiant Cut Green Sapphire & Diamond Zara Engagement Ring",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com?subject=1ct Eva Salt & Pepper Diamond Engagement Ring with Pavé Diamonds&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
+              "link_title": "Click here to send this as inspiration for your custom order"
+            }
+          },
+          "1601324391888": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Green_Sapphire_Diamond_Ring.jpg",
+              "job_title": "2.0ct Radiant Cut Green Sapphire & Diamond Zara Engagement Ring",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com",
+              "link_title": "Click here to send this as inspiration for your custom order."
+            }
+          },
+          "7cbdf742-2cad-4698-8958-289c9b4f5cbc": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/OOAK478_Marisol_teal_pear_sapphire.jpg",
+              "job_title": "1.07CT PEAR CUT TEAL SAPPHIRE MARISOL ENGAGEMENT RING",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com",
+              "link_title": "Click here to send this as inspiration for your custom order."
+            }
+          },
           "1600971298274": {
             "type": "featured-ring",
             "settings": {
               "image": "shopify:\/\/shop_images\/6351_Ruiz.jpg",
-              "job_title": "2.25ct Asscher Cut Sapphire Rey Wedding Band",
+              "job_title": "2.25ct Asscher Cut Sapphire Rey engagement ring",
               "description": "",
               "link_url": "mailto:custom@valeriemadison.com?subject=1.21ct Juno Champagne Shield Diamond Engagement Ring&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
               "link_title": "Click here to send this as inspiration for your custom order"
@@ -2417,6 +2486,26 @@
               "link_title": "Click here to send this as inspiration for your custom order"
             }
           },
+          "a997de41-c821-4f2e-bef9-532468a41e8b": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/7298_Stuart.jpg",
+              "job_title": "2.85CT Emerald Cut Teal Sapphire & Diamond Engagement ring",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com",
+              "link_title": "Click here to send this as inspiration for your custom order."
+            }
+          },
+          "f4343759-5787-4f52-8d68-a5de937c0946": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/7097_Darst.jpg",
+              "job_title": "2.04CT Emerald cut teal sapphire rey engagement ring",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com",
+              "link_title": "Click here to send this as inspiration for your custom order."
+            }
+          },
           "1600971767616": {
             "type": "featured-ring",
             "settings": {
@@ -2424,36 +2513,6 @@
               "job_title": "2.0ct Cushion Cut Teal Eva Engagement Ring with Pavé Diamonds",
               "description": "",
               "link_url": "mailto:custom@valeriemadison.com?subject=2ct Eva Teal Cushion Sapphire Diamond Engagement Ring with Pavé Diamonds&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
-              "link_title": "Click here to send this as inspiration for your custom order"
-            }
-          },
-          "1601324391888": {
-            "type": "featured-ring",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/Green_Sapphire_Diamond_Ring.jpg",
-              "job_title": "2.0ct Radiant Cut Green Sapphire & Diamond Zara Engagement Ring",
-              "description": "",
-              "link_url": "",
-              "link_title": ""
-            }
-          },
-          "1600904785265": {
-            "type": "featured-ring",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/5686_Jon_Kauffman.jpg",
-              "job_title": "1.2ct Radiant Cut Green Sapphire & Diamond Zara Engagement Ring",
-              "description": "",
-              "link_url": "mailto:custom@valeriemadison.com?subject=1ct Eva Salt & Pepper Diamond Engagement Ring with Pavé Diamonds&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
-              "link_title": "Click here to send this as inspiration for your custom order"
-            }
-          },
-          "1600971009918": {
-            "type": "featured-ring",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/Green_Sapphire_Semi_Halo_Engagement_Ring.jpg",
-              "job_title": "1.6ct Pear Cut Green Sapphire & Diamond E\/W Luna Engagement Ring",
-              "description": "",
-              "link_url": "mailto:custom@valeriemadison.com?subject=1.6ct Luna Green Pear Sapphire & canadian Diamond Cluster Engagement Ring&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
               "link_title": "Click here to send this as inspiration for your custom order"
             }
           },
@@ -2482,6 +2541,7 @@
           "1600971768975",
           "640bb445-c1bd-4dc8-9d7a-d58cc777904c",
           "f733facd-ec19-4e0f-bb9b-ecfbaadd5594",
+          "f805bfba-2ab8-4ce4-8270-41244082cf2e",
           "1600971535955",
           "da4aa41c-8ee2-4602-8af2-cd0ab9e118da",
           "01706f5b-bb86-4100-ac94-0f06c99ec419",
@@ -2493,11 +2553,12 @@
           "page-grid-template-1",
           "f8be2d68-96d4-4e9d-917b-278ccb41ce2e",
           "1600971296892",
-          "1600904795953",
           "9e2c28d0-7615-4deb-9820-5254063adafc",
+          "1600904795953",
           "5da0f710-2539-47b5-a3a1-b1d1ddd98e96",
           "1600971533421",
           "1600972039473",
+          "c14cdffa-2103-4c5f-8ef4-bebde5c835ac",
           "10128707-79bb-4a7a-b34b-da016e30342b",
           "1600904777648",
           "e5d03b69-cb0c-4bae-b518-bbe5de7fb6e3",
@@ -2513,12 +2574,16 @@
           "1600972038157",
           "1600971011621",
           "832c4dcd-0137-4409-bb36-cbb947969503",
+          "1600971009918",
+          "25f26937-528f-4fe6-838f-6c939fdcc358",
+          "1600904785265",
+          "1601324391888",
+          "7cbdf742-2cad-4698-8958-289c9b4f5cbc",
           "1600971298274",
           "1600971770447",
+          "a997de41-c821-4f2e-bef9-532468a41e8b",
+          "f4343759-5787-4f52-8d68-a5de937c0946",
           "1600971767616",
-          "1601324391888",
-          "1600904785265",
-          "1600971009918",
           "52f2a8b1-1d33-4bb3-a1da-ba076275604b",
           "c21146f0-71e1-4e94-b9b6-ab07686451c3"
         ],
@@ -3081,7 +3146,7 @@
         "type": "our-story-visit-the-store",
         "settings": {
           "title": "Visit Our Store",
-          "content": "<p>Walk-ins welcome! We have a variety of everyday fine jewelry, wedding bands, engagement rings, and lovely gifts available in store available for you to browse!<br\/><\/p><p>We recommend booking an appointment if you are seeking an Engagement Ring or Wedding Band(s) so our team can be available to assist you - book one (or two) below! <\/p><p><\/p><p>*Per CDC guidelines, fully vaccinated guests are not required to wear a mask. Our team is fully vaccinated and invites you to follow at your discretion.*<\/p>",
+          "content": "<p>Walk-ins welcome! We have a variety of everyday fine jewelry, wedding bands, engagement rings, and lovely gifts available in store available for you to browse!<br\/><\/p><p>We recommend booking an appointment if you are seeking an Engagement Ring or Wedding Band(s) so our team can be available to assist you - book one (or two) below! <\/p><p><\/p><p>*Per CDC guidelines, masks must be worn indoors. Our team is fully vaccinated for your safety.*<\/p>",
           "address": "<p>1411 34th Ave<br\/>Seattle, WA 98122<\/p>",
           "store_hours": "<p>Thursday-Friday <strong>12pm-6pm<\/strong><br\/>Saturday <strong>10am-4pm<\/strong><\/p>",
           "calendly_embed": "<!-- Calendly inline widget begin -->\n<div class=\"calendly-inline-widget\" data-url=\"https:\/\/calendly.com\/valeriemadison?text_color=1c4047&amp;primary_color=714457\" style=\"min-width:320px;height:630px;\"><\/div>\n<script type=\"text\/javascript\" src=\"https:\/\/assets.calendly.com\/assets\/external\/widget.js\" async><\/script>\n<!-- Calendly inline widget end -->",
@@ -3181,7 +3246,7 @@
             "type": "background_block",
             "settings": {
               "background_color": "light",
-              "banner_image_desktop": "shopify:\/\/shop_images\/OOAK490_Juno_Shield_Icy_Diamond_Engagement_Ring.jpg"
+              "banner_image_desktop": "shopify:\/\/shop_images\/0.90ct_Eva_Octagon_Salt_and_Pepper_Diamond_Engagement_Ring_2.jpg"
             }
           }
         },
@@ -3191,13 +3256,13 @@
         ],
         "settings": {
           "banner_wrapper_background_color": "light-alt",
-          "pretext": "Cool down with",
-          "heading": "White Gold Rings",
-          "cta_link": "shopify:\/\/collections\/new-arrivals",
+          "pretext": "Newest addition:",
+          "heading": "Salt & Pepper Diamonds",
+          "cta_link": "https:\/\/www.valeriemadison.com\/collections\/all\/salt-and-pepper-diamond",
           "cta_text": "shop now",
           "text_position": "left-block",
-          "text_color": "dark",
-          "banner_image_mobile": "shopify:\/\/shop_images\/OOAK490_Juno_Shield_Icy_Diamond_Engagement_Ring.jpg",
+          "text_color": "dark-alt",
+          "banner_image_mobile": "shopify:\/\/shop_images\/0.90ct_Eva_Octagon_Salt_and_Pepper_Diamond_Engagement_Ring_2.jpg",
           "text_color_mobile": "dark",
           "content_background_color_mobile": "light-alt"
         }
@@ -3223,7 +3288,7 @@
         "type": "heirloom-reworks-intro",
         "settings": {
           "title": "What is it?",
-          "content": "We are excited to offer heirloom diamond reworks to our offerings at Valerie Madison Fine Jewelry. We would love to help you use the diamonds that have been passed down or gifted to you to set them in one of our engagement ring settings, provided they meet certain conditions.",
+          "content": "We are excited to offer heirloom diamond reworks to our clients. We would love to help you use the diamonds that have been passed down or gifted to you and set them in one of our engagement ring settings, provided they meet certain conditions. Heirloom reworks are either deconstructed from an original ring or set with a loose heirloom diamond into a modern VM setting. This process renews a sentimental piece of history into a contemporary style making them easy to integrate with your unique personality. It is also the most sustainable choice for an engagement ring when set in our recycled metals.",
           "image": "shopify:\/\/shop_images\/Heirloom-Rework.jpg"
         }
       },
@@ -3233,43 +3298,36 @@
           "f8a3e4a7-f4a0-45c8-a9a0-8a0c508e2b3b": {
             "type": "how_it_works_item",
             "settings": {
-              "text": "Contact us to set-up an appointment to discuss your rework and talk to our Staff Gemologist to see if your stone is a good candidate for a rework."
-            }
-          },
-          "c241fcb3-159d-43f0-a2f0-08402f159fba": {
-            "type": "how_it_works_item",
-            "settings": {
-              "text": "If you are a good candidate we will refer you to seek an appraisal, if you do not already have one from the last 5 years."
+              "text": "Contact us to set-up an in-person or phone appointment to discuss your rework and talk to our Staff Gemologist to see if your stone is a good candidate for a rework."
             }
           },
           "e49040a0-c202-4afc-acb5-0418346de965": {
             "type": "how_it_works_item",
             "settings": {
-              "text": "With the recent appraisal, our Staff Gemologist will conduct an In-House Assessment. This step cross-references your appraisal with your desired new setting to ensure it will be safe to proceed."
+              "text": "If your diamond is determined to be a good fit, our Staff Gemologist will conduct an In-House Assessment. This step ensures it will be safe to proceed, it is not a guarantee we will be able to use your diamond."
             }
           },
           "7feffcc8-b4e3-4b0d-b006-edc67cbc84b0": {
             "type": "how_it_works_item",
             "settings": {
-              "text": "Once approved, you will pay the deposit for the rework and we will proceed with unsetting your stone (if necessary)."
+              "text": "If the diamond passes the in-person assessment, the next step is to confirm details of the setting and sign the Heirloom Rework Liability contract. We take every measure to ensure it's safety along the way."
             }
           },
           "fe24ac6d-36f1-499a-8d7d-a8f01ac318b7": {
             "type": "how_it_works_item",
             "settings": {
-              "text": "Once unset, you will receive CAD designs for approval on the new setting!"
+              "text": "Once approved, you will pay the deposit for the rework and any applicable fees.We will proceed with unsetting your stone (if necessary), sending you CAD designs for approval and casting and setting the new ring!"
             }
           },
           "115a6961-c5a3-4551-a06f-3a8ef525b6a1": {
             "type": "how_it_works_item",
             "settings": {
-              "text": "After 6-8 weeks, the ring is completed and ready to enjoy!"
+              "text": "After 6-8 weeks, the ring is completed and ready to enjoy! You may choose to add-on an appraisal if you wish. (Note that all unused metal and small accent diamonds will be returned to you.)"
             }
           }
         },
         "block_order": [
           "f8a3e4a7-f4a0-45c8-a9a0-8a0c508e2b3b",
-          "c241fcb3-159d-43f0-a2f0-08402f159fba",
           "e49040a0-c202-4afc-acb5-0418346de965",
           "7feffcc8-b4e3-4b0d-b006-edc67cbc84b0",
           "fe24ac6d-36f1-499a-8d7d-a8f01ac318b7",
@@ -3285,7 +3343,7 @@
         "settings": {
           "cta_lead_text": "Interested?",
           "cta_text": "Get started",
-          "cta_link": "#"
+          "cta_link": "mailto:custom@valeriemadison.com"
         }
       },
       "heirloom-reworks-faq": {
@@ -3309,7 +3367,7 @@
             "type": "faq_item",
             "settings": {
               "title": "How long does it take?",
-              "answer": "Heirloom reworks take our standard 6-8 weeks once the invoice is paid. Appraisals will add additional time."
+              "answer": "Heirloom reworks take our standard 6-8 weeks."
             }
           },
           "1951472a-32c6-481f-96ff-d6e9e6f945ff": {
@@ -3336,8 +3394,22 @@
           "d41fcacc-5df8-413b-bfa8-1445e465142d": {
             "type": "faq_item",
             "settings": {
-              "title": "",
-              "answer": ""
+              "title": "Are there additional fees?",
+              "answer": "Required fees are our non-refundable assessment fee ($50) and unsetting & resetting fee ($100) if a stone is in a mounting. An optional appraisal ($100) can be purchased separately."
+            }
+          },
+          "80f413c5-6969-4bfb-bd24-1571570a16d2": {
+            "type": "faq_item",
+            "settings": {
+              "title": "Will the rework come with an appraisal?",
+              "answer": "Appraisals often required by insurance companies and are conducted by our Staff Gemologist for $100. Appraisals add 1 week to the completion time."
+            }
+          },
+          "4bcbfd08-5cf0-4018-8a27-9b1c8a506323": {
+            "type": "faq_item",
+            "settings": {
+              "title": "Can you set a diamond a bought online?",
+              "answer": "We do not sell our settings separately, Heirloom Reworks are a way to combine our expertise with your sentimental stones, please respect the artisanship of our work."
             }
           }
         },
@@ -3348,7 +3420,9 @@
           "1951472a-32c6-481f-96ff-d6e9e6f945ff",
           "7e0d23f4-a931-452d-a2e8-61e9cb261ea4",
           "5ae3344d-bd32-4720-9f72-2f17cea9ffa6",
-          "d41fcacc-5df8-413b-bfa8-1445e465142d"
+          "d41fcacc-5df8-413b-bfa8-1445e465142d",
+          "80f413c5-6969-4bfb-bd24-1571570a16d2",
+          "4bcbfd08-5cf0-4018-8a27-9b1c8a506323"
         ],
         "settings": {
           "title": "FAQs"
@@ -3764,6 +3838,53 @@
         "settings": {
           "title": "Upcoming dates",
           "description": "<a href=\"https:\/\/calendly.com\/valeriemadison\/eternitybracelet?month=2021-10\">Appointments are encouraged<\/a>. Walk-ins will be accommodated to the best of our ability."
+        }
+      },
+      "heirloom-reworks-requirements": {
+        "type": "heirloom-reworks-requirements",
+        "blocks": {
+          "fe44046e-ebd4-49c4-a660-be3ea73f05ff": {
+            "type": "requirement",
+            "settings": {
+              "text": "0.50ct or larger"
+            }
+          },
+          "8c445705-f80d-4045-b23e-8ee972aa64fc": {
+            "type": "requirement",
+            "settings": {
+              "text": "SI2 or higher clarity"
+            }
+          },
+          "83449b1d-5289-4d5d-863b-1042f0f1e04b": {
+            "type": "requirement",
+            "settings": {
+              "text": "must have been passed down or gifted to you, we do not set diamonds purchased online"
+            }
+          },
+          "2055ab4e-06c7-48a6-8284-c31351f601bc": {
+            "type": "requirement",
+            "settings": {
+              "text": "can either be loose or in an existing mounting"
+            }
+          },
+          "b009239a-af45-4684-9619-4cddf90f0699": {
+            "type": "requirement",
+            "settings": {
+              "text": "third-party appraisals are preferred but not a requirement"
+            }
+          }
+        },
+        "block_order": [
+          "fe44046e-ebd4-49c4-a660-be3ea73f05ff",
+          "8c445705-f80d-4045-b23e-8ee972aa64fc",
+          "83449b1d-5289-4d5d-863b-1042f0f1e04b",
+          "2055ab4e-06c7-48a6-8284-c31351f601bc",
+          "b009239a-af45-4684-9619-4cddf90f0699"
+        ],
+        "settings": {
+          "title": "Diamond Requirements",
+          "description": "The criteria required for VM to consider using an heirloom stone are as follows:",
+          "image": "shopify:\/\/shop_images\/Philip-Berry-Custom-Vera-Engagement-Ring-Heirloom-Rework.jpg"
         }
       }
     },
