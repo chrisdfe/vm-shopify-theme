@@ -1,27 +1,26 @@
 /* Definitions - Components
 ================================================== */
 
-@import "components/_header.scss";
-@import "components/_sidebar.scss";
-@import "components/_footer.scss";
+@import "components/_header";
+@import "components/_sidebar";
+@import "components/_footer";
 
-@import "components/_buttons.scss";
+@import "components/_buttons";
 @import "components/_image-card";
 
-@import "components/_sub-collections.scss";
-@import "components/_breadcrumbs.scss";
-@import "components/_placeholders.scss";
-@import "components/_videos.scss";
-@import "components/_accordions.scss";
-@import "components/_social-buttons.scss";
-@import "components/_search-autocomplete.scss";
-@import "components/_swatch.scss";
-@import "components/_buttons.scss";
-@import "components/_currency-switcher.scss";
-@import "components/_promo-banner.scss";
-@import "components/_pagination.scss";
-@import "components/_modal";
+@import "components/_sub-collections";
+@import "components/_breadcrumbs";
+@import "components/_placeholders";
+@import "components/_videos";
+@import "components/_accordions";
+@import "components/_social-buttons";
+@import "components/_search-autocomplete";
+@import "components/_swatch";
+@import "components/_buttons";
+@import "components/_currency-switcher";
 @import "components/_promo-banner";
+@import "components/_pagination";
+@import "components/_modal";
 @import "components/_model-viewer";
 @import "components/_related-products";
 @import "components/_product-media";

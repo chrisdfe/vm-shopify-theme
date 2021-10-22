@@ -1,0 +1,20 @@
+<div class="mega-menu__image-caption-link">
+  {% if image_link != blank %}
+  <a href="{{ image_link }}">
+  {% endif %}
+
+  {% if image != nil %}
+    {% render 'image-element',
+      image: image,
+      alt: image.alt
+    %}
+  {% endif %}
+
+  {% if image_caption != blank %}
+    <p class="mega-menu__image-caption">{{ image_caption }}</p>
+  {% endif %}
+
+  {% if image_link != blank %}
+  </a>
+  {% endif %}
+</div>

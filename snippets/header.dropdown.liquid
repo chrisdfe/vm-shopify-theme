@@ -1,0 +1,22 @@
+{% for link in linklists[linklist].links %}
+  {% if linklists[link.handle] != empty %}
+    <div
+      class="header__dropdown-container"
+      data-dropdown="{{ link.handle }}">
+      <div class="header-dropdown">
+
+        <div class="container">
+          <div class="header-dropdown__column">
+            
+            {% for sublink in linklists[link.handle].links %}
+              {% render "header.dropdown-menu-column" with {
+                sublink: sublink
+              } %}
+            {% endfor %}
+
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+{% endfor %}

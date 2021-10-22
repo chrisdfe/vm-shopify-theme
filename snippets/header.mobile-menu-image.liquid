@@ -1,0 +1,20 @@
+<li class="mobile-mega-menu_block">
+  {% if image_link != blank %}
+  <a href="{{ image_link }}">
+  {% endif %}
+
+    {% if block.settings.image_bottom != nil %}
+      {% render 'image-element',
+        image: image,
+        alt: image.alt
+      %}
+    {% endif %}
+    
+    {% if block.settings.caption != blank %}
+      <p class="mobile-mega-menu__image-caption">{{ block.settings.caption }}</p>
+    {% endif %}
+    
+  {% if image_link != blank %}
+  </a>
+  {% endif %}
+</li>

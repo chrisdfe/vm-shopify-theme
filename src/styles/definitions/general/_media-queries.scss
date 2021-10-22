@@ -6,13 +6,13 @@
 
 /* Smaller than standard 960 (devices and browsers) */
 @media only screen and (max-width: 959px) {
-  #contact_form input.sign_up[type='submit'] {
+  #contact_form input.sign_up[type="submit"] {
     margin-left: 0;
     margin-bottom: 1.5em;
     width: 100%;
   }
 
-  input.contact_email[type='email'] {
+  input.contact_email[type="email"] {
     width: 100%;
   }
 
@@ -49,10 +49,6 @@
   .menu a span {
     padding-left: 2px;
     padding-right: 2px;
-  }
-
-  .nav .menu li.search_link {
-    display: inline-block;
   }
 
   .menu li.search_container {
@@ -178,11 +174,11 @@
     margin-left: 0;
   }
 
-  input[type='submit'],
-  input[type='reset'],
-  input[type='button'],
-  input.action_button[type='submit'],
-  input.action_button[type='button'],
+  input[type="submit"],
+  input[type="reset"],
+  input[type="button"],
+  input.action_button[type="submit"],
+  input.action_button[type="button"],
   .sign_up {
     margin-left: 0;
     width: 100%;

@@ -1,26 +1,24 @@
 // Cart form
-.mini_cart,
-.nav a.mini_cart {
-  float: right;
-  text-align: center;
-  cursor: pointer;
-  // background-color: {{ settings.top_bar_cart_bg_color }};
-  background-color: $vm-navbar-background-color;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin-left: 5px;
-  height: 40px;
-  z-index: 2001;
+// .mini_cart,
+// .nav a.mini_cart {
+//   text-align: center;
+//   cursor: pointer;
+//   background-color: $vm-navbar-background-color;
+//   padding-left: 5px;
+//   padding-right: 5px;
+//   margin-left: 5px;
+//   height: 40px;
+//   z-index: 2001;
 
-  @include respond-to("medium-up") {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
+//   @include respond-to("medium-up") {
+//     padding-left: 15px;
+//     padding-right: 15px;
+//   }
 
-  @include respond-to("medium-down") {
-    right: 0;
-  }
-}
+//   @include respond-to("medium-down") {
+//     right: 0;
+//   }
+// }
 
 .cart_container {
   li.mini-cart__item {

@@ -1,0 +1,18 @@
+<li class="mobile-mega-menu_block sublink">
+  <a
+    href="{{ title_link }}"
+    data-no-instant>
+
+    {{ title }}
+
+    <span class="right icon-down-arrow"></span>
+  </a>
+
+  <ul>
+    {% for sublink in links %}
+      <li>
+        <a href="{{ sublink.url }}">{{ sublink.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</li>
