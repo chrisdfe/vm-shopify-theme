@@ -5,9 +5,9 @@
   margin: 5rem 0;
 
   &.page-heading--padded {
-    margin: 7rem 0;
+    margin: 5rem 0;
 
-    @include respond-to('medium-down') {
+    @include respond-to("medium-down") {
       margin: 3rem 0;
     }
   }
@@ -20,7 +20,7 @@
     text-align: center;
   }
 
-  @include respond-to('medium-down') {
+  @include respond-to("medium-down") {
     margin: 3rem 0;
 
     &.page-heading--with-breadcrumbs {

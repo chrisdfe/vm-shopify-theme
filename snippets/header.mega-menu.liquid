@@ -6,160 +6,150 @@
 {% endcomment %}
 
 <div>
-<div
-  class="header__dropdown-container mega-menu mega-menu-{{ menu_number }}"
-  data-dropdown="{{ section.settings.parent | handleize }}">
-  <div class="header-dropdown">
-    <div class="container">
-      <div class="header-dropdown__content">
-        {% for block in section.blocks %}
-          <div class="header-dropdown__column" {{ block.shopify_attributes }}>
-            {% if block.type == 'column' %}
-              {% comment %}Richtext{% endcomment %}
-              {% if block.settings.richtext_top %}
-                <div class="mega-menu__richtext">
-                  {{ block.settings.richtext_top }}
-                </div>
-              {% endif %}
+  <div
+    class="header__dropdown-container"
+    data-dropdown="{{ section.settings.parent | handleize }}">
+    <div class="header-dropdown">
+      <div class="container">
+        <div class="header-dropdown__content">
+          {% for block in section.blocks %}
+            <div
+              class="header-dropdown__column"
+              {{ block.shopify_attributes }}>
+              {% if block.type == 'column' %}
+                {% if block.settings.richtext_top %}
+                  {% render "header.dropdown-richtext" with {
+                    text: block.settings.richtext_top
+                  } %}
+                {% endif %}
 
-              {% comment %}Image with caption and link{% endcomment %}
-              {% if block.settings.image_top != nil or block.settings.image_caption_top != blank %}
-                {% include "header.dropdown-menu-image" with {
-                  image_link: block.settings.image_link_top,
-                  image: block.settings.image_top,
-                  image_caption: block.settings.image_caption_top
-                } %}
-              {% endif %}
+                {% if block.settings.image_top != nil or block.settings.image_caption_top != blank %}
+                  {% render "header.dropdown-image" with {
+                    image_link: block.settings.image_link_top,
+                    image: block.settings.image_top,
+                    image_caption: block.settings.image_caption_top
+                  } %}
+                {% endif %}
 
-              {% comment %}Menu 1{% endcomment %}
-              {% if block.settings.menu_1 != blank %}
-                {% include "header.dropdown-menu-column" with {
-                  title: linklists[block.settings.menu_1].title,
-                  title_link: block.settings.menu_1_link,
-                  links: linklists[block.settings.menu_1].links
-                } %}
-              {% endif %}
+                {% if block.settings.menu_1 != blank %}
+                  {% render "header.dropdown-column" with {
+                    title: linklists[block.settings.menu_1].title,
+                    title_link: block.settings.menu_1_link,
+                    links: linklists[block.settings.menu_1].links
+                  } %}
+                {% endif %}
 
-              {% comment %}Menu 2{% endcomment %}
-              {% if block.settings.menu_2 != blank %}
-                {% include "header.dropdown-menu-column" with {
-                  title: linklists[block.settings.menu_2].title,
-                  title_link: block.settings.menu_2_link,
-                  links: linklists[block.settings.menu_2].links
-                } %}
-              {% endif %}
-                
-              {% comment %}Menu 3{% endcomment %}
-              {% if block.settings.menu_3 != blank %}
-                {% include "header.dropdown-menu-column" with {
-                  title: linklists[block.settings.menu_3].title,
-                  title_link: block.settings.menu_3_link,
-                  links: linklists[block.settings.menu_3].links
-                } %}
-              {% endif %}
-                
-              {% comment %}Menu 4{% endcomment %}
-              {% if block.settings.menu_4 != blank %}
-                {% include "header.dropdown-menu-column" with {
-                  title: linklists[block.settings.menu_4].title,
-                  title_link: block.settings.menu_4_link,
-                  links: linklists[block.settings.menu_4].links
-                } %}
-              {% endif %}
+                {% if block.settings.menu_2 != blank %}
+                  {% render "header.dropdown-column" with {
+                    title: linklists[block.settings.menu_2].title,
+                    title_link: block.settings.menu_2_link,
+                    links: linklists[block.settings.menu_2].links
+                  } %}
+                {% endif %}
+                  
+                {% if block.settings.menu_3 != blank %}
+                  {% render "header.dropdown-column" with {
+                    title: linklists[block.settings.menu_3].title,
+                    title_link: block.settings.menu_3_link,
+                    links: linklists[block.settings.menu_3].links
+                  } %}
+                {% endif %}
+                  
+                {% if block.settings.menu_4 != blank %}
+                  {% render "header.dropdown-column" with {
+                    title: linklists[block.settings.menu_4].title,
+                    title_link: block.settings.menu_4_link,
+                    links: linklists[block.settings.menu_4].links
+                  } %}
+                {% endif %}
 
-              {% comment %}Image with caption and link{% endcomment %}
-              {% if block.settings.image_bottom != nil or block.settings.image_caption_bottom != blank %}
-                {% include "header.dropdown-menu-image" with {
-                  image_link: block.settings.image_link_bottom,
-                  image: block.settings.image_bottom,
-                  image_caption: block.settings.image_caption_bottom
-                } %}
-              {% endif %}
+                {% if block.settings.image_bottom != nil or block.settings.image_caption_bottom != blank %}
+                  {% render "header.dropdown-image" with {
+                    image_link: block.settings.image_link_bottom,
+                    image: block.settings.image_bottom,
+                    image_caption: block.settings.image_caption_bottom
+                  } %}
+                {% endif %}
 
-              {% comment %}Richtext{% endcomment %}
-              {% if block.settings.richtext_bottom %}
-                <div class="mega-menu__richtext">
-                  {{ block.settings.richtext_bottom }}
-                </div>
-              {% endif %}
+                {% if block.settings.richtext_bottom %}
+                  {% render "header.dropdown-richtext" with {
+                    text: block.settings.richtext_bottom
+                  } %}
+                {% endif %}
 
-            {% endif %}
-          </div>
-        {% endfor %}
+              {% endif %}
+            </div>
+          {% endfor %}
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<ul
-  class="mobile-mega-menu"
-  data-mobile-dropdown="{{ section.settings.parent | handleize }}">
-  {% for block in section.blocks %}
-    <div>
-    {% if block.type == 'column' %}
-      {% if block.settings.richtext_top %}
-        <li class="mobile-mega-menu_block mega-menu__richtext">
-          {{ block.settings.richtext_top }}
-        </li>
-      {% endif %}
+  <ul
+    class="mobile-mega-menu"
+    data-mobile-dropdown="{{ section.settings.parent | handleize }}">
+    {% for block in section.blocks %}
+      <div>
+      {% if block.type == 'column' %}
+        {% if block.settings.richtext_top %}
+          {% include "header.mobile-menu-richtext" with {
+            text: block.settings.richtext_top 
+          } %}
+        {% endif %}
 
-      {% if block.settings.image_top != nil or block.settings.image_caption_top != blank %}
-        <li class="mobile-mega-menu_block">
+        {% if block.settings.image_top != nil or block.settings.image_caption_top != blank %}
           {% include "header.mobile-menu-image" with {
             image: block.settings.image_bottom,
             image_link: block.settings.image_link_bottom,
             caption: block.settings.image_caption_bottom
           } %}
-        </li>
-      {% endif %}
+        {% endif %}
 
-      {% if block.settings.menu_1 != blank %}
-        {% include "header.mobile-menu-column" {
-          title: linklists[block.settings.menu_1].title,
-          title_link: block.settings.menu_1_link,
-          links: linklists[block.settings.menu_1].links
-        } %}
-      {% endif %}
+        {% if block.settings.menu_1 != blank %}
+          {% include "header.mobile-menu-linklist" {
+            title: linklists[block.settings.menu_1].title,
+            title_link: block.settings.menu_1_link,
+            links: linklists[block.settings.menu_1].links
+          } %}
+        {% endif %}
 
-      {% if block.settings.menu_2 != blank %}
-        {% include "header.mobile-menu-column" {
-          title: linklists[block.settings.menu_2].title,
-          title_link: block.settings.menu_2_link,
-          links: linklists[block.settings.menu_2].links
-        } %}
-      {% endif %}
+        {% if block.settings.menu_2 != blank %}
+          {% include "header.mobile-menu-linklist" {
+            title: linklists[block.settings.menu_2].title,
+            title_link: block.settings.menu_2_link,
+            links: linklists[block.settings.menu_2].links
+          } %}
+        {% endif %}
 
-      {% if block.settings.menu_3 != blank %}
-        {% include "header.mobile-menu-column" {
-          title: linklists[block.settings.menu_3].title,
-          title_link: block.settings.menu_3_link,
-          links: linklists[block.settings.menu_3].links
-        } %}
-      {% endif %}
+        {% if block.settings.menu_3 != blank %}
+          {% include "header.mobile-menu-linklist" {
+            title: linklists[block.settings.menu_3].title,
+            title_link: block.settings.menu_3_link,
+            links: linklists[block.settings.menu_3].links
+          } %}
+        {% endif %}
 
-      {% if block.settings.menu_4 != blank %}
-        {% include "header.mobile-menu-column" {
-          title: linklists[block.settings.menu_4].title,
-          title_link: block.settings.menu_4_link,
-          links: linklists[block.settings.menu_4].links
-        } %}
-      {% endif %}
+        {% if block.settings.menu_4 != blank %}
+          {% include "header.mobile-menu-linklist" {
+            title: linklists[block.settings.menu_4].title,
+            title_link: block.settings.menu_4_link,
+            links: linklists[block.settings.menu_4].links
+          } %}
+        {% endif %}
 
-      {% if block.settings.image_bottom != nil or block.settings.image_caption_bottom != blank %}
-        {% include "header.mobile-menu-image" with {
-          image: block.settings.image_bottom,
-          image_link: block.settings.image_link_bottom,
-          caption: block.settings.image_caption_bottom
-        } %}
-      {% endif %}
+        {% if block.settings.image_bottom != nil or block.settings.image_caption_bottom != blank %}
+          {% include "header.mobile-menu-image" with {
+            image: block.settings.image_bottom,
+            image_link: block.settings.image_link_bottom,
+            caption: block.settings.image_caption_bottom
+          } %}
+        {% endif %}
 
-      {% if block.settings.richtext_bottom %}
-        <li class="mobile-mega-menu_block">
+        {% if block.settings.richtext_bottom %}
           {{ block.settings.richtext_bottom }}
-        </li>
+        {% endif %}
       {% endif %}
-    {% endif %}
-    </div>
-  {% endfor %}
-</ul>
+      </div>
+    {% endfor %}
+  </ul>
 </div>

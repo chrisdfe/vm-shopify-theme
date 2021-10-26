@@ -9,7 +9,7 @@
           <div class="header-dropdown__column">
             
             {% for sublink in linklists[link.handle].links %}
-              {% render "header.dropdown-menu-column" with {
+              {% render "header.dropdown-linklist" with {
                 sublink: sublink
               } %}
             {% endfor %}
