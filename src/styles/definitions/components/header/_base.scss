@@ -1,0 +1,21 @@
+// TODO -figure out if I can just apply these styles to header-wrapper instead
+#shopify-section-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-wrapper {
+  background-color: $vm-color-white;
+}
+
+.header {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+
+  a {
+    color: $vm-navbar-text-color;
+  }
+}

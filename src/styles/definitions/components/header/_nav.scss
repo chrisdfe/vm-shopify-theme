@@ -1,7 +1,7 @@
-.header__menu {
+.header__nav {
   display: block;
   padding: 0;
-  margin: 0 20px;
+  margin: 0 get-vm-spacer(1);
 
   ul {
     padding: 0;
@@ -18,7 +18,7 @@
   }
 
   a {
-    $navbar-padding: 2rem;
+    $navbar-padding: get-vm-spacer(3);
     @include vm-paragraph-3();
     display: block;
     position: relative;

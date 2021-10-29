@@ -1,0 +1,93 @@
+{% comment %}
+<!-- <header id="header" class="mobile_nav-fixed--{{ section.settings.fixed_header }}">
+  {% if section.settings.promo_text != blank %}
+    <div class="promo_banner">
+      <div class="promo_banner__content">
+        {{ section.settings.promo_text }}
+      </div>
+      <div class="promo_banner-close"></div>
+    </div>
+  {% endif %}
+  
+  <div class="top_bar clearfix">
+    <a class="mobile_nav header__dropdown-link" data-dropdown-rel="menu" data-no-instant="true">
+      <div class="hamburger-menu-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <span class="menu_title">{{ 'layout.general.menu' | t }}</span>
+    </a>
+    
+    <a href="{{ shop.url }}" title="{{ shop.name | escape }}" class="mobile_logo logo">
+      {% if section.settings.logo_mobile != nil %}
+        <img src="{{ section.settings.logo_mobile | img_url: '410x' }}" alt="{{ shop.name | escape }}" class="lazyload" />
+      {% elsif section.settings.logo != nil %}
+        <img src="{{ section.settings.logo | img_url: '410x' }}" alt="{{ shop.name | escape }}" />
+      {% else %}
+        {{ shop.name }}
+      {% endif %}
+    </a>
+
+    <div class="top_bar--right">
+      {% if section.settings.search_enabled %}
+        <a href="{{ routes.search_url }}" class="icon-search header__dropdown-link" title="{{ 'general.search.title' | t | escape }}" data-dropdown-rel="search"></a>
+      {% endif %}
+
+      {% if section.settings.show_cart %}
+        <div class="cart_container">
+          <a href="{{ routes.cart_url }}" class="{% if section.settings.cart_icon == "cart" %}icon-cart{% else %}icon-bag{% endif %} mini_cart header__dropdown-link" title="{{ 'layout.general.cart' | t | escape }}" data-no-instant> <span class="cart_count">{{ cart.item_count }}</span></a>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="header__dropdown-container center" data-dropdown="search">
+    <div class="dropdown">
+      <form action="{{ routes.search_url }}" class="header_search_form">
+        {% if settings.search_option != 'everything' %}
+          <input type="hidden" name="type" value="product" />
+        {% endif %}
+        <span class="icon-search search-submit"></span>
+        <input type="text" name="q" placeholder="{{ 'general.search.title' | t: shop_name: shop.name }}" autocapitalize="off" autocomplete="off" autocorrect="off" class="search-terms" />
+      </form>
+    </div>
+  </div>
+
+  <div class="header__dropdown-container" data-dropdown="menu">
+    <div class="dropdown">
+      <ul class="menu" id="mobile_menu">
+        {% render 'mobile-menu' with section.settings.main_linklist %}
+        {% render 'mobile-menu' with section.settings.main_linklist2 %}
+        {% render 'mobile-menu' with section.settings.top_bar_menu, context: 'top_bar_menu' %}
+        {% if section.settings.phone_number != blank %}
+          <li><a href="tel:{{ section.settings.phone_number | replace: ' ', '' | replace: '+', '' | replace: '-', '' }}">{{ section.settings.phone_number }}</a></li>
+        {% endif %}
+
+        {% if shop.customer_accounts_enabled %}
+          {% if customer %}
+            <li>
+              <a href="{{ routes.account_url }}" data-no-instant>{{ customer.name }}</a>
+            </li>
+            <li data-no-instant>
+              <a href="{{ routes.account_logout_url }}" id="customer_logout_link">{{ 'layout.customer.log_out' | t }}</a>
+            </li>
+          {% else %}
+            <li data-no-instant>
+              <a href="{{ routes.account_login_url }}" id="customer_login_link">{{ 'layout.customer.log_in' | t }}</a>
+            </li>
+          {% endif %}
+        {% endif %}
+
+        {% render 'localization-switcher-mobile',
+          additional_classes: 'mobile-menu__disclosure',
+          currency_selector: currency_selector,
+          locale_selector: locale_selector,
+          show_currency: section.settings.show_currency_selector
+        %}
+      </ul>
+    </div>
+  </div>
+</header>
+{% endcomment %}

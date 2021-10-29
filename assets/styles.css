@@ -1501,7 +1501,7 @@ p,
   margin: 5rem 0;
 }
 .page-heading.page-heading--padded {
-  margin: 7rem 0;
+  margin: 5rem 0;
 }
 @media only screen and (max-width: 800px) {
   .page-heading.page-heading--padded {
@@ -6470,35 +6470,32 @@ html.remodal-is-locked {
   color: #1c4047;
 }
 
-.logo {
+.header__logo {
   display: flex;
   align-items: center;
   justify-content: center;
   line-height: 0;
-  width: 16%;
   height: 55px;
-  padding: 0 1%;
   max-width: 200px;
 }
-.logo a {
+.header__logo a {
   display: block;
-  color: #1c4047;
-  outline: 0;
 }
-.logo img {
+.header__logo img {
   max-height: 100%;
+  max-width: 100%;
 }
 
-.header__menu {
+.header__nav {
   display: block;
   padding: 0;
-  margin: 0 20px;
+  margin: 0 1rem;
 }
-.header__menu ul {
+.header__nav ul {
   padding: 0;
   margin: 0;
 }
-.header__menu li {
+.header__nav li {
   display: inline-block;
   margin: 0;
   border: 0;
@@ -6506,7 +6503,7 @@ html.remodal-is-locked {
   vertical-align: top;
   padding-right: 10px;
 }
-.header__menu a {
+.header__nav a {
   font-family: poppins, sans-serif;
   font-size: 14px;
   font-weight: 400;
@@ -6516,18 +6513,18 @@ html.remodal-is-locked {
   display: block;
   position: relative;
   color: #1c4047;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
   margin-bottom: 0;
   outline: 0;
   transition: color 0.1s linear;
 }
 @media only screen and (max-width: 800px) {
-  .header__menu a {
+  .header__nav a {
     font-size: 13px;
   }
 }
-.header__menu a .icon-down-arrow {
+.header__nav a .icon-down-arrow {
   position: relative;
   top: 2px;
   font-size: 12px;

@@ -55,7 +55,8 @@
   {%- assign locale_selector = true -%}
 {%- endif -%}
 
-{% comment %}Mobile navigation{% endcomment %}
+
+{% comment %}
 <!-- <header id="header" class="mobile_nav-fixed--{{ section.settings.fixed_header }}">
   {% if section.settings.promo_text != blank %}
     <div class="promo_banner">
@@ -146,7 +147,8 @@
       </ul>
     </div>
   </div>
-</header> -->
+</header>
+{% endcomment %}
 
 {% if section.settings.promo_text != blank %}
 <div class="promo-banner">
@@ -371,46 +373,6 @@
      "content": "Layout"
     },
     {
-      "type": "checkbox",
-      "id": "fixed_header",
-      "label": "Fixed ('sticky') header",
-      "default": true
-    },
-    {
-      "type": "select",
-      "id": "logo_position",
-      "label": "Logo position",
-      "info": "Applies when menu position has been set to 'Inline with logo'",
-      "options": [
-        {
-          "value": "left",
-          "label": "Left"
-        },
-        {
-          "value": "center",
-          "label": "Center"
-        }
-      ],
-      "default": "center"
-    },
-    {
-      "type": "select",
-      "id": "logo_alignment",
-      "label": "Logo alignment",
-      "info": "Applies when menu position has been set to 'Under logo'",
-      "options": [
-        {
-          "value": "left",
-          "label": "Left"
-        },
-        {
-          "value": "center",
-          "label": "Center"
-        }
-      ],
-      "default": "center"
-    },
-    {
       "type": "select",
       "id": "menu_position",
       "label": "Menu position",
@@ -445,16 +407,6 @@
         }
       ],
       "default": "align_left"
-    },
-    {
-      "type": "range",
-      "id": "logo_top_padding",
-      "label": "Logo top padding",
-      "info": "[Learn more](https:\/\/help.outofthesandbox.com\/hc\/en-us\/articles\/115006910627)",
-      "min": 0,
-      "max": 30,
-      "default": 10,
-      "unit": "px"
     },
     {
       "type": "range",
