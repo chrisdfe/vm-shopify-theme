@@ -151,17 +151,19 @@
       }
     </style>
   </noscript>
-  <body class="{% if template == '404' %}error-404{% else %}{{ template | replace: '.', '-' | handle }}{% endif %}"
-        data-money-format="
-        {%- if settings.currency_format == 'money_with_currency_format' -%}
-          {{ shop.money_with_currency_format | strip_html }}
-        {%- else -%}
-          {{ shop.money_format | strip_html }}
-        {%- endif -%}"
-        data-shop-currency="{{ shop.currency }}"
-        data-shop-url="{{ shop.url }}">
 
-    <div class="header-section-wrapper">
+  <body
+    class="{% if template == '404' %}error-404{% else %}{{ template | replace: '.', '-' | handle }}{% endif %}"
+      data-money-format="
+      {%- if settings.currency_format == 'money_with_currency_format' -%}
+        {{ shop.money_with_currency_format | strip_html }}
+      {%- else -%}
+        {{ shop.money_format | strip_html }}
+      {%- endif -%}"
+      data-shop-currency="{{ shop.currency }}"
+      data-shop-url="{{ shop.url }}">
+
+    <div class="header-wrapper">
       {% section 'header' %}
 
       <div class="mega-menu-container">

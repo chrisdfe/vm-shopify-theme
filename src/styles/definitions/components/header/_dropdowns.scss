@@ -1,6 +1,6 @@
 .header__dropdown-container {
-  // TODO - uncomment
-  // display: none;
+  display: none;
+  background-color: #fff;
 
   img {
     max-width: 100%;
@@ -20,10 +20,19 @@
   animation: fadeIn 0.3s linear none;
 }
 
-.header__dropdown-content {
+.header-dropdown__content {
+  padding: get-vm-spacer(2);
+  display: flex;
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
 }
 
-.header__dropdown.mega-menu .dropdown_content {
+.header-dropdown__column {
+  padding: 0 get-vm-spacer(2);
 }
 
 .header__search-form {

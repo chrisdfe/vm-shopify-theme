@@ -1,0 +1,18 @@
+.header-desktop {
+  background-color: $vm-color-white;
+
+  a {
+    color: $vm-navbar-text-color;
+  }
+
+  @include respond-to("medium-down") {
+    display: none;
+  }
+}
+
+.header-desktop__navbar {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}

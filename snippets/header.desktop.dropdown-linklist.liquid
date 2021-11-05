@@ -1,0 +1,18 @@
+<div
+  class="header-dropdown__column header-dropdown__column--menu">
+  <h5>
+    {% if title_url %}
+      <a href="{{ title_url }}">{{ title }}</a>
+    {% else %}
+      {{ title }}
+    {% endif %}
+  </h5>
+
+  <ul>
+    {% for sublink in links %}
+      <li>
+        <a href="{{ sublink.url }}">{{ sublink.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>

@@ -1,4 +1,4 @@
-.header__nav {
+.header-desktop__nav {
   display: block;
   padding: 0;
   margin: 0 get-vm-spacer(1);
@@ -17,8 +17,9 @@
     padding-right: 10px;
   }
 
-  a {
-    $navbar-padding: get-vm-spacer(3);
+  .header__dropdown-link,
+  .header-desktop__nav-link {
+    $navbar-padding: get-vm-spacer(2);
     @include vm-paragraph-3();
     display: block;
     position: relative;
@@ -33,6 +34,17 @@
       position: relative;
       top: 2px;
       font-size: 12px;
+    }
+
+    .header-desktop__nav-link__dropdown-arrow {
+      display: inline-block;
+      opacity: 0;
+    }
+
+    &.is-dropdown-link {
+      .header-desktop__nav-link__dropdown-arrow {
+        opacity: 1;
+      }
     }
   }
 }

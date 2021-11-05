@@ -1,49 +1,57 @@
-{% comment %}
-<!-- <header id="header" class="mobile_nav-fixed--{{ section.settings.fixed_header }}">
-  {% if section.settings.promo_text != blank %}
-    <div class="promo_banner">
-      <div class="promo_banner__content">
-        {{ section.settings.promo_text }}
-      </div>
-      <div class="promo_banner-close"></div>
-    </div>
-  {% endif %}
-  
-  <div class="top_bar clearfix">
-    <a class="mobile_nav header__dropdown-link" data-dropdown-rel="menu" data-no-instant="true">
-      <div class="hamburger-menu-icon">
-        <span></span>
+<header class="header-mobile">
+  <div class="header-mobile__navbar">
+    <button
+      class="header-mobile__hamburger-button header-mobile__nav-button js-mobile-hamburger-button"
+      data-no-instant="true"
+      >
+      <div class="header-mobile__hamburger">
         <span></span>
         <span></span>
         <span></span>
       </div>
-      <span class="menu_title">{{ 'layout.general.menu' | t }}</span>
-    </a>
+    </button>
     
-    <a href="{{ shop.url }}" title="{{ shop.name | escape }}" class="mobile_logo logo">
+    <a
+      href="{{ shop.url }}"
+      title="{{ shop.name | escape }}"
+      class="header-mobile__logo">
       {% if section.settings.logo_mobile != nil %}
-        <img src="{{ section.settings.logo_mobile | img_url: '410x' }}" alt="{{ shop.name | escape }}" class="lazyload" />
+        <img
+          src="{{ section.settings.logo_mobile | img_url: '410x' }}"
+          alt="{{ shop.name | escape }}"
+          class="lazyload"
+        />
       {% elsif section.settings.logo != nil %}
-        <img src="{{ section.settings.logo | img_url: '410x' }}" alt="{{ shop.name | escape }}" />
-      {% else %}
-        {{ shop.name }}
+        <img
+          src="{{ section.settings.logo | img_url: '410x' }}"
+          alt="{{ shop.name | escape }}"
+        />
       {% endif %}
     </a>
 
-    <div class="top_bar--right">
-      {% if section.settings.search_enabled %}
-        <a href="{{ routes.search_url }}" class="icon-search header__dropdown-link" title="{{ 'general.search.title' | t | escape }}" data-dropdown-rel="search"></a>
-      {% endif %}
+    <div class="header-mobile__nav">
+      <button
+        href="{{ routes.search_url }}"
+        class="header-mobile__nav-button js-mobile-search-button"
+        title="{{ 'general.search.title' | t | escape }}"
+        data-dropdown-rel="search">
+        <span class="icon-search"></span>
+      </button>
 
-      {% if section.settings.show_cart %}
-        <div class="cart_container">
-          <a href="{{ routes.cart_url }}" class="{% if section.settings.cart_icon == "cart" %}icon-cart{% else %}icon-bag{% endif %} mini_cart header__dropdown-link" title="{{ 'layout.general.cart' | t | escape }}" data-no-instant> <span class="cart_count">{{ cart.item_count }}</span></a>
-        </div>
-      {% endif %}
+      <button
+        href="{{ routes.cart_url }}"
+        class="header-mobile__nav-button js-mobile-cart-button"
+        title="{{ 'layout.general.cart' | t | escape }}"
+        data-no-instant>
+        <span class="icon-bag"></span>
+        <span class="cart_count">{{ cart.item_count }}</span>
+      </button>
     </div>
   </div>
 
-  <div class="header__dropdown-container center" data-dropdown="search">
+  <div
+    class="header__dropdown-container"
+    data-dropdown="search">
     <div class="dropdown">
       <form action="{{ routes.search_url }}" class="header_search_form">
         {% if settings.search_option != 'everything' %}
@@ -55,12 +63,17 @@
     </div>
   </div>
 
-  <div class="header__dropdown-container" data-dropdown="menu">
+  <div
+    class="header__dropdown-container"
+    data-dropdown="menu">
     <div class="dropdown">
       <ul class="menu" id="mobile_menu">
+        {% comment %}
         {% render 'mobile-menu' with section.settings.main_linklist %}
         {% render 'mobile-menu' with section.settings.main_linklist2 %}
         {% render 'mobile-menu' with section.settings.top_bar_menu, context: 'top_bar_menu' %}
+        {% endcomment %}
+
         {% if section.settings.phone_number != blank %}
           <li><a href="tel:{{ section.settings.phone_number | replace: ' ', '' | replace: '+', '' | replace: '-', '' }}">{{ section.settings.phone_number }}</a></li>
         {% endif %}
@@ -70,6 +83,7 @@
             <li>
               <a href="{{ routes.account_url }}" data-no-instant>{{ customer.name }}</a>
             </li>
+            
             <li data-no-instant>
               <a href="{{ routes.account_logout_url }}" id="customer_logout_link">{{ 'layout.customer.log_out' | t }}</a>
             </li>
@@ -79,15 +93,7 @@
             </li>
           {% endif %}
         {% endif %}
-
-        {% render 'localization-switcher-mobile',
-          additional_classes: 'mobile-menu__disclosure',
-          currency_selector: currency_selector,
-          locale_selector: locale_selector,
-          show_currency: section.settings.show_currency_selector
-        %}
       </ul>
     </div>
   </div>
 </header>
-{% endcomment %}

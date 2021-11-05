@@ -1,0 +1,58 @@
+<header class="header-desktop">
+  {% capture extra_links %}
+    <li>
+      <a href="{{ routes.cart_url }}"
+      class="header__dropdown-link"
+      data-dropdown-rel="cart"
+      data-no-instant>
+      <span class="icon-bag"></span>
+      <span class="cart_count">{{ cart.item_count }}</span>
+      </a>
+    </li>
+
+    <li>
+      <a
+        href="{{ routes.account_url }}"
+        class="header-desktop__nav-link"
+        title="{{ 'layout.customer.my_account' | t }} {% if customer %}({{ customer.email }}){% endif %}">
+        <span class="icon-user"></span>
+        <span>{% if customer %}{{ 'layout.customer.my_account' | t }}{% else %}{{ 'layout.customer.log_in' | t }}{% endif %}</span>
+      </a>
+    </li>
+
+    <li>
+      <a
+        href="{{ routes.search_url }}"
+        class="header__dropdown-link"
+        title="{{ 'general.search.title' | t | escape }}"
+        data-dropdown-rel="search">
+        <span class="icon-search"></span>
+      </a>
+    </li>
+  {% endcapture %}
+
+  <div class="header-desktop__navbar">
+    {% render 'header.desktop.nav' with {
+      linklist: section.settings.main_linklist
+    } %}
+  
+    {% render "header.logo" %}
+    
+    {% render 'header.desktop.nav' with {
+      linklist: section.settings.main_linklist2,
+      extra_links: extra_links
+    } %}
+  </div>
+</header>
+
+<div class="dropdown-wrapper">
+  <!-- {% render 'header.desktop.dropdown-linklist' with {
+    linklist: section.settings.main_linklist
+  } %}
+  {% render 'header.desktop.dropdown-linklist' with {
+    linklist: section.settings.main_linklist2
+  } %} -->
+
+  {% render "header.search-dropdown" %}
+  {% render "header.cart-dropdown" %}
+</div>
