@@ -6456,6 +6456,10 @@ html.remodal-is-locked {
   z-index: 1000;
 }
 
+body.menu-is-open {
+  overflow-y: hidden;
+}
+
 .header-desktop {
   background-color: #ffffff;
 }
@@ -6681,6 +6685,32 @@ html.remodal-is-locked {
   opacity: 1;
 }
 
+@media only screen and (max-width: 800px) {
+  .header__cart-module {
+    display: block;
+    background-color: #fff;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+    transition: all 0.2s;
+    position: fixed;
+    top: 4rem;
+    right: 0;
+    width: 75%;
+    bottom: 0;
+    overflow-y: scroll;
+    padding: 1rem;
+  }
+  .header__cart-module ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 1rem;
+  }
+  .header__cart-module.is-open {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
 .cart_container li.mini-cart__item {
   display: flex;
   -moz-justify-content: space-between;
@@ -6688,12 +6718,11 @@ html.remodal-is-locked {
   justify-content: space-between;
   -ms-flex-pack: space-between;
 }
-
-.cart_content__continue-shopping {
+.cart_container .cart_content {
   display: none;
 }
 
-.cart_container .cart_content {
+.cart_content__continue-shopping {
   display: none;
 }
 

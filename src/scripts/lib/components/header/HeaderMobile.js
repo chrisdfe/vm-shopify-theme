@@ -1,18 +1,78 @@
 import findAndInitialize from "../../utils/findAndInitialize";
 
+const BodyScroll = {
+  lock: () => {
+    document.body.classList.add("menu-is-open");
+  },
+
+  unlock: () => {
+    document.body.classList.remove("menu-is-open");
+  },
+};
+
+class MegaMenuModule {
+  isOpen = false;
+}
+
+class SearchModule {
+  isOpen = false;
+}
+
+class CartModule {
+  static buttonSelector = "";
+  static moduleSelector = "";
+
+  isOpen = false;
+
+  headerElement = null;
+
+  cartButtonElement = null;
+  cartModuleElement = null;
+
+  constructor({ headerElement, onOpen }) {
+    this.headerElement = headerElement;
+    this.onOpen = onOpen;
+
+    this.cartButtonElement = this.headerElement.querySelector(
+      ".js-mobile-cart-button"
+    );
+
+    this.cartModuleElement = document.querySelector(".header__cart-module");
+
+    this.cartButtonElement.addEventListener("click", this.onButtonClick);
+  }
+
+  onButtonClick = () => {
+    this.isOpen ? this.close() : this.open();
+    this.onOpen();
+  };
+
+  open = () => {
+    this.isOpen = true;
+    this.cartModuleElement.classList.add("is-open");
+    BodyScroll.lock();
+  };
+
+  close = () => {
+    this.isOpen = false;
+    this.cartModuleElement.classList.remove("is-open");
+    BodyScroll.unlock();
+  };
+}
+
 export default class HeaderMobile {
   static selector = ".header-mobile";
 
   // state
   menuIsOpen = false;
   searchIsOpen = false;
-  cartIsOpen = false;
 
   // refs
   headerElement = null;
   menuButtonElement = null;
   searchButtonElement = null;
   cartButtonElement = null;
+  cartModuleElement = null;
   megaMenuWrapperElement = null;
   megaMenuAccordionButtons = [];
 
@@ -23,6 +83,11 @@ export default class HeaderMobile {
   }
 
   initialize() {
+    this.cartModule = new CartModule({
+      headerElement: this.headerElement,
+      onOpen: this.onCartOpen,
+    });
+
     this.menuButtonElement = this.headerElement.querySelector(
       ".js-mobile-hamburger-button"
     );
@@ -35,12 +100,15 @@ export default class HeaderMobile {
       ".mobile-menu-accordion-button"
     );
 
-    this.cartButtonElement = this.headerElement.querySelector(
-      ".js-mobile-cart-button"
-    );
     this.searchButtonElement = this.headerElement.querySelector(
       ".js-mobile-search-button"
     );
+
+    this.cartButtonElement = this.headerElement.querySelector(
+      ".js-mobile-cart-button"
+    );
+
+    this.cartModuleElement = document.querySelector(".header__cart-module");
 
     this.megaMenuAccordionMap = Array.from(
       this.megaMenuAccordionButtons
@@ -54,8 +122,10 @@ export default class HeaderMobile {
     }, {});
 
     this.menuButtonElement.addEventListener("click", this.toggleMenuOpen);
-    this.searchButtonElement.addEventListener("click", this.toggleSearchOpen);
-    this.cartButtonElement.addEventListener("click", this.toggleCartOpen);
+    this.searchButtonElement.addEventListener(
+      "click",
+      this.onSearchButtonClick
+    );
 
     this.megaMenuAccordionButtons.forEach((accordionButton) => {
       accordionButton.addEventListener("click", this.onAccordionButtonClick);
@@ -70,15 +140,19 @@ export default class HeaderMobile {
     this.menuIsOpen = true;
     this.menuButtonElement.classList.add("is-open");
     this.megaMenuWrapperElement.classList.add("is-open");
+    this.lockBodyScroll();
   };
 
   closeMenu = () => {
     this.menuIsOpen = false;
     this.menuButtonElement.classList.remove("is-open");
     this.megaMenuWrapperElement.classList.remove("is-open");
+    this.unlockBodyScroll();
   };
 
   toggleMenuOpen = () => {
+    this.closeCart();
+
     this.menuIsOpen ? this.closeMenu() : this.openMenu();
   };
 
@@ -86,20 +160,20 @@ export default class HeaderMobile {
 
   closeSearch = () => {};
 
+  onSearchButtonClick = () => {};
+
   toggleSearchOpen = () => {
-    console.log("search toggle");
     this.closeMenu();
+    this.cartModule.close();
   };
 
-  openCart = () => {};
-
-  closeCart = () => {};
-
-  toggleCartOpen = () => {
-    this.closeMenu();
+  onCartOpen = () => {
+    console.log("oncartopen");
   };
 
   onAccordionButtonClick = (event) => {
+    console.log("on click");
+
     const accordionButton = event.target.closest(
       ".mobile-menu-accordion-button"
     );
@@ -116,6 +190,19 @@ export default class HeaderMobile {
         !event.target.closest(".js-mobile-hamburger-button")
       ) {
         this.closeMenu();
+        event.preventDefault();
+        event.stopPropagation();
+      }
+    }
+
+    if (this.cartIsOpen) {
+      if (
+        !event.target.closest(".js-mobile-cart-button") &&
+        !event.target.closest(".header__cart-module")
+      ) {
+        this.cartModule.close();
+        event.preventDefault();
+        event.stopPropagation();
       }
     }
   };

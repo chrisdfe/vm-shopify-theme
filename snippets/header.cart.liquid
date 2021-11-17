@@ -1,5 +1,5 @@
 <div
-  class="header__dropdown-container"
+  class="header__cart-module"
   data-dropdown="cart">
   <div class="tos_warning cart_content animated fadeIn">
     <div class="js-empty-cart__message {% if cart.item_count > 0 %}hidden{% endif %}">
@@ -14,9 +14,11 @@
           data-shop-currency="{{ shop.currency }}"
           data-shop-name="{{ shop.name | escape }}"
           data-cart-form="mini-cart">
+      <!--
       <a class="cart_content__continue-shopping secondary_button">
         {{ 'cart.general.continue_shopping_link_html' | t }}
       </a>
+      -->
 
       <ul class="cart_items js-cart_items clearfix">
         {% assign total_saving = 0 %}

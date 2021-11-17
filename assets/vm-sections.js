@@ -598,19 +598,75 @@
 
   _defineProperty(HeaderDesktop, "selector", ".header-desktop");
 
+  var BodyScroll = {
+    lock: function lock() {
+      document.body.classList.add("menu-is-open");
+    },
+    unlock: function unlock() {
+      document.body.classList.remove("menu-is-open");
+    }
+  };
+
+  var CartModule = function CartModule(_ref) {
+    var _this = this;
+
+    var headerElement = _ref.headerElement,
+        onOpen = _ref.onOpen;
+
+    _classCallCheck(this, CartModule);
+
+    _defineProperty(this, "isOpen", false);
+
+    _defineProperty(this, "headerElement", null);
+
+    _defineProperty(this, "cartButtonElement", null);
+
+    _defineProperty(this, "cartModuleElement", null);
+
+    _defineProperty(this, "onButtonClick", function () {
+      _this.isOpen ? _this.close() : _this.open();
+
+      _this.onOpen();
+    });
+
+    _defineProperty(this, "open", function () {
+      _this.isOpen = true;
+
+      _this.cartModuleElement.classList.add("is-open");
+
+      BodyScroll.lock();
+    });
+
+    _defineProperty(this, "close", function () {
+      _this.isOpen = false;
+
+      _this.cartModuleElement.classList.remove("is-open");
+
+      BodyScroll.unlock();
+    });
+
+    this.headerElement = headerElement;
+    this.onOpen = onOpen;
+    this.cartButtonElement = this.headerElement.querySelector(".js-mobile-cart-button");
+    this.cartModuleElement = document.querySelector(".header__cart-module");
+    this.cartButtonElement.addEventListener("click", this.onButtonClick);
+  };
+
+  _defineProperty(CartModule, "buttonSelector", "");
+
+  _defineProperty(CartModule, "moduleSelector", "");
+
   var HeaderMobile = /*#__PURE__*/function () {
     // state
     // refs
     function HeaderMobile(headerElement) {
-      var _this = this;
+      var _this2 = this;
 
       _classCallCheck(this, HeaderMobile);
 
       _defineProperty(this, "menuIsOpen", false);
 
       _defineProperty(this, "searchIsOpen", false);
-
-      _defineProperty(this, "cartIsOpen", false);
 
       _defineProperty(this, "headerElement", null);
 
@@ -620,6 +676,8 @@
 
       _defineProperty(this, "cartButtonElement", null);
 
+      _defineProperty(this, "cartModuleElement", null);
+
       _defineProperty(this, "megaMenuWrapperElement", null);
 
       _defineProperty(this, "megaMenuAccordionButtons", []);
@@ -627,55 +685,72 @@
       _defineProperty(this, "megaMenuAccordionMap", {});
 
       _defineProperty(this, "openMenu", function () {
-        _this.menuIsOpen = true;
+        _this2.menuIsOpen = true;
 
-        _this.menuButtonElement.classList.add("is-open");
+        _this2.menuButtonElement.classList.add("is-open");
 
-        _this.megaMenuWrapperElement.classList.add("is-open");
+        _this2.megaMenuWrapperElement.classList.add("is-open");
+
+        _this2.lockBodyScroll();
       });
 
       _defineProperty(this, "closeMenu", function () {
-        _this.menuIsOpen = false;
+        _this2.menuIsOpen = false;
 
-        _this.menuButtonElement.classList.remove("is-open");
+        _this2.menuButtonElement.classList.remove("is-open");
 
-        _this.megaMenuWrapperElement.classList.remove("is-open");
+        _this2.megaMenuWrapperElement.classList.remove("is-open");
+
+        _this2.unlockBodyScroll();
       });
 
       _defineProperty(this, "toggleMenuOpen", function () {
-        _this.menuIsOpen ? _this.closeMenu() : _this.openMenu();
+        _this2.closeCart();
+
+        _this2.menuIsOpen ? _this2.closeMenu() : _this2.openMenu();
       });
 
       _defineProperty(this, "openSearch", function () {});
 
       _defineProperty(this, "closeSearch", function () {});
 
-      _defineProperty(this, "toggleSearchOpen", function () {
-        console.log("search toggle");
+      _defineProperty(this, "onSearchButtonClick", function () {});
 
-        _this.closeMenu();
+      _defineProperty(this, "toggleSearchOpen", function () {
+        _this2.closeMenu();
+
+        _this2.cartModule.close();
       });
 
-      _defineProperty(this, "openCart", function () {});
-
-      _defineProperty(this, "closeCart", function () {});
-
-      _defineProperty(this, "toggleCartOpen", function () {
-        _this.closeMenu();
+      _defineProperty(this, "onCartOpen", function () {
+        console.log("oncartopen");
       });
 
       _defineProperty(this, "onAccordionButtonClick", function (event) {
+        console.log("on click");
         var accordionButton = event.target.closest(".mobile-menu-accordion-button");
         var accordionId = accordionButton.getAttribute("data-accordion-id");
-        var contentElement = _this.megaMenuAccordionMap[accordionId];
+        var contentElement = _this2.megaMenuAccordionMap[accordionId];
         accordionButton.classList.toggle("is-open");
         contentElement.classList.toggle("is-open");
       });
 
       _defineProperty(this, "onBodyClick", function (event) {
-        if (_this.menuIsOpen) {
+        if (_this2.menuIsOpen) {
           if (!event.target.closest(".mega-menu-container") && !event.target.closest(".js-mobile-hamburger-button")) {
-            _this.closeMenu();
+            _this2.closeMenu();
+
+            event.preventDefault();
+            event.stopPropagation();
+          }
+        }
+
+        if (_this2.cartIsOpen) {
+          if (!event.target.closest(".js-mobile-cart-button") && !event.target.closest(".header__cart-module")) {
+            _this2.cartModule.close();
+
+            event.preventDefault();
+            event.stopPropagation();
           }
         }
       });
@@ -686,23 +761,27 @@
     _createClass(HeaderMobile, [{
       key: "initialize",
       value: function initialize() {
-        var _this2 = this;
+        var _this3 = this;
 
+        this.cartModule = new CartModule({
+          headerElement: this.headerElement,
+          onOpen: this.onCartOpen
+        });
         this.menuButtonElement = this.headerElement.querySelector(".js-mobile-hamburger-button");
         this.megaMenuWrapperElement = document.querySelector(".mega-menu-container");
         this.megaMenuAccordionButtons = document.querySelectorAll(".mobile-menu-accordion-button");
-        this.cartButtonElement = this.headerElement.querySelector(".js-mobile-cart-button");
         this.searchButtonElement = this.headerElement.querySelector(".js-mobile-search-button");
+        this.cartButtonElement = this.headerElement.querySelector(".js-mobile-cart-button");
+        this.cartModuleElement = document.querySelector(".header__cart-module");
         this.megaMenuAccordionMap = Array.from(this.megaMenuAccordionButtons).reduce(function (acc, accordionButton) {
           var accordionId = accordionButton.getAttribute("data-accordion-id");
           var contentElement = document.querySelector(".mobile-menu-accordion-content[data-accordion-id=\"".concat(accordionId, "\"]"));
           return _objectSpread2(_objectSpread2({}, acc), {}, _defineProperty({}, accordionId, contentElement));
         }, {});
         this.menuButtonElement.addEventListener("click", this.toggleMenuOpen);
-        this.searchButtonElement.addEventListener("click", this.toggleSearchOpen);
-        this.cartButtonElement.addEventListener("click", this.toggleCartOpen);
+        this.searchButtonElement.addEventListener("click", this.onSearchButtonClick);
         this.megaMenuAccordionButtons.forEach(function (accordionButton) {
-          accordionButton.addEventListener("click", _this2.onAccordionButtonClick);
+          accordionButton.addEventListener("click", _this3.onAccordionButtonClick);
         });
         document.body.addEventListener("click", this.onBodyClick);
       }
@@ -794,9 +873,6 @@
       // } else {
       //   $("body").addClass("mobile_nav-fixed--false");
       // }
-      // if ($("#header .cart_content").length < 1) {
-      //   $("#header .cart_container").append($(".header .cart_content").clone());
-      // }
       // $(".dropdown_link").attr("data-no-instant", true);
       // $("body").on("click", ".dropdown_link", function (e) {
       //   e.preventDefault();
@@ -852,101 +928,10 @@
       //     }
       //   });
       // }
-      // $(".cart_content__continue-shopping").on("click", function (e) {
-      //   hideNavbar();
-      // });
-      // $(".nav a, .logo a")
-      //   .not(".cart_content a")
-      //   .on("mouseenter", function () {
-      //     $(this).hasClass("active_link") ||
-      //       ($(".header__dropdown-container").hide(),
-      //       $(".active_link").removeClass("active_link"),
-      //       $(".is-absolute").parent().addClass("feature_image"));
-      //   });
-      // $(".main_nav, .top_bar, .cart_container").on("mouseleave", function () {
-      //   $(".header__dropdown-container").hide();
-      //   $(".active_link").removeClass("active_link");
-      // });
-      // $(".dropdown_link, .dropdown_link--vertical").attr("data-click-count", 0);
     },
-    // removeDataAttributes: function (selector) {
-    //   const element = $(selector);
-    //   if (element.length) {
-    //     const dataAttributes = [];
-    //     const attributes = a.get(0).attributes;
-    //     for (let index = 0; index < attributes.length; index++) {
-    //       if ("data-" === attributes[index].name.substring(0, 5)) {
-    //         t.push(attributes[index].name);
-    //       }
-    //     }
-    //     $.each(dataAttributes, function (e, t) {
-    //       element.removeAttr(t);
-    //     });
-    //   }
-    // },
-    loadMegaMenu: function loadMegaMenu() {// $(".sticky_nav .mega-menu").remove();
-      // $(".header .mega-menu").remove();
-      // $(".mega-menu-container .mega-menu")
-      //   .clone()
-      //   .appendTo(".sticky_nav .main_nav");
-      // this.removeDataAttributes(
-      //   ".sticky_nav .mega-menu.header__dropdown-container .dropdown_column"
-      // );
-      // $(".mega-menu-container .mega-menu").each(function (e) {
-      //   const t = $(this).data("dropdown");
-      //   $('[data-dropdown-rel="' + t + '"]')
-      //     .find("span")
-      //     .remove();
-      //   $('[data-dropdown-rel="' + t + '"]')
-      //     .not(".icon-search")
-      //     .append(' <span class="icon-down-arrow"></span>')
-      //     .addClass("mega-menu-parent")
-      //     .addClass("dropdown_link")
-      //     .removeClass("top_link");
-      //   $('[data-dropdown="' + t + '"]').each(function (e) {
-      //     $(this).hasClass("mega-menu") || $(this).remove();
-      //   });
-      // $(this).clone().appendTo(".header .main_nav");
-      // });
-    },
-    loadMobileMegaMenu: function loadMobileMegaMenu() {// $(".mega-menu-container .mobile-mega-menu").each(function (e) {
-      //   $('[data-mobile-dropdown-rel="' + $(this).data("mobile-dropdown") + '"]')
-      //     .find("span")
-      //     .remove();
-      //   $(
-      //     '[data-mobile-dropdown-rel="' +
-      //       $(this).data("mobile-dropdown") +
-      //       '"] > a'
-      //   )
-      //     .append(' <span class="right icon-down-arrow"></span>')
-      //     .attr("data-no-instant", "true");
-      //   $(
-      //     '[data-mobile-dropdown-rel="' + $(this).data("mobile-dropdown") + '"]'
-      //   ).addClass("mobile-mega-menu-parent sublink");
-      //   $(
-      //     '[data-mobile-dropdown-rel="' + $(this).data("mobile-dropdown") + '"]'
-      //   ).append(this);
-      //   $(
-      //     '[data-mobile-dropdown-rel="' +
-      //       $(this).data("mobile-dropdown") +
-      //       '"] > ul'
-      //   ).each(function (e) {
-      //     $(this).hasClass("mobile-mega-menu") || $(this).remove();
-      //   });
-      // });
-    },
-    unloadMegaMenu: function unloadMegaMenu() {// $(".header .mega-menu").remove();
-      // $(".mega-menu-container .mega-menu").each(function (e) {
-      //   $(this).data("dropdown");
-      //   $(
-      //     '.mega-menu-parent[data-dropdown-rel="' +
-      //       $(this).data("dropdown") +
-      //       '"]'
-      //   )
-      //     .find(".icon-down-arrow")
-      //     .remove();
-      // });
-    },
+    loadMegaMenu: function loadMegaMenu() {},
+    loadMobileMegaMenu: function loadMobileMegaMenu() {},
+    unloadMegaMenu: function unloadMegaMenu() {},
     unload: function unload() {// $("body").off("click", ".mobile_nav");
       // $("body").off("click", ".dropdown_link");
       // $("html").off("click");

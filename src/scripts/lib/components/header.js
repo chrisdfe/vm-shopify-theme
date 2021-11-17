@@ -45,10 +45,6 @@ const header = {
     //   $("body").addClass("mobile_nav-fixed--false");
     // }
 
-    // if ($("#header .cart_content").length < 1) {
-    //   $("#header .cart_container").append($(".header .cart_content").clone());
-    // }
-
     // $(".dropdown_link").attr("data-no-instant", true);
     // $("body").on("click", ".dropdown_link", function (e) {
     //   e.preventDefault();
@@ -112,114 +108,13 @@ const header = {
     //     }
     //   });
     // }
-
-    // $(".cart_content__continue-shopping").on("click", function (e) {
-    //   hideNavbar();
-    // });
-
-    // $(".nav a, .logo a")
-    //   .not(".cart_content a")
-    //   .on("mouseenter", function () {
-    //     $(this).hasClass("active_link") ||
-    //       ($(".header__dropdown-container").hide(),
-    //       $(".active_link").removeClass("active_link"),
-    //       $(".is-absolute").parent().addClass("feature_image"));
-    //   });
-
-    // $(".main_nav, .top_bar, .cart_container").on("mouseleave", function () {
-    //   $(".header__dropdown-container").hide();
-    //   $(".active_link").removeClass("active_link");
-    // });
-
-    // $(".dropdown_link, .dropdown_link--vertical").attr("data-click-count", 0);
   },
 
-  // removeDataAttributes: function (selector) {
-  //   const element = $(selector);
-  //   if (element.length) {
-  //     const dataAttributes = [];
-  //     const attributes = a.get(0).attributes;
+  loadMegaMenu: function () {},
 
-  //     for (let index = 0; index < attributes.length; index++) {
-  //       if ("data-" === attributes[index].name.substring(0, 5)) {
-  //         t.push(attributes[index].name);
-  //       }
-  //     }
+  loadMobileMegaMenu: function () {},
 
-  //     $.each(dataAttributes, function (e, t) {
-  //       element.removeAttr(t);
-  //     });
-  //   }
-  // },
-
-  loadMegaMenu: function () {
-    // $(".sticky_nav .mega-menu").remove();
-    // $(".header .mega-menu").remove();
-    // $(".mega-menu-container .mega-menu")
-    //   .clone()
-    //   .appendTo(".sticky_nav .main_nav");
-    // this.removeDataAttributes(
-    //   ".sticky_nav .mega-menu.header__dropdown-container .dropdown_column"
-    // );
-    // $(".mega-menu-container .mega-menu").each(function (e) {
-    //   const t = $(this).data("dropdown");
-    //   $('[data-dropdown-rel="' + t + '"]')
-    //     .find("span")
-    //     .remove();
-    //   $('[data-dropdown-rel="' + t + '"]')
-    //     .not(".icon-search")
-    //     .append(' <span class="icon-down-arrow"></span>')
-    //     .addClass("mega-menu-parent")
-    //     .addClass("dropdown_link")
-    //     .removeClass("top_link");
-    //   $('[data-dropdown="' + t + '"]').each(function (e) {
-    //     $(this).hasClass("mega-menu") || $(this).remove();
-    //   });
-    // $(this).clone().appendTo(".header .main_nav");
-    // });
-  },
-
-  loadMobileMegaMenu: function () {
-    // $(".mega-menu-container .mobile-mega-menu").each(function (e) {
-    //   $('[data-mobile-dropdown-rel="' + $(this).data("mobile-dropdown") + '"]')
-    //     .find("span")
-    //     .remove();
-    //   $(
-    //     '[data-mobile-dropdown-rel="' +
-    //       $(this).data("mobile-dropdown") +
-    //       '"] > a'
-    //   )
-    //     .append(' <span class="right icon-down-arrow"></span>')
-    //     .attr("data-no-instant", "true");
-    //   $(
-    //     '[data-mobile-dropdown-rel="' + $(this).data("mobile-dropdown") + '"]'
-    //   ).addClass("mobile-mega-menu-parent sublink");
-    //   $(
-    //     '[data-mobile-dropdown-rel="' + $(this).data("mobile-dropdown") + '"]'
-    //   ).append(this);
-    //   $(
-    //     '[data-mobile-dropdown-rel="' +
-    //       $(this).data("mobile-dropdown") +
-    //       '"] > ul'
-    //   ).each(function (e) {
-    //     $(this).hasClass("mobile-mega-menu") || $(this).remove();
-    //   });
-    // });
-  },
-
-  unloadMegaMenu: function () {
-    // $(".header .mega-menu").remove();
-    // $(".mega-menu-container .mega-menu").each(function (e) {
-    //   $(this).data("dropdown");
-    //   $(
-    //     '.mega-menu-parent[data-dropdown-rel="' +
-    //       $(this).data("dropdown") +
-    //       '"]'
-    //   )
-    //     .find(".icon-down-arrow")
-    //     .remove();
-    // });
-  },
+  unloadMegaMenu: function () {},
 
   unload: function () {
     // $("body").off("click", ".mobile_nav");

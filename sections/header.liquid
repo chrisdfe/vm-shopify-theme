@@ -57,19 +57,17 @@
 {%- endif -%}
 {% endcomment %}
 
-<!-- TODO - put in a snippet -->
-{% if section.settings.promo_text != blank %}
-<div class="promo-banner">
-  <div class="promo-banner__content">
-    {{ section.settings.promo_text }}
-  </div>
 
-  <div class="promo-banner__close-button js-promo-banner-close"></div>
-</div>
-{% endif %}
+
+{% include 'header.promo-banner' %}
 
 {% include 'header.desktop' %}
 {% include 'header.mobile' %}
+
+<div class="dropdown-wrapper">
+  {% render "header.search" %}
+  {% render "header.cart" %}
+</div>
 
 {% schema %}
 

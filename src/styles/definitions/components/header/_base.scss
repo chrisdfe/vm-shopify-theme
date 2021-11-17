@@ -5,3 +5,7 @@
   top: 0;
   z-index: 1000;
 }
+
+body.menu-is-open {
+  overflow-y: hidden;
+}
