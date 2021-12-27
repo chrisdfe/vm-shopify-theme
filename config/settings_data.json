@@ -325,12 +325,8 @@
           "search_enabled": true,
           "show_locale_selector": true,
           "show_currency_selector": true,
-          "fixed_header": true,
-          "logo_position": "center",
-          "logo_alignment": "center",
           "menu_position": "inline",
           "menu_alignment": "center",
-          "logo_top_padding": 30,
           "menu_top_padding": 0
         }
       },
@@ -974,7 +970,7 @@
             "settings": {
               "show_banner": true,
               "banner_page_width": 100,
-              "banner_page_filter": "returns-exchanges",
+              "banner_page_filter": "exchange-policy",
               "image": "shopify:\/\/shop_images\/Extended-return-window_e65aa98a-a0cf-4d55-8191-5f0acac69bce.png",
               "pretext": "",
               "title": "",
@@ -1382,7 +1378,7 @@
           "532c00fc-0a53-4c3b-9aeb-9e16deb238b8"
         ],
         "settings": {
-          "parent": ""
+          "parent": "Custom & Heirloom"
         }
       },
       "page-stockists-template": {

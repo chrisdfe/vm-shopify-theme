@@ -8,7 +8,7 @@ export default class HeaderDesktop {
 
   //
   headerElement = null;
-  dropdownNavLinkElements = [];
+  navLinkElements = [];
   dropdownLinkElements = [];
   dropdownElements = [];
   dropdownIds = [];
@@ -44,7 +44,7 @@ export default class HeaderDesktop {
 
     this.dropdownIds = Object.keys(this.dropdownMap);
 
-    this.dropdownNavLinkElements = Array.from(
+    this.navLinkElements = Array.from(
       this.headerElement.querySelectorAll(".header-desktop__nav-link")
     ).filter((element) => {
       const dropdownRel = element.getAttribute("data-dropdown-rel");
@@ -63,13 +63,13 @@ export default class HeaderDesktop {
 
     // Ideally we'd add this class in the liquid itself but the entire list of
     // dropdown ids isn't available to the header snippet
-    this.dropdownNavLinkElements.forEach((dropdownLink) => {
+    this.navLinkElements.forEach((dropdownLink) => {
       dropdownLink.classList.add("is-dropdown-link");
     });
 
     const allDropdownLinkElements = [
       ...this.dropdownLinkElements,
-      ...this.dropdownNavLinkElements,
+      ...this.navLinkElements,
     ];
 
     allDropdownLinkElements.forEach((dropdownLink) => {
@@ -93,19 +93,12 @@ export default class HeaderDesktop {
     // TODO
     // - if the mouse is within the header still the dropdown should not close
     this.headerWrapperElement.addEventListener("mouseleave", (event) => {
-      // console.log("event.target");
-      console.log(event.target.closest(".header-wrapper"));
-      // if (!event.target.closest(".header-wrapper")) {
-      // console.log("mouseout", event.target);
-
-      // dropdownElement.classList.remove("is-active");
       if (this.currentDropdownId) {
         const otherDropdownElement = this.dropdownMap[this.currentDropdownId];
         otherDropdownElement.classList.remove("is-active");
       }
 
       this.currentDropdownId = null;
-      // }
     });
   }
 

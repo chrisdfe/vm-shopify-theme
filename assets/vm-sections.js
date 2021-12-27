@@ -598,20 +598,9 @@
 
   _defineProperty(HeaderDesktop, "selector", ".header-desktop");
 
-  var BodyScroll = {
-    lock: function lock() {
-      document.body.classList.add("menu-is-open");
-    },
-    unlock: function unlock() {
-      document.body.classList.remove("menu-is-open");
-    }
-  };
-
   var CartModule = function CartModule(_ref) {
-    var _this = this;
-
-    var headerElement = _ref.headerElement,
-        onOpen = _ref.onOpen;
+    var headerElement = _ref.headerElement;
+        _ref.onOpen;
 
     _classCallCheck(this, CartModule);
 
@@ -623,33 +612,7 @@
 
     _defineProperty(this, "cartModuleElement", null);
 
-    _defineProperty(this, "onButtonClick", function () {
-      _this.isOpen ? _this.close() : _this.open();
-
-      _this.onOpen();
-    });
-
-    _defineProperty(this, "open", function () {
-      _this.isOpen = true;
-
-      _this.cartModuleElement.classList.add("is-open");
-
-      BodyScroll.lock();
-    });
-
-    _defineProperty(this, "close", function () {
-      _this.isOpen = false;
-
-      _this.cartModuleElement.classList.remove("is-open");
-
-      BodyScroll.unlock();
-    });
-
     this.headerElement = headerElement;
-    this.onOpen = onOpen;
-    this.cartButtonElement = this.headerElement.querySelector(".js-mobile-cart-button");
-    this.cartModuleElement = document.querySelector(".header__cart-module");
-    this.cartButtonElement.addEventListener("click", this.onButtonClick);
   };
 
   _defineProperty(CartModule, "buttonSelector", "");
@@ -657,24 +620,13 @@
   _defineProperty(CartModule, "moduleSelector", "");
 
   var HeaderMobile = /*#__PURE__*/function () {
-    // state
     // refs
     function HeaderMobile(headerElement) {
-      var _this2 = this;
+      var _this = this;
 
       _classCallCheck(this, HeaderMobile);
 
-      _defineProperty(this, "menuIsOpen", false);
-
-      _defineProperty(this, "searchIsOpen", false);
-
       _defineProperty(this, "headerElement", null);
-
-      _defineProperty(this, "menuButtonElement", null);
-
-      _defineProperty(this, "searchButtonElement", null);
-
-      _defineProperty(this, "cartButtonElement", null);
 
       _defineProperty(this, "cartModuleElement", null);
 
@@ -685,29 +637,29 @@
       _defineProperty(this, "megaMenuAccordionMap", {});
 
       _defineProperty(this, "openMenu", function () {
-        _this2.menuIsOpen = true;
+        _this.menuIsOpen = true;
 
-        _this2.menuButtonElement.classList.add("is-open");
+        _this.menuButtonElement.classList.add("is-open");
 
-        _this2.megaMenuWrapperElement.classList.add("is-open");
+        _this.megaMenuWrapperElement.classList.add("is-open");
 
-        _this2.lockBodyScroll();
+        _this.lockBodyScroll();
       });
 
       _defineProperty(this, "closeMenu", function () {
-        _this2.menuIsOpen = false;
+        _this.menuIsOpen = false;
 
-        _this2.menuButtonElement.classList.remove("is-open");
+        _this.menuButtonElement.classList.remove("is-open");
 
-        _this2.megaMenuWrapperElement.classList.remove("is-open");
+        _this.megaMenuWrapperElement.classList.remove("is-open");
 
-        _this2.unlockBodyScroll();
+        _this.unlockBodyScroll();
       });
 
       _defineProperty(this, "toggleMenuOpen", function () {
-        _this2.closeCart();
+        _this.closeCart();
 
-        _this2.menuIsOpen ? _this2.closeMenu() : _this2.openMenu();
+        _this.menuIsOpen ? _this.closeMenu() : _this.openMenu();
       });
 
       _defineProperty(this, "openSearch", function () {});
@@ -717,9 +669,9 @@
       _defineProperty(this, "onSearchButtonClick", function () {});
 
       _defineProperty(this, "toggleSearchOpen", function () {
-        _this2.closeMenu();
+        _this.closeMenu();
 
-        _this2.cartModule.close();
+        _this.cartModule.close();
       });
 
       _defineProperty(this, "onCartOpen", function () {
@@ -727,32 +679,11 @@
       });
 
       _defineProperty(this, "onAccordionButtonClick", function (event) {
-        console.log("on click");
         var accordionButton = event.target.closest(".mobile-menu-accordion-button");
         var accordionId = accordionButton.getAttribute("data-accordion-id");
-        var contentElement = _this2.megaMenuAccordionMap[accordionId];
+        var contentElement = _this.megaMenuAccordionMap[accordionId];
         accordionButton.classList.toggle("is-open");
         contentElement.classList.toggle("is-open");
-      });
-
-      _defineProperty(this, "onBodyClick", function (event) {
-        if (_this2.menuIsOpen) {
-          if (!event.target.closest(".mega-menu-container") && !event.target.closest(".js-mobile-hamburger-button")) {
-            _this2.closeMenu();
-
-            event.preventDefault();
-            event.stopPropagation();
-          }
-        }
-
-        if (_this2.cartIsOpen) {
-          if (!event.target.closest(".js-mobile-cart-button") && !event.target.closest(".header__cart-module")) {
-            _this2.cartModule.close();
-
-            event.preventDefault();
-            event.stopPropagation();
-          }
-        }
       });
 
       this.headerElement = headerElement;
@@ -761,13 +692,12 @@
     _createClass(HeaderMobile, [{
       key: "initialize",
       value: function initialize() {
-        var _this3 = this;
+        var _this2 = this;
 
-        this.cartModule = new CartModule({
-          headerElement: this.headerElement,
-          onOpen: this.onCartOpen
-        });
-        this.menuButtonElement = this.headerElement.querySelector(".js-mobile-hamburger-button");
+        // this.cartModule = new CartModule({
+        //   headerElement: this.headerElement,
+        //   onOpen: this.onCartOpen,
+        // });
         this.megaMenuWrapperElement = document.querySelector(".mega-menu-container");
         this.megaMenuAccordionButtons = document.querySelectorAll(".mobile-menu-accordion-button");
         this.searchButtonElement = this.headerElement.querySelector(".js-mobile-search-button");
@@ -777,13 +707,15 @@
           var accordionId = accordionButton.getAttribute("data-accordion-id");
           var contentElement = document.querySelector(".mobile-menu-accordion-content[data-accordion-id=\"".concat(accordionId, "\"]"));
           return _objectSpread2(_objectSpread2({}, acc), {}, _defineProperty({}, accordionId, contentElement));
-        }, {});
-        this.menuButtonElement.addEventListener("click", this.toggleMenuOpen);
-        this.searchButtonElement.addEventListener("click", this.onSearchButtonClick);
+        }, {}); // this.menuButtonElement.addEventListener("click", this.toggleMenuOpen);
+        // this.searchButtonElement.addEventListener(
+        //   "click",
+        //   this.onSearchButtonClick
+        // );
+
         this.megaMenuAccordionButtons.forEach(function (accordionButton) {
-          accordionButton.addEventListener("click", _this3.onAccordionButtonClick);
-        });
-        document.body.addEventListener("click", this.onBodyClick);
+          accordionButton.addEventListener("click", _this2.onAccordionButtonClick);
+        }); // document.body.addEventListener("click", this.onBodyClick);
       }
     }, {
       key: "unload",
@@ -800,6 +732,154 @@
 
   _defineProperty(HeaderMobile, "selector", ".header-mobile");
 
+  var HeaderDrawer = /*#__PURE__*/function () {
+    function HeaderDrawer(_ref) {
+      var _this = this;
+
+      var id = _ref.id,
+          buttonElement = _ref.buttonElement,
+          drawerElement = _ref.drawerElement,
+          onButtonClick = _ref.onButtonClick;
+
+      _classCallCheck(this, HeaderDrawer);
+
+      _defineProperty(this, "isOpen", false);
+
+      _defineProperty(this, "id", null);
+
+      _defineProperty(this, "buttonElement", null);
+
+      _defineProperty(this, "drawerElement", null);
+
+      _defineProperty(this, "onButtonClick", null);
+
+      _defineProperty(this, "open", function () {
+        return _this.setOpen(true);
+      });
+
+      _defineProperty(this, "close", function () {
+        return _this.setOpen(false);
+      });
+
+      _defineProperty(this, "setOpen", function (isOpen) {
+        _this.isOpen = isOpen;
+
+        _this.drawerElement.classList.toggle("is-open", isOpen);
+
+        _this.buttonElement.classList.toggle("is-open", isOpen);
+      });
+
+      this.id = id;
+      this.buttonElement = buttonElement;
+      this.drawerElement = drawerElement;
+      this.onButtonClick = onButtonClick;
+    }
+
+    _createClass(HeaderDrawer, [{
+      key: "initialize",
+      value: function initialize() {
+        var _this2 = this;
+
+        this.buttonElement.addEventListener("click", function () {
+          _this2.onButtonClick(_this2);
+        });
+        return this;
+      }
+    }, {
+      key: "unload",
+      value: function unload() {}
+    }]);
+
+    return HeaderDrawer;
+  }();
+
+  var BodyScroll = {
+    lock: function lock() {
+      document.body.classList.add("menu-is-open");
+    },
+    unlock: function unlock() {
+      document.body.classList.remove("menu-is-open");
+    }
+  };
+
+  var HeaderDrawerManager = /*#__PURE__*/function () {
+    function HeaderDrawerManager() {
+      var _this = this;
+
+      _classCallCheck(this, HeaderDrawerManager);
+
+      _defineProperty(this, "drawerButtons", []);
+
+      _defineProperty(this, "currentOpenDrawerId", null);
+
+      _defineProperty(this, "drawerIdMap", {});
+
+      _defineProperty(this, "onDrawerButtonClick", function (drawer) {
+        if (_this.currentOpenDrawerId) {
+          if (drawer.id === _this.currentOpenDrawerId) {
+            _this.closeDrawer(drawer);
+          } else {
+            _this.closeDrawer(_this.getCurrentOpenDrawer());
+
+            _this.openDrawer(drawer);
+          }
+        } else {
+          _this.openDrawer(drawer);
+        }
+      });
+
+      _defineProperty(this, "onBodyClick", function (event) {
+        if (_this.currentOpenDrawerId !== null && event.target.closest("[data-drawer-id]") === null && event.target.closest("[data-drawer-button-id]") === null) {
+          _this.closeDrawer(_this.getCurrentOpenDrawer());
+        }
+      });
+    }
+
+    _createClass(HeaderDrawerManager, [{
+      key: "initialize",
+      value: function initialize() {
+        var _this2 = this;
+
+        console.log("initializing");
+        this.drawerButtons = document.querySelectorAll("[data-drawer-button-id]");
+        this.drawerIdMap = Array.from(this.drawerButtons).reduce(function (acc, buttonElement) {
+          var id = buttonElement.getAttribute("data-drawer-button-id");
+          var drawerElement = document.querySelector("[data-drawer-id=\"".concat(id, "\"]"));
+          var drawer = new HeaderDrawer({
+            id: id,
+            buttonElement: buttonElement,
+            drawerElement: drawerElement,
+            onButtonClick: _this2.onDrawerButtonClick
+          }).initialize();
+          return _objectSpread2(_objectSpread2({}, acc), {}, _defineProperty({}, id, drawer));
+        }, {});
+        document.body.addEventListener("click", this.onBodyClick);
+        return this;
+      }
+    }, {
+      key: "getCurrentOpenDrawer",
+      value: function getCurrentOpenDrawer() {
+        return this.drawerIdMap[this.currentOpenDrawerId];
+      }
+    }, {
+      key: "openDrawer",
+      value: function openDrawer(drawer) {
+        drawer.open();
+        this.currentOpenDrawerId = drawer.id;
+        BodyScroll.lock();
+      }
+    }, {
+      key: "closeDrawer",
+      value: function closeDrawer(drawer) {
+        drawer.close();
+        this.currentOpenDrawerId = null;
+        BodyScroll.unlock();
+      }
+    }]);
+
+    return HeaderDrawerManager;
+  }();
+
   var HeaderWrapper = /*#__PURE__*/function () {
     function HeaderWrapper(headerWrapperElement) {
       _classCallCheck(this, HeaderWrapper);
@@ -812,6 +892,8 @@
 
       _defineProperty(this, "headerMobile", null);
 
+      _defineProperty(this, "drawerManager", null);
+
       this.headerWrapperElement = headerWrapperElement;
     }
 
@@ -821,6 +903,7 @@
         this.promoBanner = PromoBanner.findAndInitialize();
         this.headerDesktop = HeaderDesktop.findAndInitialize();
         this.headerMobile = HeaderMobile.findAndInitialize();
+        this.drawerManager = new HeaderDrawerManager().initialize();
       }
     }], [{
       key: "findAndInitialize",

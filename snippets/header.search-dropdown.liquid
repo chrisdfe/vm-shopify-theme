@@ -1,0 +1,19 @@
+<div class="header__dropdown-container" data-dropdown="search">
+  <div class="dropdown">
+    <form
+      action="{{ routes.search_url }}" 
+      class="header__search-form">
+      <span class="icon-search search-submit"></span>
+
+      <input
+        type="text"
+        name="q"
+        placeholder="{{ 'general.search.title' | t: shop_name: shop.name }}"
+        autocapitalize="off"
+        autocomplete="off"
+        autocorrect="off"
+        class="search-terms"
+      />
+    </form>
+  </div>
+</div>

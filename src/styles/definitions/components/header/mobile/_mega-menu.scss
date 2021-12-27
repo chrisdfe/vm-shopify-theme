@@ -1,31 +1,3 @@
-.mega-menu-container {
-  // display: none;
-
-  @include respond-to("medium-down") {
-    display: block;
-    background-color: #fff;
-    transform: translateX(-100%);
-    transition: all 0.2s;
-    position: fixed;
-    top: 4rem;
-    left: 0;
-    width: 75%;
-    bottom: 0;
-    overflow-y: scroll;
-    padding: get-vm-spacer(1);
-
-    ul {
-      list-style-type: none;
-      padding: 0;
-      margin: 0 0 get-vm-spacer(1);
-    }
-
-    &.is-open {
-      transform: translateX(0);
-    }
-  }
-}
-
 .mega-menu-mobile {
   display: none;
 
@@ -35,6 +7,7 @@
 }
 
 .mobile-menu-list-item {
+  margin-bottom: get-vm-spacer(1);
 }
 
 .mobile-menu-list-item.mobile-menu-list-item__linklist {

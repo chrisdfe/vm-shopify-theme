@@ -84,7 +84,7 @@ div.container.gallery-content {
     margin: 0;
     width: 33.33333%;
 
-    @include respond-to('small-down') {
+    @include respond-to("small-down") {
       width: 100%;
     }
   }
@@ -96,37 +96,6 @@ div.container.gallery-content {
 
 .three-per-row .overlay .icon-zoom {
   font-size: 2em;
-}
-
-//Horizontal gallery styling
-.gallery-section.gallery-horizontal {
-  @include flexbox();
-  @include flex-wrap(wrap);
-
-  i {
-    display: block;
-  }
-
-  img {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-
-  .gallery-image-wrapper:last-child {
-    @media only screen and (min-width: 2000px) {
-      width: 15%;
-      flex-basis: initial !important;
-      flex-grow: initial !important;
-    }
-  }
-
-  .gallery-empty-wrapper {
-    width: 190px;
-  }
 }
 
 .gallery-full {
@@ -165,7 +134,7 @@ div.container.gallery-content {
   .two-per-row {
     width: 50%;
 
-    @include respond-to('medium-down') {
+    @include respond-to("medium-down") {
       width: 100%;
     }
   }
@@ -173,7 +142,7 @@ div.container.gallery-content {
   .three-per-row {
     width: 33.333%;
 
-    @include respond-to('medium-down') {
+    @include respond-to("medium-down") {
       width: 100%;
     }
   }
@@ -181,7 +150,7 @@ div.container.gallery-content {
   .four-per-row {
     width: 25%;
 
-    @include respond-to('medium-down') {
+    @include respond-to("medium-down") {
       width: 100%;
     }
   }
@@ -189,7 +158,7 @@ div.container.gallery-content {
   .five-per-row {
     width: 20%;
 
-    @include respond-to('medium-down') {
+    @include respond-to("medium-down") {
       width: 100%;
     }
   }

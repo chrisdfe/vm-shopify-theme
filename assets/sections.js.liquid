@@ -1,28 +1,3 @@
-const gallery = {
-  init: function () {
-    $(".gallery-horizontal")
-      .find(".gallery-image-wrapper")
-      .each(function () {
-        var e,
-          t,
-          a = $(this),
-          i = $(this).find("img");
-        $("<img />")
-          .attr("src", $(i).attr("src"))
-          .on("load", function () {
-            (e = this.width),
-              (t = this.height),
-              $(a).css("flex-basis", (200 * e) / t),
-              $(a).css("flex-grow", (200 * e) / t),
-              $(a)
-                .find("i")
-                .css("padding-bottom", (t / e) * 100 + "%");
-          });
-      }),
-      $("[rel=gallery]").length && $("[rel=gallery]").fancybox({ baseClass: "gallery-section__lightbox", clickContent: "nextOrClose" });
-  },
-};
-
 const videoSection = {
   init: function () {
     var e = $("[data-video-element]").get(),

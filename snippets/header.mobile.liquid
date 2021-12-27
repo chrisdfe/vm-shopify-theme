@@ -1,7 +1,8 @@
 <header class="header-mobile">
   <div class="header-mobile__navbar">
     <button
-      class="header-mobile__hamburger-button header-mobile__nav-button js-mobile-hamburger-button"
+      class="header-mobile__hamburger-button header-mobile__nav-button"
+      data-drawer-button-id="menu"
       data-no-instant="true"
       >
       <div class="header-mobile__hamburger">
@@ -37,11 +38,12 @@
         data-dropdown-rel="search">
         <span class="icon-search"></span>
       </button>
-
+      
       <button
-        href="{{ routes.cart_url }}"
-        class="header-mobile__nav-button js-mobile-cart-button"
-        title="{{ 'layout.general.cart' | t | escape }}"
+      href="{{ routes.cart_url }}"
+      class="header-mobile__nav-button"
+      title="{{ 'layout.general.cart' | t | escape }}"
+        data-drawer-button-id="cart"
         data-no-instant>
         <span class="icon-bag"></span>
         <span class="cart_count">{{ cart.item_count }}</span>

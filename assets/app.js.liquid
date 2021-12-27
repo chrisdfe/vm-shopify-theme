@@ -21,7 +21,6 @@ $(function() {
   header.init();
   searchAutocomplete.init();
   videoSection.init();
-  gallery.init();
   videoFeature.setupVideoPlayer();
   collectionSidebarFilter.init();
   cart.init();
@@ -48,23 +47,18 @@ $(function() {
   var resizeTimeout;
 
   // Listen for resize events
-  window.addEventListener('resize', function ( event ) {
-
+  window.addEventListener('resize', function (event) {
     // If timer is null, reset it to 66ms and run your functions.
     // Otherwise, wait until timer is cleared
-    if ( !resizeTimeout ) {
+    if (!resizeTimeout) {
       resizeTimeout = setTimeout(function() {
-
         // Reset timeout
         resizeTimeout = null;
 
         // Run our resize functions
         if($(window).width() <= 798) {
           cart.init();
-          header.unload();
-          header.init();
         }
-
       }, 66);
     }
   }, false);

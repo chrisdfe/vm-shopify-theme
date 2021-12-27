@@ -1,6 +1,7 @@
 <div
-  class="header__cart-module"
-  data-dropdown="cart">
+  class="header__cart-module vm-mobile-drawer vm-drawer--right"
+  data-dropdown="cart"
+  data-drawer-id="cart">
   <div class="tos_warning cart_content animated fadeIn">
     <div class="js-empty-cart__message {% if cart.item_count > 0 %}hidden{% endif %}">
       <p class="empty_cart">{{ 'layout.general.empty_cart' | t }}</p>
