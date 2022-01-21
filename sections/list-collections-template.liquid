@@ -59,10 +59,6 @@
           <h1>{{ 'collections.general.title' | t }}</h1>
         </div>
       {% endif %}
-      
-      <div class="sixteen columns">
-        <div class="feature_divider"></div>
-      </div>
     </div>
 
     {% comment %}Check to see if sidebar should be enabled{% endcomment %}
@@ -72,12 +68,8 @@
       {% assign sidebar = false %}
     {% endif %}
 
-    {% if sidebar %}
-      {% render 'sidebar' %}
-      <div class="twelve columns list-collection-wrapper medium-down--one-whole">
-    {% else %}
-      <div class="sixteen columns list-collection-wrapper">
-    {% endif %}
+  
+  <div class="list-collection-wrapper">
 
     <div class="list-collections">
       <div class="container">
@@ -86,62 +78,31 @@
           {% for collection in collections %}
             {% unless collection.handle == 'frontpage' %}
               {% capture collection_title %}{{ collection.title | escape }}{% endcapture %}
-              <div class="eight columns medium-down--one-half">
-    
-            <div class="product-wrap">
-              <div class="image__container">
+
+              <div class="one-third columns medium-down--one-half">
                 {% if collection.image %}
                   {% assign collection_image = collection.image.src %}
                 {% else %}
                   {% assign collection_image = collection.products.first.featured_image %}
                 {% endif %}
-    
-                {% render 'image-element',
-                        image: collection_image,
-                        alt: collection.title,
-                        object_fit: section.settings.align_height,
-                        max_height: section.settings.collection_height
-                %}
+
+                {% include "image-card" with {
+                  image: collection_image
+                  title: collection_title,
+                  url: collection.url
+                } %}
               </div>
-    
-                <a href="{{ collection.url }}" title="{{ collection_title }}" class="hidden-product-link">{{ collection_title }}</a>
-                {% if settings.thumbnail_hover_enabled %}
-                    <div class="thumbnail-overlay">
-                    <a href="{{ collection.url }}" title="{{ collection_title }}" class="hidden-product-link">{{ collection_title }}</a>
-                      <div class="info">
-                          <div class="collection-details">
-                            <span class="title">{{ collection.title }}</span>
-                          </div>
-                          <a href="{{ collection.url }}" title="{{ collection_title }}"><span class="view_all">{{ 'collections.general.view_all' | t }}</span></a>
-                      </div>
-                    </div>
-                {% endif %}
-                <h5>
-                  <a class="collection-info__caption {% if settings.thumbnail_hover_enabled %}hidden{% endif %}" href="{{ collection.url }}">
-                    <span class="title">{{ collection.title }}</span>
-                  </a>
-                </h5>
-              </div>
-            </div>
+
             {% endunless %}
           {% endfor %}
 
+          </div>
         </div>
-      </div>
 
-      </div>
       {% render 'pagination', paginate: paginate %}
     </div>
   {% endpaginate %}
 </div>
-
-{% if section.settings.align_height %}
-  <style>
-    .list-collections .thumbnail img {
-      max-height: {{ section.settings.collection_height }}px;
-    }
-  </style>
-{% endif %}
 
 {% schema %}
 

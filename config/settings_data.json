@@ -1,7 +1,7 @@
 {
   "current": {
     "performance": "sport",
-    "image_loading_style": "blur-up",
+    "image_loading_style": "appear",
     "custom_scripts": "",
     "logo_color": "#ffffff",
     "regular_color": "#0a212d",
@@ -189,27 +189,27 @@
     "show_multiple_currencies": false,
     "supported_currencies": "USD CAD AUD GBP EUR JPY",
     "default_currency": "USD",
-    "mailchimp_link": "https:\/\/valeriemadison.us6.list-manage.com\/subscribe\/post?u=9c731b5513228fae5f50e3e52&amp;id=eacb15be45",
+    "mailchimp_link": "https:\/\/manage.kmail-lists.com\/subscriptions\/subscribe?a=KT9qEt&g=UhfE3X",
     "secondary_newsletter_banner": false,
     "newsletter_popup": false,
     "newsletter_popup_close": true,
-    "newsletter_popup_mobile": false,
-    "newsletter_popup_form": true,
+    "newsletter_popup_mobile": true,
+    "newsletter_popup_form": false,
     "display_first_name": false,
     "display_last_name": false,
     "use_newsletter_border": true,
-    "image_crop": "none",
+    "image_crop": "center",
     "newsletter_popup_image_align": "right",
-    "newsletter_popup_title": "Good news!",
-    "newsletter_popup_text": "",
+    "newsletter_popup_title": "Holiday Notice",
+    "newsletter_popup_text": "<p>test Test Test<\/p>",
     "newsletter_popup_text_align": "center",
     "popup_button1": "",
     "popup_button1_highlight": false,
     "popup_button2": "",
     "popup_button2_link": "",
     "popup_button2_highlight": false,
-    "newsletter_popup_seconds": 40,
-    "newsletter_popup_days": "7",
+    "newsletter_popup_seconds": 0,
+    "newsletter_popup_days": "0",
     "twitter_link": "",
     "facebook_link": "https:\/\/www.facebook.com\/valeriemadisonjewelry\/",
     "youtube_link": "",
@@ -309,7 +309,7 @@
       "header": {
         "type": "header",
         "settings": {
-          "promo_text": "<p>ALL DOMESTIC ORDERS SHIP FREE VIA FEDEX<\/p>",
+          "promo_text": "<p>SHIPPING WILL RESUME ON 1\/5\/2022  |  FREE SHIPPING ON ALL U.S ORDERS<\/p>",
           "social_icons_header": true,
           "phone_number": "(206) 395-6359",
           "top_bar_menu": "",
@@ -325,8 +325,12 @@
           "search_enabled": true,
           "show_locale_selector": true,
           "show_currency_selector": true,
+          "fixed_header": true,
+          "logo_position": "center",
+          "logo_alignment": "center",
           "menu_position": "inline",
           "menu_alignment": "center",
+          "logo_top_padding": 30,
           "menu_top_padding": 0
         }
       },
@@ -417,8 +421,7 @@
           "sign_up": "",
           "sign_up_hover": "",
           "sign_up_boder": "",
-          "newsletter_section_text_align": "center",
-          "image": ""
+          "newsletter_section_text_align": "center"
         }
       },
       "article-template": {
@@ -627,7 +630,7 @@
             "settings": {
               "richtext_top": "",
               "image_top": "shopify:\/\/shop_images\/Madrona-Valerie-Madison.jpg",
-              "image_caption_top": "Visit our lovely store in Seattle!",
+              "image_caption_top": "Visit our lovely store in Seattle! (We will be closed 12\/24 - 1\/5)",
               "image_link_top": "https:\/\/www.valeriemadison.com\/pages\/our-story#visit-the-store",
               "menu_1": "",
               "menu_1_link": "",
@@ -692,10 +695,18 @@
               "enable_filter_swatches": false
             }
           },
+          "b1e3cb86-ca09-4541-a5ea-43343399c8f9": {
+            "type": "filter",
+            "settings": {
+              "filter_name": "Shop by Color",
+              "filter_tags": "Colorless, White, Salt & Pepper, Black, Blue, Teal, Green, Pink, Red, Purple, Orange, Multi-color, Champagnes & Browns",
+              "enable_filter_swatches": false
+            }
+          },
           "1567199940929": {
             "type": "filter",
             "settings": {
-              "filter_name": "Shop by Shape",
+              "filter_name": "Shop by Stone Shape",
               "filter_tags": "Oval, Cushion, Round, Pear, Geometric, Emerald Cut, Marquise",
               "enable_filter_swatches": false
             }
@@ -704,15 +715,7 @@
             "type": "filter",
             "settings": {
               "filter_name": "Shop by Band Style",
-              "filter_tags": "Contour Bands, Diamond Bands, Gold Bands, Textured Bands, Unisex",
-              "enable_filter_swatches": false
-            }
-          },
-          "1587340525519": {
-            "type": "filter",
-            "settings": {
-              "filter_name": "Special Occasions",
-              "filter_tags": "Gift ideas for Mom, Ready to Ship, Birthday gift ideas",
+              "filter_tags": "Contour Bands, Straight Bands, Diamond Bands, Gold Bands, Textured Bands, Unisex, Masculine",
               "enable_filter_swatches": false
             }
           }
@@ -720,9 +723,9 @@
         "block_order": [
           "1554411533737",
           "1553112159812",
+          "b1e3cb86-ca09-4541-a5ea-43343399c8f9",
           "1567199940929",
-          "1587338269920",
-          "1587340525519"
+          "1587338269920"
         ],
         "settings": {
           "is_timed_collection": false,
@@ -1378,7 +1381,7 @@
           "532c00fc-0a53-4c3b-9aeb-9e16deb238b8"
         ],
         "settings": {
-          "parent": "Custom & Heirloom"
+          "parent": ""
         }
       },
       "page-stockists-template": {
@@ -1618,7 +1621,7 @@
             "type": "image",
             "settings": {
               "image": "shopify:\/\/shop_images\/2_Chains.jpg",
-              "link": "shopify:\/\/collections\/all-necklaces",
+              "link": "shopify:\/\/collections\/necklaces",
               "title": "<b>Necklaces<\/b>"
             }
           },
@@ -1794,13 +1797,24 @@
               "menu": "contact-info",
               "social_icons_footer": true
             }
+          },
+          "65628e64-25ae-49b4-8f53-66637e6b0068": {
+            "type": "klaviyo_newsletter",
+            "disabled": true,
+            "settings": {
+              "title": "Join our Newsletter",
+              "newsletter_text": "",
+              "newsletter_code": "<div class=\"klaviyo-form-YmSwgi\"><\/div>",
+              "show_social": false
+            }
           }
         },
         "block_order": [
           "footer-2",
           "footer-1",
           "1591048779440",
-          "1591048786272"
+          "1591048786272",
+          "65628e64-25ae-49b4-8f53-66637e6b0068"
         ],
         "settings": {
           "copyright_text": "",
@@ -1810,10 +1824,10 @@
           "enable_klaviyo": true,
           "newsletter_title1": "Sign up for our Newsletter",
           "newsletter_text1": "",
-          "background-color_newsletter": "#000000",
+          "background-color_newsletter": "#1c4047",
           "text-color": "#ffffff",
           "text-color1": "#ffffff",
-          "sign_up": "#000000",
+          "sign_up": "#1c4047",
           "sign_up_hover": "",
           "sign_up_boder": "#ffffff",
           "show_locale_selector": true,
@@ -1856,9 +1870,9 @@
               "color_subheader": "#0a212d",
               "color_columnheader": "#0a212d",
               "column_header_left": "How to Find your ring size",
-              "column_details_left": "<p>1. Only you can determine what fits you absolutely best. A ring should slide on fairly easily and have some resistance when taking it off over the knuckle. <\/p><p><br\/>2. Your finger should feel no tightness while wearing a ring. No one else should be able to pull your ring off easily but it shouldn&#x27;t be difficult for you personally to remove.<\/p><p><br\/>3. Wide rings fit more snugly than narrower rings. We recommend using the appropriate ring sizer width to find your size or try adding ¼-½ size to measurements taken with a narrow ring sizer. When in doubt, give us a call and we can help make a recommendation. <\/p><p><br\/>4. It’s not unusual for rings to fit differently through the day or in different seasons, depending on where you live. Your ring may fit snuggly in the heat and it may spin loosely in the colder winter months.<\/p>",
+              "column_details_left": "<p>1. Only you can determine what fits you absolutely best. A ring should slide on fairly easily and have some resistance when taking it off over the knuckle. <\/p><p><br\/>2. Your finger should feel no tightness while wearing a ring. No one else should be able to pull your ring off easily but it shouldn't be difficult for you personally to remove.<\/p><p><br\/>3. Wide rings fit more snugly than narrower rings. We recommend using the appropriate ring sizer width to find your size or try adding ¼-½ size to measurements taken with a narrow ring sizer. When in doubt, give us a call and we can help make a recommendation. <\/p><p><br\/>4. It’s not unusual for rings to fit differently through the day or in different seasons, depending on where you live. Your ring may fit snuggly in the heat and it may spin loosely in the colder winter months.<\/p>",
               "column_header_right": "Factors that affect ring size",
-              "column_details_right": "<p><span style=\"text-decoration:underline\">Temperature<\/span><br\/>Due to fluctuations in blood circulation, our fingers are fuller when our body temperature is highest and narrower when our temperature is lowest. <\/p><p><span style=\"text-decoration:underline\">Season<\/span><br\/>If you live in an area with strong differences between seasonal temperatures, you may find that your fingers are skinnier in the winter time and more full in the summer time. It&#x27;s not uncommon for finger sizes to change 1\/4-1\/2 ring size so opt for your largest finger size to accommodate the warmest times of year and just be conscious that there just may be some times of year where your ring fits more perfectly than others. <\/p><p><span style=\"text-decoration:underline\">Diet and time of day<\/span><br\/>it&#x27;s not uncommon to wake up with fingers feeling swollen, especially if you had a salty meal for dinner the night before. The best time to have your fingers sized is late afternoon when you may be more hydrated and body changes are most likely to be stable. <\/p><p><\/p><p><span style=\"text-decoration:underline\">Activity level<br\/><\/span>Ever notice your fingers swelling after a long walk or workout? That&#x27;s your circulatory system properly working and pushing blood into your extremities and fingertips. We don&#x27;t recommend wearing jewelry during exercise but we understand that it happens sometimes and you want to be sized in a way that will allow for these changes.<\/p>"
+              "column_details_right": "<p><span style=\"text-decoration:underline\">Temperature<\/span><br\/>Body temperatures affect blood circulation, so your finger size may be larger when you are warmer and smaller when you are cooler. <\/p><p><span style=\"text-decoration:underline\">Season<\/span><br\/>If you live in an area with strong differences between seasonal temperatures, you may find that your fingers are skinnier in the winter time and more full in the summer time. It's not uncommon for finger sizes to change 1\/4-1\/2 ring size so opt for your largest finger size to accommodate the warmest times of year and just be conscious that there just may be some times of year where your ring fits more perfectly than others. <\/p><p><span style=\"text-decoration:underline\">Diet and time of day<\/span><br\/>It's not uncommon to wake up with fingers feeling swollen, especially if you had a salty meal for dinner the night before. The best time to have your fingers sized is late afternoon when you may be more hydrated and body changes are more likely to be stable. <\/p><p><\/p><p><span style=\"text-decoration:underline\">Activity level<br\/><\/span>Ever notice your fingers swelling after a long walk or workout? That's your circulatory system properly working and pushing blood into your extremities and fingertips. We don't recommend wearing jewelry during exercise but we understand that it happens sometimes and you want to be sized in a way that will allow for these changes.<\/p>"
             }
           },
           "1601063160281": {
@@ -1922,8 +1936,8 @@
           "enable_qty": false,
           "enable_ring_size": true,
           "include_quarter_sizes": true,
-          "minimum_ring_size": "3",
-          "maximum_ring_size": "12",
+          "minimum_ring_size": "4",
+          "maximum_ring_size": "9",
           "collection1": "diamond-rings",
           "collection2": "engagement-rings",
           "enable_prong_style": true,
@@ -2062,16 +2076,6 @@
               "link_title": "Click here to send this as inspiration for your custom order"
             }
           },
-          "640bb445-c1bd-4dc8-9d7a-d58cc777904c": {
-            "type": "featured-ring",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/7367_Lechleider.jpg",
-              "job_title": "2.0CT Colorless Oval Diamond Zara Engagement Ring",
-              "description": "",
-              "link_url": "mailto:custom@valeriemadison.com",
-              "link_title": "Click here to send this as inspiration for your custom order."
-            }
-          },
           "f733facd-ec19-4e0f-bb9b-ecfbaadd5594": {
             "type": "featured-ring",
             "settings": {
@@ -2080,6 +2084,26 @@
               "description": "<p><\/p><p><\/p>",
               "link_url": "mailto:custom@valeriemadison.com?subject=1.60 tcw Three Stone Diamond Engagement Ring&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
               "link_title": "Click here to send this as inspiration for your custom order"
+            }
+          },
+          "46943720-18f2-4be1-8cfb-c95f390e1c99": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/5732_Troy_Allen_Lindsey.jpg",
+              "job_title": "0.94CT  CUSHION CUT COLORLESS DIAMOND BELLA ENGAGMENT RING",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com",
+              "link_title": "Click here to send this as inspiration for your custom order."
+            }
+          },
+          "640bb445-c1bd-4dc8-9d7a-d58cc777904c": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/7367_Lechleider.jpg",
+              "job_title": "2.0CT  Oval Cut Colorless Diamond Zara Engagement Ring",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com",
+              "link_title": "Click here to send this as inspiration for your custom order."
             }
           },
           "f805bfba-2ab8-4ce4-8270-41244082cf2e": {
@@ -2172,6 +2196,16 @@
               "link_title": "Click here to send this as inspiration for your custom order"
             }
           },
+          "6ac6b0d0-0577-44ab-b180-c7e057c830c8": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/7126_Moulton_1.jpg",
+              "job_title": "1.51CT Pear Cut Near Colorless Diamond Bezel engagement Ring",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com",
+              "link_title": "Click here to send this as inspiration for your custom order."
+            }
+          },
           "page-grid-template-1": {
             "type": "featured-ring",
             "settings": {
@@ -2222,6 +2256,16 @@
               "link_title": "Click here to send this as inspiration for your custom order"
             }
           },
+          "dc51abab-15f7-4ef1-97ea-571fe750d825": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/7529_Cantor_1.jpg",
+              "job_title": "2.37ct Oval Cut Peach Sapphire Ella RING",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com",
+              "link_title": "Click here to send this as inspiration for your next custom order."
+            }
+          },
           "5da0f710-2539-47b5-a3a1-b1d1ddd98e96": {
             "type": "featured-ring",
             "settings": {
@@ -2249,6 +2293,16 @@
               "job_title": "1.93ct Oval Cut Peachy\/Pink Sapphire Selena Right Hand Ring",
               "description": "",
               "link_url": "mailto:custom@valeriemadison.com?subject=0.70ct SuperNova Green Sapphire Engagement Ring&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
+              "link_title": "Click here to send this as inspiration for your custom order"
+            }
+          },
+          "c408e48c-2512-4d0e-9eff-d05514d0b209": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/7553_Shurtleff.jpg",
+              "job_title": "1.15 Radiant Cut Pink Sapphire Bella Engagement Ring",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com",
               "link_title": "Click here to send this as inspiration for your custom order"
             }
           },
@@ -2312,23 +2366,13 @@
               "link_title": "Click here to send this as inspiration for your custom order"
             }
           },
-          "e794913f-58c7-4b75-8b2f-cf50a9a25621": {
+          "1602216749512": {
             "type": "featured-ring",
             "settings": {
-              "image": "shopify:\/\/shop_images\/7121_Byrne.jpg",
-              "job_title": "1.64CT Gray\/Blue Oval Cut Sapphire & Diamond Zara engagement ring",
+              "image": "shopify:\/\/shop_images\/VAL_1342-sq.jpg",
+              "job_title": "1.50ct Oval Cut Blue Sapphire & Diamond Bella Engagement Ring",
               "description": "",
-              "link_url": "mailto:custom@valeriemadison.com",
-              "link_title": "Click here to send this as inspiration for your custom order."
-            }
-          },
-          "1601324394662": {
-            "type": "featured-ring",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/Screen_Shot_2021-08-06_at_10.56.27_AM.png",
-              "job_title": "1.76ct Pear Cut Blue\/Gray Sapphire & Diamond Zara Engagement Ring",
-              "description": "",
-              "link_url": "mailto:custom@valeriemadison.com?subject=1.8ct Zara Gray Sapphire Three Stone Engagement Ring&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
+              "link_url": "mailto:custom@valeriemadison.com?subject=1.5ct Bella Sapphire & Diamond Engagement Ring&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
               "link_title": "Click here to send this as inspiration for your custom order"
             }
           },
@@ -2352,14 +2396,34 @@
               "link_title": "Click here to send this as inspiration for your custom order."
             }
           },
-          "1602216749512": {
+          "a68e219f-e504-44bf-8e7c-cc8aaf9d9849": {
             "type": "featured-ring",
             "settings": {
-              "image": "shopify:\/\/shop_images\/VAL_1342-sq.jpg",
-              "job_title": "1.5ct Oval Cut Blue Sapphire & Diamond Bella Engagement Ring",
+              "image": "shopify:\/\/shop_images\/6970_Liu.jpg",
+              "job_title": "1.50ct oval cut blue sapphire & diamond Zara engagement ring",
               "description": "",
-              "link_url": "mailto:custom@valeriemadison.com?subject=1.5ct Bella Sapphire & Diamond Engagement Ring&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
+              "link_url": "mailto:custom@valeriemadison.com",
+              "link_title": "Click here to send this as inspiration for your custom order."
+            }
+          },
+          "1601324394662": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Screen_Shot_2021-08-06_at_10.56.27_AM.png",
+              "job_title": "1.76ct Pear Cut Blue\/Gray Sapphire & Diamond Zara Engagement Ring",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com?subject=1.8ct Zara Gray Sapphire Three Stone Engagement Ring&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
               "link_title": "Click here to send this as inspiration for your custom order"
+            }
+          },
+          "e794913f-58c7-4b75-8b2f-cf50a9a25621": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/7121_Byrne.jpg",
+              "job_title": "1.64CT Gray\/Blue Oval Cut Sapphire & Diamond Zara engagement ring",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com",
+              "link_title": "Click here to send this as inspiration for your custom order."
             }
           },
           "1600904797123": {
@@ -2382,13 +2446,13 @@
               "link_title": "Click here to send this as inspiration for your custom order"
             }
           },
-          "1600972038157": {
+          "832c4dcd-0137-4409-bb36-cbb947969503": {
             "type": "featured-ring",
             "settings": {
-              "image": "shopify:\/\/shop_images\/5699_Williams.jpg",
-              "job_title": "3.3ct Oval Cut Light Blue Sapphire Selena Engagement Ring",
+              "image": "shopify:\/\/shop_images\/Custom_Selena_Teal_Sapphire_Engagement_Ring.jpg",
+              "job_title": "2.02ct Oval Cut Teal Sapphire Selena Engagement Ring",
               "description": "",
-              "link_url": "mailto:custom@valeriemadison.com?subject=1.5ct Pink Sapphire SuperNova Engagement Ring&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
+              "link_url": "mailto:custom@valeriemadison.com?subject=1.60 tcw Three Stone Diamond Engagement Ring&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
               "link_title": "Click here to send this as inspiration for your custom order"
             }
           },
@@ -2402,13 +2466,13 @@
               "link_title": "Click here to send this as inspiration for your custom order"
             }
           },
-          "832c4dcd-0137-4409-bb36-cbb947969503": {
+          "1600972038157": {
             "type": "featured-ring",
             "settings": {
-              "image": "shopify:\/\/shop_images\/Custom_Selena_Teal_Sapphire_Engagement_Ring.jpg",
-              "job_title": "2.02ct Oval Cut Teal Sapphire Selena Engagement Ring",
+              "image": "shopify:\/\/shop_images\/5699_Williams.jpg",
+              "job_title": "3.3ct Oval Cut Light Blue Sapphire Selena Engagement Ring",
               "description": "",
-              "link_url": "mailto:custom@valeriemadison.com?subject=1.60 tcw Three Stone Diamond Engagement Ring&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
+              "link_url": "mailto:custom@valeriemadison.com?subject=1.5ct Pink Sapphire SuperNova Engagement Ring&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
               "link_title": "Click here to send this as inspiration for your custom order"
             }
           },
@@ -2531,12 +2595,23 @@
               "link_url": "mailto:custom@valeriemadison.com",
               "link_title": "Click here to send this as inspiration for your custom order."
             }
+          },
+          "11b31845-91b8-4f18-b096-df44448c5f7e": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/7597_Sandberg.jpg",
+              "job_title": "1.41CT Oval Cut Teal Montana Sapphire Marisol Engagement Ring",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com",
+              "link_title": "Click here to send this as inspiration for your custom order."
+            }
           }
         },
         "block_order": [
           "1600971768975",
-          "640bb445-c1bd-4dc8-9d7a-d58cc777904c",
           "f733facd-ec19-4e0f-bb9b-ecfbaadd5594",
+          "46943720-18f2-4be1-8cfb-c95f390e1c99",
+          "640bb445-c1bd-4dc8-9d7a-d58cc777904c",
           "f805bfba-2ab8-4ce4-8270-41244082cf2e",
           "1600971535955",
           "da4aa41c-8ee2-4602-8af2-cd0ab9e118da",
@@ -2546,30 +2621,34 @@
           "1600972211218",
           "page-grid-template-2",
           "2f9e7e25-62fb-4be7-92f9-4a17f041ef0b",
+          "6ac6b0d0-0577-44ab-b180-c7e057c830c8",
           "page-grid-template-1",
           "f8be2d68-96d4-4e9d-917b-278ccb41ce2e",
           "1600971296892",
           "9e2c28d0-7615-4deb-9820-5254063adafc",
           "1600904795953",
+          "dc51abab-15f7-4ef1-97ea-571fe750d825",
           "5da0f710-2539-47b5-a3a1-b1d1ddd98e96",
           "1600971533421",
           "1600972039473",
+          "c408e48c-2512-4d0e-9eff-d05514d0b209",
           "c14cdffa-2103-4c5f-8ef4-bebde5c835ac",
           "10128707-79bb-4a7a-b34b-da016e30342b",
           "1600904777648",
           "e5d03b69-cb0c-4bae-b518-bbe5de7fb6e3",
           "40b53f1e-1c3e-4a72-9167-7de84ed53ba9",
           "1602217107648",
-          "e794913f-58c7-4b75-8b2f-cf50a9a25621",
-          "1601324394662",
+          "1602216749512",
           "2505ffeb-d5c8-4f1e-987f-3567d1d93de3",
           "72f62934-075e-40a6-822e-83aa2cfea146",
-          "1602216749512",
+          "a68e219f-e504-44bf-8e7c-cc8aaf9d9849",
+          "1601324394662",
+          "e794913f-58c7-4b75-8b2f-cf50a9a25621",
           "1600904797123",
           "1601324393407",
-          "1600972038157",
-          "1600971011621",
           "832c4dcd-0137-4409-bb36-cbb947969503",
+          "1600971011621",
+          "1600972038157",
           "1600971009918",
           "25f26937-528f-4fe6-838f-6c939fdcc358",
           "1600904785265",
@@ -2581,7 +2660,8 @@
           "f4343759-5787-4f52-8d68-a5de937c0946",
           "1600971767616",
           "52f2a8b1-1d33-4bb3-a1da-ba076275604b",
-          "c21146f0-71e1-4e94-b9b6-ab07686451c3"
+          "c21146f0-71e1-4e94-b9b6-ab07686451c3",
+          "11b31845-91b8-4f18-b096-df44448c5f7e"
         ],
         "settings": {
           "image_position": "left",
@@ -2831,7 +2911,7 @@
             "settings": {
               "image": "shopify:\/\/shop_images\/Xmas_Velvet_Box_With_Ribbon_copy.jpg",
               "name": "Test Title",
-              "collection": "all-necklaces"
+              "collection": "necklaces"
             }
           },
           "0d765d29-731b-4cae-8ab9-d63524a6b0bd": {
@@ -2874,8 +2954,8 @@
         "type": "our-story-about-valerie",
         "settings": {
           "title": "About Valerie",
-          "content": "Valerie merges contemporary technology with skillful artistry to create elegant designs inspired by classic styles. With her keen eye for detail and passion for individuality, her designs celebrate not only the beauty of life and love but also the natural world and the stunning gemstones that come from it. A Valerie Madison piece features styles and stones not seen in traditional pieces, such as salt-and-pepper diamonds, rose-cut diamonds, uniquely shaped stones, vibrant hues, and more.",
-          "image": "shopify:\/\/shop_images\/DSC_9603-2_copy.jpg"
+          "content": "Valerie merges contemporary technology with skillful artistry to create elegant designs inspired by classic styles. With her keen eye for detail and passion for individuality, her designs celebrate not only the beauty of life and love but also the natural world and the stunning gemstones that come from it. A Valerie Madison piece features styles and stones not seen in traditional pieces, such as salt-and-pepper diamonds, rose-cut diamonds, uniquely shaped stones, vibrant hues, and more. Valerie is a Black Latina and proud to be diversifying the jewelry industry with her Seattle small business.",
+          "image": "shopify:\/\/shop_images\/Val-in-front-of-store-2.jpg"
         }
       },
       "our-story-timeline": {
@@ -3003,17 +3083,17 @@
           "1b8dc7aa-f7bd-480a-8337-863ec34683f4": {
             "type": "team_member",
             "settings": {
-              "image": "shopify:\/\/shop_images\/VMFJ-2020-5.jpg",
-              "title": "Valerie Madison",
-              "job_title": "Owner & Designer",
-              "description": "I love my job, especially when choosing gemstones! I hand-select every stone you see in our designs with beauty and quality being my top considerations. I have a degree in Environmental Science & Resource Management making me a great advocate for our planet. I also enjoy shopping for leopard-print tops, collecting fossils and crystals, practicing my Spanish, and tending to my indoor jungle at home."
+              "image": "shopify:\/\/shop_images\/Val---plum-skirt-cropped.jpg",
+              "title": "Valerie",
+              "job_title": "Owner, Designer, Creative Director",
+              "description": "I love my job, especially when choosing gemstones! I hand-select every stone you see in our designs with beauty and quality being my top considerations. I have a degree in Environmental Science & Resource Management making me a great advocate for our planet. I love dinosaurs, practicing my Spanish, and tending to my indoor jungle at home."
             }
           },
           "3a6eca3c-c1d0-4897-a323-7a083d69f370": {
             "type": "team_member",
             "settings": {
-              "image": "shopify:\/\/shop_images\/VMFJ-2020-12.jpg",
-              "title": "Liz Ferris",
+              "image": "shopify:\/\/shop_images\/Liz_3d5acd4a-dd6d-49f9-8451-c096ef7b6a07.jpg",
+              "title": "Liz",
               "job_title": "Head of Sales, Store Manager",
               "description": "I lead our Sales Team and am the Store Manager for our charming Madrona showroom. I met Valerie in 2017 and joined her as employee #2 just shortly after, it’s been an incredible experience to see the VM brand grow through the years. When I’m not at work I love reading and cuddling my kitties Theodore & Beatrix."
             }
@@ -3022,16 +3102,16 @@
             "type": "team_member",
             "settings": {
               "image": "shopify:\/\/shop_images\/VMFJ-2020-17.jpg",
-              "title": "Lauren Forbes",
-              "job_title": "GEMOLOGIST, SALES ASSOCIATE",
+              "title": "Lauren",
+              "job_title": "GEMOLOGIST, SENIOR SALES ASSOCIATE",
               "description": "I am the staff gemologist (aka gem nerd) and sales associate who can help answer all your jewelry questions, write your appraisal, or source the perfect stone for your ring.  When I’m not in the studio you can find me teaching fitness classes, making Spotify playlists, writing, or watching the newest episode of Dateline."
             }
           },
           "c95ab9d1-1311-4c9b-959d-9ac15d6603c6": {
             "type": "team_member",
             "settings": {
-              "image": "shopify:\/\/shop_images\/DSC_4217-8.jpg",
-              "title": "Amara Palmer",
+              "image": "shopify:\/\/shop_images\/Amara_bdb00853-e64d-428f-ba4b-81e986a23ab0.jpg",
+              "title": "Amara",
               "job_title": "SALES ASSOCIATE",
               "description": "I fell in love with vintage and ethically made fine jewelry in college. To adorn yourself in it marries the stunning beauty our planet provides us with a sentimental meaning you attach. As a sales associate, I am excited to share the craftsmanship at VM. When not at work, you can find me practicing minimalism with maximalist design, lounging with my cat Miss Cleo, collecting tea, and learning how to parallel park!"
             }
@@ -3040,7 +3120,7 @@
             "type": "team_member",
             "settings": {
               "image": "shopify:\/\/shop_images\/VMFJ-2020-1.jpg",
-              "title": "Nina Hartman",
+              "title": "Nina",
               "job_title": "BENCH JEWELER",
               "description": "I am quiet, dedicated, and passionate about working with my hands. I wake up every day excited to put all my love and positivity into the things I make. I’ve lived in Seattle most of my life, except for the 4 years I spent at the Rhode Island School of Design. When I’m not making jewelry, I run, bike, knit, play piano, and drink caffeinated beverages. Sometimes I’m a little too serious."
             }
@@ -3049,7 +3129,7 @@
             "type": "team_member",
             "settings": {
               "image": "shopify:\/\/shop_images\/VMFJ-2020-23.jpg",
-              "title": "Saraya Ittidecharchoti",
+              "title": "Saraya",
               "job_title": "OPERATIONS COORDINATOR",
               "description": "I keep track of inventory and ship your orders! A few things I enjoy include curating my wardrobe, making clothes and plant care. You can find me cutting up my old bed sheet to sew into pants or rotating my begonia collection for maximum sun!"
             }
@@ -3058,7 +3138,7 @@
             "type": "team_member",
             "settings": {
               "image": "shopify:\/\/shop_images\/VMFJ-2020-3.jpg",
-              "title": "Charlotte Muller",
+              "title": "Charlotte",
               "job_title": "BENCH JEWELER",
               "description": "I make the shiny stuff. When I’m not goldsmithing for Valerie Madison or working in my own jewelry studio, I’m either DIY renovating my mid-mod dream house or in my kitchen testing new recipes. I couldn’t remain at the top of my game in every way without the support of my handsome cat, clever dachshund puppy and my amazing husband to be."
             }
@@ -3067,7 +3147,7 @@
             "type": "team_member",
             "settings": {
               "image": "shopify:\/\/shop_images\/VMFJ-2020-15.jpg",
-              "title": "Laura O'Clair",
+              "title": "Laura",
               "job_title": "CONTENT CREATOR",
               "description": "I get to take pictures of sparkly things for a living! Each day I wake up feeling blessed, with the intention of bringing more beauty into the world through my work at VM. I focus on contributing in creative and playful ways that add value to the company. After hours, my time is spent going on spontaneous adventures and decorating unconventional cakes for friends and family."
             }
@@ -3076,7 +3156,7 @@
             "type": "team_member",
             "settings": {
               "image": "shopify:\/\/shop_images\/Sue_Pess.jpg",
-              "title": "Sue Pess",
+              "title": "Sue",
               "job_title": "OPERATIONS MANAGER",
               "description": "I am here to keep things running smoothly and in-step with our growth trajectory. My decades long background in jewelry production, retail, and small business operations make this a great place for me to have a positive impact. When I am not here you can find me thrifting, laughing at my cats, and spending time with friends & family."
             }
@@ -3085,7 +3165,7 @@
             "type": "team_member",
             "settings": {
               "image": "shopify:\/\/shop_images\/Adriana_Ortiz.jpg",
-              "title": "Adriana Ortiz",
+              "title": "Adriana",
               "job_title": "DIGITAL MARKETING SPECIALIST",
               "description": "I love that my job combines building community through digital media and getting to play with beautiful sparkling things. I’m excited to bring an analytic and strategic mindset to Valerie Madison Jewelry’s digital presence while working alongside such kind humans. Outside of work you’ll find me probably on my couch watching something sappy, reading, scrolling TikTok and\/or shopping for shoes online."
             }
@@ -3094,16 +3174,16 @@
             "type": "team_member",
             "settings": {
               "image": "shopify:\/\/shop_images\/Megan_Headshot.jpg",
-              "title": "Megan Cosgrove",
-              "job_title": "CUSTOMER SERVICE SPECIALIST",
+              "title": "Megan",
+              "job_title": "Customer Service Specialist & Associate Buyer",
               "description": "As the face of VM’s Customer Service Department, I strive to make your experience unforgettable. My sense of humor and colorful personality helps ensure that you will be taken care of no matter what! I love to help individuals find lifelong custom rings or commemorate milestones in gold. When I am away from work, you can find me hunting for vintage clothing, obsessing over my dog or impulsively dying my hair."
             }
           },
           "f41d0541-dc50-4627-be73-bb5bc0d48a67": {
             "type": "team_member",
             "settings": {
-              "image": "shopify:\/\/shop_images\/Danielle_Nielsen_Staff_Photo.jpg",
-              "title": "Danielle Nielsen",
+              "image": "shopify:\/\/shop_images\/Dani_6074b318-29e0-4c94-8e10-b15bc675a860.jpg",
+              "title": "Danielle",
               "job_title": "SALES ASSOCIATE",
               "description": "I love that my job is a combination of connecting with our customers and getting to show case such beautiful, ethically sourced and unique jewelry. Before working for VM, I never pictured myself in the jewelry sales world but I am so grateful that life has brought me to where I am. Working alongside this wonderful group of women has taught me so much in just a few short months. When I’m not selling sparkly pieces of gold, I am either discovering new restaurants to add to my “foodie lovers list”, taking walks to catch the sunset or getting new tattoos."
             }
@@ -3112,7 +3192,7 @@
             "type": "team_member",
             "settings": {
               "image": "shopify:\/\/shop_images\/Omar_4ee53a79-155e-4cb6-b349-5d1140450b70.jpg",
-              "title": "Omar Little",
+              "title": "Omar",
               "job_title": "CHIEF MORALE BOOSTER",
               "description": "I like to visit the office and zoom around looking for snacks and butt scratches. Everyone is always so excited to see me when I visit so I'm happy that I'm able to please!"
             }
@@ -3225,8 +3305,8 @@
         "type": "eternity-bracelets-cta",
         "settings": {
           "cta_lead_text": "Ready to get yours?",
-          "cta_text": "Book your appointment",
-          "cta_link": "https:\/\/calendly.com\/valeriemadison\/eternitybracelet"
+          "cta_text": "Order now!",
+          "cta_link": "https:\/\/www.valeriemadison.com\/products\/14k-gold-eternity-bracelet"
         }
       },
       "1629483439e1253581": {
@@ -3235,32 +3315,32 @@
           "95beecd3-2bab-4b22-b737-ed9a5c1dbf17": {
             "type": "background_block",
             "settings": {
-              "background_color": "light"
+              "background_color": "dark-alt"
             }
           },
-          "fcd1e1d8-f0cf-40a1-8187-70e1d60e192e": {
+          "d91053c6-ac00-49c1-8f28-fa6ab2412493": {
             "type": "background_block",
             "settings": {
               "background_color": "light",
-              "banner_image_desktop": "shopify:\/\/shop_images\/0.90ct_Eva_Octagon_Salt_and_Pepper_Diamond_Engagement_Ring_2.jpg"
+              "banner_image_desktop": "shopify:\/\/shop_images\/Madrona-Jewelry-Store_193b6c07-8710-4b8b-85cc-0fff4e8ef7e9.jpg"
             }
           }
         },
         "block_order": [
           "95beecd3-2bab-4b22-b737-ed9a5c1dbf17",
-          "fcd1e1d8-f0cf-40a1-8187-70e1d60e192e"
+          "d91053c6-ac00-49c1-8f28-fa6ab2412493"
         ],
         "settings": {
           "banner_wrapper_background_color": "light-alt",
-          "pretext": "Newest addition:",
-          "heading": "Salt & Pepper Diamonds",
-          "cta_link": "https:\/\/www.valeriemadison.com\/collections\/all\/salt-and-pepper-diamond",
-          "cta_text": "shop now",
+          "pretext": "SHOP ONLINE 24\/7",
+          "heading": "Our Seattle store reopens 1\/6\/22",
+          "cta_link": "https:\/\/www.valeriemadison.com\/pages\/our-story#visit-the-store",
+          "cta_text": "VISIT OUR SEATTLE STORE IN JANUARY",
           "text_position": "left-block",
-          "text_color": "dark-alt",
-          "banner_image_mobile": "shopify:\/\/shop_images\/0.90ct_Eva_Octagon_Salt_and_Pepper_Diamond_Engagement_Ring_2.jpg",
-          "text_color_mobile": "dark",
-          "content_background_color_mobile": "light-alt"
+          "text_color": "light",
+          "banner_image_mobile": "shopify:\/\/shop_images\/Madrona-Jewelry-Store_193b6c07-8710-4b8b-85cc-0fff4e8ef7e9.jpg",
+          "text_color_mobile": "dark-alt",
+          "content_background_color_mobile": "light"
         }
       },
       "1630687320cad1aa82": {
@@ -3444,7 +3524,7 @@
             "type": "Content",
             "settings": {
               "title": "WHEN WILL MY ORDER SHIP?",
-              "subtitle": "<p><br\/>Every item in our shop has current production times listed within the description. These dates are an accurate time frame for when to expect your order to be shipped by based on the day you purchase. The shipping speed depends on the option you select during checkout. If you require your item to be delivered by a specific day, we recommend letting us know in the order notes or reach out to us via email at hello@valeriemadison.com<\/p>"
+              "subtitle": "<p><br\/>Every item in our shop has current production times listed within the description. These dates are an accurate time frame for when to expect your order to be shipped by, based on the day you purchase. The shipping speed depends on the option you select during checkout. If you require your item to be delivered by a specific day, we recommend letting us know in the order notes or reach out to us via email at hello@valeriemadison.com<\/p>"
             }
           },
           "page--faq-3": {
@@ -3465,7 +3545,7 @@
             "type": "Content",
             "settings": {
               "title": "CAN I MODIFY MY ORDER?",
-              "subtitle": "<p>Please contact us immediately to see if we can change your order. <\/p>"
+              "subtitle": "<p>Please contact us immediately to see if we can change your order. Any changes to your order after 48 hours will incur a $50 change fee per <a href=\"https:\/\/www.valeriemadison.com\/pages\/exchange-policy\" target=\"_blank\" title=\"https:\/\/www.valeriemadison.com\/pages\/exchange-policy\">our policy.<\/a> <\/p>"
             }
           },
           "page--faq-6": {
@@ -3485,35 +3565,35 @@
             "type": "Content",
             "settings": {
               "title": "DO YOU HAVE A STORE FRONT?",
-              "subtitle": "<p>We are opening a store in the Seattle neighborhood of Madrona very soon! <\/p>"
+              "subtitle": "<p>Yes! You can visit our storefront in Madrona from Thursday-Saturday. To view our business hours and make an appointment, click <a href=\"https:\/\/www.valeriemadison.com\/pages\/our-story#visit-the-store\" target=\"_blank\" title=\"https:\/\/www.valeriemadison.com\/pages\/our-story#visit-the-store\">here.<\/a><\/p>"
             }
           },
           "9d0ad352-40cb-4f0b-a9ee-cab49156a19f": {
             "type": "Content",
             "settings": {
               "title": "HOW DO I FIND OUT MY RING SIZE?",
-              "subtitle": "<p>For the most accurate size, <a href=\"https:\/\/www.valeriemadison.com\/pages\/visit-us\" title=\"Studio Appointments\">visit our studio<\/a>. If you're unable to visit we sell the second closest thing: the same <a href=\"https:\/\/www.valeriemadison.com\/products\/ring-sizers\" title=\"Ring Sizers\">ring sizers<\/a> we use in-house. <\/p>"
+              "subtitle": "<p>For the most accurate size, <a href=\"https:\/\/www.valeriemadison.com\/pages\/visit-us\" title=\"Studio Appointments\">visit our studio<\/a>. If you're unable to visit we recommend purchasing a <a href=\"https:\/\/www.valeriemadison.com\/products\/ring-sizers\" title=\"Ring Sizers\">ring sizers<\/a> in your desired width. These sizers are the same that we use in-house and are sent with instructions on how to determine your measurement. <\/p>"
             }
           },
           "87ceb8a3-5a76-440b-acd2-4f327a183b39": {
             "type": "Content",
             "settings": {
               "title": "DO YOU OFFER RESIZING?",
-              "subtitle": "<p>Include a helpful and informative answer to the frequently asked question here.<\/p>"
+              "subtitle": "<p>We offer resizing on all rings that are eligible for resizing. If you are unsure, please contact us. <br\/><br\/>Our resizing for stacking rings can be purchased <a href=\"https:\/\/www.valeriemadison.com\/products\/stacking-ring-resizing-service?_pos=2&_sid=d8c5a046b&_ss=r\" target=\"_blank\" title=\"https:\/\/www.valeriemadison.com\/products\/stacking-ring-resizing-service?_pos=2&_sid=d8c5a046b&_ss=r\">here<\/a>. Looking to resize a wedding band or engagement ring? Please follow <a href=\"https:\/\/www.valeriemadison.com\/products\/ring-resizing-service?_pos=1&_sid=83c1f5269&_ss=r&variant=39575679303734\" target=\"_blank\" title=\"https:\/\/www.valeriemadison.com\/products\/ring-resizing-service?_pos=1&_sid=83c1f5269&_ss=r&variant=39575679303734\">this link<\/a> to purchase. <\/p>"
             }
           },
           "d188b4d3-557f-4e61-a0b1-3102326f5259": {
             "type": "Content",
             "settings": {
               "title": "WHAT IF I DON'T SEE MY RING SIZE LISTED?",
-              "subtitle": "<p>Please don't hesitate to reach out if you don't see your ring size available. We can certainly accommodate most sizes as a custom order. <\/p>"
+              "subtitle": "<p>Please don't hesitate to reach out if you don't see your ring size available. We can certainly accommodate most sizes as a custom order. Please note that any ring purchased outside of our sizes offered in the drop-down will be considered custom, and final sale.<\/p>"
             }
           },
           "33bcc53e-1366-4283-bb1d-4f6e3918514b": {
             "type": "Content",
             "settings": {
               "title": "DO YOU OFFER APPRAISALS?",
-              "subtitle": "<p>Appraisals are available for $150. They are conducted by <a href=\"http:\/\/gemcsi.com\/\" title=\"http:\/\/gemcsi.com\/\">Seattle's top independent jewelry appraiser<\/a>. Let us know if you would like your ring appraised and we can do this for you on your behalf and will send an invoice. <\/p>"
+              "subtitle": "<p>Appraisals are available for $150. They are conducted by our Gemologist Lauren. Let us know if you would like your ring appraised as this service will add 5 business days to your timeline.<br\/>Appraisals are required for each ring or band and can be purchased <a href=\"https:\/\/www.valeriemadison.com\/products\/ring-appraisal-service?_pos=1&_sid=fed0e7605&_ss=r\" target=\"_blank\" title=\"https:\/\/www.valeriemadison.com\/products\/ring-appraisal-service?_pos=1&_sid=fed0e7605&_ss=r\">here<\/a>.  <\/p>"
             }
           },
           "8df1886f-4ad6-4fae-b0bc-4d702cc5d325": {
@@ -3541,7 +3621,7 @@
             "type": "Content",
             "settings": {
               "title": "ARE YOUR METALS RECYCLED?",
-              "subtitle": "<p>Our recycled metals have been certified by third party SCS Global Services as 100% recycled. The only exception is our chains, which we (and most jewelers) are unable to verify as recycled.<\/p>"
+              "subtitle": "<p>We’re committed to using recycled metals from legitimate sources. The only metal we are unable to verify as recycled, is that which is used in our chains.<\/p>"
             }
           },
           "281ad49d-42b4-4fc5-ac7c-170e629726f2": {
@@ -3561,42 +3641,42 @@
             "type": "Content",
             "settings": {
               "title": "DO YOU ACCEPT CUSTOM ORDERS?",
-              "subtitle": "<p>Yes, we do accept custom orders fir engagement rings only, so long as they fall within our design aesthetic. More info on that <a href=\"https:\/\/www.valeriemadison.com\/pages\/custom-engagement-rings\" title=\"Custom Engagement Rings\">here<\/a>.<\/p>"
+              "subtitle": "<p>Yes, we do accept custom orders for engagement rings only. We currently offer diamonds and sapphires as center stones and require a <a href=\"https:\/\/www.valeriemadison.com\/products\/procurement-fee?_pos=1&_sid=d93684593&_ss=r\" target=\"_blank\" title=\"https:\/\/www.valeriemadison.com\/products\/procurement-fee?_pos=1&_sid=d93684593&_ss=r\">procurement fee<\/a> to begin sourcing a stone. To start the custom process, please fill out our <a href=\"https:\/\/www.valeriemadison.com\/pages\/custom-engagement-rings\" target=\"_blank\" title=\"https:\/\/www.valeriemadison.com\/pages\/custom-engagement-rings\">questionnaire<\/a>. <\/p>"
             }
           },
           "7a46589c-c8bb-4031-a054-c226fa297461": {
             "type": "Content",
             "settings": {
               "title": "WHAT IS THE MINIMUM COST FOR A CUSTOM ORDER?",
-              "subtitle": "<p>$2,500. Orders are frequently in the $3,000 - $5,000 range but often run higher. <\/p>"
+              "subtitle": "<p>Our custom orders start at $2,500-$3,500.  To inquire about a certain design or stone, please contact us. <\/p>"
             }
           },
           "675cf9ee-fa0a-46a1-acfa-65c9dd906f37": {
             "type": "Content",
             "settings": {
               "title": "WHAT'S THE TURNAROUND TIME FOR CUSTOM ORDERS?",
-              "subtitle": "<p>Currently, about 6-8 weeks. It depends on a few factors including how complex of a gem search we have to do and intricacy of the design. <\/p>"
+              "subtitle": "<p>We require 6-8 weeks in production once your stone is sourced. Depending on how complex of a gem search your project requires, custom orders are best to start at least 3 months in advance. <\/p>"
             }
           },
           "b9451238-6c8e-4e59-9dee-d02fd3e39ad4": {
             "type": "Content",
             "settings": {
               "title": "CAN YOU CREATE SOMETHING WITH MY GOLD AND GEMSTONES OR DIAMONDS?",
-              "subtitle": "<p>We offer limited reworks with client provided diamonds which you can <a href=\"https:\/\/www.valeriemadison.com\/pages\/heirloom-diamond-reworks\" title=\"Heirloom Diamond Reworks\">read about here<\/a>. We are unable to use client provided metals at this time. <\/p>"
+              "subtitle": "<p>We offer <a href=\"https:\/\/www.valeriemadison.com\/pages\/heirloom-reworks\" target=\"_blank\" title=\"https:\/\/www.valeriemadison.com\/pages\/heirloom-reworks\">limited heirloom reworks<\/a> with client provided diamonds.  We are unable to use client provided metals or stones outside of diamonds at this time. <\/p>"
             }
           },
           "3cb395ea-0110-4753-a4a4-e5617ed3f417": {
             "type": "Content",
             "settings": {
               "title": "CAN YOU MAKE ME SOMETHING IN PLATINUM?",
-              "subtitle": "<p>Absolutely! Let us know which style in particular you're interested in and we'll get back to you with pricing. It's generally $300-$500 additional for platinum.<\/p>"
+              "subtitle": "<p>Absolutely! Please find all of our platinum offerings <a href=\"https:\/\/www.valeriemadison.com\/search?q=platinum%20band*\" target=\"_blank\" title=\"https:\/\/www.valeriemadison.com\/search?q=platinum%20band*\">here<\/a>. If you have a specific request, please contact us. <\/p>"
             }
           },
           "0f51ab15-e4c4-4772-a4ac-bd1b7950b7d2": {
             "type": "Content",
             "settings": {
               "title": "CAN YOU MAKE ENGAGEMENT RINGS OUT OF MOONSTONE, OPAL, ETC?",
-              "subtitle": "<p>We only work with diamonds, sapphires, spinels, emeralds, and rubies owing to their durability. You can read more about our stone choices <a href=\"https:\/\/www.valeriemadison.com\/blogs\/the-studio-blog\/7-stones-to-avoid-in-an-engagement-ring-what-to-buy-instead\" title=\"7 Stones to Avoid in an Engagement Ring (And What to Buy Instead!)\">here<\/a>. <\/p>"
+              "subtitle": "<p>We only work with diamonds and sapphires based on their durability. You can read more about our stone choices <a href=\"https:\/\/www.valeriemadison.com\/blogs\/the-studio-blog\/7-stones-to-avoid-in-an-engagement-ring-what-to-buy-instead\" title=\"7 Stones to Avoid in an Engagement Ring (And What to Buy Instead!)\">here<\/a>. <\/p>"
             }
           }
         },
@@ -3639,19 +3719,19 @@
           "b7975580-c6f0-4101-aaea-432a3c56f6e6": {
             "type": "how_it_works_item",
             "settings": {
-              "text": "Review our available chain styles and pricing. (Please pre-order luxe chain styles.)"
+              "text": "Review our available chain styles and pricing and select a date."
             }
           },
           "2f24f9a7-c329-4ffa-8a9e-da8ecebd3e15": {
             "type": "how_it_works_item",
             "settings": {
-              "text": "Schedule an appointment and pay a $25 deposit to confirm your booking. One appointment per person, contact us for groups of 4 or more."
+              "text": "Appointment are per person and close two weeks before the scheduled date, contact us for groups of 4 or more."
             }
           },
           "a76a74cf-6042-4f4c-9924-644f19ad7150": {
             "type": "how_it_works_item",
             "settings": {
-              "text": "Select your chain(s) and get the exact length measured and cut for your wrist."
+              "text": "When you arrive, we will measure your wrist and cut the chain for a perfect fit."
             }
           },
           "537b4667-28d3-4b27-9e52-06d851219776": {
@@ -3663,7 +3743,7 @@
           "5a2b1cca-409f-4e92-9769-049d948a4724": {
             "type": "how_it_works_item",
             "settings": {
-              "text": "Pay the remaining balance for your bracelet(s) and enjoy!"
+              "text": "Enjoy!"
             }
           }
         },
@@ -3676,7 +3756,7 @@
         ],
         "settings": {
           "title": "How does it work?",
-          "image": "shopify:\/\/shop_images\/IMG_4297_crop.jpg"
+          "image": "shopify:\/\/shop_images\/Eternity-Bracelet-Event-Charlotte-1.jpg"
         }
       },
       "eternity-bracelets-chain-styles": {
@@ -3694,7 +3774,7 @@
             "type": "chain_style",
             "settings": {
               "title": "Baby Flat Chain",
-              "price": "145",
+              "price": "155",
               "has_asterisk": true
             }
           },
@@ -3702,7 +3782,7 @@
             "type": "chain_style",
             "settings": {
               "title": "Flat Chain",
-              "price": "205",
+              "price": "215",
               "has_asterisk": true
             }
           },
@@ -3710,7 +3790,15 @@
             "type": "chain_style",
             "settings": {
               "title": "Rolo Chain",
-              "price": "375",
+              "price": "425",
+              "has_asterisk": true
+            }
+          },
+          "a1c00d91-55f9-4e80-92d4-fef2b22aa62e": {
+            "type": "chain_style",
+            "settings": {
+              "title": "Curb Chain",
+              "price": "425",
               "has_asterisk": true
             }
           }
@@ -3719,12 +3807,13 @@
           "c8a9841e-6e45-4a5e-8a5e-308a38ddcefe",
           "4bd03a84-d9c1-4e98-a939-443f8a52c4e4",
           "08338bc0-8637-41fa-b7a2-88cb5e3650ea",
-          "d1a26eab-2a0f-4107-9657-405fc1b62646"
+          "d1a26eab-2a0f-4107-9657-405fc1b62646",
+          "a1c00d91-55f9-4e80-92d4-fef2b22aa62e"
         ],
         "settings": {
           "title": "Available Chain Styles",
-          "content": "Cable Chain is available in all metal colors. Luxe styles (indicated with a *) must be pre-ordered, contact us!\nImage shows chains from left to right (Baby Flat, Rolo, Cable, Flat Chain).",
-          "image": "shopify:\/\/shop_images\/Eternity_Bracelets_1.jpg"
+          "content": "Cable Chain is available in all metal colors. Luxe chains (*) are only available in 14k yellow gold.\nImage shows chains from left to right (Cable, Baby Flat, Flat, Rolo, Curb).",
+          "image": "shopify:\/\/shop_images\/Chains_2000x_0c56f92c-48e6-425c-90c1-7aabd1a96c84.jpg"
         }
       },
       "eternity-bracelets-faq": {
@@ -3734,7 +3823,7 @@
             "type": "faq_item",
             "settings": {
               "title": "DOES IT HURT?",
-              "answer": "You may feel a bit of warmth for a moment. This process involves a laser welder being in close proximity with your hand. Your skin will be shielded with a section of leather as a precaution against the unlikely possibility of machine malfunction or human error. Our technician has over 120 hours of training and experience on this machine, and we take pride in our commitment to the health and safety of both our clients and staff!"
+              "answer": "No. You may feel a bit of warmth for a moment. This process involves a laser welder being in close proximity with your hand. Your skin will be shielded with a section of leather as a precaution against the unlikely possibility of machine malfunction or human error. Our technician has over 120 hours of training and experience on this machine, and we take pride in our commitment to the comfort and safety of our clients."
             }
           },
           "aef2af61-bda0-4ab4-a6e2-1c1cebff3641": {
@@ -3796,44 +3885,60 @@
       "eternity-bracelets-upcoming-dates": {
         "type": "eternity-bracelets-upcoming-dates",
         "blocks": {
-          "d09a56a0-771b-4fb8-9c28-5ac1a5aa872c": {
-            "type": "upcoming-date",
-            "settings": {
-              "date": "Friday, October 15th",
-              "time": "SOLD OUT for luxe chain styles. Walk-ins are welcome for cable chain only."
-            }
-          },
-          "e9a0b393-5714-4253-bde7-503a0110c85f": {
-            "type": "upcoming-date",
-            "settings": {
-              "date": "Friday, November 5th",
-              "time": "3-5:30pm"
-            }
-          },
           "6b9bb5f1-1501-4ac6-844b-ad89f683138e": {
             "type": "upcoming-date",
             "settings": {
-              "date": "Friday, December 3rd",
-              "time": "3-5:30pm"
+              "date": "Thursday, January 27th",
+              "time": "4:00-5:30pm"
             }
           },
-          "e93b78c8-dd13-4603-9e6e-777c703f9bbc": {
+          "9484b5cd-9b18-4d8d-9d09-726ca4bae89d": {
             "type": "upcoming-date",
             "settings": {
-              "date": "Wednesday, December 22nd",
-              "time": "3-5:30pm"
+              "date": "Friday, February 11th",
+              "time": "4:00-5:30pm"
+            }
+          },
+          "4b8ee067-7a68-4ccb-8c3e-3b6d6ce0fe94": {
+            "type": "upcoming-date",
+            "settings": {
+              "date": "Friday, March 4th",
+              "time": "4:00-5:30pm"
+            }
+          },
+          "d36b3ef1-6903-4309-b66a-ca3c178dbf39": {
+            "type": "upcoming-date",
+            "settings": {
+              "date": "Thursday, March 24th",
+              "time": "4:00-5:30pm"
+            }
+          },
+          "19a3b110-92bc-45ae-8013-b67373c7179b": {
+            "type": "upcoming-date",
+            "settings": {
+              "date": "Friday, April 8th",
+              "time": "4:00-5:30pm"
+            }
+          },
+          "0010c5f7-a4de-4b72-9ab0-c94c0ad2f9fc": {
+            "type": "upcoming-date",
+            "settings": {
+              "date": "Thursday, April 21st",
+              "time": "4:00-5:30pm"
             }
           }
         },
         "block_order": [
-          "d09a56a0-771b-4fb8-9c28-5ac1a5aa872c",
-          "e9a0b393-5714-4253-bde7-503a0110c85f",
           "6b9bb5f1-1501-4ac6-844b-ad89f683138e",
-          "e93b78c8-dd13-4603-9e6e-777c703f9bbc"
+          "9484b5cd-9b18-4d8d-9d09-726ca4bae89d",
+          "4b8ee067-7a68-4ccb-8c3e-3b6d6ce0fe94",
+          "d36b3ef1-6903-4309-b66a-ca3c178dbf39",
+          "19a3b110-92bc-45ae-8013-b67373c7179b",
+          "0010c5f7-a4de-4b72-9ab0-c94c0ad2f9fc"
         ],
         "settings": {
           "title": "Upcoming dates",
-          "description": "<a href=\"https:\/\/calendly.com\/valeriemadison\/eternitybracelet?month=2021-10\">Appointments are encouraged<\/a>. Walk-ins will be accommodated to the best of our ability."
+          "description": ""
         }
       },
       "heirloom-reworks-requirements": {
@@ -3882,10 +3987,34 @@
           "description": "The criteria required for VM to consider using an heirloom stone are as follows:",
           "image": "shopify:\/\/shop_images\/Philip-Berry-Custom-Vera-Engagement-Ring-Heirloom-Rework.jpg"
         }
+      },
+      "163546741951c79e41": {
+        "type": "image-with-text",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/Square-Eternity-Bracelets.jpg",
+          "title": "NEW Eternity Bracelets dates announced!",
+          "text": "<p>Get a solid 14K gold chain permanently welded onto your wrist. These claspless bracelets are so chic and minimalist. Treat yourself or bring someone special to enjoy this experience together in our Seattle store. Prices start at $95.<\/p>",
+          "cta_text": "See the upcoming dates",
+          "cta_link": "https:\/\/www.valeriemadison.com\/pages\/eternity-bracelets",
+          "color_region": "light"
+        }
+      },
+      "1638989716bc82a38f": {
+        "type": "featured-collection",
+        "settings": {
+          "title": "Val's Favorites",
+          "collection_description": true,
+          "collection": "vals-favorites",
+          "collection_style": "grid",
+          "products_per": 3,
+          "products_limit": 9
+        }
       }
     },
     "content_for_index": [
       "1629483439e1253581",
+      "163546741951c79e41",
+      "1638989716bc82a38f",
       "1619300542332dabf8",
       "1578277933549",
       "1553110251439",
