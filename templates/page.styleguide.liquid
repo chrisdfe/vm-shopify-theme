@@ -1,13 +1,15 @@
 <div class="page page--block-text">
   {{ 'pages_styleguide.css' | asset_url | stylesheet_tag }}
-
-  {% render 'styleguide.banner' %}
-
+  
+  <div id="styleguide-app"></div>
+  
   <div>
     {% render 'styleguide.typography-section' %}
     {% render 'styleguide.colors-section' %}
     {% render 'styleguide.components-section' %}
   </div>
+
+  {{ 'styleguide.js' | asset_url | script_tag }}
 </div>
 
 <script>
