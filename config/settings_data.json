@@ -2560,6 +2560,16 @@
               "link_url": "mailto:custom@valeriemadison.com?subject=0.63ct Bella Rose White Diamond Cluster Engagement Ring&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
               "link_title": "Click here to send this as inspiration for your custom order"
             }
+          },
+          "a05be93b-bef1-4fb9-8b5c-f33d557c5d76": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/6458_Fenley.jpg",
+              "job_title": "1.50CT PEAR CUT NEAR COLORLESS DIAMOND VERA WITH PAVÉ",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com",
+              "link_title": "Click here to send this as inspiration for your custom order."
+            }
           }
         },
         "block_order": [
@@ -2616,7 +2626,8 @@
           "1602216749512",
           "46943720-18f2-4be1-8cfb-c95f390e1c99",
           "1600972038157",
-          "page-grid-template-2"
+          "page-grid-template-2",
+          "a05be93b-bef1-4fb9-8b5c-f33d557c5d76"
         ],
         "settings": {
           "image_position": "left",
@@ -2890,9 +2901,8 @@
         "type": "featured-collection",
         "settings": {
           "title": "What's New",
-          "collection_description": true,
+          "title_cta_text": "Shop Now",
           "collection": "new-arrivals",
-          "collection_style": "grid",
           "products_per": 3,
           "products_limit": 9
         }
@@ -3959,9 +3969,8 @@
         "type": "featured-collection",
         "settings": {
           "title": "Recently Engaged?",
-          "collection_description": false,
+          "title_cta_text": "shop wedding bands",
           "collection": "womens-wedding-bands",
-          "collection_style": "grid",
           "products_per": 3,
           "products_limit": 9
         }
@@ -3969,7 +3978,7 @@
       "164274212639d1a2f5": {
         "type": "image-with-text",
         "settings": {
-          "image": "shopify:\/\/shop_images\/Meet-the-VM-team.jpg",
+          "image": "shopify:\/\/shop_images\/VMFJ.jpg",
           "title": "Don't be shy, come say Hi!",
           "text": "<p>Meet the kind hearts behind every piece of jewelry and come visit the showroom to see where our pieces are made. <\/p>",
           "cta_text": "Meet Us",
