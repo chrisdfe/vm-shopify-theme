@@ -1,8 +1,8 @@
 /* Styleguide
   ==============================================================================*/
 
-@import '../_variables.scss';
-@import '../_mixins.scss';
+@import "../../../styles/_variables.scss";
+@import "../../../styles/_mixins.scss";
 
 .vm-styleguide {
   max-width: 700px;
@@ -72,10 +72,8 @@
   position: relative;
 
   sup {
-    position: absolute;
     top: 50%;
     transform: translateY(-1rem);
-    left: -4rem;
     color: $vm-color-sand;
   }
 

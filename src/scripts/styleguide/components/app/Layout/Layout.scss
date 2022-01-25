@@ -1,0 +1,29 @@
+@import "../../../../../styles/_variables";
+@import "../../../../../styles/_mixins";
+
+.vm-styleguide-layout {
+  display: flex;
+  flex-direction: row;
+}
+
+.vm-styleguide-sidebar {
+  background-color: $vm-color-cream;
+  flex-basis: 200px;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.vm-styleguide-sidebar__nav {
+  position: sticky;
+  top: 0;
+  padding: get-vm-spacer(2);
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+}
+
+.vm-styleguide-content {
+  padding: get-vm-spacer(2);
+}

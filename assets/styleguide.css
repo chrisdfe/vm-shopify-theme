@@ -125,11 +125,8 @@
 }
 .vm-styleguide__section-title sup,
 .vm-styleguide__subsection-title sup {
-  position: absolute;
   top: 50%;
-  -webkit-transform: translateY(-1rem);
-          transform: translateY(-1rem);
-  left: -4rem;
+  transform: translateY(-1rem);
   color: #dec1a8;
 }
 .vm-styleguide__section-title .anchor,
@@ -223,4 +220,83 @@
 }
 .vm-styleguide__swatch-color.vm-styleguide__swatch-color--cream .vm-styleguide__swatch-color__color-square {
   background-color: #f8f4f4;
+}
+
+/* #Variables
+================================================== */
+/* variables/general
+================================================== */
+/* Variables - Colors
+================================================== */
+:root {
+  --vm-color-sea-green: #1c4047;
+  --vm-color-plum: #714457;
+  --vm-color-sand: #dec1a8;
+  --vm-color-cream: #f8f4f4;
+  --vm-color-white: #ffffff;
+}
+
+/* Variables - Typography
+================================================== */
+/* Variables - Components
+================================================== */
+/* Variables - Misc
+================================================== */
+/* Variables - Misc
+================================================== */
+/* Mixins
+================================================== */
+/* Mixins - general
+================================================== */
+/*
+  This mixin can be used to set the object-fit:
+  @include object-fit(contain);
+   or object-fit and object-position:
+  @include object-fit(cover, top);
+*/
+/*
+  Prefix mixin for generating vendor prefixes.
+  Based on https://github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/addons/_prefixer.scss
+
+  Usage:
+    // Input:
+    .element {
+      @include prefix(transform, scale(1), ms webkit spec);
+    }
+
+    // Output:
+    .element {
+      -ms-transform: scale(1);
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+*/
+/* Mixins - typography
+================================================== */
+/* Mixins - typography
+================================================== */
+.vm-styleguide-layout {
+  display: flex;
+  flex-direction: row;
+}
+
+.vm-styleguide-sidebar {
+  background-color: #f8f4f4;
+  flex-basis: 200px;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.vm-styleguide-sidebar__nav {
+  position: sticky;
+  top: 0;
+  padding: 2rem;
+}
+.vm-styleguide-sidebar__nav ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.vm-styleguide-content {
+  padding: 2rem;
 }
