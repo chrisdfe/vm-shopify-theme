@@ -1,0 +1,27 @@
+@import "../../../../../../styles/_variables.scss";
+@import "../../../../../../styles/_mixins.scss";
+
+.vm-styleguide__font-example {
+  font-size: $vm-heading-2-font-size;
+  line-height: $vm-heading-2-line-height;
+
+  &.vm-styleguide__font-example--font-poppins {
+    font-family: $vm-font-poppins;
+  }
+
+  &.vm-styleguide__font-example--font-orpheus-pro {
+    font-family: $vm-font-orpheus;
+  }
+
+  &.vm-styleguide__font-example--weight-normal {
+    font-weight: 400;
+  }
+
+  &.vm-styleguide__font-example--weight-semibold {
+    font-weight: 600;
+  }
+
+  &.vm-styleguide__font-example--weight-bold {
+    font-weight: 700;
+  }
+}

@@ -17,7 +17,13 @@
   padding: 0;
   text-transform: none;
 
-  @include respond-to('medium-down') {
+  sup {
+    font-size: 0.5em;
+    top: -1em;
+    right: 0.2em;
+  }
+
+  @include respond-to("medium-down") {
     font-size: $mobile-font-size;
   }
 }
@@ -64,7 +70,7 @@
   font-weight: 600;
   font-style: normal;
 
-  @include respond-to('medium-down') {
+  @include respond-to("medium-down") {
     font-size: $mobile-font-size;
   }
 }
@@ -110,7 +116,7 @@
   line-height: $line-height;
   text-transform: none;
 
-  @include respond-to('medium-down') {
+  @include respond-to("medium-down") {
     font-size: $mobile-font-size;
   }
 }

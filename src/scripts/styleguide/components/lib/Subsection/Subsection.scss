@@ -1,0 +1,15 @@
+.vm-styleguide__subsection {
+  margin: get-vm-spacer(2) 0;
+}
+
+.vm-styleguide__subsection-title {
+  margin-bottom: get-vm-spacer(5);
+
+  sup {
+    color: $vm-color-sand;
+  }
+}
+
+.vm-styleguide__content-section-description {
+  margin: get-vm-spacer(5) 0;
+}

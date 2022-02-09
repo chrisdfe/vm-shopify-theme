@@ -30834,36 +30834,165 @@ function useLinkClickHandler(to, _temp) {
   }, [location, navigate, path, replaceProp, state, target, to]);
 }
 
+function ScrollToTop() {
+  var _useLocation = useLocation(),
+      pathname = _useLocation.pathname;
+
+  react.exports.useEffect(function () {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+}
+
+var classnames = {exports: {}};
+
+/*!
+  Copyright (c) 2018 Jed Watson.
+  Licensed under the MIT License (MIT), see
+  http://jedwatson.github.io/classnames
+*/
+
+(function (module) {
+/* global define */
+
+(function () {
+
+	var hasOwn = {}.hasOwnProperty;
+
+	function classNames() {
+		var classes = [];
+
+		for (var i = 0; i < arguments.length; i++) {
+			var arg = arguments[i];
+			if (!arg) continue;
+
+			var argType = typeof arg;
+
+			if (argType === 'string' || argType === 'number') {
+				classes.push(arg);
+			} else if (Array.isArray(arg)) {
+				if (arg.length) {
+					var inner = classNames.apply(null, arg);
+					if (inner) {
+						classes.push(inner);
+					}
+				}
+			} else if (argType === 'object') {
+				if (arg.toString === Object.prototype.toString) {
+					for (var key in arg) {
+						if (hasOwn.call(arg, key) && arg[key]) {
+							classes.push(key);
+						}
+					}
+				} else {
+					classes.push(arg.toString());
+				}
+			}
+		}
+
+		return classes.join(' ');
+	}
+
+	if (module.exports) {
+		classNames.default = classNames;
+		module.exports = classNames;
+	} else {
+		window.classNames = classNames;
+	}
+}());
+}(classnames));
+
+var classNames = classnames.exports;
+
 var sidebarLinks = [{
   title: "Overview",
+  id: "overview",
   href: "/"
 }, {
   title: "Typography",
-  href: "/typography"
+  id: "typography",
+  href: "/typography" // subsections: [
+  //   {
+  //     number: "a",
+  //     title: "Fonts",
+  //     url: "fonts",
+  //   },
+  //   {
+  //     number: "b",
+  //     title: "Headings",
+  //     url: "headings",
+  //   },
+  //   {
+  //     number: "c",
+  //     title: "Subheadings",
+  //     url: "subheadings",
+  //   },
+  //   {
+  //     number: "d",
+  //     title: "Paragraph Text",
+  //     url: "paragraphs",
+  //   },
+  // ],
+
 }, {
   title: "Colors",
+  id: "colors",
   href: "/colors"
+}, {
+  title: "Components",
+  id: "components",
+  href: "/components"
 }];
 
-function Layout(_ref) {
-  var children = _ref.children;
+function Sidebar(_ref) {
+  var page = _ref.page;
   return /*#__PURE__*/React.createElement("div", {
-    className: "vm-styleguide-layout"
-  }, /*#__PURE__*/React.createElement("div", {
     className: "vm-styleguide-sidebar"
   }, /*#__PURE__*/React.createElement("div", {
     className: "vm-styleguide-sidebar__nav"
-  }, /*#__PURE__*/React.createElement("ul", null, sidebarLinks.map(function (_ref2) {
+  }, /*#__PURE__*/React.createElement("ul", null, sidebarLinks.map(function (_ref2, index) {
     var title = _ref2.title,
-        href = _ref2.href;
+        id = _ref2.id,
+        href = _ref2.href,
+        subsections = _ref2.subsections;
+    var isActive = id === page;
+    var sectionNumber = "0".concat(index, ".");
     return /*#__PURE__*/React.createElement("li", {
-      key: title
-    }, /*#__PURE__*/React.createElement("h6", null, /*#__PURE__*/React.createElement(Link, {
-      to: href
-    }, title)));
-  })))), /*#__PURE__*/React.createElement("div", {
+      key: title,
+      className: "vm-styleguide-sidebar__nav-item"
+    }, /*#__PURE__*/React.createElement("h4", null, /*#__PURE__*/React.createElement(Link, {
+      to: href,
+      className: classNames("vm-styleguide-sidebar__nav-link", {
+        "vm-styleguide-sidebar__nav-link--active": isActive
+      })
+    }, /*#__PURE__*/React.createElement("sup", null, sectionNumber), title)), isActive && !!subsections && /*#__PURE__*/React.createElement("ul", null, subsections.map(function (subsectionLink) {
+      return /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement(Link, {
+        to: "".concat(href, "?section=").concat(subsectionLink.url)
+      }, sectionNumber, subsectionLink.number, " ", subsectionLink.title));
+    })));
+  }))));
+}
+
+function Layout(_ref) {
+  var page = _ref.page,
+      pageNumber = _ref.pageNumber,
+      title = _ref.title,
+      children = _ref.children;
+  return /*#__PURE__*/React.createElement("div", {
+    className: "vm-styleguide-layout"
+  }, /*#__PURE__*/React.createElement(Sidebar, {
+    page: page
+  }), /*#__PURE__*/React.createElement("div", {
     className: "vm-styleguide-content"
-  }, children));
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "container"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "row"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "one-whole columns"
+  }, /*#__PURE__*/React.createElement("h1", {
+    className: "vm-styleguide__page-title"
+  }, /*#__PURE__*/React.createElement("sup", null, pageNumber, "."), title)))), children));
 }
 
 function StyleguideSubsection(_ref) {
@@ -30873,100 +31002,460 @@ function StyleguideSubsection(_ref) {
       children = _ref.children;
   return /*#__PURE__*/React.createElement("div", {
     className: "vm-styleguide-subsection"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "container"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "row"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "twelve columns offset-by-four"
   }, /*#__PURE__*/React.createElement("h2", {
     className: "vm-styleguide__subsection-title"
-  }, /*#__PURE__*/React.createElement("sup", null, number), /*#__PURE__*/React.createElement("span", null, title)), description && /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("sup", null, number, "."), /*#__PURE__*/React.createElement("span", null, title)), description && /*#__PURE__*/React.createElement("div", {
     className: "vm-styleguide__content-section-description"
-  }, description), /*#__PURE__*/React.createElement("div", {
+  }, description)))), /*#__PURE__*/React.createElement("div", {
     className: "vm-styleguide-subsection__content"
   }, children));
 }
 
-function StyleguideSubsectionRow(_ref) {
-  var title = _ref.title,
-      children = _ref.children;
+function DataTable(_ref) {
+  var dataRows = _ref.dataRows;
+  return /*#__PURE__*/React.createElement("table", {
+    className: "vm-styleguide__subsection-row-data-table"
+  }, /*#__PURE__*/React.createElement("tbody", null, dataRows.map(function (_ref2) {
+    var title = _ref2.title,
+        value = _ref2.value;
+    return /*#__PURE__*/React.createElement("tr", {
+      key: title
+    }, /*#__PURE__*/React.createElement("td", null, /*#__PURE__*/React.createElement("h5", {
+      className: "vm-styleguide__subsection-row-data-table__title"
+    }, title)), /*#__PURE__*/React.createElement("td", null, /*#__PURE__*/React.createElement("h5", {
+      className: "vm-styleguide__subsection-row-data-table__value"
+    }, value)));
+  })));
+}
+
+function StyleguideSubsectionRow$1(_ref3) {
+  var title = _ref3.title,
+      children = _ref3.children,
+      dataRows = _ref3.dataRows;
   return /*#__PURE__*/React.createElement("div", {
     className: "vm-styleguide__subsection-row"
   }, /*#__PURE__*/React.createElement("div", {
+    className: "container"
+  }, /*#__PURE__*/React.createElement("div", {
     className: "row"
   }, /*#__PURE__*/React.createElement("div", {
-    className: "one-whole columns"
+    className: "four columns"
   }, /*#__PURE__*/React.createElement("h4", {
     className: "vm-styleguide-content__subsection-row-subheading"
-  }, title), children)));
+  }, title), dataRows && /*#__PURE__*/React.createElement(DataTable, {
+    dataRows: dataRows
+  })), /*#__PURE__*/React.createElement("div", {
+    className: "twelve columns"
+  }, children))));
+}
+
+function FontExample(_ref) {
+  var font = _ref.font,
+      weight = _ref.weight;
+  return /*#__PURE__*/React.createElement("div", {
+    className: classNames("vm-styleguide__font-example", "vm-styleguide__font-example--font-".concat(font), "vm-styleguide__font-example--weight-".concat(weight))
+  }, "ABCDEFGHIJKLMNOPQRSTUVWXYZ", /*#__PURE__*/React.createElement("br", null), "abcdefghijklmnopqrstuvwxyz", /*#__PURE__*/React.createElement("br", null), "01 02 03 04 05 06 07 08 09");
 }
 
 var LOREM = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
 var QUICK_BROWN_FOX = "The quick brown fox jumps over the lazy dog";
-var FONT_EXAMPLE = /*#__PURE__*/React.createElement(React.Fragment, null, "ABCDEFGHIJKLMNOPQRSTUVWXYZ", /*#__PURE__*/React.createElement("br", null), "abcdefghijklmnopqrstuvwxyz", /*#__PURE__*/React.createElement("br", null), "01 02 03 04 05 06 07 08 09");
 
 function TypographyPage() {
-  return /*#__PURE__*/React.createElement(Layout, null, /*#__PURE__*/React.createElement("h1", null, "Typography"), /*#__PURE__*/React.createElement(StyleguideSubsection, {
-    number: "01a.",
+  return /*#__PURE__*/React.createElement(Layout, {
+    page: "typography",
+    pageNumber: "01",
+    title: "Typography"
+  }, /*#__PURE__*/React.createElement(StyleguideSubsection, {
+    number: "01a",
     title: "Fonts"
-  }, /*#__PURE__*/React.createElement(StyleguideSubsectionRow, {
+  }, /*#__PURE__*/React.createElement(StyleguideSubsectionRow$1, {
     title: "Orpheus Pro"
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "vm-styleguide__font-example vm-styleguide__font-example--orpheus"
-  }, FONT_EXAMPLE)), /*#__PURE__*/React.createElement(StyleguideSubsectionRow, {
+  }, /*#__PURE__*/React.createElement(FontExample, {
+    font: "orpheus-pro",
+    weight: "bold"
+  })), /*#__PURE__*/React.createElement(StyleguideSubsectionRow$1, {
     title: "Poppins"
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "vm-styleguide__font-example vm-styleguide__font-example--orpheus"
-  }, FONT_EXAMPLE))), /*#__PURE__*/React.createElement(StyleguideSubsection, {
-    number: "01b.",
+  }, /*#__PURE__*/React.createElement(FontExample, {
+    font: "poppins",
+    weight: "normal"
+  }))), /*#__PURE__*/React.createElement(StyleguideSubsection, {
+    number: "01b",
     title: "Headings",
     description: /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("p", null, "Headings are used for page and section titles."), /*#__PURE__*/React.createElement("p", null, "All Headings use ", /*#__PURE__*/React.createElement("b", null, "Orpheus Pro Bold.")))
-  }, /*#__PURE__*/React.createElement(StyleguideSubsectionRow, {
-    title: "Heading 1"
-  }, /*#__PURE__*/React.createElement("h1", null, QUICK_BROWN_FOX)), /*#__PURE__*/React.createElement(StyleguideSubsectionRow, {
-    title: "Heading 2"
-  }, /*#__PURE__*/React.createElement("h2", null, QUICK_BROWN_FOX)), /*#__PURE__*/React.createElement(StyleguideSubsectionRow, {
-    title: "Heading 3"
+  }, /*#__PURE__*/React.createElement(StyleguideSubsectionRow$1, {
+    title: "Heading 1",
+    dataRows: [{
+      title: "size",
+      value: "56px"
+    }, {
+      title: "line height",
+      value: "1.2 (67.2px)"
+    }, {
+      title: "spacing",
+      value: "20 (0.02em)"
+    }]
+  }, /*#__PURE__*/React.createElement("h1", null, QUICK_BROWN_FOX)), /*#__PURE__*/React.createElement(StyleguideSubsectionRow$1, {
+    title: "Heading 2",
+    dataRows: [{
+      title: "size",
+      value: "36px"
+    }, {
+      title: "line height",
+      value: "1.2 (67.2px)"
+    }, {
+      title: "spacing",
+      value: "20 (0.02em)"
+    }]
+  }, /*#__PURE__*/React.createElement("h2", null, QUICK_BROWN_FOX)), /*#__PURE__*/React.createElement(StyleguideSubsectionRow$1, {
+    title: "Heading 3",
+    dataRows: [{
+      title: "size",
+      value: "30px"
+    }, {
+      title: "line height",
+      value: "1.2 (48 px)"
+    }, {
+      title: "spacing",
+      value: "20 (0.02em)"
+    }]
   }, /*#__PURE__*/React.createElement("h3", null, QUICK_BROWN_FOX))), /*#__PURE__*/React.createElement(StyleguideSubsection, {
-    number: "01c.",
+    number: "01c",
     title: "Subheadings",
     description: /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("p", null, "Subheadings are the next tier down from headings. They are also used for button text and labels (see ", /*#__PURE__*/React.createElement("b", null, "03. Components"), " for more details"), " ", /*#__PURE__*/React.createElement("p", null, "All subheadings use ", /*#__PURE__*/React.createElement("b", null, "Poppins Semibold"), " and are in", " ", /*#__PURE__*/React.createElement("b", null, "all Caps"), "."))
-  }, /*#__PURE__*/React.createElement(StyleguideSubsectionRow, {
-    title: "Heading 4"
-  }, /*#__PURE__*/React.createElement("h4", null, QUICK_BROWN_FOX)), /*#__PURE__*/React.createElement(StyleguideSubsectionRow, {
-    title: "Heading 5"
-  }, /*#__PURE__*/React.createElement("h5", null, QUICK_BROWN_FOX)), /*#__PURE__*/React.createElement(StyleguideSubsectionRow, {
-    title: "Heading 6"
+  }, /*#__PURE__*/React.createElement(StyleguideSubsectionRow$1, {
+    title: "Subheading 1",
+    dataRows: [{
+      title: "size",
+      value: "16px"
+    }, {
+      title: "line height",
+      value: "1.4 (22.4px)"
+    }, {
+      title: "spacing",
+      value: "80 (0.08em)"
+    }]
+  }, /*#__PURE__*/React.createElement("h4", null, QUICK_BROWN_FOX)), /*#__PURE__*/React.createElement(StyleguideSubsectionRow$1, {
+    title: "Subheading 2",
+    dataRows: [{
+      title: "size",
+      value: "15px"
+    }, {
+      title: "line height",
+      value: "1.4 (21)"
+    }, {
+      title: "spacing",
+      value: "80 (0.08em)"
+    }]
+  }, /*#__PURE__*/React.createElement("h5", null, QUICK_BROWN_FOX)), /*#__PURE__*/React.createElement(StyleguideSubsectionRow$1, {
+    title: "Subheading 3",
+    dataRows: [{
+      title: "size",
+      value: "13px"
+    }, {
+      title: "line height",
+      value: "1.4 (18.2px)"
+    }, {
+      title: "spacing",
+      value: "80 (0.08em)"
+    }]
   }, /*#__PURE__*/React.createElement("h6", null, QUICK_BROWN_FOX))), /*#__PURE__*/React.createElement(StyleguideSubsection, {
-    number: "01d.",
+    number: "01d",
     title: "Paragraph Text",
     description: /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("p", null, "Anything that is not a ", /*#__PURE__*/React.createElement("b", null, "heading"), " or a ", /*#__PURE__*/React.createElement("b", null, "subheading"), " is a paragraph."), /*#__PURE__*/React.createElement("p", null, "All paragraph text uses ", /*#__PURE__*/React.createElement("b", null, "Poppins Regular"), " and ", /*#__PURE__*/React.createElement("b", null, "bold"), "."))
-  }, /*#__PURE__*/React.createElement(StyleguideSubsectionRow, {
-    title: "Paragraph 1"
+  }, /*#__PURE__*/React.createElement(StyleguideSubsectionRow$1, {
+    title: "Paragraph 1",
+    dataRows: [{
+      title: "size",
+      value: "17px"
+    }, {
+      title: "line height",
+      value: "1.6 (27.2px)"
+    }, {
+      title: "spacing",
+      value: "30 (0.03em)"
+    }]
   }, /*#__PURE__*/React.createElement("p", {
     className: "paragraph-1"
-  }, LOREM)), /*#__PURE__*/React.createElement(StyleguideSubsectionRow, {
-    title: "Paragraph 2"
+  }, LOREM)), /*#__PURE__*/React.createElement(StyleguideSubsectionRow$1, {
+    title: "Paragraph 2",
+    dataRows: [{
+      title: "size",
+      value: "16px"
+    }, {
+      title: "line height",
+      value: "1.6 (25.6px)"
+    }, {
+      title: "spacing",
+      value: "30 (0.03em)"
+    }]
   }, /*#__PURE__*/React.createElement("p", {
     className: "paragraph-2"
-  }, LOREM)), /*#__PURE__*/React.createElement(StyleguideSubsectionRow, {
-    title: "Paragraph 3"
+  }, LOREM)), /*#__PURE__*/React.createElement(StyleguideSubsectionRow$1, {
+    title: "Paragraph 3",
+    dataRows: [{
+      title: "size",
+      value: "14px"
+    }, {
+      title: "line height",
+      value: "1.6 (22.4px)"
+    }, {
+      title: "spacing",
+      value: "30 (0.03em)"
+    }]
   }, /*#__PURE__*/React.createElement("p", {
     className: "paragraph-3"
   }, LOREM))));
 }
 
 function OverviewPage() {
-  return /*#__PURE__*/React.createElement(Layout, null, /*#__PURE__*/React.createElement("div", {
-    className: "vm-styleguide__page vm-styleguide__page--OverviewPage"
-  }, /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("h1", null, "Overview"))));
+  return /*#__PURE__*/React.createElement(Layout, {
+    page: "overview",
+    pageNumber: "00",
+    title: "Overview"
+  });
 }
 
+function _slicedToArray(arr, i) {
+  return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest();
+}
+
+function _arrayWithHoles(arr) {
+  if (Array.isArray(arr)) return arr;
+}
+
+function _iterableToArrayLimit(arr, i) {
+  var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"];
+
+  if (_i == null) return;
+  var _arr = [];
+  var _n = true;
+  var _d = false;
+
+  var _s, _e;
+
+  try {
+    for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) {
+      _arr.push(_s.value);
+
+      if (i && _arr.length === i) break;
+    }
+  } catch (err) {
+    _d = true;
+    _e = err;
+  } finally {
+    try {
+      if (!_n && _i["return"] != null) _i["return"]();
+    } finally {
+      if (_d) throw _e;
+    }
+  }
+
+  return _arr;
+}
+
+function _unsupportedIterableToArray(o, minLen) {
+  if (!o) return;
+  if (typeof o === "string") return _arrayLikeToArray(o, minLen);
+  var n = Object.prototype.toString.call(o).slice(8, -1);
+  if (n === "Object" && o.constructor) n = o.constructor.name;
+  if (n === "Map" || n === "Set") return Array.from(o);
+  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
+}
+
+function _arrayLikeToArray(arr, len) {
+  if (len == null || len > arr.length) len = arr.length;
+
+  for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
+
+  return arr2;
+}
+
+function _nonIterableRest() {
+  throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
+
+function CopyButton(_ref) {
+  var text = _ref.text;
+      _ref.onClick;
+
+  var _useState = react.exports.useState("copy"),
+      _useState2 = _slicedToArray(_useState, 2),
+      label = _useState2[0],
+      setLabel = _useState2[1];
+
+  return /*#__PURE__*/React.createElement("button", {
+    onClick: function onClick() {
+      navigator.clipboard.writeText(text).then(function () {
+        setLabel("copied!");
+        setTimeout(function () {
+          setLabel("copy");
+        }, 3000);
+      });
+    }
+  }, label);
+}
+
+function StyleguideSubsectionRow(_ref2) {
+  var colors = _ref2.colors;
+  return /*#__PURE__*/React.createElement("div", {
+    className: "vm-styleguide__swatch"
+  }, colors.map(function (_ref3) {
+    var title = _ref3.title,
+        hex = _ref3.hex;
+    return /*#__PURE__*/React.createElement("div", {
+      className: "vm-styleguide__swatch-color",
+      key: title
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "vm-styleguide__swatch-color__color-square",
+      style: {
+        backgroundColor: hex
+      }
+    }), /*#__PURE__*/React.createElement("h4", {
+      className: "vm-styleguide__swatch-color__title"
+    }, title), /*#__PURE__*/React.createElement("div", {
+      className: "vm-styleguide__swatch-color__values"
+    }, /*#__PURE__*/React.createElement("h6", {
+      className: "vm-styleguide__swatch-color__value-label"
+    }, "hex"), /*#__PURE__*/React.createElement("h6", {
+      className: "vm-styleguide__swatch-color__value-value"
+    }, hex), /*#__PURE__*/React.createElement(CopyButton, {
+      text: hex
+    })));
+  }));
+}
+
+var CLASSNAME_BASE = "vm-styleguide__color-region-example";
+
+var DefaultContent = function DefaultContent() {
+  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h2", null, "Heading 2"), /*#__PURE__*/React.createElement("h4", null, "heading 4"), /*#__PURE__*/React.createElement("p", null, "Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum"), /*#__PURE__*/React.createElement("a", {
+    href: "#",
+    className: "cta-link",
+    onClick: function onClick(e) {
+      e.preventDefault();
+    }
+  }, "cta link"));
+};
+
+function ColorRegionExample(_ref) {
+  var region = _ref.region,
+      children = _ref.children;
+  var className = classNames("color-region--".concat(region), CLASSNAME_BASE, "".concat(CLASSNAME_BASE, "--region-").concat(region));
+  return /*#__PURE__*/React.createElement("div", {
+    className: className
+  }, children || /*#__PURE__*/React.createElement(DefaultContent, null));
+}
+
+var VM_SWATCH = [{
+  title: "Sea Green",
+  hex: "#1c4047"
+}, {
+  title: "Plum",
+  hex: "#714457"
+}, {
+  title: "Sand",
+  hex: "#DEC1A8"
+}, {
+  title: "Cream",
+  hex: "#F8F4F4"
+}];
+
 function ColorsPage() {
-  return /*#__PURE__*/React.createElement(Layout, null, /*#__PURE__*/React.createElement("div", {
+  return /*#__PURE__*/React.createElement(Layout, {
+    page: "colors",
+    pageNumber: "02",
+    title: "Colors"
+  }, /*#__PURE__*/React.createElement("div", {
     className: "vm-styleguide__page vm-styleguide__page--Colors"
-  }, /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("h1", null, "Colors"))));
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "content-section content-section--vm-styleguide js-styleguide-section",
+    "data-section-id": "#colors"
+  }, /*#__PURE__*/React.createElement(StyleguideSubsection, {
+    number: "02a",
+    title: "Swatch"
+  }, /*#__PURE__*/React.createElement(StyleguideSubsectionRow$1, {
+    title: "Primary Colors"
+  }, /*#__PURE__*/React.createElement(StyleguideSubsectionRow, {
+    colors: VM_SWATCH
+  }))), /*#__PURE__*/React.createElement(StyleguideSubsection, {
+    number: "02b",
+    title: "Color Shades"
+  }, /*#__PURE__*/React.createElement(StyleguideSubsectionRow$1, {
+    title: "Plum"
+  }, /*#__PURE__*/React.createElement("p", null, "TODO")), /*#__PURE__*/React.createElement(StyleguideSubsectionRow$1, {
+    title: "Sea green"
+  }, /*#__PURE__*/React.createElement("p", null, "TODO")), /*#__PURE__*/React.createElement(StyleguideSubsectionRow$1, {
+    title: "Sand"
+  }, /*#__PURE__*/React.createElement("p", null, "TODO"))), /*#__PURE__*/React.createElement(StyleguideSubsection, {
+    number: "02c",
+    title: "Regions"
+  }, /*#__PURE__*/React.createElement(StyleguideSubsectionRow$1, {
+    title: "Light"
+  }, /*#__PURE__*/React.createElement(ColorRegionExample, {
+    region: "light"
+  })), /*#__PURE__*/React.createElement(StyleguideSubsectionRow$1, {
+    title: "Light - alt"
+  }, /*#__PURE__*/React.createElement(ColorRegionExample, {
+    region: "light-alt"
+  })), /*#__PURE__*/React.createElement(StyleguideSubsectionRow$1, {
+    title: "Dark"
+  }, /*#__PURE__*/React.createElement(ColorRegionExample, {
+    region: "dark"
+  })), /*#__PURE__*/React.createElement(StyleguideSubsectionRow$1, {
+    title: "Dark - alt"
+  }, /*#__PURE__*/React.createElement(ColorRegionExample, {
+    region: "dark-alt"
+  }))), /*#__PURE__*/React.createElement(StyleguideSubsection, {
+    number: "02d",
+    title: "Color Ratios"
+  }, /*#__PURE__*/React.createElement(StyleguideSubsectionRow$1, {
+    title: "Key"
+  }, /*#__PURE__*/React.createElement("p", null, "TODO"))))));
+}
+
+function ComponentsPage() {
+  return /*#__PURE__*/React.createElement(Layout, {
+    page: "components",
+    pageNumber: "03",
+    title: "Components"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "vm-styleguide__page vm-styleguide__page--ComponentsPage"
+  }, /*#__PURE__*/React.createElement(StyleguideSubsection, {
+    number: "03a",
+    title: "Button"
+  }, /*#__PURE__*/React.createElement(StyleguideSubsectionRow$1, {
+    title: "Primary"
+  }, /*#__PURE__*/React.createElement("button", {
+    className: "button button--primary"
+  }, "Secondary")), /*#__PURE__*/React.createElement(StyleguideSubsectionRow$1, {
+    title: "Secondary"
+  }, /*#__PURE__*/React.createElement("button", {
+    className: "button button--primary"
+  }, "Secondary"))), /*#__PURE__*/React.createElement(StyleguideSubsection, {
+    number: "03b",
+    title: "CTA Link"
+  }, /*#__PURE__*/React.createElement(StyleguideSubsectionRow$1, {
+    title: "Primary"
+  }, /*#__PURE__*/React.createElement("a", {
+    className: "cta-link",
+    href: "#"
+  }, "CTA Link"))), /*#__PURE__*/React.createElement(StyleguideSubsection, {
+    number: "03c",
+    title: "Table"
+  }, /*#__PURE__*/React.createElement(StyleguideSubsectionRow$1, {
+    title: "default"
+  }, /*#__PURE__*/React.createElement("table", null, /*#__PURE__*/React.createElement("thead", null, /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("td", null, "column 1"), /*#__PURE__*/React.createElement("td", null, "column 2"), /*#__PURE__*/React.createElement("td", null, "column 3"))), /*#__PURE__*/React.createElement("tbody", null, /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("td", null, "column 1"), /*#__PURE__*/React.createElement("td", null, "column 2"), /*#__PURE__*/React.createElement("td", null, "column 3")), /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("td", null, "column 1"), /*#__PURE__*/React.createElement("td", null, "column 2"), /*#__PURE__*/React.createElement("td", null, "column 3")), /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("td", null, "column 1"), /*#__PURE__*/React.createElement("td", null, "column 2"), /*#__PURE__*/React.createElement("td", null, "column 3"))))))));
 }
 
 function StyleguideApp() {
   return /*#__PURE__*/React.createElement(HashRouter, {
     hashType: "slash"
-  }, /*#__PURE__*/React.createElement(Routes, null, /*#__PURE__*/React.createElement(Route, {
+  }, /*#__PURE__*/React.createElement(ScrollToTop, null), /*#__PURE__*/React.createElement(Routes, null, /*#__PURE__*/React.createElement(Route, {
     path: "/",
     element: /*#__PURE__*/React.createElement(OverviewPage, null)
   }), /*#__PURE__*/React.createElement(Route, {
@@ -30975,6 +31464,9 @@ function StyleguideApp() {
   }), /*#__PURE__*/React.createElement(Route, {
     path: "/colors",
     element: /*#__PURE__*/React.createElement(ColorsPage, null)
+  }), /*#__PURE__*/React.createElement(Route, {
+    path: "/components",
+    element: /*#__PURE__*/React.createElement(ComponentsPage, null)
   })));
 }
 

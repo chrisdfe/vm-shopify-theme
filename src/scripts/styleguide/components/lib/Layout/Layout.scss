@@ -1,0 +1,25 @@
+@import "../../../../../styles/_variables";
+@import "../../../../../styles/_mixins";
+
+.vm-styleguide-layout {
+  display: flex;
+  flex-direction: row;
+}
+
+.vm-styleguide-content {
+  width: calc(100% - 300px);
+  min-height: 80vh;
+  padding: get-vm-spacer(2);
+
+  .container {
+    margin-left: 0;
+  }
+}
+
+.vm-styleguide__page-title {
+  margin-bottom: get-vm-spacer(7);
+
+  sup {
+    color: $vm-color-sand;
+  }
+}

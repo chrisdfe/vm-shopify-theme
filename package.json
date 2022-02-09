@@ -24,6 +24,7 @@
     "@rollup/plugin-node-resolve": "^13.0.5",
     "@rollup/plugin-replace": "^3.0.1",
     "autoprefixer": "^10.3.6",
+    "classnames": "^2.3.1",
     "core-js": "3.3.5",
     "lodash-es": "^4.17.21",
     "node-watch": "^0.7.1",

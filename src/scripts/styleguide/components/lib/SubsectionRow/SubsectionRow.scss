@@ -1,0 +1,34 @@
+.vm-styleguide__subsection-row {
+  margin-bottom: get-vm-spacer(7);
+}
+
+.vm-styleguide-content__subsection-row-subheading {
+  color: $vm-color-sand;
+}
+
+.vm-styleguide__subsection-row-data-table {
+  tr {
+    background: transparent;
+
+    &:nth-child(odd) {
+      background: transparent;
+    }
+  }
+
+  td {
+    padding: 0;
+  }
+
+  .vm-styleguide__subsection-row-data-table__title,
+  .vm-styleguide__subsection-row-data-table__value {
+    margin: 0;
+  }
+
+  .vm-styleguide__subsection-row-data-table__title {
+    opacity: 0.6;
+  }
+
+  .vm-styleguide__subsection-row-data-table__value {
+    text-transform: lowercase;
+  }
+}

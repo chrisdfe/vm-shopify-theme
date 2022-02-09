@@ -1,0 +1,15 @@
+// These are styles I'm going to add to the core set of styles in styles.css
+// But because of the Navbar situation I can't yet
+
+@import "../../../styles/_variables.scss";
+@import "../../../styles/_mixins.scss";
+
+h1,
+h2,
+h3 {
+  sup {
+    font-size: 0.5em;
+    top: -1em;
+    right: 0.3em;
+  }
+}

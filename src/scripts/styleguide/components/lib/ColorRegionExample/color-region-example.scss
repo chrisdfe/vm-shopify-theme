@@ -1,0 +1,23 @@
+@import "../../../../../../styles/_variables.scss";
+@import "../../../../../../styles/_mixins.scss";
+
+.vm-styleguide__color-region-example {
+  border: 5px solid white;
+  padding: get-vm-spacer(3);
+
+  &.vm-styleguide__color-region-example--region-light {
+    border-color: $vm-color-cream;
+  }
+
+  &.vm-styleguide__color-region-example--region-light-alt {
+    border-color: $vm-color-cream;
+  }
+
+  &.vm-styleguide__color-region-example--region-dark {
+    border-color: $vm-color-plum;
+  }
+
+  &.vm-styleguide__color-region-example--region-dark-alt {
+    border-color: $vm-color-sea-green;
+  }
+}
