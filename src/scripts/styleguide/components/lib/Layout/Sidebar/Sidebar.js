@@ -1,12 +1,12 @@
 import React from "react";
 import classNames from "classnames";
-import { Link, useSearchParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import "./Sidebar.scss";
 
 const sidebarLinks = [
   {
-    title: "Overview",
+    title: "Title Card",
     id: "overview",
     href: "/",
   },
@@ -75,11 +75,16 @@ function Sidebar({ page }) {
                 {isActive && !!subsections && (
                   <ul>
                     {subsections.map((subsectionLink) => (
-                      <li>
-                        <Link to={`${href}?section=${subsectionLink.url}`}>
-                          {sectionNumber}
-                          {subsectionLink.number} {subsectionLink.title}
-                        </Link>
+                      <li key={subsectionLink.url}>
+                        <h6>
+                          <Link to={`${href}?section=${subsectionLink.url}`}>
+                            <sup>
+                              {sectionNumber}
+                              {subsectionLink.number}
+                            </sup>
+                            {subsectionLink.title}
+                          </Link>
+                        </h6>
                       </li>
                     ))}
                   </ul>

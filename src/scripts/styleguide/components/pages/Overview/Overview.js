@@ -6,8 +6,7 @@ function OverviewPage() {
   return (
     <StyleguideLayout
       page="overview"
-      pageNumber="00"
-      title="Overview"
+      title="Valerie Madison Fine Jewelry Styleguide"
     ></StyleguideLayout>
   );
 }

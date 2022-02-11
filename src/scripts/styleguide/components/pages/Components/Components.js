@@ -4,6 +4,7 @@ import StyleguideLayout from "../../lib/Layout";
 
 import StyleguideSubsection from "../../lib/Subsection";
 import StyleguideSubsectionRow from "../../lib/SubsectionRow";
+import ComponentExample from "./ComponentExample";
 
 function ComponentsPage() {
   return (
@@ -11,18 +12,41 @@ function ComponentsPage() {
       <div className="vm-styleguide__page vm-styleguide__page--ComponentsPage">
         <StyleguideSubsection number="03a" title="Button">
           <StyleguideSubsectionRow title="Primary">
-            <button className="button button--primary">Secondary</button>
+            <ComponentExample omitDarkRegions>
+              <button className="button button--primary">Primary</button>
+            </ComponentExample>
+          </StyleguideSubsectionRow>
+
+          <StyleguideSubsectionRow title="Primary - inverted">
+            <ComponentExample omitLightRegions>
+              <button className="button button--primary button--inverted">
+                Primary
+              </button>
+            </ComponentExample>
           </StyleguideSubsectionRow>
 
           <StyleguideSubsectionRow title="Secondary">
-            <button className="button button--primary">Secondary</button>
+            <ComponentExample omitDarkRegions>
+              <button className="button button--secondary">Secondary</button>
+            </ComponentExample>
+          </StyleguideSubsectionRow>
+
+          <StyleguideSubsectionRow title="Secondary - inverted">
+            <ComponentExample omitLightRegions>
+              <button className="button button--secondary button--inverted">
+                Secondary
+              </button>
+            </ComponentExample>
           </StyleguideSubsectionRow>
         </StyleguideSubsection>
+
         <StyleguideSubsection number="03b" title="CTA Link">
           <StyleguideSubsectionRow title="Primary">
-            <a className="cta-link" href="#">
-              CTA Link
-            </a>
+            <ComponentExample>
+              <a className="cta-link" href="#">
+                CTA Link
+              </a>
+            </ComponentExample>
           </StyleguideSubsectionRow>
         </StyleguideSubsection>
 

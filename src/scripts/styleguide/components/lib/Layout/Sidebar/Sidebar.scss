@@ -20,4 +20,10 @@
       color: $vm-color-sand;
     }
   }
+
+  .vm-styleguide-sidebar__nav-link {
+    &.vm-styleguide-sidebar__nav-link--active {
+      color: $vm-color-sand;
+    }
+  }
 }

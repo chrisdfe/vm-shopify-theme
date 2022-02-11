@@ -13,3 +13,63 @@ h3 {
     right: 0.3em;
   }
 }
+
+.button.button--link {
+  background: transparent;
+  border: 0 none;
+  padding: 0;
+  margin: 0;
+  height: auto;
+  min-height: auto;
+  color: $vm-link-color;
+  text-decoration: none;
+  position: relative;
+  transition: color $vm-link-transition-speed;
+
+  &:hover {
+    color: $vm-link-hover-color;
+    text-decoration: underline;
+  }
+}
+
+h4,
+h5,
+h6 {
+  sup {
+    font-size: 0.5em;
+  }
+}
+
+a.button,
+.button,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+.action_button {
+  &.button--inverted {
+    background: $vm-color-white;
+    color: $vm-color-sea-green;
+    border-color: $vm-color-white;
+  }
+
+  &:hover {
+    background-color: $vm-button-hover-background-color;
+    border: 1px solid $vm-button-hover-border-color;
+    color: $vm-button-hover-text-color;
+  }
+}
+
+.button.button--secondary.button--inverted,
+.action_button.action_button--secondary.button--inverted {
+  background-color: transparent;
+  border-color: $vm-color-white;
+  color: $vm-color-white;
+
+  &:hover,
+  &:focus {
+    background-color: $vm-button-secondary-hover-background-color;
+    border-color: $vm-button-secondary-hover-border-color;
+    color: $vm-button-secondary-hover-text-color;
+  }
+}

@@ -30639,7 +30639,7 @@ function _extends() {
   return _extends.apply(this, arguments);
 }
 
-function _objectWithoutPropertiesLoose(source, excluded) {
+function _objectWithoutPropertiesLoose$1(source, excluded) {
   if (source == null) return {};
   var target = {};
   var sourceKeys = Object.keys(source);
@@ -30706,7 +30706,7 @@ const Link = /*#__PURE__*/react.exports.forwardRef(function LinkWithRef(_ref4, r
     target,
     to
   } = _ref4,
-      rest = _objectWithoutPropertiesLoose(_ref4, _excluded);
+      rest = _objectWithoutPropertiesLoose$1(_ref4, _excluded);
 
   let href = useHref(to);
   let internalOnClick = useLinkClickHandler(to, {
@@ -30752,7 +30752,7 @@ const NavLink = /*#__PURE__*/react.exports.forwardRef(function NavLinkWithRef(_r
     to,
     children
   } = _ref5,
-      rest = _objectWithoutPropertiesLoose(_ref5, _excluded2);
+      rest = _objectWithoutPropertiesLoose$1(_ref5, _excluded2);
 
   let location = useLocation();
   let path = useResolvedPath(to);
@@ -30905,7 +30905,7 @@ var classnames = {exports: {}};
 var classNames = classnames.exports;
 
 var sidebarLinks = [{
-  title: "Overview",
+  title: "Title Card",
   id: "overview",
   href: "/"
 }, {
@@ -30966,9 +30966,11 @@ function Sidebar(_ref) {
         "vm-styleguide-sidebar__nav-link--active": isActive
       })
     }, /*#__PURE__*/React.createElement("sup", null, sectionNumber), title)), isActive && !!subsections && /*#__PURE__*/React.createElement("ul", null, subsections.map(function (subsectionLink) {
-      return /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement(Link, {
+      return /*#__PURE__*/React.createElement("li", {
+        key: subsectionLink.url
+      }, /*#__PURE__*/React.createElement("h6", null, /*#__PURE__*/React.createElement(Link, {
         to: "".concat(href, "?section=").concat(subsectionLink.url)
-      }, sectionNumber, subsectionLink.number, " ", subsectionLink.title));
+      }, /*#__PURE__*/React.createElement("sup", null, sectionNumber, subsectionLink.number), subsectionLink.title)));
     })));
   }))));
 }
@@ -30977,13 +30979,14 @@ function Layout(_ref) {
   var page = _ref.page,
       pageNumber = _ref.pageNumber,
       title = _ref.title,
+      contentRegion = _ref.contentRegion,
       children = _ref.children;
   return /*#__PURE__*/React.createElement("div", {
     className: "vm-styleguide-layout"
   }, /*#__PURE__*/React.createElement(Sidebar, {
     page: page
   }), /*#__PURE__*/React.createElement("div", {
-    className: "vm-styleguide-content"
+    className: classNames("vm-styleguide-content", "color-region--".concat(contentRegion))
   }, /*#__PURE__*/React.createElement("div", {
     className: "container"
   }, /*#__PURE__*/React.createElement("div", {
@@ -30992,13 +30995,14 @@ function Layout(_ref) {
     className: "one-whole columns"
   }, /*#__PURE__*/React.createElement("h1", {
     className: "vm-styleguide__page-title"
-  }, /*#__PURE__*/React.createElement("sup", null, pageNumber, "."), title)))), children));
+  }, pageNumber && /*#__PURE__*/React.createElement("sup", null, pageNumber, "."), title)))), children));
 }
 
 function StyleguideSubsection(_ref) {
   var number = _ref.number,
-      title = _ref.title,
-      description = _ref.description,
+      title = _ref.title;
+      _ref.sectionId;
+      var description = _ref.description,
       children = _ref.children;
   return /*#__PURE__*/React.createElement("div", {
     className: "vm-styleguide-subsection"
@@ -31034,7 +31038,7 @@ function DataTable(_ref) {
   })));
 }
 
-function StyleguideSubsectionRow$1(_ref3) {
+function StyleguideSubsectionRow(_ref3) {
   var title = _ref3.title,
       children = _ref3.children,
       dataRows = _ref3.dataRows;
@@ -31073,13 +31077,14 @@ function TypographyPage() {
     title: "Typography"
   }, /*#__PURE__*/React.createElement(StyleguideSubsection, {
     number: "01a",
-    title: "Fonts"
-  }, /*#__PURE__*/React.createElement(StyleguideSubsectionRow$1, {
+    title: "Fonts",
+    sectionId: "fonts"
+  }, /*#__PURE__*/React.createElement(StyleguideSubsectionRow, {
     title: "Orpheus Pro"
   }, /*#__PURE__*/React.createElement(FontExample, {
     font: "orpheus-pro",
     weight: "bold"
-  })), /*#__PURE__*/React.createElement(StyleguideSubsectionRow$1, {
+  })), /*#__PURE__*/React.createElement(StyleguideSubsectionRow, {
     title: "Poppins"
   }, /*#__PURE__*/React.createElement(FontExample, {
     font: "poppins",
@@ -31087,8 +31092,9 @@ function TypographyPage() {
   }))), /*#__PURE__*/React.createElement(StyleguideSubsection, {
     number: "01b",
     title: "Headings",
+    sectionId: "headings",
     description: /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("p", null, "Headings are used for page and section titles."), /*#__PURE__*/React.createElement("p", null, "All Headings use ", /*#__PURE__*/React.createElement("b", null, "Orpheus Pro Bold.")))
-  }, /*#__PURE__*/React.createElement(StyleguideSubsectionRow$1, {
+  }, /*#__PURE__*/React.createElement(StyleguideSubsectionRow, {
     title: "Heading 1",
     dataRows: [{
       title: "size",
@@ -31100,7 +31106,7 @@ function TypographyPage() {
       title: "spacing",
       value: "20 (0.02em)"
     }]
-  }, /*#__PURE__*/React.createElement("h1", null, QUICK_BROWN_FOX)), /*#__PURE__*/React.createElement(StyleguideSubsectionRow$1, {
+  }, /*#__PURE__*/React.createElement("h1", null, QUICK_BROWN_FOX)), /*#__PURE__*/React.createElement(StyleguideSubsectionRow, {
     title: "Heading 2",
     dataRows: [{
       title: "size",
@@ -31112,7 +31118,7 @@ function TypographyPage() {
       title: "spacing",
       value: "20 (0.02em)"
     }]
-  }, /*#__PURE__*/React.createElement("h2", null, QUICK_BROWN_FOX)), /*#__PURE__*/React.createElement(StyleguideSubsectionRow$1, {
+  }, /*#__PURE__*/React.createElement("h2", null, QUICK_BROWN_FOX)), /*#__PURE__*/React.createElement(StyleguideSubsectionRow, {
     title: "Heading 3",
     dataRows: [{
       title: "size",
@@ -31127,8 +31133,9 @@ function TypographyPage() {
   }, /*#__PURE__*/React.createElement("h3", null, QUICK_BROWN_FOX))), /*#__PURE__*/React.createElement(StyleguideSubsection, {
     number: "01c",
     title: "Subheadings",
+    sectionId: "subheadings",
     description: /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("p", null, "Subheadings are the next tier down from headings. They are also used for button text and labels (see ", /*#__PURE__*/React.createElement("b", null, "03. Components"), " for more details"), " ", /*#__PURE__*/React.createElement("p", null, "All subheadings use ", /*#__PURE__*/React.createElement("b", null, "Poppins Semibold"), " and are in", " ", /*#__PURE__*/React.createElement("b", null, "all Caps"), "."))
-  }, /*#__PURE__*/React.createElement(StyleguideSubsectionRow$1, {
+  }, /*#__PURE__*/React.createElement(StyleguideSubsectionRow, {
     title: "Subheading 1",
     dataRows: [{
       title: "size",
@@ -31140,7 +31147,7 @@ function TypographyPage() {
       title: "spacing",
       value: "80 (0.08em)"
     }]
-  }, /*#__PURE__*/React.createElement("h4", null, QUICK_BROWN_FOX)), /*#__PURE__*/React.createElement(StyleguideSubsectionRow$1, {
+  }, /*#__PURE__*/React.createElement("h4", null, QUICK_BROWN_FOX)), /*#__PURE__*/React.createElement(StyleguideSubsectionRow, {
     title: "Subheading 2",
     dataRows: [{
       title: "size",
@@ -31152,7 +31159,7 @@ function TypographyPage() {
       title: "spacing",
       value: "80 (0.08em)"
     }]
-  }, /*#__PURE__*/React.createElement("h5", null, QUICK_BROWN_FOX)), /*#__PURE__*/React.createElement(StyleguideSubsectionRow$1, {
+  }, /*#__PURE__*/React.createElement("h5", null, QUICK_BROWN_FOX)), /*#__PURE__*/React.createElement(StyleguideSubsectionRow, {
     title: "Subheading 3",
     dataRows: [{
       title: "size",
@@ -31167,8 +31174,9 @@ function TypographyPage() {
   }, /*#__PURE__*/React.createElement("h6", null, QUICK_BROWN_FOX))), /*#__PURE__*/React.createElement(StyleguideSubsection, {
     number: "01d",
     title: "Paragraph Text",
+    sectionId: "paragraphs",
     description: /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("p", null, "Anything that is not a ", /*#__PURE__*/React.createElement("b", null, "heading"), " or a ", /*#__PURE__*/React.createElement("b", null, "subheading"), " is a paragraph."), /*#__PURE__*/React.createElement("p", null, "All paragraph text uses ", /*#__PURE__*/React.createElement("b", null, "Poppins Regular"), " and ", /*#__PURE__*/React.createElement("b", null, "bold"), "."))
-  }, /*#__PURE__*/React.createElement(StyleguideSubsectionRow$1, {
+  }, /*#__PURE__*/React.createElement(StyleguideSubsectionRow, {
     title: "Paragraph 1",
     dataRows: [{
       title: "size",
@@ -31182,7 +31190,7 @@ function TypographyPage() {
     }]
   }, /*#__PURE__*/React.createElement("p", {
     className: "paragraph-1"
-  }, LOREM)), /*#__PURE__*/React.createElement(StyleguideSubsectionRow$1, {
+  }, LOREM)), /*#__PURE__*/React.createElement(StyleguideSubsectionRow, {
     title: "Paragraph 2",
     dataRows: [{
       title: "size",
@@ -31196,7 +31204,7 @@ function TypographyPage() {
     }]
   }, /*#__PURE__*/React.createElement("p", {
     className: "paragraph-2"
-  }, LOREM)), /*#__PURE__*/React.createElement(StyleguideSubsectionRow$1, {
+  }, LOREM)), /*#__PURE__*/React.createElement(StyleguideSubsectionRow, {
     title: "Paragraph 3",
     dataRows: [{
       title: "size",
@@ -31216,8 +31224,7 @@ function TypographyPage() {
 function OverviewPage() {
   return /*#__PURE__*/React.createElement(Layout, {
     page: "overview",
-    pageNumber: "00",
-    title: "Overview"
+    title: "Valerie Madison Fine Jewelry Styleguide"
   });
 }
 
@@ -31280,60 +31287,687 @@ function _nonIterableRest() {
   throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
 }
 
-function CopyButton(_ref) {
-  var text = _ref.text;
-      _ref.onClick;
-
-  var _useState = react.exports.useState("copy"),
-      _useState2 = _slicedToArray(_useState, 2),
-      label = _useState2[0],
-      setLabel = _useState2[1];
-
-  return /*#__PURE__*/React.createElement("button", {
-    onClick: function onClick() {
-      navigator.clipboard.writeText(text).then(function () {
-        setLabel("copied!");
-        setTimeout(function () {
-          setLabel("copy");
-        }, 3000);
-      });
-    }
-  }, label);
+function degreesToRadians(degrees) {
+  return degrees * Math.PI / 180;
+}
+function valueBetween(value, min, max) {
+  if (value > max) return max;
+  if (value < min) return min;
+  return value;
+}
+function extractPercentage(value, percentage) {
+  return percentage / 100 * value;
+}
+function bisectorAngle(startAngle, lengthAngle) {
+  return startAngle + lengthAngle / 2;
+}
+function shiftVectorAlongAngle(angle, distance) {
+  var angleRadians = degreesToRadians(angle);
+  return {
+    dx: distance * Math.cos(angleRadians),
+    dy: distance * Math.sin(angleRadians)
+  };
+}
+function isNumber(value) {
+  return typeof value === 'number';
+}
+function functionProp(prop, payload) {
+  return typeof prop === 'function' ? prop(payload) : prop;
 }
 
-function StyleguideSubsectionRow(_ref2) {
-  var colors = _ref2.colors;
+function sumValues(data) {
+  var sum = 0;
+
+  for (var i = 0; i < data.length; i++) {
+    sum += data[i].value;
+  }
+
+  return sum;
+} // Append "percentage", "degrees" and "startAngle" to each data entry
+
+
+function extendData(_ref) {
+  var data = _ref.data,
+      totalAngle = _ref.lengthAngle,
+      totalValue = _ref.totalValue,
+      paddingAngle = _ref.paddingAngle,
+      chartStartAngle = _ref.startAngle;
+  var total = totalValue || sumValues(data);
+  var normalizedTotalAngle = valueBetween(totalAngle, -360, 360);
+  var numberOfPaddings = Math.abs(normalizedTotalAngle) === 360 ? data.length : data.length - 1;
+  var singlePaddingDegrees = Math.abs(paddingAngle) * Math.sign(totalAngle);
+  var degreesTakenByPadding = singlePaddingDegrees * numberOfPaddings;
+  var degreesTakenByPaths = normalizedTotalAngle - degreesTakenByPadding;
+  var lastSegmentEnd = 0;
+  var extendedData = []; // @NOTE: Shall we evaluate percentage accordingly to dataEntry.value's sign?
+
+  for (var i = 0; i < data.length; i++) {
+    var dataEntry = data[i];
+    var valueInPercentage = total === 0 ? 0 : dataEntry.value / total * 100;
+    var degrees = extractPercentage(degreesTakenByPaths, valueInPercentage);
+    var startAngle = lastSegmentEnd + chartStartAngle;
+    lastSegmentEnd = lastSegmentEnd + degrees + singlePaddingDegrees;
+    extendedData.push(Object.assign({
+      percentage: valueInPercentage,
+      startAngle: startAngle,
+      degrees: degrees
+    }, dataEntry));
+  }
+
+  return extendedData;
+}
+
+function _objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+
+  return target;
+}
+
+function ReactMinimalPieChartLabel(_ref) {
+  _ref.dataEntry;
+      _ref.dataIndex;
+      var props = _objectWithoutPropertiesLoose(_ref, ["dataEntry", "dataIndex"]);
+
+  return /*#__PURE__*/React.createElement("text", Object.assign({
+    dominantBaseline: "central"
+  }, props));
+}
+
+function round(number) {
+  var divisor = 1e14; // 14 decimals
+
+  return Math.round((number + Number.EPSILON) * divisor) / divisor;
+}
+
+function evaluateTextAnchorPosition(_ref) {
+  var labelPosition = _ref.labelPosition,
+      lineWidth = _ref.lineWidth,
+      labelHorizontalShift = _ref.labelHorizontalShift;
+  var dx = round(labelHorizontalShift); // Label in the vertical center
+
+  if (dx === 0) {
+    return 'middle';
+  } // Outward label
+
+
+  if (labelPosition > 100) {
+    return dx > 0 ? 'start' : 'end';
+  } // Inward label
+
+
+  var innerRadius = 100 - lineWidth;
+
+  if (labelPosition < innerRadius) {
+    return dx > 0 ? 'end' : 'start';
+  } // Overlying label
+
+
+  return 'middle';
+}
+
+function renderLabelElement(renderLabel, labelProps) {
+  var label = renderLabel(labelProps);
+
+  if (typeof label === 'string' || typeof label === 'number') {
+    return /*#__PURE__*/React.createElement(ReactMinimalPieChartLabel, Object.assign({
+      key: "label-" + (labelProps.dataEntry.key || labelProps.dataIndex)
+    }, labelProps), label);
+  }
+
+  if (React.isValidElement(label)) {
+    return label;
+  }
+
+  return null;
+}
+
+function renderLabels(data, props) {
+  return data.map(function (dataEntry, index) {
+    var _functionProp;
+
+    var segmentsShift = (_functionProp = functionProp(props.segmentsShift, index)) != null ? _functionProp : 0;
+    var distanceFromCenter = extractPercentage(props.radius, props.labelPosition) + segmentsShift;
+
+    var _shiftVectorAlongAngl = shiftVectorAlongAngle(bisectorAngle(dataEntry.startAngle, dataEntry.degrees), distanceFromCenter),
+        dx = _shiftVectorAlongAngl.dx,
+        dy = _shiftVectorAlongAngl.dy; // This object is passed as argument to the "label" function prop
+
+
+    var labelRenderProps = {
+      x: props.center[0],
+      y: props.center[1],
+      dx: dx,
+      dy: dy,
+      textAnchor: evaluateTextAnchorPosition({
+        labelPosition: props.labelPosition,
+        lineWidth: props.lineWidth,
+        labelHorizontalShift: dx
+      }),
+      dataEntry: dataEntry,
+      dataIndex: index,
+      style: functionProp(props.labelStyle, index)
+    };
+    return props.label && renderLabelElement(props.label, labelRenderProps);
+  });
+}
+
+var partialCircle = function partialCircle(cx, cy, r, start, end) {
+  var length = end - start;
+  if (length === 0) return [];
+  var fromX = r * Math.cos(start) + cx;
+  var fromY = r * Math.sin(start) + cy;
+  var toX = r * Math.cos(end) + cx;
+  var toY = r * Math.sin(end) + cy;
+  var large = Math.abs(length) <= Math.PI ? '0' : '1';
+  var sweep = length < 0 ? '0' : '1';
+  return [['M', fromX, fromY], ['A', r, r, 0, large, sweep, toX, toY]];
+};
+
+var svgPartialCircle = partialCircle;
+
+function makePathCommands(cx, cy, startAngle, lengthAngle, radius) {
+  var patchedLengthAngle = valueBetween(lengthAngle, -359.999, 359.999);
+  return svgPartialCircle(cx, cy, // center X and Y
+  radius, degreesToRadians(startAngle), degreesToRadians(startAngle + patchedLengthAngle)).map(function (command) {
+    return command.join(' ');
+  }).join(' ');
+}
+function ReactMinimalPieChartPath(_ref) {
+  var cx = _ref.cx,
+      cy = _ref.cy,
+      lengthAngle = _ref.lengthAngle,
+      lineWidth = _ref.lineWidth,
+      radius = _ref.radius,
+      _ref$shift = _ref.shift,
+      shift = _ref$shift === void 0 ? 0 : _ref$shift,
+      reveal = _ref.reveal,
+      rounded = _ref.rounded,
+      startAngle = _ref.startAngle,
+      title = _ref.title,
+      props = _objectWithoutPropertiesLoose(_ref, ["cx", "cy", "lengthAngle", "lineWidth", "radius", "shift", "reveal", "rounded", "startAngle", "title"]);
+
+  var pathRadius = radius - lineWidth / 2; //@NOTE This shift might be rendered as a translation in future
+
+  var _shiftVectorAlongAngl = shiftVectorAlongAngle(bisectorAngle(startAngle, lengthAngle), shift),
+      dx = _shiftVectorAlongAngl.dx,
+      dy = _shiftVectorAlongAngl.dy;
+
+  var pathCommands = makePathCommands(cx + dx, cy + dy, startAngle, lengthAngle, pathRadius);
+  var strokeDasharray;
+  var strokeDashoffset; // Animate/hide paths with "stroke-dasharray" + "stroke-dashoffset"
+  // https://css-tricks.com/svg-line-animation-works/
+
+  if (isNumber(reveal)) {
+    var pathLength = degreesToRadians(pathRadius) * lengthAngle;
+    strokeDasharray = Math.abs(pathLength);
+    strokeDashoffset = strokeDasharray - extractPercentage(strokeDasharray, reveal);
+  }
+
+  return /*#__PURE__*/React.createElement("path", Object.assign({
+    d: pathCommands,
+    fill: "none",
+    strokeWidth: lineWidth,
+    strokeDasharray: strokeDasharray,
+    strokeDashoffset: strokeDashoffset,
+    strokeLinecap: rounded ? 'round' : undefined
+  }, props), title && /*#__PURE__*/React.createElement("title", null, title));
+}
+
+function combineSegmentTransitionsStyle(duration, easing, customStyle) {
+  // Merge chart's animation CSS transition with "transition" found to customStyle
+  var transition = "stroke-dashoffset " + duration + "ms " + easing;
+
+  if (customStyle && customStyle.transition) {
+    transition = transition + "," + customStyle.transition;
+  }
+
+  return {
+    transition: transition
+  };
+}
+
+function getRevealValue(props) {
+  //@NOTE When animation is on, chart has to be fully revealed when reveal is not set
+  if (props.animate && !isNumber(props.reveal)) {
+    return 100;
+  }
+
+  return props.reveal;
+}
+
+function makeEventHandler(eventHandler, payload) {
+  return eventHandler && function (e) {
+    eventHandler(e, payload);
+  };
+}
+
+function renderSegments(data, props, revealOverride) {
+  // @NOTE this should go in Path component. Here for performance reasons
+  var reveal = revealOverride != null ? revealOverride : getRevealValue(props);
+  var radius = props.radius,
+      _props$center = props.center,
+      cx = _props$center[0],
+      cy = _props$center[1];
+  var lineWidth = extractPercentage(radius, props.lineWidth);
+  var paths = data.map(function (dataEntry, index) {
+    var segmentsStyle = functionProp(props.segmentsStyle, index);
+    return /*#__PURE__*/React.createElement(ReactMinimalPieChartPath, {
+      cx: cx,
+      cy: cy,
+      key: dataEntry.key || index,
+      lengthAngle: dataEntry.degrees,
+      lineWidth: lineWidth,
+      radius: radius,
+      rounded: props.rounded,
+      reveal: reveal,
+      shift: functionProp(props.segmentsShift, index),
+      startAngle: dataEntry.startAngle,
+      title: dataEntry.title,
+      style: Object.assign({}, segmentsStyle, props.animate && combineSegmentTransitionsStyle(props.animationDuration, props.animationEasing, segmentsStyle)),
+      stroke: dataEntry.color,
+      tabIndex: props.segmentsTabIndex,
+      onBlur: makeEventHandler(props.onBlur, index),
+      onClick: makeEventHandler(props.onClick, index),
+      onFocus: makeEventHandler(props.onFocus, index),
+      onKeyDown: makeEventHandler(props.onKeyDown, index),
+      onMouseOver: makeEventHandler(props.onMouseOver, index),
+      onMouseOut: makeEventHandler(props.onMouseOut, index)
+    });
+  });
+
+  if (props.background) {
+    paths.unshift( /*#__PURE__*/React.createElement(ReactMinimalPieChartPath, {
+      cx: cx,
+      cy: cy,
+      key: "bg",
+      lengthAngle: props.lengthAngle,
+      lineWidth: lineWidth,
+      radius: radius,
+      rounded: props.rounded,
+      startAngle: props.startAngle,
+      stroke: props.background
+    }));
+  }
+
+  return paths;
+}
+
+var defaultProps = {
+  animationDuration: 500,
+  animationEasing: 'ease-out',
+  center: [50, 50],
+  data: [],
+  labelPosition: 50,
+  lengthAngle: 360,
+  lineWidth: 100,
+  paddingAngle: 0,
+  radius: 50,
+  startAngle: 0,
+  viewBoxSize: [100, 100]
+};
+function ReactMinimalPieChart(props) {
+  var _useState = react.exports.useState(props.animate ? 0 : null),
+      revealOverride = _useState[0],
+      setRevealOverride = _useState[1];
+
+  react.exports.useEffect(function () {
+    if (props.animate) {
+      return startInitialAnimation();
+    }
+
+    function startInitialAnimation() {
+      var animationTimerId;
+      var animationRAFId;
+      animationTimerId = setTimeout(function () {
+        animationTimerId = null;
+        animationRAFId = requestAnimationFrame(function () {
+          animationRAFId = null;
+          setRevealOverride(null); // Start animation
+        });
+      });
+      return function () {
+        animationTimerId && clearTimeout(animationTimerId);
+        animationRAFId && cancelAnimationFrame(animationRAFId);
+      };
+    }
+  }, []);
+  var extendedData = extendData(props);
+  return /*#__PURE__*/React.createElement("svg", {
+    viewBox: "0 0 " + props.viewBoxSize[0] + " " + props.viewBoxSize[1],
+    width: "100%",
+    height: "100%",
+    className: props.className,
+    style: props.style
+  }, renderSegments(extendedData, props, revealOverride), props.label && renderLabels(extendedData, props), props.children);
+}
+ReactMinimalPieChart.defaultProps = defaultProps;
+
+var observerMap = new Map();
+var RootIds = new WeakMap();
+var rootId = 0;
+var unsupportedValue = undefined;
+/**
+ * Generate a unique ID for the root element
+ * @param root
+ */
+
+function getRootId(root) {
+  if (!root) return '0';
+  if (RootIds.has(root)) return RootIds.get(root);
+  rootId += 1;
+  RootIds.set(root, rootId.toString());
+  return RootIds.get(root);
+}
+/**
+ * Convert the options to a string Id, based on the values.
+ * Ensures we can reuse the same observer when observing elements with the same options.
+ * @param options
+ */
+
+
+function optionsToId(options) {
+  return Object.keys(options).sort().filter(function (key) {
+    return options[key] !== undefined;
+  }).map(function (key) {
+    return key + "_" + (key === 'root' ? getRootId(options.root) : options[key]);
+  }).toString();
+}
+
+function createObserver(options) {
+  // Create a unique ID for this observer instance, based on the root, root margin and threshold.
+  var id = optionsToId(options);
+  var instance = observerMap.get(id);
+
+  if (!instance) {
+    // Create a map of elements this observer is going to observe. Each element has a list of callbacks that should be triggered, once it comes into view.
+    var elements = new Map();
+    var thresholds;
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        var _elements$get;
+
+        // While it would be nice if you could just look at isIntersecting to determine if the component is inside the viewport, browsers can't agree on how to use it.
+        // -Firefox ignores `threshold` when considering `isIntersecting`, so it will never be false again if `threshold` is > 0
+        var inView = entry.isIntersecting && thresholds.some(function (threshold) {
+          return entry.intersectionRatio >= threshold;
+        }); // @ts-ignore support IntersectionObserver v2
+
+        if (options.trackVisibility && typeof entry.isVisible === 'undefined') {
+          // The browser doesn't support Intersection Observer v2, falling back to v1 behavior.
+          // @ts-ignore
+          entry.isVisible = inView;
+        }
+
+        (_elements$get = elements.get(entry.target)) == null ? void 0 : _elements$get.forEach(function (callback) {
+          callback(inView, entry);
+        });
+      });
+    }, options); // Ensure we have a valid thresholds array. If not, use the threshold from the options
+
+    thresholds = observer.thresholds || (Array.isArray(options.threshold) ? options.threshold : [options.threshold || 0]);
+    instance = {
+      id: id,
+      observer: observer,
+      elements: elements
+    };
+    observerMap.set(id, instance);
+  }
+
+  return instance;
+}
+/**
+ * @param element - DOM Element to observe
+ * @param callback - Callback function to trigger when intersection status changes
+ * @param options - Intersection Observer options
+ * @param fallbackInView - Fallback inView value.
+ * @return Function - Cleanup function that should be triggered to unregister the observer
+ */
+
+
+function observe(element, callback, options, fallbackInView) {
+  if (options === void 0) {
+    options = {};
+  }
+
+  if (fallbackInView === void 0) {
+    fallbackInView = unsupportedValue;
+  }
+
+  if (typeof window.IntersectionObserver === 'undefined' && fallbackInView !== undefined) {
+    var bounds = element.getBoundingClientRect();
+    callback(fallbackInView, {
+      isIntersecting: fallbackInView,
+      target: element,
+      intersectionRatio: typeof options.threshold === 'number' ? options.threshold : 0,
+      time: 0,
+      boundingClientRect: bounds,
+      intersectionRect: bounds,
+      rootBounds: bounds
+    });
+    return function () {// Nothing to cleanup
+    };
+  } // An observer with the same options can be reused, so lets use this fact
+
+
+  var _createObserver = createObserver(options),
+      id = _createObserver.id,
+      observer = _createObserver.observer,
+      elements = _createObserver.elements; // Register the callback listener for this element
+
+
+  var callbacks = elements.get(element) || [];
+
+  if (!elements.has(element)) {
+    elements.set(element, callbacks);
+  }
+
+  callbacks.push(callback);
+  observer.observe(element);
+  return function unobserve() {
+    // Remove the callback from the callback list
+    callbacks.splice(callbacks.indexOf(callback), 1);
+
+    if (callbacks.length === 0) {
+      // No more callback exists for element, so destroy it
+      elements["delete"](element);
+      observer.unobserve(element);
+    }
+
+    if (elements.size === 0) {
+      // No more elements are being observer by this instance, so destroy it
+      observer.disconnect();
+      observerMap["delete"](id);
+    }
+  };
+}
+
+/**
+ * React Hooks make it easy to monitor the `inView` state of your components. Call
+ * the `useInView` hook with the (optional) [options](#options) you need. It will
+ * return an array containing a `ref`, the `inView` status and the current
+ * [`entry`](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserverEntry).
+ * Assign the `ref` to the DOM element you want to monitor, and the hook will
+ * report the status.
+ *
+ * @example
+ * ```jsx
+ * import React from 'react';
+ * import { useInView } from 'react-intersection-observer';
+ *
+ * const Component = () => {
+ *   const { ref, inView, entry } = useInView({
+ *       threshold: 0,
+ *   });
+ *
+ *   return (
+ *     <div ref={ref}>
+ *       <h2>{`Header inside viewport ${inView}.`}</h2>
+ *     </div>
+ *   );
+ * };
+ * ```
+ */
+
+function useInView(_temp) {
+  var _ref = _temp === void 0 ? {} : _temp,
+      threshold = _ref.threshold,
+      delay = _ref.delay,
+      trackVisibility = _ref.trackVisibility,
+      rootMargin = _ref.rootMargin,
+      root = _ref.root,
+      triggerOnce = _ref.triggerOnce,
+      skip = _ref.skip,
+      initialInView = _ref.initialInView,
+      fallbackInView = _ref.fallbackInView;
+
+  var unobserve = react.exports.useRef();
+
+  var _React$useState = react.exports.useState({
+    inView: !!initialInView
+  }),
+      state = _React$useState[0],
+      setState = _React$useState[1];
+
+  var setRef = react.exports.useCallback(function (node) {
+    if (unobserve.current !== undefined) {
+      unobserve.current();
+      unobserve.current = undefined;
+    } // Skip creating the observer
+
+
+    if (skip) return;
+
+    if (node) {
+      unobserve.current = observe(node, function (inView, entry) {
+        setState({
+          inView: inView,
+          entry: entry
+        });
+
+        if (entry.isIntersecting && triggerOnce && unobserve.current) {
+          // If it should only trigger once, unobserve the element after it's inView
+          unobserve.current();
+          unobserve.current = undefined;
+        }
+      }, {
+        root: root,
+        rootMargin: rootMargin,
+        threshold: threshold,
+        // @ts-ignore
+        trackVisibility: trackVisibility,
+        // @ts-ignore
+        delay: delay
+      }, fallbackInView);
+    }
+  }, // We break the rule here, because we aren't including the actual `threshold` variable
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  [// If the threshold is an array, convert it to a string so it won't change between renders.
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  Array.isArray(threshold) ? threshold.toString() : threshold, root, rootMargin, triggerOnce, skip, trackVisibility, fallbackInView, delay]);
+  /* eslint-disable-next-line */
+
+  react.exports.useEffect(function () {
+    if (!unobserve.current && state.entry && !triggerOnce && !skip) {
+      // If we don't have a ref, then reset the state (unless the hook is set to only `triggerOnce` or `skip`)
+      // This ensures we correctly reflect the current state - If you aren't observing anything, then nothing is inView
+      setState({
+        inView: !!initialInView
+      });
+    }
+  });
+  var result = [setRef, state.inView, state.entry]; // Support object destructuring, by adding the specific values.
+
+  result.ref = result[0];
+  result.inView = result[1];
+  result.entry = result[2];
+  return result;
+}
+
+var getTextColor = function getTextColor(title) {
+  return ["Sea Green", "Plum"].includes(title) ? "white" : "auto";
+};
+
+var HAS_COPIED_MESSAGE_LENGTH = 1500; // This is set the CSS
+
+var FADE_IN_OUT_LENGTH = 500;
+
+function SwatchColor(_ref) {
+  var title = _ref.title,
+      hex = _ref.hex;
+
+  var _useState = react.exports.useState(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      hasCopied = _useState2[0],
+      setHasCopied = _useState2[1];
+
+  var _useState3 = react.exports.useState("click to copy"),
+      _useState4 = _slicedToArray(_useState3, 2),
+      copyText = _useState4[0],
+      setCopyText = _useState4[1];
+
+  var squareClassNames = classNames("vm-styleguide__swatch-color__square", {
+    "vm-styleguide__swatch-color__square--has-copied": hasCopied
+  });
+  return /*#__PURE__*/React.createElement("div", {
+    className: "vm-styleguide__swatch-color",
+    key: title
+  }, /*#__PURE__*/React.createElement("div", {
+    className: squareClassNames,
+    style: {
+      backgroundColor: hex,
+      color: getTextColor(title)
+    },
+    onClick: function onClick() {
+      navigator.clipboard.writeText(hex).then(function () {
+        setHasCopied(true);
+        setCopyText("copied!");
+        setTimeout(function () {
+          setHasCopied(false);
+        }, HAS_COPIED_MESSAGE_LENGTH);
+        setTimeout(function () {
+          setCopyText("click to copy");
+        }, HAS_COPIED_MESSAGE_LENGTH + FADE_IN_OUT_LENGTH);
+      });
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "vm-styleguide__swatch-color__label"
+  }, copyText)), /*#__PURE__*/React.createElement("h4", {
+    className: "vm-styleguide__swatch-color__title"
+  }, title), /*#__PURE__*/React.createElement("h6", {
+    className: "vm-styleguide__swatch-color__value"
+  }, hex));
+}
+
+function Swatch(_ref) {
+  var colors = _ref.colors;
   return /*#__PURE__*/React.createElement("div", {
     className: "vm-styleguide__swatch"
-  }, colors.map(function (_ref3) {
-    var title = _ref3.title,
-        hex = _ref3.hex;
+  }, colors.map(function (_ref2) {
+    var title = _ref2.title,
+        hex = _ref2.hex;
     return /*#__PURE__*/React.createElement("div", {
-      className: "vm-styleguide__swatch-color",
-      key: title
-    }, /*#__PURE__*/React.createElement("div", {
-      className: "vm-styleguide__swatch-color__color-square",
-      style: {
-        backgroundColor: hex
-      }
-    }), /*#__PURE__*/React.createElement("h4", {
-      className: "vm-styleguide__swatch-color__title"
-    }, title), /*#__PURE__*/React.createElement("div", {
-      className: "vm-styleguide__swatch-color__values"
-    }, /*#__PURE__*/React.createElement("h6", {
-      className: "vm-styleguide__swatch-color__value-label"
-    }, "hex"), /*#__PURE__*/React.createElement("h6", {
-      className: "vm-styleguide__swatch-color__value-value"
-    }, hex), /*#__PURE__*/React.createElement(CopyButton, {
-      text: hex
-    })));
+      key: title,
+      className: "vm-styleguide__swatch__column"
+    }, /*#__PURE__*/React.createElement(SwatchColor, {
+      title: title,
+      hex: hex
+    }));
   }));
 }
 
 var CLASSNAME_BASE = "vm-styleguide__color-region-example";
 
 var DefaultContent = function DefaultContent() {
-  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h2", null, "Heading 2"), /*#__PURE__*/React.createElement("h4", null, "heading 4"), /*#__PURE__*/React.createElement("p", null, "Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum"), /*#__PURE__*/React.createElement("a", {
+  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h2", null, "Heading 2"), /*#__PURE__*/React.createElement("h4", null, "heading 4"), /*#__PURE__*/React.createElement("p", null, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."), /*#__PURE__*/React.createElement("a", {
     href: "#",
     className: "cta-link",
     onClick: function onClick(e) {
@@ -31365,6 +31999,51 @@ var VM_SWATCH = [{
   hex: "#F8F4F4"
 }];
 
+function ColorsPieChart() {
+  var _useInView = useInView({
+    threshold: 0.5
+  }),
+      ref = _useInView.ref,
+      inView = _useInView.inView;
+
+  var _useState = react.exports.useState(inView),
+      _useState2 = _slicedToArray(_useState, 2),
+      isVisible = _useState2[0],
+      setIsVisible = _useState2[1];
+
+  react.exports.useEffect(function () {
+    if (inView && !isVisible) {
+      setIsVisible(true);
+    }
+  }, [inView]);
+  return /*#__PURE__*/React.createElement("div", {
+    ref: ref
+  }, /*#__PURE__*/React.createElement(ReactMinimalPieChart, {
+    lineWidth: 40,
+    reveal: isVisible ? 100 : 0,
+    animate: true,
+    animationDuration: 800,
+    animationEasing: "ease-in-out",
+    data: [{
+      title: "Cream",
+      value: 40,
+      color: "#F8F4F4"
+    }, {
+      title: "Plum",
+      value: 30,
+      color: "#714457"
+    }, {
+      title: "Sea Green",
+      value: 25,
+      color: "#1c4047"
+    }, {
+      title: "Sand",
+      value: 5,
+      color: "#DEC1A8"
+    }]
+  }));
+}
+
 function ColorsPage() {
   return /*#__PURE__*/React.createElement(Layout, {
     page: "colors",
@@ -31377,45 +32056,105 @@ function ColorsPage() {
     "data-section-id": "#colors"
   }, /*#__PURE__*/React.createElement(StyleguideSubsection, {
     number: "02a",
-    title: "Swatch"
-  }, /*#__PURE__*/React.createElement(StyleguideSubsectionRow$1, {
-    title: "Primary Colors"
+    title: "Swatch",
+    sectionId: "swatch"
   }, /*#__PURE__*/React.createElement(StyleguideSubsectionRow, {
+    title: "Primary Colors"
+  }, /*#__PURE__*/React.createElement(Swatch, {
     colors: VM_SWATCH
   }))), /*#__PURE__*/React.createElement(StyleguideSubsection, {
     number: "02b",
-    title: "Color Shades"
-  }, /*#__PURE__*/React.createElement(StyleguideSubsectionRow$1, {
+    title: "Color Shades",
+    sectionId: "color-shades"
+  }, /*#__PURE__*/React.createElement(StyleguideSubsectionRow, {
     title: "Plum"
-  }, /*#__PURE__*/React.createElement("p", null, "TODO")), /*#__PURE__*/React.createElement(StyleguideSubsectionRow$1, {
+  }, /*#__PURE__*/React.createElement("p", null, "TODO")), /*#__PURE__*/React.createElement(StyleguideSubsectionRow, {
     title: "Sea green"
-  }, /*#__PURE__*/React.createElement("p", null, "TODO")), /*#__PURE__*/React.createElement(StyleguideSubsectionRow$1, {
+  }, /*#__PURE__*/React.createElement("p", null, "TODO")), /*#__PURE__*/React.createElement(StyleguideSubsectionRow, {
     title: "Sand"
   }, /*#__PURE__*/React.createElement("p", null, "TODO"))), /*#__PURE__*/React.createElement(StyleguideSubsection, {
     number: "02c",
-    title: "Regions"
-  }, /*#__PURE__*/React.createElement(StyleguideSubsectionRow$1, {
+    title: "Regions",
+    sectionId: "color-regions"
+  }, /*#__PURE__*/React.createElement(StyleguideSubsectionRow, {
     title: "Light"
   }, /*#__PURE__*/React.createElement(ColorRegionExample, {
     region: "light"
-  })), /*#__PURE__*/React.createElement(StyleguideSubsectionRow$1, {
+  })), /*#__PURE__*/React.createElement(StyleguideSubsectionRow, {
     title: "Light - alt"
   }, /*#__PURE__*/React.createElement(ColorRegionExample, {
     region: "light-alt"
-  })), /*#__PURE__*/React.createElement(StyleguideSubsectionRow$1, {
+  })), /*#__PURE__*/React.createElement(StyleguideSubsectionRow, {
     title: "Dark"
   }, /*#__PURE__*/React.createElement(ColorRegionExample, {
     region: "dark"
-  })), /*#__PURE__*/React.createElement(StyleguideSubsectionRow$1, {
+  })), /*#__PURE__*/React.createElement(StyleguideSubsectionRow, {
     title: "Dark - alt"
   }, /*#__PURE__*/React.createElement(ColorRegionExample, {
     region: "dark-alt"
   }))), /*#__PURE__*/React.createElement(StyleguideSubsection, {
     number: "02d",
-    title: "Color Ratios"
-  }, /*#__PURE__*/React.createElement(StyleguideSubsectionRow$1, {
-    title: "Key"
-  }, /*#__PURE__*/React.createElement("p", null, "TODO"))))));
+    title: "Color Ratios",
+    sectionId: "color-ratios"
+  }, /*#__PURE__*/React.createElement(StyleguideSubsectionRow, {
+    title: "Key",
+    dataRows: [{
+      title: "cream",
+      value: "40%"
+    }, {
+      title: "plum",
+      value: "30%"
+    }, {
+      title: "sea green",
+      value: "25%"
+    }, {
+      title: "sand",
+      value: "5%"
+    }]
+  }, /*#__PURE__*/React.createElement(ColorsPieChart, null))))));
+}
+
+function ColorRegionWrapper(_ref) {
+  var region = _ref.region,
+      children = _ref.children;
+  return /*#__PURE__*/React.createElement("div", {
+    className: "vm-styleguide__component-example__color-region"
+  }, /*#__PURE__*/React.createElement(ColorRegionExample, {
+    region: region
+  }, children));
+}
+
+function ComponentExample(_ref2) {
+  var children = _ref2.children,
+      omitLightRegions = _ref2.omitLightRegions,
+      omitDarkRegions = _ref2.omitDarkRegions;
+  return /*#__PURE__*/React.createElement("div", {
+    className: "vm-styleguide__component-example"
+  }, !omitLightRegions && /*#__PURE__*/React.createElement("div", {
+    className: "container"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "row"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "one-half columns"
+  }, /*#__PURE__*/React.createElement(ColorRegionWrapper, {
+    region: "light"
+  }, children)), /*#__PURE__*/React.createElement("div", {
+    className: "one-half columns"
+  }, /*#__PURE__*/React.createElement(ColorRegionWrapper, {
+    region: "light-alt"
+  }, children)))), !omitDarkRegions && /*#__PURE__*/React.createElement("div", {
+    className: "container"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "row"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "one-half columns"
+  }, /*#__PURE__*/React.createElement(ColorRegionWrapper, {
+    region: "dark"
+  }, children)), /*#__PURE__*/React.createElement("div", {
+    className: "one-half columns"
+  }, /*#__PURE__*/React.createElement(ColorRegionWrapper, {
+    region: "dark-alt"
+  }, children)))));
 }
 
 function ComponentsPage() {
@@ -31428,26 +32167,42 @@ function ComponentsPage() {
   }, /*#__PURE__*/React.createElement(StyleguideSubsection, {
     number: "03a",
     title: "Button"
-  }, /*#__PURE__*/React.createElement(StyleguideSubsectionRow$1, {
+  }, /*#__PURE__*/React.createElement(StyleguideSubsectionRow, {
     title: "Primary"
+  }, /*#__PURE__*/React.createElement(ComponentExample, {
+    omitDarkRegions: true
   }, /*#__PURE__*/React.createElement("button", {
     className: "button button--primary"
-  }, "Secondary")), /*#__PURE__*/React.createElement(StyleguideSubsectionRow$1, {
+  }, "Primary"))), /*#__PURE__*/React.createElement(StyleguideSubsectionRow, {
+    title: "Primary - inverted"
+  }, /*#__PURE__*/React.createElement(ComponentExample, {
+    omitLightRegions: true
+  }, /*#__PURE__*/React.createElement("button", {
+    className: "button button--primary button--inverted"
+  }, "Primary"))), /*#__PURE__*/React.createElement(StyleguideSubsectionRow, {
     title: "Secondary"
+  }, /*#__PURE__*/React.createElement(ComponentExample, {
+    omitDarkRegions: true
   }, /*#__PURE__*/React.createElement("button", {
-    className: "button button--primary"
-  }, "Secondary"))), /*#__PURE__*/React.createElement(StyleguideSubsection, {
+    className: "button button--secondary"
+  }, "Secondary"))), /*#__PURE__*/React.createElement(StyleguideSubsectionRow, {
+    title: "Secondary - inverted"
+  }, /*#__PURE__*/React.createElement(ComponentExample, {
+    omitLightRegions: true
+  }, /*#__PURE__*/React.createElement("button", {
+    className: "button button--secondary button--inverted"
+  }, "Secondary")))), /*#__PURE__*/React.createElement(StyleguideSubsection, {
     number: "03b",
     title: "CTA Link"
-  }, /*#__PURE__*/React.createElement(StyleguideSubsectionRow$1, {
+  }, /*#__PURE__*/React.createElement(StyleguideSubsectionRow, {
     title: "Primary"
-  }, /*#__PURE__*/React.createElement("a", {
+  }, /*#__PURE__*/React.createElement(ComponentExample, null, /*#__PURE__*/React.createElement("a", {
     className: "cta-link",
     href: "#"
-  }, "CTA Link"))), /*#__PURE__*/React.createElement(StyleguideSubsection, {
+  }, "CTA Link")))), /*#__PURE__*/React.createElement(StyleguideSubsection, {
     number: "03c",
     title: "Table"
-  }, /*#__PURE__*/React.createElement(StyleguideSubsectionRow$1, {
+  }, /*#__PURE__*/React.createElement(StyleguideSubsectionRow, {
     title: "default"
   }, /*#__PURE__*/React.createElement("table", null, /*#__PURE__*/React.createElement("thead", null, /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("td", null, "column 1"), /*#__PURE__*/React.createElement("td", null, "column 2"), /*#__PURE__*/React.createElement("td", null, "column 3"))), /*#__PURE__*/React.createElement("tbody", null, /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("td", null, "column 1"), /*#__PURE__*/React.createElement("td", null, "column 2"), /*#__PURE__*/React.createElement("td", null, "column 3")), /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("td", null, "column 1"), /*#__PURE__*/React.createElement("td", null, "column 2"), /*#__PURE__*/React.createElement("td", null, "column 3")), /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("td", null, "column 1"), /*#__PURE__*/React.createElement("td", null, "column 2"), /*#__PURE__*/React.createElement("td", null, "column 3"))))))));
 }

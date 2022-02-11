@@ -59,6 +59,66 @@ h3 sup {
   right: 0.3em;
 }
 
+.button.button--link {
+  background: transparent;
+  border: 0 none;
+  padding: 0;
+  margin: 0;
+  height: auto;
+  min-height: auto;
+  color: #714457;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.1s;
+}
+.button.button--link:hover {
+  color: #dec1a8;
+  text-decoration: underline;
+}
+
+h4 sup,
+h5 sup,
+h6 sup {
+  font-size: 0.5em;
+}
+
+a.button.button--inverted,
+.button.button--inverted,
+button.button--inverted,
+input[type=submit].button--inverted,
+input[type=reset].button--inverted,
+input[type=button].button--inverted,
+.action_button.button--inverted {
+  background: #ffffff;
+  color: #1c4047;
+  border-color: #ffffff;
+}
+a.button:hover,
+.button:hover,
+button:hover,
+input[type=submit]:hover,
+input[type=reset]:hover,
+input[type=button]:hover,
+.action_button:hover {
+  background-color: #dec1a8;
+  border: 1px solid transparent;
+  color: #ffffff;
+}
+
+.button.button--secondary.button--inverted,
+.action_button.action_button--secondary.button--inverted {
+  background-color: transparent;
+  border-color: #ffffff;
+  color: #ffffff;
+}
+.button.button--secondary.button--inverted:hover, .button.button--secondary.button--inverted:focus,
+.action_button.action_button--secondary.button--inverted:hover,
+.action_button.action_button--secondary.button--inverted:focus {
+  background-color: transparent;
+  border-color: #dec1a8;
+  color: #dec1a8;
+}
+
 /* #Variables
 ================================================== */
 /* variables/general
@@ -127,10 +187,31 @@ h3 sup {
 }
 
 .vm-styleguide__page-title {
+  margin-top: 7rem;
   margin-bottom: 7rem;
 }
 .vm-styleguide__page-title sup {
   color: #dec1a8;
+}
+
+.vm-styleguide__subsection {
+  margin: 2rem 0;
+}
+
+.vm-styleguide__subsection-title {
+  position: relative;
+  margin-bottom: 5rem;
+}
+.vm-styleguide__subsection-title sup {
+  position: absolute;
+  top: 0.5em;
+  left: -2.5em;
+  right: auto;
+  color: #dec1a8;
+}
+
+.vm-styleguide__content-section-description {
+  margin: 5rem 0;
 }
 
 /* #Variables
@@ -186,42 +267,21 @@ h3 sup {
 ================================================== */
 /* Mixins - typography
 ================================================== */
-.vm-styleguide__swatch {
-  display: flex;
+.vm-styleguide__color-region-example {
+  border: 5px solid white;
+  padding: 3rem;
 }
-
-.vm-styleguide__swatch-color {
-  padding: 15px;
-  flex-grow: 1;
-  flex-shrink: 0;
-  flex-basis: 0;
+.vm-styleguide__color-region-example.vm-styleguide__color-region-example--region-light {
+  border-color: #f8f4f4;
 }
-.vm-styleguide__swatch-color .vm-styleguide__swatch-color__title {
-  margin: 1rem 0;
+.vm-styleguide__color-region-example.vm-styleguide__color-region-example--region-light-alt {
+  border-color: #f8f4f4;
 }
-.vm-styleguide__swatch-color p {
-  margin: 0;
+.vm-styleguide__color-region-example.vm-styleguide__color-region-example--region-dark {
+  border-color: #714457;
 }
-.vm-styleguide__swatch-color .vm-styleguide__swatch-color__color-square {
-  padding-top: 100%;
-}
-.vm-styleguide__swatch-color .vm-styleguide__swatch-color__values .vm-styleguide__swatch-color__value-label {
-  margin-bottom: 0;
-  opacity: 0.6;
-}
-.vm-styleguide__subsection {
-  margin: 2rem 0;
-}
-
-.vm-styleguide__subsection-title {
-  margin-bottom: 5rem;
-}
-.vm-styleguide__subsection-title sup {
-  color: #dec1a8;
-}
-
-.vm-styleguide__content-section-description {
-  margin: 5rem 0;
+.vm-styleguide__color-region-example.vm-styleguide__color-region-example--region-dark-alt {
+  border-color: #1c4047;
 }
 
 .vm-styleguide__subsection-row {
@@ -305,44 +365,15 @@ h3 sup {
 ================================================== */
 /* Mixins - typography
 ================================================== */
-.vm-styleguide__font-example {
-  font-size: 41px;
-  line-height: 1.2;
-}
-.vm-styleguide__font-example.vm-styleguide__font-example--font-poppins {
-  font-family: poppins, sans-serif;
-}
-.vm-styleguide__font-example.vm-styleguide__font-example--font-orpheus-pro {
-  font-family: orpheuspro, serif;
-}
-.vm-styleguide__font-example.vm-styleguide__font-example--weight-normal {
-  font-weight: 400;
-}
-.vm-styleguide__font-example.vm-styleguide__font-example--weight-semibold {
-  font-weight: 600;
-}
-.vm-styleguide__font-example.vm-styleguide__font-example--weight-bold {
-  font-weight: 700;
+.vm-styleguide__swatch {
+  display: flex;
 }
 
-.vm-styleguide-sidebar {
-  background-color: #f8f4f4;
-  flex-basis: 300px;
-  flex-grow: 0;
+.vm-styleguide__swatch__column {
+  padding: 15px;
+  flex-grow: 1;
   flex-shrink: 0;
-}
-
-.vm-styleguide-sidebar__nav {
-  position: sticky;
-  top: 0;
-  padding: 2rem;
-}
-.vm-styleguide-sidebar__nav ul {
-  list-style: none;
-  padding-left: 0;
-}
-.vm-styleguide-sidebar__nav .vm-styleguide-sidebar__nav-item sup {
-  color: #dec1a8;
+  flex-basis: 0;
 }
 
 /* #Variables
@@ -398,19 +429,136 @@ h3 sup {
 ================================================== */
 /* Mixins - typography
 ================================================== */
-.vm-styleguide__color-region-example {
-  border: 5px solid white;
-  padding: 3rem;
+.vm-styleguide__font-example {
+  font-size: 41px;
+  line-height: 1.2;
 }
-.vm-styleguide__color-region-example.vm-styleguide__color-region-example--region-light {
-  border-color: #f8f4f4;
+.vm-styleguide__font-example.vm-styleguide__font-example--font-poppins {
+  font-family: poppins, sans-serif;
 }
-.vm-styleguide__color-region-example.vm-styleguide__color-region-example--region-light-alt {
-  border-color: #f8f4f4;
+.vm-styleguide__font-example.vm-styleguide__font-example--font-orpheus-pro {
+  font-family: orpheuspro, serif;
 }
-.vm-styleguide__color-region-example.vm-styleguide__color-region-example--region-dark {
-  border-color: #714457;
+.vm-styleguide__font-example.vm-styleguide__font-example--weight-normal {
+  font-weight: 400;
 }
-.vm-styleguide__color-region-example.vm-styleguide__color-region-example--region-dark-alt {
-  border-color: #1c4047;
+.vm-styleguide__font-example.vm-styleguide__font-example--weight-semibold {
+  font-weight: 600;
+}
+.vm-styleguide__font-example.vm-styleguide__font-example--weight-bold {
+  font-weight: 700;
+}
+
+.vm-styleguide__component-example__color-region {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.vm-styleguide-sidebar {
+  background-color: #f8f4f4;
+  flex-basis: 300px;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.vm-styleguide-sidebar__nav {
+  position: sticky;
+  top: 0;
+  padding: 2rem;
+}
+.vm-styleguide-sidebar__nav ul {
+  list-style: none;
+  padding-left: 0;
+}
+.vm-styleguide-sidebar__nav .vm-styleguide-sidebar__nav-item sup {
+  color: #dec1a8;
+}
+.vm-styleguide-sidebar__nav .vm-styleguide-sidebar__nav-link.vm-styleguide-sidebar__nav-link--active {
+  color: #dec1a8;
+}
+
+.vm-styleguide__swatch-color .vm-styleguide__swatch-color__square {
+  padding-top: 100%;
+  position: relative;
+  cursor: pointer;
+}
+.vm-styleguide__swatch-color .vm-styleguide__swatch-color__square .vm-styleguide__swatch-color__label {
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  right: 1rem;
+  transform: translateY(-50%);
+  text-align: center;
+  opacity: 0;
+  transition: 0.5s opacity;
+}
+.vm-styleguide__swatch-color .vm-styleguide__swatch-color__square:hover .vm-styleguide__swatch-color__label, .vm-styleguide__swatch-color .vm-styleguide__swatch-color__square.vm-styleguide__swatch-color__square--has-copied .vm-styleguide__swatch-color__label {
+  opacity: 1;
+}
+.vm-styleguide__swatch-color .vm-styleguide__swatch-color__title {
+  margin: 1rem 0 0.5rem;
+}
+.vm-styleguide__swatch-color p {
+  margin: 0;
+}
+.vm-styleguide__swatch-color .vm-styleguide__swatch-color__values .vm-styleguide__swatch-color__value-label {
+  margin-bottom: 0;
+  opacity: 0.6;
+}
+
+/* #Variables
+================================================== */
+/* variables/general
+================================================== */
+/* Variables - Colors
+================================================== */
+:root {
+  --vm-color-sea-green: #1c4047;
+  --vm-color-plum: #714457;
+  --vm-color-sand: #dec1a8;
+  --vm-color-cream: #f8f4f4;
+  --vm-color-white: #ffffff;
+}
+
+/* Variables - Typography
+================================================== */
+/* Variables - Components
+================================================== */
+/* Variables - Misc
+================================================== */
+/* Variables - Misc
+================================================== */
+/* Mixins
+================================================== */
+/* Mixins - general
+================================================== */
+/*
+  This mixin can be used to set the object-fit:
+  @include object-fit(contain);
+   or object-fit and object-position:
+  @include object-fit(cover, top);
+*/
+/*
+  Prefix mixin for generating vendor prefixes.
+  Based on https://github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/addons/_prefixer.scss
+
+  Usage:
+    // Input:
+    .element {
+      @include prefix(transform, scale(1), ms webkit spec);
+    }
+
+    // Output:
+    .element {
+      -ms-transform: scale(1);
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+*/
+/* Mixins - typography
+================================================== */
+/* Mixins - typography
+================================================== */
+.overview-page {
+  background: #714457;
 }

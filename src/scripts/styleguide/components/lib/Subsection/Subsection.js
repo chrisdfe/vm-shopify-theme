@@ -2,7 +2,15 @@ import React from "react";
 
 import "./Subsection.scss";
 
-function StyleguideSubsection({ number, title, description, children }) {
+// import { PageSectionContext } from "../Layout/PageSectionManager/PageSectionManager";
+
+function StyleguideSubsection({
+  number,
+  title,
+  sectionId,
+  description,
+  children,
+}) {
   return (
     <div className="vm-styleguide-subsection">
       <div className="container">

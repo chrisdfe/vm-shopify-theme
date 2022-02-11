@@ -5,31 +5,9 @@
   display: flex;
 }
 
-.vm-styleguide__swatch-color {
+.vm-styleguide__swatch__column {
   padding: ($gutter * 0.5);
   flex-grow: 1;
   flex-shrink: 0;
   flex-basis: 0;
-
-  .vm-styleguide__swatch-color__title {
-    margin: 1rem 0;
-  }
-
-  p {
-    margin: 0;
-  }
-
-  .vm-styleguide__swatch-color__color-square {
-    padding-top: 100%;
-  }
-
-  .vm-styleguide__swatch-color__values {
-    .vm-styleguide__swatch-color__value-label {
-      margin-bottom: 0;
-      opacity: 0.6;
-    }
-
-    .vm-styleguide__swatch-color__value-value {
-    }
-  }
 }

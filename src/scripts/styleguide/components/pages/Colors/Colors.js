@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { PieChart } from "react-minimal-pie-chart";
+import { useInView } from "react-intersection-observer";
 
 import StyleguideLayout from "../../lib/Layout";
 
@@ -27,6 +29,35 @@ const VM_SWATCH = [
   },
 ];
 
+function ColorsPieChart() {
+  const { ref, inView } = useInView({ threshold: 0.5 });
+  const [isVisible, setIsVisible] = useState(inView);
+
+  useEffect(() => {
+    if (inView && !isVisible) {
+      setIsVisible(true);
+    }
+  }, [inView]);
+
+  return (
+    <div ref={ref}>
+      <PieChart
+        lineWidth={40}
+        reveal={isVisible ? 100 : 0}
+        animate
+        animationDuration={800}
+        animationEasing="ease-in-out"
+        data={[
+          { title: "Cream", value: 40, color: "#F8F4F4" },
+          { title: "Plum", value: 30, color: "#714457" },
+          { title: "Sea Green", value: 25, color: "#1c4047" },
+          { title: "Sand", value: 5, color: "#DEC1A8" },
+        ]}
+      />
+    </div>
+  );
+}
+
 function ColorsPage() {
   return (
     <StyleguideLayout page="colors" pageNumber="02" title="Colors">
@@ -35,13 +66,17 @@ function ColorsPage() {
           className="content-section content-section--vm-styleguide js-styleguide-section"
           data-section-id="#colors"
         >
-          <StyleguideSubsection number="02a" title="Swatch">
+          <StyleguideSubsection number="02a" title="Swatch" sectionId="swatch">
             <StyleguideSubsectionRow title="Primary Colors">
               <StyleguideSwatch colors={VM_SWATCH} />
             </StyleguideSubsectionRow>
           </StyleguideSubsection>
 
-          <StyleguideSubsection number="02b" title="Color Shades">
+          <StyleguideSubsection
+            number="02b"
+            title="Color Shades"
+            sectionId="color-shades"
+          >
             <StyleguideSubsectionRow title="Plum">
               <p>TODO</p>
             </StyleguideSubsectionRow>
@@ -53,7 +88,11 @@ function ColorsPage() {
             </StyleguideSubsectionRow>
           </StyleguideSubsection>
 
-          <StyleguideSubsection number="02c" title="Regions">
+          <StyleguideSubsection
+            number="02c"
+            title="Regions"
+            sectionId="color-regions"
+          >
             <StyleguideSubsectionRow title="Light">
               <ColorRegionExample region="light" />
             </StyleguideSubsectionRow>
@@ -71,9 +110,21 @@ function ColorsPage() {
             </StyleguideSubsectionRow>
           </StyleguideSubsection>
 
-          <StyleguideSubsection number="02d" title="Color Ratios">
-            <StyleguideSubsectionRow title="Key">
-              <p>TODO</p>
+          <StyleguideSubsection
+            number="02d"
+            title="Color Ratios"
+            sectionId="color-ratios"
+          >
+            <StyleguideSubsectionRow
+              title="Key"
+              dataRows={[
+                { title: "cream", value: "40%" },
+                { title: "plum", value: "30%" },
+                { title: "sea green", value: "25%" },
+                { title: "sand", value: "5%" },
+              ]}
+            >
+              <ColorsPieChart />
             </StyleguideSubsectionRow>
           </StyleguideSubsection>
         </div>

@@ -3,9 +3,14 @@
 }
 
 .vm-styleguide__subsection-title {
+  position: relative;
   margin-bottom: get-vm-spacer(5);
 
   sup {
+    position: absolute;
+    top: 0.5em;
+    left: -2.5em;
+    right: auto;
     color: $vm-color-sand;
   }
 }

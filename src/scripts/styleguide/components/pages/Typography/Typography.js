@@ -15,7 +15,7 @@ const QUICK_BROWN_FOX = "The quick brown fox jumps over the lazy dog";
 function TypographyPage() {
   return (
     <StyleguideLayout page="typography" pageNumber="01" title="Typography">
-      <StyleguideSubsection number="01a" title="Fonts">
+      <StyleguideSubsection number="01a" title="Fonts" sectionId="fonts">
         <StyleguideSubsectionRow title="Orpheus Pro">
           <FontExample font="orpheus-pro" weight="bold" />
         </StyleguideSubsectionRow>
@@ -28,6 +28,7 @@ function TypographyPage() {
       <StyleguideSubsection
         number="01b"
         title="Headings"
+        sectionId="headings"
         description={
           <>
             <p>Headings are used for page and section titles.</p>
@@ -74,6 +75,7 @@ function TypographyPage() {
       <StyleguideSubsection
         number="01c"
         title="Subheadings"
+        sectionId="subheadings"
         description={
           <>
             <p>
@@ -125,6 +127,7 @@ function TypographyPage() {
       <StyleguideSubsection
         number="01d"
         title="Paragraph Text"
+        sectionId="paragraphs"
         description={
           <>
             <p>

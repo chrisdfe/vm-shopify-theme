@@ -1,0 +1,40 @@
+.vm-styleguide__swatch-color {
+  .vm-styleguide__swatch-color__square {
+    padding-top: 100%;
+    position: relative;
+    cursor: pointer;
+
+    .vm-styleguide__swatch-color__label {
+      position: absolute;
+      top: 50%;
+      left: 1rem;
+      right: 1rem;
+      transform: translateY(-50%);
+      text-align: center;
+      opacity: 0;
+      transition: 0.5s opacity;
+    }
+
+    &:hover,
+    &.vm-styleguide__swatch-color__square--has-copied {
+      .vm-styleguide__swatch-color__label {
+        opacity: 1;
+      }
+    }
+  }
+
+  .vm-styleguide__swatch-color__title {
+    margin: 1rem 0 0.5rem;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .vm-styleguide__swatch-color__values {
+    .vm-styleguide__swatch-color__value-label {
+      margin-bottom: 0;
+      opacity: 0.6;
+    }
+  }
+}
