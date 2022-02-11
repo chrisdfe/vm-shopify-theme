@@ -17,15 +17,31 @@
       "default": "Featured collection"
     },
     {
-      "type": "text",
-      "id": "title_cta_text",
-      "label": "Title CTA Text",
-      "default": "Shop Now"
+      "type": "checkbox",
+      "id": "collection_description",
+      "label": "Show description",
+      "default": true
     },
     {
       "type": "collection",
       "id": "collection",
       "label": "Collection"
+    },
+    {
+      "type": "radio",
+      "id": "collection_style",
+      "label": "Collection layout",
+      "default": "grid",
+      "options": [
+        {
+          "value": "slider",
+          "label": "Slider"
+        },
+        {
+          "value": "grid",
+          "label": "Grid"
+        }
+      ]
     },
     {
       "type": "header",
@@ -49,6 +65,13 @@
       "step": 1,
       "default": 9
     }
-  ]
+  ],
+  "presets": [{
+    "name": "Featured collection",
+    "category": "Collection",
+    "settings": {
+
+    }
+  }]
 }
 {% endschema %}

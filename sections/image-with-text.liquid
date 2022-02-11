@@ -13,10 +13,12 @@
 
 {% include "content-section.image-with-text" with {
   title: section.settings.title,
+  title_tag: "h1",
   with_accent: true,
   text_content: text_content,
   image: section.settings.image,
   color_region: "light",
+  extra_classes: 'u-padding-horizontal-4'
 } %}
 
 {% schema %}

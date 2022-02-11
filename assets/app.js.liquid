@@ -21,7 +21,6 @@ $(function() {
   header.init();
   searchAutocomplete.init();
   videoSection.init();
-  gallery.init();
   videoFeature.setupVideoPlayer();
   collectionSidebarFilter.init();
   cart.init();
@@ -48,23 +47,18 @@ $(function() {
   var resizeTimeout;
 
   // Listen for resize events
-  window.addEventListener('resize', function ( event ) {
-
+  window.addEventListener('resize', function (event) {
     // If timer is null, reset it to 66ms and run your functions.
     // Otherwise, wait until timer is cleared
-    if ( !resizeTimeout ) {
+    if (!resizeTimeout) {
       resizeTimeout = setTimeout(function() {
-
         // Reset timeout
         resizeTimeout = null;
 
         // Run our resize functions
         if($(window).width() <= 798) {
           cart.init();
-          header.unload();
-          header.init();
         }
-
       }, 66);
     }
   }, false);
@@ -1022,7 +1016,7 @@ $(document)
       setTimeout(function() {
         $('a.mega-menu-parent[data-dropdown-rel="' + megaMenuParent + '"]').trigger('mouseenter');
         $('a.mega-menu-parent[data-dropdown-rel="' + megaMenuParent + '"]').parents('header').addClass('editor-hover--true');
-        header.removeDataAttributes('.header .mega-menu.dropdown_container .dropdown_column');
+        header.removeDataAttributes('.header .mega-menu.header__dropdown-container .dropdown_column');
       }, 10);
     }
 

@@ -12,7 +12,7 @@ Example: <!--[ringsize="3.5-9"]-->
     {% endif %}
   {% endfor %}
 
-  {% if product.tags contains 'Design Your Own Ring' or product.tags contains 'Ring Resizing'  or product.tags contains 'ring resizing' or product.type == "OOAK and RTS" %}
+  {% if product.tags contains 'Design Your Own Ring' or contains_collection == "true" or product.tags contains 'Ring Resizing'  or product.tags contains 'ring resizing' or product.type == "OOAK and RTS" %}
     <!-- Ringsize Lineitem Snippet - SM 11/1/2016-->
     {% assign text_before_code = product.description | split: '<!--[ringsize="' %}
     {% if text_before_code[1].length != '' %}

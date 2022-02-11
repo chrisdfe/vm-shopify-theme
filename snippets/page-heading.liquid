@@ -6,12 +6,9 @@
   {% assign with_banner_padding = false %}
 {% endif %}
 
-{% comment %}
-<!-- temporarily disabling padded page headings -->
-{% if with_banner_padding %}page-heading--padded{% endif %}
-{% endcomment %}
 <div class="page-heading
     {% if align == "center" %}page-heading--center{% endif %}
+    {% if with_banner_padding %}page-heading--padded{% endif %}
     {{ extra_classes }}
   ">
   <h1 class="page-heading__title

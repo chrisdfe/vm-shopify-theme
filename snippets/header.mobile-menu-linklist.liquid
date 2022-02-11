@@ -1,18 +1,11 @@
-<li class="mobile-menu-list-item mobile-menu-list-item__linklist">
-  <a
-    href="{{ title_link }}"
-    data-no-instant>
-
-    {{ title }}
-
-    <span class="right icon-down-arrow"></span>
-  </a>
+<li class="mobile-menu-list-item mobile-menu-list-item__linklist">  
+  <h5>{{ title }}</h5>
 
   <ul>
     {% for sublink in links %}
-      <li>
-        <a href="{{ sublink.url }}">{{ sublink.title }}</a>
-      </li>
+    <li>
+      <a href="{{ sublink.url }}">{{ sublink.title }}</a>
+    </li>
     {% endfor %}
   </ul>
 </li>
