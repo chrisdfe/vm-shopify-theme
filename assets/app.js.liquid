@@ -44,24 +44,24 @@ $(function() {
   }
 
   // Setup a timer
-  var resizeTimeout;
+  // var resizeTimeout;
 
   // Listen for resize events
-  window.addEventListener('resize', function (event) {
-    // If timer is null, reset it to 66ms and run your functions.
-    // Otherwise, wait until timer is cleared
-    if (!resizeTimeout) {
-      resizeTimeout = setTimeout(function() {
-        // Reset timeout
-        resizeTimeout = null;
+  // window.addEventListener('resize', function (event) {
+  //   // If timer is null, reset it to 66ms and run your functions.
+  //   // Otherwise, wait until timer is cleared
+  //   if (!resizeTimeout) {
+  //     resizeTimeout = setTimeout(function() {
+  //       // Reset timeout
+  //       resizeTimeout = null;
 
-        // Run our resize functions
-        if($(window).width() <= 798) {
-          cart.init();
-        }
-      }, 66);
-    }
-  }, false);
+  //       // Run our resize functions
+  //       if($(window).width() <= 798) {
+  //         cart.init();
+  //       }
+  //     }, 66);
+  //   }
+  // }, false);
 
   //Lightbox default options
   //https://fancyapps.com/fancybox/3/docs/#options
@@ -1016,7 +1016,7 @@ $(document)
       setTimeout(function() {
         $('a.mega-menu-parent[data-dropdown-rel="' + megaMenuParent + '"]').trigger('mouseenter');
         $('a.mega-menu-parent[data-dropdown-rel="' + megaMenuParent + '"]').parents('header').addClass('editor-hover--true');
-        header.removeDataAttributes('.header .mega-menu.header__dropdown-container .dropdown_column');
+        // header.removeDataAttributes('.header .mega-menu.header__dropdown-container .dropdown_column');
       }, 10);
     }
 

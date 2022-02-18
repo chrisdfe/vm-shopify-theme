@@ -1,4 +1,4 @@
-@mixin vm-drawer() {
+.vm-drawer {
   display: block;
   background-color: #fff;
   // transform: translateX(100%);
@@ -11,10 +11,12 @@
   overflow-y: scroll;
   padding: get-vm-spacer(1);
 
+  // TODO - move this into somewhere else
+  //        'accordion' or something
   ul {
     list-style-type: none;
     padding: 0;
-    margin: 0 0 get-vm-spacer(1);
+    margin: 0;
   }
 
   &.vm-drawer--left {
@@ -29,15 +31,5 @@
 
   &.is-open {
     transform: translateX(0);
-  }
-}
-
-.vm-drawer {
-  @include vm-drawer();
-}
-
-.vm-mobile-drawer {
-  @include respond-to("medium-down") {
-    @include vm-drawer();
   }
 }

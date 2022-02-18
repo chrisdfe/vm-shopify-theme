@@ -10,9 +10,22 @@
   }
 }
 
+.header__logo {
+  width: 10%;
+}
+
+.header-desktop__nav {
+  width: 45%;
+
+  &:last-child {
+    text-align: right;
+  }
+}
+
 .header-desktop__navbar {
   display: flex;
   position: relative;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  padding: 0 get-vm-spacer(2);
 }

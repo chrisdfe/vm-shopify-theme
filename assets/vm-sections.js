@@ -76,39 +76,6 @@
     return obj;
   }
 
-  function _toConsumableArray(arr) {
-    return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();
-  }
-
-  function _arrayWithoutHoles(arr) {
-    if (Array.isArray(arr)) return _arrayLikeToArray(arr);
-  }
-
-  function _iterableToArray(iter) {
-    if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter);
-  }
-
-  function _unsupportedIterableToArray(o, minLen) {
-    if (!o) return;
-    if (typeof o === "string") return _arrayLikeToArray(o, minLen);
-    var n = Object.prototype.toString.call(o).slice(8, -1);
-    if (n === "Object" && o.constructor) n = o.constructor.name;
-    if (n === "Map" || n === "Set") return Array.from(o);
-    if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
-  }
-
-  function _arrayLikeToArray(arr, len) {
-    if (len == null || len > arr.length) len = arr.length;
-
-    for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
-
-    return arr2;
-  }
-
-  function _nonIterableSpread() {
-    throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
-  }
-
   /**
    * Image Helper Functions
    * -----------------------------------------------------------------------------
@@ -455,12 +422,10 @@
   }
 
   var PromoBanner = /*#__PURE__*/function () {
-    function PromoBanner(element) {
+    function PromoBanner() {
       _classCallCheck(this, PromoBanner);
 
-      _defineProperty(this, "element", null);
-
-      this.element = element;
+      this.element = document.querySelector(".promo-banner");
     }
 
     _createClass(PromoBanner, [{
@@ -468,269 +433,22 @@
       value: function initialize() {
         if (Cookies.get("promo-banner") === "dismiss") {
           return;
-        } // this.closeButtons =
+        }
 
-
-        $("body").addClass("promo-banner-show");
+        document.body.classList.add("promo-banner-show");
         document.querySelectorAll(".js-promo-banner-close").forEach(function (closeButton) {
           closeButton.addEventListener("click", function () {
-            $("body").removeClass("promo-banner-show");
+            document.body.classList.remove("promo-banner-show");
             Cookies.set("promo-banner", "dismiss", {
               expires: 30
             });
           });
         });
       }
-    }], [{
-      key: "findAndInitialize",
-      value: function findAndInitialize$1() {
-        return findAndInitialize(PromoBanner);
-      }
     }]);
 
     return PromoBanner;
   }();
-
-  _defineProperty(PromoBanner, "selector", ".promo-banner");
-
-  var HeaderDesktop = /*#__PURE__*/function () {
-    //
-    //
-    function HeaderDesktop(headerElement) {
-      _classCallCheck(this, HeaderDesktop);
-
-      _defineProperty(this, "currentDropdownId", null);
-
-      _defineProperty(this, "headerElement", null);
-
-      _defineProperty(this, "dropdownNavLinkElements", []);
-
-      _defineProperty(this, "dropdownLinkElements", []);
-
-      _defineProperty(this, "dropdownElements", []);
-
-      _defineProperty(this, "dropdownIds", []);
-
-      _defineProperty(this, "dropdownMap", {});
-
-      this.headerElement = headerElement;
-    }
-
-    _createClass(HeaderDesktop, [{
-      key: "initialize",
-      value: function initialize() {
-        var _this = this;
-
-        this.headerWrapperElement = document.querySelector(".header-wrapper");
-        this.dropdownLinkElements = this.headerElement.querySelectorAll(".header__dropdown-link");
-        this.dropdownElements = document.querySelectorAll(".header__dropdown-container");
-        this.dropdownMap = Array.from(this.dropdownElements).reduce(function (acc, element) {
-          var dropdownId = element.getAttribute("data-dropdown");
-
-          if (!dropdownId) {
-            return acc;
-          }
-
-          return _objectSpread2(_objectSpread2({}, acc), {}, _defineProperty({}, dropdownId, element));
-        }, {});
-        this.dropdownIds = Object.keys(this.dropdownMap);
-        this.dropdownNavLinkElements = Array.from(this.headerElement.querySelectorAll(".header-desktop__nav-link")).filter(function (element) {
-          var dropdownRel = element.getAttribute("data-dropdown-rel");
-
-          if (!dropdownRel) {
-            return false;
-          } // dropdownLink points to a non-existant dropdown
-
-
-          if (!_this.dropdownIds.includes(dropdownRel)) {
-            return false;
-          }
-
-          return true;
-        }); // Ideally we'd add this class in the liquid itself but the entire list of
-        // dropdown ids isn't available to the header snippet
-
-        this.dropdownNavLinkElements.forEach(function (dropdownLink) {
-          dropdownLink.classList.add("is-dropdown-link");
-        });
-        var allDropdownLinkElements = [].concat(_toConsumableArray(this.dropdownLinkElements), _toConsumableArray(this.dropdownNavLinkElements));
-        allDropdownLinkElements.forEach(function (dropdownLink) {
-          var dropdownId = dropdownLink.getAttribute("data-dropdown-rel");
-          var dropdownElement = _this.dropdownMap[dropdownId]; // TODO -
-          // 1) store current active dropdownId
-          // 2) deactivate current dropdown
-
-          dropdownLink.addEventListener("mouseover", function (event) {
-            if (_this.currentDropdownId && _this.currentDropdownId !== dropdownId) {
-              var otherDropdownElement = _this.dropdownMap[_this.currentDropdownId];
-              otherDropdownElement.classList.remove("is-active");
-            }
-
-            _this.currentDropdownId = dropdownId;
-            dropdownElement.classList.add("is-active");
-          });
-        }); // TODO
-        // - if the mouse is within the header still the dropdown should not close
-
-        this.headerWrapperElement.addEventListener("mouseleave", function (event) {
-          // console.log("event.target");
-          console.log(event.target.closest(".header-wrapper")); // if (!event.target.closest(".header-wrapper")) {
-          // console.log("mouseout", event.target);
-          // dropdownElement.classList.remove("is-active");
-
-          if (_this.currentDropdownId) {
-            var otherDropdownElement = _this.dropdownMap[_this.currentDropdownId];
-            otherDropdownElement.classList.remove("is-active");
-          }
-
-          _this.currentDropdownId = null; // }
-        });
-      }
-    }], [{
-      key: "findAndInitialize",
-      value: function findAndInitialize$1() {
-        return findAndInitialize(HeaderDesktop);
-      }
-    }]);
-
-    return HeaderDesktop;
-  }();
-
-  _defineProperty(HeaderDesktop, "selector", ".header-desktop");
-
-  var CartModule = function CartModule(_ref) {
-    var headerElement = _ref.headerElement;
-        _ref.onOpen;
-
-    _classCallCheck(this, CartModule);
-
-    _defineProperty(this, "isOpen", false);
-
-    _defineProperty(this, "headerElement", null);
-
-    _defineProperty(this, "cartButtonElement", null);
-
-    _defineProperty(this, "cartModuleElement", null);
-
-    this.headerElement = headerElement;
-  };
-
-  _defineProperty(CartModule, "buttonSelector", "");
-
-  _defineProperty(CartModule, "moduleSelector", "");
-
-  var HeaderMobile = /*#__PURE__*/function () {
-    // refs
-    function HeaderMobile(headerElement) {
-      var _this = this;
-
-      _classCallCheck(this, HeaderMobile);
-
-      _defineProperty(this, "headerElement", null);
-
-      _defineProperty(this, "cartModuleElement", null);
-
-      _defineProperty(this, "megaMenuWrapperElement", null);
-
-      _defineProperty(this, "megaMenuAccordionButtons", []);
-
-      _defineProperty(this, "megaMenuAccordionMap", {});
-
-      _defineProperty(this, "openMenu", function () {
-        _this.menuIsOpen = true;
-
-        _this.menuButtonElement.classList.add("is-open");
-
-        _this.megaMenuWrapperElement.classList.add("is-open");
-
-        _this.lockBodyScroll();
-      });
-
-      _defineProperty(this, "closeMenu", function () {
-        _this.menuIsOpen = false;
-
-        _this.menuButtonElement.classList.remove("is-open");
-
-        _this.megaMenuWrapperElement.classList.remove("is-open");
-
-        _this.unlockBodyScroll();
-      });
-
-      _defineProperty(this, "toggleMenuOpen", function () {
-        _this.closeCart();
-
-        _this.menuIsOpen ? _this.closeMenu() : _this.openMenu();
-      });
-
-      _defineProperty(this, "openSearch", function () {});
-
-      _defineProperty(this, "closeSearch", function () {});
-
-      _defineProperty(this, "onSearchButtonClick", function () {});
-
-      _defineProperty(this, "toggleSearchOpen", function () {
-        _this.closeMenu();
-
-        _this.cartModule.close();
-      });
-
-      _defineProperty(this, "onCartOpen", function () {
-        console.log("oncartopen");
-      });
-
-      _defineProperty(this, "onAccordionButtonClick", function (event) {
-        var accordionButton = event.target.closest(".mobile-menu-accordion-button");
-        var accordionId = accordionButton.getAttribute("data-accordion-id");
-        var contentElement = _this.megaMenuAccordionMap[accordionId];
-        accordionButton.classList.toggle("is-open");
-        contentElement.classList.toggle("is-open");
-      });
-
-      this.headerElement = headerElement;
-    }
-
-    _createClass(HeaderMobile, [{
-      key: "initialize",
-      value: function initialize() {
-        var _this2 = this;
-
-        // this.cartModule = new CartModule({
-        //   headerElement: this.headerElement,
-        //   onOpen: this.onCartOpen,
-        // });
-        this.megaMenuWrapperElement = document.querySelector(".mega-menu-container");
-        this.megaMenuAccordionButtons = document.querySelectorAll(".mobile-menu-accordion-button");
-        this.searchButtonElement = this.headerElement.querySelector(".js-mobile-search-button");
-        this.cartButtonElement = this.headerElement.querySelector(".js-mobile-cart-button");
-        this.cartModuleElement = document.querySelector(".header__cart-module");
-        this.megaMenuAccordionMap = Array.from(this.megaMenuAccordionButtons).reduce(function (acc, accordionButton) {
-          var accordionId = accordionButton.getAttribute("data-accordion-id");
-          var contentElement = document.querySelector(".mobile-menu-accordion-content[data-accordion-id=\"".concat(accordionId, "\"]"));
-          return _objectSpread2(_objectSpread2({}, acc), {}, _defineProperty({}, accordionId, contentElement));
-        }, {}); // this.menuButtonElement.addEventListener("click", this.toggleMenuOpen);
-        // this.searchButtonElement.addEventListener(
-        //   "click",
-        //   this.onSearchButtonClick
-        // );
-
-        this.megaMenuAccordionButtons.forEach(function (accordionButton) {
-          accordionButton.addEventListener("click", _this2.onAccordionButtonClick);
-        }); // document.body.addEventListener("click", this.onBodyClick);
-      }
-    }, {
-      key: "unload",
-      value: function unload() {}
-    }], [{
-      key: "findAndInitialize",
-      value: function findAndInitialize$1() {
-        return findAndInitialize(HeaderMobile);
-      }
-    }]);
-
-    return HeaderMobile;
-  }();
-
-  _defineProperty(HeaderMobile, "selector", ".header-mobile");
 
   var HeaderDrawer = /*#__PURE__*/function () {
     function HeaderDrawer(_ref) {
@@ -754,11 +472,11 @@
       _defineProperty(this, "onButtonClick", null);
 
       _defineProperty(this, "open", function () {
-        return _this.setOpen(true);
+        _this.setOpen(true);
       });
 
       _defineProperty(this, "close", function () {
-        return _this.setOpen(false);
+        _this.setOpen(false);
       });
 
       _defineProperty(this, "setOpen", function (isOpen) {
@@ -840,7 +558,6 @@
       value: function initialize() {
         var _this2 = this;
 
-        console.log("initializing");
         this.drawerButtons = document.querySelectorAll("[data-drawer-button-id]");
         this.drawerIdMap = Array.from(this.drawerButtons).reduce(function (acc, buttonElement) {
           var id = buttonElement.getAttribute("data-drawer-button-id");
@@ -880,6 +597,69 @@
     return HeaderDrawerManager;
   }();
 
+  var DropdownManager = /*#__PURE__*/function () {
+    //
+    //
+    function DropdownManager() {
+      _classCallCheck(this, DropdownManager);
+
+      _defineProperty(this, "currentDropdownId", null);
+
+      _defineProperty(this, "headerElement", null);
+
+      _defineProperty(this, "navLinkElements", []);
+
+      _defineProperty(this, "dropdownLinkElements", []);
+
+      _defineProperty(this, "dropdownElements", []);
+
+      _defineProperty(this, "dropdownIds", []);
+
+      _defineProperty(this, "dropdownMap", {});
+    }
+
+    _createClass(DropdownManager, [{
+      key: "initialize",
+      value: function initialize() {
+        var _this = this;
+
+        this.headerWrapperElement = document.querySelector(".header-wrapper");
+        this.dropdownLinkElements = document.querySelectorAll(".header__dropdown-link");
+        this.dropdownElements = document.querySelectorAll(".header__dropdown-container");
+        this.dropdownMap = Array.from(this.dropdownElements).reduce(function (acc, element) {
+          var dropdownId = element.getAttribute("data-dropdown");
+
+          if (!dropdownId) {
+            return acc;
+          }
+
+          return _objectSpread2(_objectSpread2({}, acc), {}, _defineProperty({}, dropdownId, element));
+        }, {});
+        this.dropdownIds = Object.keys(this.dropdownMap);
+        this.navLinkElements = Array.from(this.headerWrapperElement.querySelectorAll(".header-desktop__nav-link")).filter(function (element) {
+          var dropdownRel = element.getAttribute("data-dropdown-rel");
+
+          if (!dropdownRel) {
+            return false;
+          } // dropdownLink points to a non-existant dropdown
+
+
+          if (!_this.dropdownIds.includes(dropdownRel)) {
+            return false;
+          }
+
+          return true;
+        });
+        return this;
+      }
+    }, {
+      key: "unload",
+      value: function unload() {}
+    }]);
+
+    return DropdownManager;
+  }();
+
   var HeaderWrapper = /*#__PURE__*/function () {
     function HeaderWrapper(headerWrapperElement) {
       _classCallCheck(this, HeaderWrapper);
@@ -894,16 +674,17 @@
 
       _defineProperty(this, "drawerManager", null);
 
+      _defineProperty(this, "dropdownManager", null);
+
       this.headerWrapperElement = headerWrapperElement;
     }
 
     _createClass(HeaderWrapper, [{
       key: "initialize",
       value: function initialize() {
-        this.promoBanner = PromoBanner.findAndInitialize();
-        this.headerDesktop = HeaderDesktop.findAndInitialize();
-        this.headerMobile = HeaderMobile.findAndInitialize();
+        this.promoBanner = new PromoBanner().initialize();
         this.drawerManager = new HeaderDrawerManager().initialize();
+        this.dropdownManager = new DropdownManager().initialize();
       }
     }], [{
       key: "findAndInitialize",
@@ -917,112 +698,17 @@
 
   _defineProperty(HeaderWrapper, "selector", ".header-wrapper");
 
-  //   $("body").removeClass("is-active").removeClass("blocked-scroll"),
-  //     $(".dropdown_link").toggleClass("active_link"),
-  //     $(".cart_container").removeClass("active_link");
-  // }
-
   var header = {
     init: function init() {
-      HeaderWrapper.findAndInitialize(); // $("html").on("click", function (e) {
-      //   if (
-      //     !$(e.target).closest(".cart_container").length &&
-      //     $(".cart_content").is(":visible")
-      //   ) {
-      //     hideNavbar();
-      //     if (
-      //       $(e.target).closest(".header__dropdown-container").length &&
-      //       $(".dropdown").is(":visible") &&
-      //       !$(e.target).hasClass("url-deadlink")
-      //     ) {
-      //       $("body").removeClass("is-active");
-      //       $(".dropdown_link").removeClass("active_link");
-      //       $(".header__dropdown-container").hide();
-      //       $(".mobile_nav").find("div").removeClass("open");
-      //     }
-      //   }
-      // });
-      // if ($(".main_nav_wrapper").length > 1) {
-      //   $(".main_nav_wrapper").first().remove();
-      // }
-      // if ($("#header").hasClass("mobile_nav-fixed--true")) {
-      //   $("body").addClass("mobile_nav-fixed--true");
-      //   $("body").on("click", '.banner a[href^="#"]', function (e) {
-      //     e.preventDefault();
-      //     const t = $(this).attr("href");
-      //     const a = $("#header").outerHeight();
-      //     $("html, body").animate({ scrollTop: $(t).offset().top - a }, 2e3);
-      //   });
-      // } else {
-      //   $("body").addClass("mobile_nav-fixed--false");
-      // }
-      // $(".dropdown_link").attr("data-no-instant", true);
-      // $("body").on("click", ".dropdown_link", function (e) {
-      //   e.preventDefault();
-      //   // console.log("dropdown_link click");
-      //   $(".nav a").removeClass("active_link");
-      //   if ($("#header").is(":visible")) {
-      //     var t = $(this)
-      //       .parents("#header")
-      //       .find('[data-dropdown="' + $(this).data("dropdown-rel") + '"]');
-      //     $(this).hasClass("mini_cart") ||
-      //       $(".cart_container").removeClass("active_link");
-      //   } else {
-      //     if ($(this).hasClass("icon-search"))
-      //       // window.location = $(this).attr("href"));
-      //       // return false;
-      //       t = $(this)
-      //         .parents(".main_nav")
-      //         .find('[data-dropdown="' + $(this).data("dropdown-rel") + '"]');
-      //   }
-      //   if (t.is(":visible") || !t.attr("class")) {
-      //     t.hide();
-      //     $("body").removeClass("is-active");
-      //   } else {
-      //     $(".header__dropdown-container").hide();
-      //     t.show();
-      //     $("body").addClass("is-active");
-      //     $(".mobile_nav").find("div").removeClass("open");
-      //     t.is(":visible");
-      //   }
-      //   e.preventDefault();
-      //   e.stopPropagation();
-      //   return false;
-      // });
-      // $("body").on("click", ".mobile_nav", function () {
-      //   console.log("mobile_nav click");
-      //   $(this).find("div").toggleClass("open");
-      // });
-      // if (Shopify.theme_settings.cart_action !== "redirect_cart") {
-      //   $(".mini_cart").on("click", function (e) {
-      //     let t;
-      //     const a = $(this).parent();
-      //     if (a.hasClass("active_link")) {
-      //       hideNavbar();
-      //       $("body").removeClass("blocked-scroll");
-      //     } else {
-      //       t = a;
-      //       $("body").addClass("blocked-scroll");
-      //       $(".mobile_nav div").removeClass("open");
-      //       $(".dropdown_link").removeClass("active_link");
-      //       t.addClass("active_link");
-      //       $("body").addClass("blocked-scroll");
-      //       (is_touch_device() || $(window).width() <= 798) && e.preventDefault();
-      //     }
-      //   });
-      // }
+      HeaderWrapper.findAndInitialize();
+      window.addEventListener("shopify:section:select", function (event) {
+        console.log("section selected");
+      });
     },
     loadMegaMenu: function loadMegaMenu() {},
     loadMobileMegaMenu: function loadMobileMegaMenu() {},
     unloadMegaMenu: function unloadMegaMenu() {},
-    unload: function unload() {// $("body").off("click", ".mobile_nav");
-      // $("body").off("click", ".dropdown_link");
-      // $("html").off("click");
-      // $(".mini_cart").off("click");
-      // $(".cart_content__continue-shopping").off("click");
-      // $("body").off("click", '.banner a[href^="#"]');
-      // $(".main_nav_wrapper.sticky_nav").remove();
-    }
+    unload: function unload() {}
   };
 
   var cart = {
@@ -1038,9 +724,9 @@
     }
   };
 
-  // import intersections from "../lib/intersections";
-  window.searchAutocomplete = searchAutocompleteManager;
+  // import intersections from "../vm-sections/modules/intersections";
   window.header = header;
+  window.searchAutocomplete = searchAutocompleteManager;
   window.cart = cart; // intersections.init();
 
 })();

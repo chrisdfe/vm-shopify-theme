@@ -7,7 +7,11 @@
 }
 
 .mobile-menu-list-item {
-  margin-bottom: get-vm-spacer(1);
+  margin-bottom: get-vm-spacer(2);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .mobile-menu-list-item.mobile-menu-list-item__linklist {

@@ -23,9 +23,13 @@ export default class HeaderDrawer {
 
   unload() {}
 
-  open = () => this.setOpen(true);
+  open = () => {
+    this.setOpen(true);
+  };
 
-  close = () => this.setOpen(false);
+  close = () => {
+    this.setOpen(false);
+  };
 
   setOpen = (isOpen) => {
     this.isOpen = isOpen;

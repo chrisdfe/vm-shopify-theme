@@ -17,7 +17,6 @@ export default class HeaderDrawerManager {
   drawerIdMap = {};
 
   initialize() {
-    console.log("initializing");
     this.drawerButtons = document.querySelectorAll("[data-drawer-button-id]");
     this.drawerIdMap = Array.from(this.drawerButtons).reduce(
       (acc, buttonElement) => {
