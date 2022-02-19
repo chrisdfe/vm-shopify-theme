@@ -57,14 +57,26 @@
 {%- endif -%}
 {% endcomment %}
 
-{% include 'header.promo-banner' %}
-
-{% include 'header.desktop' %}
-{% include 'header.mobile' %}
-
-<div class="dropdown-wrapper">
-  {% render "header.search" %}
-  {% render "header.cart" %}
+<div class="header-wrapper">
+  {% include 'header.promo-banner' %}
+  
+  {% include 'header.desktop' %}
+  {% include 'header.mobile' %}
+  
+  <div class="dropdown-wrapper">
+    <div class="vm-header-dropdown" data-dropdown="search">
+      {% render "header.search" %}
+    </div>
+  </div>
+  
+  <div
+  class="vm-drawer vm-mobile-only-drawer vm-drawer--right
+  vm-header-dropdown vm-desktop-only-header-dropdown"
+  data-drawer-id="cart"
+  data-dropdown="cart"
+  >
+    {% render "header.cart" %}
+  </div>
 </div>
 
 {% schema %}

@@ -1,64 +1,10 @@
 (function () {
   'use strict';
 
-  function ownKeys(object, enumerableOnly) {
-    var keys = Object.keys(object);
-
-    if (Object.getOwnPropertySymbols) {
-      var symbols = Object.getOwnPropertySymbols(object);
-
-      if (enumerableOnly) {
-        symbols = symbols.filter(function (sym) {
-          return Object.getOwnPropertyDescriptor(object, sym).enumerable;
-        });
-      }
-
-      keys.push.apply(keys, symbols);
-    }
-
-    return keys;
-  }
-
-  function _objectSpread2(target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i] != null ? arguments[i] : {};
-
-      if (i % 2) {
-        ownKeys(Object(source), true).forEach(function (key) {
-          _defineProperty(target, key, source[key]);
-        });
-      } else if (Object.getOwnPropertyDescriptors) {
-        Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
-      } else {
-        ownKeys(Object(source)).forEach(function (key) {
-          Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
-        });
-      }
-    }
-
-    return target;
-  }
-
   function _classCallCheck(instance, Constructor) {
     if (!(instance instanceof Constructor)) {
       throw new TypeError("Cannot call a class as a function");
     }
-  }
-
-  function _defineProperties(target, props) {
-    for (var i = 0; i < props.length; i++) {
-      var descriptor = props[i];
-      descriptor.enumerable = descriptor.enumerable || false;
-      descriptor.configurable = true;
-      if ("value" in descriptor) descriptor.writable = true;
-      Object.defineProperty(target, descriptor.key, descriptor);
-    }
-  }
-
-  function _createClass(Constructor, protoProps, staticProps) {
-    if (protoProps) _defineProperties(Constructor.prototype, protoProps);
-    if (staticProps) _defineProperties(Constructor, staticProps);
-    return Constructor;
   }
 
   function _defineProperty(obj, key, value) {
@@ -421,294 +367,260 @@
     return null;
   }
 
-  var PromoBanner = /*#__PURE__*/function () {
-    function PromoBanner() {
-      _classCallCheck(this, PromoBanner);
-
-      this.element = document.querySelector(".promo-banner");
-    }
-
-    _createClass(PromoBanner, [{
-      key: "initialize",
-      value: function initialize() {
-        if (Cookies.get("promo-banner") === "dismiss") {
-          return;
-        }
-
-        document.body.classList.add("promo-banner-show");
-        document.querySelectorAll(".js-promo-banner-close").forEach(function (closeButton) {
-          closeButton.addEventListener("click", function () {
-            document.body.classList.remove("promo-banner-show");
-            Cookies.set("promo-banner", "dismiss", {
-              expires: 30
-            });
+  var PromoBanner = /** @class */ (function () {
+      function PromoBanner() {
+          // this.element = document.querySelector(".promo-banner");
+      }
+      PromoBanner.prototype.initialize = function () {
+          // @ts-ignore TODO - switch to npm library instead
+          if (Cookies.get("promo-banner") === "dismiss") {
+              return;
+          }
+          document.body.classList.add("promo-banner-show");
+          document
+              .querySelectorAll(".js-promo-banner-close")
+              .forEach(function (closeButton) {
+              closeButton.addEventListener("click", function () {
+                  document.body.classList.remove("promo-banner-show");
+                  // @ts-ignore TODO - switch to npm library instead
+                  Cookies.set("promo-banner", "dismiss", { expires: 30 });
+              });
           });
-        });
+          return this;
+      };
+      return PromoBanner;
+  }());
+
+  var _assign = function __assign() {
+    _assign = Object.assign || function __assign(t) {
+      for (var s, i = 1, n = arguments.length; i < n; i++) {
+        s = arguments[i];
+
+        for (var p in s) {
+          if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+        }
       }
-    }]);
 
-    return PromoBanner;
-  }();
+      return t;
+    };
 
-  var HeaderDrawer = /*#__PURE__*/function () {
-    function HeaderDrawer(_ref) {
-      var _this = this;
-
-      var id = _ref.id,
-          buttonElement = _ref.buttonElement,
-          drawerElement = _ref.drawerElement,
-          onButtonClick = _ref.onButtonClick;
-
-      _classCallCheck(this, HeaderDrawer);
-
-      _defineProperty(this, "isOpen", false);
-
-      _defineProperty(this, "id", null);
-
-      _defineProperty(this, "buttonElement", null);
-
-      _defineProperty(this, "drawerElement", null);
-
-      _defineProperty(this, "onButtonClick", null);
-
-      _defineProperty(this, "open", function () {
-        _this.setOpen(true);
-      });
-
-      _defineProperty(this, "close", function () {
-        _this.setOpen(false);
-      });
-
-      _defineProperty(this, "setOpen", function (isOpen) {
-        _this.isOpen = isOpen;
-
-        _this.drawerElement.classList.toggle("is-open", isOpen);
-
-        _this.buttonElement.classList.toggle("is-open", isOpen);
-      });
-
-      this.id = id;
-      this.buttonElement = buttonElement;
-      this.drawerElement = drawerElement;
-      this.onButtonClick = onButtonClick;
-    }
-
-    _createClass(HeaderDrawer, [{
-      key: "initialize",
-      value: function initialize() {
-        var _this2 = this;
-
-        this.buttonElement.addEventListener("click", function () {
-          _this2.onButtonClick(_this2);
-        });
-        return this;
-      }
-    }, {
-      key: "unload",
-      value: function unload() {}
-    }]);
-
-    return HeaderDrawer;
-  }();
-
-  var BodyScroll = {
-    lock: function lock() {
-      document.body.classList.add("menu-is-open");
-    },
-    unlock: function unlock() {
-      document.body.classList.remove("menu-is-open");
-    }
+    return _assign.apply(this, arguments);
   };
 
-  var HeaderDrawerManager = /*#__PURE__*/function () {
-    function HeaderDrawerManager() {
-      var _this = this;
+  var HeaderDrawer = /** @class */ (function () {
+      function HeaderDrawer(_a) {
+          var _this = this;
+          var drawerElement = _a.drawerElement, onButtonClick = _a.onButtonClick;
+          this.isOpen = false;
+          this.unload = function () { };
+          this.open = function () {
+              _this.toggle(true);
+          };
+          this.close = function () {
+              _this.toggle(false);
+          };
+          this.toggle = function (isOpen) {
+              _this.isOpen = isOpen;
+              _this.drawerElement.classList.toggle("is-open", isOpen);
+              _this.buttonElements.forEach(function (element) {
+                  element.classList.toggle("is-open", isOpen);
+              });
+          };
+          this.drawerElement = drawerElement;
+          this.onButtonClick = onButtonClick;
+      }
+      HeaderDrawer.prototype.initialize = function () {
+          var _this = this;
+          this.id = this.drawerElement.getAttribute("data-drawer-id");
+          console.log("this.id", this.id);
+          this.buttonElements = Array.from(document.querySelectorAll("[data-drawer-button-id=\"".concat(this.id, "\"]")));
+          console.log("this.buttonElement", this.buttonElements.length);
+          this.buttonElements.forEach(function (element) {
+              element.addEventListener("click", function () {
+                  _this.onButtonClick(_this);
+              });
+          });
+          return this;
+      };
+      return HeaderDrawer;
+  }());
 
-      _classCallCheck(this, HeaderDrawerManager);
+  var BodyScroll = {
+      lock: function () {
+          document.body.classList.add("menu-is-open");
+      },
+      unlock: function () {
+          document.body.classList.remove("menu-is-open");
+      }
+  };
 
-      _defineProperty(this, "drawerButtons", []);
-
-      _defineProperty(this, "currentOpenDrawerId", null);
-
-      _defineProperty(this, "drawerIdMap", {});
-
-      _defineProperty(this, "onDrawerButtonClick", function (drawer) {
-        if (_this.currentOpenDrawerId) {
-          if (drawer.id === _this.currentOpenDrawerId) {
-            _this.closeDrawer(drawer);
-          } else {
-            _this.closeDrawer(_this.getCurrentOpenDrawer());
-
-            _this.openDrawer(drawer);
+  var HeaderDrawerManager = /** @class */ (function () {
+      function HeaderDrawerManager() {
+          var _this = this;
+          this.onDrawerButtonClick = function (drawer) {
+              if (_this.currentOpenDrawerId) {
+                  if (drawer.id === _this.currentOpenDrawerId) {
+                      _this.closeDrawer(drawer);
+                  }
+                  else {
+                      _this.closeDrawer(_this.getCurrentOpenDrawer());
+                      _this.openDrawer(drawer);
+                  }
+              }
+              else {
+                  _this.openDrawer(drawer);
+              }
+          };
+          this.onBodyClick = function (event) {
+              if (_this.getCurrentOpenDrawer() &&
+                  event.target.closest("[data-drawer-id]") === null &&
+                  event.target.closest("[data-drawer-button-id]") === null) {
+                  _this.closeDrawer(_this.getCurrentOpenDrawer());
+              }
+          };
+      }
+      HeaderDrawerManager.prototype.initialize = function () {
+          var _this = this;
+          this.drawerElements = document.querySelectorAll("[data-drawer-id]");
+          this.drawerIdMap = Array.from(this.drawerElements).reduce(function (acc, drawerElement) {
+              var _a;
+              var drawer = new HeaderDrawer({
+                  drawerElement: drawerElement,
+                  onButtonClick: _this.onDrawerButtonClick
+              }).initialize();
+              return _assign(_assign({}, acc), (_a = {}, _a[drawer.id] = drawer, _a));
+          }, {});
+          document.body.addEventListener("click", this.onBodyClick);
+          return this;
+      };
+      HeaderDrawerManager.prototype.getCurrentOpenDrawer = function () {
+          if (!this.currentOpenDrawerId) {
+              return null;
           }
-        } else {
-          _this.openDrawer(drawer);
-        }
-      });
+          console.log("this.currentOpenDrawerId", this.currentOpenDrawerId);
+          return this.drawerIdMap[this.currentOpenDrawerId];
+      };
+      HeaderDrawerManager.prototype.openDrawer = function (drawer) {
+          drawer.open();
+          this.currentOpenDrawerId = drawer.id;
+          BodyScroll.lock();
+      };
+      HeaderDrawerManager.prototype.closeDrawer = function (drawer) {
+          drawer.close();
+          this.currentOpenDrawerId = null;
+          BodyScroll.unlock();
+      };
+      return HeaderDrawerManager;
+  }());
 
-      _defineProperty(this, "onBodyClick", function (event) {
-        if (_this.currentOpenDrawerId !== null && event.target.closest("[data-drawer-id]") === null && event.target.closest("[data-drawer-button-id]") === null) {
-          _this.closeDrawer(_this.getCurrentOpenDrawer());
-        }
-      });
-    }
-
-    _createClass(HeaderDrawerManager, [{
-      key: "initialize",
-      value: function initialize() {
-        var _this2 = this;
-
-        this.drawerButtons = document.querySelectorAll("[data-drawer-button-id]");
-        this.drawerIdMap = Array.from(this.drawerButtons).reduce(function (acc, buttonElement) {
-          var id = buttonElement.getAttribute("data-drawer-button-id");
-          var drawerElement = document.querySelector("[data-drawer-id=\"".concat(id, "\"]"));
-          var drawer = new HeaderDrawer({
-            id: id,
-            buttonElement: buttonElement,
-            drawerElement: drawerElement,
-            onButtonClick: _this2.onDrawerButtonClick
-          }).initialize();
-          return _objectSpread2(_objectSpread2({}, acc), {}, _defineProperty({}, id, drawer));
-        }, {});
-        document.body.addEventListener("click", this.onBodyClick);
-        return this;
+  var OPEN_CLASSNAME = "is-active";
+  var HeaderDropdown = /** @class */ (function () {
+      function HeaderDropdown(element) {
+          var _this = this;
+          this.isOpen = false;
+          this.initialize = function () {
+              _this.id = _this.dropdownElement.getAttribute("data-dropdown");
+              _this.buttonElements = Array.from(document.querySelectorAll("[data-dropdown-rel=\"".concat(_this.id, "\"]")));
+              console.log("this.buttonElements", _this.id);
+              console.log("this.buttonElements", _this.buttonElements.length);
+              _this.buttonElements.forEach(function (element) {
+                  element.classList.add("is-dropdown-button");
+                  element.addEventListener("click", function (event) {
+                      _this.onButtonElementClick(event, element);
+                  });
+              });
+              return _this;
+          };
+          this.onButtonElementClick = function (event, element) {
+              event.preventDefault();
+              console.log("click", _this.id);
+              _this.toggle(!_this.isOpen);
+          };
+          this.open = function () {
+              _this.isOpen = true;
+              _this.dropdownElement.classList.add(OPEN_CLASSNAME);
+          };
+          this.close = function () {
+              _this.isOpen = false;
+              _this.dropdownElement.classList.remove(OPEN_CLASSNAME);
+          };
+          this.toggle = function (isOpen) {
+              _this.isOpen = isOpen;
+              _this.dropdownElement.classList.toggle(OPEN_CLASSNAME, isOpen);
+          };
+          this.dropdownElement = element;
       }
-    }, {
-      key: "getCurrentOpenDrawer",
-      value: function getCurrentOpenDrawer() {
-        return this.drawerIdMap[this.currentOpenDrawerId];
+      HeaderDropdown.prototype.unload = function () { };
+      return HeaderDropdown;
+  }());
+
+  var DropdownManager = /** @class */ (function () {
+      // navLinkElements: Element[];
+      function DropdownManager() {
+          //
+          this.currentDropdownId = null;
       }
-    }, {
-      key: "openDrawer",
-      value: function openDrawer(drawer) {
-        drawer.open();
-        this.currentOpenDrawerId = drawer.id;
-        BodyScroll.lock();
+      DropdownManager.prototype.initialize = function () {
+          this.headerWrapperElement = document.querySelector(".header-wrapper");
+          this.dropdownLinkElements = document.querySelectorAll(".vm-header-dropdown-link");
+          this.dropdownElements = document.querySelectorAll(".vm-header-dropdown");
+          this.dropdownMap = Array.from(this.dropdownElements).reduce(function (acc, element) {
+              var _a;
+              var dropdown = new HeaderDropdown(element).initialize();
+              return _assign(_assign({}, acc), (_a = {}, _a[dropdown.id] = dropdown, _a));
+          }, {});
+          this.dropdownIds = Object.keys(this.dropdownMap);
+          // TODO - put this inside of Dropdown instead?
+          // this.navLinkElements = Array.from(
+          //   document.querySelectorAll(".header-desktop__nav-link")
+          // ).filter((element) => {
+          //   const dropdownRel = element.getAttribute("data-dropdown-rel");
+          //   if (!dropdownRel) {
+          //     return false;
+          //   }
+          //   // dropdownLink points to a non-existant dropdown
+          //   if (!this.dropdownIds.includes(dropdownRel)) {
+          //     return false;
+          //   }
+          //   return true;
+          // });
+          return this;
+      };
+      DropdownManager.prototype.onDropdownHover = function (dropdown) {
+          console.log("ondropdownhover");
+      };
+      DropdownManager.prototype.unload = function () { };
+      return DropdownManager;
+  }());
+
+  var HeaderWrapper = /** @class */ (function () {
+      function HeaderWrapper(headerWrapperElement) {
+          this.headerWrapperElement = null;
+          this.headerWrapperElement = headerWrapperElement;
       }
-    }, {
-      key: "closeDrawer",
-      value: function closeDrawer(drawer) {
-        drawer.close();
-        this.currentOpenDrawerId = null;
-        BodyScroll.unlock();
-      }
-    }]);
-
-    return HeaderDrawerManager;
-  }();
-
-  var DropdownManager = /*#__PURE__*/function () {
-    //
-    //
-    function DropdownManager() {
-      _classCallCheck(this, DropdownManager);
-
-      _defineProperty(this, "currentDropdownId", null);
-
-      _defineProperty(this, "headerElement", null);
-
-      _defineProperty(this, "navLinkElements", []);
-
-      _defineProperty(this, "dropdownLinkElements", []);
-
-      _defineProperty(this, "dropdownElements", []);
-
-      _defineProperty(this, "dropdownIds", []);
-
-      _defineProperty(this, "dropdownMap", {});
-    }
-
-    _createClass(DropdownManager, [{
-      key: "initialize",
-      value: function initialize() {
-        var _this = this;
-
-        this.headerWrapperElement = document.querySelector(".header-wrapper");
-        this.dropdownLinkElements = document.querySelectorAll(".header__dropdown-link");
-        this.dropdownElements = document.querySelectorAll(".header__dropdown-container");
-        this.dropdownMap = Array.from(this.dropdownElements).reduce(function (acc, element) {
-          var dropdownId = element.getAttribute("data-dropdown");
-
-          if (!dropdownId) {
-            return acc;
-          }
-
-          return _objectSpread2(_objectSpread2({}, acc), {}, _defineProperty({}, dropdownId, element));
-        }, {});
-        this.dropdownIds = Object.keys(this.dropdownMap);
-        this.navLinkElements = Array.from(this.headerWrapperElement.querySelectorAll(".header-desktop__nav-link")).filter(function (element) {
-          var dropdownRel = element.getAttribute("data-dropdown-rel");
-
-          if (!dropdownRel) {
-            return false;
-          } // dropdownLink points to a non-existant dropdown
-
-
-          if (!_this.dropdownIds.includes(dropdownRel)) {
-            return false;
-          }
-
-          return true;
-        });
-        return this;
-      }
-    }, {
-      key: "unload",
-      value: function unload() {}
-    }]);
-
-    return DropdownManager;
-  }();
-
-  var HeaderWrapper = /*#__PURE__*/function () {
-    function HeaderWrapper(headerWrapperElement) {
-      _classCallCheck(this, HeaderWrapper);
-
-      _defineProperty(this, "headerWrapperElement", null);
-
-      _defineProperty(this, "promoBanner", null);
-
-      _defineProperty(this, "headerDesktop", null);
-
-      _defineProperty(this, "headerMobile", null);
-
-      _defineProperty(this, "drawerManager", null);
-
-      _defineProperty(this, "dropdownManager", null);
-
-      this.headerWrapperElement = headerWrapperElement;
-    }
-
-    _createClass(HeaderWrapper, [{
-      key: "initialize",
-      value: function initialize() {
-        this.promoBanner = new PromoBanner().initialize();
-        this.drawerManager = new HeaderDrawerManager().initialize();
-        this.dropdownManager = new DropdownManager().initialize();
-      }
-    }], [{
-      key: "findAndInitialize",
-      value: function findAndInitialize$1() {
-        return findAndInitialize(HeaderWrapper);
-      }
-    }]);
-
-    return HeaderWrapper;
-  }();
-
-  _defineProperty(HeaderWrapper, "selector", ".header-wrapper");
+      HeaderWrapper.prototype.initialize = function () {
+          this.promoBanner = new PromoBanner().initialize();
+          this.drawerManager = new HeaderDrawerManager().initialize();
+          this.dropdownManager = new DropdownManager().initialize();
+      };
+      HeaderWrapper.findAndInitialize = function () {
+          return findAndInitialize(HeaderWrapper);
+      };
+      HeaderWrapper.selector = ".header-wrapper";
+      return HeaderWrapper;
+  }());
 
   var header = {
-    init: function init() {
-      HeaderWrapper.findAndInitialize();
-      window.addEventListener("shopify:section:select", function (event) {
-        console.log("section selected");
-      });
-    },
-    loadMegaMenu: function loadMegaMenu() {},
-    loadMobileMegaMenu: function loadMobileMegaMenu() {},
-    unloadMegaMenu: function unloadMegaMenu() {},
-    unload: function unload() {}
+      init: function () {
+          HeaderWrapper.findAndInitialize();
+          // window.addEventListener("shopify:section:select", (event) => {
+          //   console.log("section selected");
+          // });
+      },
+      loadMegaMenu: function () { },
+      loadMobileMegaMenu: function () { },
+      unloadMegaMenu: function () { },
+      unload: function () { }
   };
 
   var cart = {
@@ -725,8 +637,12 @@
   };
 
   // import intersections from "../vm-sections/modules/intersections";
+  // @ts-ignore
   window.header = header;
+  // @ts-ignore
   window.searchAutocomplete = searchAutocompleteManager;
-  window.cart = cart; // intersections.init();
+  // @ts-ignore
+  window.cart = cart;
+  // intersections.init();
 
 })();

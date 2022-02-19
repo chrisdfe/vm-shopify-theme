@@ -1,5 +1,6 @@
 <header class="header-mobile">
   <div class="header-mobile__navbar">
+
     <button
       class="header-mobile__hamburger-button header-mobile__nav-button"
       data-drawer-button-id="menu"
@@ -40,62 +41,15 @@
       </button>
       
       <button
-      href="{{ routes.cart_url }}"
-      class="header-mobile__nav-button"
-      title="{{ 'layout.general.cart' | t | escape }}"
+        href="{{ routes.cart_url }}"
+        class="header-mobile__nav-button"
+        title="{{ 'layout.general.cart' | t | escape }}"
         data-drawer-button-id="cart"
         data-no-instant>
         <span class="icon-bag"></span>
         <span class="cart_count">{{ cart.item_count }}</span>
       </button>
     </div>
-  </div>
 
-  <div
-    class="header__dropdown-container"
-    data-dropdown="search">
-    <div class="dropdown">
-      <form action="{{ routes.search_url }}" class="header_search_form">
-        {% if settings.search_option != 'everything' %}
-          <input type="hidden" name="type" value="product" />
-        {% endif %}
-        <span class="icon-search search-submit"></span>
-        <input type="text" name="q" placeholder="{{ 'general.search.title' | t: shop_name: shop.name }}" autocapitalize="off" autocomplete="off" autocorrect="off" class="search-terms" />
-      </form>
-    </div>
-  </div>
-
-  <div
-    class="header__dropdown-container"
-    data-dropdown="menu">
-    <div class="dropdown">
-      <ul class="menu" id="mobile_menu">
-        {% comment %}
-        {% render 'mobile-menu' with section.settings.main_linklist %}
-        {% render 'mobile-menu' with section.settings.main_linklist2 %}
-        {% render 'mobile-menu' with section.settings.top_bar_menu, context: 'top_bar_menu' %}
-        {% endcomment %}
-
-        {% if section.settings.phone_number != blank %}
-          <li><a href="tel:{{ section.settings.phone_number | replace: ' ', '' | replace: '+', '' | replace: '-', '' }}">{{ section.settings.phone_number }}</a></li>
-        {% endif %}
-
-        {% if shop.customer_accounts_enabled %}
-          {% if customer %}
-            <li>
-              <a href="{{ routes.account_url }}" data-no-instant>{{ customer.name }}</a>
-            </li>
-            
-            <li data-no-instant>
-              <a href="{{ routes.account_logout_url }}" id="customer_logout_link">{{ 'layout.customer.log_out' | t }}</a>
-            </li>
-          {% else %}
-            <li data-no-instant>
-              <a href="{{ routes.account_login_url }}" id="customer_login_link">{{ 'layout.customer.log_in' | t }}</a>
-            </li>
-          {% endif %}
-        {% endif %}
-      </ul>
-    </div>
   </div>
 </header>

@@ -1,8 +1,8 @@
 .mega-menu-mobile {
-  display: none;
+  display: block;
 
-  @include respond-to("medium-down") {
-    display: block;
+  @include respond-to("medium-up") {
+    display: none;
   }
 }
 

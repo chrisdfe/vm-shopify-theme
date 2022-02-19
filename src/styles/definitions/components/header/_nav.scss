@@ -1,3 +1,4 @@
+// TODO - put in head/desktop/_nav
 .header-desktop__nav {
   display: block;
   padding: 0;
@@ -17,7 +18,7 @@
     padding-right: 10px;
   }
 
-  .header__dropdown-link,
+  .vm-header-dropdown-link,
   .header-desktop__nav-link {
     $navbar-padding: get-vm-spacer(2);
     @include vm-paragraph-3();
@@ -41,7 +42,7 @@
       opacity: 0;
     }
 
-    &.is-dropdown-link {
+    &.is-dropdown-button {
       .header-desktop__nav-link__dropdown-arrow {
         opacity: 1;
       }

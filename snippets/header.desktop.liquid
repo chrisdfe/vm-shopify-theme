@@ -1,10 +1,10 @@
 <header class="header-desktop">
   {% capture extra_links %}
     <li>
-      <a href="{{ routes.cart_url }}"
-      class="header__dropdown-link"
-      data-dropdown-rel="cart"
-      data-no-instant>
+      <a
+        href="{{ routes.cart_url }}"
+        class="vm-header-dropdown-link"
+        data-dropdown-rel="cart">
       <span class="icon-bag"></span>
       <span class="cart_count">{{ cart.item_count }}</span>
       </a>
@@ -23,7 +23,7 @@
     <li>
       <a
         href="{{ routes.search_url }}"
-        class="header__dropdown-link"
+        class="vm-header-dropdown-link"
         title="{{ 'general.search.title' | t | escape }}"
         data-dropdown-rel="search">
         <span class="icon-search"></span>

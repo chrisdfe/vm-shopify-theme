@@ -1,38 +1,23 @@
 import HeaderDrawer from "./Drawer";
-
-const BodyScroll = {
-  lock: () => {
-    document.body.classList.add("menu-is-open");
-  },
-
-  unlock: () => {
-    document.body.classList.remove("menu-is-open");
-  },
-};
+import BodyScroll from "./BodyScroll";
 
 export default class HeaderDrawerManager {
-  drawerButtons = [];
+  drawerElements: NodeListOf<Element>;
 
-  currentOpenDrawerId = null;
-  drawerIdMap = {};
+  currentOpenDrawerId: string | null;
+  drawerIdMap: { [drawerId: string]: HeaderDrawer };
 
   initialize() {
-    this.drawerButtons = document.querySelectorAll("[data-drawer-button-id]");
-    this.drawerIdMap = Array.from(this.drawerButtons).reduce(
-      (acc, buttonElement) => {
-        const id = buttonElement.getAttribute("data-drawer-button-id");
-        const drawerElement = document.querySelector(
-          `[data-drawer-id="${id}"]`
-        );
+    this.drawerElements = document.querySelectorAll("[data-drawer-id]");
 
+    this.drawerIdMap = Array.from(this.drawerElements).reduce(
+      (acc, drawerElement) => {
         const drawer = new HeaderDrawer({
-          id,
-          buttonElement,
           drawerElement,
           onButtonClick: this.onDrawerButtonClick,
         }).initialize();
 
-        return { ...acc, [id]: drawer };
+        return { ...acc, [drawer.id]: drawer };
       },
       {}
     );
@@ -57,7 +42,7 @@ export default class HeaderDrawerManager {
 
   onBodyClick = (event) => {
     if (
-      this.currentOpenDrawerId !== null &&
+      this.getCurrentOpenDrawer() &&
       event.target.closest("[data-drawer-id]") === null &&
       event.target.closest("[data-drawer-button-id]") === null
     ) {
@@ -66,6 +51,12 @@ export default class HeaderDrawerManager {
   };
 
   getCurrentOpenDrawer() {
+    if (!this.currentOpenDrawerId) {
+      return null;
+    }
+
+    console.log("this.currentOpenDrawerId", this.currentOpenDrawerId);
+
     return this.drawerIdMap[this.currentOpenDrawerId];
   }
 

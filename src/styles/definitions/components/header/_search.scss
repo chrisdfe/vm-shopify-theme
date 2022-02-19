@@ -1,0 +1,20 @@
+.header__search-form {
+  .search-terms {
+    $height: 50px;
+    height: $height;
+    min-height: $height;
+    border: 0 none;
+    border-bottom: 1px solid $vm-border-color;
+
+    &:focus,
+    &:active {
+      border-bottom: 1px solid $vm-color-sand;
+    }
+  }
+
+  @include respond-to("medium-down") {
+    .search__results {
+      margin-top: 30px;
+    }
+  }
+}

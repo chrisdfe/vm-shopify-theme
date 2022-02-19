@@ -4,9 +4,9 @@ const header = {
   init: function () {
     const headerWrapper = HeaderWrapper.findAndInitialize();
 
-    window.addEventListener("shopify:section:select", (event) => {
-      console.log("section selected");
-    });
+    // window.addEventListener("shopify:section:select", (event) => {
+    //   console.log("section selected");
+    // });
   },
 
   loadMegaMenu: function () {},

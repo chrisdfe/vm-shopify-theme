@@ -20,32 +20,6 @@
 //   }
 // }
 
-.header__cart-module {
-  @include respond-to("medium-down") {
-    display: block;
-    background-color: #fff;
-    transform: translateX(100%);
-    transition: all 0.2s;
-    position: fixed;
-    top: 4rem;
-    right: 0;
-    width: 75%;
-    bottom: 0;
-    overflow-y: scroll;
-    padding: get-vm-spacer(1);
-
-    ul {
-      list-style-type: none;
-      padding: 0;
-      margin: 0 0 get-vm-spacer(1);
-    }
-
-    &.is-open {
-      transform: translateX(0);
-    }
-  }
-}
-
 .cart_container {
   li.mini-cart__item {
     @include flexbox();

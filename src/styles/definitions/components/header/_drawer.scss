@@ -1,4 +1,4 @@
-.vm-drawer {
+@mixin vm-drawer() {
   display: block;
   background-color: #fff;
   // transform: translateX(100%);
@@ -31,5 +31,17 @@
 
   &.is-open {
     transform: translateX(0);
+  }
+}
+
+.vm-drawer {
+  &:not(.vm-mobile-only-drawer) {
+    @include vm-drawer();
+  }
+
+  &.vm-mobile-only-drawer {
+    @include respond-to("medium-down") {
+      @include vm-drawer();
+    }
   }
 }

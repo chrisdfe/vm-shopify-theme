@@ -23,6 +23,7 @@
     "@rollup/plugin-commonjs": "^21.0.1",
     "@rollup/plugin-node-resolve": "^13.0.5",
     "@rollup/plugin-replace": "^3.0.1",
+    "@rollup/plugin-typescript": "^8.3.0",
     "autoprefixer": "^10.3.6",
     "classnames": "^2.3.1",
     "core-js": "3.3.5",
@@ -39,6 +40,8 @@
     "rollup-plugin-scss": "3",
     "sass": "^1.35.2",
     "styled-jsx": "^5.0.0",
+    "tslib": "^2.3.1",
+    "typescript": "^4.5.5",
     "yargs": "^17.0.1"
   }
 }

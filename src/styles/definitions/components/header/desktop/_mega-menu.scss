@@ -1,10 +1,2 @@
 .mega-menu-desktop {
-  display: block;
-
-  @include respond-to("medium-down") {
-    display: none;
-  }
-}
-
-.header-dropdown__content {
 }

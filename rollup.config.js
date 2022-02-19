@@ -2,18 +2,20 @@ import { nodeResolve } from '@rollup/plugin-node-resolve';
 import { babel } from '@rollup/plugin-babel';
 import replace from '@rollup/plugin-replace';
 import commonjs from '@rollup/plugin-commonjs';
+import typescript from '@rollup/plugin-typescript';
 import scss from 'rollup-plugin-scss'
 
 export default [
   {
-    input: 'src/scripts/entrypoints/vm-sections.js',
+    input: 'src/scripts/entrypoints/vm-sections.ts',
     output: {
       dir: 'assets/',
       format: 'iife',
     },
     plugins: [
       nodeResolve(),
-      babel({ babelHelpers: 'bundled' })
+      babel({ babelHelpers: 'bundled' }),
+      typescript()
     ]
   },
   {

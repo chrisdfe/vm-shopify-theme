@@ -10,12 +10,9 @@ export default class HeaderWrapper {
 
   headerWrapperElement = null;
 
-  promoBanner = null;
-  headerDesktop = null;
-  headerMobile = null;
-
-  drawerManager = null;
-  dropdownManager = null;
+  promoBanner: PromoBanner;
+  drawerManager: DrawerManager;
+  dropdownManager: DropdownManager;
 
   constructor(headerWrapperElement) {
     this.headerWrapperElement = headerWrapperElement;
