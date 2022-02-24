@@ -157,12 +157,14 @@
   #header {
     display: block;
   }
-  .header {
-    display: none;
-  }
+  // .header {
+  //   display: none;
+  // }
+
   h4.toggle {
     cursor: pointer;
   }
+
   .toggle span {
     display: block;
   }

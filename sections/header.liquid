@@ -57,24 +57,32 @@
 {%- endif -%}
 {% endcomment %}
 
-<div class="header-wrapper">
+<div class="header">
   {% include 'header.promo-banner' %}
   
   {% include 'header.desktop' %}
   {% include 'header.mobile' %}
   
-  <div class="dropdown-wrapper">
-    <div class="vm-header-dropdown" data-dropdown="search">
-      {% render "header.search" %}
-    </div>
+  <div
+    class="vm-header-dropdown"
+    data-dropdown-id="search"
+    data-dropdown-activation-type="click"
+  >
+    {% render "header.search" %}
   </div>
   
   <div
-  class="vm-drawer vm-mobile-only-drawer vm-drawer--right
-  vm-header-dropdown vm-desktop-only-header-dropdown"
-  data-drawer-id="cart"
-  data-dropdown="cart"
+    class="vm-header-drawer vm-header-drawer--right"
+    data-drawer-id="cart"
   >
+    <div class="vm-header-drawer__header">
+      <button
+        class="vm-header-drawer__header__close-button"
+        data-drawer-button-id="cart">
+        <span class="icon-down-arrow"></span>
+      </button>
+    </div>
+
     {% render "header.cart" %}
   </div>
 </div>

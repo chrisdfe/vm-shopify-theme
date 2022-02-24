@@ -1,3 +1,20 @@
+import debounce from "../../../utils/debounce";
+
+const getElementHeight = (element: Element) =>
+  element.getBoundingClientRect().height;
+
+const getHeaderHeight = () => {
+  const promoBanner = document.querySelector(".promo-banner");
+  const headerDesktop = document.querySelector(".header-desktop");
+  const headerMobile = document.querySelector(".header-mobile");
+
+  return (
+    getElementHeight(promoBanner) +
+    getElementHeight(headerDesktop) +
+    getElementHeight(headerMobile)
+  );
+};
+
 export default class HeaderDrawer {
   isOpen = false;
 
@@ -5,7 +22,7 @@ export default class HeaderDrawer {
   buttonElements: Element[];
   drawerElement: Element;
 
-  onButtonClick: (Drawer) => void;
+  onButtonClick: (event: Event, drawer: HeaderDrawer) => void;
 
   constructor({ drawerElement, onButtonClick }) {
     this.drawerElement = drawerElement;
@@ -14,18 +31,18 @@ export default class HeaderDrawer {
 
   initialize() {
     this.id = this.drawerElement.getAttribute("data-drawer-id");
-    console.log("this.id", this.id);
 
     this.buttonElements = Array.from(
       document.querySelectorAll(`[data-drawer-button-id="${this.id}"]`)
     );
-    console.log("this.buttonElement", this.buttonElements.length);
 
     this.buttonElements.forEach((element) => {
-      element.addEventListener("click", () => {
-        this.onButtonClick(this);
+      element.addEventListener("click", (event: Event) => {
+        this.onButtonClick(event, this);
       });
     });
+
+    console.log("test");
 
     return this;
   }

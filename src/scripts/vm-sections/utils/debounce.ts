@@ -1,10 +1,8 @@
 // copied from https://davidwalsh.name/javascript-debounce-function
-function debounce(func, wait, immediate = false) {
+function debounce(func, wait: number, immediate: boolean = false) {
   let timeout;
 
-  const debouncedFunction = () => {
-    const args = arguments;
-
+  const debouncedFunction = (...args) => {
     const later = () => {
       timeout = null;
 

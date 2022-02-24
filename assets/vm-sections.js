@@ -1,27 +1,6 @@
 (function () {
   'use strict';
 
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _defineProperty(obj, key, value) {
-    if (key in obj) {
-      Object.defineProperty(obj, key, {
-        value: value,
-        enumerable: true,
-        configurable: true,
-        writable: true
-      });
-    } else {
-      obj[key] = value;
-    }
-
-    return obj;
-  }
-
   /**
    * Image Helper Functions
    * -----------------------------------------------------------------------------
@@ -60,311 +39,247 @@
   }
 
   // copied from https://davidwalsh.name/javascript-debounce-function
-  function debounce(func, wait) {
-    var _arguments = arguments,
-        _this = this;
-
-    var immediate = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
-    var timeout;
-
-    var debouncedFunction = function debouncedFunction() {
-      var args = _arguments;
-
-      var later = function later() {
-        timeout = null;
-
-        if (!immediate) {
-          func.apply(_this, args);
-        }
+  function debounce(func, wait, immediate) {
+      var _this = this;
+      if (immediate === void 0) { immediate = false; }
+      var timeout;
+      var debouncedFunction = function () {
+          var args = [];
+          for (var _i = 0; _i < arguments.length; _i++) {
+              args[_i] = arguments[_i];
+          }
+          var later = function () {
+              timeout = null;
+              if (!immediate) {
+                  func.apply(_this, args);
+              }
+          };
+          var callNow = immediate && !timeout;
+          clearTimeout(timeout);
+          timeout = setTimeout(later, wait);
+          if (callNow) {
+              func.apply(_this, args);
+          }
       };
-
-      var callNow = immediate && !timeout;
-      clearTimeout(timeout);
-      timeout = setTimeout(later, wait);
-
-      if (callNow) {
-        func.apply(_this, args);
-      }
-    };
-
-    return debouncedFunction;
+      return debouncedFunction;
   }
 
   /*============================================================================
     Search autocomplete
   ==============================================================================*/
-
-  var CDN_BASE_URL = "//cdn.shopify.com/s/files/1/1077/2230/t/118/"; // TODO - move to a more general location
-
+  var CDN_BASE_URL = "//cdn.shopify.com/s/files/1/1077/2230/t/118/";
+  // TODO - move to a more general location
   function getCDNImageUrl(imageUrl, size, version) {
-    var sizedImageUrl = getSizedImageUrl(imageUrl, size);
-    var cdnImageUrl = "".concat(CDN_BASE_URL, "assets/").concat(sizedImageUrl);
-
-    if (version) {
-      cdnImageUrl += "?v=".concat(version);
-    }
-
-    return cdnImageUrl;
+      var sizedImageUrl = getSizedImageUrl(imageUrl, size);
+      var cdnImageUrl = "".concat(CDN_BASE_URL, "assets/").concat(sizedImageUrl);
+      if (version) {
+          cdnImageUrl += "?v=".concat(version);
+      }
+      return cdnImageUrl;
   }
-
-  var getCollectionHandles = function getCollectionHandles(item) {
-    return item.collections.map(function (collection) {
-      return collection.handle;
-    });
+  var getCollectionHandles = function (item) {
+      return item.collections.map(function (collection) { return collection.handle; });
   };
-
   function getSearchResultItemPrice(item) {
-    if (getCollectionHandles(item).includes("coming-soon")) {
-      return Shopify.translation.coming_soon_text;
-    }
-
-    if (!item.available) {
-      if (Shopify.theme_settings.display_sold_out_price) {
-        return "\n        ".concat(item.price, " <span class=\"sold-out-text\">").concat(Shopify.theme_settings.sold_out_text, "</span>\n      ");
+      if (getCollectionHandles(item).includes("coming-soon")) {
+          return Shopify.translation.coming_soon_text;
       }
-
-      return "<span class=\"sold-out-text\">".concat(Shopify.theme_settings.sold_out_text, "</span>");
-    }
-
-    if (item.raw_compare > item.raw_price) {
-      return "\n      <span class=\"was_price\">".concat(item.compare, "</span> ").concat(item.price, "\n    ");
-    }
-
-    if (item.price_varies && item.price_min > 0) {
-      return "".concat(Shopify.translation.from_text, " ").concat(item.price);
-    }
-
-    if (item.price > 0 || item.raw_price > 0) {
-      return item.price;
-    }
-
-    return Shopify.theme_settings.free_text;
+      if (!item.available) {
+          if (Shopify.theme_settings.display_sold_out_price) {
+              return "\n        ".concat(item.price, " <span class=\"sold-out-text\">").concat(Shopify.theme_settings.sold_out_text, "</span>\n      ");
+          }
+          return "<span class=\"sold-out-text\">".concat(Shopify.theme_settings.sold_out_text, "</span>");
+      }
+      if (item.raw_compare > item.raw_price) {
+          return "\n      <span class=\"was_price\">".concat(item.compare, "</span> ").concat(item.price, "\n    ");
+      }
+      if (item.price_varies && item.price_min > 0) {
+          return "".concat(Shopify.translation.from_text, " ").concat(item.price);
+      }
+      if (item.price > 0 || item.raw_price > 0) {
+          return item.price;
+      }
+      return Shopify.theme_settings.free_text;
   }
-
   function renderSearchResultThumbnail(item) {
-    var thumbnailSrc = !!item.thumbnail && item.thumbnail !== "NULL" ? item.thumbnail : getCDNImageUrl("vm-logo-seagreen.png", "small");
-    return "\n    <div class=\"search-autocomplete__result__thumbnail\">\n      <img src=\"".concat(thumbnailSrc, "\" />\n    </div>\n  ");
+      var thumbnailSrc = !!item.thumbnail && item.thumbnail !== "NULL"
+          ? item.thumbnail
+          : getCDNImageUrl("vm-logo-seagreen.png", "small");
+      return "\n    <div class=\"search-autocomplete__result__thumbnail\">\n      <img src=\"".concat(thumbnailSrc, "\" />\n    </div>\n  ");
   }
-
   var searchResultTemplates = {
-    product: function product(item) {
-      var itemPrice = getSearchResultItemPrice(item);
-      return "\n      <h5>".concat(item.title, "</h5>\n      <div class=\"search-autocomplete__result__description\">\n        ").concat(itemPrice, "\n      </div>\n    ");
-    },
-    article: function article(item) {
-      return "\n      <h5>".concat(item.title, "</h5>\n      <div class=\"search-autocomplete__result__description\">\n        <p class=\"paragraph-3\">").concat(item.text_content, "</p>\n      </div>\n    ");
-    },
-    page: function page(item) {
-      return "\n      <h5>".concat(item.title, "</h5>\n      <div class=\"search-autocomplete__result__description\">\n        <p class=\"paragraph-3\">").concat(item.text_content, "</p>\n      </div>\n    ");
-    }
+      product: function (item) {
+          var itemPrice = getSearchResultItemPrice(item);
+          return "\n      <h5>".concat(item.title, "</h5>\n      <div class=\"search-autocomplete__result__description\">\n        ").concat(itemPrice, "\n      </div>\n    ");
+      },
+      article: function (item) {
+          return "\n      <h5>".concat(item.title, "</h5>\n      <div class=\"search-autocomplete__result__description\">\n        <p class=\"paragraph-3\">").concat(item.text_content, "</p>\n      </div>\n    ");
+      },
+      page: function (item) {
+          return "\n      <h5>".concat(item.title, "</h5>\n      <div class=\"search-autocomplete__result__description\">\n        <p class=\"paragraph-3\">").concat(item.text_content, "</p>\n      </div>\n    ");
+      }
   };
-
   function getDisplayObjectType(item) {
-    if (item.object_type === "article") {
-      return "blog post";
-    }
-
-    if (item.object_type === "product") {
-      if (item.collections && item.collections.length && getCollectionHandles(item).includes("services")) {
-        return "service";
+      if (item.object_type === "article") {
+          return "blog post";
       }
-    }
-
-    return item.object_type;
+      if (item.object_type === "product") {
+          if (item.collections &&
+              item.collections.length &&
+              getCollectionHandles(item).includes("services")) {
+              return "service";
+          }
+      }
+      return item.object_type;
   }
-
   function renderSearchResult(item) {
-    var thumbnail = renderSearchResultThumbnail(item);
-    var renderFunction = searchResultTemplates[item.object_type];
-    var body = renderFunction(item);
-    var displayObjectType = getDisplayObjectType(item);
-    var fullTemplate = "\n    <li class=\"search-autocomplete__result search-autocomplete__result--type-".concat(item.object_type, "\">\n      <a class=\"search-autocomplete__result-link\" href=\"").concat(item.url, "\">\n        <div class=\"search-autocomplete__result__thumbnail-wrapper\">\n          ").concat(thumbnail, "\n        </div>  \n\n        <div class=\"search-autocomplete__result__body\">\n          <h6 class=\"search-autocomplete__result__type-heading\">\n            ").concat(displayObjectType, "\n          </h6>\n\n          ").concat(body, "\n        </div>\n      </a>\n    </li>\n  ");
-    return fullTemplate;
+      var thumbnail = renderSearchResultThumbnail(item);
+      var renderFunction = searchResultTemplates[item.object_type];
+      var body = renderFunction(item);
+      var displayObjectType = getDisplayObjectType(item);
+      var fullTemplate = "\n    <li class=\"search-autocomplete__result search-autocomplete__result--type-".concat(item.object_type, "\">\n      <a class=\"search-autocomplete__result-link\" href=\"").concat(item.url, "\">\n        <div class=\"search-autocomplete__result__thumbnail-wrapper\">\n          ").concat(thumbnail, "\n        </div>  \n\n        <div class=\"search-autocomplete__result__body\">\n          <h6 class=\"search-autocomplete__result__type-heading\">\n            ").concat(displayObjectType, "\n          </h6>\n\n          ").concat(body, "\n        </div>\n      </a>\n    </li>\n  ");
+      return fullTemplate;
   }
-
-  function renderSearchResults(_ref) {
-    var resultsList = _ref.resultsList,
-        totalResults = _ref.totalResults,
-        searchValue = _ref.searchValue,
-        searchUrl = _ref.searchUrl;
-
-    // If we have no results
-    if (totalResults === 0) {
-      return "\n      <li class=\"search-autocomplete__result search-autocomplete__result--no-results\">\n        <p>No results for <b>\"".concat(searchValue, "\"</b>.</p>\n      </li>\n    ");
-    } // If we have results
-
-
-    var concatenatedResults = resultsList.slice(0, Shopify.theme_settings.search_items_to_display);
-    var renderedContents = concatenatedResults.reduce(function (acc, item, index) {
-      return acc + renderSearchResult(item);
-    }, ""); // The Ajax request will return at the most 5 results.
-    // If there are more than 5, let's link to the search results page.
-
-    if (totalResults >= Shopify.theme_settings.search_items_to_display) {
-      renderedContents += "\n        <li class=\"search-autocomplete__result search-autocomplete__result--see-all\">\n          <a class=\"cta-link\" href=\"".concat(searchUrl, "*\">").concat(Shopify.translation.all_results, " (").concat(totalResults, ")</a>\n        </li>\n      ");
-    }
-
-    return renderedContents;
+  function renderSearchResults(_a) {
+      var resultsList = _a.resultsList, totalResults = _a.totalResults, searchValue = _a.searchValue, searchUrl = _a.searchUrl;
+      // If we have no results
+      if (totalResults === 0) {
+          return "\n      <li class=\"search-autocomplete__result search-autocomplete__result--no-results\">\n        <p>No results for <b>\"".concat(searchValue, "\"</b>.</p>\n      </li>\n    ");
+      }
+      // If we have results
+      var concatenatedResults = resultsList.slice(0, Shopify.theme_settings.search_items_to_display);
+      var renderedContents = concatenatedResults.reduce(function (acc, item, index) {
+          return acc + renderSearchResult(item);
+      }, "");
+      // The Ajax request will return at the most 5 results.
+      // If there are more than 5, let's link to the search results page.
+      if (totalResults >= Shopify.theme_settings.search_items_to_display) {
+          renderedContents += "\n        <li class=\"search-autocomplete__result search-autocomplete__result--see-all\">\n          <a class=\"cta-link\" href=\"".concat(searchUrl, "*\">").concat(Shopify.translation.all_results, " (").concat(totalResults, ")</a>\n        </li>\n      ");
+      }
+      return renderedContents;
   }
-
-  var SearchAutocomplete = function SearchAutocomplete(searchFormElement) {
-    var _this = this;
-
-    _classCallCheck(this, SearchAutocomplete);
-
-    _defineProperty(this, "shopURL", "");
-
-    _defineProperty(this, "searchValue", "");
-
-    _defineProperty(this, "searchFormElement", null);
-
-    _defineProperty(this, "resultsListElement", null);
-
-    _defineProperty(this, "inputElement", null);
-
-    _defineProperty(this, "init", function () {
-      _this.shopURL = document.querySelector("body").getAttribute("data-shop-url");
-      _this.searchPath = "".concat(_this.shopURL, "/search?q=");
-      _this.debouncedFetchSearchResults = debounce(_this.fetchSearchResults, 1000);
-      var searchAutocompleteElement = document.createElement("div");
-      searchAutocompleteElement.innerHTML = "\n      <div class=\"search-autocomplete\">\n        <ul class=\"search-autocomplete__results\"></ul>\n      </div>";
-
-      _this.searchFormElement.appendChild(searchAutocompleteElement);
-
-      _this.resultsListElement = _this.searchFormElement.querySelector(".search-autocomplete__results");
-      _this.inputElement = _this.searchFormElement.querySelector('input[name="q"]');
-
-      _this.inputElement.setAttribute("autocomplete", "off");
-
-      _this.inputElement.addEventListener("keyup", _this.onSearchInputKeyup);
-
-      _this.searchFormElement.addEventListener("submit", _this.onSearchFormSubmit); // Clicking outside makes the results disappear.
-
-
-      document.addEventListener("click", _this.onDocumentClick);
-      return _this;
-    });
-
-    _defineProperty(this, "showDropdown", function () {
-      _this.resultsListElement.classList.remove("u-hidden");
-    });
-
-    _defineProperty(this, "hideDropdown", function () {
-      _this.resultsListElement.classList.add("u-hidden");
-    });
-
-    _defineProperty(this, "unload", function () {});
-
-    _defineProperty(this, "onDocumentClick", function (event) {
-      if (!_this.searchFormElement.isSameNode(event.target) && !_this.searchFormElement.contains(event.target)) {
-        _this.hideDropdown();
+  var SearchAutocomplete = /** @class */ (function () {
+      function SearchAutocomplete(searchFormElement) {
+          var _this = this;
+          this.shopURL = "";
+          this.searchValue = "";
+          this.searchFormElement = null;
+          this.resultsListElement = null;
+          this.inputElement = null;
+          this.init = function () {
+              _this.shopURL = document.querySelector("body").getAttribute("data-shop-url");
+              _this.searchPath = "".concat(_this.shopURL, "/search?q=");
+              _this.debouncedFetchSearchResults = debounce(_this.fetchSearchResults, 1000);
+              var searchAutocompleteElement = document.createElement("div");
+              searchAutocompleteElement.innerHTML = "\n      <div class=\"search-autocomplete\">\n        <ul class=\"search-autocomplete__results\"></ul>\n      </div>";
+              _this.searchFormElement.appendChild(searchAutocompleteElement);
+              _this.resultsListElement = _this.searchFormElement.querySelector(".search-autocomplete__results");
+              _this.inputElement = _this.searchFormElement.querySelector('input[name="q"]');
+              _this.inputElement.setAttribute("autocomplete", "off");
+              _this.inputElement.addEventListener("keyup", _this.onSearchInputKeyup);
+              _this.searchFormElement.addEventListener("submit", _this.onSearchFormSubmit);
+              // Clicking outside makes the results disappear.
+              document.addEventListener("click", _this.onDocumentClick);
+              return _this;
+          };
+          this.showDropdown = function () {
+              _this.resultsListElement.classList.remove("u-hidden");
+          };
+          this.hideDropdown = function () {
+              _this.resultsListElement.classList.add("u-hidden");
+          };
+          this.unload = function () { };
+          this.onDocumentClick = function (event) {
+              if (!_this.searchFormElement.isSameNode(event.target) &&
+                  !_this.searchFormElement.contains(event.target)) {
+                  _this.hideDropdown();
+              }
+          };
+          // TODO - reconsider whether this is the right behavior
+          this.onSearchFormSubmit = function (event) {
+              event.preventDefault();
+              var value = _this.inputElement.value;
+              var cleanedValue = encodeURI(value);
+              var newUrl = cleanedValue
+                  ? "".concat(_this.searchPath).concat(cleanedValue, "*")
+                  : "/search";
+              window.location.href = newUrl;
+          };
+          this.onSearchInputKeyup = debounce(function () {
+              _this.searchValue = _this.inputElement.value;
+              if (_this.searchValue === "") {
+                  _this.hideDropdown();
+                  return;
+              }
+              if (_this.searchValue.length < 3) {
+                  return;
+              }
+              _this.fetchSearchResults(_this.searchValue).then(function (_a) {
+                  var searchValue = _a.searchValue, searchUrl = _a.searchUrl, resultsList = _a.resultsList, totalResults = _a.totalResults;
+                  if (searchValue !== _this.searchValue) {
+                      console.log("stale request", searchValue, _this.searchValue);
+                      return;
+                  }
+                  var renderedContents = renderSearchResults({
+                      searchValue: searchValue,
+                      searchUrl: searchUrl,
+                      resultsList: resultsList,
+                      totalResults: totalResults
+                  });
+                  _this.resultsListElement.innerHTML = renderedContents;
+                  _this.showDropdown();
+              });
+          }, 250);
+          this.getSearchUrl = function (searchValue) {
+              var cleanedValue = encodeURI(searchValue);
+              var searchURL = _this.searchPath + cleanedValue;
+              var fullSearchUrl = "".concat(searchURL, "*&view=json");
+              return fullSearchUrl;
+          };
+          this.fetchSearchResults = function (searchValue) {
+              var searchUrl = _this.getSearchUrl(searchValue);
+              return fetch(searchUrl)
+                  .then(function (response) { return response.json(); })
+                  .then(function (data) {
+                  return {
+                      searchValue: searchValue,
+                      searchUrl: searchUrl,
+                      resultsList: data.results,
+                      totalResults: data.results_count
+                  };
+              });
+          };
+          this.searchFormElement = searchFormElement;
       }
-    });
-
-    _defineProperty(this, "onSearchFormSubmit", function (event) {
-      event.preventDefault();
-      var value = _this.inputElement.value;
-      var cleanedValue = encodeURI(value);
-      var newUrl = cleanedValue ? "".concat(_this.searchPath).concat(cleanedValue, "*") : "/search";
-      window.location.href = newUrl;
-    });
-
-    _defineProperty(this, "onSearchInputKeyup", debounce(function () {
-      _this.searchValue = _this.inputElement.value;
-
-      if (_this.searchValue === "") {
-        _this.hideDropdown();
-
-        return;
+      return SearchAutocomplete;
+  }());
+  var SearchAutocompleteManager = /** @class */ (function () {
+      function SearchAutocompleteManager() {
+          var _this = this;
+          this.init = function () {
+              var searchFormElements = document.querySelectorAll("form.search_form, form.search, form.header_search_form");
+              _this.searchAutocompletes = Array.from(searchFormElements).map(function (searchFormElement) {
+                  return new SearchAutocomplete(searchFormElement).init();
+              });
+          };
+          this.unload = function () {
+              _this.searchAutocompletes.forEach(function (searchAutocomplete) {
+                  searchAutocomplete.unload();
+              });
+          };
       }
-
-      if (_this.searchValue.length < 3) {
-        return;
-      }
-
-      _this.fetchSearchResults(_this.searchValue).then(function (_ref2) {
-        var searchValue = _ref2.searchValue,
-            searchUrl = _ref2.searchUrl,
-            resultsList = _ref2.resultsList,
-            totalResults = _ref2.totalResults;
-
-        if (searchValue !== _this.searchValue) {
-          console.log("stale request", searchValue, _this.searchValue);
-          return;
-        }
-
-        var renderedContents = renderSearchResults({
-          searchValue: searchValue,
-          searchUrl: searchUrl,
-          resultsList: resultsList,
-          totalResults: totalResults
-        });
-        _this.resultsListElement.innerHTML = renderedContents;
-
-        _this.showDropdown();
-      });
-    }, 250));
-
-    _defineProperty(this, "getSearchUrl", function (searchValue) {
-      var cleanedValue = encodeURI(searchValue);
-      var searchURL = _this.searchPath + cleanedValue;
-      var fullSearchUrl = "".concat(searchURL, "*&view=json");
-      return fullSearchUrl;
-    });
-
-    _defineProperty(this, "fetchSearchResults", function (searchValue) {
-      var searchUrl = _this.getSearchUrl(searchValue);
-
-      return fetch(searchUrl).then(function (response) {
-        return response.json();
-      }).then(function (data) {
-        return {
-          searchValue: searchValue,
-          searchUrl: searchUrl,
-          resultsList: data.results,
-          totalResults: data.results_count
-        };
-      });
-    });
-
-    this.searchFormElement = searchFormElement;
-  };
-
-  var SearchAutocompleteManager = function SearchAutocompleteManager() {
-    var _this2 = this;
-
-    _classCallCheck(this, SearchAutocompleteManager);
-
-    _defineProperty(this, "searchFormElements", []);
-
-    _defineProperty(this, "searchAutocompletes", []);
-
-    _defineProperty(this, "init", function () {
-      _this2.searchFormElements = document.querySelectorAll("form.search_form, form.search, form.header_search_form");
-      _this2.searchAutocompletes = Array.from(_this2.searchFormElements).map(function (searchFormElement) {
-        return new SearchAutocomplete(searchFormElement).init();
-      });
-    });
-
-    _defineProperty(this, "unload", function () {
-      _this2.searchAutocompletes.forEach(function (searchAutocomplete) {
-        searchAutocomplete.unload();
-      });
-    });
-  };
-
+      return SearchAutocompleteManager;
+  }());
   var searchAutocompleteManager = new SearchAutocompleteManager();
 
   function findAndInitialize(klass) {
-    var element = document.querySelector(klass.selector);
-
-    if (element) {
-      var klassInstance = new klass(element);
-      klassInstance.initialize();
-      return klassInstance;
-    }
-
-    return null;
+      var element = document.querySelector(klass.selector);
+      if (element) {
+          var klassInstance = new klass(element);
+          klassInstance.initialize();
+          return klassInstance;
+      }
+      return null;
   }
 
   var PromoBanner = /** @class */ (function () {
@@ -407,6 +322,31 @@
     return _assign.apply(this, arguments);
   };
 
+  var BodyScroll = /** @class */ (function () {
+      function BodyScroll() {
+          this.lock = function () {
+              document.body.classList.add("menu-is-open");
+          };
+          this.unlock = function () {
+              document.body.classList.remove("menu-is-open");
+          };
+      }
+      return BodyScroll;
+  }());
+
+  var HeaderDrawerUnderlay = /** @class */ (function () {
+      function HeaderDrawerUnderlay() {
+          this.element = document.querySelector(".header-drawer-underlay");
+      }
+      HeaderDrawerUnderlay.prototype.show = function () {
+          this.element.classList.add("is-active");
+      };
+      HeaderDrawerUnderlay.prototype.hide = function () {
+          this.element.classList.remove("is-active");
+      };
+      return HeaderDrawerUnderlay;
+  }());
+
   var HeaderDrawer = /** @class */ (function () {
       function HeaderDrawer(_a) {
           var _this = this;
@@ -432,32 +372,23 @@
       HeaderDrawer.prototype.initialize = function () {
           var _this = this;
           this.id = this.drawerElement.getAttribute("data-drawer-id");
-          console.log("this.id", this.id);
           this.buttonElements = Array.from(document.querySelectorAll("[data-drawer-button-id=\"".concat(this.id, "\"]")));
-          console.log("this.buttonElement", this.buttonElements.length);
           this.buttonElements.forEach(function (element) {
-              element.addEventListener("click", function () {
-                  _this.onButtonClick(_this);
+              element.addEventListener("click", function (event) {
+                  _this.onButtonClick(event, _this);
               });
           });
+          console.log("test");
           return this;
       };
       return HeaderDrawer;
   }());
 
-  var BodyScroll = {
-      lock: function () {
-          document.body.classList.add("menu-is-open");
-      },
-      unlock: function () {
-          document.body.classList.remove("menu-is-open");
-      }
-  };
-
   var HeaderDrawerManager = /** @class */ (function () {
       function HeaderDrawerManager() {
           var _this = this;
-          this.onDrawerButtonClick = function (drawer) {
+          this.onDrawerButtonClick = function (event, drawer) {
+              event.preventDefault();
               if (_this.currentOpenDrawerId) {
                   if (drawer.id === _this.currentOpenDrawerId) {
                       _this.closeDrawer(drawer);
@@ -473,10 +404,41 @@
           };
           this.onBodyClick = function (event) {
               if (_this.getCurrentOpenDrawer() &&
+                  event.target instanceof Element &&
                   event.target.closest("[data-drawer-id]") === null &&
                   event.target.closest("[data-drawer-button-id]") === null) {
                   _this.closeDrawer(_this.getCurrentOpenDrawer());
               }
+          };
+          this.onWindowResize = debounce(function () {
+              var currentOpenDrawer = _this.getCurrentOpenDrawer();
+              if (currentOpenDrawer) {
+                  _this.closeDrawer(currentOpenDrawer);
+              }
+          }, 100);
+          this.getCurrentOpenDrawer = function () {
+              if (!_this.currentOpenDrawerId) {
+                  return null;
+              }
+              return _this.drawerIdMap[_this.currentOpenDrawerId];
+          };
+          this.closeCurrentOpenDrawer = function () {
+              var currentOpenDrawer = _this.getCurrentOpenDrawer();
+              if (currentOpenDrawer) {
+                  _this.closeDrawer(currentOpenDrawer);
+              }
+          };
+          this.openDrawer = function (drawer) {
+              drawer.open();
+              _this.currentOpenDrawerId = drawer.id;
+              _this.bodyScroll.lock();
+              _this.drawerUnderlay.show();
+          };
+          this.closeDrawer = function (drawer) {
+              drawer.close();
+              _this.currentOpenDrawerId = null;
+              _this.bodyScroll.unlock();
+              _this.drawerUnderlay.hide();
           };
       }
       HeaderDrawerManager.prototype.initialize = function () {
@@ -490,106 +452,165 @@
               }).initialize();
               return _assign(_assign({}, acc), (_a = {}, _a[drawer.id] = drawer, _a));
           }, {});
+          this.bodyScroll = new BodyScroll();
+          this.drawerUnderlay = new HeaderDrawerUnderlay();
           document.body.addEventListener("click", this.onBodyClick);
+          window.addEventListener("resize", this.onWindowResize);
           return this;
-      };
-      HeaderDrawerManager.prototype.getCurrentOpenDrawer = function () {
-          if (!this.currentOpenDrawerId) {
-              return null;
-          }
-          console.log("this.currentOpenDrawerId", this.currentOpenDrawerId);
-          return this.drawerIdMap[this.currentOpenDrawerId];
-      };
-      HeaderDrawerManager.prototype.openDrawer = function (drawer) {
-          drawer.open();
-          this.currentOpenDrawerId = drawer.id;
-          BodyScroll.lock();
-      };
-      HeaderDrawerManager.prototype.closeDrawer = function (drawer) {
-          drawer.close();
-          this.currentOpenDrawerId = null;
-          BodyScroll.unlock();
       };
       return HeaderDrawerManager;
   }());
 
-  var OPEN_CLASSNAME = "is-active";
+  var HeaderDropdownUnderlay = /** @class */ (function () {
+      function HeaderDropdownUnderlay() {
+          this.element = document.querySelector(".header-dropdown-underlay");
+      }
+      HeaderDropdownUnderlay.prototype.show = function () {
+          this.element.classList.add("is-active");
+      };
+      HeaderDropdownUnderlay.prototype.hide = function () {
+          this.element.classList.remove("is-active");
+      };
+      return HeaderDropdownUnderlay;
+  }());
+
+  var OPEN_CLASSNAME = "is-open";
   var HeaderDropdown = /** @class */ (function () {
-      function HeaderDropdown(element) {
+      function HeaderDropdown(_a) {
           var _this = this;
+          var dropdownElement = _a.dropdownElement, onDropdownButtonMouseOver = _a.onDropdownButtonMouseOver, onDropdownButtonClick = _a.onDropdownButtonClick;
           this.isOpen = false;
           this.initialize = function () {
-              _this.id = _this.dropdownElement.getAttribute("data-dropdown");
-              _this.buttonElements = Array.from(document.querySelectorAll("[data-dropdown-rel=\"".concat(_this.id, "\"]")));
-              console.log("this.buttonElements", _this.id);
-              console.log("this.buttonElements", _this.buttonElements.length);
+              _this.id = _this.dropdownElement.getAttribute("data-dropdown-id");
+              _this.buttonElements = Array.from(document.querySelectorAll("[data-dropdown-button-id=\"".concat(_this.id, "\"]")));
+              _this.activationType = (_this.dropdownElement.getAttribute("data-dropdown-activation-type") || "hover");
               _this.buttonElements.forEach(function (element) {
                   element.classList.add("is-dropdown-button");
-                  element.addEventListener("click", function (event) {
-                      _this.onButtonElementClick(event, element);
-                  });
+                  if (_this.activationType === "hover") {
+                      element.addEventListener("mouseover", function (event) {
+                          _this.onDropdownButtonMouseOver(event, _this);
+                      });
+                  }
+                  else {
+                      element.addEventListener("click", function (event) {
+                          _this.onDropdownButtonClick(event, _this);
+                      });
+                  }
               });
               return _this;
-          };
-          this.onButtonElementClick = function (event, element) {
-              event.preventDefault();
-              console.log("click", _this.id);
-              _this.toggle(!_this.isOpen);
           };
           this.open = function () {
               _this.isOpen = true;
               _this.dropdownElement.classList.add(OPEN_CLASSNAME);
+              // new TransitionTimer(10).start().then(() => {
+              //   this.dropdownElement.classList.add(VISIBLE_CLASSNAME);
+              // });
           };
           this.close = function () {
               _this.isOpen = false;
+              // this.dropdownElement.classList.remove(VISIBLE_CLASSNAME);
               _this.dropdownElement.classList.remove(OPEN_CLASSNAME);
+              // new TransitionTimer(200).start().then(() => {
+              //   this.dropdownElement.classList.remove(OPEN_CLASSNAME);
+              // });
           };
-          this.toggle = function (isOpen) {
-              _this.isOpen = isOpen;
-              _this.dropdownElement.classList.toggle(OPEN_CLASSNAME, isOpen);
+          this.toggle = function (shouldOpen) {
+              shouldOpen ? _this.open() : _this.close();
           };
-          this.dropdownElement = element;
+          this.dropdownElement = dropdownElement;
+          this.onDropdownButtonMouseOver = onDropdownButtonMouseOver;
+          this.onDropdownButtonClick = onDropdownButtonClick;
       }
-      HeaderDropdown.prototype.unload = function () { };
       return HeaderDropdown;
   }());
 
   var DropdownManager = /** @class */ (function () {
-      // navLinkElements: Element[];
       function DropdownManager() {
-          //
+          var _this = this;
           this.currentDropdownId = null;
+          this.onBodyClick = function (event) {
+              var currentOpenDropdown = _this.getCurrentOpenDropdown();
+              if (currentOpenDropdown &&
+                  currentOpenDropdown.activationType === "click" &&
+                  event.target instanceof Element &&
+                  event.target.closest("[data-dropdown-id]") === null &&
+                  event.target.closest("[data-dropdown-button-id]") === null) {
+                  _this.closeCurrentOpenDropdown();
+              }
+          };
+          this.onDropdownButtonMouseOver = function (event, dropdown) {
+              _this.closeCurrentOpenDropdown();
+              _this.openDropdown(dropdown);
+          };
+          this.onDropdownButtonClick = function (event, dropdown) {
+              event.preventDefault();
+              // TODO - don't open if the button being clicked is for the current dropdown
+              //        in that case - close the dropdown
+              var currentDropdown = _this.getCurrentOpenDropdown();
+              if (currentDropdown) {
+                  _this.closeDropdown(currentDropdown);
+                  if (currentDropdown.id !== dropdown.id) {
+                      _this.openDropdown(dropdown);
+                  }
+              }
+              else {
+                  _this.openDropdown(dropdown);
+              }
+          };
+          // TODO - check
+          this.onHeaderMouseOut = function (event) {
+              var currentOpenDropdown = _this.getCurrentOpenDropdown();
+              if (!currentOpenDropdown) {
+                  return;
+              }
+              if (currentOpenDropdown.activationType === "click") {
+                  return;
+              }
+              var toElement = event.relatedTarget;
+              // If the mouse is no longer within the header content area hide the dropdown
+              if (toElement && !toElement.closest(".header-content-wrapper")) {
+                  _this.closeCurrentOpenDropdown();
+              }
+          };
+          this.getCurrentOpenDropdown = function () { return _this.dropdownMap[_this.currentDropdownId]; };
+          this.closeCurrentOpenDropdown = function () {
+              var currentDropdown = _this.getCurrentOpenDropdown();
+              if (currentDropdown) {
+                  _this.closeDropdown(currentDropdown);
+              }
+          };
+          this.openDropdown = function (dropdown) {
+              _this.currentDropdownId = dropdown.id;
+              dropdown.open();
+              _this.headerUnderlay.show();
+          };
+          this.closeDropdown = function (dropdown) {
+              dropdown.close();
+              _this.currentDropdownId = null;
+              _this.headerUnderlay.hide();
+          };
       }
       DropdownManager.prototype.initialize = function () {
-          this.headerWrapperElement = document.querySelector(".header-wrapper");
-          this.dropdownLinkElements = document.querySelectorAll(".vm-header-dropdown-link");
+          var _this = this;
+          this.headerContentWrapperElement = document.querySelector(".header-content-wrapper");
+          this.headerContentWrapperElement.addEventListener("mouseout", function (event) {
+              _this.onHeaderMouseOut(event);
+          });
+          this.headerUnderlay = new HeaderDropdownUnderlay();
           this.dropdownElements = document.querySelectorAll(".vm-header-dropdown");
-          this.dropdownMap = Array.from(this.dropdownElements).reduce(function (acc, element) {
+          this.dropdownMap = Array.from(this.dropdownElements).reduce(function (acc, dropdownElement) {
               var _a;
-              var dropdown = new HeaderDropdown(element).initialize();
+              var dropdown = new HeaderDropdown({
+                  dropdownElement: dropdownElement,
+                  onDropdownButtonMouseOver: _this.onDropdownButtonMouseOver,
+                  onDropdownButtonClick: _this.onDropdownButtonClick
+              }).initialize();
               return _assign(_assign({}, acc), (_a = {}, _a[dropdown.id] = dropdown, _a));
           }, {});
           this.dropdownIds = Object.keys(this.dropdownMap);
-          // TODO - put this inside of Dropdown instead?
-          // this.navLinkElements = Array.from(
-          //   document.querySelectorAll(".header-desktop__nav-link")
-          // ).filter((element) => {
-          //   const dropdownRel = element.getAttribute("data-dropdown-rel");
-          //   if (!dropdownRel) {
-          //     return false;
-          //   }
-          //   // dropdownLink points to a non-existant dropdown
-          //   if (!this.dropdownIds.includes(dropdownRel)) {
-          //     return false;
-          //   }
-          //   return true;
-          // });
+          document.body.addEventListener("click", this.onBodyClick);
           return this;
       };
-      DropdownManager.prototype.onDropdownHover = function (dropdown) {
-          console.log("ondropdownhover");
-      };
-      DropdownManager.prototype.unload = function () { };
       return DropdownManager;
   }());
 

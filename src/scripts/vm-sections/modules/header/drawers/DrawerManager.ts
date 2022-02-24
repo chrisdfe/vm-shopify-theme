@@ -1,11 +1,22 @@
+import debounce from "../../../utils/debounce";
+
+import BodyScroll from "../modules/BodyScroll";
+import DrawerUnderlay from "./DrawerUnderlay";
+
 import HeaderDrawer from "./Drawer";
-import BodyScroll from "./BodyScroll";
+
+interface Props {
+  onDrawerOpen: (drawer: HeaderDrawer) => void;
+}
 
 export default class HeaderDrawerManager {
   drawerElements: NodeListOf<Element>;
 
   currentOpenDrawerId: string | null;
   drawerIdMap: { [drawerId: string]: HeaderDrawer };
+
+  drawerUnderlay: DrawerUnderlay;
+  bodyScroll: BodyScroll;
 
   initialize() {
     this.drawerElements = document.querySelectorAll("[data-drawer-id]");
@@ -22,12 +33,18 @@ export default class HeaderDrawerManager {
       {}
     );
 
+    this.bodyScroll = new BodyScroll();
+    this.drawerUnderlay = new DrawerUnderlay();
+
     document.body.addEventListener("click", this.onBodyClick);
+    window.addEventListener("resize", this.onWindowResize);
 
     return this;
   }
 
-  onDrawerButtonClick = (drawer) => {
+  private onDrawerButtonClick = (event: Event, drawer: HeaderDrawer) => {
+    event.preventDefault();
+
     if (this.currentOpenDrawerId) {
       if (drawer.id === this.currentOpenDrawerId) {
         this.closeDrawer(drawer);
@@ -40,9 +57,10 @@ export default class HeaderDrawerManager {
     }
   };
 
-  onBodyClick = (event) => {
+  private onBodyClick = (event: Event) => {
     if (
       this.getCurrentOpenDrawer() &&
+      event.target instanceof Element &&
       event.target.closest("[data-drawer-id]") === null &&
       event.target.closest("[data-drawer-button-id]") === null
     ) {
@@ -50,25 +68,42 @@ export default class HeaderDrawerManager {
     }
   };
 
-  getCurrentOpenDrawer() {
+  private onWindowResize = debounce(() => {
+    const currentOpenDrawer = this.getCurrentOpenDrawer();
+    if (currentOpenDrawer) {
+      this.closeDrawer(currentOpenDrawer);
+    }
+  }, 100);
+
+  getCurrentOpenDrawer = () => {
     if (!this.currentOpenDrawerId) {
       return null;
     }
 
-    console.log("this.currentOpenDrawerId", this.currentOpenDrawerId);
-
     return this.drawerIdMap[this.currentOpenDrawerId];
-  }
+  };
 
-  openDrawer(drawer) {
+  closeCurrentOpenDrawer = () => {
+    const currentOpenDrawer = this.getCurrentOpenDrawer();
+
+    if (currentOpenDrawer) {
+      this.closeDrawer(currentOpenDrawer);
+    }
+  };
+
+  openDrawer = (drawer: HeaderDrawer) => {
     drawer.open();
     this.currentOpenDrawerId = drawer.id;
-    BodyScroll.lock();
-  }
 
-  closeDrawer(drawer) {
+    this.bodyScroll.lock();
+    this.drawerUnderlay.show();
+  };
+
+  closeDrawer = (drawer: HeaderDrawer) => {
     drawer.close();
     this.currentOpenDrawerId = null;
-    BodyScroll.unlock();
-  }
+
+    this.bodyScroll.unlock();
+    this.drawerUnderlay.hide();
+  };
 }

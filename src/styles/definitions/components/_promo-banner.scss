@@ -12,6 +12,7 @@
   padding: 0.75rem 1.5rem;
   display: none;
   position: relative;
+  z-index: $vm-z-index-header-content;
 
   p {
     @include vm-paragraph-3();

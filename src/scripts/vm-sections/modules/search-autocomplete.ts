@@ -1,6 +1,22 @@
 import { getSizedImageUrl } from "@shopify/theme-images";
 import debounce from "../utils/debounce";
 
+type ShopifyGlobal = {
+  translation: {
+    coming_soon_text: string;
+    from_text: string;
+    all_results: string;
+  };
+  theme_settings: {
+    display_sold_out_price: boolean;
+    sold_out_text: string;
+    free_text: string;
+    search_items_to_display: string;
+  };
+};
+
+declare var Shopify: ShopifyGlobal;
+
 /*============================================================================
   Search autocomplete
 ==============================================================================*/
@@ -8,7 +24,7 @@ import debounce from "../utils/debounce";
 const CDN_BASE_URL = "//cdn.shopify.com/s/files/1/1077/2230/t/118/";
 
 // TODO - move to a more general location
-function getCDNImageUrl(imageUrl, size, version) {
+function getCDNImageUrl(imageUrl: string, size: string, version?: boolean) {
   const sizedImageUrl = getSizedImageUrl(imageUrl, size);
   let cdnImageUrl = `${CDN_BASE_URL}assets/${sizedImageUrl}`;
 
@@ -184,13 +200,17 @@ function renderSearchResults({
 }
 
 class SearchAutocomplete {
-  shopURL = "";
+  shopURL: string = "";
 
-  searchValue = "";
+  searchValue: string = "";
 
   searchFormElement = null;
   resultsListElement = null;
   inputElement = null;
+
+  searchPath: string;
+
+  debouncedFetchSearchResults: () => void;
 
   constructor(searchFormElement) {
     this.searchFormElement = searchFormElement;
@@ -313,15 +333,14 @@ class SearchAutocomplete {
 }
 
 class SearchAutocompleteManager {
-  searchFormElements = [];
-  searchAutocompletes = [];
+  searchAutocompletes: SearchAutocomplete[];
 
   init = () => {
-    this.searchFormElements = document.querySelectorAll(
+    const searchFormElements = document.querySelectorAll(
       "form.search_form, form.search, form.header_search_form"
     );
 
-    this.searchAutocompletes = Array.from(this.searchFormElements).map(
+    this.searchAutocompletes = Array.from(searchFormElements).map(
       (searchFormElement) => {
         return new SearchAutocomplete(searchFormElement).init();
       }

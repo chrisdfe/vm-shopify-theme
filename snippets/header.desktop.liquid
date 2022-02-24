@@ -2,11 +2,12 @@
   {% capture extra_links %}
     <li>
       <a
-        href="{{ routes.cart_url }}"
+        href="{{ routes.search_url }}"
         class="vm-header-dropdown-link"
-        data-dropdown-rel="cart">
-      <span class="icon-bag"></span>
-      <span class="cart_count">{{ cart.item_count }}</span>
+        data-dropdown-button-id="search"
+        title="{{ 'general.search.title' | t | escape }}"
+        >
+        <span class="icon-search"></span>
       </a>
     </li>
 
@@ -19,14 +20,14 @@
         <span>{% if customer %}{{ 'layout.customer.my_account' | t }}{% else %}{{ 'layout.customer.log_in' | t }}{% endif %}</span>
       </a>
     </li>
-
+    
     <li>
       <a
-        href="{{ routes.search_url }}"
+        href="{{ routes.cart_url }}"
         class="vm-header-dropdown-link"
-        title="{{ 'general.search.title' | t | escape }}"
-        data-dropdown-rel="search">
-        <span class="icon-search"></span>
+        data-drawer-button-id="cart">
+      <span class="icon-bag"></span>
+      <span class="cart_count">{{ cart.item_count }}</span>
       </a>
     </li>
   {% endcapture %}

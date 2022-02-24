@@ -1,11 +1,11 @@
-const BodyScroll = {
-  lock: () => {
+class BodyScroll {
+  lock = () => {
     document.body.classList.add("menu-is-open");
-  },
+  };
 
-  unlock: () => {
+  unlock = () => {
     document.body.classList.remove("menu-is-open");
-  },
-};
+  };
+}
 
 export default BodyScroll;

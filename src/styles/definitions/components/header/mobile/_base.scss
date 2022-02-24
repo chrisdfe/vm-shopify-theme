@@ -1,4 +1,6 @@
 .header-mobile {
+  position: relative;
+  z-index: $vm-z-index-header-content;
   background-color: $vm-color-white;
 
   .header-mobile__navbar {
@@ -10,6 +12,7 @@
   .header-mobile__logo {
     display: block;
     padding: get-vm-spacer(1);
+    width: 10%;
 
     img {
       max-height: get-vm-spacer(2);
@@ -19,6 +22,11 @@
 
   .header-mobile__nav {
     display: flex;
+    width: 45%;
+
+    &.header-mobile__nav--right {
+      justify-content: flex-end;
+    }
   }
 
   .header-mobile__nav-button {

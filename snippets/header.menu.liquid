@@ -10,7 +10,7 @@
         href="{{ link.url }}"
         class="{% if link.active %}active{% endif %}
         {% if is_dropdown_link %}vm-header-dropdown-link{% endif %}" 
-        data-dropdown-rel="{{ link.handle }}"
+        data-dropdown-button-id="{{ link.handle }}"
       >
         {{ link.title }}
 

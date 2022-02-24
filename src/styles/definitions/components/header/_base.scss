@@ -1,11 +1,56 @@
-// TODO -figure out if I can just apply these styles to header-wrapper instead
-// #shopify-section-header {
 .header-wrapper {
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: $vm-z-index-header-wrapper;
+}
+
+.header {
+  position: relative;
+  // z-index: $vm-z-index-header;
 }
 
 body.menu-is-open {
   overflow-y: hidden;
+}
+
+.header-dropdown-underlay {
+  background-color: rgba($vm-color-sea-green, 0.5);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: $vm-z-index-header-dropdown-underlay;
+  opacity: 0;
+  display: none;
+  // animation: fadeIn 0.4s ease-in-out, fadeOut 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out;
+
+  &.is-active {
+    display: block;
+    opacity: 1;
+  }
+}
+
+.header-drawer-underlay {
+  background-color: rgba($vm-color-sea-green, 0.5);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: $vm-z-index-header-drawer-underlay;
+  opacity: 0;
+  display: none;
+  // animation: fadeIn 0.4s ease-in-out, fadeOut 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out;
+
+  &.is-active {
+    display: block;
+    opacity: 1;
+  }
+}
+
+.mega-menu-wrapper {
+  z-index: $vm-z-index-header;
 }

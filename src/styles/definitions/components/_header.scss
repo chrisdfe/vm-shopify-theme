@@ -1,6 +1,18 @@
 /* Components - Header
 ================================================== */
 
+// TODO - put these variables elsewhere
+$vm-z-index-header-wrapper: 1000;
+
+$vm-z-index-header-dropdown-underlay: $vm-z-index-header-wrapper + 100;
+$vm-z-index-header-dropdown: $vm-z-index-header-wrapper + 110;
+
+$vm-z-index-header: $vm-z-index-header-wrapper + 200;
+$vm-z-index-header-content: $vm-z-index-header-wrapper + 210;
+
+$vm-z-index-header-drawer-underlay: $vm-z-index-header-wrapper + 300;
+$vm-z-index-header-drawer: $vm-z-index-header-wrapper + 310;
+
 @import "./header/_base";
 @import "./header/_desktop";
 @import "./header/_mobile";

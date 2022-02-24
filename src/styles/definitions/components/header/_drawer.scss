@@ -1,15 +1,17 @@
-@mixin vm-drawer() {
+$vm-drawer-desktop-width: 450px;
+$vm-drawer-mobile-width: 75%;
+
+@mixin vm-header-drawer() {
   display: block;
   background-color: #fff;
-  // transform: translateX(100%);
-  transition: all 0.2s;
+  transition: all 0.4s;
   position: fixed;
-  top: 4rem;
-  // right: 0;
-  width: 75%;
+  top: 0;
+  width: $vm-drawer-desktop-width;
   bottom: 0;
   overflow-y: scroll;
-  padding: get-vm-spacer(1);
+  padding: get-vm-spacer(2);
+  z-index: $vm-z-index-header-drawer;
 
   // TODO - move this into somewhere else
   //        'accordion' or something
@@ -19,12 +21,18 @@
     margin: 0;
   }
 
-  &.vm-drawer--left {
+  .vm-header-drawer__header {
+    display: flex;
+    padding: 0 0 get-vm-spacer(1);
+    border-bottom: 1px solid $vm-color-sea-green;
+  }
+
+  &.vm-header-drawer--left {
     left: 0;
     transform: translateX(-100%);
   }
 
-  &.vm-drawer--right {
+  &.vm-header-drawer--right {
     right: 0;
     transform: translateX(100%);
   }
@@ -32,16 +40,35 @@
   &.is-open {
     transform: translateX(0);
   }
+
+  @include respond-to("medium-down") {
+    padding: get-vm-spacer(1);
+    width: $vm-drawer-mobile-width;
+  }
 }
 
-.vm-drawer {
+.vm-header-drawer {
   &:not(.vm-mobile-only-drawer) {
-    @include vm-drawer();
+    @include vm-header-drawer();
   }
 
   &.vm-mobile-only-drawer {
+    .vm-header-drawer__header {
+      display: none;
+    }
+
     @include respond-to("medium-down") {
-      @include vm-drawer();
+      @include vm-header-drawer();
+
+      .vm-header-drawer__header {
+        display: block;
+      }
+    }
+  }
+
+  &.vm-header-drawer--right {
+    .vm-header-drawer__header {
+      align-items: flex-end;
     }
   }
 }

@@ -12,7 +12,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@shopify/theme-images": "^4.1.1"
+    "@shopify/theme-images": "^4.1.1",
+    "mitt": "^3.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.15.5",

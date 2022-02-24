@@ -1,20 +1,26 @@
 @mixin vm-header-dropdown() {
   position: absolute;
   width: 100%;
-  z-index: 1000;
+  z-index: $vm-z-index-header-dropdown;
   display: none;
   background-color: #fff;
   @include vm-dropdown-menu-boxshadow();
-  transition: all 0.3s linear;
-  animation: fadeIn 0.3s linear none;
+  // transition: all 0.3s linear;
+  // animation: fadeIn 0.3s linear none;
+  padding: get-vm-spacer(2);
+  // opacity: 0;
 
   img {
     max-width: 100%;
   }
 
-  &.is-active {
+  &.is-open {
     display: block;
   }
+
+  // &.is-visible {
+  //   opacity: 1;
+  // }
 }
 
 .vm-header-dropdown {
@@ -31,7 +37,6 @@
 
 // TODO - move to mega-menu
 .header-dropdown__content {
-  padding: get-vm-spacer(2);
   display: flex;
 
   ul {

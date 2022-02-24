@@ -30,6 +30,9 @@ function init() {
   document.addEventListener("DOMContentLoaded", registerIntersectionObservers);
 }
 
+function unload() {}
+
 export default {
   init,
+  unload,
 };

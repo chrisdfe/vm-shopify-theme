@@ -1,4 +1,6 @@
 .header-desktop {
+  position: relative;
+  z-index: $vm-z-index-header-content;
   background-color: $vm-color-white;
 
   a {

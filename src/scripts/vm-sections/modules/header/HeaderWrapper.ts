@@ -3,7 +3,9 @@ import findAndInitialize from "../../utils/findAndInitialize";
 import PromoBanner from "./modules/PromoBanner";
 
 import DrawerManager from "./drawers/DrawerManager";
+import HeaderDrawer from "./drawers/Drawer";
 import DropdownManager from "./dropdowns/DropdownManager";
+import HeaderDropdown from "./dropdowns/Dropdown";
 
 export default class HeaderWrapper {
   static selector = ".header-wrapper";
@@ -24,7 +26,6 @@ export default class HeaderWrapper {
     this.drawerManager = new DrawerManager().initialize();
     this.dropdownManager = new DropdownManager().initialize();
   }
-
   static findAndInitialize() {
     return findAndInitialize(HeaderWrapper);
   }

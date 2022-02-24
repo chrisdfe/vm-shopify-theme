@@ -1,42 +1,45 @@
 <header class="header-mobile">
   <div class="header-mobile__navbar">
 
-    <button
-      class="header-mobile__hamburger-button header-mobile__nav-button"
-      data-drawer-button-id="menu"
-      data-no-instant="true"
-      >
-      <div class="header-mobile__hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </button>
-    
-    <a
-      href="{{ shop.url }}"
-      title="{{ shop.name | escape }}"
-      class="header-mobile__logo">
-      {% if section.settings.logo_mobile != nil %}
-        <img
-          src="{{ section.settings.logo_mobile | img_url: '410x' }}"
-          alt="{{ shop.name | escape }}"
-          class="lazyload"
-        />
-      {% elsif section.settings.logo != nil %}
-        <img
-          src="{{ section.settings.logo | img_url: '410x' }}"
-          alt="{{ shop.name | escape }}"
-        />
-      {% endif %}
-    </a>
-
     <div class="header-mobile__nav">
+      <button
+        class="header-mobile__hamburger-button header-mobile__nav-button"
+        data-drawer-button-id="menu"
+      >
+        <div class="header-mobile__hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </button>
+    </div>
+    
+    <div class="header-mobile__logo-wrapper">
+      <a
+        href="{{ shop.url }}"
+        title="{{ shop.name | escape }}"
+        class="header-mobile__logo">
+        {% if section.settings.logo_mobile != nil %}
+          <img
+            src="{{ section.settings.logo_mobile | img_url: '410x' }}"
+            alt="{{ shop.name | escape }}"
+            class="lazyload"
+          />
+        {% elsif section.settings.logo != nil %}
+          <img
+            src="{{ section.settings.logo | img_url: '410x' }}"
+            alt="{{ shop.name | escape }}"
+          />
+        {% endif %}
+      </a>
+    </div>
+
+    <div class="header-mobile__nav header-mobile__nav--right">
       <button
         href="{{ routes.search_url }}"
         class="header-mobile__nav-button js-mobile-search-button"
         title="{{ 'general.search.title' | t | escape }}"
-        data-dropdown-rel="search">
+        data-dropdown-button-id="search">
         <span class="icon-search"></span>
       </button>
       
@@ -44,8 +47,7 @@
         href="{{ routes.cart_url }}"
         class="header-mobile__nav-button"
         title="{{ 'layout.general.cart' | t | escape }}"
-        data-drawer-button-id="cart"
-        data-no-instant>
+        data-drawer-button-id="cart">
         <span class="icon-bag"></span>
         <span class="cart_count">{{ cart.item_count }}</span>
       </button>
