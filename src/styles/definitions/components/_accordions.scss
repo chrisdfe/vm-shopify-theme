@@ -1,6 +1,49 @@
 /* Components - Accordions (and tabs)
 ================================================== */
 
+.vm-accordion-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: transparent;
+  color: $vm-color-sea-green;
+  fill: $vm-color-sea-green;
+  width: 100%;
+  text-align: left;
+  padding: get-vm-spacer(1.5) get-vm-spacer(0.5);
+  border-bottom: 1px solid rgba($vm-color-sea-green, 0.4);
+
+  // TODO - don't break accessibility
+  &:active,
+  &:focus {
+    background: $vm-color-cream;
+    color: $vm-color-sea-green;
+    border-bottom: 1px solid rgba($vm-color-sea-green, 0.4);
+  }
+
+  .mobile-menu-accordion-button__arrow {
+    transform: rotate(-90deg);
+    transition: all 0.2s;
+  }
+
+  &.is-open {
+    .mobile-menu-accordion-button__arrow {
+      transform: rotate(0);
+    }
+  }
+}
+
+.vm-accordion-content {
+  display: none;
+  padding: get-vm-spacer(1);
+
+  &.is-open {
+    display: block;
+  }
+}
+
+// TODO - go through and make sure none of this is used anymore
+//        and then delete
 ul.tabs {
   display: block;
   margin: 25px 0;
@@ -39,10 +82,10 @@ ul.tabs li a {
     margin-right: 30px;
   }
 
-  @include respond-to('medium-down') {
+  @include respond-to("medium-down") {
     font-size: 12px;
   }
-  @include respond-to('small-down') {
+  @include respond-to("small-down") {
     margin-right: 20px;
   }
 }
@@ -119,13 +162,13 @@ ul.tabs-content ul {
         transform: translateY(-50%);
         left: 15px;
         font-size: 20px;
-        content: '\002b';
+        content: "\002b";
         color: inherit;
       }
 
-      &[aria-expanded='true'] {
+      &[aria-expanded="true"] {
         &::after {
-          content: '\002d';
+          content: "\002d";
           font-size: 30px;
         }
       }
@@ -145,11 +188,11 @@ ul.tabs-content ul {
       margin-bottom: 0;
     }
 
-    &[aria-hidden='true'] {
+    &[aria-hidden="true"] {
       display: none;
     }
 
-    @include respond-to('medium-down') {
+    @include respond-to("medium-down") {
       margin-left: 15px;
     }
   }
@@ -167,7 +210,7 @@ ul.tabs-content ul {
     }
   }
 
-  & > li[id*='tab'] {
+  & > li[id*="tab"] {
     display: none;
     list-style: none;
   }
@@ -175,7 +218,7 @@ ul.tabs-content ul {
 
 ul.tabs:before,
 ul.tabs:after {
-  content: '\0020';
+  content: "\0020";
   display: block;
   overflow: hidden;
   visibility: hidden;

@@ -6614,6 +6614,11 @@ body.menu-is-open {
 .mega-menu-mobile {
   display: block;
 }
+.mega-menu-mobile ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
 @media only screen and (min-width: 801px) {
   .mega-menu-mobile {
     display: none;
@@ -8574,6 +8579,41 @@ p.checkout_button {
 
 /* Components - Accordions (and tabs)
 ================================================== */
+.vm-accordion-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: transparent;
+  color: #1c4047;
+  fill: #1c4047;
+  width: 100%;
+  text-align: left;
+  padding: 1.5rem 0.5rem;
+  border-bottom: 1px solid rgba(28, 64, 71, 0.4);
+}
+.vm-accordion-button:active, .vm-accordion-button:focus {
+  background: #f8f4f4;
+  color: #1c4047;
+  border-bottom: 1px solid rgba(28, 64, 71, 0.4);
+}
+.vm-accordion-button .mobile-menu-accordion-button__arrow {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  transition: all 0.2s;
+}
+.vm-accordion-button.is-open .mobile-menu-accordion-button__arrow {
+  -webkit-transform: rotate(0);
+          transform: rotate(0);
+}
+
+.vm-accordion-content {
+  display: none;
+  padding: 1rem;
+}
+.vm-accordion-content.is-open {
+  display: block;
+}
+
 ul.tabs {
   display: block;
   margin: 25px 0;

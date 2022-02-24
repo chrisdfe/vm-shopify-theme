@@ -8,15 +8,15 @@
 <!-- <h1>mega mobile menu {{ menu_number}}</h1> -->
 <div class="mega-menu-mobile">
   <button
-    class="mobile-menu-accordion-button"
-    data-accordion-id="{{ section.settings.parent | handleize }}"
+    class="vm-accordion-button"
+    data-accordion-button-id="{{ section.settings.parent | handleize }}"
     data-no-instant>
     <span>{{ section.settings.parent }}</span>
     <span class="mobile-menu-accordion-button__arrow icon-down-arrow"></span>
   </button>
   
   <div
-    class="mobile-menu-accordion-content"
+    class="vm-accordion-content"
     data-accordion-id="{{ section.settings.parent | handleize }}">
     <ul
       data-mobile-dropdown="{{ section.settings.parent | handleize }}">

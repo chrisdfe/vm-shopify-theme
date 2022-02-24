@@ -474,7 +474,7 @@
       return HeaderDropdownUnderlay;
   }());
 
-  var OPEN_CLASSNAME = "is-open";
+  var OPEN_CLASSNAME$1 = "is-open";
   var HeaderDropdown = /** @class */ (function () {
       function HeaderDropdown(_a) {
           var _this = this;
@@ -501,7 +501,7 @@
           };
           this.open = function () {
               _this.isOpen = true;
-              _this.dropdownElement.classList.add(OPEN_CLASSNAME);
+              _this.dropdownElement.classList.add(OPEN_CLASSNAME$1);
               // new TransitionTimer(10).start().then(() => {
               //   this.dropdownElement.classList.add(VISIBLE_CLASSNAME);
               // });
@@ -509,7 +509,7 @@
           this.close = function () {
               _this.isOpen = false;
               // this.dropdownElement.classList.remove(VISIBLE_CLASSNAME);
-              _this.dropdownElement.classList.remove(OPEN_CLASSNAME);
+              _this.dropdownElement.classList.remove(OPEN_CLASSNAME$1);
               // new TransitionTimer(200).start().then(() => {
               //   this.dropdownElement.classList.remove(OPEN_CLASSNAME);
               // });
@@ -657,13 +657,75 @@
     }
   };
 
+  var OPEN_CLASSNAME = "is-open";
+  var Accordion = /** @class */ (function () {
+      function Accordion(_a) {
+          var _this = this;
+          var contentElement = _a.contentElement;
+          this.isOpen = false;
+          this.initialize = function () {
+              _this.id = _this.contentElement.getAttribute("data-accordion-id");
+              _this.buttonElements = Array.from(document.querySelectorAll("[data-accordion-button-id=".concat(_this.id, "]")));
+              _this.buttonElements.forEach(function (buttonElement) {
+                  buttonElement.addEventListener("click", _this.onButtonClick);
+              });
+              return _this;
+          };
+          this.onButtonClick = function () {
+              console.log("clickity click");
+              _this.toggle(!_this.isOpen);
+          };
+          this.open = function () {
+              _this.isOpen = true;
+              _this.contentElement.classList.add(OPEN_CLASSNAME);
+              _this.buttonElements.forEach(function (buttonElement) {
+                  buttonElement.classList.add(OPEN_CLASSNAME);
+              });
+          };
+          this.close = function () {
+              _this.isOpen = false;
+              _this.contentElement.classList.remove(OPEN_CLASSNAME);
+              _this.buttonElements.forEach(function (buttonElement) {
+                  buttonElement.classList.remove(OPEN_CLASSNAME);
+              });
+          };
+          this.toggle = function (shouldOpen) {
+              shouldOpen ? _this.open() : _this.close();
+          };
+          this.contentElement = contentElement;
+      }
+      return Accordion;
+  }());
+
+  var AccordionManager = /** @class */ (function () {
+      function AccordionManager() {
+          var _this = this;
+          this.initialize = function () {
+              _this.accordionElements = Array.from(document.querySelectorAll(".vm-accordion-content"));
+              console.log("this.accordionElements", _this.accordionElements.length);
+              _this.accordionMap = _this.accordionElements.reduce(function (acc, contentElement) {
+                  var _a;
+                  var accordionId = contentElement.getAttribute("data-accordion-id");
+                  var accordion = new Accordion({ contentElement: contentElement }).initialize();
+                  return _assign(_assign({}, acc), (_a = {}, _a[accordionId] = accordion, _a));
+              }, {});
+              return _this;
+          };
+      }
+      return AccordionManager;
+  }());
+
   // import intersections from "../vm-sections/modules/intersections";
+  // modules with 'legacy' (i.e turbo 6) support
+  // attached to window and use api that app.js.liquid and utilities.js.liquid expect
   // @ts-ignore
   window.header = header;
   // @ts-ignore
   window.searchAutocomplete = searchAutocompleteManager;
   // @ts-ignore
   window.cart = cart;
+  // VM modules
   // intersections.init();
+  new AccordionManager().initialize();
 
 })();
