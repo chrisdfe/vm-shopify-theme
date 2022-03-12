@@ -1,7 +1,5 @@
-<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
-  <g>
-    <rect y="9" width="20" height="2" fill="#714457"/>
-    <rect y="3.74" width="20" height="2" fill="#714457"/>
-    <rect y="14.26" width="20" height="2" fill="#714457"/>
-  </g>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <rect x="2" y="11.19" width="20" height="1.5" fill="#714457"/>
+  <rect x="2" y="5.93" width="20" height="1.5" fill="#714457"/>
+  <rect x="2" y="16.45" width="20" height="1.5" fill="#714457"/>
 </svg>

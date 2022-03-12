@@ -23,7 +23,8 @@
       background: $vm-color-cream;
       outline: 0;
       border: 0 none;
-      border-bottom: 1px solid $vm-color-sand;
+      // border-bottom: 1px solid $vm-color-sand;
+      border-bottom: 1px solid transparent;
     }
   }
 

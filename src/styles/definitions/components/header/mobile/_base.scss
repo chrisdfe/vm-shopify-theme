@@ -8,7 +8,11 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 get-vm-spacer(1);
-    height: get-vm-spacer(3);
+    height: get-vm-spacer(4);
+    
+    @include respond-to("medium-down") {
+      height: get-vm-spacer(3);
+    }
   }
 
   .header-mobile__logo-wrapper {
@@ -28,11 +32,6 @@
       width: 30px;
       height: 30px;
     }
-
-    // img {
-    //   max-height: get-vm-spacer(2);
-    //   width: auto;
-    // }
   }
 
   .header-mobile__nav {
@@ -52,14 +51,21 @@
     height: 44px;
     background-color: transparent;
     color: $vm-color-sea-green;
+    border: 2px solid transparent;
     fill: $vm-color-sea-green;
-
+    
     .cart_count {
-      margin-left: 2px;
+      position: relative;
+      top: 1px;
     }
-
-    &:active {
-      background-color: $vm-color-sand;
+    
+    &:hover {
+      background-color: $vm-color-cream;
+    }
+    
+    &:active {      
+      background-color: $vm-color-cream;
+      border-color: $vm-color-sea-green;
     }
   }
 

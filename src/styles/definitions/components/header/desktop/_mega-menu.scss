@@ -5,5 +5,10 @@
     img {
       margin-bottom: get-vm-spacer(1);
     }
+    
+  }
+  
+  @include respond-to("large-down") {
+    display: none;
   }
 }

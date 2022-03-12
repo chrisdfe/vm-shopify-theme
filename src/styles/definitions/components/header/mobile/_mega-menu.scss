@@ -7,7 +7,7 @@
     margin: 0;
   }
 
-  @include respond-to("medium-up") {
+  @include respond-to("large-up") {
     display: none;
   }
 }

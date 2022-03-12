@@ -1,6 +1,6 @@
 @use "sass:math";
 
-$header-desktop-logo-width: 160px;
+$header-desktop-logo-width: 150px;
 $header-desktop-logo-height: 30px;
 $header-desktop-nav-width: calc(
   50% - #{math.div($header-desktop-logo-width, 2)}
@@ -62,6 +62,13 @@ $header-desktop-nav-width: calc(
       }
     }
 
+    button {
+
+      &:hover {
+        background-color: $vm-color-cream;
+      }
+    }
+
     .vm-header-dropdown-link,
     .header-desktop__nav-link {
       $navbar-padding: get-vm-spacer(2);
@@ -85,8 +92,8 @@ $header-desktop-nav-width: calc(
 
       svg {
         transition: fill 0.2s linear;
-        width: 16px;
-        height: 16px;
+        // width: 16px;
+        // height: 16px;
       }
 
       &:hover {
@@ -103,7 +110,8 @@ $header-desktop-nav-width: calc(
         justify-content: center;
         line-height: 0;
         opacity: 0;
-        margin: 0 0 0 3px;
+        // margin: 0 0 0 3px;
+        margin: 0;
       }
 
       &.is-dropdown-button {

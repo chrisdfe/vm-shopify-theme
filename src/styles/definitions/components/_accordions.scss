@@ -11,18 +11,16 @@
   width: 100%;
   text-align: left;
   padding: get-vm-spacer(1.5) get-vm-spacer(0.5);
-  // border-bottom: 1px solid rgba($vm-color-sea-green, 0.4);
   border-bottom: 1px solid $vm-color-sea-green;
-
-  // TODO - don't break accessibility
+  
+  &:hover,
   &:active,
   &:focus {
     background: $vm-color-cream;
     color: $vm-color-sea-green;
-    // border-bottom: 1px solid rgba($vm-color-sea-green, 0.4);
     border-bottom: 1px solid $vm-color-sea-green;
   }
-
+  
   .mobile-menu-accordion-button__arrow {
     transform: rotate(-90deg);
     transition: all 0.2s;

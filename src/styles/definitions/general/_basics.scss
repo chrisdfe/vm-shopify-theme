@@ -52,7 +52,9 @@ abbr {
 .transition--appear {
   opacity: 0;
   //important is to override the fade-in transition on product img
-  transition: opacity 0s !important;
+  // transition: opacity 0s !important;
+  transition: opacity 0s;
+  
   &.lazyloaded {
     opacity: 1;
   }
