@@ -14,10 +14,10 @@
         {% endif %}"
         data-dropdown-button-id="{{ link.handle | strip }}"
       >
-        {{ link.title }}
+        <span>{{ link.title }}</span>
 
         <div class="header-desktop__nav-link__dropdown-arrow">
-          <span class="icon-down-arrow"></span>
+          {% render "icon.carat" %}
         </div>
       </a>
     </li>

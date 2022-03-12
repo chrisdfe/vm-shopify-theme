@@ -7,10 +7,10 @@
   list-style-type: none;
   background: #fff;
   overflow: hidden;
-  position: absolute;
-  right: 0;
-  width: 350px;
-  @include vm-dropdown-menu-boxshadow();
+  // position: absolute;
+  // right: 0;
+  // width: 350px;
+  // @include vm-dropdown-menu-boxshadow();
 }
 
 .search-autocomplete__results {
@@ -101,10 +101,4 @@
       }
     }
   }
-}
-
-// Make the search autocomplete in the sticky nav span the entire width
-.vm-header-dropdown .search-autocomplete {
-  left: 0;
-  width: auto;
 }

@@ -1,3 +1,11 @@
+@use "sass:math";
+
+$header-desktop-logo-width: 160px;
+$header-desktop-logo-height: 30px;
+$header-desktop-nav-width: calc(
+  50% - #{math.div($header-desktop-logo-width, 2)}
+);
+
 .header-desktop {
   position: relative;
   z-index: $vm-z-index-header-content;
@@ -7,27 +15,113 @@
     color: $vm-navbar-text-color;
   }
 
-  @include respond-to("medium-down") {
+  @include respond-to("large-down") {
     display: none;
   }
-}
 
-.header__logo {
-  width: 10%;
-}
+  .header__logo {
+    width: $header-desktop-logo-width;
+    position: relative;
+    top: 2px;
 
-.header-desktop__nav {
-  width: 45%;
-
-  &:last-child {
-    text-align: right;
+    svg {
+      width: $header-desktop-logo-width;
+      height: $header-desktop-logo-height;
+    }
   }
-}
 
-.header-desktop__navbar {
-  display: flex;
-  position: relative;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 get-vm-spacer(2);
+  .header-desktop__navbar {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 get-vm-spacer(2);
+  }
+
+  .header-desktop__nav {
+    display: block;
+    padding: 0;
+    margin: 0;
+    width: $header-desktop-nav-width;
+
+    ul {
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+      display: inline-block;
+      margin: 0;
+      border: 0;
+      position: relative;
+      vertical-align: top;
+      margin-right: get-vm-spacer(0.5);
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    .vm-header-dropdown-link,
+    .header-desktop__nav-link {
+      $navbar-padding: get-vm-spacer(2);
+      @include vm-paragraph-3();
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      background-color: transparent;
+      color: $vm-navbar-text-color;
+      padding: $navbar-padding 0;
+      margin-bottom: 0;
+      outline: 0;
+      transition: color 0.2s linear;
+      line-height: 1;
+      height: auto;
+
+      .vm-icon {
+        margin-right: 3px;
+      }
+
+      svg {
+        transition: fill 0.2s linear;
+        width: 16px;
+        height: 16px;
+      }
+
+      &:hover {
+        color: $vm-color-sand;
+
+        svg {
+          fill: $vm-color-sand;
+        }
+      }
+
+      .header-desktop__nav-link__dropdown-arrow {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        line-height: 0;
+        opacity: 0;
+        margin: 0 0 0 3px;
+      }
+
+      &.is-dropdown-button {
+        .header-desktop__nav-link__dropdown-arrow {
+          opacity: 1;
+        }
+      }
+
+      // &.vm-header-dropdown-link--search {
+      //   padding-left: get-vm-spacer(0.5);
+      //   padding-right: get-vm-spacer(0.5);
+      // }
+    }
+
+    &:last-child {
+      text-align: right;
+      margin-right: 0;
+      margin-left: get-vm-spacer(1);
+    }
+  }
 }

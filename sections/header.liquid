@@ -79,11 +79,13 @@
       <button
         class="vm-header-drawer__header__close-button"
         data-drawer-button-id="cart">
-        <span class="icon-down-arrow"></span>
+        {% render "icon.close" %}
       </button>
     </div>
 
-    {% render "header.cart" %}
+    <div class="vm-header-drawer__content">
+      {% render "header.cart" %}
+    </div>
   </div>
 </div>
 

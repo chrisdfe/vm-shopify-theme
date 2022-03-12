@@ -1,13 +1,28 @@
+.vm-header__search {
+  margin: 0 10%;
+
+  @include respond-to("medium-down") {
+    margin: 0;
+  }
+}
+
 .header__search-form {
+  margin-bottom: 0;
+
   .search-terms {
     $height: 50px;
     height: $height;
     min-height: $height;
     border: 0 none;
+    // border-bottom: 2px solid $vm-border-color;
     border-bottom: 1px solid $vm-border-color;
+    margin: 0;
 
     &:focus,
     &:active {
+      background: $vm-color-cream;
+      outline: 0;
+      border: 0 none;
       border-bottom: 1px solid $vm-color-sand;
     }
   }

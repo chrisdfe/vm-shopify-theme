@@ -1,5 +1,5 @@
 interface Props {
-  contentElement: Element;
+  contentElement: HTMLElement;
 }
 
 const OPEN_CLASSNAME = "is-open";
@@ -8,8 +8,8 @@ export default class Accordion {
   id: string;
   isOpen: boolean = false;
 
-  buttonElements: Element[];
-  contentElement: Element;
+  buttonElements: HTMLElement[];
+  contentElement: HTMLElement;
 
   constructor({ contentElement }: Props) {
     this.contentElement = contentElement;
@@ -30,7 +30,6 @@ export default class Accordion {
   };
 
   onButtonClick = () => {
-    console.log("clickity click");
     this.toggle(!this.isOpen);
   };
 
@@ -40,14 +39,37 @@ export default class Accordion {
     this.buttonElements.forEach((buttonElement) => {
       buttonElement.classList.add(OPEN_CLASSNAME);
     });
+
+    // slideDown-style animation
+    this.contentElement.style.height = "auto";
+    const height = this.contentElement.clientHeight + "px";
+    this.contentElement.style.height = "0";
+    setTimeout(() => {
+      this.contentElement.style.height = height;
+    }, 0);
   };
 
   close = () => {
     this.isOpen = false;
-    this.contentElement.classList.remove(OPEN_CLASSNAME);
     this.buttonElements.forEach((buttonElement) => {
       buttonElement.classList.remove(OPEN_CLASSNAME);
     });
+
+    // slideDown-style animation
+    this.contentElement.style.height = "0";
+    this.contentElement.addEventListener(
+      "transitionend",
+      () => {
+        // Check this.isOpen to avoid animation weirdness if the button
+        // is clicked on before the transition ends
+        if (!this.isOpen) {
+          this.contentElement.classList.remove(OPEN_CLASSNAME);
+        }
+      },
+      {
+        once: true,
+      }
+    );
   };
 
   toggle = (shouldOpen: boolean) => {

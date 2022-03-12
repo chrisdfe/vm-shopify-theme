@@ -7,17 +7,32 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 0 get-vm-spacer(1);
+    height: get-vm-spacer(3);
+  }
+
+  .header-mobile__logo-wrapper {
+    width: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .header-mobile__logo {
-    display: block;
-    padding: get-vm-spacer(1);
-    width: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $vm-color-sea-green;
 
-    img {
-      max-height: get-vm-spacer(2);
-      width: auto;
+    svg {
+      width: 30px;
+      height: 30px;
     }
+
+    // img {
+    //   max-height: get-vm-spacer(2);
+    //   width: auto;
+    // }
   }
 
   .header-mobile__nav {
@@ -31,10 +46,17 @@
 
   .header-mobile__nav-button {
     display: flex;
-    padding: get-vm-spacer(1);
+    // padding: get-vm-spacer(1);
+    padding: 0;
+    width: 44px;
+    height: 44px;
     background-color: transparent;
     color: $vm-color-sea-green;
     fill: $vm-color-sea-green;
+
+    .cart_count {
+      margin-left: 2px;
+    }
 
     &:active {
       background-color: $vm-color-sand;
@@ -42,14 +64,27 @@
   }
 
   .header-mobile__hamburger-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    width: 44px;
+
+    &:hover {
+      background-color: $vm-color-cream;
+    }
+
     .header-mobile__hamburger {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      width: get-vm-spacer(2);
-      height: get-vm-spacer(2);
-      transition: all 0.2s;
+      // display: flex;
+      // align-items: center;
+      // justify-content: center;
+      // flex-direction: column;
+      // width: get-vm-spacer(2);
+      // height: get-vm-spacer(2);
+      flex-grow: 1;
+      flex-shrink: 0;
+      padding: 0 10px;
+      // transition: all 0.2s;
 
       span {
         flex-grow: 0;
@@ -58,19 +93,13 @@
         display: block;
         height: 2px;
         width: 100%;
-        margin: 3px 0;
+        margin: 5px 0;
         background-color: $vm-color-sea-green;
-        transition: all 0.2s;
-      }
-    }
-
-    &.is-open {
-      .header-mobile__hamburger {
       }
     }
   }
 
-  @include respond-to("medium-up") {
+  @include respond-to("large-up") {
     display: none;
   }
 }

@@ -11,14 +11,16 @@
   width: 100%;
   text-align: left;
   padding: get-vm-spacer(1.5) get-vm-spacer(0.5);
-  border-bottom: 1px solid rgba($vm-color-sea-green, 0.4);
+  // border-bottom: 1px solid rgba($vm-color-sea-green, 0.4);
+  border-bottom: 1px solid $vm-color-sea-green;
 
   // TODO - don't break accessibility
   &:active,
   &:focus {
     background: $vm-color-cream;
     color: $vm-color-sea-green;
-    border-bottom: 1px solid rgba($vm-color-sea-green, 0.4);
+    // border-bottom: 1px solid rgba($vm-color-sea-green, 0.4);
+    border-bottom: 1px solid $vm-color-sea-green;
   }
 
   .mobile-menu-accordion-button__arrow {
@@ -35,11 +37,16 @@
 
 .vm-accordion-content {
   display: none;
-  padding: get-vm-spacer(1);
+  transition: height 0.4s;
+  overflow-y: hidden;
 
   &.is-open {
     display: block;
   }
+}
+
+.vm-accordion-content__inner {
+  padding: get-vm-spacer(1.5) get-vm-spacer(0.5);
 }
 
 // TODO - go through and make sure none of this is used anymore
@@ -92,12 +99,9 @@ ul.tabs li a {
 
 ul.tabs li a.active {
   border-bottom: solid 3px $vm-border-color;
-  // background-color: {{ settings.shop_bg_color }};
-  // border-bottom: solid 3px {{ settings.headline_border_color }};
   height: 31px;
   position: relative;
   border-right-width: 1px;
-  // color: {{ settings.regular_color}};
 }
 
 ul.tabs li:last-child a {
@@ -124,78 +128,6 @@ ul.tabs-content > li.active {
 
 ul.tabs-content ul {
   padding-left: 0;
-}
-
-.faqAccordion {
-  & > dt {
-    & > button {
-      @include vm-paragraph-2();
-      border: none;
-      appearance: none;
-      background: transparent;
-      position: relative;
-      padding: 1rem 1rem 1rem 3rem;
-      border-bottom: 1px solid $vm-border-color;
-      margin: 0;
-      color: $vm-body-text-color;
-      text-align: left;
-      display: block;
-      cursor: pointer;
-      width: 100%;
-      outline: none;
-      text-transform: initial;
-      min-height: auto;
-      height: auto;
-      border-radius: 0;
-
-      &:hover,
-      &:focus {
-        // background-color: $vm-color-cream;
-        color: $vm-color-sand;
-      }
-
-      &::after {
-        position: absolute;
-        top: 50%;
-        -webkit-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-        transform: translateY(-50%);
-        left: 15px;
-        font-size: 20px;
-        content: "\002b";
-        color: inherit;
-      }
-
-      &[aria-expanded="true"] {
-        &::after {
-          content: "\002d";
-          font-size: 30px;
-        }
-      }
-    }
-
-    &:first-child {
-      & > button {
-        border-top: none;
-      }
-    }
-  }
-
-  & > dd {
-    padding: 20px 0;
-
-    p:last-child {
-      margin-bottom: 0;
-    }
-
-    &[aria-hidden="true"] {
-      display: none;
-    }
-
-    @include respond-to("medium-down") {
-      margin-left: 15px;
-    }
-  }
 }
 
 //Accordion tabs

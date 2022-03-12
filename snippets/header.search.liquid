@@ -3,16 +3,20 @@
   <form
     action="{{ routes.search_url }}" 
     class="header__search-form">
-    <span class="icon-search search-submit"></span>
-
-    <input
-      type="text"
-      name="q"
-      placeholder="{{ 'general.search.title' | t: shop_name: shop.name }}"
-      autocapitalize="off"
-      autocomplete="off"
-      autocorrect="off"
-      class="search-terms"
-    />
+    <div class="input-wrapper">
+      <span class="search-submit">
+        {% render "icon.magnifying-glass" %}
+      </span>
+      
+      <input
+        type="text"
+        name="q"
+        placeholder="{{ 'general.search.title' | t: shop_name: shop.name }}"
+        autocapitalize="off"
+        autocomplete="off"
+        autocorrect="off"
+        class="search-terms"
+      />
+    </div>
   </form>
 </div>

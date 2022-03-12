@@ -1,7 +1,7 @@
 import Accordion from "./Accordion";
 
 export default class AccordionManager {
-  accordionElements: Element[];
+  accordionElements: HTMLElement[];
   accordionMap: { [id: string]: Accordion };
 
   constructor() {}
@@ -10,8 +10,6 @@ export default class AccordionManager {
     this.accordionElements = Array.from(
       document.querySelectorAll(".vm-accordion-content")
     );
-
-    console.log("this.accordionElements", this.accordionElements.length);
 
     this.accordionMap = this.accordionElements.reduce((acc, contentElement) => {
       const accordionId = contentElement.getAttribute("data-accordion-id");

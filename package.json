@@ -7,7 +7,8 @@
     "styles:compile": "node scripts/compile-styles.js",
     "styles:watch": "node scripts/watch-styles.js",
     "scripts:compile": "./node_modules/.bin/rollup --config",
-    "scripts:watch": "./node_modules/.bin/rollup --config --watch"
+    "scripts:watch": "./node_modules/.bin/rollup --config --watch",
+    "create-snippets-from-svgs": "node ./scripts/create-snippets-from-svgs.js"
   },
   "author": "",
   "license": "ISC",
@@ -41,6 +42,7 @@
     "rollup-plugin-scss": "3",
     "sass": "^1.35.2",
     "styled-jsx": "^5.0.0",
+    "svgo": "^2.8.0",
     "tslib": "^2.3.1",
     "typescript": "^4.5.5",
     "yargs": "^17.0.1"

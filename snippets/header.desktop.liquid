@@ -1,34 +1,32 @@
 <header class="header-desktop">
   {% capture extra_links %}
+  <li>
+    <a
+      href="{{ routes.account_url }}"
+      class="header-desktop__nav-link"
+      title="{{ 'layout.customer.my_account' | t }} {% if customer %}({{ customer.email }}){% endif %}">
+      {% render "icon.user" %}
+      <span>{% if customer %}{{ 'layout.customer.my_account' | t }}{% else %}{{ 'layout.customer.log_in' | t }}{% endif %}</span>
+    </a>
+  </li>
+
     <li>
-      <a
-        href="{{ routes.search_url }}"
-        class="vm-header-dropdown-link"
+      <button
+        class="vm-header-dropdown-link vm-header-dropdown-link--search"
         data-dropdown-button-id="search"
         title="{{ 'general.search.title' | t | escape }}"
         >
-        <span class="icon-search"></span>
-      </a>
-    </li>
-
-    <li>
-      <a
-        href="{{ routes.account_url }}"
-        class="header-desktop__nav-link"
-        title="{{ 'layout.customer.my_account' | t }} {% if customer %}({{ customer.email }}){% endif %}">
-        <span class="icon-user"></span>
-        <span>{% if customer %}{{ 'layout.customer.my_account' | t }}{% else %}{{ 'layout.customer.log_in' | t }}{% endif %}</span>
-      </a>
+        {% render "icon.magnifying-glass" %}
+      </button>
     </li>
     
     <li>
-      <a
-        href="{{ routes.cart_url }}"
-        class="vm-header-dropdown-link"
+      <button
+        class="vm-header-dropdown-link vm-header-dropdown-link--search"
         data-drawer-button-id="cart">
-      <span class="icon-bag"></span>
-      <span class="cart_count">{{ cart.item_count }}</span>
-      </a>
+        {% render "icon.bag" %}
+        <span class="cart_count">{{ cart.item_count }}</span>
+      </button>
     </li>
   {% endcapture %}
 

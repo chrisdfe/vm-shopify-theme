@@ -1,5 +1,5 @@
 // import intersections from "../vm-sections/modules/intersections";
-import searchAutocomplete from "../vm-sections/modules/search-autocomplete";
+import SearchAutocompleteManager from "../vm-sections/modules/search-autocomplete/SearchAutocompleteManager";
 import header from "../vm-sections/modules/header";
 import cart from "../vm-sections/modules/cart";
 import AccordionManager from "../vm-sections/modules/accordions/AccordionManager";
@@ -9,7 +9,7 @@ import AccordionManager from "../vm-sections/modules/accordions/AccordionManager
 // @ts-ignore
 window.header = header;
 // @ts-ignore
-window.searchAutocomplete = searchAutocomplete;
+window.searchAutocomplete = new SearchAutocompleteManager();
 // @ts-ignore
 window.cart = cart;
 

@@ -1,5 +1,5 @@
-import { getSizedImageUrl } from "@shopify/theme-images";
-import debounce from "../utils/debounce";
+import debounce from "../../utils/debounce";
+import { getCDNImageUrl } from "./utils";
 
 type ShopifyGlobal = {
   translation: {
@@ -20,20 +20,6 @@ declare var Shopify: ShopifyGlobal;
 /*============================================================================
   Search autocomplete
 ==============================================================================*/
-
-const CDN_BASE_URL = "//cdn.shopify.com/s/files/1/1077/2230/t/118/";
-
-// TODO - move to a more general location
-function getCDNImageUrl(imageUrl: string, size: string, version?: boolean) {
-  const sizedImageUrl = getSizedImageUrl(imageUrl, size);
-  let cdnImageUrl = `${CDN_BASE_URL}assets/${sizedImageUrl}`;
-
-  if (version) {
-    cdnImageUrl += `?v=${version}`;
-  }
-
-  return cdnImageUrl;
-}
 
 const getCollectionHandles = (item) =>
   item.collections.map((collection) => collection.handle);
@@ -199,7 +185,7 @@ function renderSearchResults({
   return renderedContents;
 }
 
-class SearchAutocomplete {
+export default class SearchAutocomplete {
   shopURL: string = "";
 
   searchValue: string = "";
@@ -331,29 +317,3 @@ class SearchAutocomplete {
       });
   };
 }
-
-class SearchAutocompleteManager {
-  searchAutocompletes: SearchAutocomplete[];
-
-  init = () => {
-    const searchFormElements = document.querySelectorAll(
-      "form.search_form, form.search, form.header_search_form"
-    );
-
-    this.searchAutocompletes = Array.from(searchFormElements).map(
-      (searchFormElement) => {
-        return new SearchAutocomplete(searchFormElement).init();
-      }
-    );
-  };
-
-  unload = () => {
-    this.searchAutocompletes.forEach((searchAutocomplete) => {
-      searchAutocomplete.unload();
-    });
-  };
-}
-
-const searchAutocompleteManager = new SearchAutocompleteManager();
-
-export default searchAutocompleteManager;

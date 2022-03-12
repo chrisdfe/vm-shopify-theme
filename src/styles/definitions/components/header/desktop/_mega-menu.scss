@@ -1,2 +1,9 @@
 .mega-menu-desktop {
+  .mega-menu__image-caption-link {
+    text-align: center;
+
+    img {
+      margin-bottom: get-vm-spacer(1);
+    }
+  }
 }

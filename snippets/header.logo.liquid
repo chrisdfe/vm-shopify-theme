@@ -3,9 +3,10 @@
   <a
     href="{{ shop.url }}"
     title="{{ shop.name }}">
-    <img
+    <!-- <img
       src="{{ section.settings.logo | img_url: '800x' }}"
       alt="{{ shop.name | escape }}"
-    />
+    /> -->
+    {% render "icon.logo-text" %}
   </a>
 </div>

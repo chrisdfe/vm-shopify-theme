@@ -96,6 +96,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js" integrity="sha256-eNcUzO3jsv0XlJLveFEkbB8bA7/CroNpNVk3XpmnwHc=" crossorigin="anonymous"></script>
     {% endcomment %}
     {{ "jquery221.min.js" | asset_url | script_tag }}
+
+    {% render "icon-defs" %}
   </head>
 
   {% if template contains "index" %}
@@ -181,29 +183,31 @@
                 data-accordion-id="menu"
                 data-drawer-button-id="menu"
                 >
-                <span class="icon-down-arrow"></span>
+                {% render "icon.close" %}
               </button>
             </div>
 
-            {% if settings.mega_menu_1 %}
-              {% section 'mega-menu-1' %}
-            {% endif %}
-  
-            {% if settings.mega_menu_2 %}
-              {% section 'mega-menu-2' %}
-            {% endif %}
-  
-            {% if settings.mega_menu_3 %}
-              {% section 'mega-menu-3' %}
-            {% endif %}
-  
-            {% if settings.mega_menu_4 %}
-              {% section 'mega-menu-4' %}
-            {% endif %}
-  
-            {% if settings.mega_menu_5 %}
-              {% section 'mega-menu-5' %}
-            {% endif %}
+            <div class="vm-header-drawer__content">
+              {% if settings.mega_menu_1 %}
+                {% section 'mega-menu-1' %}
+              {% endif %}
+    
+              {% if settings.mega_menu_2 %}
+                {% section 'mega-menu-2' %}
+              {% endif %}
+    
+              {% if settings.mega_menu_3 %}
+                {% section 'mega-menu-3' %}
+              {% endif %}
+    
+              {% if settings.mega_menu_4 %}
+                {% section 'mega-menu-4' %}
+              {% endif %}
+    
+              {% if settings.mega_menu_5 %}
+                {% section 'mega-menu-5' %}
+              {% endif %}
+            </div>
           </div>
         </div>
       </div>

@@ -70,8 +70,32 @@ export default class DropdownManager {
     event: Event,
     dropdown: HeaderDropdown
   ) => {
+    // const currentDropdown = this.getCurrentOpenDropdown();
+    // if (currentDropdown && currentDropdown.activationType === "click") {
+    //   return;
+    // }
+
     this.closeCurrentOpenDropdown();
     this.openDropdown(dropdown);
+  };
+
+  // TODO - check
+  private onHeaderMouseOut = (event: MouseEvent) => {
+    const currentOpenDropdown = this.getCurrentOpenDropdown();
+
+    if (
+      !currentOpenDropdown ||
+      currentOpenDropdown.activationType === "click"
+    ) {
+      return;
+    }
+
+    const toElement = event.relatedTarget as Element;
+
+    // If the mouse is no longer within the header content, area hide the dropdown
+    if (toElement && !toElement.closest(".header-content-wrapper")) {
+      this.closeCurrentOpenDropdown();
+    }
   };
 
   private onDropdownButtonClick = (event: Event, dropdown: HeaderDropdown) => {
@@ -89,26 +113,6 @@ export default class DropdownManager {
       }
     } else {
       this.openDropdown(dropdown);
-    }
-  };
-
-  // TODO - check
-  private onHeaderMouseOut = (event: MouseEvent) => {
-    const currentOpenDropdown = this.getCurrentOpenDropdown();
-
-    if (!currentOpenDropdown) {
-      return;
-    }
-
-    if (currentOpenDropdown.activationType === "click") {
-      return;
-    }
-
-    const toElement = event.relatedTarget as Element;
-
-    // If the mouse is no longer within the header content area hide the dropdown
-    if (toElement && !toElement.closest(".header-content-wrapper")) {
-      this.closeCurrentOpenDropdown();
     }
   };
 

@@ -5,82 +5,86 @@
 - Must be enabled through general settings
 {% endcomment %}
 
-<!-- <h1>mega mobile menu {{ menu_number}}</h1> -->
 <div class="mega-menu-mobile">
   <button
     class="vm-accordion-button"
     data-accordion-button-id="{{ section.settings.parent | handleize }}"
     data-no-instant>
     <span>{{ section.settings.parent }}</span>
-    <span class="mobile-menu-accordion-button__arrow icon-down-arrow"></span>
+    <span class="mobile-menu-accordion-button__arrow">
+      {% render "icon.carat" %}
+    </span>
   </button>
   
   <div
     class="vm-accordion-content"
     data-accordion-id="{{ section.settings.parent | handleize }}">
-    <ul
-      data-mobile-dropdown="{{ section.settings.parent | handleize }}">
-      {% for block in section.blocks %}
-        {% if block.type == 'column' %}
-          {% if block.settings.richtext_top and block.settings.richtext_top != blank %}
-            {% include "header.mobile-menu-richtext" with {
-              text: block.settings.richtext_top 
-            } %}
-          {% endif %}
+    <div class="vm-accordion-content__inner">
 
-          {% if block.settings.image_top != nil or block.settings.image_caption_top != blank %}
-            {% include "header.mobile-menu-image" with {
-              image: block.settings.image_bottom,
-              image_link: block.settings.image_link_bottom,
-              caption: block.settings.image_caption_bottom
-            } %}
-          {% endif %}
+      <ul class="mega-menu-mobile__content-list">
+        {% for block in section.blocks %}
+          {% if block.type == 'column' %}
+            {% if block.settings.richtext_top and block.settings.richtext_top != blank %}
+              {% render "header.mobile-menu-richtext" with {
+                text: block.settings.richtext_top 
+              } %}
+            {% endif %}
 
-          {% if block.settings.menu_1 != blank %}
-            {% include "header.mobile-menu-linklist" {
-              title: linklists[block.settings.menu_1].title,
-              title_link: block.settings.menu_1_link,
-              links: linklists[block.settings.menu_1].links
-            } %}
-          {% endif %}
+            {% if block.settings.image_top != nil or block.settings.image_caption_top != blank %}
+              {% render "header.mobile-menu-image" with {
+                image: block.settings.image_bottom,
+                image_link: block.settings.image_link_bottom,
+                caption: block.settings.image_caption_bottom
+              } %}
+            {% endif %}
 
-          {% if block.settings.menu_2 != blank %}
-            {% include "header.mobile-menu-linklist" {
-              title: linklists[block.settings.menu_2].title,
-              title_link: block.settings.menu_2_link,
-              links: linklists[block.settings.menu_2].links
-            } %}
-          {% endif %}
+            {% if block.settings.menu_1 != blank %}
+              {% render "header.mobile-menu-linklist" {
+                title: linklists[block.settings.menu_1].title,
+                title_link: block.settings.menu_1_link,
+                links: linklists[block.settings.menu_1].links
+              } %}
+            {% endif %}
 
-          {% if block.settings.menu_3 != blank %}
-            {% include "header.mobile-menu-linklist" {
-              title: linklists[block.settings.menu_3].title,
-              title_link: block.settings.menu_3_link,
-              links: linklists[block.settings.menu_3].links
-            } %}
-          {% endif %}
+            {% if block.settings.menu_2 != blank %}
+              {% render "header.mobile-menu-linklist" {
+                title: linklists[block.settings.menu_2].title,
+                title_link: block.settings.menu_2_link,
+                links: linklists[block.settings.menu_2].links
+              } %}
+            {% endif %}
 
-          {% if block.settings.menu_4 != blank %}
-            {% include "header.mobile-menu-linklist" {
-              title: linklists[block.settings.menu_4].title,
-              title_link: block.settings.menu_4_link,
-              links: linklists[block.settings.menu_4].links
-            } %}
-          {% endif %}
+            {% if block.settings.menu_3 != blank %}
+              {% render "header.mobile-menu-linklist" {
+                title: linklists[block.settings.menu_3].title,
+                title_link: block.settings.menu_3_link,
+                links: linklists[block.settings.menu_3].links
+              } %}
+            {% endif %}
 
-          {% if block.settings.image_bottom != nil or block.settings.image_caption_bottom != blank %}
-            {% include "header.mobile-menu-image" with {
-              image: block.settings.image_bottom,
-              image_link: block.settings.image_link_bottom,
-              caption: block.settings.image_caption_bottom
-            } %}
-          {% endif %}
+            {% if block.settings.menu_4 != blank %}
+              {% render "header.mobile-menu-linklist" {
+                title: linklists[block.settings.menu_4].title,
+                title_link: block.settings.menu_4_link,
+                links: linklists[block.settings.menu_4].links
+              } %}
+            {% endif %}
 
-          {% if block.settings.richtext_bottom %}
-            {{ block.settings.richtext_bottom }}
+            {% if block.settings.image_bottom != nil or block.settings.image_caption_bottom != blank %}
+              {% render "header.mobile-menu-image" with {
+                image_link: block.settings.image_link_bottom,
+                image: block.settings.image_bottom,
+                caption: block.settings.image_caption_bottom
+              } %}
+            {% endif %}
+
+            {% if block.settings.richtext_bottom %}
+              {{ block.settings.richtext_bottom }}
+            {% endif %}
           {% endif %}
-        {% endif %}
-      {% endfor %}
-    </ul>
+        {% endfor %}
+      </ul>
+
+    </div>
   </div>
 </div>
