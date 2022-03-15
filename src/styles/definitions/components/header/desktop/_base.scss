@@ -146,18 +146,26 @@ $header-desktop-nav-width: calc(
   }
 
   .header-desktop__nav-button {
-    width: 44px;
     height: 44px;
-    padding: 0;
+    padding: 0 get-vm-spacer(1);
     transition: all 0.2s;
     
+    .vm-icon.vm-icon--user,
     .vm-icon.vm-icon--bag {
       margin-left: -6px;
     }
     
     &:hover {
       background-color: $vm-color-cream;
-      // color: $vm-color-sand;
+    }
+    
+    &.header-desktop__nav-button--square {
+      padding: 0;
+      width: 44px;
+    }
+
+    &.header-desktop__nav-button--login {
+      margin-left: get-vm-spacer(0.5);
     }
   }
 }

@@ -3,31 +3,31 @@
   <li>
     <a
       href="{{ routes.account_url }}"
-      class="header-desktop__nav-link"
+      class="header-desktop__nav-button"
       title="{{ 'layout.customer.my_account' | t }} {% if customer %}({{ customer.email }}){% endif %}">
       {% render "icon.user" %}
       <span>{% if customer %}{{ 'layout.customer.my_account' | t }}{% else %}{{ 'layout.customer.log_in' | t }}{% endif %}</span>
     </a>
   </li>
 
-    <li>
-      <button
-        class="header-desktop__nav-button header-desktop__nav-button--search"
-        data-dropdown-button-id="search"
-        title="{{ 'general.search.title' | t | escape }}"
-        >
-        {% render "icon.magnifying-glass" %}
-      </button>
-    </li>
-    
-    <li>
-      <button
-        class="header-desktop__nav-button header-desktop__nav-button--cart"
-        data-drawer-button-id="cart">
-        {% render "icon.bag" %}
-        <span class="cart_count">{{ cart.item_count }}</span>
-      </button>
-    </li>
+  <li>
+    <button
+      class="header-desktop__nav-button header-desktop__nav-button--square header-desktop__nav-button--search"
+      data-dropdown-button-id="search"
+      title="{{ 'general.search.title' | t | escape }}"
+      >
+      {% render "icon.magnifying-glass" %}
+    </button>
+  </li>
+  
+  <li>
+    <button
+      class="header-desktop__nav-button header-desktop__nav-button--square header-desktop__nav-button--cart"
+      data-drawer-button-id="cart">
+      {% render "icon.bag" %}
+      <span class="cart_count">{{ cart.item_count }}</span>
+    </button>
+  </li>
   {% endcapture %}
 
   <div class="header-desktop__navbar">
