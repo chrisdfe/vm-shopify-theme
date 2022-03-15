@@ -705,7 +705,7 @@
             "type": "filter",
             "settings": {
               "filter_name": "Shop by Stone",
-              "filter_tags": "Diamond, White Diamond, Brown Diamond, Gemstone, Gray Diamond, Moissanite, Salt and Pepper Diamond, Rose Cut Diamond, Ruby, Sapphire, Spinel, Garnet, Emerald",
+              "filter_tags": "Diamond, White Diamond, Brown Diamond, Gemstone, Gray Diamond, Moissanite, Salt and Pepper Diamond, Rose Cut Diamond, Ruby, Sapphire, Spinel, Garnet",
               "enable_filter_swatches": false
             }
           },
@@ -721,15 +721,15 @@
             "type": "filter",
             "settings": {
               "filter_name": "Shop by Stone Shape",
-              "filter_tags": "Oval, Cushion, Round, Pear, Geometric, Emerald Cut, Marquise",
+              "filter_tags": "Round, Oval, Pear, Cushion, Emerald Cut, Marquise, Geometric, Baguette, Half Moon",
               "enable_filter_swatches": false
             }
           },
           "1587338269920": {
             "type": "filter",
             "settings": {
-              "filter_name": "Shop by Band Style",
-              "filter_tags": "Contour Bands, Straight Bands, Diamond Bands, Gold Bands, Textured Bands, Unisex, Masculine",
+              "filter_name": "Shop by Style",
+              "filter_tags": "Contour Bands, Straight Bands, Diamond Bands, Gold Bands, Textured Bands, Unisex, Masculine, Zodiac",
               "enable_filter_swatches": false
             }
           }
@@ -2165,6 +2165,16 @@
               "link_title": "Click here to send this as inspiration for your custom order."
             }
           },
+          "22248c50-c98a-4f32-8403-bb27bb95e42c": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/8893_Foster.jpg",
+              "job_title": "1.72ct Round cut faint yellow halo supernova engagement ring",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com",
+              "link_title": "Cick here to send this as inspiration for your custom order."
+            }
+          },
           "640bb445-c1bd-4dc8-9d7a-d58cc777904c": {
             "type": "featured-ring",
             "settings": {
@@ -2585,6 +2595,16 @@
               "link_title": "Click here to send this as inspiration for your custom order"
             }
           },
+          "6eb108e0-a484-4eb1-b20e-4fc7425896e8": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/8195-Silvas.jpg",
+              "job_title": "2.22ct Near Colorless emerald cut diamond vera engagement ring",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com",
+              "link_title": "Click here to send this as inspiration for your custom order."
+            }
+          },
           "d6b7aea6-dfa4-4eb9-bf98-b4cf45c7cdce": {
             "type": "featured-ring",
             "settings": {
@@ -2602,7 +2622,17 @@
               "job_title": "0.63ct Round Rose Cut COLORLESS Diamond Bella Engagement Ring",
               "description": "",
               "link_url": "mailto:custom@valeriemadison.com?subject=0.63ct Bella Rose White Diamond Cluster Engagement Ring&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
-              "link_title": "Click here to send this as inspiration for your custom order"
+              "link_title": "Click here to send this as inspiration for your custom order."
+            }
+          },
+          "049de5c1-1d8f-403a-b03b-8549e2fe8e80": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/9112_Morse_1.jpg",
+              "job_title": "1.06ct Hexagon Cut Teal Sapphire Eva Engagement Ring",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com",
+              "link_title": "Click here to send this as inspiration for your custom order."
             }
           }
         },
@@ -2620,6 +2650,7 @@
           "1600971298274",
           "1600904795953",
           "52f2a8b1-1d33-4bb3-a1da-ba076275604b",
+          "22248c50-c98a-4f32-8403-bb27bb95e42c",
           "640bb445-c1bd-4dc8-9d7a-d58cc777904c",
           "1600904777648",
           "f805bfba-2ab8-4ce4-8270-41244082cf2e",
@@ -2662,8 +2693,10 @@
           "1600971533421",
           "1602216749512",
           "1600971011621",
+          "6eb108e0-a484-4eb1-b20e-4fc7425896e8",
           "d6b7aea6-dfa4-4eb9-bf98-b4cf45c7cdce",
-          "page-grid-template-2"
+          "page-grid-template-2",
+          "049de5c1-1d8f-403a-b03b-8549e2fe8e80"
         ],
         "settings": {
           "image_position": "left",
@@ -3113,17 +3146,26 @@
             "settings": {
               "image": "shopify:\/\/shop_images\/Amara_bdb00853-e64d-428f-ba4b-81e986a23ab0.jpg",
               "title": "Amara",
-              "job_title": "SALES ASSOCIATE",
+              "job_title": "Custom Sales Specialist",
               "description": "I fell in love with vintage and ethically made fine jewelry in college. To adorn yourself in it marries the stunning beauty our planet provides us with a sentimental meaning you attach. As a sales associate, I am excited to share the craftsmanship at VM. When not at work, you can find me practicing minimalism with maximalist design, lounging with my cat Miss Cleo, collecting tea, and learning how to parallel park!"
             }
           },
-          "4362dbc0-cab4-4110-afd2-e469c7319d14": {
+          "7b3b1866-850a-4e2b-bbb2-b5be4f9d5bb0": {
             "type": "team_member",
             "settings": {
-              "image": "shopify:\/\/shop_images\/VMFJ-2020-1.jpg",
-              "title": "Nina",
-              "job_title": "BENCH JEWELER",
-              "description": "I am quiet, dedicated, and passionate about working with my hands. I wake up every day excited to put all my love and positivity into the things I make. I’ve lived in Seattle most of my life, except for the 4 years I spent at the Rhode Island School of Design. When I’m not making jewelry, I run, bike, knit, play piano, and drink caffeinated beverages. Sometimes I’m a little too serious."
+              "image": "shopify:\/\/shop_images\/Adriana_Ortiz.jpg",
+              "title": "Adriana",
+              "job_title": "Associate Marketing Manager",
+              "description": "I love that my job combines building community through digital media and getting to play with beautiful sparkling things. I’m excited to bring an analytic and strategic mindset to Valerie Madison Jewelry’s digital presence while working alongside such kind humans. Outside of work you’ll find me probably on my couch watching something sappy, reading, scrolling TikTok and\/or shopping for shoes online."
+            }
+          },
+          "f41d0541-dc50-4627-be73-bb5bc0d48a67": {
+            "type": "team_member",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Christina.png",
+              "title": "Christina",
+              "job_title": "Associate Content Creator & Social Content Lead",
+              "description": "I take video content of everything that happens at Valerie Madison to share to our growing followers on social media. I love creating a story with our beautiful and unique jewelry for everyone in the world to see. When I am not creating video content, you can find me taking photos, baking macarons, hanging out with my family and friends and exploring the latest restaurants in Seattle!"
             }
           },
           "e6c1bdfc-589c-4d27-86fb-b4511eed9b80": {
@@ -3131,17 +3173,17 @@
             "settings": {
               "image": "shopify:\/\/shop_images\/VMFJ-2020-23.jpg",
               "title": "Saraya",
-              "job_title": "OPERATIONS COORDINATOR",
+              "job_title": "FULFILLMENT MANAGER",
               "description": "I keep track of inventory and ship your orders! A few things I enjoy include curating my wardrobe, making clothes and plant care. You can find me cutting up my old bed sheet to sew into pants or rotating my begonia collection for maximum sun!"
             }
           },
-          "97a96a55-9052-47a8-83df-1f5e01539e7d": {
+          "403aa6d2-005e-4604-a369-5efa4062f6ab": {
             "type": "team_member",
             "settings": {
-              "image": "shopify:\/\/shop_images\/VMFJ-2020-3.jpg",
-              "title": "Charlotte",
-              "job_title": "BENCH JEWELER",
-              "description": "I make the shiny stuff. When I’m not goldsmithing for Valerie Madison or working in my own jewelry studio, I’m either DIY renovating my mid-mod dream house or in my kitchen testing new recipes. I couldn’t remain at the top of my game in every way without the support of my handsome cat, clever dachshund puppy and my amazing husband to be."
+              "image": "shopify:\/\/shop_images\/Megan_Headshot.jpg",
+              "title": "Megan",
+              "job_title": "Customer Service Specialist & Associate Buyer",
+              "description": "As the face of VM’s Customer Service Department, I strive to make your experience unforgettable. My sense of humor and colorful personality helps ensure that you will be taken care of no matter what! I love to help individuals find lifelong custom rings or commemorate milestones in gold."
             }
           },
           "b9bb3a8d-56e2-4b2f-99d5-7c1ddde5cba5": {
@@ -3162,31 +3204,22 @@
               "description": "I am here to keep things running smoothly and in-step with our growth trajectory. My decades long background in jewelry production, retail, and small business operations make this a great place for me to have a positive impact. When I am not here you can find me thrifting, laughing at my cats, and spending time with friends & family."
             }
           },
-          "7b3b1866-850a-4e2b-bbb2-b5be4f9d5bb0": {
+          "4362dbc0-cab4-4110-afd2-e469c7319d14": {
             "type": "team_member",
             "settings": {
-              "image": "shopify:\/\/shop_images\/Adriana_Ortiz.jpg",
-              "title": "Adriana",
-              "job_title": "Associate Marketing Manager",
-              "description": "I love that my job combines building community through digital media and getting to play with beautiful sparkling things. I’m excited to bring an analytic and strategic mindset to Valerie Madison Jewelry’s digital presence while working alongside such kind humans. Outside of work you’ll find me probably on my couch watching something sappy, reading, scrolling TikTok and\/or shopping for shoes online."
+              "image": "shopify:\/\/shop_images\/VMFJ-2020-1.jpg",
+              "title": "Nina",
+              "job_title": "LEAD BENCH JEWELER",
+              "description": "I am quiet, dedicated, and passionate about working with my hands. I wake up every day excited to put all my love and positivity into the things I make. I’ve lived in Seattle most of my life, except for the 4 years I spent at the Rhode Island School of Design. When I’m not making jewelry, I run, bike, knit, play piano, and drink caffeinated beverages. Sometimes I’m a little too serious."
             }
           },
-          "403aa6d2-005e-4604-a369-5efa4062f6ab": {
+          "97a96a55-9052-47a8-83df-1f5e01539e7d": {
             "type": "team_member",
             "settings": {
-              "image": "shopify:\/\/shop_images\/Megan_Headshot.jpg",
-              "title": "Megan",
-              "job_title": "Customer Service Specialist & Associate Buyer",
-              "description": "As the face of VM’s Customer Service Department, I strive to make your experience unforgettable. My sense of humor and colorful personality helps ensure that you will be taken care of no matter what! I love to help individuals find lifelong custom rings or commemorate milestones in gold. When I am away from work, you can find me hunting for vintage clothing, obsessing over my dog or impulsively dying my hair."
-            }
-          },
-          "f41d0541-dc50-4627-be73-bb5bc0d48a67": {
-            "type": "team_member",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/Dani_6074b318-29e0-4c94-8e10-b15bc675a860.jpg",
-              "title": "Danielle",
-              "job_title": "SALES ASSOCIATE",
-              "description": "I love that my job is a combination of connecting with our customers and getting to show case such beautiful, ethically sourced and unique jewelry. Before working for VM, I never pictured myself in the jewelry sales world but I am so grateful that life has brought me to where I am. Working alongside this wonderful group of women has taught me so much in just a few short months. When I’m not selling sparkly pieces of gold, I am either discovering new restaurants to add to my “foodie lovers list”, taking walks to catch the sunset or getting new tattoos."
+              "image": "shopify:\/\/shop_images\/VMFJ-2020-3.jpg",
+              "title": "Charlotte",
+              "job_title": "INVENTORY MANAGER AND BENCH JEWELER",
+              "description": "I make the shiny stuff. When I’m not goldsmithing for Valerie Madison or working in my own jewelry studio, I’m either DIY renovating my mid-mod dream house or in my kitchen testing new recipes. I couldn’t remain at the top of my game in every way without the support of my handsome cat, clever dachshund puppy and my amazing husband to be."
             }
           },
           "6fbd4270-d7b7-4a6f-9bf1-0e7a9e8c2eef": {
@@ -3204,14 +3237,14 @@
           "3a6eca3c-c1d0-4897-a323-7a083d69f370",
           "9c18c131-7a70-41c9-986f-0b5bb41916b5",
           "c95ab9d1-1311-4c9b-959d-9ac15d6603c6",
-          "4362dbc0-cab4-4110-afd2-e469c7319d14",
+          "7b3b1866-850a-4e2b-bbb2-b5be4f9d5bb0",
+          "f41d0541-dc50-4627-be73-bb5bc0d48a67",
           "e6c1bdfc-589c-4d27-86fb-b4511eed9b80",
-          "97a96a55-9052-47a8-83df-1f5e01539e7d",
+          "403aa6d2-005e-4604-a369-5efa4062f6ab",
           "b9bb3a8d-56e2-4b2f-99d5-7c1ddde5cba5",
           "cf3bd9f0-e995-42ed-a2e9-527e40187beb",
-          "7b3b1866-850a-4e2b-bbb2-b5be4f9d5bb0",
-          "403aa6d2-005e-4604-a369-5efa4062f6ab",
-          "f41d0541-dc50-4627-be73-bb5bc0d48a67",
+          "4362dbc0-cab4-4110-afd2-e469c7319d14",
+          "97a96a55-9052-47a8-83df-1f5e01539e7d",
           "6fbd4270-d7b7-4a6f-9bf1-0e7a9e8c2eef"
         ],
         "settings": {
@@ -3314,33 +3347,33 @@
       "1629483439e1253581": {
         "type": "homepage-banner",
         "blocks": {
-          "95beecd3-2bab-4b22-b737-ed9a5c1dbf17": {
-            "type": "background_block",
-            "settings": {
-              "background_color": "light",
-              "banner_image_desktop": "shopify:\/\/shop_images\/Two_Ruby_Stackers_on_Hand_w_Flowers_2.jpg"
-            }
-          },
           "398fe46e-43dd-41e3-8d73-51f91275cd68": {
             "type": "background_block",
             "settings": {
               "background_color": "light"
             }
+          },
+          "95beecd3-2bab-4b22-b737-ed9a5c1dbf17": {
+            "type": "background_block",
+            "settings": {
+              "background_color": "light",
+              "banner_image_desktop": "shopify:\/\/shop_images\/REFRESH-Collection-1x1-val-edited-HI-RES.jpg"
+            }
           }
         },
         "block_order": [
-          "95beecd3-2bab-4b22-b737-ed9a5c1dbf17",
-          "398fe46e-43dd-41e3-8d73-51f91275cd68"
+          "398fe46e-43dd-41e3-8d73-51f91275cd68",
+          "95beecd3-2bab-4b22-b737-ed9a5c1dbf17"
         ],
         "settings": {
           "banner_wrapper_background_color": "light-alt",
-          "pretext": "",
-          "heading": "Radiant Rubies",
-          "cta_link": "shopify:\/\/collections\/new-arrivals",
-          "cta_text": "Shop Now",
-          "text_position": "right-block",
+          "pretext": "Here to stay",
+          "heading": "The REFRESH Collection",
+          "cta_link": "shopify:\/\/collections\/refresh-collection",
+          "cta_text": "Shop the new styles",
+          "text_position": "left-block",
           "text_color": "dark-alt",
-          "banner_image_mobile": "shopify:\/\/shop_images\/Two_Ruby_Stackers_on_Hand_w_Flowers_2.jpg",
+          "banner_image_mobile": "shopify:\/\/shop_images\/REFRESH-Collection-1x1-val-edited-HI-RES.jpg",
           "text_color_mobile": "dark-alt",
           "content_background_color_mobile": "light-alt"
         }
@@ -3887,20 +3920,6 @@
       "eternity-bracelets-upcoming-dates": {
         "type": "eternity-bracelets-upcoming-dates",
         "blocks": {
-          "6b9bb5f1-1501-4ac6-844b-ad89f683138e": {
-            "type": "upcoming-date",
-            "settings": {
-              "date": "Thursday, January 27th",
-              "time": "4:00-5:30pm"
-            }
-          },
-          "9484b5cd-9b18-4d8d-9d09-726ca4bae89d": {
-            "type": "upcoming-date",
-            "settings": {
-              "date": "Friday, February 11th",
-              "time": "4:00-5:30pm"
-            }
-          },
           "4b8ee067-7a68-4ccb-8c3e-3b6d6ce0fe94": {
             "type": "upcoming-date",
             "settings": {
@@ -3928,18 +3947,40 @@
               "date": "Thursday, April 21st",
               "time": "4:00-5:30pm"
             }
+          },
+          "da0d1ed9-b0ea-4f15-942a-5315ebdc1d68": {
+            "type": "upcoming-date",
+            "settings": {
+              "date": "Saturday, May 7",
+              "time": "11:00-3:00pm"
+            }
+          },
+          "bedf200f-6f49-408b-a592-54058d9e6802": {
+            "type": "upcoming-date",
+            "settings": {
+              "date": "Friday, June 17th",
+              "time": "4:00-5:30pm"
+            }
+          },
+          "69a248c7-2269-473f-a52f-45e48c117dee": {
+            "type": "upcoming-date",
+            "settings": {
+              "date": "Friday, July 1",
+              "time": "4:00-5:30pm"
+            }
           }
         },
         "block_order": [
-          "6b9bb5f1-1501-4ac6-844b-ad89f683138e",
-          "9484b5cd-9b18-4d8d-9d09-726ca4bae89d",
           "4b8ee067-7a68-4ccb-8c3e-3b6d6ce0fe94",
           "d36b3ef1-6903-4309-b66a-ca3c178dbf39",
           "19a3b110-92bc-45ae-8013-b67373c7179b",
-          "0010c5f7-a4de-4b72-9ab0-c94c0ad2f9fc"
+          "0010c5f7-a4de-4b72-9ab0-c94c0ad2f9fc",
+          "da0d1ed9-b0ea-4f15-942a-5315ebdc1d68",
+          "bedf200f-6f49-408b-a592-54058d9e6802",
+          "69a248c7-2269-473f-a52f-45e48c117dee"
         ],
         "settings": {
-          "title": "Upcoming dates",
+          "title": "Upcoming Dates",
           "description": ""
         }
       },
