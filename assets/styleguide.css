@@ -119,6 +119,34 @@ input[type=button]:hover,
   color: #dec1a8;
 }
 
+.vm-styleguide__subsection-row {
+  margin-bottom: 7rem;
+}
+
+.vm-styleguide-content__subsection-row-subheading {
+  color: #dec1a8;
+}
+
+.vm-styleguide__subsection-row-data-table tr {
+  background: transparent;
+}
+.vm-styleguide__subsection-row-data-table tr:nth-child(odd) {
+  background: transparent;
+}
+.vm-styleguide__subsection-row-data-table td {
+  padding: 0;
+}
+.vm-styleguide__subsection-row-data-table .vm-styleguide__subsection-row-data-table__title,
+.vm-styleguide__subsection-row-data-table .vm-styleguide__subsection-row-data-table__value {
+  margin: 0;
+}
+.vm-styleguide__subsection-row-data-table .vm-styleguide__subsection-row-data-table__title {
+  opacity: 0.6;
+}
+.vm-styleguide__subsection-row-data-table .vm-styleguide__subsection-row-data-table__value {
+  text-transform: lowercase;
+}
+
 /* #Variables
 ================================================== */
 /* variables/general
@@ -172,26 +200,21 @@ input[type=button]:hover,
 ================================================== */
 /* Mixins - typography
 ================================================== */
-.vm-styleguide-layout {
-  display: flex;
-  flex-direction: row;
+.vm-styleguide__color-region-example {
+  border: 5px solid white;
+  padding: 3rem;
 }
-
-.vm-styleguide-content {
-  width: calc(100% - 300px);
-  min-height: 80vh;
-  padding: 2rem;
+.vm-styleguide__color-region-example.vm-styleguide__color-region-example--region-light {
+  border-color: #f8f4f4;
 }
-.vm-styleguide-content .container {
-  margin-left: 0;
+.vm-styleguide__color-region-example.vm-styleguide__color-region-example--region-light-alt {
+  border-color: #f8f4f4;
 }
-
-.vm-styleguide__page-title {
-  margin-top: 7rem;
-  margin-bottom: 7rem;
+.vm-styleguide__color-region-example.vm-styleguide__color-region-example--region-dark {
+  border-color: #714457;
 }
-.vm-styleguide__page-title sup {
-  color: #dec1a8;
+.vm-styleguide__color-region-example.vm-styleguide__color-region-example--region-dark-alt {
+  border-color: #1c4047;
 }
 
 .vm-styleguide__subsection {
@@ -212,34 +235,6 @@ input[type=button]:hover,
 
 .vm-styleguide__content-section-description {
   margin: 5rem 0;
-}
-
-.vm-styleguide__subsection-row {
-  margin-bottom: 7rem;
-}
-
-.vm-styleguide-content__subsection-row-subheading {
-  color: #dec1a8;
-}
-
-.vm-styleguide__subsection-row-data-table tr {
-  background: transparent;
-}
-.vm-styleguide__subsection-row-data-table tr:nth-child(odd) {
-  background: transparent;
-}
-.vm-styleguide__subsection-row-data-table td {
-  padding: 0;
-}
-.vm-styleguide__subsection-row-data-table .vm-styleguide__subsection-row-data-table__title,
-.vm-styleguide__subsection-row-data-table .vm-styleguide__subsection-row-data-table__value {
-  margin: 0;
-}
-.vm-styleguide__subsection-row-data-table .vm-styleguide__subsection-row-data-table__title {
-  opacity: 0.6;
-}
-.vm-styleguide__subsection-row-data-table .vm-styleguide__subsection-row-data-table__value {
-  text-transform: lowercase;
 }
 
 /* #Variables
@@ -359,21 +354,26 @@ input[type=button]:hover,
 ================================================== */
 /* Mixins - typography
 ================================================== */
-.vm-styleguide__color-region-example {
-  border: 5px solid white;
-  padding: 3rem;
+.vm-styleguide-layout {
+  display: flex;
+  flex-direction: row;
 }
-.vm-styleguide__color-region-example.vm-styleguide__color-region-example--region-light {
-  border-color: #f8f4f4;
+
+.vm-styleguide-content {
+  width: calc(100% - 300px);
+  min-height: 80vh;
+  padding: 2rem;
 }
-.vm-styleguide__color-region-example.vm-styleguide__color-region-example--region-light-alt {
-  border-color: #f8f4f4;
+.vm-styleguide-content .container {
+  margin-left: 0;
 }
-.vm-styleguide__color-region-example.vm-styleguide__color-region-example--region-dark {
-  border-color: #714457;
+
+.vm-styleguide__page-title {
+  margin-top: 7rem;
+  margin-bottom: 7rem;
 }
-.vm-styleguide__color-region-example.vm-styleguide__color-region-example--region-dark-alt {
-  border-color: #1c4047;
+.vm-styleguide__page-title sup {
+  color: #dec1a8;
 }
 
 .vm-styleguide__component-example__color-region {
@@ -454,6 +454,29 @@ input[type=button]:hover,
   font-weight: 700;
 }
 
+.vm-styleguide-sidebar {
+  background-color: #f8f4f4;
+  flex-basis: 300px;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.vm-styleguide-sidebar__nav {
+  position: sticky;
+  top: 0;
+  padding: 2rem;
+}
+.vm-styleguide-sidebar__nav ul {
+  list-style: none;
+  padding-left: 0;
+}
+.vm-styleguide-sidebar__nav .vm-styleguide-sidebar__nav-item sup {
+  color: #dec1a8;
+}
+.vm-styleguide-sidebar__nav .vm-styleguide-sidebar__nav-link.vm-styleguide-sidebar__nav-link--active {
+  color: #dec1a8;
+}
+
 .vm-styleguide__swatch-color .vm-styleguide__swatch-color__square {
   padding-top: 100%;
   position: relative;
@@ -481,27 +504,4 @@ input[type=button]:hover,
 .vm-styleguide__swatch-color .vm-styleguide__swatch-color__values .vm-styleguide__swatch-color__value-label {
   margin-bottom: 0;
   opacity: 0.6;
-}
-
-.vm-styleguide-sidebar {
-  background-color: #f8f4f4;
-  flex-basis: 300px;
-  flex-grow: 0;
-  flex-shrink: 0;
-}
-
-.vm-styleguide-sidebar__nav {
-  position: sticky;
-  top: 0;
-  padding: 2rem;
-}
-.vm-styleguide-sidebar__nav ul {
-  list-style: none;
-  padding-left: 0;
-}
-.vm-styleguide-sidebar__nav .vm-styleguide-sidebar__nav-item sup {
-  color: #dec1a8;
-}
-.vm-styleguide-sidebar__nav .vm-styleguide-sidebar__nav-link.vm-styleguide-sidebar__nav-link--active {
-  color: #dec1a8;
 }

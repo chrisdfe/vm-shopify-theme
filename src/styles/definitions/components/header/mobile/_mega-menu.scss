@@ -24,6 +24,10 @@
         display: block;
         padding: 5px 0;
         color: $vm-color-sea-green;
+        
+        &:hover {
+          color: $vm-color-sand;
+        }
       }
     }
   }

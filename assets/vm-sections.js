@@ -342,10 +342,20 @@
             this.element = document.querySelector(".header-drawer-underlay");
         }
         HeaderDrawerUnderlay.prototype.show = function () {
+            var _this = this;
             this.element.classList.add("is-active");
+            this.element.classList.add("animated", "animated--snappy", "fadeIn");
+            this.element.addEventListener("animationend", function () {
+                console.log('animationend');
+                _this.element.classList.remove("animated", "fadeIn");
+            }, { once: true });
         };
         HeaderDrawerUnderlay.prototype.hide = function () {
-            this.element.classList.remove("is-active");
+            var _this = this;
+            this.element.classList.add("animated", "animated--snappy", "fadeOut");
+            this.element.addEventListener("animationend", function () {
+                _this.element.classList.remove("animated", "fadeOut", "is-active");
+            }, { once: true });
         };
         return HeaderDrawerUnderlay;
     }());
@@ -357,17 +367,24 @@
             this.isOpen = false;
             this.unload = function () { };
             this.open = function () {
-                _this.toggle(true);
+                _this.isOpen = true;
+                _this.drawerElement.classList.add("is-active");
+                setTimeout(function () {
+                    _this.drawerElement.classList.add("is-open");
+                    _this.buttonElements.forEach(function (element) {
+                        element.classList.add("is-open");
+                    });
+                });
             };
             this.close = function () {
-                _this.toggle(false);
-            };
-            this.toggle = function (isOpen) {
-                _this.isOpen = isOpen;
-                _this.drawerElement.classList.toggle("is-open", isOpen);
+                _this.isOpen = false;
+                _this.drawerElement.classList.remove("is-open");
                 _this.buttonElements.forEach(function (element) {
-                    element.classList.toggle("is-open", isOpen);
+                    element.classList.remove("is-open");
                 });
+                _this.drawerElement.addEventListener('transitionend', function () {
+                    _this.drawerElement.classList.remove("is-active");
+                }, { once: true });
             };
             this.drawerElement = drawerElement;
             this.onButtonClick = onButtonClick;
@@ -477,6 +494,7 @@
         return HeaderDropdownUnderlay;
     }());
 
+    var ACTIVE_BUTTON_CLASSNAME = "is-active";
     var OPEN_CLASSNAME$1 = "is-open";
     var HeaderDropdown = /** @class */ (function () {
         function HeaderDropdown(_a) {
@@ -504,6 +522,9 @@
             };
             this.open = function () {
                 _this.isOpen = true;
+                _this.buttonElements.forEach(function (buttonElement) {
+                    buttonElement.classList.add(ACTIVE_BUTTON_CLASSNAME);
+                });
                 _this.dropdownElement.classList.add(OPEN_CLASSNAME$1);
                 // new TransitionTimer(10).start().then(() => {
                 //   this.dropdownElement.classList.add(VISIBLE_CLASSNAME);
@@ -511,6 +532,9 @@
             };
             this.close = function () {
                 _this.isOpen = false;
+                _this.buttonElements.forEach(function (buttonElement) {
+                    buttonElement.classList.remove(ACTIVE_BUTTON_CLASSNAME);
+                });
                 // this.dropdownElement.classList.remove(VISIBLE_CLASSNAME);
                 _this.dropdownElement.classList.remove(OPEN_CLASSNAME$1);
                 // new TransitionTimer(200).start().then(() => {
@@ -542,10 +566,6 @@
                 }
             };
             this.onDropdownButtonMouseOver = function (event, dropdown) {
-                // const currentDropdown = this.getCurrentOpenDropdown();
-                // if (currentDropdown && currentDropdown.activationType === "click") {
-                //   return;
-                // }
                 _this.closeCurrentOpenDropdown();
                 _this.openDropdown(dropdown);
             };

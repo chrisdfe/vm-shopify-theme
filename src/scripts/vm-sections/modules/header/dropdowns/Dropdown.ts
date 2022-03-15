@@ -1,7 +1,7 @@
 import TransitionTimer from "../../../utils/TransitionTimer";
 
+const ACTIVE_BUTTON_CLASSNAME = "is-active";
 const OPEN_CLASSNAME = "is-open";
-// const VISIBLE_CLASSNAME = "is-visible";
 
 type HeaderDropdownCallback = (event: Event, dropdown: HeaderDropdown) => void;
 
@@ -67,6 +67,9 @@ export default class HeaderDropdown {
 
   open = () => {
     this.isOpen = true;
+    this.buttonElements.forEach(buttonElement => {
+      buttonElement.classList.add(ACTIVE_BUTTON_CLASSNAME);
+    })
     this.dropdownElement.classList.add(OPEN_CLASSNAME);
 
     // new TransitionTimer(10).start().then(() => {
@@ -76,6 +79,9 @@ export default class HeaderDropdown {
 
   close = () => {
     this.isOpen = false;
+    this.buttonElements.forEach(buttonElement => {
+      buttonElement.classList.remove(ACTIVE_BUTTON_CLASSNAME);
+    })
     // this.dropdownElement.classList.remove(VISIBLE_CLASSNAME);
     this.dropdownElement.classList.remove(OPEN_CLASSNAME);
 

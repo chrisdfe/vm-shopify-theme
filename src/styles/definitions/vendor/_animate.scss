@@ -13,6 +13,10 @@
   animation-duration: 1s;
   animation-fill-mode: both;
 }
+.animated.animated--snappy {
+  animation-duration: 0.4s;
+  animation-fill-mode: both;
+}
 .animated.infinite {
   animation-iteration-count: infinite;
 }

@@ -70,11 +70,6 @@ export default class DropdownManager {
     event: Event,
     dropdown: HeaderDropdown
   ) => {
-    // const currentDropdown = this.getCurrentOpenDropdown();
-    // if (currentDropdown && currentDropdown.activationType === "click") {
-    //   return;
-    // }
-
     this.closeCurrentOpenDropdown();
     this.openDropdown(dropdown);
   };

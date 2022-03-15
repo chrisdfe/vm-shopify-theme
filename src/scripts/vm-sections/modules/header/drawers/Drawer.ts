@@ -50,18 +50,24 @@ export default class HeaderDrawer {
   unload = () => {};
 
   open = () => {
-    this.toggle(true);
+    this.isOpen = true;
+    this.drawerElement.classList.add("is-active");
+    setTimeout(() => {
+      this.drawerElement.classList.add("is-open");
+      this.buttonElements.forEach((element) => {
+        element.classList.add("is-open");
+      });
+    })
   };
 
   close = () => {
-    this.toggle(false);
-  };
-
-  toggle = (isOpen) => {
-    this.isOpen = isOpen;
-    this.drawerElement.classList.toggle("is-open", isOpen);
+    this.isOpen = false;
+    this.drawerElement.classList.remove("is-open");
     this.buttonElements.forEach((element) => {
-      element.classList.toggle("is-open", isOpen);
+      element.classList.remove("is-open");
     });
+    this.drawerElement.addEventListener('transitionend', () => {
+      this.drawerElement.classList.remove("is-active");
+    }, { once: true });
   };
 }

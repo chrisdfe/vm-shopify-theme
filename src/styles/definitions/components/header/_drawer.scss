@@ -4,18 +4,17 @@ $vm-drawer-mobile-width: 80%;
 @mixin vm-header-drawer() {
   display: block;
   background-color: #fff;
-  transition: all 0.4s;
   position: fixed;
   top: 0;
   width: $vm-drawer-desktop-width;
   bottom: 0;
   overflow-y: scroll;
-  padding: get-vm-spacer(0.5) get-vm-spacer(2);
+  padding: get-vm-spacer(1) get-vm-spacer(2);
   z-index: $vm-z-index-header-drawer;
 
   .vm-header-drawer__header {
     display: flex;
-    padding: 0 0 get-vm-spacer(0.5);
+    padding: 0 0 get-vm-spacer(1);
     border-bottom: 1px solid $vm-color-sea-green;
   }
 
@@ -37,10 +36,6 @@ $vm-drawer-mobile-width: 80%;
     }
   }
 
-  .vm-header-drawer__content {
-    transition: all 0.6s;
-  }
-
   &.vm-header-drawer--left {
     left: 0;
     transform: translateX(-100%);
@@ -49,6 +44,10 @@ $vm-drawer-mobile-width: 80%;
   &.vm-header-drawer--right {
     right: 0;
     transform: translateX(100%);
+  }
+
+  &.is-active {
+    transition: all 0.4s;
   }
 
   &.is-open {

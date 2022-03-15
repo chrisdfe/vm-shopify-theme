@@ -45,26 +45,32 @@
 
   .header-mobile__nav-button {
     display: flex;
-    // padding: get-vm-spacer(1);
     padding: 0;
     width: 44px;
     height: 44px;
     background-color: transparent;
-    color: $vm-color-sea-green;
     border: 2px solid transparent;
+    color: $vm-color-sea-green;
     fill: $vm-color-sea-green;
+    transition: all 0.2s;
     
+    .vm-icon.vm-icon--bag {
+      margin-left: -6px;
+    }
+
     .cart_count {
       position: relative;
       top: 1px;
     }
     
-    &:hover {
+    &:hover,
+    &:active {
       background-color: $vm-color-cream;
+      // color: $vm-color-sand;
+      // fill: $vm-color-sand;
     }
     
     &:active {      
-      background-color: $vm-color-cream;
       border-color: $vm-color-sea-green;
     }
   }
@@ -81,16 +87,9 @@
     }
 
     .header-mobile__hamburger {
-      // display: flex;
-      // align-items: center;
-      // justify-content: center;
-      // flex-direction: column;
-      // width: get-vm-spacer(2);
-      // height: get-vm-spacer(2);
       flex-grow: 1;
       flex-shrink: 0;
       padding: 0 10px;
-      // transition: all 0.2s;
 
       span {
         flex-grow: 0;
