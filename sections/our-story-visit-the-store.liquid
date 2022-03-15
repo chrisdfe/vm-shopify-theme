@@ -40,24 +40,32 @@
           <div class="row">
             <div class="eight columns medium-down--one-whole">
               {% if section.settings.address %}
-                <h4>Location</h4>
-                
-                {{ section.settings.address }}
+              <h4>Location</h4>
+              
+              {{ section.settings.address }}
               {% endif %}
             </div>
             
             <div class="eight columns medium-down--one-whole">
               {% if section.settings.store_hours %}
-                <h4>Hours</h4>
-                
-                {{ section.settings.store_hours }}
+              <h4>Hours</h4>
+              
+              {{ section.settings.store_hours }}
               {% endif %}
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="sixteen columns medium-down--one-whole medium-down--offset-by-zero">
+              <h4>Parking</h4>
+              <p>{{ section.settings.parking_directions }}</p>
             </div>
           </div>
         </div>
       </div>
     </div>
-        
+    
+
     <div class="twelve columns offset-by-two medium-down--one-whole medium-down--offset-by-zero">
       <div class="our-story__store-calendly-embed">
         {% if section.settings.calendly_embed != blank %}
@@ -106,6 +114,12 @@
       "label": "Store Hours",
       "type": "richtext",
       "default": "<p>Thursday-Friday <strong>12pm-6pm</strong><br/>Saturday <strong>10am-4pm</strong></p>"
+    },
+    {
+      "id": "parking_directions",
+      "label": "Parking Directions",
+      "type": "richtext",
+      "default": "<p>There is limited free street parking.</p>"
     },
     {
       "id": "calendly_embed",
