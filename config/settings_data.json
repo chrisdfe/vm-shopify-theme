@@ -149,6 +149,7 @@
     "enable_estimate": true,
     "enable_estimate_date": true,
     "enable_estimate_box": true,
+    "estimate_text": "If ordered today, these earrings will be handcrafted in our Seattle jewelry studio and will ship between",
     "estimate_text_resizable_rings": "This ring will be resized for you.",
     "estimate_text_other": "This item will be made to order for you.",
     "enable_shopify_review_comments": false,
@@ -325,12 +326,8 @@
           "search_enabled": true,
           "show_locale_selector": true,
           "show_currency_selector": true,
-          "fixed_header": true,
-          "logo_position": "center",
-          "logo_alignment": "center",
           "menu_position": "inline",
           "menu_alignment": "center",
-          "logo_top_padding": 30,
           "menu_top_padding": 0
         }
       },
@@ -472,25 +469,6 @@
       "mega-menu-1": {
         "type": "mega-menu-1",
         "blocks": {
-          "a9f09f7d-e1d6-4eee-a98b-6b9172e7eca2": {
-            "type": "column",
-            "settings": {
-              "richtext_top": "",
-              "image_caption_top": "",
-              "image_link_top": "",
-              "menu_1": "",
-              "menu_1_link": "",
-              "menu_2": "",
-              "menu_2_link": "",
-              "menu_3": "",
-              "menu_3_link": "",
-              "menu_4": "",
-              "menu_4_link": "",
-              "image_caption_bottom": "",
-              "image_link_bottom": "",
-              "richtext_bottom": ""
-            }
-          },
           "89c82cf2-e452-4010-a7a2-fc3c9e3d7dd9": {
             "type": "column",
             "settings": {
@@ -547,33 +525,12 @@
               "image_link_bottom": "",
               "richtext_bottom": ""
             }
-          },
-          "d207f029-fbcc-4e64-9a3e-9167438d5c41": {
-            "type": "column",
-            "settings": {
-              "richtext_top": "",
-              "image_caption_top": "",
-              "image_link_top": "",
-              "menu_1": "",
-              "menu_1_link": "",
-              "menu_2": "",
-              "menu_2_link": "",
-              "menu_3": "",
-              "menu_3_link": "",
-              "menu_4": "",
-              "menu_4_link": "",
-              "image_caption_bottom": "",
-              "image_link_bottom": "",
-              "richtext_bottom": ""
-            }
           }
         },
         "block_order": [
-          "a9f09f7d-e1d6-4eee-a98b-6b9172e7eca2",
           "89c82cf2-e452-4010-a7a2-fc3c9e3d7dd9",
           "396cb187-a7c8-431f-9b50-7c86a37d239b",
-          "8908700f-c81c-47a6-809d-d7c5cf21c961",
-          "d207f029-fbcc-4e64-9a3e-9167438d5c41"
+          "8908700f-c81c-47a6-809d-d7c5cf21c961"
         ],
         "settings": {
           "parent": "Wedding & Engagement"
@@ -582,25 +539,6 @@
       "mega-menu-2": {
         "type": "mega-menu-2",
         "blocks": {
-          "04dff2d5-62f9-432d-904f-320a85a8fdfe": {
-            "type": "column",
-            "settings": {
-              "richtext_top": "",
-              "image_caption_top": "",
-              "image_link_top": "",
-              "menu_1": "",
-              "menu_1_link": "",
-              "menu_2": "",
-              "menu_2_link": "",
-              "menu_3": "",
-              "menu_3_link": "",
-              "menu_4": "",
-              "menu_4_link": "",
-              "image_caption_bottom": "",
-              "image_link_bottom": "",
-              "richtext_bottom": ""
-            }
-          },
           "9c9b6135-be0a-4019-a52d-b273b37d4333": {
             "type": "column",
             "settings": {
@@ -658,33 +596,12 @@
               "image_link_bottom": "",
               "richtext_bottom": ""
             }
-          },
-          "24ad7f8a-bc8b-489a-ba06-8b3936322547": {
-            "type": "column",
-            "settings": {
-              "richtext_top": "",
-              "image_caption_top": "",
-              "image_link_top": "",
-              "menu_1": "",
-              "menu_1_link": "",
-              "menu_2": "",
-              "menu_2_link": "",
-              "menu_3": "",
-              "menu_3_link": "",
-              "menu_4": "",
-              "menu_4_link": "",
-              "image_caption_bottom": "",
-              "image_link_bottom": "",
-              "richtext_bottom": ""
-            }
           }
         },
         "block_order": [
-          "04dff2d5-62f9-432d-904f-320a85a8fdfe",
           "9c9b6135-be0a-4019-a52d-b273b37d4333",
           "19c77f33-dbcb-4e88-b872-3ac4c5d10492",
-          "6624135a-a3ae-458d-8675-b13b0d6fa01c",
-          "24ad7f8a-bc8b-489a-ba06-8b3936322547"
+          "6624135a-a3ae-458d-8675-b13b0d6fa01c"
         ],
         "settings": {
           "parent": "About Us"
@@ -696,8 +613,8 @@
           "1554411533737": {
             "type": "filter",
             "settings": {
-              "filter_name": "Shop by Style",
-              "filter_tags": "Bezel, Cluster, Halo, Solitaire, Split-Shank, Three Stone, Toi et Moi, Unique",
+              "filter_name": "Shop by Setting",
+              "filter_tags": "Bezel, Cluster, Double Shank, Halo, Solitaire, Split-Shank, Three Stone, Toi et Moi, Unique",
               "enable_filter_swatches": false
             }
           },
@@ -728,8 +645,8 @@
           "1587338269920": {
             "type": "filter",
             "settings": {
-              "filter_name": "Shop by Style",
-              "filter_tags": "Contour Bands, Straight Bands, Diamond Bands, Gold Bands, Textured Bands, Unisex, Masculine, Zodiac",
+              "filter_name": "Shop by Category",
+              "filter_tags": "Contour Bands, Straight Bands, Diamond Bands, Gold Bands, Textured Bands, Masculine, Unisex,  Zodiac",
               "enable_filter_swatches": false
             }
           }
@@ -1350,7 +1267,7 @@
           "532c00fc-0a53-4c3b-9aeb-9e16deb238b8"
         ],
         "settings": {
-          "parent": ""
+          "parent": "Custom & Heirloom"
         }
       },
       "page-stockists-template": {
@@ -1422,25 +1339,6 @@
       "mega-menu-4": {
         "type": "mega-menu-4",
         "blocks": {
-          "52597529-c975-4d37-a92f-5fc78be6b808": {
-            "type": "column",
-            "settings": {
-              "richtext_top": "",
-              "image_caption_top": "",
-              "image_link_top": "",
-              "menu_1": "",
-              "menu_1_link": "",
-              "menu_2": "",
-              "menu_2_link": "",
-              "menu_3": "",
-              "menu_3_link": "",
-              "menu_4": "",
-              "menu_4_link": "",
-              "image_caption_bottom": "",
-              "image_link_bottom": "",
-              "richtext_bottom": ""
-            }
-          },
           "f29a3256-abfc-41b8-8483-5567a70b7932": {
             "type": "column",
             "settings": {
@@ -1448,25 +1346,6 @@
               "image_caption_top": "",
               "image_link_top": "",
               "menu_1": "featured",
-              "menu_1_link": "",
-              "menu_2": "",
-              "menu_2_link": "",
-              "menu_3": "",
-              "menu_3_link": "",
-              "menu_4": "",
-              "menu_4_link": "",
-              "image_caption_bottom": "",
-              "image_link_bottom": "",
-              "richtext_bottom": ""
-            }
-          },
-          "315c2351-f1af-4594-ae6e-ad566613dae4": {
-            "type": "column",
-            "settings": {
-              "richtext_top": "",
-              "image_caption_top": "",
-              "image_link_top": "",
-              "menu_1": "",
               "menu_1_link": "",
               "menu_2": "",
               "menu_2_link": "",
@@ -1497,33 +1376,11 @@
               "image_link_bottom": "",
               "richtext_bottom": ""
             }
-          },
-          "c2dd3fde-b1ac-4355-b05a-bb6abe677451": {
-            "type": "column",
-            "settings": {
-              "richtext_top": "",
-              "image_caption_top": "",
-              "image_link_top": "",
-              "menu_1": "",
-              "menu_1_link": "",
-              "menu_2": "",
-              "menu_2_link": "",
-              "menu_3": "",
-              "menu_3_link": "",
-              "menu_4": "",
-              "menu_4_link": "",
-              "image_caption_bottom": "",
-              "image_link_bottom": "",
-              "richtext_bottom": ""
-            }
           }
         },
         "block_order": [
-          "52597529-c975-4d37-a92f-5fc78be6b808",
           "f29a3256-abfc-41b8-8483-5567a70b7932",
-          "315c2351-f1af-4594-ae6e-ad566613dae4",
-          "mega-menu-4-0",
-          "c2dd3fde-b1ac-4355-b05a-bb6abe677451"
+          "mega-menu-4-0"
         ],
         "settings": {
           "parent": "Jewelry"
@@ -1565,7 +1422,7 @@
           "1578277933549-0": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/4_eng_rings.jpg",
+              "image": "shopify:\/\/shop_images\/Oval-Vera-wide-band-and-pave-diamond-band-stack-4x5_60642f46-f994-46bd-8fc5-03db2843c2b9.jpg",
               "link": "shopify:\/\/collections\/engagement-rings",
               "title": "<b>Engagement Rings<\/b>"
             }
@@ -1573,7 +1430,7 @@
           "1578277933549-2": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/5_hammered_bands.jpg",
+              "image": "shopify:\/\/shop_images\/BANDS_Masculine_jpg_0252c415-63a3-471c-a842-bdf50cb9de69.jpg",
               "link": "shopify:\/\/collections\/masculine-wedding-bands",
               "title": "<b>Men's Wedding Bands<\/b>"
             }
@@ -1581,7 +1438,7 @@
           "1578277933549-1": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/3_bands.jpg",
+              "image": "shopify:\/\/shop_images\/BANDS_DIAMOND_2022_1_copy_495b12d0-4326-49cb-8295-d06d7e18ef4d.jpg",
               "link": "shopify:\/\/collections\/womens-wedding-bands",
               "title": "<b>Women's Wedding Bands<\/b>"
             }
@@ -1589,7 +1446,7 @@
           "1578277944089": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/2_Chains.jpg",
+              "image": "shopify:\/\/shop_images\/Woman-in-the-moon-val-edited-4x5-2000px_a8a93be3-f03d-4ea9-be86-4105e5d46d73.jpg",
               "link": "shopify:\/\/collections\/necklaces",
               "title": "<b>Necklaces<\/b>"
             }
@@ -1597,7 +1454,7 @@
           "1578278006036": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/Hoop_Test_.736_Sat.jpg",
+              "image": "shopify:\/\/shop_images\/REFRESH_2022_Blue_Meridian_Dangles_33ee0f79-8274-4c04-9535-4b885d09d8c2.jpg",
               "link": "shopify:\/\/collections\/earrings",
               "title": "<b>Earrings<\/b>"
             }
@@ -1605,7 +1462,7 @@
           "1578278048532": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/1_Bangles.jpg",
+              "image": "shopify:\/\/shop_images\/Duo-Bracelet-J_L-4x5_5f4ef2c0-f9ea-43a5-9609-83d124a681ec.jpg",
               "link": "shopify:\/\/collections\/all-bracelets",
               "title": "<b>Bracelets<\/b>"
             }
@@ -1882,9 +1739,9 @@
           "display_sku": false,
           "display_collections": false,
           "display_type": false,
-          "display_tags": true,
+          "display_tags": false,
           "display_social_buttons": true,
-          "product_description_position": "top",
+          "product_description_position": "bottom",
           "display_savings": true,
           "product_info_width": "eight|eight",
           "show_payment_button": true,
@@ -3349,6 +3206,7 @@
         "blocks": {
           "398fe46e-43dd-41e3-8d73-51f91275cd68": {
             "type": "background_block",
+            "disabled": true,
             "settings": {
               "background_color": "light"
             }
@@ -3357,7 +3215,7 @@
             "type": "background_block",
             "settings": {
               "background_color": "light",
-              "banner_image_desktop": "shopify:\/\/shop_images\/REFRESH-Collection-1x1-val-edited-HI-RES.jpg"
+              "banner_image_desktop": "shopify:\/\/shop_images\/Primavera-Collection-Shadows.jpg"
             }
           }
         },
@@ -3367,13 +3225,13 @@
         ],
         "settings": {
           "banner_wrapper_background_color": "light-alt",
-          "pretext": "Here to stay",
-          "heading": "The REFRESH Collection",
-          "cta_link": "shopify:\/\/collections\/refresh-collection",
-          "cta_text": "Shop the new styles",
-          "text_position": "left-block",
+          "pretext": "new season",
+          "heading": "New Designs",
+          "cta_link": "shopify:\/\/collections\/primavera",
+          "cta_text": "Shop new arrivals",
+          "text_position": "right-block",
           "text_color": "dark-alt",
-          "banner_image_mobile": "shopify:\/\/shop_images\/REFRESH-Collection-1x1-val-edited-HI-RES.jpg",
+          "banner_image_mobile": "shopify:\/\/shop_images\/Primavera-Collection-Shadows.jpg",
           "text_color_mobile": "dark-alt",
           "content_background_color_mobile": "light-alt"
         }
