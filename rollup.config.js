@@ -5,6 +5,9 @@ import commonjs from '@rollup/plugin-commonjs';
 import typescript from '@rollup/plugin-typescript';
 import scss from 'rollup-plugin-scss'
 
+import postcss from "postcss";
+import autoprefixer from "autoprefixer";
+
 export default [
   {
     input: 'src/scripts/entrypoints/vm-sections.ts',
@@ -16,6 +19,24 @@ export default [
       nodeResolve(),
       babel({ babelHelpers: 'bundled' }),
       typescript()
+    ]
+  },
+  {
+    input: 'src/styles/styles.js',
+    output: {
+      dir: 'assets/',
+    },
+    plugins: [
+      scss({
+        output: true,
+
+        // Filename to write all styles to
+        output: 'assets/styles.css',
+
+        processor: () => postcss([autoprefixer()]),
+
+        watch: ['src/styles/']
+      })
     ]
   },
   {
@@ -38,7 +59,7 @@ export default [
       commonjs(),
       scss({
         // TODO - don't hardcode styleguide.css
-        output: 'assets/styleguide.css' 
+        output: 'assets/styleguide.css'
       }),
     ]
   }

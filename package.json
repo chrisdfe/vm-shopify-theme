@@ -4,10 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "styles:compile": "node scripts/compile-styles.js",
-    "styles:watch": "node scripts/watch-styles.js",
-    "scripts:compile": "./node_modules/.bin/rollup --config",
-    "scripts:watch": "./node_modules/.bin/rollup --config --watch",
+    "assets:compile": "./node_modules/.bin/rollup --config",
+    "assets:watch": "./node_modules/.bin/rollup --config --watch",
     "create-snippets-from-svgs": "node ./scripts/create-snippets-from-svgs.js"
   },
   "author": "",

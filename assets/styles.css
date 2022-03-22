@@ -13781,19 +13781,27 @@ div.collection_title_tags {
   }
 }
 
-/* Shipping Estimate */
-.shipping_estimate {
-  display: block;
-  font-style: italic;
-  margin: 3rem 1rem;
-}
-
 /* Shipping Estimate Box */
 .shipping_estimate,
 .product .description .retailer_box {
+  font-family: poppins, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  line-height: 1.6;
+  text-transform: none;
+  display: block;
+  font-style: italic;
+  padding: 1.5rem;
+  margin: 2rem 0;
   background: #ffffff;
   border: none;
-  padding: 3rem 2rem;
+}
+@media only screen and (max-width: 800px) {
+  .shipping_estimate,
+.product .description .retailer_box {
+    font-size: 13px;
+  }
 }
 
 span.shipping_estimate #fromDate,

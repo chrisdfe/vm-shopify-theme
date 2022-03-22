@@ -261,19 +261,17 @@ div {
   }
 }
 
-/* Shipping Estimate */
-.shipping_estimate {
-  display: block;
-  font-style: italic;
-  margin: get-vm-spacer(3) get-vm-spacer(1);
-}
 
 /* Shipping Estimate Box */
 .shipping_estimate,
 .product .description .retailer_box {
+  @include vm-paragraph-3();
+  display: block;
+  font-style: italic;
+  padding: get-vm-spacer(1.5);
+  margin: get-vm-spacer(2) 0;
   background: $vm-color-white;
   border: none;
-  padding: get-vm-spacer(3) get-vm-spacer(2);
 }
 
 span.shipping_estimate #fromDate,
