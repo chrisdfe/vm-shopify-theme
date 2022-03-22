@@ -261,7 +261,6 @@
             var _this = this;
             this.init = function () {
                 var searchFormElements = document.querySelectorAll("form.search_form, form.search, form.header_search_form, form.header__search-form");
-                console.log("searchFormElements", searchFormElements.length);
                 _this.searchAutocompletes = Array.from(searchFormElements).map(function (searchFormElement) {
                     return new SearchAutocomplete(searchFormElement).init();
                 });
@@ -346,7 +345,6 @@
             this.element.classList.add("is-active");
             this.element.classList.add("animated", "animated--snappy", "fadeIn");
             this.element.addEventListener("animationend", function () {
-                console.log('animationend');
                 _this.element.classList.remove("animated", "fadeIn");
             }, { once: true });
         };
@@ -398,7 +396,6 @@
                     _this.onButtonClick(event, _this);
                 });
             });
-            console.log("test");
             return this;
         };
         return HeaderDrawer;
@@ -688,6 +685,8 @@
             var _this = this;
             var contentElement = _a.contentElement;
             this.isOpen = false;
+            this.onOpen = function () { };
+            this.onClose = function () { };
             this.initialize = function () {
                 _this.id = _this.contentElement.getAttribute("data-accordion-id");
                 _this.buttonElements = Array.from(document.querySelectorAll("[data-accordion-button-id=".concat(_this.id, "]")));
@@ -699,12 +698,21 @@
             this.onButtonClick = function () {
                 _this.toggle(!_this.isOpen);
             };
+            this.getGroupId = function () {
+                var accordionGroupId = _this.contentElement.getAttribute("data-accordion-group-id");
+                if (!accordionGroupId) {
+                    accordionGroupId = 'default';
+                    _this.contentElement.setAttribute("data-accordion-group-id", 'default');
+                }
+                return accordionGroupId;
+            };
             this.open = function () {
                 _this.isOpen = true;
                 _this.contentElement.classList.add(OPEN_CLASSNAME);
                 _this.buttonElements.forEach(function (buttonElement) {
                     buttonElement.classList.add(OPEN_CLASSNAME);
                 });
+                _this.onOpen(_this);
                 // slideDown-style animation
                 _this.contentElement.style.height = "auto";
                 var height = _this.contentElement.clientHeight + "px";
@@ -718,6 +726,7 @@
                 _this.buttonElements.forEach(function (buttonElement) {
                     buttonElement.classList.remove(OPEN_CLASSNAME);
                 });
+                _this.onClose(_this);
                 // slideDown-style animation
                 _this.contentElement.style.height = "0";
                 _this.contentElement.addEventListener("transitionend", function () {
@@ -738,17 +747,73 @@
         return Accordion;
     }());
 
+    var AccordionGroup = /** @class */ (function () {
+        function AccordionGroup(id, options) {
+            var _this = this;
+            if (options === void 0) { options = {}; }
+            this.options = {
+                singleAccordionOpenOnly: true
+            };
+            this.accordionMap = {};
+            this.onAccordionOpen = function (accordion) {
+                if (_this.options.singleAccordionOpenOnly) {
+                    _this.closeAllAccordionsExcept(accordion.id);
+                }
+            };
+            this.id = id;
+            this.options = _assign(_assign({}, this.options), options);
+        }
+        AccordionGroup.prototype.initialize = function () {
+            var wrapperElement = document.querySelector("[data-accordion-group-wrapper=\"".concat(this.id, "\"]"));
+            if (wrapperElement) {
+                // initialize options
+                var singleAccordionOpenOnly = wrapperElement.getAttribute('data-accordion-group-option-single-open-only');
+                this.options.singleAccordionOpenOnly = singleAccordionOpenOnly === "true";
+            }
+            return this;
+        };
+        AccordionGroup.prototype.addAccordion = function (accordion) {
+            this.accordionMap[accordion.id] = accordion;
+            accordion.onOpen = this.onAccordionOpen;
+        };
+        AccordionGroup.prototype.closeAllAccordionsExcept = function (targetAccordionId) {
+            var _this = this;
+            Object.keys(this.accordionMap).forEach(function (accordionId) {
+                if (accordionId !== targetAccordionId) {
+                    var accordion = _this.accordionMap[accordionId];
+                    accordion.close();
+                }
+            });
+        };
+        return AccordionGroup;
+    }());
+
     var AccordionManager = /** @class */ (function () {
         function AccordionManager() {
             var _this = this;
+            this.accordionGroupMap = {
+                "default": new AccordionGroup('default', { singleAccordionOpenOnly: false })
+            };
             this.initialize = function () {
                 _this.accordionElements = Array.from(document.querySelectorAll(".vm-accordion-content"));
-                _this.accordionMap = _this.accordionElements.reduce(function (acc, contentElement) {
-                    var _a;
-                    var accordionId = contentElement.getAttribute("data-accordion-id");
+                _this.accordionGroupMap = {};
+                _this.accordionElements.forEach(function (contentElement) {
+                    // Determine which accordion group this belongs to
+                    var accordionGroupId = contentElement.getAttribute("data-accordion-group-id");
+                    if (!accordionGroupId) {
+                        accordionGroupId = 'default';
+                        contentElement.setAttribute("data-accordion-group-id", 'default');
+                    }
+                    // Create accordion and add it to group
                     var accordion = new Accordion({ contentElement: contentElement }).initialize();
-                    return _assign(_assign({}, acc), (_a = {}, _a[accordionId] = accordion, _a));
-                }, {});
+                    var accordionGroup = _this.accordionGroupMap[accordionGroupId];
+                    if (!accordionGroup) {
+                        // Create new accordion group
+                        accordionGroup = new AccordionGroup(accordionGroupId).initialize();
+                        _this.accordionGroupMap[accordionGroupId] = accordionGroup;
+                    }
+                    accordionGroup.addAccordion(accordion);
+                });
                 return _this;
             };
         }

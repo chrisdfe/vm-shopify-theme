@@ -8,8 +8,6 @@ export default class SearchAutocompleteManager {
       "form.search_form, form.search, form.header_search_form, form.header__search-form"
     );
 
-    console.log("searchFormElements", searchFormElements.length);
-
     this.searchAutocompletes = Array.from(searchFormElements).map(
       (searchFormElement) => {
         return new SearchAutocomplete(searchFormElement).init();

@@ -1,15 +1,24 @@
+type AccordionEventHandler = (accordion: Accordion) => void;
+
 interface Props {
   contentElement: HTMLElement;
+  onOpen?: AccordionEventHandler,
+  onClose?: AccordionEventHandler,
 }
 
 const OPEN_CLASSNAME = "is-open";
 
 export default class Accordion {
   id: string;
+  groupId: string;
+
   isOpen: boolean = false;
 
   buttonElements: HTMLElement[];
   contentElement: HTMLElement;
+
+  onOpen: AccordionEventHandler = () => { };
+  onClose: AccordionEventHandler = () => { };
 
   constructor({ contentElement }: Props) {
     this.contentElement = contentElement;
@@ -33,12 +42,25 @@ export default class Accordion {
     this.toggle(!this.isOpen);
   };
 
+  getGroupId = () => {
+    let accordionGroupId = this.contentElement.getAttribute("data-accordion-group-id");
+
+    if (!accordionGroupId) {
+      accordionGroupId = 'default';
+      this.contentElement.setAttribute("data-accordion-group-id", 'default');
+    }
+
+    return accordionGroupId;
+  }
+
   open = () => {
     this.isOpen = true;
     this.contentElement.classList.add(OPEN_CLASSNAME);
     this.buttonElements.forEach((buttonElement) => {
       buttonElement.classList.add(OPEN_CLASSNAME);
     });
+
+    this.onOpen(this);
 
     // slideDown-style animation
     this.contentElement.style.height = "auto";
@@ -54,6 +76,8 @@ export default class Accordion {
     this.buttonElements.forEach((buttonElement) => {
       buttonElement.classList.remove(OPEN_CLASSNAME);
     });
+
+    this.onClose(this);
 
     // slideDown-style animation
     this.contentElement.style.height = "0";

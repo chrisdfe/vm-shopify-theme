@@ -5,7 +5,11 @@
 - Must be enabled through general settings
 {% endcomment %}
 
-<div class="mega-menu-mobile">
+<div
+  class="mega-menu-mobile"
+  data-accordion-group-wrapper="mobile-mega-menu"
+  data-accordion-group-option-single-open-only="false"
+  >
   <button
     class="vm-accordion-button"
     data-accordion-button-id="{{ section.settings.parent | handleize }}"
@@ -18,7 +22,8 @@
   
   <div
     class="vm-accordion-content"
-    data-accordion-id="{{ section.settings.parent | handleize }}">
+    data-accordion-id="{{ section.settings.parent | handleize }}"
+    data-accordion-group-id="mobile-mega-menu">
     <div class="vm-accordion-content__inner">
 
       <ul class="mega-menu-mobile__content-list">
