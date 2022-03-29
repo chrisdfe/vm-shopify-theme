@@ -17,7 +17,7 @@ export default class AccordionGroup {
   id: string;
 
   private options: AccordionGroupOptions = {
-    singleAccordionOpenOnly: true
+    singleAccordionOpenOnly: false
   };
 
   private state: AccordionGroupState;

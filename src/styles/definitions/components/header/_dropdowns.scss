@@ -6,7 +6,6 @@
   background-color: #fff;
   @include vm-dropdown-menu-boxshadow();
   padding: get-vm-spacer(1) get-vm-spacer(2) get-vm-spacer(2);
-  // opacity: 0;
 
   img {
     max-width: 100%;

@@ -18,7 +18,7 @@ export default class HeaderDrawerUnderlay {
     this.element.classList.add("animated", "animated--snappy", "fadeOut");
 
     this.element.addEventListener("animationend", () => {
-      this.element.classList.remove("animated", "fadeOut", "is-active");
+      this.element.classList.remove("animated", "animated--snappy", "fadeOut", "is-active");
     }, { once: true })
   }
 }

@@ -352,7 +352,7 @@
             var _this = this;
             this.element.classList.add("animated", "animated--snappy", "fadeOut");
             this.element.addEventListener("animationend", function () {
-                _this.element.classList.remove("animated", "fadeOut", "is-active");
+                _this.element.classList.remove("animated", "animated--snappy", "fadeOut", "is-active");
             }, { once: true });
         };
         return HeaderDrawerUnderlay;
@@ -504,16 +504,15 @@
                 _this.activationType = (_this.dropdownElement.getAttribute("data-dropdown-activation-type") || "hover");
                 _this.buttonElements.forEach(function (element) {
                     element.classList.add("is-dropdown-button");
-                    if (_this.activationType === "hover") {
-                        element.addEventListener("mouseover", function (event) {
-                            _this.onDropdownButtonMouseOver(event, _this);
-                        });
-                    }
-                    else {
-                        element.addEventListener("click", function (event) {
-                            _this.onDropdownButtonClick(event, _this);
-                        });
-                    }
+                    // if (this.activationType === "hover") {
+                    element.addEventListener("mouseover", function (event) {
+                        _this.onDropdownButtonMouseOver(event, _this);
+                    });
+                    // } else {
+                    element.addEventListener("click", function (event) {
+                        _this.onDropdownButtonClick(event, _this);
+                    });
+                    // }
                 });
                 return _this;
             };
@@ -523,6 +522,10 @@
                     buttonElement.classList.add(ACTIVE_BUTTON_CLASSNAME);
                 });
                 _this.dropdownElement.classList.add(OPEN_CLASSNAME$1);
+                // this.dropdownElement.classList.add("animated", "animated--snappy", "fadeInDown");
+                // this.dropdownElement.addEventListener("animationend", () => {
+                // this.dropdownElement.classList.remove("animated", "animated--snappy", "fadeInDown");
+                // }, { once: true });
                 // new TransitionTimer(10).start().then(() => {
                 //   this.dropdownElement.classList.add(VISIBLE_CLASSNAME);
                 // });
@@ -532,8 +535,11 @@
                 _this.buttonElements.forEach(function (buttonElement) {
                     buttonElement.classList.remove(ACTIVE_BUTTON_CLASSNAME);
                 });
-                // this.dropdownElement.classList.remove(VISIBLE_CLASSNAME);
                 _this.dropdownElement.classList.remove(OPEN_CLASSNAME$1);
+                // this.dropdownElement.classList.add("animated", "animated--snappy", "fadeOutUp");
+                // this.dropdownElement.addEventListener("animationend", () => {
+                //   this.dropdownElement.classList.remove("animated", "animated--snappy", "fadeOutUp");
+                // }, { once: true })
                 // new TransitionTimer(200).start().then(() => {
                 //   this.dropdownElement.classList.remove(OPEN_CLASSNAME);
                 // });
@@ -563,14 +569,20 @@
                 }
             };
             this.onDropdownButtonMouseOver = function (event, dropdown) {
+                var currentOpenDropdown = _this.getCurrentOpenDropdown();
+                if (currentOpenDropdown && currentOpenDropdown.activationType === "click") {
+                    return;
+                }
+                if (dropdown.activationType === "click") {
+                    return;
+                }
                 _this.closeCurrentOpenDropdown();
                 _this.openDropdown(dropdown);
             };
             // TODO - check
             this.onHeaderMouseOut = function (event) {
                 var currentOpenDropdown = _this.getCurrentOpenDropdown();
-                if (!currentOpenDropdown ||
-                    currentOpenDropdown.activationType === "click") {
+                if (!currentOpenDropdown || currentOpenDropdown.activationType === "click") {
                     return;
                 }
                 var toElement = event.relatedTarget;
@@ -581,12 +593,10 @@
             };
             this.onDropdownButtonClick = function (event, dropdown) {
                 event.preventDefault();
-                // TODO - don't open if the button being clicked is for the current dropdown
-                //        in that case - close the dropdown
-                var currentDropdown = _this.getCurrentOpenDropdown();
-                if (currentDropdown) {
-                    _this.closeDropdown(currentDropdown);
-                    if (currentDropdown.id !== dropdown.id) {
+                var currentOpenDropdown = _this.getCurrentOpenDropdown();
+                if (currentOpenDropdown) {
+                    _this.closeDropdown(currentOpenDropdown);
+                    if (currentOpenDropdown.id !== dropdown.id) {
                         _this.openDropdown(dropdown);
                     }
                 }
@@ -656,9 +666,6 @@
     var header = {
         init: function () {
             HeaderWrapper.findAndInitialize();
-            // window.addEventListener("shopify:section:select", (event) => {
-            //   console.log("section selected");
-            // });
         },
         loadMegaMenu: function () { },
         loadMobileMegaMenu: function () { },
@@ -752,7 +759,7 @@
             var _this = this;
             if (options === void 0) { options = {}; }
             this.options = {
-                singleAccordionOpenOnly: true
+                singleAccordionOpenOnly: false
             };
             this.accordionMap = {};
             this.onAccordionOpen = function (accordion) {

@@ -3,19 +3,15 @@ import HeaderWrapper from "./HeaderWrapper";
 const header = {
   init: function () {
     const headerWrapper = HeaderWrapper.findAndInitialize();
-
-    // window.addEventListener("shopify:section:select", (event) => {
-    //   console.log("section selected");
-    // });
   },
 
-  loadMegaMenu: function () {},
+  loadMegaMenu: function () { },
 
-  loadMobileMegaMenu: function () {},
+  loadMobileMegaMenu: function () { },
 
-  unloadMegaMenu: function () {},
+  unloadMegaMenu: function () { },
 
-  unload: function () {},
+  unload: function () { },
 };
 
 export default header;

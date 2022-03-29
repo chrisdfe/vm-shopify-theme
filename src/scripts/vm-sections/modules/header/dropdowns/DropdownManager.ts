@@ -70,6 +70,16 @@ export default class DropdownManager {
     event: Event,
     dropdown: HeaderDropdown
   ) => {
+    const currentOpenDropdown = this.getCurrentOpenDropdown();
+
+    if (currentOpenDropdown && currentOpenDropdown.activationType === "click") {
+      return;
+    }
+
+    if (dropdown.activationType === "click") {
+      return;
+    }
+
     this.closeCurrentOpenDropdown();
     this.openDropdown(dropdown);
   };
@@ -79,8 +89,7 @@ export default class DropdownManager {
     const currentOpenDropdown = this.getCurrentOpenDropdown();
 
     if (
-      !currentOpenDropdown ||
-      currentOpenDropdown.activationType === "click"
+      !currentOpenDropdown || currentOpenDropdown.activationType === "click"
     ) {
       return;
     }
@@ -96,14 +105,12 @@ export default class DropdownManager {
   private onDropdownButtonClick = (event: Event, dropdown: HeaderDropdown) => {
     event.preventDefault();
 
-    // TODO - don't open if the button being clicked is for the current dropdown
-    //        in that case - close the dropdown
-    const currentDropdown = this.getCurrentOpenDropdown();
+    const currentOpenDropdown = this.getCurrentOpenDropdown();
 
-    if (currentDropdown) {
-      this.closeDropdown(currentDropdown);
+    if (currentOpenDropdown) {
+      this.closeDropdown(currentOpenDropdown);
 
-      if (currentDropdown.id !== dropdown.id) {
+      if (currentOpenDropdown.id !== dropdown.id) {
         this.openDropdown(dropdown);
       }
     } else {
@@ -111,23 +118,24 @@ export default class DropdownManager {
     }
   };
 
-  getCurrentOpenDropdown = () => this.dropdownMap[this.currentDropdownId];
+  private getCurrentOpenDropdown = () => this.dropdownMap[this.currentDropdownId];
 
-  closeCurrentOpenDropdown = () => {
+  private closeCurrentOpenDropdown = () => {
     const currentDropdown = this.getCurrentOpenDropdown();
+
     if (currentDropdown) {
       this.closeDropdown(currentDropdown);
     }
   };
 
-  openDropdown = (dropdown: HeaderDropdown) => {
+  private openDropdown = (dropdown: HeaderDropdown) => {
     this.currentDropdownId = dropdown.id;
     dropdown.open();
 
     this.headerUnderlay.show();
   };
 
-  closeDropdown = (dropdown: HeaderDropdown) => {
+  private closeDropdown = (dropdown: HeaderDropdown) => {
     dropdown.close();
     this.currentDropdownId = null;
 

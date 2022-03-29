@@ -1,6 +1,3 @@
-const getElementHeight = (element: Element) =>
-  element.getBoundingClientRect().height;
-
 export default class HeaderDrawer {
   isOpen = false;
 

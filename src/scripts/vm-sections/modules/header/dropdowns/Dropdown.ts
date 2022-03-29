@@ -51,15 +51,15 @@ export default class HeaderDropdown {
     this.buttonElements.forEach((element) => {
       element.classList.add("is-dropdown-button");
 
-      if (this.activationType === "hover") {
-        element.addEventListener("mouseover", (event) => {
-          this.onDropdownButtonMouseOver(event, this);
-        });
-      } else {
-        element.addEventListener("click", (event) => {
-          this.onDropdownButtonClick(event, this);
-        });
-      }
+      // if (this.activationType === "hover") {
+      element.addEventListener("mouseover", (event) => {
+        this.onDropdownButtonMouseOver(event, this);
+      });
+      // } else {
+      element.addEventListener("click", (event) => {
+        this.onDropdownButtonClick(event, this);
+      });
+      // }
     });
 
     return this;
@@ -70,7 +70,13 @@ export default class HeaderDropdown {
     this.buttonElements.forEach(buttonElement => {
       buttonElement.classList.add(ACTIVE_BUTTON_CLASSNAME);
     })
-    this.dropdownElement.classList.add(OPEN_CLASSNAME);
+
+    this.dropdownElement.classList.add(OPEN_CLASSNAME)
+    // this.dropdownElement.classList.add("animated", "animated--snappy", "fadeInDown");
+
+    // this.dropdownElement.addEventListener("animationend", () => {
+    // this.dropdownElement.classList.remove("animated", "animated--snappy", "fadeInDown");
+    // }, { once: true });
 
     // new TransitionTimer(10).start().then(() => {
     //   this.dropdownElement.classList.add(VISIBLE_CLASSNAME);
@@ -82,8 +88,13 @@ export default class HeaderDropdown {
     this.buttonElements.forEach(buttonElement => {
       buttonElement.classList.remove(ACTIVE_BUTTON_CLASSNAME);
     })
-    // this.dropdownElement.classList.remove(VISIBLE_CLASSNAME);
+
     this.dropdownElement.classList.remove(OPEN_CLASSNAME);
+    // this.dropdownElement.classList.add("animated", "animated--snappy", "fadeOutUp");
+
+    // this.dropdownElement.addEventListener("animationend", () => {
+    //   this.dropdownElement.classList.remove("animated", "animated--snappy", "fadeOutUp");
+    // }, { once: true })
 
     // new TransitionTimer(200).start().then(() => {
     //   this.dropdownElement.classList.remove(OPEN_CLASSNAME);

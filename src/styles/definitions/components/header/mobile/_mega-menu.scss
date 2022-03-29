@@ -57,17 +57,6 @@
     color: $vm-color-sea-green;
     border-bottom: 1px solid rgba($vm-color-sea-green, 0.4);
   }
-
-  .mobile-menu-accordion-button__arrow {
-    transform: rotate(-90deg);
-    transition: all 0.2s;
-  }
-
-  &.is-open {
-    .mobile-menu-accordion-button__arrow {
-      transform: rotate(0);
-    }
-  }
 }
 
 .mobile-menu-accordion-content {

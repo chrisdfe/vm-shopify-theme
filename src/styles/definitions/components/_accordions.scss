@@ -21,13 +21,13 @@
     border-bottom: 1px solid $vm-color-sea-green;
   }
   
-  .mobile-menu-accordion-button__arrow {
+  .vm-accordion-button__arrow {
     transform: rotate(-90deg);
     transition: all 0.2s;
   }
 
   &.is-open {
-    .mobile-menu-accordion-button__arrow {
+    .vm-accordion-button__arrow {
       transform: rotate(0);
     }
   }
@@ -45,6 +45,12 @@
 
 .vm-accordion-content__inner {
   padding: get-vm-spacer(1.5) get-vm-spacer(0.5);
+
+  p {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 }
 
 // TODO - go through and make sure none of this is used anymore

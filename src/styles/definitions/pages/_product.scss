@@ -1,10 +1,6 @@
 /* Pages - Product
 ================================================== */
 
-/* Product Page Elements */
-.container .align_right--images > div.columns {
-}
-
 .vendor {
   margin-bottom: 6px;
 }
@@ -14,8 +10,8 @@
 }
 
 .product_section .description {
-  @include word-wrap;
-  margin: 2rem 0;
+  // @include word-wrap;
+  // margin: 2rem 0;
 }
 
 .modal_price {
@@ -40,14 +36,14 @@
   white-space: nowrap;
 }
 
-.sale_banner_product {
+// .sale_banner_product {
   // background: {{ settings.sale_banner_color }};
-}
+// }
 
-.new_banner_product,
-.preorder_banner_product {
+// .new_banner_product,
+// .preorder_banner_product {
   // background: {{ settings.new_banner_color }};
-}
+// }
 
 .recommended-products__title {
   margin-top: get-vm-spacer(3);
@@ -148,12 +144,15 @@
   float: left;
 }
 
-.product_section .product_form,
-.product_section .contact-form {
-  max-width: 400px;
+.product_section {
 
-  @include respond-to('medium-down') {
-    max-width: 100%;
+  .product_form,
+  .contact-form {
+    // max-width: 400px;
+  
+    @include respond-to('medium-down') {
+      max-width: 100%;
+    }
   }
 }
 
@@ -261,23 +260,25 @@ div {
   }
 }
 
+.product-info {
+  margin-bottom: get-vm-spacer(2);
+}
 
 /* Shipping Estimate Box */
 .shipping_estimate,
 .product .description .retailer_box {
-  @include vm-paragraph-3();
-  display: block;
-  font-style: italic;
-  padding: get-vm-spacer(1.5);
-  margin: get-vm-spacer(2) 0;
-  background: $vm-color-white;
-  border: none;
+  // @include vm-paragraph-3();
+  // display: block;
+  // font-style: italic;
+  // padding: get-vm-spacer(1.5);
+  // margin: get-vm-spacer(2) 0;
+  // background: $vm-color-white;
+  // border: none;
 }
 
-span.shipping_estimate #fromDate,
-span.shipping_estimate #toDate,
+.shipping_estimate #fromDate,
+.shipping_estimate #toDate,
 .product .description h6 em a {
-  // color: {{settings.estimate_box_shipping_color}};
   font-weight: 600;
 }
 
@@ -285,4 +286,210 @@ span.shipping_estimate #toDate,
 .product .shopify-payment-button__more-options,
 .product .shopify-payment-button__button--branded {
   visibility: hidden;
+}
+
+
+.purchase-details {
+
+  .columns,
+  .column {
+    display: flex;
+    align-items: flex-end;
+    justify-content: stretch;
+
+    > * {
+      width: 100%;
+    }
+  }
+}
+
+.line-item-property__field {
+  
+  select {
+    margin-bottom: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.product_section .smart-payment-button--true.product_form {
+  max-width: 100%;
+}
+
+.smart-payment-button--true .purchase-details {
+  // padding-bottom: 50px;
+
+  // .shopify-payment-button__button--branded {
+  //   padding-bottom: 30px;
+  // }
+
+  // .shopify-payment-button__more-options {
+  //   top: 70%;
+  // }
+}
+
+.smart-payment-button--true button .checkmark path {
+  stroke: $vm-color-sea-green;
+}
+
+.smart-payment-button--false .purchase-details {
+  @include align-items(flex-end);
+}
+
+.smart-payment-button--false {
+  margin-bottom: 20px;
+}
+
+.product-quantity-box.purchase-details__quantity {
+  margin-right: 5px;
+  width: calc(50% - 12px);
+
+  @include respond-to('small-down') {
+    width: 100%;
+  }
+
+  input.quantity {
+    padding-top: 11px;
+    padding-bottom: 11px;
+    line-height: 1.4;
+    min-height: 44px;
+    margin-bottom: 0;
+    width: calc(100% - 88px);
+  }
+}
+
+.smart-payment-button--true .product-quantity-box.purchase-details__quantity {
+  width: calc(50% - 6px);
+
+  @include respond-to('medium-down') {
+    width: 100%;
+    margin-right: 0;
+
+    .input.quantity {
+      width: calc(100% - 88px);
+    }
+  }
+}
+
+p.checkout_button {
+  margin-bottom: 0;
+}
+
+.purchase-details__buttons {
+  // @include flexbox;
+  // @include flex(1 0 calc(50% - 12px));
+  // @include flex-wrap(wrap);
+  // margin-left: 6px;
+
+  // @include respond-to('medium-down') {
+  //   margin-top: 20px;
+  //   margin-left: 12px;
+  //   @include flex(1 0 calc(50% - 12px));
+  // }
+
+  // @include respond-to('small-down') {
+  //   margin-top: 12px;
+  //   margin-left: 0;
+  //   @include flex(1 0 100%);
+  // }
+
+  // .shopify-payment-button {
+  //   @include flex(1 0 100%);
+  //   margin-bottom: 0;
+  //   max-width: 100%;
+
+  //   @include respond-to('widescreen-up') {
+  //     @include flex(1 0 calc(50% - 4px));
+  //     max-width: calc(50% - 4px);
+  //   }
+  // }
+}
+
+.purchase-details__buttons.purchase-details__spb--true {
+  // @include flex(1 0 100%);
+  // margin-top: 10px;
+  // margin-left: 0;
+
+  @include respond-to('medium-down') {
+    margin-left: 0;
+    margin-bottom: 0;
+  }
+
+  .action_button.action_button--secondary {
+    // @include flex(1 0 50%);
+    // max-width: calc(50% - 6px);
+
+    @include respond-to('medium-down') {
+      @include flex(1 0 100%);
+      margin-right: 0px;
+      margin-top: 0;
+      margin-bottom: 10px;
+      max-width: 100%;
+    }
+  }
+
+  .shopify-payment-button {
+    // margin-left: 6px;
+    // max-width: calc(50% - 6px);
+    // height: inherit;
+    // 
+    // @include respond-to('medium-down') {
+    //   margin-left: 0;
+    //   margin-top: 0;
+    //   margin-bottom: 10px;
+    //   max-width: 100%;
+    // }
+  }
+}
+
+// When product is unavailable
+.purchase-details__buttons {
+  &.product-is-unavailable {
+    .add_to_cart,
+    .shopify-payment-button {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    .add_to_cart {
+      padding: 10px 5px;
+    }
+  }
+}
+
+// .sidebar--true .purchase-details {
+//   @include respond-to('large-down') {
+//     @include flex-direction(column);
+//     @include align-items(flex-start);
+
+//     .purchase-details__quantity,
+//     .purchase-details__buttons {
+//       margin: 0 0 10px;
+//       width: 100%;
+//     }
+
+//     .action_button.action_button--secondary,
+//     .shopify-payment-button {
+//       @include flex(1 0 100%);
+//       margin: 0 0 10px;
+//       max-width: 100%;
+//     }
+//   }
+// }
+
+#checkout {
+  min-height: 54px; /* Match the height of additional checkout buttons. */
+}
+
+.additional-checkout-button + .additional-checkout-button {
+  margin-left: 0 !important;
+  max-width: 100% !important;
+}
+
+.additional-checkout-button,
+.additional-checkout-button.additional-checkout-button--paypal,
+.additional-checkout-button.additional-checkout-button--google-pay {
+  min-width: 100% !important; /* Overwrite inline style */
 }
