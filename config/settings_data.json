@@ -244,7 +244,7 @@
     "mega_text_font_weight": "normal",
     "hide_paypal_button": true,
     "enable_ring_size": true,
-    "ring_size_title": "Ring size",
+    "ring_size_title": "Please select your ring size (or contact us for a custom order in another size)",
     "ring_size_title_resizing": "What ring size would you like?",
     "ring_size_dropdown": "Available in sizes:",
     "ring_size_collection": "rings",
@@ -310,7 +310,7 @@
       "header": {
         "type": "header",
         "settings": {
-          "promo_text": "<p>FREE SHIPPING ON ALL U.S ORDERS<\/p>",
+          "promo_text": "<p>FREE SHIPPING ON ALL U.S. ORDERS<\/p>",
           "social_icons_header": true,
           "phone_number": "(206) 395-6359",
           "top_bar_menu": "",
@@ -318,7 +318,7 @@
           "cart_icon": "bag",
           "logo_display_width": 205,
           "logo_display_width_percent": 45,
-          "logo": "shopify:\/\/shop_images\/Logo-name-large.png",
+          "logo": "shopify:\/\/shop_images\/logo_173a67f6-34c1-4670-82e7-e7a2e1e4f697.png",
           "logo_mobile": "shopify:\/\/shop_images\/mobile-logo-seagreen_256x256_79182b2b-7668-4862-8b08-f67f60755daf.png",
           "main_linklist": "menu-left-of-logo",
           "main_linklist2": "menu-right-of-logo",
@@ -469,6 +469,25 @@
       "mega-menu-1": {
         "type": "mega-menu-1",
         "blocks": {
+          "852d9f2d-70e1-4702-8d04-bc5726f6ebe3": {
+            "type": "column",
+            "settings": {
+              "richtext_top": "",
+              "image_caption_top": "",
+              "image_link_top": "",
+              "menu_1": "",
+              "menu_1_link": "",
+              "menu_2": "",
+              "menu_2_link": "",
+              "menu_3": "",
+              "menu_3_link": "",
+              "menu_4": "",
+              "menu_4_link": "",
+              "image_caption_bottom": "",
+              "image_link_bottom": "",
+              "richtext_bottom": ""
+            }
+          },
           "89c82cf2-e452-4010-a7a2-fc3c9e3d7dd9": {
             "type": "column",
             "settings": {
@@ -525,12 +544,33 @@
               "image_link_bottom": "",
               "richtext_bottom": ""
             }
+          },
+          "8f9fb105-9c3c-4ed6-af64-80e49b99b9b7": {
+            "type": "column",
+            "settings": {
+              "richtext_top": "",
+              "image_caption_top": "",
+              "image_link_top": "",
+              "menu_1": "",
+              "menu_1_link": "",
+              "menu_2": "",
+              "menu_2_link": "",
+              "menu_3": "",
+              "menu_3_link": "",
+              "menu_4": "",
+              "menu_4_link": "",
+              "image_caption_bottom": "",
+              "image_link_bottom": "",
+              "richtext_bottom": ""
+            }
           }
         },
         "block_order": [
+          "852d9f2d-70e1-4702-8d04-bc5726f6ebe3",
           "89c82cf2-e452-4010-a7a2-fc3c9e3d7dd9",
           "396cb187-a7c8-431f-9b50-7c86a37d239b",
-          "8908700f-c81c-47a6-809d-d7c5cf21c961"
+          "8908700f-c81c-47a6-809d-d7c5cf21c961",
+          "8f9fb105-9c3c-4ed6-af64-80e49b99b9b7"
         ],
         "settings": {
           "parent": "Wedding & Engagement"
@@ -539,6 +579,25 @@
       "mega-menu-2": {
         "type": "mega-menu-2",
         "blocks": {
+          "c885c7ee-9e7b-4135-b417-76316cdd7dad": {
+            "type": "column",
+            "settings": {
+              "richtext_top": "",
+              "image_caption_top": "",
+              "image_link_top": "",
+              "menu_1": "",
+              "menu_1_link": "",
+              "menu_2": "",
+              "menu_2_link": "",
+              "menu_3": "",
+              "menu_3_link": "",
+              "menu_4": "",
+              "menu_4_link": "",
+              "image_caption_bottom": "",
+              "image_link_bottom": "",
+              "richtext_bottom": ""
+            }
+          },
           "9c9b6135-be0a-4019-a52d-b273b37d4333": {
             "type": "column",
             "settings": {
@@ -581,9 +640,28 @@
             "type": "column",
             "settings": {
               "richtext_top": "",
-              "image_top": "shopify:\/\/shop_images\/Madrona-Valerie-Madison.jpg",
-              "image_caption_top": "Visit our lovely store in Seattle!",
+              "image_top": "shopify:\/\/shop_images\/storefront.jpg",
+              "image_caption_top": "Visit our Seattle Jewelry Store!",
               "image_link_top": "https:\/\/www.valeriemadison.com\/pages\/our-story#visit-the-store",
+              "menu_1": "",
+              "menu_1_link": "",
+              "menu_2": "",
+              "menu_2_link": "",
+              "menu_3": "",
+              "menu_3_link": "",
+              "menu_4": "",
+              "menu_4_link": "",
+              "image_caption_bottom": "",
+              "image_link_bottom": "",
+              "richtext_bottom": ""
+            }
+          },
+          "7aa4b7a4-3994-4377-8910-4003ca8acc7f": {
+            "type": "column",
+            "settings": {
+              "richtext_top": "",
+              "image_caption_top": "",
+              "image_link_top": "",
               "menu_1": "",
               "menu_1_link": "",
               "menu_2": "",
@@ -599,9 +677,11 @@
           }
         },
         "block_order": [
+          "c885c7ee-9e7b-4135-b417-76316cdd7dad",
           "9c9b6135-be0a-4019-a52d-b273b37d4333",
           "19c77f33-dbcb-4e88-b872-3ac4c5d10492",
-          "6624135a-a3ae-458d-8675-b13b0d6fa01c"
+          "6624135a-a3ae-458d-8675-b13b0d6fa01c",
+          "7aa4b7a4-3994-4377-8910-4003ca8acc7f"
         ],
         "settings": {
           "parent": "About Us"
@@ -610,6 +690,14 @@
       "collection-template": {
         "type": "collection-template",
         "blocks": {
+          "1587338269920": {
+            "type": "filter",
+            "settings": {
+              "filter_name": "Shop by Category",
+              "filter_tags": "Contour Bands, Straight Bands, Diamond Bands, Gold Bands, Textured Bands, Masculine, Unisex,  Zodiac, Studs, Hoops, Bridal Earrings",
+              "enable_filter_swatches": false
+            }
+          },
           "1554411533737": {
             "type": "filter",
             "settings": {
@@ -641,22 +729,14 @@
               "filter_tags": "Round, Oval, Pear, Cushion, Emerald Cut, Marquise, Geometric, Baguette, Half Moon",
               "enable_filter_swatches": false
             }
-          },
-          "1587338269920": {
-            "type": "filter",
-            "settings": {
-              "filter_name": "Shop by Category",
-              "filter_tags": "Contour Bands, Straight Bands, Diamond Bands, Gold Bands, Textured Bands, Masculine, Unisex,  Zodiac",
-              "enable_filter_swatches": false
-            }
           }
         },
         "block_order": [
+          "1587338269920",
           "1554411533737",
           "1553112159812",
           "b1e3cb86-ca09-4541-a5ea-43343399c8f9",
-          "1567199940929",
-          "1587338269920"
+          "1567199940929"
         ],
         "settings": {
           "is_timed_collection": false,
@@ -823,7 +903,7 @@
           "display_vendor": false,
           "display_sku": false,
           "display_savings": true,
-          "show_payment_button": false,
+          "show_payment_button": true,
           "display_collections": true,
           "display_type": false,
           "display_tags": false,
@@ -1223,6 +1303,25 @@
       "mega-menu-3": {
         "type": "mega-menu-3",
         "blocks": {
+          "aab23c57-f19b-4d01-b468-32be2b8a1684": {
+            "type": "column",
+            "settings": {
+              "richtext_top": "",
+              "image_caption_top": "",
+              "image_link_top": "",
+              "menu_1": "",
+              "menu_1_link": "",
+              "menu_2": "",
+              "menu_2_link": "",
+              "menu_3": "",
+              "menu_3_link": "",
+              "menu_4": "",
+              "menu_4_link": "",
+              "image_caption_bottom": "",
+              "image_link_bottom": "",
+              "richtext_bottom": ""
+            }
+          },
           "47d145a4-b12b-4e17-860c-625091745268": {
             "type": "column",
             "settings": {
@@ -1263,6 +1362,7 @@
           }
         },
         "block_order": [
+          "aab23c57-f19b-4d01-b468-32be2b8a1684",
           "47d145a4-b12b-4e17-860c-625091745268",
           "532c00fc-0a53-4c3b-9aeb-9e16deb238b8"
         ],
@@ -1339,6 +1439,25 @@
       "mega-menu-4": {
         "type": "mega-menu-4",
         "blocks": {
+          "51477d6a-b0a2-41b4-bc57-5411e6b7b4af": {
+            "type": "column",
+            "settings": {
+              "richtext_top": "",
+              "image_caption_top": "",
+              "image_link_top": "",
+              "menu_1": "",
+              "menu_1_link": "",
+              "menu_2": "",
+              "menu_2_link": "",
+              "menu_3": "",
+              "menu_3_link": "",
+              "menu_4": "",
+              "menu_4_link": "",
+              "image_caption_bottom": "",
+              "image_link_bottom": "",
+              "richtext_bottom": ""
+            }
+          },
           "f29a3256-abfc-41b8-8483-5567a70b7932": {
             "type": "column",
             "settings": {
@@ -1376,11 +1495,32 @@
               "image_link_bottom": "",
               "richtext_bottom": ""
             }
+          },
+          "8197ba8a-3d57-44be-9ba0-a173e3f7f18f": {
+            "type": "column",
+            "settings": {
+              "richtext_top": "",
+              "image_caption_top": "",
+              "image_link_top": "",
+              "menu_1": "",
+              "menu_1_link": "",
+              "menu_2": "",
+              "menu_2_link": "",
+              "menu_3": "",
+              "menu_3_link": "",
+              "menu_4": "",
+              "menu_4_link": "",
+              "image_caption_bottom": "",
+              "image_link_bottom": "",
+              "richtext_bottom": ""
+            }
           }
         },
         "block_order": [
+          "51477d6a-b0a2-41b4-bc57-5411e6b7b4af",
           "f29a3256-abfc-41b8-8483-5567a70b7932",
-          "mega-menu-4-0"
+          "mega-menu-4-0",
+          "8197ba8a-3d57-44be-9ba0-a173e3f7f18f"
         ],
         "settings": {
           "parent": "Jewelry"
@@ -1744,7 +1884,7 @@
           "product_description_position": "bottom",
           "display_savings": true,
           "product_info_width": "eight|eight",
-          "show_payment_button": false,
+          "show_payment_button": true,
           "product_images_position": "right",
           "set_product_height": false,
           "product_height": 500,
@@ -3035,10 +3175,10 @@
           "403aa6d2-005e-4604-a369-5efa4062f6ab": {
             "type": "team_member",
             "settings": {
-              "image": "shopify:\/\/shop_images\/Megan_Headshot.jpg",
+              "image": "shopify:\/\/shop_images\/Megan_Cosgrove_Headshot.jpg",
               "title": "Megan",
               "job_title": "Customer Service Specialist & Associate Buyer",
-              "description": "As the face of VM’s Customer Service Department, I strive to make your experience unforgettable. My sense of humor and colorful personality helps ensure that you will be taken care of no matter what! I love to help individuals find lifelong custom rings or commemorate milestones in gold."
+              "description": "As the face of VM’s Customer Service Department, I strive to make your experience memorable and stress-free. When I am not helping customers via email, chat or over the phone, I am cultivating our in-store merchandise to offer the best sourced gifts for our local shoppers. My sense of humor and colorful personality helps ensure that you will be taken care of no matter what!"
             }
           },
           "b9bb3a8d-56e2-4b2f-99d5-7c1ddde5cba5": {
@@ -3204,7 +3344,6 @@
         "blocks": {
           "398fe46e-43dd-41e3-8d73-51f91275cd68": {
             "type": "background_block",
-            "disabled": true,
             "settings": {
               "background_color": "light"
             }
@@ -3212,7 +3351,7 @@
           "95beecd3-2bab-4b22-b737-ed9a5c1dbf17": {
             "type": "background_block",
             "settings": {
-              "background_color": "light",
+              "background_color": "light-alt",
               "banner_image_desktop": "shopify:\/\/shop_images\/Primavera-Collection-Shadows.jpg"
             }
           }
@@ -3223,11 +3362,11 @@
         ],
         "settings": {
           "banner_wrapper_background_color": "light-alt",
-          "pretext": "new season",
-          "heading": "New Designs",
-          "cta_link": "shopify:\/\/collections\/primavera",
-          "cta_text": "Shop new arrivals",
-          "text_position": "right-block",
+          "pretext": "New Season, New Rings",
+          "heading": "Springtime engagements",
+          "cta_link": "shopify:\/\/collections\/gemstone-bridal-1",
+          "cta_text": "Shop Gemstone Bridal",
+          "text_position": "left-block",
           "text_color": "dark-alt",
           "banner_image_mobile": "shopify:\/\/shop_images\/Primavera-Collection-Shadows.jpg",
           "text_color_mobile": "dark-alt",
@@ -3808,7 +3947,7 @@
             "type": "upcoming-date",
             "settings": {
               "date": "Saturday, May 7",
-              "time": "11:00-3:00pm"
+              "time": "10:00-2:00pm"
             }
           },
           "bedf200f-6f49-408b-a592-54058d9e6802": {
