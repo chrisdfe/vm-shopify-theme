@@ -1,0 +1,45 @@
+<div class="product-price-wrapper">
+  {% if collection_handles contains 'coming-soon' %}
+    <p class="modal_price">{{ 'collections.general.coming_soon' | t }}</p>
+  {% else %}
+    <div class="modal_price">
+      {% unless product.available == false and settings.display_price == false %}
+        <div class="price__container price__container--display-price-{{ settings.display_price }} {% if settings.display_price %}has-margin-right{% endif %}">
+          <span content="{{ variant.price | money_without_currency | remove: "," }}" class="{% if variant.compare_at_price > variant.price %}sale{% endif %}">
+            <span class="current_price">
+              {% if variant.price > 0 %}
+                <span class="money">{% render 'price-element', price: variant.price %}</span>
+              {% else %}
+                {{ settings.free_price_text }}
+              {% endif %}
+            </span>
+          </span>
+
+          <span class="was_price">
+            {% if variant.price < variant.compare_at_price %}
+              <span class="money">{% render 'price-element', price: variant.compare_at_price %}</span>
+            {% endif %}
+          </span>
+
+          {% if section.settings.display_savings %}
+            <span class="sale savings">
+              {% if variant.price < variant.compare_at_price %}
+                {{ 'products.product.savings' | t }}  {{ variant.compare_at_price | minus: variant.price | times: 100 | divided_by: variant.compare_at_price }}% (<span class="money">{% assign compare_at = variant.compare_at_price | minus: variant.price %}{% render 'price-element', price: compare_at %}</span>)
+              {% endif %}
+            </span>
+          {% endif %}
+        </div>
+      {% endunless %}
+      
+      <div class="sold-out__container">
+        <span class="sold_out">{% if variant.available == false %}{{ settings.sold_out_text }}{% endif %}</span>
+      </div>
+    </div>
+  {% endif %}
+
+  <p
+    class="affirm-as-low-as paragraph-3"
+    data-page-type="product"
+    data-amount="{{variant.price}}">
+  </p>
+</div>

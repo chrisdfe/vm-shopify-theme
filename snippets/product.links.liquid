@@ -1,0 +1,37 @@
+{% if section.settings.display_collections or section.settings.display_tags or section.settings.display_type %}
+  <div class="product_links">
+    {% if section.settings.display_collections %}
+      <p>
+        <span class="subheading-3">{{ 'products.product.collections' | t }}:</span>
+        <span>
+          {% for col in product.collections %}
+            <a href="{{ col.url }}" title="{{ col.title }}">{{ col.title }}</a>{% unless forloop.last %},{% endunless %}
+          {% endfor %}
+        </span>
+      </p>
+    {% endif %}
+
+    {% if section.settings.display_type %}
+      <p>
+        <span class="subheading-3">{{ 'products.product.product_types' | t }}:</span>
+        <span>{{ product.type | link_to_type }}</span>
+      </p>
+    {% endif %}
+
+    {% if section.settings.display_tags %}
+      <p class="paragraph-3">
+      {% for tag in product.tags %}
+        {% if forloop.first %}
+          <span class="subheading-3">{{ 'products.product.tags' | t }}:</span>
+        {% endif %}
+
+        {% unless tag contains 'meta-' or tag contains 'store-' or tag contains 'final sale' or tag contains 'Ring Resizing' or tag contains 'weeks' or tag contains 'days' %}
+          <span>
+            <a href="{{ routes.collections_url }}/{% if collection %}{{ collection.handle }}{% else %}all{% endif %}/{{ tag | handle }}" title="{{ 'products.product.products_tagged' | t: tag: tag }}">{{ tag }}</a>{% unless forloop.last %},{% endunless %}
+          </span>
+        {% endunless %}
+      {% endfor %}
+      </p>
+    {% endif %}
+  </div>
+{% endif %}

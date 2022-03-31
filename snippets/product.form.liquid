@@ -6,9 +6,21 @@
   {% assign show_payment_button = false %}
 {% endif %}
 
+<!-- Criteria for showing ring size dropdown: -->
+{% assign show_ringsize_dropdown = false %}
+{% if product.tags contains 'Design Your Own Ring' or product.tags contains 'Ring Resizing'  or product.tags contains 'ring resizing' or product.type == "OOAK and RTS" %}
+  {% assign show_ringsize_dropdown = true %}
+{% endif %}
+
+{% assign show_inline_ringsize = show_ringsize_dropdown %}
+
+{% if product.tags contains 'Design Your Own Ring' %}
+  {% assign show_inline_ringsize = false %}
+{% endif %}
+
 {% assign variant = product.selected_or_first_available_variant %}
 
-<div class="clearfix product_form init smart-payment-button--{{ show_payment_button }} {% if product.variants.size > 1 or product.options.size > 1 %}product_form_options{% endif %} product_form--{{ settings.product_form_style }}"
+<div class="product_form init smart-payment-button--{{ show_payment_button }} {% if product.variants.size > 1 or product.options.size > 1 %}product_form_options{% endif %} product_form--{{ settings.product_form_style }}"
   id="product-form-{{ product.id }}"
   data-product-form
   data-options-size="{{ product.options.size }}"
@@ -52,8 +64,8 @@
     <div class="swatch_options">
       {% for option in product.options %}
         {% render 'product-swatch',
-                option: option,
-                product: product
+          option: option,
+          product: product
         %}
       {% endfor %}
     </div>
@@ -62,7 +74,9 @@
   <!-- Build Your Own Ring - Addon -->
   {% if product.tags contains 'Design Your Own Ring' %}
     {% if section.settings.enable_ring_size == true %}
-      {% render 'storemods-ringsize', min_size:section.settings.minimum_ring_size, max_size:section.settings.maximum_ring_size %}
+      {% unless show_inline_ringsize %}
+        {% render 'storemods-ringsize', min_size: section.settings.minimum_ring_size, max_size: section.settings.maximum_ring_size %}
+      {% endunless %}
     {% endif %}
 
     {% if section.settings.enable_prong_style == true %}
@@ -72,8 +86,9 @@
           <option value="" selected disabled hidden>Select {{section.settings.dropdown_prong_style_label | strip }}</option>
           {% assign options = section.settings.dropdown_variant_prong_style | split: "," %}
           {% capture num %}{{ options | size | minus: 1 }}{% endcapture %}
+          
           {% for i in (0..num) %}
-          <option value="{{ options[i] | strip }}">{{ options[i] | strip }}</option>  
+            <option value="{{ options[i] | strip }}">{{ options[i] | strip }}</option>  
           {% endfor %}
         </select>
       </p>
@@ -86,8 +101,9 @@
           <option value="" selected disabled hidden>Select {{section.settings.dropdown_prong_orientation_label | strip }}</option>
           {% assign options = section.settings.dropdown_variant_prong_orientation | split: "," %}
           {% capture num %}{{ options | size | minus: 1 }}{% endcapture %}
+          
           {% for i in (0..num) %}
-          <option value="{{ options[i] | strip }}">{{ options[i] | strip }}</option>  
+            <option value="{{ options[i] | strip }}">{{ options[i] | strip }}</option>  
           {% endfor %}
         </select>
       </p>
@@ -124,26 +140,27 @@
   		{% endif %}
     {% endfor %}
   
-  {% if section.settings.enable_agreement == true %}
-    <div class="line-item-property__field">
-      <input
-        type="hidden"
-        name="properties[{{section.settings.agreement_label | strip }}]"
-        value="No">
-      <label
-        for="{{section.settings.agreement_label | strip | replace: ' ', '-'}}">
+    {% if section.settings.enable_agreement == true %}
+      <div class="line-item-property__field">
         <input
-          id="{{section.settings.agreement_label | strip | replace: ' ', '-'}}" type="checkbox"
+          type="hidden"
           name="properties[{{section.settings.agreement_label | strip }}]"
-          value="Yes"
-          required="Yes"> {{section.settings.agreement_label | strip_html }}</label>
+          value="No">
+        <label
+          for="{{section.settings.agreement_label | strip | replace: ' ', '-'}}">
+          <input
+            id="{{section.settings.agreement_label | strip | replace: ' ', '-'}}" type="checkbox"
+            name="properties[{{section.settings.agreement_label | strip }}]"
+            value="Yes"
+            required="Yes"> {{section.settings.agreement_label | strip_html }}</label>
 
-      <p class="agreement_description paragraph-3">
-        {{ section.settings.agreement_description | strip_html }}
-      </p>
-    </div>
-  	{% endif %}
-   <input type="hidden" id="buildring" name="buildring" value="false" />
+        <p class="agreement_description paragraph-3">
+          {{ section.settings.agreement_description | strip_html }}
+        </p>
+      </div>
+    {% endif %}
+    
+    <input type="hidden" id="buildring" name="buildring" value="false" />
   {% endif %}
 
   <!-- End Of Build Your Own Ring - Addon -->
@@ -213,13 +230,14 @@
     {% endif %}
 
     <div class="row">
-      <div class="one-half medium-down--one-whole columns">
-        {% unless product.tags contains 'Design Your Own Ring' %}	
-          {% render 'storemods-ringsize' %}
-        {% endunless %}
-      </div>
 
-      <div class="one-half medium-down--one-whole columns">
+      {% if show_inline_ringsize %}
+        <div class="one-half medium-down--one-whole columns">
+          {% render 'storemods-ringsize' %}
+        </div>
+      {% endif %}
+
+      <div class="{% if show_inline_ringsize %}one-half{% else %}one-whole{% endif %} medium-down--one-whole columns">
         <div class="purchase-details__buttons purchase-details__spb--{{ show_payment_button }} {% if product.available == false %}product-is-unavailable{% endif %}">
           {% if settings.cart_action == 'reload_page' %}
             <input type="hidden" name="return_to" value="back" />
@@ -243,6 +261,14 @@
         </div>
       </div>
     </div>
+
+    {% if show_inline_ringsize %}
+    <div class="row">
+      <div class="one-whole columns">
+        <p class="paragraph-3 u-margin-top-1 u-margin-bottom-0">{{ section.settings.custom_ring_size_text}}</p>
+      </div>
+    </div>
+    {% endif %}
 
   </div>
   {% endform %}

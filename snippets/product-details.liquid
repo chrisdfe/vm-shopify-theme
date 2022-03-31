@@ -19,9 +19,11 @@
       <div class="sale_banner thumbnail_banner">{{ 'collections.general.sale' | t }}</div>
     {% endif %}
   {% endif %}
+  
   {% if collection_handles contains 'new' %}
     <div class="new_banner thumbnail_banner">{{ 'collections.general.new' | t }}</div>
   {% endif %}
+
   {% if collection_handles contains 'pre-order' %}
     <div class="preorder_banner thumbnail_banner">{{ 'collections.general.pre_order' | t }}</div>
   {% endif %}

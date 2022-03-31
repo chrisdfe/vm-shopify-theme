@@ -27,23 +27,9 @@
 .sale_banner_product,
 .new_banner_product,
 .preorder_banner_product {
-  padding: 8px 20px;
+  padding: get-vm-spacer(1);
   text-align: center;
-  color: #fff;
-  margin-bottom: 13px;
-  display: inline-block;
-  font-size: 15px;
-  white-space: nowrap;
 }
-
-// .sale_banner_product {
-  // background: {{ settings.sale_banner_color }};
-// }
-
-// .new_banner_product,
-// .preorder_banner_product {
-  // background: {{ settings.new_banner_color }};
-// }
 
 .recommended-products__title {
   margin-top: get-vm-spacer(3);
@@ -204,7 +190,7 @@ div {
 }
 
 .product-price-wrapper {
-  margin: 30px 0;
+  margin: get-vm-spacer(1) 0;
 }
 
 .notify_form #contact_form .action_button {

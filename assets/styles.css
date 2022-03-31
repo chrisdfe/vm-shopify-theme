@@ -13112,13 +13112,8 @@ div#disqus_thread li {
 .sale_banner_product,
 .new_banner_product,
 .preorder_banner_product {
-  padding: 8px 20px;
+  padding: 1rem;
   text-align: center;
-  color: #fff;
-  margin-bottom: 13px;
-  display: inline-block;
-  font-size: 15px;
-  white-space: nowrap;
 }
 
 .recommended-products__title {
@@ -13269,7 +13264,7 @@ div.collection_title_tags {
 }
 
 .product-price-wrapper {
-  margin: 30px 0;
+  margin: 1rem 0;
 }
 
 .notify_form #contact_form .action_button {
