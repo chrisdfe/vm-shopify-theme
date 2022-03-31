@@ -97,7 +97,11 @@
               {% endif %}
             {% endif %}
   
-
+            {% if section.settings.review_position == "next_to_gallery" %}
+              <div class="shopify-reviews reviewsVisibility--{{settings.enable_shopify_review_comments}}">
+                <div id="shopify-product-reviews" data-id="{{product.id}}">{{ product.metafields.spr.reviews }}</div>
+              </div>
+            {% endif %}
   
             {% if section.settings.display_collections or section.settings.display_tags or section.settings.display_type %}
               <div class="product_links">
@@ -136,7 +140,12 @@
                 {% endif %}
               </div>
             {% endif %}
-
+  
+            <div class="meta">
+              {% if section.settings.display_social_buttons %}
+                {% include "social-buttons" with "product" %}
+              {% endif %}
+            </div>
           </div>
           
         </div>
@@ -144,7 +153,20 @@
 
     </div>
 
-    {% include "product.reviews" %}
+    {% if product.description contains "<!-- split -->"  %}
+      <br class="clear" />
+      <div class="section clearfix">
+        <div class="description">
+          {{ product.description | split: '<!-- split -->' | last }}
+        </div>
+      </div>
+    {% endif %}
+
+    {% if section.settings.review_position == "below_gallery" %}
+      <div class="shopify-reviews reviewsVisibility--{{settings.enable_shopify_review_comments}}">
+        <div id="shopify-product-reviews" data-id="{{product.id}}">{{ product.metafields.spr.reviews }}</div>
+      </div>
+    {% endif %}
   </div>
 </div>
 
