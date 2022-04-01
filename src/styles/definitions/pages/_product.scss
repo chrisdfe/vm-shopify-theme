@@ -132,6 +132,10 @@
 
 .product_section {
 
+  .product_form {
+    margin-bottom: get-vm-spacer(2);
+  }
+
   .product_form,
   .contact-form {
     // max-width: 400px;
@@ -190,7 +194,15 @@ div {
 }
 
 .product-price-wrapper {
-  margin: get-vm-spacer(1) 0;
+  margin: get-vm-spacer(2) 0;
+
+  .affirm-as-low-as-wrapper {
+    min-height: 1.4rem;
+  }
+
+  .affirm-as-low-as {
+    margin: 0;
+  }
 }
 
 .notify_form #contact_form .action_button {
@@ -269,12 +281,17 @@ div {
 }
 
 /* SM - Hide Paypal Button */
-.product .shopify-payment-button__more-options,
-.product .shopify-payment-button__button--branded {
-  visibility: hidden;
+.product {
+
+  .shopify-payment-button,
+  .shopify-payment-button__more-options,
+  .shopify-payment-button__button--branded {
+    visibility: hidden;
+    display: none;
+  }
 }
 
-
+// Hacky solution to make add to cart button + ring size dropdown line up
 .purchase-details {
 
   .columns,
@@ -287,18 +304,22 @@ div {
       width: 100%;
     }
   }
-}
-
-.line-item-property__field {
   
-  select {
-    margin-bottom: 0;
-  }
+  .line-item-property__field {
 
-  &:last-child {
-    margin-bottom: 0;
+    select {
+      margin-bottom: 0;
+    }
+  
+    @include respond-to('large-up') {
+    
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
   }
 }
+
 
 .product_section .smart-payment-button--true.product_form {
   max-width: 100%;

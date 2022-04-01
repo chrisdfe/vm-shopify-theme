@@ -246,7 +246,7 @@
           {% endif %}
     
           {% capture add_to_cart_label %}{% if collection_handles contains 'pre-order' %}{{ 'collections.general.pre_order' | t }}{% else %}{{ 'products.product.add_to_cart' | t }}{% endif %}{% endcapture %}
-          <button type="{% if settings.cart_action == 'ajax' %}button{% else %}submit{% endif %}" name="add" class="button {% if settings.cart_action == 'ajax' %} ajax-submit {% endif %}action_button add_to_cart {% if show_payment_button %} action_button--secondary {% endif %} {% if product.available == false %}disabled{% endif %}" data-label={{ add_to_cart_label | json }}>
+          <button type="{% if settings.cart_action == 'ajax' %}button{% else %}submit{% endif %}" name="add" class="button {% if settings.cart_action == 'ajax' %} ajax-submit {% endif %}action_button add_to_cart {% if product.available == false %}disabled{% endif %}" data-label={{ add_to_cart_label | json }}>
             <span class="text">
               {% if product.available %}{{ add_to_cart_label }}{% else %}{{ settings.sold_out_text }}{% endif %}
             </span>
@@ -263,11 +263,11 @@
     </div>
 
     {% if show_inline_ringsize %}
-    <div class="row">
-      <div class="one-whole columns">
-        <p class="paragraph-3 u-margin-top-1 u-margin-bottom-0">{{ section.settings.custom_ring_size_text}}</p>
+      <div class="row">
+        <div class="one-whole columns">
+          <p class="paragraph-3 u-margin-vertical-1">{{ section.settings.custom_ring_size_text}}</p>
+        </div>
       </div>
-    </div>
     {% endif %}
 
   </div>

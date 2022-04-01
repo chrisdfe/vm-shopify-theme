@@ -8250,7 +8250,11 @@ label.tos_label {
 .add_to_cart.action_button {
   min-height: 44px;
   margin-bottom: 0;
-  height: 100%;
+}
+
+.shopify-payment-button__button--branded,
+.shopify-payment-button__button--unbranded {
+  display: none;
 }
 
 button.shopify-payment-button__more-options {
@@ -9307,7 +9311,11 @@ label.tos_label {
 .add_to_cart.action_button {
   min-height: 44px;
   margin-bottom: 0;
-  height: 100%;
+}
+
+.shopify-payment-button__button--branded,
+.shopify-payment-button__button--unbranded {
+  display: none;
 }
 
 button.shopify-payment-button__more-options {
@@ -13218,6 +13226,9 @@ div#disqus_thread li {
   float: left;
 }
 
+.product_section .product_form {
+  margin-bottom: 2rem;
+}
 @media only screen and (max-width: 800px) {
   .product_section .product_form,
 .product_section .contact-form {
@@ -13264,7 +13275,13 @@ div.collection_title_tags {
 }
 
 .product-price-wrapper {
-  margin: 1rem 0;
+  margin: 2rem 0;
+}
+.product-price-wrapper .affirm-as-low-as-wrapper {
+  min-height: 1.4rem;
+}
+.product-price-wrapper .affirm-as-low-as {
+  margin: 0;
 }
 
 .notify_form #contact_form .action_button {
@@ -13331,9 +13348,11 @@ div.collection_title_tags {
 }
 
 /* SM - Hide Paypal Button */
+.product .shopify-payment-button,
 .product .shopify-payment-button__more-options,
 .product .shopify-payment-button__button--branded {
   visibility: hidden;
+  display: none;
 }
 
 .purchase-details .columns,
@@ -13346,12 +13365,13 @@ div.collection_title_tags {
 .purchase-details .column > * {
   width: 100%;
 }
-
-.line-item-property__field select {
+.purchase-details .line-item-property__field select {
   margin-bottom: 0;
 }
-.line-item-property__field:last-child {
-  margin-bottom: 0;
+@media only screen and (min-width: 1025px) {
+  .purchase-details .line-item-property__field:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .product_section .smart-payment-button--true.product_form {

@@ -198,7 +198,7 @@ label.tos_label {
 .add_to_cart.action_button {
   min-height: 44px;
   margin-bottom: 0;
-  height: 100%;
+  // height: 100%;
 }
 
 .shopify-payment-button {
@@ -229,6 +229,7 @@ div.shopify-payment-button__button {
 .shopify-payment-button__button--unbranded {
   // overflow: hidden;
   // min-height: 44px;
+  display: none;
 }
 
 button.shopify-payment-button__more-options {

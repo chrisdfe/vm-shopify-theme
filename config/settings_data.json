@@ -244,7 +244,7 @@
     "mega_text_font_weight": "normal",
     "hide_paypal_button": true,
     "enable_ring_size": true,
-    "ring_size_title": "Please select your ring size (or contact us for a custom order in another size)",
+    "ring_size_title": "Ring Size",
     "ring_size_title_resizing": "What ring size would you like?",
     "ring_size_dropdown": "Available in sizes:",
     "ring_size_collection": "rings",
@@ -469,25 +469,6 @@
       "mega-menu-1": {
         "type": "mega-menu-1",
         "blocks": {
-          "852d9f2d-70e1-4702-8d04-bc5726f6ebe3": {
-            "type": "column",
-            "settings": {
-              "richtext_top": "",
-              "image_caption_top": "",
-              "image_link_top": "",
-              "menu_1": "",
-              "menu_1_link": "",
-              "menu_2": "",
-              "menu_2_link": "",
-              "menu_3": "",
-              "menu_3_link": "",
-              "menu_4": "",
-              "menu_4_link": "",
-              "image_caption_bottom": "",
-              "image_link_bottom": "",
-              "richtext_bottom": ""
-            }
-          },
           "89c82cf2-e452-4010-a7a2-fc3c9e3d7dd9": {
             "type": "column",
             "settings": {
@@ -544,33 +525,12 @@
               "image_link_bottom": "",
               "richtext_bottom": ""
             }
-          },
-          "8f9fb105-9c3c-4ed6-af64-80e49b99b9b7": {
-            "type": "column",
-            "settings": {
-              "richtext_top": "",
-              "image_caption_top": "",
-              "image_link_top": "",
-              "menu_1": "",
-              "menu_1_link": "",
-              "menu_2": "",
-              "menu_2_link": "",
-              "menu_3": "",
-              "menu_3_link": "",
-              "menu_4": "",
-              "menu_4_link": "",
-              "image_caption_bottom": "",
-              "image_link_bottom": "",
-              "richtext_bottom": ""
-            }
           }
         },
         "block_order": [
-          "852d9f2d-70e1-4702-8d04-bc5726f6ebe3",
           "89c82cf2-e452-4010-a7a2-fc3c9e3d7dd9",
           "396cb187-a7c8-431f-9b50-7c86a37d239b",
-          "8908700f-c81c-47a6-809d-d7c5cf21c961",
-          "8f9fb105-9c3c-4ed6-af64-80e49b99b9b7"
+          "8908700f-c81c-47a6-809d-d7c5cf21c961"
         ],
         "settings": {
           "parent": "Wedding & Engagement"
@@ -579,25 +539,6 @@
       "mega-menu-2": {
         "type": "mega-menu-2",
         "blocks": {
-          "c885c7ee-9e7b-4135-b417-76316cdd7dad": {
-            "type": "column",
-            "settings": {
-              "richtext_top": "",
-              "image_caption_top": "",
-              "image_link_top": "",
-              "menu_1": "",
-              "menu_1_link": "",
-              "menu_2": "",
-              "menu_2_link": "",
-              "menu_3": "",
-              "menu_3_link": "",
-              "menu_4": "",
-              "menu_4_link": "",
-              "image_caption_bottom": "",
-              "image_link_bottom": "",
-              "richtext_bottom": ""
-            }
-          },
           "9c9b6135-be0a-4019-a52d-b273b37d4333": {
             "type": "column",
             "settings": {
@@ -655,33 +596,12 @@
               "image_link_bottom": "",
               "richtext_bottom": ""
             }
-          },
-          "7aa4b7a4-3994-4377-8910-4003ca8acc7f": {
-            "type": "column",
-            "settings": {
-              "richtext_top": "",
-              "image_caption_top": "",
-              "image_link_top": "",
-              "menu_1": "",
-              "menu_1_link": "",
-              "menu_2": "",
-              "menu_2_link": "",
-              "menu_3": "",
-              "menu_3_link": "",
-              "menu_4": "",
-              "menu_4_link": "",
-              "image_caption_bottom": "",
-              "image_link_bottom": "",
-              "richtext_bottom": ""
-            }
           }
         },
         "block_order": [
-          "c885c7ee-9e7b-4135-b417-76316cdd7dad",
           "9c9b6135-be0a-4019-a52d-b273b37d4333",
           "19c77f33-dbcb-4e88-b872-3ac4c5d10492",
-          "6624135a-a3ae-458d-8675-b13b0d6fa01c",
-          "7aa4b7a4-3994-4377-8910-4003ca8acc7f"
+          "6624135a-a3ae-458d-8675-b13b0d6fa01c"
         ],
         "settings": {
           "parent": "About Us"
@@ -1303,25 +1223,6 @@
       "mega-menu-3": {
         "type": "mega-menu-3",
         "blocks": {
-          "aab23c57-f19b-4d01-b468-32be2b8a1684": {
-            "type": "column",
-            "settings": {
-              "richtext_top": "",
-              "image_caption_top": "",
-              "image_link_top": "",
-              "menu_1": "",
-              "menu_1_link": "",
-              "menu_2": "",
-              "menu_2_link": "",
-              "menu_3": "",
-              "menu_3_link": "",
-              "menu_4": "",
-              "menu_4_link": "",
-              "image_caption_bottom": "",
-              "image_link_bottom": "",
-              "richtext_bottom": ""
-            }
-          },
           "47d145a4-b12b-4e17-860c-625091745268": {
             "type": "column",
             "settings": {
@@ -1362,7 +1263,6 @@
           }
         },
         "block_order": [
-          "aab23c57-f19b-4d01-b468-32be2b8a1684",
           "47d145a4-b12b-4e17-860c-625091745268",
           "532c00fc-0a53-4c3b-9aeb-9e16deb238b8"
         ],
@@ -1439,25 +1339,6 @@
       "mega-menu-4": {
         "type": "mega-menu-4",
         "blocks": {
-          "51477d6a-b0a2-41b4-bc57-5411e6b7b4af": {
-            "type": "column",
-            "settings": {
-              "richtext_top": "",
-              "image_caption_top": "",
-              "image_link_top": "",
-              "menu_1": "",
-              "menu_1_link": "",
-              "menu_2": "",
-              "menu_2_link": "",
-              "menu_3": "",
-              "menu_3_link": "",
-              "menu_4": "",
-              "menu_4_link": "",
-              "image_caption_bottom": "",
-              "image_link_bottom": "",
-              "richtext_bottom": ""
-            }
-          },
           "f29a3256-abfc-41b8-8483-5567a70b7932": {
             "type": "column",
             "settings": {
@@ -1495,32 +1376,11 @@
               "image_link_bottom": "",
               "richtext_bottom": ""
             }
-          },
-          "8197ba8a-3d57-44be-9ba0-a173e3f7f18f": {
-            "type": "column",
-            "settings": {
-              "richtext_top": "",
-              "image_caption_top": "",
-              "image_link_top": "",
-              "menu_1": "",
-              "menu_1_link": "",
-              "menu_2": "",
-              "menu_2_link": "",
-              "menu_3": "",
-              "menu_3_link": "",
-              "menu_4": "",
-              "menu_4_link": "",
-              "image_caption_bottom": "",
-              "image_link_bottom": "",
-              "richtext_bottom": ""
-            }
           }
         },
         "block_order": [
-          "51477d6a-b0a2-41b4-bc57-5411e6b7b4af",
           "f29a3256-abfc-41b8-8483-5567a70b7932",
-          "mega-menu-4-0",
-          "8197ba8a-3d57-44be-9ba0-a173e3f7f18f"
+          "mega-menu-4-0"
         ],
         "settings": {
           "parent": "Jewelry"
@@ -1898,7 +1758,7 @@
           "rv_products_style": "grid",
           "rv_max_display": 3,
           "rv_per": 3,
-          "toggle": true,
+          "custom_ring_size_text": "If your ring size isn't shown above, <a href=\"mailto:hello@valeriemadison.com\">contact us<\/a> for a custom order",
           "enable_qty": false,
           "enable_ring_size": true,
           "include_quarter_sizes": true,
