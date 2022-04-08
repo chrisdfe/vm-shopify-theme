@@ -35,6 +35,10 @@
   }
 }
 
+.sidebar {
+  margin-top: get-vm-spacer(2);
+}
+
 .sidebar a,
 .sidebar a:visited {
   text-decoration: none;

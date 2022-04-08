@@ -2,18 +2,14 @@
 ================================================== */
 
 .page-heading {
-  margin: 5rem 0;
-
-  &.page-heading--padded {
-    margin: 5rem 0;
-
-    @include respond-to("medium-down") {
-      margin: 3rem 0;
-    }
-  }
+  margin: get-vm-spacer(5) 0;
 
   &.page-heading--with-breadcrumbs {
-    margin: 0 0 5rem;
+    margin: 0 0 get-vm-spacer(3);
+  }
+
+  &.page-heading--no-padding {
+    margin: 0;
   }
 
   &.page-heading--center {
@@ -21,10 +17,10 @@
   }
 
   @include respond-to("medium-down") {
-    margin: 3rem 0;
+    margin: get-vm-spacer(3);
 
     &.page-heading--with-breadcrumbs {
-      margin: 0 0 5rem;
+      margin: 0 0 get-vm-spacer(3);
     }
   }
 }

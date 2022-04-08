@@ -1,0 +1,30 @@
+/* Pages - Collection
+================================================== */
+
+.collection-banner {
+  // min-height: 400px;
+
+  // picture {
+    // display: flex;
+  // }
+
+  // img {
+  //   width: 100%;
+  //   // height: 100%;
+  //   object-fit: cover;
+  //   object-position: center;
+  // }
+}
+
+.collection-head {
+  margin: get-vm-spacer(3) 0;
+
+  .page-heading__title {
+    margin-bottom: get-vm-spacer(2);
+  }
+
+  .sort_by {
+    margin: 0;
+    color: $vm-color-sea-green;
+  }
+}

@@ -1,0 +1,68 @@
+<div class="breadcrumb-collection">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@id": "{{ shop.url }}",
+            "name": "{{ 'general.breadcrumbs.home' | t }}"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@id": "{{ routes.collections_url }}/{% if collection.handle != blank %}{{ collection.handle }}{% else %}all{% endif %}",
+            "name": "{{ collection.title }}"
+          }
+        }
+        {% if current_tags %}
+          {% for tag in current_tags %}
+            {% unless tag contains 'meta-' or tag contains 'store-' or tag contains 'final sale' or tag contains 'Ring Resizing' or tag contains 'days' or tag contains 'weeks' %}
+              ,
+              {
+                "@type": "ListItem",
+                "position": {{ forloop.index | plus: 2 }},
+                "item": {
+                  "@id": "{{ routes.collections_url }}/{% if collection.handle != blank %}{{ collection.handle }}{% else %}all{% endif %}/{{ tag | handleize }}",
+                  "name": "{{ tag }}"
+                }
+              }
+            {% endunless %}
+          {% endfor %}
+        {% endif %}
+      ]
+    }
+  </script>
+  
+  <div class="breadcrumb_text">
+    <a href="{{ shop.url }}" title="{{ shop.name | escape }}">
+      <span>{{ 'general.breadcrumbs.home' | t }}</span>
+    </a>
+  
+    <span class="breadcrumb-divider">/</span>
+  
+    <a href="{{ routes.collections_url }}/{% if collection.handle != blank %}{{ collection.handle }}{% else %}all{% endif %}" title="{{ collection.title | escape }}" class="breadcrumb_link">
+      <span>{{ collection.title }}</span>
+    </a>
+    {% if current_tags %}
+      {% for tag in current_tags %}
+        {% unless tag contains 'meta-' or tag contains 'store-' or tag contains 'final sale' or tag contains 'Ring Resizing' or tag contains 'weeks' or tag contains 'days' %}
+          <span class="breadcrumb-divider">/</span>
+          <a href="{{ routes.collections_url }}/{% if collection.handle != blank %}{{ collection.handle }}{% else %}all{% endif %}/{{ tag | handleize }}" title="{{ tag | escape }}">
+            <span>{{ tag }}</span>
+          </a>
+        {% endunless %}
+      {% endfor %}
+    {% endif %}
+  
+    {% if paginate.pages != 0 and settings.pagination_type != 'load_more' and settings.pagination_type != 'infinite_scroll' %}
+      <span class="breadcrumb-divider">/</span> {{ 'general.breadcrumbs.page' | t: current_page: paginate.current_page, pages: paginate.pages }}
+    {% endif %}
+  </div>
+  
+</div>
