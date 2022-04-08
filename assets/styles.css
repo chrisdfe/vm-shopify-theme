@@ -1276,10 +1276,10 @@ h3,
 h1,
 .heading-1 {
   font-family: orpheuspro, serif;
-  font-size: 55px;
+  font-size: 56px;
   letter-spacing: 0.02em;
   line-height: 1.2;
-  font-weight: 400;
+  font-weight: 700;
   font-style: normal;
   padding: 0;
   text-transform: none;
@@ -1300,10 +1300,10 @@ h1 sup,
 h2,
 .heading-2 {
   font-family: orpheuspro, serif;
-  font-size: 45px;
+  font-size: 41px;
   letter-spacing: 0.02em;
   line-height: 1.2;
-  font-weight: 400;
+  font-weight: 700;
   font-style: normal;
   padding: 0;
   text-transform: none;
@@ -1324,10 +1324,10 @@ h2 sup,
 h3,
 .heading-3 {
   font-family: orpheuspro, serif;
-  font-size: 32px;
+  font-size: 30px;
   letter-spacing: 0.02em;
   line-height: 1.2;
-  font-weight: 400;
+  font-weight: 700;
   font-style: normal;
   padding: 0;
   text-transform: none;
@@ -1358,7 +1358,7 @@ h4,
 .subheading-1 {
   font-family: poppins, sans-serif;
   font-size: 16px;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
   line-height: 1.4;
   text-transform: uppercase;
   font-weight: 600;
@@ -1375,7 +1375,7 @@ h5,
 .subheading-2 {
   font-family: poppins, sans-serif;
   font-size: 14px;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
   line-height: 1.4;
   text-transform: uppercase;
   font-weight: 600;
@@ -1392,7 +1392,7 @@ h6,
 .subheading-3 {
   font-family: poppins, sans-serif;
   font-size: 13px;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
   line-height: 1.4;
   text-transform: uppercase;
   font-weight: 600;
@@ -1438,7 +1438,7 @@ p,
 .paragraph-2,
 .paragraph-2 p {
   font-family: poppins, sans-serif;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 400;
   letter-spacing: 0.02em;
   line-height: 1.6;
@@ -1479,9 +1479,9 @@ p,
   bottom: -1rem;
   left: 0.25rem;
   display: block;
-  height: 1px;
-  width: 70px;
-  background-color: #1c4047;
+  height: 3px;
+  width: 30px;
+  background-color: #dec1a8;
 }
 .heading--with-accent.page-heading__title--no-accent:after {
   display: none;
@@ -1518,21 +1518,26 @@ p,
 .page-heading {
   margin: 5rem 0;
 }
-.page-heading.page-heading--with-breadcrumbs {
-  margin: 0 0 3rem;
+.page-heading.page-heading--padded {
+  margin: 5rem 0;
 }
-.page-heading.page-heading--no-padding {
-  margin: 0;
+@media only screen and (max-width: 800px) {
+  .page-heading.page-heading--padded {
+    margin: 3rem 0;
+  }
+}
+.page-heading.page-heading--with-breadcrumbs {
+  margin: 0 0 5rem;
 }
 .page-heading.page-heading--center {
   text-align: center;
 }
 @media only screen and (max-width: 800px) {
   .page-heading {
-    margin: 3rem;
+    margin: 3rem 0;
   }
   .page-heading.page-heading--with-breadcrumbs {
-    margin: 0 0 3rem;
+    margin: 0 0 5rem;
   }
 }
 
@@ -1546,7 +1551,7 @@ p,
 blockquote,
 blockquote p {
   font-family: poppins, sans-serif;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 400;
   letter-spacing: 0.02em;
   line-height: 1.6;
@@ -1694,14 +1699,14 @@ a.cta-link {
   border-bottom: 2px solid #714457;
   text-transform: uppercase;
   font-size: 14px;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
 }
 a.cta-link:hover {
   border-bottom-color: #dec1a8;
 }
 a.cta-link.cta-link-3 {
   font-size: 13px;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
 }
 a.cta-link.cta-link--inverted {
   color: #ffffff;
@@ -1985,7 +1990,7 @@ legend,
   margin-bottom: 8px;
   font-family: poppins, sans-serif;
   font-size: 13px;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
   line-height: 1.4;
   text-transform: uppercase;
   font-weight: 600;
@@ -2594,7 +2599,7 @@ span.icon-down-arrow {
 *[class^=klaviyo-form] button {
   font-family: poppins, sans-serif !important;
   font-size: 13px !important;
-  letter-spacing: 0.04em !important;
+  letter-spacing: 0.06em !important;
 }
 *[class^=klaviyo-form] input {
   border-radius: 0 !important;
@@ -7378,10 +7383,6 @@ body.menu-is-open {
   }
 }
 
-.sidebar {
-  margin-top: 2rem;
-}
-
 .sidebar a,
 .sidebar a:visited {
   text-decoration: none;
@@ -8058,7 +8059,7 @@ input.action_button[type=button] {
   font-weight: 600;
   text-transform: uppercase;
   text-decoration: none;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
   display: -moz-inline-flex;
   display: inline-flex;
   -moz-align-items: center;
@@ -8394,7 +8395,7 @@ button.shopify-payment-button__more-options:hover {
 .article-pagination {
   font-family: poppins, sans-serif;
   font-size: 13px;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
   line-height: 1.4;
   text-transform: uppercase;
   font-weight: 600;
@@ -8879,7 +8880,7 @@ ul.tabs {
   font-weight: 600;
   font-family: poppins, sans-serif;
   font-size: 13px;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
   line-height: 1.4;
   text-transform: uppercase;
   font-weight: 600;
@@ -9119,7 +9120,7 @@ input.action_button[type=button] {
   font-weight: 600;
   text-transform: uppercase;
   text-decoration: none;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
   display: -moz-inline-flex;
   display: inline-flex;
   -moz-align-items: center;
@@ -10812,7 +10813,7 @@ div.container.gallery-content {
   .content-section__heading__title-wrapper .content-section__heading__title-link {
     font-family: poppins, sans-serif;
     font-size: 13px;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.06em;
     line-height: 1.4;
     text-transform: uppercase;
     font-weight: 600;
@@ -13467,19 +13468,6 @@ p.checkout_button {
   /* Overwrite inline style */
 }
 
-/* Pages - Collection
-================================================== */
-.collection-head {
-  margin: 3rem 0;
-}
-.collection-head .page-heading__title {
-  margin-bottom: 2rem;
-}
-.collection-head .sort_by {
-  margin: 0;
-  color: #1c4047;
-}
-
 .product-list .one-third.column .product-details,
 .slider-gallery .one-third.column .product-details,
 .list-collections .one-third.column .product-details {
@@ -14718,10 +14706,10 @@ button.update {
 @media only screen and (max-width: 800px) {
   .vm-testimonial-slide .vm-testimonial-slide__title {
     font-family: orpheuspro, serif;
-    font-size: 45px;
+    font-size: 41px;
     letter-spacing: 0.02em;
     line-height: 1.2;
-    font-weight: 400;
+    font-weight: 700;
     font-style: normal;
     padding: 0;
     text-transform: none;
@@ -14902,7 +14890,7 @@ button.update {
   .search-page-result .search-page-result__title {
     font-family: poppins, sans-serif;
     font-size: 14px;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.06em;
     line-height: 1.4;
     text-transform: uppercase;
     font-weight: 600;

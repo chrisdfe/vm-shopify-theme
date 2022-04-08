@@ -614,7 +614,7 @@
             "type": "filter",
             "settings": {
               "filter_name": "Shop by Category",
-              "filter_tags": "Contour Bands, Straight Bands, Diamond Bands, Gold Bands, Textured Bands, Masculine, Unisex,  Zodiac, Studs, Hoops, Bridal Earrings",
+              "filter_tags": "Contour Bands, Straight Bands, Diamond Bands, Gold Bands, Textured Bands, Masculine, Unisex, Gemstone Essentials, Zodiac, Studs, Hoops, Bridal Earrings",
               "enable_filter_swatches": false
             }
           },
@@ -3111,7 +3111,7 @@
         "type": "our-story-visit-the-store",
         "settings": {
           "title": "Visit Our Store",
-          "content": "<p>Walk-ins welcome! We have a variety of everyday fine jewelry, wedding bands, engagement rings, and lovely gifts available in store available for you to browse!<br\/><\/p><p>We recommend booking an appointment if you are seeking an Engagement Ring or Wedding Band(s) so our team can be available to assist you - book one (or two) below! <\/p><p><\/p><p>*Per CDC guidelines, masks must be worn indoors. Our team is fully vaccinated for your safety.*<\/p>",
+          "content": "<p>Walk-ins welcome! We have a variety of everyday fine jewelry, wedding bands, engagement rings, and lovely gifts available in store available for you to browse!<br\/><\/p><p>We recommend booking an appointment if you are seeking an Engagement Ring or Wedding Band(s) so our team can be available to assist you - book one (or two) below! <\/p><p><\/p><p>*Masks are now optional for fully vaccinated guests. Our team is fully vaccinated for your safety.*<\/p>",
           "address": "<p>1411 34th Ave<br\/>Seattle, WA 98122<\/p>",
           "store_hours": "<p>Thursday-Friday <strong>12pm-6pm<\/strong><br\/>Saturday <strong>10am-4pm<\/strong><\/p>",
           "parking_directions": "<p>There is limited free street parking.<\/p>",
@@ -3223,7 +3223,7 @@
         "settings": {
           "banner_wrapper_background_color": "light-alt",
           "pretext": "New Season, New Rings",
-          "heading": "Springtime engagements",
+          "heading": "Springtime Engagements",
           "cta_link": "shopify:\/\/collections\/gemstone-bridal-1",
           "cta_text": "Shop Gemstone Bridal",
           "text_position": "left-block",
@@ -3775,20 +3775,6 @@
       "eternity-bracelets-upcoming-dates": {
         "type": "eternity-bracelets-upcoming-dates",
         "blocks": {
-          "4b8ee067-7a68-4ccb-8c3e-3b6d6ce0fe94": {
-            "type": "upcoming-date",
-            "settings": {
-              "date": "Friday, March 4th",
-              "time": "4:00-5:30pm"
-            }
-          },
-          "d36b3ef1-6903-4309-b66a-ca3c178dbf39": {
-            "type": "upcoming-date",
-            "settings": {
-              "date": "Thursday, March 24th",
-              "time": "4:00-5:30pm"
-            }
-          },
           "19a3b110-92bc-45ae-8013-b67373c7179b": {
             "type": "upcoming-date",
             "settings": {
@@ -3800,13 +3786,13 @@
             "type": "upcoming-date",
             "settings": {
               "date": "Thursday, April 21st",
-              "time": "4:00-5:30pm"
+              "time": "4:00-6:00pm"
             }
           },
           "da0d1ed9-b0ea-4f15-942a-5315ebdc1d68": {
             "type": "upcoming-date",
             "settings": {
-              "date": "Saturday, May 7",
+              "date": "Saturday, May 7th",
               "time": "10:00-2:00pm"
             }
           },
@@ -3814,20 +3800,18 @@
             "type": "upcoming-date",
             "settings": {
               "date": "Friday, June 17th",
-              "time": "4:00-5:30pm"
+              "time": "4:00-6:00pm"
             }
           },
           "69a248c7-2269-473f-a52f-45e48c117dee": {
             "type": "upcoming-date",
             "settings": {
               "date": "Friday, July 1",
-              "time": "4:00-5:30pm"
+              "time": "4:00-6:00pm"
             }
           }
         },
         "block_order": [
-          "4b8ee067-7a68-4ccb-8c3e-3b6d6ce0fe94",
-          "d36b3ef1-6903-4309-b66a-ca3c178dbf39",
           "19a3b110-92bc-45ae-8013-b67373c7179b",
           "0010c5f7-a4de-4b72-9ab0-c94c0ad2f9fc",
           "da0d1ed9-b0ea-4f15-942a-5315ebdc1d68",
