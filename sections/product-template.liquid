@@ -5,6 +5,12 @@
 
 <a name="pagecontent" id="pagecontent"></a>
 
+{% assign show_description_above_add_to_cart = false %}
+
+{% if product.tags contains 'Design Your Own Ring' or product.tags contains 'Services' %}
+  {% assign show_description_above_add_to_cart = true %}
+{% endif %}
+
 <div class="product product-name--{{ product.handle }}">
   {% include "product.breadcrumbs" %}
 
@@ -40,12 +46,14 @@
           
           {% include "product.price" %}
 
-          {% if product.tags contains 'Design Your Own Ring' and product.description != blank %}
-            <div class="product-info">
-              <div class="product-description">
-                {{ product.description | split: '<!-- split -->' | first }}
+          {% if show_description_above_add_to_cart %}
+            {% if product.description != blank %}
+              <div class="product-info">
+                <div class="product-description">
+                  {{ product.description | split: '<!-- split -->' | first }}
+                </div>
               </div>
-            </div>
+            {% endif %}
           {% endif %}
 
           {% unless collection_handles contains 'coming-soon' %}
@@ -55,7 +63,7 @@
 
           {% render 'storemods-shipping-estimate' %}
           
-          {% unless product.tags contains 'Design Your Own Ring' %}
+          {% unless show_description_above_add_to_cart %}
             {% if product.description != blank %}
               <div class="product-info">
                 <button class="vm-accordion-button" data-accordion-button-id="product-description">
