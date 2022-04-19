@@ -1,0 +1,73 @@
+{% assign count = 0 %}      
+{% for block in section.blocks %}
+  {% if product.handle == block.settings.product_details_id and count == 0 and block.settings.enable_details == true %}
+    {% assign count = count | plus: 1 %}
+
+      <section class="image-list details-section u-margin-bottom-5">
+        {% if block.settings.title != blank %}
+          <h2>{{ block.settings.title | escape }}</h2>
+        {% endif %}
+
+        {% if block.settings.subtext != blank %}
+          <span class="subheading">
+            {{ block.settings.subtext }}
+          </span>
+        {% endif %}
+
+        {% assign column_class = "sixteen" %}
+        {% if block.settings.column_details_left and block.settings.column_details_right %}
+          {% assign column_class = "eight" %}
+        {% endif %}
+
+        <div class="container">
+          <div class="row">
+            {% if block.settings.column_details_left %}
+              <div class="{{ column_class }} medium-down--one-whole columns">
+                <div class="photo_block">
+                  {% if block.settings.column_header_left %}
+                    <div class="icon_header">
+                      {% if block.settings.column_icon_left %}
+                        {{ block.settings.column_icon_left | img_url: '80x80' | img_tag:block.settings.column_header_left }}
+                      {% endif %}
+
+                      <h3>
+                        {{ block.settings.column_header_left | escape }}
+                      </h3>
+                    </div>
+                  {% endif %}
+
+                  <p>
+                    {{ block.settings.column_details_left }}
+                  </p>
+                </div>
+              </div>
+            {% endif %}
+              
+            {% if block.settings.column_details_right %}
+              <div class="{{ column_class }} medium-down--one-whole columns">
+                <div class="photo_block">
+                  {% if block.settings.column_header_right %}
+                    <div class="icon_header">
+                      {% if block.settings.column_icon_right %}
+                        {{ block.settings.column_icon_right | img_url: '80x80'  | img_tag:block.settings.column_header_right }}
+                      {% endif %}
+
+                      <h3>
+                        {{ block.settings.column_header_right | escape }}
+                      </h3>
+                    </div>
+                  {% endif %}
+
+                  <p>
+                    {{ block.settings.column_details_right }}
+                  </p>
+                </div>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+          
+      </div>
+    </section>
+  {% endif %}
+{% endfor %}

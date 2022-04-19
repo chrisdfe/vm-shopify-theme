@@ -310,7 +310,7 @@
       "header": {
         "type": "header",
         "settings": {
-          "promo_text": "<p>FREE SHIPPING ON ALL U.S. ORDERS<\/p>",
+          "promo_text": "<p>Purchase an engraved gift for Mom by 5\/3 for delivery in time for Mother's Day. <\/p>",
           "social_icons_header": true,
           "phone_number": "(206) 395-6359",
           "top_bar_menu": "",
@@ -614,7 +614,7 @@
             "type": "filter",
             "settings": {
               "filter_name": "Shop by Category",
-              "filter_tags": "Contour Bands, Straight Bands, Diamond Bands, Gold Bands, Textured Bands, Masculine, Unisex, Gemstone Essentials, Zodiac, Studs, Hoops, Bridal Earrings",
+              "filter_tags": "Contour Bands, Straight Bands, Diamond Bands, Gold Bands, Textured Bands, Masculine, Unisex, Gemstone Essentials, Zodiac, Studs, Hoops, Engravable, Bridal Earrings",
               "enable_filter_swatches": false
             }
           },
@@ -1223,6 +1223,25 @@
       "mega-menu-3": {
         "type": "mega-menu-3",
         "blocks": {
+          "4e4cc41e-dbc0-44c8-b5a7-d0d1a89038eb": {
+            "type": "column",
+            "settings": {
+              "richtext_top": "",
+              "image_caption_top": "",
+              "image_link_top": "",
+              "menu_1": "",
+              "menu_1_link": "",
+              "menu_2": "",
+              "menu_2_link": "",
+              "menu_3": "",
+              "menu_3_link": "",
+              "menu_4": "",
+              "menu_4_link": "",
+              "image_caption_bottom": "",
+              "image_link_bottom": "",
+              "richtext_bottom": ""
+            }
+          },
           "47d145a4-b12b-4e17-860c-625091745268": {
             "type": "column",
             "settings": {
@@ -1263,6 +1282,7 @@
           }
         },
         "block_order": [
+          "4e4cc41e-dbc0-44c8-b5a7-d0d1a89038eb",
           "47d145a4-b12b-4e17-860c-625091745268",
           "532c00fc-0a53-4c3b-9aeb-9e16deb238b8"
         ],
@@ -1339,6 +1359,25 @@
       "mega-menu-4": {
         "type": "mega-menu-4",
         "blocks": {
+          "f7ec1e14-4340-4109-9331-8968de2dff61": {
+            "type": "column",
+            "settings": {
+              "richtext_top": "",
+              "image_caption_top": "",
+              "image_link_top": "",
+              "menu_1": "",
+              "menu_1_link": "",
+              "menu_2": "",
+              "menu_2_link": "",
+              "menu_3": "",
+              "menu_3_link": "",
+              "menu_4": "",
+              "menu_4_link": "",
+              "image_caption_bottom": "",
+              "image_link_bottom": "",
+              "richtext_bottom": ""
+            }
+          },
           "f29a3256-abfc-41b8-8483-5567a70b7932": {
             "type": "column",
             "settings": {
@@ -1379,6 +1418,7 @@
           }
         },
         "block_order": [
+          "f7ec1e14-4340-4109-9331-8968de2dff61",
           "f29a3256-abfc-41b8-8483-5567a70b7932",
           "mega-menu-4-0"
         ],
@@ -1696,7 +1736,7 @@
               "color_subheader": "#0a212d",
               "color_columnheader": "#0a212d",
               "column_header_left": "How to Find your ring size",
-              "column_details_left": "<p>1. Only you can determine what fits you absolutely best. A ring should slide on fairly easily and have some resistance when taking it off over the knuckle. <\/p><p><br\/>2. Your finger should feel no tightness while wearing a ring. No one else should be able to pull your ring off easily but it shouldn't be difficult for you personally to remove.<\/p><p><br\/>3. Wide rings fit more snugly than narrower rings. We recommend using the appropriate ring sizer width to find your size or try adding ¼-½ size to measurements taken with a narrow ring sizer. When in doubt, give us a call and we can help make a recommendation. <\/p><p><br\/>4. It’s not unusual for rings to fit differently through the day or in different seasons, depending on where you live. Your ring may fit snuggly in the heat and it may spin loosely in the colder winter months.<\/p>",
+              "column_details_left": "<p>1. Only you can determine what fits you absolutely best. A ring should slide on fairly easily and have some resistance when taking it off over the knuckle.<\/p><p><br\/>2. Your finger should feel no tightness while wearing a ring. No one else should be able to pull your ring off easily but it shouldn't be difficult for you personally to remove.<\/p><p><br\/>3. Wide rings fit more snugly than narrower rings. We recommend using the appropriate ring sizer width to find your size or try adding ¼-½ size to measurements taken with a narrow ring sizer. When in doubt, give us a call and we can help make a recommendation. <\/p><p><br\/>4. It’s not unusual for rings to fit differently through the day or in different seasons, depending on where you live. Your ring may fit snuggly in the heat and it may spin loosely in the colder winter months.<\/p>",
               "column_header_right": "Factors that affect ring size",
               "column_details_right": "<p><span style=\"text-decoration:underline\">Temperature<\/span><br\/>Body temperatures affect blood circulation, so your finger size may be larger when you are warmer and smaller when you are cooler. <\/p><p><span style=\"text-decoration:underline\">Season<\/span><br\/>If you live in an area with strong differences between seasonal temperatures, you may find that your fingers are skinnier in the winter time and more full in the summer time. It's not uncommon for finger sizes to change 1\/4-1\/2 ring size so opt for your largest finger size to accommodate the warmest times of year and just be conscious that there just may be some times of year where your ring fits more perfectly than others. <\/p><p><span style=\"text-decoration:underline\">Diet and time of day<\/span><br\/>It's not uncommon to wake up with fingers feeling swollen, especially if you had a salty meal for dinner the night before. The best time to have your fingers sized is late afternoon when you may be more hydrated and body changes are more likely to be stable. <\/p><p><\/p><p><span style=\"text-decoration:underline\">Activity level<br\/><\/span>Ever notice your fingers swelling after a long walk or workout? That's your circulatory system properly working and pushing blood into your extremities and fingertips. We don't recommend wearing jewelry during exercise but we understand that it happens sometimes and you want to be sized in a way that will allow for these changes.<\/p>"
             }
@@ -2823,6 +2863,7 @@
       },
       "1619300542332dabf8": {
         "type": "featured-collection",
+        "disabled": true,
         "settings": {
           "title": "What's New",
           "title_cta_text": "Shop Now",
@@ -3205,14 +3246,15 @@
           "398fe46e-43dd-41e3-8d73-51f91275cd68": {
             "type": "background_block",
             "settings": {
-              "background_color": "light"
+              "background_color": "light",
+              "banner_image_desktop": "shopify:\/\/shop_images\/Gemstone-Stacking-Rings-1x1.jpg"
             }
           },
           "95beecd3-2bab-4b22-b737-ed9a5c1dbf17": {
             "type": "background_block",
             "settings": {
               "background_color": "light-alt",
-              "banner_image_desktop": "shopify:\/\/shop_images\/Primavera-Collection-Shadows.jpg"
+              "banner_image_desktop": "shopify:\/\/shop_images\/Rainbow-Gemstone-Pendants-Square.jpg"
             }
           }
         },
@@ -3222,13 +3264,13 @@
         ],
         "settings": {
           "banner_wrapper_background_color": "light-alt",
-          "pretext": "New Season, New Rings",
-          "heading": "Springtime Engagements",
-          "cta_link": "shopify:\/\/collections\/gemstone-bridal-1",
-          "cta_text": "Shop Gemstone Bridal",
-          "text_position": "left-block",
+          "pretext": "Fresh off the bench",
+          "heading": "New Gemstone Styles",
+          "cta_link": "shopify:\/\/collections\/new-arrivals",
+          "cta_text": "See what's new",
+          "text_position": "center",
           "text_color": "dark-alt",
-          "banner_image_mobile": "shopify:\/\/shop_images\/Primavera-Collection-Shadows.jpg",
+          "banner_image_mobile": "shopify:\/\/shop_images\/Gemstone-Stacking-Rings-1x1.jpg",
           "text_color_mobile": "dark-alt",
           "content_background_color_mobile": "light-alt"
         }
@@ -3775,13 +3817,6 @@
       "eternity-bracelets-upcoming-dates": {
         "type": "eternity-bracelets-upcoming-dates",
         "blocks": {
-          "19a3b110-92bc-45ae-8013-b67373c7179b": {
-            "type": "upcoming-date",
-            "settings": {
-              "date": "Friday, April 8th",
-              "time": "4:00-5:30pm"
-            }
-          },
           "0010c5f7-a4de-4b72-9ab0-c94c0ad2f9fc": {
             "type": "upcoming-date",
             "settings": {
@@ -3812,7 +3847,6 @@
           }
         },
         "block_order": [
-          "19a3b110-92bc-45ae-8013-b67373c7179b",
           "0010c5f7-a4de-4b72-9ab0-c94c0ad2f9fc",
           "da0d1ed9-b0ea-4f15-942a-5315ebdc1d68",
           "bedf200f-6f49-408b-a592-54058d9e6802",
@@ -3884,9 +3918,9 @@
       "1638989716bc82a38f": {
         "type": "featured-collection",
         "settings": {
-          "title": "Recently Engaged?",
-          "title_cta_text": "shop wedding bands",
-          "collection": "womens-wedding-bands",
+          "title": "Gift ideas for the Mom(s) in your life",
+          "title_cta_text": "shop our picks",
+          "collection": "for-mom",
           "products_per": 3,
           "products_limit": 9
         }
