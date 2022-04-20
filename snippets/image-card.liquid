@@ -1,5 +1,4 @@
 {% assign extra_class_list = extra_classes | split: ", " %}
-{% assign modifier_class_list = modifier_classes | split: ", " %}
 
 {% capture link_content %}
   {% render "image-card.image" with { 
@@ -15,10 +14,7 @@
 {% endcapture %}
 
 
-<div class="image-card
-  {% for modifier_class in modifier_class_list %}image-card--{{ modifier_class }}{% endfor %}
-  {% for extra_class in extra_class_list %}{{ extra_class }}{% endfor %}
-  ">
+<div class="image-card {% for extra_class in extra_class_list %}{{ extra_class }}{% endfor %}">
   {% if url != blank %}
     <a class="image-card__link" href="{{ url }}">
       {{ link_content }}

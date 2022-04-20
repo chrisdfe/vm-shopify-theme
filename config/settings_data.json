@@ -310,7 +310,7 @@
       "header": {
         "type": "header",
         "settings": {
-          "promo_text": "<p>Purchase an engraved gift for Mom by 5\/3 for delivery in time for Mother's Day. <\/p>",
+          "promo_text": "<p>Don't forget about Mom! Purchase before 5\/3 to get your order delivered in time. Shop our gift guide <a href=\"https:\/\/www.valeriemadison.com\/collections\/for-mom\" title=\"https:\/\/www.valeriemadison.com\/collections\/for-mom\">HERE<\/a>.<\/p>",
           "social_icons_header": true,
           "phone_number": "(206) 395-6359",
           "top_bar_menu": "",
@@ -394,9 +394,9 @@
           "a0f89095-f4be-46a5-ad9a-2295375cfc1f"
         ],
         "settings": {
-          "wide_display": true,
-          "testimonial_text_animation": "fadeInDown",
-          "testimonial_speed": 6
+          "color_region": "dark",
+          "padding_top": "default",
+          "padding_bottom": "default"
         }
       },
       "blog-template": {
@@ -469,6 +469,25 @@
       "mega-menu-1": {
         "type": "mega-menu-1",
         "blocks": {
+          "19251629-9dd4-4100-a316-877b5086b6a5": {
+            "type": "column",
+            "settings": {
+              "richtext_top": "",
+              "image_caption_top": "",
+              "image_link_top": "",
+              "menu_1": "",
+              "menu_1_link": "",
+              "menu_2": "",
+              "menu_2_link": "",
+              "menu_3": "",
+              "menu_3_link": "",
+              "menu_4": "",
+              "menu_4_link": "",
+              "image_caption_bottom": "",
+              "image_link_bottom": "",
+              "richtext_bottom": ""
+            }
+          },
           "89c82cf2-e452-4010-a7a2-fc3c9e3d7dd9": {
             "type": "column",
             "settings": {
@@ -528,6 +547,7 @@
           }
         },
         "block_order": [
+          "19251629-9dd4-4100-a316-877b5086b6a5",
           "89c82cf2-e452-4010-a7a2-fc3c9e3d7dd9",
           "396cb187-a7c8-431f-9b50-7c86a37d239b",
           "8908700f-c81c-47a6-809d-d7c5cf21c961"
@@ -539,6 +559,25 @@
       "mega-menu-2": {
         "type": "mega-menu-2",
         "blocks": {
+          "6a2f7e41-e6d5-4ab3-995f-2cdccae0ee0d": {
+            "type": "column",
+            "settings": {
+              "richtext_top": "",
+              "image_caption_top": "",
+              "image_link_top": "",
+              "menu_1": "",
+              "menu_1_link": "",
+              "menu_2": "",
+              "menu_2_link": "",
+              "menu_3": "",
+              "menu_3_link": "",
+              "menu_4": "",
+              "menu_4_link": "",
+              "image_caption_bottom": "",
+              "image_link_bottom": "",
+              "richtext_bottom": ""
+            }
+          },
           "9c9b6135-be0a-4019-a52d-b273b37d4333": {
             "type": "column",
             "settings": {
@@ -599,6 +638,7 @@
           }
         },
         "block_order": [
+          "6a2f7e41-e6d5-4ab3-995f-2cdccae0ee0d",
           "9c9b6135-be0a-4019-a52d-b273b37d4333",
           "19c77f33-dbcb-4e88-b872-3ac4c5d10492",
           "6624135a-a3ae-458d-8675-b13b0d6fa01c"
@@ -702,7 +742,10 @@
           "read_time": false,
           "blog_date": true,
           "blog_comment_count": false,
-          "read_more_link": true
+          "read_more_link": true,
+          "color_region": "light-alt",
+          "padding_top": "default",
+          "padding_bottom": "3"
         }
       },
       "page-gallery-template": {
@@ -1223,7 +1266,7 @@
       "mega-menu-3": {
         "type": "mega-menu-3",
         "blocks": {
-          "4e4cc41e-dbc0-44c8-b5a7-d0d1a89038eb": {
+          "a50c6125-6f65-4d99-914a-685ff55c5ec0": {
             "type": "column",
             "settings": {
               "richtext_top": "",
@@ -1282,7 +1325,7 @@
           }
         },
         "block_order": [
-          "4e4cc41e-dbc0-44c8-b5a7-d0d1a89038eb",
+          "a50c6125-6f65-4d99-914a-685ff55c5ec0",
           "47d145a4-b12b-4e17-860c-625091745268",
           "532c00fc-0a53-4c3b-9aeb-9e16deb238b8"
         ],
@@ -1359,7 +1402,7 @@
       "mega-menu-4": {
         "type": "mega-menu-4",
         "blocks": {
-          "f7ec1e14-4340-4109-9331-8968de2dff61": {
+          "df8f2b20-2ab9-44d3-a4bc-a02fabadc497": {
             "type": "column",
             "settings": {
               "richtext_top": "",
@@ -1418,7 +1461,7 @@
           }
         },
         "block_order": [
-          "f7ec1e14-4340-4109-9331-8968de2dff61",
+          "df8f2b20-2ab9-44d3-a4bc-a02fabadc497",
           "f29a3256-abfc-41b8-8483-5567a70b7932",
           "mega-menu-4-0"
         ],
@@ -1519,10 +1562,11 @@
         "settings": {
           "title": "Shop Fine Jewelry",
           "featured_promos_grid": false,
-          "promo_text_on_image_enabled": true,
           "featured_promos_per_row": 3,
           "featured_links_animation": "fadeInDown",
-          "feature_style": "square"
+          "color_region": "light-alt",
+          "padding_top": "default",
+          "padding_bottom": "3"
         }
       },
       "1584247981998": {
@@ -1564,14 +1608,7 @@
         "settings": {
           "hide_section_list": false,
           "title": "What makes Valerie Madison Jewelry different?",
-          "grid_size": 3,
-          "grid_size_mobile": 1,
-          "image_size": 35,
-          "image_opacity": 100,
-          "color_background": "#f9fafb",
-          "color_header": "#5a6067",
-          "color_subheader": "#0a212d",
-          "color_label": "#5b5b5b"
+          "color_region": "light-alt"
         }
       },
       "image-list": {
@@ -1612,15 +1649,7 @@
         ],
         "settings": {
           "hide_section_list": false,
-          "title": "What makes Valerie Madison Jewelry different?",
-          "grid_size": 3,
-          "grid_size_mobile": 1,
-          "image_size": 90,
-          "image_opacity": 100,
-          "color_background": "#f9fafb",
-          "color_header": "#5a6067",
-          "color_subheader": "#0a212d",
-          "color_label": "#000000"
+          "title": "What makes Valerie Madison Jewelry different?"
         }
       },
       "product-recommendations": {
@@ -1872,7 +1901,10 @@
           "c7baa2c9-f1b7-4302-89b6-1f5535ec9558"
         ],
         "settings": {
-          "title": "As Featured In"
+          "title": "As Featured In",
+          "color_region": "light",
+          "padding_top": "3",
+          "padding_bottom": "3"
         }
       },
       "404-template": {
@@ -2869,7 +2901,10 @@
           "title_cta_text": "Shop Now",
           "collection": "new-arrivals",
           "products_per": 3,
-          "products_limit": 9
+          "products_limit": 9,
+          "color_region": "light",
+          "padding_top": "default",
+          "padding_bottom": "default"
         }
       },
       "our-story-intro": {
@@ -3247,7 +3282,7 @@
             "type": "background_block",
             "settings": {
               "background_color": "light",
-              "banner_image_desktop": "shopify:\/\/shop_images\/Gemstone-Stacking-Rings-1x1.jpg"
+              "banner_image_desktop": "shopify:\/\/shop_images\/Mothers-Day-1x1.jpg"
             }
           },
           "95beecd3-2bab-4b22-b737-ed9a5c1dbf17": {
@@ -3264,13 +3299,13 @@
         ],
         "settings": {
           "banner_wrapper_background_color": "light-alt",
-          "pretext": "Fresh off the bench",
-          "heading": "New Gemstone Styles",
-          "cta_link": "shopify:\/\/collections\/new-arrivals",
-          "cta_text": "See what's new",
-          "text_position": "center",
+          "pretext": "Jewelry for",
+          "heading": "Mom",
+          "cta_link": "shopify:\/\/collections\/for-mom",
+          "cta_text": "Shop now",
+          "text_position": "right-block",
           "text_color": "dark-alt",
-          "banner_image_mobile": "shopify:\/\/shop_images\/Gemstone-Stacking-Rings-1x1.jpg",
+          "banner_image_mobile": "shopify:\/\/shop_images\/Mothers-Day-1x1.jpg",
           "text_color_mobile": "dark-alt",
           "content_background_color_mobile": "light-alt"
         }
@@ -3283,7 +3318,11 @@
           "text": "<p>Our approach to making jewelry includes using recycled precious metals, conflict-free diamonds, and ethically-sourced gemstones to create elegant, sophisticated, and vibrant heirloom-quality pieces.<br\/><\/p><p>We are a women-operated company founded by a Black Latina and we are based in Seattle, WA where you can also shop from our retail store in person.<br\/><br\/>We're looking forward to helping you discover our unique engagement rings, wedding bands, and fine jewelry to celebrate special milestones or treat yourself.<\/p>",
           "cta_text": "Read more",
           "cta_link": "shopify:\/\/pages\/our-story",
-          "color_region": "light"
+          "image_position": "right",
+          "is_full_width": false,
+          "color_region": "light",
+          "padding_top": "default",
+          "padding_bottom": "default"
         }
       },
       "heirloom-reworks-banner": {
@@ -3912,7 +3951,11 @@
           "text": "<p>Get a solid 14K gold chain permanently welded onto your wrist. These claspless bracelets are so chic and minimalist. Treat yourself or bring someone special to enjoy this experience together in our Seattle store. Prices start at $95.<\/p>",
           "cta_text": "See the upcoming dates",
           "cta_link": "https:\/\/www.valeriemadison.com\/pages\/eternity-bracelets",
-          "color_region": "light"
+          "image_position": "left",
+          "is_full_width": false,
+          "color_region": "light",
+          "padding_top": "default",
+          "padding_bottom": "default"
         }
       },
       "1638989716bc82a38f": {
@@ -3922,7 +3965,10 @@
           "title_cta_text": "shop our picks",
           "collection": "for-mom",
           "products_per": 3,
-          "products_limit": 9
+          "products_limit": 9,
+          "color_region": "light-alt",
+          "padding_top": "2",
+          "padding_bottom": "2"
         }
       },
       "164274212639d1a2f5": {
@@ -3933,7 +3979,11 @@
           "text": "<p>Meet the kind hearts behind every piece of jewelry and come visit the showroom to see where our pieces are made. <\/p>",
           "cta_text": "Meet Us",
           "cta_link": "https:\/\/www.valeriemadison.com\/pages\/our-story#our-team",
-          "color_region": "light"
+          "image_position": "left",
+          "is_full_width": false,
+          "color_region": "light",
+          "padding_top": "default",
+          "padding_bottom": "default"
         }
       }
     },
@@ -3946,8 +3996,8 @@
       "1630687320cad1aa82",
       "1489285524898",
       "1553466079804",
-      "1584247981998",
       "164274212639d1a2f5",
+      "1584247981998",
       "1591661011742"
     ]
   }
