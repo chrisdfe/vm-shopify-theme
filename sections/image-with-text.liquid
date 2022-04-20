@@ -16,7 +16,11 @@
   with_accent: true,
   text_content: text_content,
   image: section.settings.image,
-  color_region: "light",
+  image_position: section.settings.image_position,
+  color_region: section.settings.color_region,
+  padding_top: section.settings.padding_top,
+  padding_bottom: section.settings.padding_bottom,
+  is_full_width: section.settings.is_full_width
 } %}
 
 {% schema %}
@@ -54,6 +58,30 @@
     },
     {
       "type": "select",
+      "id": "image_position",
+      "label": "Image Position (Desktop)",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left (default)"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "is_full_width",
+      "label": "Full Width"
+    },
+    {
+      "type": "header",
+      "content": "Content Section Settings"
+    },
+    {
+      "type": "select",
       "id": "color_region",
       "label": "Color Region",
       "options": [
@@ -62,7 +90,7 @@
           "label": "Light"
         },
         {
-          "value": "light_alt",
+          "value": "light-alt",
           "label": "Light - alternative"
         },
         {
@@ -70,16 +98,72 @@
           "label": "Dark"
         },
         {
-          "value": "dark_alt",
+          "value": "dark-alt",
           "label": "Dark - alternative"
         }
       ]
-    }
-  ],
-  "presets": [
+    },
     {
-      "name": "Image with Text",
-      "category": "Text"
+      "type": "select",
+      "id": "padding_top",
+      "label": "Top Padding (in spacing units)",
+      "options": [
+        {
+          "value": "default",
+          "label": "Default (5)"
+        },
+        {
+          "value": "0",
+          "label": "0"
+        },
+        {
+          "value": "2",
+          "label": "2"
+        },
+        {
+          "value": "3",
+          "label": "3"
+        },
+        {
+          "value": "8",
+          "label": "8"
+        },
+        {
+          "value": "10",
+          "label": "10"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "padding_bottom",
+      "label": "Bottom Padding (in spacing units)",
+      "options": [
+        {
+          "value": "default",
+          "label": "Default (5)"
+        },
+        {
+          "value": "0",
+          "label": "0"
+        },
+        {
+          "value": "2",
+          "label": "2"
+        },
+        {
+          "value": "3",
+          "label": "3"
+        },
+        {
+          "value": "8",
+          "label": "8"
+        },
+        {
+          "value": "10",
+          "label": "10"
+        }
+      ]
     }
   ]
 }

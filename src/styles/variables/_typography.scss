@@ -10,8 +10,8 @@ $vm-heading-font: $vm-font-orpheus;
 $vm-subheading-font: $vm-font-poppins;
 $vm-paragraph-font: $vm-font-poppins;
 
-// $vm-heading-accent-color: $vm-color-sand;
-$vm-heading-accent-color: $vm-color-sea-green;
+$vm-heading-accent-color: $vm-color-sand;
+// $vm-heading-accent-color: $vm-color-sea-green;
 
 // $vm-link-color: rgba($vm-color-plum, 0.7);
 // $vm-link-color: mix($vm-color-plum, $vm-color-sand, 70%);
@@ -19,20 +19,21 @@ $vm-link-color: $vm-color-plum;
 $vm-link-hover-color: $vm-color-sand;
 $vm-link-transition-speed: 0.1s;
 
-$vm-heading-1-font-size: 55px;
+$vm-heading-1-font-size: 56px;
 $vm-heading-1-letter-spacing: 0.02em;
 $vm-heading-1-line-height: 1.2;
 
 $vm-heading-1-mobile-font-size: 40px;
 
-// $vm-heading-2-font-size: 36px;
-$vm-heading-2-font-size: 45px;
+$vm-heading-2-font-size: 36px;
+// $vm-heading-2-font-size: 45px;
 $vm-heading-2-letter-spacing: 0.02em;
 $vm-heading-2-line-height: 1.2;
 
 $vm-heading-2-mobile-font-size: 30px;
 
-$vm-heading-3-font-size: 32px;
+$vm-heading-3-font-size: 30px;
+// $vm-heading-3-font-size: 32px;
 $vm-heading-3-letter-spacing: 0.02em;
 $vm-heading-3-line-height: 1.2;
 
@@ -66,8 +67,8 @@ $vm-paragraph-1-line-height: 1.6;
 
 $vm-paragraph-1-mobile-font-size: 16px;
 
-// $vm-paragraph-2-font-size: 16px;
-$vm-paragraph-2-font-size: 15px;
+$vm-paragraph-2-font-size: 16px;
+// $vm-paragraph-2-font-size: 15px;
 $vm-paragraph-2-letter-spacing: 0.02em;
 $vm-paragraph-2-line-height: 1.6;
 

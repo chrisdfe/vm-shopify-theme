@@ -80,3 +80,13 @@
     transform: rotate(180deg);
   }
 }
+
+.color-region--dark,
+.color-region--dark-alt {
+  .vm-testimonial__slide-button {
+
+    svg {
+      fill: #fff;
+    }
+  }
+}

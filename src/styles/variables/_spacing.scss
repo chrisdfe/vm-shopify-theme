@@ -7,5 +7,5 @@ $vm-spacer: 1rem;
   @return $vm-spacer * $amount;
 }
 
-$vm-content-section-padding: get-vm-spacer(6);
+$vm-content-section-padding: get-vm-spacer(5);
 $vm-content-section-mobile-padding: get-vm-spacer(3);

@@ -10,6 +10,16 @@
     top: -$vm-content-section-padding;
   }
 
+
+  @include respond-to('large-up') {
+    &.content-section--is-full-width {
+      .container {
+        max-width: none !important;
+        padding: 0;
+      }
+    }
+  }
+
   @include respond-to('medium-down') {
     padding: $vm-content-section-mobile-padding 0;
 

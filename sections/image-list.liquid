@@ -1,5 +1,3 @@
-{% unless template.name != "index" and section.settings.hide_section_list == true %}
-
 {% assign column_count = section.blocks | size %}
 
 {% if column_count == 1 %}
@@ -12,57 +10,57 @@
   {% assign column_class = "four" %}
 {% endif %}
 
+{% capture content %}
 <section class="image-list">
-  <div class="content-section">
-
-    {% if section.settings.title != blank %}
-      <div class="container">
-        <div class="row">
-          <div class="sixteen columns">
-            {% include "content-section.title" with {
-              title: section.settings.title,
-            } %}
-          </div>
-        </div>
-      </div>
-    {% endif %}
-
+  
+  {% if section.settings.title != blank %}
     <div class="container">
       <div class="row">
-
-        {% for block in section.blocks %} 
-          {% if block.type == 'content-image' and block.settings.show_section %}
-            <div class="{{ column_class }} columns medium-down--one-whole">
-              <div class="image-card image-list__item">
-
-                <!--
-                {% if block.settings.image_option != blank %}
-                  {{ block.settings.image_option | img_url: 'x150' | img_tag }}
-                {% else %}
-                  {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
-                {% endif %}
-                -->
-
-                
-                <div class="image-list__content">
-                  <h5 class="image-list__title">
-                    {{ block.settings.title }}
-                  </h5>
-                  
-                  <p class="paragraph-2">
-                    {{ block.settings.icon_subtext | strip_html }}
-                  </p>
-                </div>
-              </div>
-            </div>
-          {% endif %}
-        {% endfor %}
-
+        <div class="sixteen columns">
+          {% include "content-section.title" with {
+            title: section.settings.title,
+          } %}
+        </div>
       </div>
     </div>
+  {% endif %}
 
+  <div class="container">
+    <div class="row">
+
+      {% for block in section.blocks %} 
+        {% if block.type == 'content-image' and block.settings.show_section %}
+          <div class="{{ column_class }} columns medium-down--one-whole">
+            <div class="image-card image-list__item">
+
+              <div class="image-list__content">
+                <h5 class="image-list__title">
+                  {{ block.settings.title }}
+                </h5>
+                
+                <p class="paragraph-2">
+                  {{ block.settings.icon_subtext | strip_html }}
+                </p>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+
+    </div>
   </div>
+
 </section>
+{% endcapture %}
+
+{% unless template.name != "index" and section.settings.hide_section_list == true %}
+  {% include "content-section" with {
+    title: section.settings.title,
+    with_accent: true,
+    content: content,
+    image: section.settings.image,
+    color_region: section.settings.color_region,
+  } %}
 {% endunless %}
 
 {% schema %}
@@ -83,79 +81,31 @@
       },
       {
         "type": "header",
-        "content": "Grid Settings"
-      },
-      {
-      "type":      "range",
-      "id":        "grid_size",
-      "min":       1,
-      "max":       6,
-      "step":      1,
-      "label":     "Grid Size (Desktop)",
-      "default":   3
-      },
-      {
-      "type":      "range",
-      "id":        "grid_size_mobile",
-      "min":       1,
-      "max":       3,
-      "step":      1,
-      "label":     "Grid Size (Mobile)",
-      "default":   1
-      },
-      {
-        "type": "header",
-        "content": "Image Settings"
-      },
-      {
-      "type":      "range",
-      "id":        "image_size",
-      "min":       0,
-      "max":       100,
-      "step":      5,
-      "label":     "Image Width",
-      "default":   90,
-      "unit":      "%"
-      },
-      {
-      "type":      "range",
-      "id":        "image_opacity",
-      "min":       0,
-      "max":       100,
-      "step":      5,
-      "label":     "Image Opacity",
-      "default":   100,
-      "unit":      "%"
-      },
-      {
-        "type": "header",
         "content": "Color Settings"
       },
       {
-      "type": "color",
-      "id": "color_background",
-      "label": "Section Background",
-	  "default": "#f9fafb"
-      },
-      {
-      "type": "color",
-      "id": "color_header",
-      "label": "Header Color",
-	  "default": "#5a6067"
-      },
-      {
-      "type": "color",
-      "id": "color_subheader",
-      "label": "Sub Heading Color",
-	  "default": "#0A212D"
-      },
-      {
-      "type": "color",
-      "id": "color_label",
-      "label": "Image Label",
-	  "default": "#EBCB5C"
+        "type": "select",
+        "id": "color_region",
+        "label": "Color Region",
+        "options": [
+          {
+            "value": "light",
+            "label": "Light"
+          },
+          {
+            "value": "light-alt",
+            "label": "Light - alternative"
+          },
+          {
+            "value": "dark",
+            "label": "Dark"
+          },
+          {
+            "value": "dark-alt",
+            "label": "Dark - alternative"
+          }
+        ]
       }
-
     ],
 
   "blocks": [

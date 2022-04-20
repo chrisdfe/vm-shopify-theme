@@ -22,15 +22,16 @@
   {% assign products = collections[settingCollection].products %}
 
   {% render 'product-loop',
-      limit: section.settings.products_limit,
-      products: products,
-      products_per_row: section.settings.products_per
+    limit: section.settings.products_limit,
+    products: products,
+    products_per_row: section.settings.products_per
   %}
 {% endcapture %}
 
 {% include "content-section" with {
   title: section.settings.title,
   content: content,
-  color_region: "light-alt",
-  extra_classes: "u-padding-bottom-0"
+  color_region: section.settings.color_region,
+  padding_top: section.settings.padding_top,
+  padding_bottom: section.settings.padding_bottom
 } %}

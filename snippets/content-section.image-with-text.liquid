@@ -4,7 +4,7 @@
 
     <div class="eight columns medium-down--one-whole">
       <div class="content-section--image-text-columns__image-wrapper">
-        {{ image | img_url: 'x500' | img_tag }}
+        {{ image | img_url: 'x1800' | img_tag }}
       </div>
     </div>
 
@@ -33,5 +33,9 @@
   id_classes: "image-with-text"
   modifiers: modifiers,
   content: content,
-  extra_classes: extra_classes
+  extra_classes: extra_classes,
+  color_region: color_region,
+  padding_top: padding_top,
+  padding_bottom: padding_bottom,
+  is_full_width: is_full_width
 } %}

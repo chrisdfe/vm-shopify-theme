@@ -32,8 +32,46 @@
 
 .content-section--image-text-columns__text-wrapper {
   flex-direction: column;
+  padding: get-vm-spacer(1);
 
   @include respond-to('medium-down') {
     padding: 0;
+  }
+}
+
+.content-section.content-section--is-full-width {
+
+  @include respond-to('large-up') {
+    padding: 0;
+  }
+
+  .content-section--image-text-columns__image-wrapper {
+    padding: 0;
+    max-height: 80vh;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @include respond-to('medium-down') {
+      padding-bottom: get-vm-spacer(3);
+    }
+  }
+
+  .content-section--image-text-columns__text-wrapper {
+    padding: get-vm-spacer(3);
+
+    @include respond-to('widescreen-up') {
+      p {
+        max-width: 75%;
+      }
+    }
+
+    @include respond-to('medium-down') {
+      padding: 0;
+    }
   }
 }

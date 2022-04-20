@@ -1,52 +1,58 @@
-<div class="content-section content-section--vm-testimonials content-section--2x-padding">
+{% capture content %}
+<div class="container">
+  <div class="row">
+    <div class="twelve columns offset-by-two medium-down--sixteen">
 
-  <div class="container">
-    <div class="row">
-      <div class="twelve columns offset-by-two medium-down--sixteen">
-
-        <div class="vm-testimonials js-vm-testimonials">
-          {% for block in section.blocks %}
-            <div class="vm-testimonial-slide vm-testimonial-slide--index-{{ index }} js-testimonial-slide {% if forloop.first %}is-active{% endif %}" data-slide-index="{{ forloop.index }}">
-              <div class="vm-testimonial-slide__content">
-                <h2 class="vm-testimonial-slide__title heading-1">
-                  &ldquo;{{ block.settings.title }}&rdquo;
-                </h2>
-                
-                <p class="vm-testimonial-slide__testimonial paragraph--block-text">
-                  &ldquo;{{ block.settings.testimonial | strip_html }}&rdquo;
-                </p>
-                
-                {% if block.settings.name != blank %}
-                  <h4 class="vm-testimonial-slide__name subheading-2">
-                    - {{ block.settings.name }}
-                  </h4>
-                {% endif %}
-              </div>
+      <div class="vm-testimonials js-vm-testimonials">
+        {% for block in section.blocks %}
+          <div class="vm-testimonial-slide vm-testimonial-slide--index-{{ index }} js-testimonial-slide {% if forloop.first %}is-active{% endif %}" data-slide-index="{{ forloop.index }}">
+            <div class="vm-testimonial-slide__content">
+              <h2 class="vm-testimonial-slide__title heading-1">
+                &ldquo;{{ block.settings.title }}&rdquo;
+              </h2>
+              
+              <p class="vm-testimonial-slide__testimonial paragraph--block-text">
+                &ldquo;{{ block.settings.testimonial | strip_html }}&rdquo;
+              </p>
+              
+              {% if block.settings.name != blank %}
+                <h4 class="vm-testimonial-slide__name subheading-2">
+                  - {{ block.settings.name }}
+                </h4>
+              {% endif %}
             </div>
-          {% endfor %}
-
-          <div class="vm-testimonial__buttons-wrapper">
-            <button class="vm-testimonial__slide-button vm-testimonial__slide-button--prev js-testimonials-prev-button">
-              {% include "icon-right-arrow" %}
-            </button>
-
-            <h6 class="vm-testimonial__slide-index-indicator">
-              <span class="js-testimonials-slide-index">1</span>
-              <span class="divider">/</span>
-              <span>{{ section.blocks.size }}</span>
-            </h6>
-            
-            <button class="vm-testimonial__slide-button vm-testimonial__slide-button--next js-testimonials-next-button">
-              {% include "icon-right-arrow" %}
-            </button>
           </div>
-        </div>
+        {% endfor %}
 
+        <div class="vm-testimonial__buttons-wrapper">
+          <button class="vm-testimonial__slide-button vm-testimonial__slide-button--prev js-testimonials-prev-button">
+            {% include "icon-right-arrow" %}
+          </button>
+
+          <h6 class="vm-testimonial__slide-index-indicator">
+            <span class="js-testimonials-slide-index">1</span>
+            <span class="divider">/</span>
+            <span>{{ section.blocks.size }}</span>
+          </h6>
+          
+          <button class="vm-testimonial__slide-button vm-testimonial__slide-button--next js-testimonials-next-button">
+            {% include "icon-right-arrow" %}
+          </button>
+        </div>
       </div>
+
     </div>
   </div>
-
 </div>
+{% endcapture %}
+
+{% include "content-section" with {
+  title: section.settings.title,
+  content: content,
+  color_region: section.settings.color_region,
+  padding_top: section.settings.padding_top,
+  padding_bottom: section.settings.padding_bottom,
+} %}
 
 <script>
 (function() {
@@ -178,44 +184,89 @@
   "class": "testimonial-section",
   "settings": [
     {
-      "type": "checkbox",
-      "id": "wide_display",
-      "label": "Wide display",
-      "default": true
+      "type": "select",
+      "id": "color_region",
+      "label": "Color Region",
+      "options": [
+        {
+          "value": "light",
+          "label": "Light"
+        },
+        {
+          "value": "light-alt",
+          "label": "Light - alternative"
+        },
+        {
+          "value": "dark",
+          "label": "Dark"
+        },
+        {
+          "value": "dark-alt",
+          "label": "Dark - alternative"
+        }
+      ]
     },
     {
       "type": "select",
-      "id": "testimonial_text_animation",
-      "label": "Text animation",
+      "id": "padding_top",
+      "label": "Top Padding (in spacing units)",
       "options": [
         {
-          "value": "",
-          "label": "None"
+          "value": "default",
+          "label": "Default (5)"
         },
         {
-          "value": "fadeIn",
-          "label": "Fade In"
+          "value": "0",
+          "label": "0"
         },
         {
-          "value": "fadeInUp",
-          "label": "Fade Up"
+          "value": "2",
+          "label": "2"
         },
         {
-          "value": "fadeInDown",
-          "label": "Fade Down"
+          "value": "3",
+          "label": "3"
+        },
+        {
+          "value": "8",
+          "label": "8"
+        },
+        {
+          "value": "10",
+          "label": "10"
         }
-      ],
-      "default": "fadeInDown"
+      ]
     },
     {
-      "type": "range",
-      "id": "testimonial_speed",
-      "label": "Change testimonials every",
-      "min": 0,
-      "max": 12,
-      "step": 1,
-      "default": 6,
-      "unit": "sec"
+      "type": "select",
+      "id": "padding_bottom",
+      "label": "Bottom Padding (in spacing units)",
+      "options": [
+        {
+          "value": "default",
+          "label": "Default (5)"
+        },
+        {
+          "value": "0",
+          "label": "0"
+        },
+        {
+          "value": "2",
+          "label": "2"
+        },
+        {
+          "value": "3",
+          "label": "3"
+        },
+        {
+          "value": "8",
+          "label": "8"
+        },
+        {
+          "value": "10",
+          "label": "10"
+        }
+      ]
     }
   ],
   "blocks": [
