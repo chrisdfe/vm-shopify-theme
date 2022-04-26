@@ -286,21 +286,30 @@
 
     var PromoBanner = /** @class */ (function () {
         function PromoBanner() {
+            this.showPromoBanner = function () {
+                document.body.classList.add("promo-banner-show");
+                window.dispatchEvent(new Event('header:resize'));
+            };
+            this.hidePromoBanner = function () {
+                document.body.classList.remove("promo-banner-show");
+                // @ts-ignore TODO - switch to npm library instead
+                Cookies.set("promo-banner", "dismiss", { expires: 30 });
+                window.dispatchEvent(new Event('header:resize'));
+            };
             // this.element = document.querySelector(".promo-banner");
         }
         PromoBanner.prototype.initialize = function () {
+            var _this = this;
             // @ts-ignore TODO - switch to npm library instead
             if (Cookies.get("promo-banner") === "dismiss") {
                 return;
             }
-            document.body.classList.add("promo-banner-show");
+            this.showPromoBanner();
             document
                 .querySelectorAll(".js-promo-banner-close")
                 .forEach(function (closeButton) {
                 closeButton.addEventListener("click", function () {
-                    document.body.classList.remove("promo-banner-show");
-                    // @ts-ignore TODO - switch to npm library instead
-                    Cookies.set("promo-banner", "dismiss", { expires: 30 });
+                    _this.hidePromoBanner();
                 });
             });
             return this;
@@ -641,6 +650,9 @@
             }, {});
             this.dropdownIds = Object.keys(this.dropdownMap);
             document.body.addEventListener("click", this.onBodyClick);
+            document.documentElement.addEventListener("mouseleave", function () {
+                _this.closeCurrentOpenDropdown();
+            });
             return this;
         };
         return DropdownManager;
@@ -827,6 +839,25 @@
         return AccordionManager;
     }());
 
+    var ProductCardsManager = /** @class */ (function () {
+        function ProductCardsManager() {
+            var _this = this;
+            this.setProductCardHeights = function () {
+                _this.productCards.forEach(function (productCard) {
+                    var imageWrapElement = productCard.querySelector(".product_image");
+                    imageWrapElement.style.height = 'auto';
+                    imageWrapElement.style.height = imageWrapElement.clientHeight + 'px';
+                });
+            };
+        }
+        ProductCardsManager.prototype.initialize = function () {
+            this.productCards = Array.from(document.querySelectorAll('.product-wrap'));
+            window.addEventListener('DOMContentLoaded', this.setProductCardHeights);
+            window.addEventListener('resize', debounce(this.setProductCardHeights, 5));
+        };
+        return ProductCardsManager;
+    }());
+
     // import intersections from "../vm-sections/modules/intersections";
     // modules with 'legacy' (i.e turbo 6) support
     // attached to window and use api that app.js.liquid and utilities.js.liquid expect
@@ -839,5 +870,6 @@
     // VM modules
     // intersections.init();
     new AccordionManager().initialize();
+    new ProductCardsManager().initialize();
 
 })();

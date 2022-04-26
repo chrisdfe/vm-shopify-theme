@@ -1,25 +1,14 @@
-.product-list,
-.slider-gallery,
-.list-collections {
-  // Slightly hacky solution to try to keep aligned with the product image
-  .one-third.column {
-    .product-details {
-      margin-left: 10%;
-      margin-right: 10%;
+.thumbnail {
 
-      @include respond-to('large-down') {
-        margin-left: 0;
-        margin-right: 0;
-      }
-    }
+  .image__container {
+    position: relative;
   }
 }
-
 .product-list .thumbnail,
 .slider-gallery .thumbnail,
 .list-collections .thumbnail {
   position: relative;
-  margin-bottom: 25px;
+  margin-bottom: get-vm-spacer(2);
   display: block;
 
   .thumbnail-overlay {
@@ -96,7 +85,6 @@
 }
 
 // Swap to second image on hover
-// {% if settings.collection_secondary_image %}
 .has-secondary-media-swap {
   img {
     visibility: visible;
@@ -104,6 +92,7 @@
   }
 
   .secondary-media-hidden {
+    display: none;
     opacity: 0;
     visibility: hidden;
     height: 0 !important; // override inline height on image-element snippet
@@ -115,10 +104,8 @@
   cursor: pointer;
   position: relative;
   display: inline-block;
-  // border: 1px solid {{ settings.product_hover_text_color }};
   padding: 10px 20px;
   margin-top: 2rem;
-  // color: {{ settings.product_hover_text_color }};
   opacity: 0;
   pointer-events: all;
   -webkit-appearance: none;
@@ -149,14 +136,12 @@
   font-size: 12px;
 }
 
-$collection-height: 300px;
-
-// {% if settings.align_height %}
+// $collection-height: 300px;
 
 .product-list,
 .slider-gallery {
   .thumbnail img {
-    max-height: $collection-height;
+    // max-height: $collection-height;
     // width: 100%;
     @include object-fit(contain);
   }
@@ -164,11 +149,11 @@ $collection-height: 300px;
   .thumbnail video,
   .thumbnail .plyr--youtube {
     // width: 100%;
-    max-height: $collection-height;
+    // max-height: $collection-height;
   }
 
   .thumbnail .plyr--youtube {
-    height: $collection-height;
+    // height: $collection-height;
   }
 
   .thumbnail .plyr--youtube .plyr__video-embed {
@@ -224,16 +209,6 @@ $collection-height: 300px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-smoothing: antialiased;
-
-  // @include respond-to('medium-down') {
-  //   padding: 4px 10px;
-  //   font-size: smaller;
-  // }
-}
-
-.new_banner,
-.preorder_banner {
-  // background: {{ settings.new_banner_color }};
 }
 
 a.secondary_button,
@@ -244,28 +219,12 @@ input.secondary_button {
   border-top: solid 1px $vm-border-color;
   border-bottom: solid 1px $vm-border-color;
   margin: 10px 0;
-  // font-family: {{ settings.nav__font.family }}, {{ settings.nav__font.fallback_families }};
-  // font-weight: {{ settings.nav__font.weight }};
-  // font-style: {{ settings.nav__font.style }};
-  // font-size: {{ settings.nav_font_size }}px;
-  // text-transform: {{ settings.nav_font_style }};
-  // letter-spacing: {{ settings.nav_letter_spacing }}px;
-  // color: {{ settings.link_color }};
   -webkit-appearance: none;
-  // -webkit-font-smoothing: antialiased;
-  // -moz-osx-font-smoothing: grayscale;
-  // font-smoothing: antialiased;
-
-  &:hover,
-  &:active,
-  &:visited {
-    // color: {{ settings.link_hover_color }};
-  }
 }
 
 .thumbnail .title,
 .thumbnail .price .money {
-  /*   color: {{ settings.headline_color }}; */
+
 }
 
 .thumbnail .price,

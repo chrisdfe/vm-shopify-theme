@@ -9,18 +9,29 @@ export default class PromoBanner {
       return;
     }
 
-    document.body.classList.add("promo-banner-show");
+    this.showPromoBanner();
 
     document
       .querySelectorAll(".js-promo-banner-close")
       .forEach((closeButton) => {
         closeButton.addEventListener("click", () => {
-          document.body.classList.remove("promo-banner-show");
-          // @ts-ignore TODO - switch to npm library instead
-          Cookies.set("promo-banner", "dismiss", { expires: 30 });
+          this.hidePromoBanner();
         });
       });
 
     return this;
+  }
+
+  showPromoBanner = () => {
+    document.body.classList.add("promo-banner-show");
+
+    window.dispatchEvent(new Event('header:resize'));
+  }
+
+  hidePromoBanner = () => {
+    document.body.classList.remove("promo-banner-show");
+    // @ts-ignore TODO - switch to npm library instead
+    Cookies.set("promo-banner", "dismiss", { expires: 30 });
+    window.dispatchEvent(new Event('header:resize'));
   }
 }

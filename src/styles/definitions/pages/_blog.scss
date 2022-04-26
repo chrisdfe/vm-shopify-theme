@@ -61,22 +61,17 @@
 
 /* Styles for blog, collections */
 .section_select {
-  padding: 0;
-  text-align: right;
-  float: right;
 
   .blog_filter,
   .tag_filter,
   .sort_by {
-    display: inline-block;
+    display: block;
     border: none;
-    margin: 10px 0 0;
+    // margin: 10px 0 0;
     padding-right: 30px;
     background-position: 100% 50%;
     cursor: pointer;
-    width: auto;
-
-    max-width: 80%;
+    width: 100%;
 
     @include respond-to('medium-down') {
       float: none;
@@ -85,10 +80,6 @@
       margin: 0 0 2rem;
     }
   }
-}
-
-.meta {
-  // font-size: 13px;
 }
 
 .meta p {

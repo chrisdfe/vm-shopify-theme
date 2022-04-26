@@ -45,23 +45,56 @@
   {% paginate collection.products by page_limit %}
 
 
+  <div class="u-hidden-large-up">
+    {% include "collection.breadcrumbs" %}
+    {% include "collection.head" %}
+  </div>
+
   <div class="row">
     {% render 'sidebar' %}
     
     <div class="twelve columns medium-down--one-whole">
-      {% include "collection.breadcrumbs" %}
+      <div class="u-hidden-medium-down">
+        {% include "collection.breadcrumbs" %}
+      </div>
+
+      {% assign has_custom_banner = false %}
 
       {% for block in section.blocks %}
         {% if block.type == "collection_banner" %}
           {% if block.settings.collection.id == collection.id %}
+            {% assign has_custom_banner = true %}
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+        
+      {% for block in section.blocks %}
+        {% if block.type == "collection_banner" %}
+          {% assign is_current_collection_banner = false %}
+          {% if block.settings.collection.id == collection.id %}
+            {% assign is_current_collection_banner = true %}
+          {% endif %}
+          
+          {% assign show_default_banner = false %}
+          {% if block.settings.collection == null and has_custom_banner == false %}
+            {% assign show_default_banner = true %}
+          {% endif %}
+
+          {% if is_current_collection_banner or show_default_banner %}
             <div class="collection-banner">
               <picture>
                 <source
-                  srcset="{{ block.settings.banner_image | img_url: '1200x400', crop: 'center' }}"
+                  srcset="{{ block.settings.banner_image_desktop | img_url: '1200x400', crop: 'center' }}"
+                  media="(min-width: 801px)"
+                />
+
+                <source
+                  srcset="{{ block.settings.banner_image_mobile | img_url: '800x400', crop: 'center' }}"
+                  media="(max-width: 800px)"
                 />
 
                 <img
-                src="{{ block.settings.banner_image | img_url: '1200x400', crop: 'center' }}"
+                  src="{{ block.settings.banner_image_desktop | img_url: '1200x400', crop: 'center' }}"
                 />
               </picture>
             </div>
@@ -69,26 +102,8 @@
         {% endif %}
       {% endfor %}
 
-      <div class="collection-head">
-        <div class="row">
-          <div class="twelve columns medium-down--one-whole">
-            <div class="page-heading page-heading--no-padding">
-              <h1 class="page-heading__title heading-2">{{ collection.title }}</h1>
-            </div>
-          </div>
-          
-          <div class="four columns section_select medium-down--one-whole">
-            {% include "collection.search-filters" %}
-          </div>
-
-          {% if collection.description != blank %}
-            <div class="one-whole columns">
-              <p class="collection_description">
-                {{ collection.description }}
-              </p>
-            </div>
-          {% endif %}
-        </div>
+      <div class="u-hidden-medium-down">
+        {% include "collection.head" %}
       </div>
 
       {% if collection.products.size == 0 %}
@@ -113,6 +128,26 @@
   {% endpaginate %}
   </div>
 </div>
+
+<script>
+(function() {
+  const sidebarElement = document.querySelector('.sidebar');
+  const sidebarWrapElement = document.querySelector('.sidebar-wrap');
+
+  function setSidebarTopAttribute() {
+    const offsetTop = sidebarElement.getBoundingClientRect().top;
+    const scrollY = window.scrollY;
+
+    sidebarWrapElement.style.top = (offsetTop - scrollY) + "px";
+  }
+
+  setSidebarTopAttribute();
+  
+  window.addEventListener("header:resize", () => {
+    setSidebarTopAttribute();
+  })
+})();
+</script>
 
 {% schema %}
 
@@ -347,17 +382,17 @@
         {
           "type": "text",
           "id": "heading",
-          "label": "Heading"
-        },
-        {
-          "type": "textarea",
-          "id": "description",
-          "label": "Description"
+          "label": "Label (for organization purposes only - doesn't show on page)"
         },
         {
           "type": "image_picker",
-          "id": "banner_image",
-          "label": "Desktop Image (must have ratio 4:1)"
+          "id": "banner_image_desktop",
+          "label": "Desktop Image (1200x400 / 4:1 aspect ratio)"
+        },
+        {
+          "type": "image_picker",
+          "id": "banner_image_mobile",
+          "label": "Mobile Image (800x400 / 2:1 aspect ratio)"
         }
       ]
     }

@@ -119,98 +119,6 @@ input[type=button]:hover,
   color: #dec1a8;
 }
 
-.vm-styleguide__subsection-row {
-  margin-bottom: 7rem;
-}
-
-.vm-styleguide-content__subsection-row-subheading {
-  color: #dec1a8;
-}
-
-.vm-styleguide__subsection-row-data-table tr {
-  background: transparent;
-}
-.vm-styleguide__subsection-row-data-table tr:nth-child(odd) {
-  background: transparent;
-}
-.vm-styleguide__subsection-row-data-table td {
-  padding: 0;
-}
-.vm-styleguide__subsection-row-data-table .vm-styleguide__subsection-row-data-table__title,
-.vm-styleguide__subsection-row-data-table .vm-styleguide__subsection-row-data-table__value {
-  margin: 0;
-}
-.vm-styleguide__subsection-row-data-table .vm-styleguide__subsection-row-data-table__title {
-  opacity: 0.6;
-}
-.vm-styleguide__subsection-row-data-table .vm-styleguide__subsection-row-data-table__value {
-  text-transform: lowercase;
-}
-
-/* #Variables
-================================================== */
-/* variables/general
-================================================== */
-/* Variables - Colors
-================================================== */
-:root {
-  --vm-color-sea-green: #1c4047;
-  --vm-color-plum: #714457;
-  --vm-color-sand: #dec1a8;
-  --vm-color-cream: #f8f4f4;
-  --vm-color-white: #ffffff;
-}
-
-/* Variables - Typography
-================================================== */
-/* Variables - Components
-================================================== */
-/* Variables - Misc
-================================================== */
-/* Variables - Misc
-================================================== */
-/* Mixins
-================================================== */
-/* Mixins - general
-================================================== */
-/*
-  This mixin can be used to set the object-fit:
-  @include object-fit(contain);
-   or object-fit and object-position:
-  @include object-fit(cover, top);
-*/
-/*
-  Prefix mixin for generating vendor prefixes.
-  Based on https://github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/addons/_prefixer.scss
-
-  Usage:
-    // Input:
-    .element {
-      @include prefix(transform, scale(1), ms webkit spec);
-    }
-
-    // Output:
-    .element {
-      -ms-transform: scale(1);
-      -webkit-transform: scale(1);
-      transform: scale(1);
-    }
-*/
-/* Mixins - typography
-================================================== */
-/* Mixins - typography
-================================================== */
-.vm-styleguide__swatch {
-  display: flex;
-}
-
-.vm-styleguide__swatch__column {
-  padding: 15px;
-  flex-grow: 1;
-  flex-shrink: 0;
-  flex-basis: 0;
-}
-
 /* #Variables
 ================================================== */
 /* variables/general
@@ -286,74 +194,32 @@ input[type=button]:hover,
   color: #dec1a8;
 }
 
-/* #Variables
-================================================== */
-/* variables/general
-================================================== */
-/* Variables - Colors
-================================================== */
-:root {
-  --vm-color-sea-green: #1c4047;
-  --vm-color-plum: #714457;
-  --vm-color-sand: #dec1a8;
-  --vm-color-cream: #f8f4f4;
-  --vm-color-white: #ffffff;
+.vm-styleguide__subsection-row {
+  margin-bottom: 7rem;
 }
 
-/* Variables - Typography
-================================================== */
-/* Variables - Components
-================================================== */
-/* Variables - Misc
-================================================== */
-/* Variables - Misc
-================================================== */
-/* Mixins
-================================================== */
-/* Mixins - general
-================================================== */
-/*
-  This mixin can be used to set the object-fit:
-  @include object-fit(contain);
-   or object-fit and object-position:
-  @include object-fit(cover, top);
-*/
-/*
-  Prefix mixin for generating vendor prefixes.
-  Based on https://github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/addons/_prefixer.scss
+.vm-styleguide-content__subsection-row-subheading {
+  color: #dec1a8;
+}
 
-  Usage:
-    // Input:
-    .element {
-      @include prefix(transform, scale(1), ms webkit spec);
-    }
-
-    // Output:
-    .element {
-      -ms-transform: scale(1);
-      -webkit-transform: scale(1);
-      transform: scale(1);
-    }
-*/
-/* Mixins - typography
-================================================== */
-/* Mixins - typography
-================================================== */
-.vm-styleguide__color-region-example {
-  border: 5px solid white;
-  padding: 3rem;
+.vm-styleguide__subsection-row-data-table tr {
+  background: transparent;
 }
-.vm-styleguide__color-region-example.vm-styleguide__color-region-example--region-light {
-  border-color: #f8f4f4;
+.vm-styleguide__subsection-row-data-table tr:nth-child(odd) {
+  background: transparent;
 }
-.vm-styleguide__color-region-example.vm-styleguide__color-region-example--region-light-alt {
-  border-color: #f8f4f4;
+.vm-styleguide__subsection-row-data-table td {
+  padding: 0;
 }
-.vm-styleguide__color-region-example.vm-styleguide__color-region-example--region-dark {
-  border-color: #714457;
+.vm-styleguide__subsection-row-data-table .vm-styleguide__subsection-row-data-table__title,
+.vm-styleguide__subsection-row-data-table .vm-styleguide__subsection-row-data-table__value {
+  margin: 0;
 }
-.vm-styleguide__color-region-example.vm-styleguide__color-region-example--region-dark-alt {
-  border-color: #1c4047;
+.vm-styleguide__subsection-row-data-table .vm-styleguide__subsection-row-data-table__title {
+  opacity: 0.6;
+}
+.vm-styleguide__subsection-row-data-table .vm-styleguide__subsection-row-data-table__value {
+  text-transform: lowercase;
 }
 
 .vm-styleguide__subsection {
@@ -429,8 +295,147 @@ input[type=button]:hover,
 ================================================== */
 /* Mixins - typography
 ================================================== */
+.vm-styleguide__color-region-example {
+  border: 5px solid white;
+  padding: 3rem;
+}
+.vm-styleguide__color-region-example.vm-styleguide__color-region-example--region-light {
+  border-color: #f8f4f4;
+}
+.vm-styleguide__color-region-example.vm-styleguide__color-region-example--region-light-alt {
+  border-color: #f8f4f4;
+}
+.vm-styleguide__color-region-example.vm-styleguide__color-region-example--region-dark {
+  border-color: #714457;
+}
+.vm-styleguide__color-region-example.vm-styleguide__color-region-example--region-dark-alt {
+  border-color: #1c4047;
+}
+
+/* #Variables
+================================================== */
+/* variables/general
+================================================== */
+/* Variables - Colors
+================================================== */
+:root {
+  --vm-color-sea-green: #1c4047;
+  --vm-color-plum: #714457;
+  --vm-color-sand: #dec1a8;
+  --vm-color-cream: #f8f4f4;
+  --vm-color-white: #ffffff;
+}
+
+/* Variables - Typography
+================================================== */
+/* Variables - Components
+================================================== */
+/* Variables - Misc
+================================================== */
+/* Variables - Misc
+================================================== */
+/* Mixins
+================================================== */
+/* Mixins - general
+================================================== */
+/*
+  This mixin can be used to set the object-fit:
+  @include object-fit(contain);
+   or object-fit and object-position:
+  @include object-fit(cover, top);
+*/
+/*
+  Prefix mixin for generating vendor prefixes.
+  Based on https://github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/addons/_prefixer.scss
+
+  Usage:
+    // Input:
+    .element {
+      @include prefix(transform, scale(1), ms webkit spec);
+    }
+
+    // Output:
+    .element {
+      -ms-transform: scale(1);
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+*/
+/* Mixins - typography
+================================================== */
+/* Mixins - typography
+================================================== */
+.vm-styleguide__swatch {
+  display: flex;
+}
+
+.vm-styleguide__swatch__column {
+  padding: 15px;
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: 0;
+}
+
+.vm-styleguide__component-example__color-region {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* #Variables
+================================================== */
+/* variables/general
+================================================== */
+/* Variables - Colors
+================================================== */
+:root {
+  --vm-color-sea-green: #1c4047;
+  --vm-color-plum: #714457;
+  --vm-color-sand: #dec1a8;
+  --vm-color-cream: #f8f4f4;
+  --vm-color-white: #ffffff;
+}
+
+/* Variables - Typography
+================================================== */
+/* Variables - Components
+================================================== */
+/* Variables - Misc
+================================================== */
+/* Variables - Misc
+================================================== */
+/* Mixins
+================================================== */
+/* Mixins - general
+================================================== */
+/*
+  This mixin can be used to set the object-fit:
+  @include object-fit(contain);
+   or object-fit and object-position:
+  @include object-fit(cover, top);
+*/
+/*
+  Prefix mixin for generating vendor prefixes.
+  Based on https://github.com/thoughtbot/bourbon/blob/v4-stable/app/assets/stylesheets/addons/_prefixer.scss
+
+  Usage:
+    // Input:
+    .element {
+      @include prefix(transform, scale(1), ms webkit spec);
+    }
+
+    // Output:
+    .element {
+      -ms-transform: scale(1);
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+*/
+/* Mixins - typography
+================================================== */
+/* Mixins - typography
+================================================== */
 .vm-styleguide__font-example {
-  font-size: 45px;
+  font-size: 36px;
   line-height: 1.2;
 }
 .vm-styleguide__font-example.vm-styleguide__font-example--font-poppins {
@@ -447,11 +452,6 @@ input[type=button]:hover,
 }
 .vm-styleguide__font-example.vm-styleguide__font-example--weight-bold {
   font-weight: 700;
-}
-
-.vm-styleguide__component-example__color-region {
-  margin-bottom: 2rem;
-  text-align: center;
 }
 
 .vm-styleguide-sidebar {

@@ -7,7 +7,7 @@
   // Compensate for the sticky nav
   .content-section__anchor {
     position: relative;
-    top: -$vm-content-section-padding;
+    top: -$vm-content-section-padding * 2;
   }
 
 

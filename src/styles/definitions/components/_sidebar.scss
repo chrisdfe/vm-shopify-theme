@@ -36,7 +36,7 @@
 }
 
 .sidebar {
-  margin-top: get-vm-spacer(2);
+  margin: get-vm-spacer(2) 0;
 }
 
 .sidebar a,
@@ -78,11 +78,9 @@
     padding-left: 0;
     margin-left: 0;
     border-left: none;
-    // color: {{ settings.link_color }};
 
     &:hover {
       border-left: none;
-      // color: {{ settings.link_hover_color }}
     }
   }
 }
@@ -211,18 +209,9 @@
 }
 
 //Filter collections
-
 .sidebar .filter-active-tag {
   position: relative;
 }
-
-.color-filter--true {
-  label {
-    @include flexbox();
-    @include align-items(center);
-  }
-}
-
 .sidebar__collection-filter {
   a,
   label {
@@ -230,7 +219,6 @@
   }
 
   label:hover {
-    // color: {{ settings.link_hover_color }}
     color: $vm-link-hover-color;
   }
 
@@ -347,21 +335,6 @@
 
   .recently-viewed__title {
     display: none;
-  }
-
-  .rv-sidebar-element {
-    max-width: 75%;
-
-    .product_image {
-      a {
-        display: block;
-        min-width: 100%;
-      }
-
-      img {
-        height: auto;
-      }
-    }
   }
 
   .product-list .thumbnail {

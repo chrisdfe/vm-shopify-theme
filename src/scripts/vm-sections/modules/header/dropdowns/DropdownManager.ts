@@ -49,6 +49,10 @@ export default class DropdownManager {
 
     document.body.addEventListener("click", this.onBodyClick);
 
+    document.documentElement.addEventListener("mouseleave", () => {
+      this.closeCurrentOpenDropdown();
+    });
+
     return this;
   }
 

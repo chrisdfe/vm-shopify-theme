@@ -1,0 +1,21 @@
+<div class="collection-head">
+  <div class="row">
+    <div class="twelve columns medium-down--one-whole">
+      <div class="page-heading page-heading--no-padding">
+        <h1 class="page-heading__title heading-2">{{ collection.title }}</h1>
+      </div>
+    </div>
+    
+    <div class="four columns section_select medium-down--one-whole">
+      {% include "collection.search-filters" %}
+    </div>
+
+    {% if collection.description != blank %}
+      <div class="one-whole columns">
+        <p class="collection_description">
+          {{ collection.description }}
+        </p>
+      </div>
+    {% endif %}
+  </div>
+</div>

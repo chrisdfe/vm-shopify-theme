@@ -29,11 +29,19 @@
   }
 
   .image-card__content {
+    margin: get-vm-spacer(1) 0 0;
+  }
+
+}
+
+.image-card.image-card--desktop-no-margin {
+  @include respond-to("large-up") {
+    margin-bottom: 0;
   }
 }
 
 // TODO - this doesn't go here
-.image-card--blog-post {
+.image-card.image-card--blog-post {
   .image-card__title {
     margin-bottom: 0;
   }
