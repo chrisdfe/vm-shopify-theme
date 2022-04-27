@@ -689,6 +689,22 @@
               "filter_tags": "Round, Oval, Pear, Cushion, Emerald Cut, Marquise, Geometric, Baguette, Half Moon",
               "enable_filter_swatches": false
             }
+          },
+          "35e522fb-5fc1-4c3a-b8a2-34b7fcb3db00": {
+            "type": "collection_banner",
+            "settings": {
+              "collection": "earrings",
+              "banner_image_desktop": "shopify:\/\/shop_images\/BANDS_DIAMOND_2022_2.jpg",
+              "banner_image_mobile": "shopify:\/\/shop_images\/IMG_1416.jpg"
+            }
+          },
+          "396b7b28-c310-4efa-99dc-2431a6cb9284": {
+            "type": "collection_banner",
+            "settings": {
+              "collection": "",
+              "banner_image_desktop": "shopify:\/\/shop_images\/Mothers-Day-1x1.jpg",
+              "banner_image_mobile": "shopify:\/\/shop_images\/3_a09e14d8-cf02-48f7-8fde-f764ad70ec32.png"
+            }
           }
         },
         "block_order": [
@@ -696,7 +712,9 @@
           "1554411533737",
           "1553112159812",
           "b1e3cb86-ca09-4541-a5ea-43343399c8f9",
-          "1567199940929"
+          "1567199940929",
+          "35e522fb-5fc1-4c3a-b8a2-34b7fcb3db00",
+          "396b7b28-c310-4efa-99dc-2431a6cb9284"
         ],
         "settings": {
           "is_timed_collection": false,
@@ -704,11 +722,7 @@
           "redirect_url": "https:\/\/www.valeriemadison.com\/collections",
           "start_datetime": "2020-11-05 12:27",
           "end_datetime": "2020-12-05 13:25",
-          "wide_display": true,
           "featured_collection_image": false,
-          "image_darken": false,
-          "display_collection_title": true,
-          "collection_breadcrumb": true,
           "collection_tags": false,
           "collection_sort": true,
           "products_per_row": 4,
