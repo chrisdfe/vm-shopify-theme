@@ -131,6 +131,7 @@
 
 <script>
 (function() {
+  /*
   const sidebarElement = document.querySelector('.sidebar');
   const sidebarWrapElement = document.querySelector('.sidebar-wrap');
 
@@ -138,7 +139,11 @@
     const offsetTop = sidebarElement.getBoundingClientRect().top;
     const scrollY = window.scrollY;
 
-    sidebarWrapElement.style.top = (offsetTop - scrollY) + "px";
+    console.log(offsetTop);
+    console.log(scrollY);
+
+    sidebarWrapElement.style.top = (offsetTop + scrollY) + "px";
+    console.log(sidebarWrapElement.style.top);
   }
 
   setSidebarTopAttribute();
@@ -146,6 +151,11 @@
   window.addEventListener("header:resize", () => {
     setSidebarTopAttribute();
   })
+
+  window.addEventListener("resize", () => {
+    setSidebarTopAttribute();
+  })
+  */
 })();
 </script>
 

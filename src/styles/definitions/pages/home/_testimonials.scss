@@ -17,7 +17,7 @@
   }
 
   .vm-testimonial-slide__testimonial {
-    margin: 2rem 0 3rem;
+    margin: get-vm-spacer(6) 0;
   }
 
   &.is-hidden {

@@ -4,12 +4,17 @@
 ================================================== */
 /* Variables - Colors
 ================================================== */
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
 :root {
-  --vm-color-sea-green: #1c4047;
+  --vm-color-sea-green: #1c4747;
   --vm-color-plum: #714457;
   --vm-color-sand: #dec1a8;
   --vm-color-cream: #f8f4f4;
-  --vm-color-white: #ffffff;
+  --vm-color-white: #fff;
 }
 
 /* Variables - Typography
@@ -89,9 +94,9 @@ input[type=submit].button--inverted,
 input[type=reset].button--inverted,
 input[type=button].button--inverted,
 .action_button.button--inverted {
-  background: #ffffff;
-  color: #1c4047;
-  border-color: #ffffff;
+  background: #fff;
+  color: #1c4747;
+  border-color: #fff;
 }
 a.button:hover,
 .button:hover,
@@ -102,14 +107,14 @@ input[type=button]:hover,
 .action_button:hover {
   background-color: #dec1a8;
   border: 1px solid transparent;
-  color: #ffffff;
+  color: #fff;
 }
 
 .button.button--secondary.button--inverted,
 .action_button.action_button--secondary.button--inverted {
   background-color: transparent;
-  border-color: #ffffff;
-  color: #ffffff;
+  border-color: #fff;
+  color: #fff;
 }
 .button.button--secondary.button--inverted:hover, .button.button--secondary.button--inverted:focus,
 .action_button.action_button--secondary.button--inverted:hover,
@@ -119,6 +124,34 @@ input[type=button]:hover,
   color: #dec1a8;
 }
 
+.vm-styleguide__subsection-row {
+  margin-bottom: 7rem;
+}
+
+.vm-styleguide-content__subsection-row-subheading {
+  color: #dec1a8;
+}
+
+.vm-styleguide__subsection-row-data-table tr {
+  background: transparent;
+}
+.vm-styleguide__subsection-row-data-table tr:nth-child(odd) {
+  background: transparent;
+}
+.vm-styleguide__subsection-row-data-table td {
+  padding: 0;
+}
+.vm-styleguide__subsection-row-data-table .vm-styleguide__subsection-row-data-table__title,
+.vm-styleguide__subsection-row-data-table .vm-styleguide__subsection-row-data-table__value {
+  margin: 0;
+}
+.vm-styleguide__subsection-row-data-table .vm-styleguide__subsection-row-data-table__title {
+  opacity: 0.6;
+}
+.vm-styleguide__subsection-row-data-table .vm-styleguide__subsection-row-data-table__value {
+  text-transform: lowercase;
+}
+
 /* #Variables
 ================================================== */
 /* variables/general
@@ -126,11 +159,11 @@ input[type=button]:hover,
 /* Variables - Colors
 ================================================== */
 :root {
-  --vm-color-sea-green: #1c4047;
+  --vm-color-sea-green: #1c4747;
   --vm-color-plum: #714457;
   --vm-color-sand: #dec1a8;
   --vm-color-cream: #f8f4f4;
-  --vm-color-white: #ffffff;
+  --vm-color-white: #fff;
 }
 
 /* Variables - Typography
@@ -194,34 +227,6 @@ input[type=button]:hover,
   color: #dec1a8;
 }
 
-.vm-styleguide__subsection-row {
-  margin-bottom: 7rem;
-}
-
-.vm-styleguide-content__subsection-row-subheading {
-  color: #dec1a8;
-}
-
-.vm-styleguide__subsection-row-data-table tr {
-  background: transparent;
-}
-.vm-styleguide__subsection-row-data-table tr:nth-child(odd) {
-  background: transparent;
-}
-.vm-styleguide__subsection-row-data-table td {
-  padding: 0;
-}
-.vm-styleguide__subsection-row-data-table .vm-styleguide__subsection-row-data-table__title,
-.vm-styleguide__subsection-row-data-table .vm-styleguide__subsection-row-data-table__value {
-  margin: 0;
-}
-.vm-styleguide__subsection-row-data-table .vm-styleguide__subsection-row-data-table__title {
-  opacity: 0.6;
-}
-.vm-styleguide__subsection-row-data-table .vm-styleguide__subsection-row-data-table__value {
-  text-transform: lowercase;
-}
-
 .vm-styleguide__subsection {
   margin: 2rem 0;
 }
@@ -249,11 +254,11 @@ input[type=button]:hover,
 /* Variables - Colors
 ================================================== */
 :root {
-  --vm-color-sea-green: #1c4047;
+  --vm-color-sea-green: #1c4747;
   --vm-color-plum: #714457;
   --vm-color-sand: #dec1a8;
   --vm-color-cream: #f8f4f4;
-  --vm-color-white: #ffffff;
+  --vm-color-white: #fff;
 }
 
 /* Variables - Typography
@@ -309,7 +314,7 @@ input[type=button]:hover,
   border-color: #714457;
 }
 .vm-styleguide__color-region-example.vm-styleguide__color-region-example--region-dark-alt {
-  border-color: #1c4047;
+  border-color: #1c4747;
 }
 
 /* #Variables
@@ -319,11 +324,11 @@ input[type=button]:hover,
 /* Variables - Colors
 ================================================== */
 :root {
-  --vm-color-sea-green: #1c4047;
+  --vm-color-sea-green: #1c4747;
   --vm-color-plum: #714457;
   --vm-color-sand: #dec1a8;
   --vm-color-cream: #f8f4f4;
-  --vm-color-white: #ffffff;
+  --vm-color-white: #fff;
 }
 
 /* Variables - Typography
@@ -388,11 +393,11 @@ input[type=button]:hover,
 /* Variables - Colors
 ================================================== */
 :root {
-  --vm-color-sea-green: #1c4047;
+  --vm-color-sea-green: #1c4747;
   --vm-color-plum: #714457;
   --vm-color-sand: #dec1a8;
   --vm-color-cream: #f8f4f4;
-  --vm-color-white: #ffffff;
+  --vm-color-white: #fff;
 }
 
 /* Variables - Typography
@@ -435,7 +440,7 @@ input[type=button]:hover,
 /* Mixins - typography
 ================================================== */
 .vm-styleguide__font-example {
-  font-size: 36px;
+  font-size: 42px;
   line-height: 1.2;
 }
 .vm-styleguide__font-example.vm-styleguide__font-example--font-poppins {

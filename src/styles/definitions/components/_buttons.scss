@@ -24,10 +24,10 @@ input.action_button[type='button'] {
   line-height: 1.2;
   vertical-align: top;
   font-size: $vm-subheading-2-font-size;
-  font-weight: 600;
+  font-weight: $vm-subheading-font-weight;
+  letter-spacing: $vm-subheading-2-letter-spacing;
   text-transform: uppercase;
   text-decoration: none;
-  letter-spacing: $vm-subheading-2-letter-spacing;
   @include inline-flexbox();
   @include align-items(center);
   @include justify-content(center);

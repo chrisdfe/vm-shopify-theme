@@ -689,22 +689,6 @@
               "filter_tags": "Round, Oval, Pear, Cushion, Emerald Cut, Marquise, Geometric, Baguette, Half Moon",
               "enable_filter_swatches": false
             }
-          },
-          "35e522fb-5fc1-4c3a-b8a2-34b7fcb3db00": {
-            "type": "collection_banner",
-            "settings": {
-              "collection": "earrings",
-              "banner_image_desktop": "shopify:\/\/shop_images\/BANDS_DIAMOND_2022_2.jpg",
-              "banner_image_mobile": "shopify:\/\/shop_images\/IMG_1416.jpg"
-            }
-          },
-          "396b7b28-c310-4efa-99dc-2431a6cb9284": {
-            "type": "collection_banner",
-            "settings": {
-              "collection": "",
-              "banner_image_desktop": "shopify:\/\/shop_images\/Mothers-Day-1x1.jpg",
-              "banner_image_mobile": "shopify:\/\/shop_images\/3_a09e14d8-cf02-48f7-8fde-f764ad70ec32.png"
-            }
           }
         },
         "block_order": [
@@ -712,9 +696,7 @@
           "1554411533737",
           "1553112159812",
           "b1e3cb86-ca09-4541-a5ea-43343399c8f9",
-          "1567199940929",
-          "35e522fb-5fc1-4c3a-b8a2-34b7fcb3db00",
-          "396b7b28-c310-4efa-99dc-2431a6cb9284"
+          "1567199940929"
         ],
         "settings": {
           "is_timed_collection": false,

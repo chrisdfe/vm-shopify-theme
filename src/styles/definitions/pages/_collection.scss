@@ -3,7 +3,7 @@
 
 .collection-banner {
   overflow: hidden;
-  aspect-ratio: 4 / 1;
+  aspect-ratio: 3 / 1;
   object-fit: cover;
   object-position: center;
 
@@ -41,10 +41,9 @@
 
 .collection {
   .sidebar-wrap {
-    position: sticky;
+    // position: sticky;
     // To be set by js to account for header height
-    top: 0;
-
+    // top: 0;
   }
 
   // @include respond-to("medium-down") {

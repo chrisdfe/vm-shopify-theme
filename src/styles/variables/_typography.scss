@@ -1,81 +1,108 @@
 /* Variables - Typography
 ================================================== */
 
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
 $vm-body-text-color: $vm-color-sea-green;
+// $vm-body-text-color: #111;
 
 $vm-font-poppins: poppins, sans-serif;
 $vm-font-orpheus: orpheuspro, serif;
+$vm-font-granville: granville, sans-serif;
+$vm-font-proxima-nova: proxima-nova, sans-serif;
+
+$vm-body-font: $vm-font-proxima-nova;
 
 $vm-heading-font: $vm-font-orpheus;
-$vm-subheading-font: $vm-font-poppins;
-$vm-paragraph-font: $vm-font-poppins;
 
-$vm-heading-accent-color: $vm-color-sand;
-// $vm-heading-accent-color: $vm-color-sea-green;
+// $vm-subheading-font: $vm-font-paragraph-and-subheading;
+$vm-subheading-font: $vm-font-granville;
 
-// $vm-link-color: rgba($vm-color-plum, 0.7);
-// $vm-link-color: mix($vm-color-plum, $vm-color-sand, 70%);
+$vm-paragraph-font: $vm-body-font;
+
 $vm-link-color: $vm-color-plum;
 $vm-link-hover-color: $vm-color-sand;
 $vm-link-transition-speed: 0.1s;
 
-$vm-heading-1-font-size: 56px;
-$vm-heading-1-letter-spacing: 0.02em;
-$vm-heading-1-line-height: 1.2;
+$vm-heading-accent-color: $vm-color-sea-green;
+$vm-heading-font-weight: 400;
+
+$vm-heading-1-font-size: 62px;
+// $vm-heading-1-letter-spacing: 0.02em;
+$vm-heading-1-letter-spacing: 0;
+$vm-heading-1-line-height: 1.1;
+$vm-heading-1-font-weight: 400;
 
 $vm-heading-1-mobile-font-size: 40px;
 
-$vm-heading-2-font-size: 36px;
-// $vm-heading-2-font-size: 45px;
+// $vm-heading-2-font-size: 36px;
+$vm-heading-2-font-size: 42px;
+// $vm-heading-2-font-size: 52px;
 $vm-heading-2-letter-spacing: 0.02em;
 $vm-heading-2-line-height: 1.2;
+$vm-heading-2-font-weight: 400;
 
 $vm-heading-2-mobile-font-size: 30px;
 
-$vm-heading-3-font-size: 30px;
 // $vm-heading-3-font-size: 32px;
+$vm-heading-3-font-size: 22px;
 $vm-heading-3-letter-spacing: 0.02em;
 $vm-heading-3-line-height: 1.2;
+$vm-heading-3-font-weight: 400;
 
 $vm-heading-3-mobile-font-size: 26px;
 
 // $vm-subheading-letter-spacing: 0.08em;
-$vm-subheading-letter-spacing: 0.04em;
+$vm-subheading-letter-spacing: 0;
+// $vm-subheading-letter-spacing: 0.04em;
 $vm-subheading-line-height: 1.4;
+$vm-subheading-font-weight: 600;
 
-$vm-subheading-1-font-size: 16px;
+$vm-subheading-1-font-size: 15px;
 $vm-subheading-1-letter-spacing: $vm-subheading-letter-spacing;
 $vm-subheading-1-line-height: $vm-subheading-line-height;
+$vm-subheading-1-font-weight: $vm-subheading-font-weight;
 
 $vm-subheading-1-mobile-font-size: 16px;
 
 $vm-subheading-2-font-size: 14px;
 $vm-subheading-2-letter-spacing: $vm-subheading-letter-spacing;
 $vm-subheading-2-line-height: $vm-subheading-line-height;
+$vm-subheading-2-font-weight: $vm-subheading-font-weight;
 
 $vm-subheading-2-mobile-font-size: 14px;
 
 $vm-subheading-3-font-size: 13px;
 $vm-subheading-3-letter-spacing: $vm-subheading-letter-spacing;
 $vm-subheading-3-line-height: $vm-subheading-line-height;
+$vm-subheading-3-font-weight: $vm-subheading-font-weight;
 
 $vm-subheading-3-mobile-font-size: 12px;
 
+// $vm-paragraph-font-weight: 300;
+$vm-paragraph-font-weight: 400;
+$vm-paragraph-letter-spacing: 0;
+
 $vm-paragraph-1-font-size: 18px;
-$vm-paragraph-1-letter-spacing: 0.01em;
+$vm-paragraph-1-letter-spacing: $vm-paragraph-letter-spacing;
 $vm-paragraph-1-line-height: 1.6;
+$vm-paragraph-1-font-weight: 400;
 
 $vm-paragraph-1-mobile-font-size: 16px;
 
 $vm-paragraph-2-font-size: 16px;
 // $vm-paragraph-2-font-size: 15px;
-$vm-paragraph-2-letter-spacing: 0.02em;
+// $vm-paragraph-2-letter-spacing: 0.02em;
+$vm-paragraph-2-letter-spacing: $vm-paragraph-letter-spacing;
 $vm-paragraph-2-line-height: 1.6;
+$vm-paragraph-2-font-weight: $vm-paragraph-font-weight;
 
 $vm-paragraph-2-mobile-font-size: 15px;
 
 $vm-paragraph-3-font-size: 14px;
-$vm-paragraph-3-letter-spacing: 0.03em;
+// $vm-paragraph-3-letter-spacing: 0.03em;
+$vm-paragraph-3-letter-spacing: $vm-paragraph-letter-spacing;
 $vm-paragraph-3-line-height: 1.6;
+$vm-paragraph-3-font-weight: $vm-paragraph-font-weight;
 
 $vm-paragraph-3-mobile-font-size: 13px;

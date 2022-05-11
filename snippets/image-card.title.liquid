@@ -1,6 +1,6 @@
 
 {% if tag == "h5" %}
-  <h5 class="image-card__title">{{ title }}</h5>
+  <h5 class="image-card__title">{{ title | strip_html }}</h5>
 {% else %}
-  <h4 class="image-card__title">{{ title }}</h4>
+  <h4 class="image-card__title">{{ title | strip_html }}</h4>
 {% endif %}

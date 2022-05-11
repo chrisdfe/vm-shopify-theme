@@ -8,8 +8,14 @@ Description: Shopify Theme (https://www.shopify.com/&ref=out-of-the-sandbox)
 @use "sass:math";
 
 /* Loads VM fonts */
-@import url('https://use.typekit.net/gio1gfe.css');
+// @import url('https://use.typekit.net/gio1gfe.css');
+@import url('https://use.typekit.net/ffv8gow.css');
 
 @import '_variables.scss';
 @import '_mixins.scss';
 @import '_definitions.scss';
+
+// TODO - this is just until I figure out how to fix this with rollup
+@import "pages/eternity-bracelets.scss";
+@import "pages/faq.scss";
+@import "pages/our-story.scss";

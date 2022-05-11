@@ -29,8 +29,8 @@ summary {
 }
 
 a.cta-link {
-  font-weight: 600;
-  border-bottom: 2px solid $vm-link-color;
+  font-weight: $vm-subheading-font-weight;
+  border-bottom: 1px solid $vm-link-color;
   text-transform: uppercase;
   font-size: $vm-subheading-2-font-size;
   letter-spacing: $vm-subheading-2-letter-spacing;

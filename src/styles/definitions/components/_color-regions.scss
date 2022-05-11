@@ -28,12 +28,23 @@
   a {
     color: $vm-color-white;
   }
+
 }
 
 .color-region--dark {
   background-color: $vm-color-plum;
+  
+  *::selection {
+    color: $vm-color-plum;
+    background: $vm-color-cream;
+  }
 }
 
 .color-region--dark-alt {
   background-color: $vm-color-sea-green;
+  
+  *::selection {
+    color: $vm-color-sea-green;
+    background: $vm-color-cream;
+  }
 }
