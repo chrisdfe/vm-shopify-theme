@@ -717,7 +717,7 @@
           "featured_collection_image": true,
           "collection_tags": false,
           "collection_sort": true,
-          "products_per_row": 4,
+          "products_per_row": 3,
           "pagination_limit": 48,
           "toggle": false,
           "byod_filter_enable": true,
@@ -1572,7 +1572,7 @@
           "featured_links_animation": "fadeInDown",
           "color_region": "light-alt",
           "padding_top": "default",
-          "padding_bottom": "3"
+          "padding_bottom": "default"
         }
       },
       "1584247981998": {
@@ -1613,7 +1613,7 @@
         ],
         "settings": {
           "hide_section_list": false,
-          "title": "What makes Valerie Madison Jewelry different?",
+          "title": "What makes Valerie Madison Jewelry <em>different?<\/em>",
           "color_region": "light-alt"
         }
       },
@@ -2949,8 +2949,9 @@
       "our-story-intro": {
         "type": "our-story-intro",
         "settings": {
-          "title": "Celebrating your<br>Love Stories in Gold.",
-          "content": "Whether it’s proposing to the love of your life, marking a special occasion in gold, or truly treating yourself with a gem as amazing as you are, we’re here for it. With an eye for balance, durability, and function, Valerie's inspiration comes from the beautiful spectrum of colors of diamonds and gemstones she sources as well as the geometry and shapes they come in. All jewelry tells a story and we believe in fine jewelry as an expression of the desire to decorate oneself with metals and jewels that reflect the love and style you want to reflect outwards.",
+          "title": "Celebrating your<br>Love Stories in <em><span class=\"u-text-color-sand\">Gold.<\/span><\/em>",
+          "intro_content": "Whether it’s proposing to the love of your life, marking a special occasion in gold, or truly treating yourself with a gem as amazing as you are, we’re here for it.",
+          "body_content": "With an eye for balance, durability, and function, Valerie's inspiration comes from the beautiful spectrum of colors of diamonds and gemstones she sources as well as the geometry and shapes they come in. All jewelry tells a story and we believe in fine jewelry as an expression of the desire to decorate oneself with metals and jewels that reflect the love and style you want to reflect outwards.",
           "icon": "shopify:\/\/shop_images\/illustrations_ring2.png"
         }
       },
@@ -3353,7 +3354,7 @@
         "type": "image-with-text",
         "settings": {
           "image": "shopify:\/\/shop_images\/Rosy_Vibes.jpg",
-          "title": "Environmentally Conscious",
+          "title": "Environmentally <em>Conscious<\/em>",
           "text": "<p>Our approach to making jewelry includes using recycled precious metals, conflict-free diamonds, and ethically-sourced gemstones to create elegant, sophisticated, and vibrant heirloom-quality pieces.<br\/><\/p><p>We are a women-operated company founded by a Black Latina and we are based in Seattle, WA where you can also shop from our retail store in person.<br\/><br\/>We're looking forward to helping you discover our unique engagement rings, wedding bands, and fine jewelry to celebrate special milestones or treat yourself.<\/p>",
           "cta_text": "Read more",
           "cta_link": "shopify:\/\/pages\/our-story",
@@ -4005,7 +4006,7 @@
         "type": "image-with-text",
         "settings": {
           "image": "shopify:\/\/shop_images\/1000px-Eternity-bracelets-and-dua-band-and-crescent-band.jpg",
-          "title": "NEW Eternity Bracelets dates announced!",
+          "title": "<em>New<\/em> Eternity Bracelets dates",
           "text": "<p>Get a solid 14K gold chain permanently welded onto your wrist. These claspless bracelets are so chic and minimalist. Treat yourself or bring someone special to enjoy this experience together in our Seattle store. Prices start at $100.<\/p>",
           "cta_text": "See the upcoming dates",
           "cta_link": "https:\/\/www.valeriemadison.com\/pages\/eternity-bracelets",
