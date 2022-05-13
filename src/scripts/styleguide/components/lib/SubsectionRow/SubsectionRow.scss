@@ -1,5 +1,22 @@
 .vm-styleguide__subsection-row {
   margin-bottom: get-vm-spacer(7);
+
+  .row {
+    align-items: center;
+  }
+
+  .vm-styleguide__subsection-row__body {
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
+      margin-bottom: 0;
+    }
+  }
 }
 
 .vm-styleguide__subsection-row-data-table {

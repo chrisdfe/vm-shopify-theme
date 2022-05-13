@@ -13,10 +13,6 @@ Description: Shopify Theme (https://www.shopify.com/&ref=out-of-the-sandbox)
 ================================================== */
 /* Variables - Colors
 ================================================== */
-@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
 :root {
   --vm-color-sea-green: #1c4747;
   --vm-color-plum: #714457;
@@ -428,9 +424,11 @@ summary {
   touch-action: manipulation;
 }
 
+/* General - CTA Link
+================================================== */
 a.cta-link {
   font-weight: 600;
-  border-bottom: 1px solid #714457;
+  border-bottom: 2px solid #714457;
   text-transform: uppercase;
   font-size: 14px;
   font-family: proxima-nova, sans-serif;
@@ -1386,7 +1384,7 @@ h3 sup,
 h1,
 .heading-1 {
   font-family: orpheuspro, serif;
-  font-size: 62px;
+  font-size: 58px;
   letter-spacing: 0;
   line-height: 1.1;
   font-weight: 400;
@@ -1410,7 +1408,7 @@ h1 sup,
 h2,
 .heading-2 {
   font-family: orpheuspro, serif;
-  font-size: 45px;
+  font-size: 42px;
   letter-spacing: 0;
   line-height: 1.2;
   font-weight: 400;
@@ -1467,7 +1465,7 @@ h6,
 h4,
 .subheading-1 {
   font-family: proxima-nova, sans-serif;
-  font-size: 15px;
+  font-size: 16px;
   letter-spacing: 0.04em;
   line-height: 1.4;
   text-transform: uppercase;
@@ -1511,7 +1509,7 @@ h6,
 @media only screen and (max-width: 800px) {
   h6,
 .subheading-3 {
-    font-size: 12px;
+    font-size: 13px;
   }
 }
 
@@ -1531,8 +1529,8 @@ p:empty,
 .paragraph-1,
 .paragraph-1 p {
   font-family: proxima-nova, sans-serif;
-  font-size: 19px;
-  font-weight: 400;
+  font-size: 18px;
+  font-weight: 500;
   letter-spacing: 0;
   line-height: 1.6;
   text-transform: none;
@@ -1548,7 +1546,7 @@ p,
 .paragraph-2,
 .paragraph-2 p {
   font-family: proxima-nova, sans-serif;
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 400;
   letter-spacing: 0;
   line-height: 1.6;
@@ -1586,11 +1584,11 @@ p,
 .heading--with-accent:after {
   content: "";
   position: absolute;
-  bottom: -1rem;
+  bottom: -0.5rem;
   left: 0.25rem;
   display: block;
   width: 32px;
-  border-bottom: 1px solid #1c4747;
+  border-bottom: 2px solid #dec1a8;
 }
 .heading--with-accent.page-heading__title--no-accent:after {
   display: none;
@@ -1620,11 +1618,6 @@ p,
     -webkit-transform: translateX(-50%);
             transform: translateX(-50%);
   }
-}
-
-.color-region--dark .heading--with-accent:after,
-.color-region--dark-alt .heading--with-accent:after {
-  border-color: #fff;
 }
 
 /* general/typography/page-heading
@@ -1660,7 +1653,7 @@ p,
 blockquote,
 blockquote p {
   font-family: proxima-nova, sans-serif;
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 400;
   letter-spacing: 0;
   line-height: 1.6;
@@ -2013,7 +2006,7 @@ legend,
   label,
 legend,
 .option_title {
-    font-size: 12px;
+    font-size: 13px;
   }
 }
 
@@ -8447,7 +8440,7 @@ button.shopify-payment-button__more-options:hover {
 @media only screen and (max-width: 800px) {
   .breadcrumb_text,
 .article-pagination {
-    font-size: 12px;
+    font-size: 13px;
   }
 }
 @media only screen and (max-width: 800px) {
@@ -8932,7 +8925,7 @@ ul.tabs {
 }
 @media only screen and (max-width: 800px) {
   .search-autocomplete__result.search-autocomplete__result.search-autocomplete__result--see-all a {
-    font-size: 12px;
+    font-size: 13px;
   }
 }
 .search-autocomplete__result.search-autocomplete__result.search-autocomplete__result--see-all a:after {
@@ -10920,15 +10913,12 @@ div.container.gallery-content {
 }
 @media only screen and (max-width: 800px) and (max-width: 800px) {
   .content-section__heading__title-wrapper .content-section__heading__title-link {
-    font-size: 12px;
+    font-size: 13px;
   }
 }
 
 .content-section__heading__title {
   margin-bottom: 0;
-}
-.content-section__heading__title.heading--with-accent {
-  margin-bottom: 2rem;
 }
 .content-section__heading__title.content-section__heading__title--align-center {
   text-align: center;
@@ -15030,7 +15020,7 @@ button.update {
 @media only screen and (max-width: 800px) {
   .vm-testimonial-slide .vm-testimonial-slide__title {
     font-family: orpheuspro, serif;
-    font-size: 45px;
+    font-size: 42px;
     letter-spacing: 0;
     line-height: 1.2;
     font-weight: 400;
@@ -15099,6 +15089,10 @@ button.update {
 .color-region--dark .vm-testimonial__slide-button svg,
 .color-region--dark-alt .vm-testimonial__slide-button svg {
   fill: #fff;
+}
+.color-region--dark .vm-testimonial__slide-button:hover svg,
+.color-region--dark-alt .vm-testimonial__slide-button:hover svg {
+  fill: #dec1a8;
 }
 
 /* #Account

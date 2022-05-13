@@ -6,6 +6,7 @@ import StyleguideSubsection from "../../lib/Subsection";
 import StyleguideSubsectionRow from "../../lib/SubsectionRow";
 
 import FontExample from "./FontExample";
+import TypeStyleSubsectionRow from "./TypeStyleSubsectionRow";
 
 const LOREM =
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
@@ -38,38 +39,17 @@ function TypographyPage() {
           </>
         }
       >
-        <StyleguideSubsectionRow
-          title="Heading 1"
-          dataRows={[
-            { title: "size", value: "56px" },
-            { title: "line height", value: "1.2 (67.2px)" },
-            { title: "spacing", value: "20 (0.02em)" },
-          ]}
-        >
+        <TypeStyleSubsectionRow title="Heading 1" size={58} lineHeight={1.2} spacing={0}>
           <h1>{QUICK_BROWN_FOX}</h1>
-        </StyleguideSubsectionRow>
+        </TypeStyleSubsectionRow>
 
-        <StyleguideSubsectionRow
-          title="Heading 2"
-          dataRows={[
-            { title: "size", value: "36px" },
-            { title: "line height", value: "1.2 (67.2px)" },
-            { title: "spacing", value: "20 (0.02em)" },
-          ]}
-        >
+        <TypeStyleSubsectionRow title="Heading 2" size={42} lineHeight={1.2} spacing={0}>
           <h2>{QUICK_BROWN_FOX}</h2>
-        </StyleguideSubsectionRow>
+        </TypeStyleSubsectionRow>
 
-        <StyleguideSubsectionRow
-          title="Heading 3"
-          dataRows={[
-            { title: "size", value: "30px" },
-            { title: "line height", value: "1.2 (48 px)" },
-            { title: "spacing", value: "20 (0.02em)" },
-          ]}
-        >
+        <TypeStyleSubsectionRow title="Heading 3" size={32} lineHeight={1.2} spacing={0}>
           <h3>{QUICK_BROWN_FOX}</h3>
-        </StyleguideSubsectionRow>
+        </TypeStyleSubsectionRow>
       </StyleguideSubsection>
 
       <StyleguideSubsection
@@ -90,38 +70,17 @@ function TypographyPage() {
           </>
         }
       >
-        <StyleguideSubsectionRow
-          title="Subheading 1"
-          dataRows={[
-            { title: "size", value: "16px" },
-            { title: "line height", value: "1.4 (22.4px)" },
-            { title: "spacing", value: "80 (0.08em)" },
-          ]}
-        >
+        <TypeStyleSubsectionRow title="Subheading 1" size={16} lineHeight={1.4} spacing={20}>
           <h4>{QUICK_BROWN_FOX}</h4>
-        </StyleguideSubsectionRow>
+        </TypeStyleSubsectionRow>
 
-        <StyleguideSubsectionRow
-          title="Subheading 2"
-          dataRows={[
-            { title: "size", value: "15px" },
-            { title: "line height", value: "1.4 (21)" },
-            { title: "spacing", value: "80 (0.08em)" },
-          ]}
-        >
+        <TypeStyleSubsectionRow title="Subheading 2" size={14} lineHeight={1.4} spacing={20}>
           <h5>{QUICK_BROWN_FOX}</h5>
-        </StyleguideSubsectionRow>
+        </TypeStyleSubsectionRow>
 
-        <StyleguideSubsectionRow
-          title="Subheading 3"
-          dataRows={[
-            { title: "size", value: "13px" },
-            { title: "line height", value: "1.4 (18.2px)" },
-            { title: "spacing", value: "80 (0.08em)" },
-          ]}
-        >
+        <TypeStyleSubsectionRow title="Subheading 3" size={12} lineHeight={1.4} spacing={20}>
           <h6>{QUICK_BROWN_FOX}</h6>
-        </StyleguideSubsectionRow>
+        </TypeStyleSubsectionRow>
       </StyleguideSubsection>
 
       <StyleguideSubsection
@@ -136,16 +95,9 @@ function TypographyPage() {
           </>
         }
       >
-        <StyleguideSubsectionRow
-          title="Label"
-          dataRows={[
-            { title: "size", value: "16px" },
-            { title: "line height", value: "1.4 (22.4px)" },
-            { title: "spacing", value: "80 (0.08em)" },
-          ]}
-        >
+        <TypeStyleSubsectionRow title="Label" size={16} lineHeight={1.4} spacing={80}>
           <h4>{QUICK_BROWN_FOX}</h4>
-        </StyleguideSubsectionRow>
+        </TypeStyleSubsectionRow>
       </StyleguideSubsection>
 
       <StyleguideSubsection
@@ -155,8 +107,7 @@ function TypographyPage() {
         description={
           <>
             <p>
-              Anything that is not a <b>heading</b> or a <b>subheading</b> is a
-              paragraph.
+              Any text isn't a heading, subheading, or label is paragraph text.
             </p>
 
             <p>
@@ -165,38 +116,17 @@ function TypographyPage() {
           </>
         }
       >
-        <StyleguideSubsectionRow
-          title="Paragraph 1"
-          dataRows={[
-            { title: "size", value: "17px" },
-            { title: "line height", value: "1.6 (27.2px)" },
-            { title: "spacing", value: "30 (0.03em)" },
-          ]}
-        >
+        <TypeStyleSubsectionRow title="Paragraph 1" size={18} lineHeight={1.6} spacing={0}>
           <p className="paragraph-1">{LOREM}</p>
-        </StyleguideSubsectionRow>
+        </TypeStyleSubsectionRow>
 
-        <StyleguideSubsectionRow
-          title="Paragraph 2"
-          dataRows={[
-            { title: "size", value: "16px" },
-            { title: "line height", value: "1.6 (25.6px)" },
-            { title: "spacing", value: "30 (0.03em)" },
-          ]}
-        >
+        <TypeStyleSubsectionRow title="Paragraph 2" size={16} lineHeight={1.6} spacing={0}>
           <p className="paragraph-2">{LOREM}</p>
-        </StyleguideSubsectionRow>
+        </TypeStyleSubsectionRow>
 
-        <StyleguideSubsectionRow
-          title="Paragraph 3"
-          dataRows={[
-            { title: "size", value: "14px" },
-            { title: "line height", value: "1.6 (22.4px)" },
-            { title: "spacing", value: "30 (0.03em)" },
-          ]}
-        >
+        <TypeStyleSubsectionRow title="Paragraph 3" size={15} lineHeight={1.6} spacing={0}>
           <p className="paragraph-3">{LOREM}</p>
-        </StyleguideSubsectionRow>
+        </TypeStyleSubsectionRow>
       </StyleguideSubsection>
     </StyleguideLayout>
   );

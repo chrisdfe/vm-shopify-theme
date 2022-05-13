@@ -31705,7 +31705,7 @@ function Layout(_a) {
 }
 
 function StyleguideSubsection(_a) {
-    var number = _a.number, title = _a.title; _a.sectionId; var description = _a.description, children = _a.children;
+    var number = _a.number, title = _a.title; _a.sectionId; var description = _a.description, uses = _a.uses, avoids = _a.avoids, children = _a.children;
     return (React.createElement("div", { className: "vm-styleguide-subsection" },
         React.createElement("div", { className: "container" },
             React.createElement("div", { className: "row" },
@@ -31715,8 +31715,28 @@ function StyleguideSubsection(_a) {
                             number,
                             "."),
                         React.createElement("span", null, title)),
-                    description && (React.createElement("div", { className: "vm-styleguide__content-section-description" }, description))))),
-        React.createElement("div", { className: "vm-styleguide-subsection__content" }, children)));
+                    description && (React.createElement("div", { className: "vm-styleguide__content-section-description" }, description)))),
+            (uses || avoids) && (React.createElement(React.Fragment, null,
+                React.createElement("div", { className: "row" },
+                    React.createElement("div", { className: "twelve columns offset-by-four" },
+                        React.createElement("h3", null, "Usage"))),
+                React.createElement("div", { className: "row u-margin-bottom-5" },
+                    React.createElement("div", { className: "four columns" }, "\u00A0"),
+                    React.createElement("div", { className: "six columns" },
+                        "\u00A0",
+                        uses && uses.length && (React.createElement(React.Fragment, null,
+                            React.createElement("h4", null, "Uses:"),
+                            React.createElement("ul", null, uses.map(function (use) { return React.createElement("li", null, use); }))))),
+                    React.createElement("div", { className: "six columns" },
+                        "\u00A0",
+                        avoids && avoids.length && (React.createElement(React.Fragment, null,
+                            React.createElement("h4", null, "Avoid:"),
+                            React.createElement("ul", null, avoids.map(function (avoid) { return React.createElement("li", null, avoid); })))))))),
+            React.createElement("div", { className: "vm-styleguide-subsection__content" },
+                React.createElement("div", { className: "row" },
+                    React.createElement("div", { className: "twelve columns offset-by-four" },
+                        React.createElement("h3", null, "Examples"))),
+                children))));
 }
 
 function DataTable(_a) {
@@ -31733,14 +31753,23 @@ function DataTable(_a) {
 }
 
 function StyleguideSubsectionRow(_a) {
-    var title = _a.title, children = _a.children, dataRows = _a.dataRows;
+    var title = _a.title, children = _a.children, dataRows = _a.dataRows, uses = _a.uses, avoids = _a.avoids;
     return (React.createElement("div", { className: "vm-styleguide__subsection-row" },
         React.createElement("div", { className: "container" },
             React.createElement("div", { className: "row" },
-                React.createElement("div", { className: "four columns" },
+                React.createElement("div", { className: "four columns vm-styleguide__subsection-row__sidebar" },
                     React.createElement("h4", { className: "vm-styleguide-content__subsection-row-subheading" }, title),
                     dataRows && React.createElement(DataTable, { dataRows: dataRows })),
-                React.createElement("div", { className: "twelve columns" }, children)))));
+                React.createElement("div", { className: "twelve columns" },
+                    React.createElement("div", { className: "vm-styleguide__subsection-row__body" }, children))),
+            (uses || avoids) && (React.createElement("div", { className: "row" },
+                React.createElement("div", { className: "four columns" }),
+                React.createElement("div", { className: "six columns" }, uses && uses.length && (React.createElement(React.Fragment, null,
+                    React.createElement("h4", null, "Uses:"),
+                    React.createElement("ul", null, uses.map(function (use) { return React.createElement("li", null, use); }))))),
+                React.createElement("div", { className: "six columns" }, avoids && avoids.length && (React.createElement(React.Fragment, null,
+                    React.createElement("h4", null, "Avoid:"),
+                    React.createElement("ul", null, avoids.map(function (avoid) { return React.createElement("li", null, avoid); }))))))))));
 }
 
 function FontExample(_a) {
@@ -31751,6 +31780,16 @@ function FontExample(_a) {
         "abcdefghijklmnopqrstuvwxyz",
         React.createElement("br", null),
         "01 02 03 04 05 06 07 08 09"));
+}
+
+var calculateLineHeight = function (lineHeight, fontSize) { return Math.round((lineHeight * fontSize) * 100) / 100; };
+function TypeStyleSubsectionRow(_a) {
+    var title = _a.title, size = _a.size, lineHeight = _a.lineHeight, spacing = _a.spacing, uses = _a.uses, avoids = _a.avoids, children = _a.children;
+    return (React.createElement(StyleguideSubsectionRow, { title: title, uses: uses, avoids: avoids, dataRows: [
+            { title: "size", value: "".concat(size, "px") },
+            { title: "line height", value: "".concat(lineHeight, " (").concat(calculateLineHeight(lineHeight, size), ")") },
+            { title: "spacing", value: "".concat(spacing, " (").concat(spacing / 1000, "em)") },
+        ] }, children));
 }
 
 var LOREM = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
@@ -31767,23 +31806,11 @@ function TypographyPage() {
                 React.createElement("p", null,
                     "All Headings use ",
                     React.createElement("b", null, "Orpheus Pro Regular."))) },
-            React.createElement(StyleguideSubsectionRow, { title: "Heading 1", dataRows: [
-                    { title: "size", value: "56px" },
-                    { title: "line height", value: "1.2 (67.2px)" },
-                    { title: "spacing", value: "20 (0.02em)" },
-                ] },
+            React.createElement(TypeStyleSubsectionRow, { title: "Heading 1", size: 58, lineHeight: 1.2, spacing: 0 },
                 React.createElement("h1", null, QUICK_BROWN_FOX)),
-            React.createElement(StyleguideSubsectionRow, { title: "Heading 2", dataRows: [
-                    { title: "size", value: "36px" },
-                    { title: "line height", value: "1.2 (67.2px)" },
-                    { title: "spacing", value: "20 (0.02em)" },
-                ] },
+            React.createElement(TypeStyleSubsectionRow, { title: "Heading 2", size: 42, lineHeight: 1.2, spacing: 0 },
                 React.createElement("h2", null, QUICK_BROWN_FOX)),
-            React.createElement(StyleguideSubsectionRow, { title: "Heading 3", dataRows: [
-                    { title: "size", value: "30px" },
-                    { title: "line height", value: "1.2 (48 px)" },
-                    { title: "spacing", value: "20 (0.02em)" },
-                ] },
+            React.createElement(TypeStyleSubsectionRow, { title: "Heading 3", size: 32, lineHeight: 1.2, spacing: 0 },
                 React.createElement("h3", null, QUICK_BROWN_FOX))),
         React.createElement(StyleguideSubsection, { number: "01c", title: "Subheadings", sectionId: "subheadings", description: React.createElement(React.Fragment, null,
                 React.createElement("p", null,
@@ -31798,39 +31825,18 @@ function TypographyPage() {
                     " ",
                     React.createElement("b", null, "all Caps"),
                     ".")) },
-            React.createElement(StyleguideSubsectionRow, { title: "Subheading 1", dataRows: [
-                    { title: "size", value: "16px" },
-                    { title: "line height", value: "1.4 (22.4px)" },
-                    { title: "spacing", value: "80 (0.08em)" },
-                ] },
+            React.createElement(TypeStyleSubsectionRow, { title: "Subheading 1", size: 16, lineHeight: 1.4, spacing: 20 },
                 React.createElement("h4", null, QUICK_BROWN_FOX)),
-            React.createElement(StyleguideSubsectionRow, { title: "Subheading 2", dataRows: [
-                    { title: "size", value: "15px" },
-                    { title: "line height", value: "1.4 (21)" },
-                    { title: "spacing", value: "80 (0.08em)" },
-                ] },
+            React.createElement(TypeStyleSubsectionRow, { title: "Subheading 2", size: 14, lineHeight: 1.4, spacing: 20 },
                 React.createElement("h5", null, QUICK_BROWN_FOX)),
-            React.createElement(StyleguideSubsectionRow, { title: "Subheading 3", dataRows: [
-                    { title: "size", value: "13px" },
-                    { title: "line height", value: "1.4 (18.2px)" },
-                    { title: "spacing", value: "80 (0.08em)" },
-                ] },
+            React.createElement(TypeStyleSubsectionRow, { title: "Subheading 3", size: 12, lineHeight: 1.4, spacing: 20 },
                 React.createElement("h6", null, QUICK_BROWN_FOX))),
         React.createElement(StyleguideSubsection, { number: "01d", title: "Labels", sectionId: "labels", description: React.createElement(React.Fragment, null,
                 React.createElement("p", null, "Labels are primariliy used in form components - buttons, inputs.")) },
-            React.createElement(StyleguideSubsectionRow, { title: "Label", dataRows: [
-                    { title: "size", value: "16px" },
-                    { title: "line height", value: "1.4 (22.4px)" },
-                    { title: "spacing", value: "80 (0.08em)" },
-                ] },
+            React.createElement(TypeStyleSubsectionRow, { title: "Label", size: 16, lineHeight: 1.4, spacing: 80 },
                 React.createElement("h4", null, QUICK_BROWN_FOX))),
         React.createElement(StyleguideSubsection, { number: "01e", title: "Paragraph Text", sectionId: "paragraphs", description: React.createElement(React.Fragment, null,
-                React.createElement("p", null,
-                    "Anything that is not a ",
-                    React.createElement("b", null, "heading"),
-                    " or a ",
-                    React.createElement("b", null, "subheading"),
-                    " is a paragraph."),
+                React.createElement("p", null, "Any text isn't a heading, subheading, or label is paragraph text."),
                 React.createElement("p", null,
                     "All paragraph text uses ",
                     React.createElement("b", null, "Proxima Nova Regular"),
@@ -31839,23 +31845,11 @@ function TypographyPage() {
                     " and ",
                     React.createElement("b", null, "bold"),
                     " for emphasis.")) },
-            React.createElement(StyleguideSubsectionRow, { title: "Paragraph 1", dataRows: [
-                    { title: "size", value: "17px" },
-                    { title: "line height", value: "1.6 (27.2px)" },
-                    { title: "spacing", value: "30 (0.03em)" },
-                ] },
+            React.createElement(TypeStyleSubsectionRow, { title: "Paragraph 1", size: 18, lineHeight: 1.6, spacing: 0 },
                 React.createElement("p", { className: "paragraph-1" }, LOREM)),
-            React.createElement(StyleguideSubsectionRow, { title: "Paragraph 2", dataRows: [
-                    { title: "size", value: "16px" },
-                    { title: "line height", value: "1.6 (25.6px)" },
-                    { title: "spacing", value: "30 (0.03em)" },
-                ] },
+            React.createElement(TypeStyleSubsectionRow, { title: "Paragraph 2", size: 16, lineHeight: 1.6, spacing: 0 },
                 React.createElement("p", { className: "paragraph-2" }, LOREM)),
-            React.createElement(StyleguideSubsectionRow, { title: "Paragraph 3", dataRows: [
-                    { title: "size", value: "14px" },
-                    { title: "line height", value: "1.6 (22.4px)" },
-                    { title: "spacing", value: "30 (0.03em)" },
-                ] },
+            React.createElement(TypeStyleSubsectionRow, { title: "Paragraph 3", size: 15, lineHeight: 1.6, spacing: 0 },
                 React.createElement("p", { className: "paragraph-3" }, LOREM)))));
 }
 
@@ -32655,15 +32649,13 @@ function ComponentsPage() {
                                 React.createElement("td", null, "column 3")))))))));
 }
 
-// {/* <HashRouter hashType="slash" > */ }
 function StyleguideApp() {
-    return (react.exports.createElement(react.exports.Fragment, null,
-        react.exports.createElement(HashRouter, null,
-            react.exports.createElement(Routes, null,
-                react.exports.createElement(Route, { path: "/", element: react.exports.createElement(OverviewPage, null) }),
-                react.exports.createElement(Route, { path: "/typography", element: react.exports.createElement(TypographyPage, null) }),
-                react.exports.createElement(Route, { path: "/colors", element: react.exports.createElement(ColorsPage, null) }),
-                react.exports.createElement(Route, { path: "/components", element: react.exports.createElement(ComponentsPage, null) })))));
+    return (react.exports.createElement(HashRouter, null,
+        react.exports.createElement(Routes, null,
+            react.exports.createElement(Route, { path: "/", element: react.exports.createElement(OverviewPage, null) }),
+            react.exports.createElement(Route, { path: "/typography", element: react.exports.createElement(TypographyPage, null) }),
+            react.exports.createElement(Route, { path: "/colors", element: react.exports.createElement(ColorsPage, null) }),
+            react.exports.createElement(Route, { path: "/components", element: react.exports.createElement(ComponentsPage, null) }))));
 }
 
 reactDom.exports.render(react.exports.createElement(StyleguideApp, null), document.getElementById("styleguide-app"));

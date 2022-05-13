@@ -7,11 +7,11 @@
   &:after {
     content: '';
     position: absolute;
-    bottom: -1rem;
+    bottom: -0.5rem;
     left: 0.25rem;
     display: block;
     width: 32px;
-    border-bottom: 1px solid $vm-heading-accent-color;
+    border-bottom: 2px solid $vm-heading-accent-color;
   }
 
   &.page-heading__title--no-accent {
@@ -50,9 +50,9 @@
   }
 }
 
-.color-region--dark,
-.color-region--dark-alt {
-  .heading--with-accent:after {
-    border-color: $vm-color-white;   
-  }
-}
+// .color-region--dark,
+// .color-region--dark-alt {
+//   .heading--with-accent:after {
+//     border-color: $vm-color-white;   
+//   }
+// }

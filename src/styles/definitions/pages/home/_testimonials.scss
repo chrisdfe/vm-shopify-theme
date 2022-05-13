@@ -89,5 +89,12 @@
     svg {
       fill: #fff;
     }
+
+    &:hover {
+
+      svg {
+        fill: $vm-color-sand;
+      }
+    }
   }
 }

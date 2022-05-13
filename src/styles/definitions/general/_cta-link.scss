@@ -1,0 +1,84 @@
+/* General - CTA Link
+================================================== */
+
+a.cta-link {
+  font-weight: $vm-subheading-font-weight;
+  border-bottom: 2px solid $vm-link-color;
+  text-transform: uppercase;
+  font-size: $vm-subheading-2-font-size;
+  font-family: $vm-label-font;
+  letter-spacing: $vm-subheading-2-letter-spacing;
+
+  &:hover {
+    border-bottom-color: $vm-link-hover-color;
+  }
+
+  &.cta-link-3 {
+    font-size: $vm-subheading-3-font-size;
+    letter-spacing: $vm-subheading-3-letter-spacing;
+  }
+
+  &.cta-link--inverted {
+    color: $vm-color-white;
+    border-bottom-color: $vm-color-white;
+
+    &:hover {
+      color: $vm-color-sand;
+      border-bottom-color: $vm-color-sand;
+    }
+  }
+
+  &.cta-link--light {
+    color: $vm-color-white;
+    border-bottom-color: $vm-color-white;
+
+    &:hover {
+      color: $vm-color-sand;
+      border-bottom-color: $vm-color-sand;
+    }
+  }
+
+  &.cta-link--light-alt {
+    color: $vm-color-cream;
+    border-bottom-color: $vm-color-cream;
+
+    &:hover {
+      color: $vm-color-sand;
+      border-bottom-color: $vm-color-sand;
+    }
+  }
+
+  &.cta-link--dark {
+    color: $vm-color-plum;
+    border-bottom-color: $vm-color-plum;
+
+    &:hover {
+      color: $vm-color-sand;
+      border-bottom-color: $vm-color-sand;
+    }
+  }
+
+  &.cta-link--dark-alt {
+    color: $vm-color-sea-green;
+    border-bottom-color: $vm-color-sea-green;
+
+    &:hover {
+      color: $vm-color-sand;
+      border-bottom-color: $vm-color-sand;
+    }
+  }
+
+  &.cta-link--body-text {
+    color: $vm-body-text-color;
+    border-bottom-color: $vm-body-text-color;
+
+    &:hover {
+      color: $vm-color-sand;
+      border-bottom-color: $vm-color-sand;
+    }
+  }
+
+  .content & {
+    text-decoration: none;
+  }
+}

@@ -3,13 +3,16 @@
   <div class="row">
 
     <div class="eight columns medium-down--one-whole medium-down--offset-by-zero">
-      {% include "content-section.title", with {
-        title: section.settings.title,
-        extra_classes: "u-margin-top-0",
-        title_tag: "h1"
-      } %}
+      <div class="u-margin-bottom-2">
+        {% include "content-section.title", with {
+          title: section.settings.title,
+          extra_classes: "u-margin-top-0",
+          with_accent: false,
+          title_tag: "h1"
+        } %}
+      </div>
 
-      <div class="block-text">
+      <div>
         <p class="paragraph-1">{{ section.settings.intro_content }}</p>
         <p >{{ section.settings.body_content }}</p>
       </div>
