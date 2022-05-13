@@ -1,12 +1,20 @@
-import React, { createContext } from "react";
+import * as React from "react";
+import { ReactNode } from "react";
 import classNames from "classnames";
 
-// import PageSectionManager from "./PageSectionManager";
 import Sidebar from "./Sidebar";
 
 import "./Layout.scss";
 
-function Layout({ page, pageNumber, title, contentRegion, children }) {
+interface Props {
+  page: string,
+  title: string,
+  children?: ReactNode,
+  pageNumber?: string,
+  contentRegion?: string,
+}
+
+function Layout({ page, pageNumber, title, contentRegion, children }: Props) {
   return (
     <div className="vm-styleguide-layout">
       <Sidebar page={page} />
@@ -14,7 +22,7 @@ function Layout({ page, pageNumber, title, contentRegion, children }) {
       <div
         className={classNames(
           "vm-styleguide-content",
-          `color-region--${contentRegion}`
+          { [`color-region--${contentRegion}`]: !!contentRegion }
         )}
       >
         <div className="container">
@@ -29,7 +37,7 @@ function Layout({ page, pageNumber, title, contentRegion, children }) {
         </div>
         {children}
       </div>
-    </div>
+    </div >
   );
 }
 

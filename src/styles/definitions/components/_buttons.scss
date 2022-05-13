@@ -2,14 +2,13 @@
 ================================================== */
 
 a.button,
-.button,
 button,
 input[type='submit'],
 input[type='reset'],
 input[type='button'],
-.action_button,
 a.action_button,
 input.action_button[type='submit'],
+input.action_button[type='reset'],
 input.action_button[type='button'] {
   display: inline-block;
   background: $vm-button-background-color;
@@ -58,6 +57,50 @@ input.action_button[type='button'] {
   box-shadow: none;
   @include flex(1 0 100%);
   max-width: 100%;
+
+  &:hover,
+  &:focus {
+    background-color: $vm-button-secondary-hover-background-color;
+    border-color: $vm-button-secondary-hover-border-color;
+    color: $vm-button-secondary-hover-text-color;
+  }
+}
+
+
+.button.button--link {
+  background: transparent;
+  border: 0 none;
+  padding: 0;
+  margin: 0;
+  height: auto;
+  min-height: auto;
+  color: $vm-link-color;
+  text-decoration: none;
+  position: relative;
+  transition: color $vm-link-transition-speed;
+
+  &:hover {
+    color: $vm-link-hover-color;
+    text-decoration: underline;
+  }
+}
+
+.button.button--inverted {
+  background: $vm-color-white;
+  color: $vm-color-sea-green;
+  border-color: $vm-color-white;
+
+  &:hover {
+    background-color: $vm-button-hover-background-color;
+    border: 1px solid $vm-button-hover-border-color;
+    color: $vm-button-hover-text-color;
+  }
+}
+
+.button.button--secondary.button--inverted {
+  background-color: transparent;
+  border-color: $vm-color-white;
+  color: $vm-color-white;
 
   &:hover,
   &:focus {
@@ -201,34 +244,8 @@ label.tos_label {
   // height: 100%;
 }
 
-.shopify-payment-button {
-  // position: relative;
-  // height: 44px;
-
-  // div {
-  //   height: 100%;
-  // }
-
-  // button {
-  //   line-height: 1.2;
-  //   padding-top: 11px;
-  //   padding-bottom: 11px;
-  //   margin-bottom: 0;
-  // }
-}
-
-button.shopify-payment-button__button.shopify-payment-button__button--unbranded {
-  // height: 100%;
-}
-
-div.shopify-payment-button__button {
-  // border-radius: 0;
-}
-
 .shopify-payment-button__button--branded,
 .shopify-payment-button__button--unbranded {
-  // overflow: hidden;
-  // min-height: 44px;
   display: none;
 }
 

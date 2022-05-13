@@ -33,6 +33,7 @@ a.cta-link {
   border-bottom: 1px solid $vm-link-color;
   text-transform: uppercase;
   font-size: $vm-subheading-2-font-size;
+  font-family: $vm-label-font;
   letter-spacing: $vm-subheading-2-letter-spacing;
 
   &:hover {

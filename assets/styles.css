@@ -399,6 +399,102 @@ img[data-sizes="100vw"] {
   height: auto;
 }
 
+/* General - Links
+================================================== */
+a,
+a:visited {
+  color: #714457;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.1s;
+}
+
+a:hover,
+a:focus {
+  color: #dec1a8;
+}
+
+p a {
+  text-decoration: underline;
+}
+
+a,
+button,
+input,
+select,
+textarea,
+label,
+summary {
+  touch-action: manipulation;
+}
+
+a.cta-link {
+  font-weight: 600;
+  border-bottom: 1px solid #714457;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-family: proxima-nova, sans-serif;
+  letter-spacing: 0.04em;
+}
+a.cta-link:hover {
+  border-bottom-color: #dec1a8;
+}
+a.cta-link.cta-link-3 {
+  font-size: 13px;
+  letter-spacing: 0.04em;
+}
+a.cta-link.cta-link--inverted {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+a.cta-link.cta-link--inverted:hover {
+  color: #dec1a8;
+  border-bottom-color: #dec1a8;
+}
+a.cta-link.cta-link--light {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+a.cta-link.cta-link--light:hover {
+  color: #dec1a8;
+  border-bottom-color: #dec1a8;
+}
+a.cta-link.cta-link--light-alt {
+  color: #f8f4f4;
+  border-bottom-color: #f8f4f4;
+}
+a.cta-link.cta-link--light-alt:hover {
+  color: #dec1a8;
+  border-bottom-color: #dec1a8;
+}
+a.cta-link.cta-link--dark {
+  color: #714457;
+  border-bottom-color: #714457;
+}
+a.cta-link.cta-link--dark:hover {
+  color: #dec1a8;
+  border-bottom-color: #dec1a8;
+}
+a.cta-link.cta-link--dark-alt {
+  color: #1c4747;
+  border-bottom-color: #1c4747;
+}
+a.cta-link.cta-link--dark-alt:hover {
+  color: #dec1a8;
+  border-bottom-color: #dec1a8;
+}
+a.cta-link.cta-link--body-text {
+  color: #1c4747;
+  border-bottom-color: #1c4747;
+}
+a.cta-link.cta-link--body-text:hover {
+  color: #dec1a8;
+  border-bottom-color: #dec1a8;
+}
+.content a.cta-link {
+  text-decoration: none;
+}
+
 /* general/grid
 ================================================== */
 .container {
@@ -1276,6 +1372,16 @@ h3,
 .heading-3 {
   margin: 0 0 0.75em;
 }
+h1 sup,
+.heading-1 sup,
+h2 sup,
+.heading-2 sup,
+h3 sup,
+.heading-3 sup {
+  font-size: 0.5em;
+  top: -1em;
+  right: 0.3em;
+}
 
 h1,
 .heading-1 {
@@ -1297,15 +1403,15 @@ h1 sup,
 @media only screen and (max-width: 800px) {
   h1,
 .heading-1 {
-    font-size: 40px;
+    font-size: 50px;
   }
 }
 
 h2,
 .heading-2 {
   font-family: orpheuspro, serif;
-  font-size: 42px;
-  letter-spacing: 0.02em;
+  font-size: 45px;
+  letter-spacing: 0;
   line-height: 1.2;
   font-weight: 400;
   font-style: normal;
@@ -1321,15 +1427,15 @@ h2 sup,
 @media only screen and (max-width: 800px) {
   h2,
 .heading-2 {
-    font-size: 30px;
+    font-size: 38px;
   }
 }
 
 h3,
 .heading-3 {
   font-family: orpheuspro, serif;
-  font-size: 22px;
-  letter-spacing: 0.02em;
+  font-size: 32px;
+  letter-spacing: 0;
   line-height: 1.2;
   font-weight: 400;
   font-style: normal;
@@ -1360,9 +1466,9 @@ h6,
 
 h4,
 .subheading-1 {
-  font-family: granville, sans-serif;
+  font-family: proxima-nova, sans-serif;
   font-size: 15px;
-  letter-spacing: 0;
+  letter-spacing: 0.04em;
   line-height: 1.4;
   text-transform: uppercase;
   font-weight: 600;
@@ -1377,9 +1483,9 @@ h4,
 
 h5,
 .subheading-2 {
-  font-family: granville, sans-serif;
+  font-family: proxima-nova, sans-serif;
   font-size: 14px;
-  letter-spacing: 0;
+  letter-spacing: 0.04em;
   line-height: 1.4;
   text-transform: uppercase;
   font-weight: 600;
@@ -1394,9 +1500,9 @@ h5,
 
 h6,
 .subheading-3 {
-  font-family: granville, sans-serif;
+  font-family: proxima-nova, sans-serif;
   font-size: 13px;
-  letter-spacing: 0;
+  letter-spacing: 0.04em;
   line-height: 1.4;
   text-transform: uppercase;
   font-weight: 600;
@@ -1425,7 +1531,7 @@ p:empty,
 .paragraph-1,
 .paragraph-1 p {
   font-family: proxima-nova, sans-serif;
-  font-size: 18px;
+  font-size: 19px;
   font-weight: 400;
   letter-spacing: 0;
   line-height: 1.6;
@@ -1442,7 +1548,7 @@ p,
 .paragraph-2,
 .paragraph-2 p {
   font-family: proxima-nova, sans-serif;
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 400;
   letter-spacing: 0;
   line-height: 1.6;
@@ -1459,7 +1565,7 @@ p,
 .paragraph-3,
 .paragraph-3 p {
   font-family: proxima-nova, sans-serif;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 400;
   letter-spacing: 0;
   line-height: 1.6;
@@ -1468,7 +1574,7 @@ p,
 @media only screen and (max-width: 800px) {
   .paragraph-3,
 .paragraph-3 p {
-    font-size: 13px;
+    font-size: 14px;
   }
 }
 
@@ -1483,7 +1589,7 @@ p,
   bottom: -1rem;
   left: 0.25rem;
   display: block;
-  width: 102px;
+  width: 32px;
   border-bottom: 1px solid #1c4747;
 }
 .heading--with-accent.page-heading__title--no-accent:after {
@@ -1554,7 +1660,7 @@ p,
 blockquote,
 blockquote p {
   font-family: proxima-nova, sans-serif;
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 400;
   letter-spacing: 0;
   line-height: 1.6;
@@ -1579,7 +1685,7 @@ blockquote p:last-child {
 }
 blockquote cite {
   font-family: proxima-nova, sans-serif;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 400;
   letter-spacing: 0;
   line-height: 1.6;
@@ -1588,7 +1694,7 @@ blockquote cite {
 }
 @media only screen and (max-width: 800px) {
   blockquote cite {
-    font-size: 13px;
+    font-size: 14px;
   }
 }
 blockquote cite a,
@@ -1664,102 +1770,7 @@ blockquote cite:before {
 }
 
 .image-with-text-overlay-section {
-  margin-bottom: 5rem;
-}
-
-/* General - Links
-================================================== */
-a,
-a:visited {
-  color: #714457;
-  text-decoration: none;
-  position: relative;
-  transition: color 0.1s;
-}
-
-a:hover,
-a:focus {
-  color: #dec1a8;
-}
-
-p a {
-  text-decoration: underline;
-}
-
-a,
-button,
-input,
-select,
-textarea,
-label,
-summary {
-  touch-action: manipulation;
-}
-
-a.cta-link {
-  font-weight: 600;
-  border-bottom: 1px solid #714457;
-  text-transform: uppercase;
-  font-size: 14px;
-  letter-spacing: 0;
-}
-a.cta-link:hover {
-  border-bottom-color: #dec1a8;
-}
-a.cta-link.cta-link-3 {
-  font-size: 13px;
-  letter-spacing: 0;
-}
-a.cta-link.cta-link--inverted {
-  color: #fff;
-  border-bottom-color: #fff;
-}
-a.cta-link.cta-link--inverted:hover {
-  color: #dec1a8;
-  border-bottom-color: #dec1a8;
-}
-a.cta-link.cta-link--light {
-  color: #fff;
-  border-bottom-color: #fff;
-}
-a.cta-link.cta-link--light:hover {
-  color: #dec1a8;
-  border-bottom-color: #dec1a8;
-}
-a.cta-link.cta-link--light-alt {
-  color: #f8f4f4;
-  border-bottom-color: #f8f4f4;
-}
-a.cta-link.cta-link--light-alt:hover {
-  color: #dec1a8;
-  border-bottom-color: #dec1a8;
-}
-a.cta-link.cta-link--dark {
-  color: #714457;
-  border-bottom-color: #714457;
-}
-a.cta-link.cta-link--dark:hover {
-  color: #dec1a8;
-  border-bottom-color: #dec1a8;
-}
-a.cta-link.cta-link--dark-alt {
-  color: #1c4747;
-  border-bottom-color: #1c4747;
-}
-a.cta-link.cta-link--dark-alt:hover {
-  color: #dec1a8;
-  border-bottom-color: #dec1a8;
-}
-a.cta-link.cta-link--body-text {
-  color: #1c4747;
-  border-bottom-color: #1c4747;
-}
-a.cta-link.cta-link--body-text:hover {
-  color: #dec1a8;
-  border-bottom-color: #dec1a8;
-}
-.content a.cta-link {
-  text-decoration: none;
+  margin-bottom: 6rem;
 }
 
 /* General - Lists
@@ -1877,7 +1888,7 @@ textarea {
   background: #fff;
   color: #5f6a7d;
   font-size: 13px;
-  font-family: poppins, sans-serif;
+  font-family: proxima-nova, sans-serif;
   margin-bottom: 15px;
   -webkit-appearance: none;
   text-rendering: optimizeLegibility;
@@ -1990,9 +2001,9 @@ legend,
   font-weight: bold;
   text-align: left;
   margin-bottom: 8px;
-  font-family: granville, sans-serif;
+  font-family: proxima-nova, sans-serif;
   font-size: 13px;
-  letter-spacing: 0;
+  letter-spacing: 0.04em;
   line-height: 1.4;
   text-transform: uppercase;
   font-weight: 600;
@@ -2591,13 +2602,13 @@ span.icon-down-arrow {
 ================================================== */
 *[class^=klaviyo-form] .ql-font-verdana {
   font-family: orpheuspro, serif !important;
-  letter-spacing: 0.02em !important;
+  letter-spacing: 0 !important;
 }
 *[class^=klaviyo-form] input,
 *[class^=klaviyo-form] button {
   font-family: proxima-nova, sans-serif !important;
   font-size: 13px !important;
-  letter-spacing: 0 !important;
+  letter-spacing: 0.04em !important;
 }
 *[class^=klaviyo-form] input {
   border-radius: 0 !important;
@@ -2942,7 +2953,7 @@ div.is-absolute {
 }
 
 .container.content {
-  margin-bottom: 5rem;
+  margin-bottom: 6rem;
 }
 
 .nav_arrows {
@@ -6583,7 +6594,7 @@ body.menu-is-open {
 .header-desktop .header-desktop__nav-link,
 .header-desktop .header-desktop__nav-button {
   font-family: proxima-nova, sans-serif;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 400;
   letter-spacing: 0;
   line-height: 1.6;
@@ -6603,7 +6614,7 @@ body.menu-is-open {
 @media only screen and (max-width: 800px) {
   .header-desktop .header-desktop__nav-link,
 .header-desktop .header-desktop__nav-button {
-    font-size: 13px;
+    font-size: 14px;
   }
 }
 .header-desktop .header-desktop__nav-link svg,
@@ -6805,7 +6816,7 @@ body.menu-is-open {
 }
 .mobile-menu-list-item.mobile-menu-list-item__linklist li {
   font-family: proxima-nova, sans-serif;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 400;
   letter-spacing: 0;
   line-height: 1.6;
@@ -6814,7 +6825,7 @@ body.menu-is-open {
 }
 @media only screen and (max-width: 800px) {
   .mobile-menu-list-item.mobile-menu-list-item__linklist li {
-    font-size: 13px;
+    font-size: 14px;
   }
 }
 .mobile-menu-list-item.mobile-menu-list-item__linklist li a {
@@ -7440,7 +7451,7 @@ body.menu-is-open {
 }
 .toggle_list label {
   font-family: proxima-nova, sans-serif;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 400;
   letter-spacing: 0;
   line-height: 1.6;
@@ -7449,7 +7460,7 @@ body.menu-is-open {
 }
 @media only screen and (max-width: 800px) {
   .toggle_list label {
-    font-size: 13px;
+    font-size: 14px;
   }
 }
 .toggle_list li ul {
@@ -7695,7 +7706,7 @@ body.menu-is-open {
 /* Components - Footer
 ================================================== */
 .footer {
-  padding: 5rem 0;
+  padding: 6rem 0;
   background-color: #714457;
   color: #fff;
   pointer-events: all;
@@ -8020,14 +8031,13 @@ footer .social_icons a {
 /* Components - Buttons
 ================================================== */
 a.button,
-.button,
 button,
 input[type=submit],
 input[type=reset],
 input[type=button],
-.action_button,
 a.action_button,
 input.action_button[type=submit],
+input.action_button[type=reset],
 input.action_button[type=button] {
   display: inline-block;
   background: #1c4747;
@@ -8043,7 +8053,7 @@ input.action_button[type=button] {
   vertical-align: top;
   font-size: 14px;
   font-weight: 600;
-  letter-spacing: 0;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   text-decoration: none;
   display: -moz-inline-flex;
@@ -8058,28 +8068,26 @@ input.action_button[type=button] {
   transition: all 0.1s linear;
 }
 a.button:hover,
-.button:hover,
 button:hover,
 input[type=submit]:hover,
 input[type=reset]:hover,
 input[type=button]:hover,
-.action_button:hover,
 a.action_button:hover,
 input.action_button[type=submit]:hover,
+input.action_button[type=reset]:hover,
 input.action_button[type=button]:hover {
   background-color: #dec1a8;
   border: 1px solid transparent;
   color: #fff;
 }
 a.button:active,
-.button:active,
 button:active,
 input[type=submit]:active,
 input[type=reset]:active,
 input[type=button]:active,
-.action_button:active,
 a.action_button:active,
 input.action_button[type=submit]:active,
+input.action_button[type=reset]:active,
 input.action_button[type=button]:active {
   outline: 0;
 }
@@ -8102,6 +8110,45 @@ input.action_button[type=button]:active {
 .button.button--secondary:hover, .button.button--secondary:focus,
 .action_button.action_button--secondary:hover,
 .action_button.action_button--secondary:focus {
+  background-color: transparent;
+  border-color: #dec1a8;
+  color: #dec1a8;
+}
+
+.button.button--link {
+  background: transparent;
+  border: 0 none;
+  padding: 0;
+  margin: 0;
+  height: auto;
+  min-height: auto;
+  color: #714457;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.1s;
+}
+.button.button--link:hover {
+  color: #dec1a8;
+  text-decoration: underline;
+}
+
+.button.button--inverted {
+  background: #fff;
+  color: #1c4747;
+  border-color: #fff;
+}
+.button.button--inverted:hover {
+  background-color: #dec1a8;
+  border: 1px solid transparent;
+  color: #fff;
+}
+
+.button.button--secondary.button--inverted {
+  background-color: transparent;
+  border-color: #fff;
+  color: #fff;
+}
+.button.button--secondary.button--inverted:hover, .button.button--secondary.button--inverted:focus {
   background-color: transparent;
   border-color: #dec1a8;
   color: #dec1a8;
@@ -8389,9 +8436,9 @@ button.shopify-payment-button__more-options:hover {
 
 .breadcrumb_text,
 .article-pagination {
-  font-family: granville, sans-serif;
+  font-family: proxima-nova, sans-serif;
   font-size: 13px;
-  letter-spacing: 0;
+  letter-spacing: 0.04em;
   line-height: 1.4;
   text-transform: uppercase;
   font-weight: 600;
@@ -8874,9 +8921,9 @@ ul.tabs {
 .search-autocomplete__result.search-autocomplete__result.search-autocomplete__result--see-all a {
   padding: 0;
   font-weight: 600;
-  font-family: granville, sans-serif;
+  font-family: proxima-nova, sans-serif;
   font-size: 13px;
-  letter-spacing: 0;
+  letter-spacing: 0.04em;
   line-height: 1.4;
   text-transform: uppercase;
   font-weight: 600;
@@ -9091,14 +9138,13 @@ ul.tabs {
 /* Components - Buttons
 ================================================== */
 a.button,
-.button,
 button,
 input[type=submit],
 input[type=reset],
 input[type=button],
-.action_button,
 a.action_button,
 input.action_button[type=submit],
+input.action_button[type=reset],
 input.action_button[type=button] {
   display: inline-block;
   background: #1c4747;
@@ -9114,7 +9160,7 @@ input.action_button[type=button] {
   vertical-align: top;
   font-size: 14px;
   font-weight: 600;
-  letter-spacing: 0;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   text-decoration: none;
   display: -moz-inline-flex;
@@ -9129,28 +9175,26 @@ input.action_button[type=button] {
   transition: all 0.1s linear;
 }
 a.button:hover,
-.button:hover,
 button:hover,
 input[type=submit]:hover,
 input[type=reset]:hover,
 input[type=button]:hover,
-.action_button:hover,
 a.action_button:hover,
 input.action_button[type=submit]:hover,
+input.action_button[type=reset]:hover,
 input.action_button[type=button]:hover {
   background-color: #dec1a8;
   border: 1px solid transparent;
   color: #fff;
 }
 a.button:active,
-.button:active,
 button:active,
 input[type=submit]:active,
 input[type=reset]:active,
 input[type=button]:active,
-.action_button:active,
 a.action_button:active,
 input.action_button[type=submit]:active,
+input.action_button[type=reset]:active,
 input.action_button[type=button]:active {
   outline: 0;
 }
@@ -9173,6 +9217,45 @@ input.action_button[type=button]:active {
 .button.button--secondary:hover, .button.button--secondary:focus,
 .action_button.action_button--secondary:hover,
 .action_button.action_button--secondary:focus {
+  background-color: transparent;
+  border-color: #dec1a8;
+  color: #dec1a8;
+}
+
+.button.button--link {
+  background: transparent;
+  border: 0 none;
+  padding: 0;
+  margin: 0;
+  height: auto;
+  min-height: auto;
+  color: #714457;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.1s;
+}
+.button.button--link:hover {
+  color: #dec1a8;
+  text-decoration: underline;
+}
+
+.button.button--inverted {
+  background: #fff;
+  color: #1c4747;
+  border-color: #fff;
+}
+.button.button--inverted:hover {
+  background-color: #dec1a8;
+  border: 1px solid transparent;
+  color: #fff;
+}
+
+.button.button--secondary.button--inverted {
+  background-color: transparent;
+  border-color: #fff;
+  color: #fff;
+}
+.button.button--secondary.button--inverted:hover, .button.button--secondary.button--inverted:focus {
   background-color: transparent;
   border-color: #dec1a8;
   color: #dec1a8;
@@ -9441,7 +9524,7 @@ button.disclosure__button {
 }
 .promo-banner p {
   font-family: proxima-nova, sans-serif;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 400;
   letter-spacing: 0;
   line-height: 1.6;
@@ -9450,7 +9533,7 @@ button.disclosure__button {
 }
 @media only screen and (max-width: 800px) {
   .promo-banner p {
-    font-size: 13px;
+    font-size: 14px;
   }
 }
 .promo-banner .promo-banner__content {
@@ -10201,7 +10284,7 @@ a.tag {
   padding: 2rem;
 }
 .homepage-banner .homepage-banner__pretext {
-  margin-bottom: 1rem;
+  margin-bottom: 0;
 }
 .homepage-banner .homepage-banner__title {
   margin-bottom: 3rem;
@@ -10727,11 +10810,11 @@ div.container.gallery-content {
 /* Sections
   ==============================================================================*/
 .content-section {
-  padding: 5rem 0;
+  padding: 6rem 0;
 }
 .content-section .content-section__anchor {
   position: relative;
-  top: -10rem;
+  top: -12rem;
 }
 @media only screen and (min-width: 1025px) {
   .content-section.content-section--is-full-width .container {
@@ -10749,7 +10832,7 @@ div.container.gallery-content {
   }
 }
 .content-section.content-section--2x-padding {
-  padding: 10rem 0;
+  padding: 12rem 0;
 }
 @media only screen and (max-width: 800px) {
   .content-section.content-section--2x-padding {
@@ -10757,7 +10840,7 @@ div.container.gallery-content {
   }
 }
 .content-section.content-section--2x-padding-top {
-  padding-top: 10rem;
+  padding-top: 12rem;
 }
 @media only screen and (max-width: 800px) {
   .content-section.content-section--2x-padding-top {
@@ -10765,7 +10848,7 @@ div.container.gallery-content {
   }
 }
 .content-section.content-section--2x-padding-bottom {
-  padding-bottom: 10rem;
+  padding-bottom: 12rem;
 }
 @media only screen and (max-width: 800px) {
   .content-section.content-section--2x-padding-bottom {
@@ -10819,11 +10902,16 @@ div.container.gallery-content {
 @media only screen and (max-width: 800px) {
   .content-section__heading__title-wrapper {
     margin-bottom: 1rem;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .content-section__heading__title-wrapper .content-section__heading__title {
+    margin-bottom: 1rem;
   }
   .content-section__heading__title-wrapper .content-section__heading__title-link {
-    font-family: granville, sans-serif;
+    font-family: proxima-nova, sans-serif;
     font-size: 13px;
-    letter-spacing: 0;
+    letter-spacing: 0.04em;
     line-height: 1.4;
     text-transform: uppercase;
     font-weight: 600;
@@ -12975,12 +13063,12 @@ form.search_form,
 /* Pages - general styles
 ================================================== */
 .page-banner .container.content {
-  margin-top: 5rem;
-  margin-bottom: 5rem;
+  margin-top: 6rem;
+  margin-bottom: 6rem;
 }
 
 .page-narrow .container.content {
-  margin-bottom: 5rem;
+  margin-bottom: 6rem;
 }
 
 /* Pages - Blog
@@ -13090,7 +13178,7 @@ p.meta {
   display: inline-block;
   margin-right: 15px;
   font-family: proxima-nova, sans-serif;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 400;
   letter-spacing: 0;
   line-height: 1.6;
@@ -13098,7 +13186,7 @@ p.meta {
 }
 @media only screen and (max-width: 800px) {
   .blog_meta span {
-    font-size: 13px;
+    font-size: 14px;
   }
 }
 
@@ -13161,7 +13249,7 @@ figure img {
 }
 figure figcaption {
   font-family: proxima-nova, sans-serif;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 400;
   letter-spacing: 0;
   line-height: 1.6;
@@ -13170,7 +13258,7 @@ figure figcaption {
 }
 @media only screen and (max-width: 800px) {
   figure figcaption {
-    font-size: 13px;
+    font-size: 14px;
   }
 }
 
@@ -13349,7 +13437,7 @@ div#disqus_thread li {
 
 .product_links {
   font-family: proxima-nova, sans-serif;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 400;
   letter-spacing: 0;
   line-height: 1.6;
@@ -13359,7 +13447,7 @@ div#disqus_thread li {
 }
 @media only screen and (max-width: 800px) {
   .product_links {
-    font-size: 13px;
+    font-size: 14px;
   }
 }
 .product_links a {
@@ -13911,7 +13999,7 @@ p.checkout_button {
   background: #714457;
   color: #fff;
   font-family: proxima-nova, sans-serif;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 400;
   letter-spacing: 0;
   line-height: 1.6;
@@ -13927,7 +14015,7 @@ p.checkout_button {
   .sale_banner,
 .new_banner,
 .preorder_banner {
-    font-size: 13px;
+    font-size: 14px;
   }
 }
 
@@ -14942,8 +15030,8 @@ button.update {
 @media only screen and (max-width: 800px) {
   .vm-testimonial-slide .vm-testimonial-slide__title {
     font-family: orpheuspro, serif;
-    font-size: 42px;
-    letter-spacing: 0.02em;
+    font-size: 45px;
+    letter-spacing: 0;
     line-height: 1.2;
     font-weight: 400;
     font-style: normal;
@@ -14958,12 +15046,13 @@ button.update {
 }
 @media only screen and (max-width: 800px) and (max-width: 800px) {
   .vm-testimonial-slide .vm-testimonial-slide__title {
-    font-size: 30px;
+    font-size: 38px;
   }
 }
 @media only screen and (max-width: 800px) {
   .vm-testimonial-slide .vm-testimonial-slide__testimonial {
     line-height: 1.6;
+    margin: 3rem 0;
   }
 }
 @media only screen and (max-width: 800px) {
@@ -15129,9 +15218,9 @@ button.update {
     align-items: flex-start;
   }
   .search-page-result .search-page-result__title {
-    font-family: granville, sans-serif;
+    font-family: proxima-nova, sans-serif;
     font-size: 14px;
-    letter-spacing: 0;
+    letter-spacing: 0.04em;
     line-height: 1.4;
     text-transform: uppercase;
     font-weight: 600;
@@ -15333,16 +15422,6 @@ button.update {
 ================================================== */
 /* Mixins - typography
 ================================================== */
-.content-section.content-section--faq {
-  padding-top: 0;
-  padding-bottom: 5rem;
-}
-@media only screen and (max-width: 800px) {
-  .content-section.content-section--faq {
-    padding-bottom: 3rem;
-  }
-}
-
 /* # VM page - Our Story
 ================================================== */
 /* #Variables

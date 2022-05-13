@@ -1,7 +1,12 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import classNames from "classnames";
 
 import "./color-region-example.scss";
+
+interface Props {
+  region: string,
+  children?: ReactNode
+}
 
 const CLASSNAME_BASE = "vm-styleguide__color-region-example";
 
@@ -31,7 +36,8 @@ const DefaultContent = () => (
   </div>
 );
 
-function ColorRegionExample({ region, children }) {
+
+function ColorRegionExample({ region, children }: Props) {
   const className = classNames(
     `color-region--${region}`,
     CLASSNAME_BASE,

@@ -60,7 +60,7 @@ textarea {
   color: #5f6a7d;
   font-size: 13px;
   // TODO - use font stack variable
-  font-family: poppins, sans-serif;
+  font-family: $vm-body-font;
   margin-bottom: 15px;
   -webkit-appearance: none;
   text-rendering: optimizeLegibility;

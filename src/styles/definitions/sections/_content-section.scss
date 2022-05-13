@@ -108,6 +108,12 @@
 
   @include respond-to('medium-down') {
     margin-bottom: get-vm-spacer(1);
+    align-items: flex-start;
+    flex-direction: column;
+
+    .content-section__heading__title {
+      margin-bottom: get-vm-spacer(1);
+    }
 
     .content-section__heading__title-link {
       @include vm-subheading-3();

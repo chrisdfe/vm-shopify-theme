@@ -1,17 +1,16 @@
-import React from "react";
-import ColorRegionExample from "../../../lib/ColorRegionExample";
+import React, { ReactNode } from "react";
 
 import "./component-example.scss";
 
-function ColorRegionWrapper({ region, children }) {
-  return (
-    <div className="vm-styleguide__component-example__color-region">
-      <ColorRegionExample region={region}>{children}</ColorRegionExample>
-    </div>
-  );
+import ColorRegionWrapper from "./ColorRegionWrapper";
+
+interface Props {
+  children: ReactNode,
+  omitLightRegions?: boolean,
+  omitDarkRegions?: boolean,
 }
 
-function ComponentExample({ children, omitLightRegions, omitDarkRegions }) {
+function ComponentExample({ children, omitLightRegions, omitDarkRegions }: Props) {
   return (
     <div className="vm-styleguide__component-example">
       {!omitLightRegions && (

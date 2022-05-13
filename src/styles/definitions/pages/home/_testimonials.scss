@@ -35,6 +35,7 @@
 
     .vm-testimonial-slide__testimonial {
       line-height: $vm-paragraph-2-line-height;
+      margin: get-vm-spacer(3) 0;
     }
 
     .vm-testimonial-slide__content {

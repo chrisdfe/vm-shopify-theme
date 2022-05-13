@@ -40,23 +40,25 @@ export default [
     ]
   },
   {
-    input: "src/scripts/entrypoints/styleguide.js",
+    input: "src/scripts/entrypoints/styleguide.tsx",
     output: {
       dir: 'assets/',
       format: 'cjs',
     },
     plugins: [
-      babel({
-        exclude: "node_modules/**",
-        babelHelpers: 'bundled'
-      }),
+      nodeResolve(),
+      commonjs(),
       replace({
         "process.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV),
         preventAssignment: true
       }),
-      // resolve(),
-      nodeResolve(),
-      commonjs(),
+      babel({
+        exclude: "node_modules/**",
+        babelHelpers: 'bundled'
+      }),
+      typescript({
+        allowSyntheticDefaultImports: true,
+      }),
       scss({
         // TODO - don't hardcode styleguide.css
         output: 'assets/styleguide.css'

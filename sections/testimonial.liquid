@@ -11,15 +11,17 @@
                 &ldquo;{{ block.settings.title }}&rdquo;
               </h2>
               
-              <p class="vm-testimonial-slide__testimonial paragraph--block-text">
-                &ldquo;{{ block.settings.testimonial | strip_html }}&rdquo;
-              </p>
-              
-              {% if block.settings.name != blank %}
-                <h4 class="vm-testimonial-slide__name subheading-2">
-                  - {{ block.settings.name }}
-                </h4>
-              {% endif %}
+              <div class="vm-testimonial-slide__testimonial">
+                <p class=" paragraph--block-text">
+                  &ldquo;{{ block.settings.testimonial | strip_html }}&rdquo;
+                </p>
+                
+                {% if block.settings.name != blank %}
+                  <h4 class="vm-testimonial-slide__name subheading-2">
+                    - {{ block.settings.name }}
+                  </h4>
+                {% endif %}
+              </div>
             </div>
           </div>
         {% endfor %}

@@ -14,28 +14,6 @@ const sidebarLinks = [
     title: "Typography",
     id: "typography",
     href: "/typography",
-    // subsections: [
-    //   {
-    //     number: "a",
-    //     title: "Fonts",
-    //     url: "fonts",
-    //   },
-    //   {
-    //     number: "b",
-    //     title: "Headings",
-    //     url: "headings",
-    //   },
-    //   {
-    //     number: "c",
-    //     title: "Subheadings",
-    //     url: "subheadings",
-    //   },
-    //   {
-    //     number: "d",
-    //     title: "Paragraph Text",
-    //     url: "paragraphs",
-    //   },
-    // ],
   },
   {
     title: "Colors",
@@ -54,7 +32,7 @@ function Sidebar({ page }) {
     <div className="vm-styleguide-sidebar">
       <div className="vm-styleguide-sidebar__nav">
         <ul>
-          {sidebarLinks.map(({ title, id, href, subsections }, index) => {
+          {sidebarLinks.map(({ title, id, href }, index) => {
             const isActive = id === page;
             const sectionNumber = `0${index}.`;
 
@@ -72,7 +50,7 @@ function Sidebar({ page }) {
                   </Link>
                 </h4>
 
-                {isActive && !!subsections && (
+                {/* {isActive && !!subsections && (
                   <ul>
                     {subsections.map((subsectionLink) => (
                       <li key={subsectionLink.url}>
@@ -88,7 +66,7 @@ function Sidebar({ page }) {
                       </li>
                     ))}
                   </ul>
-                )}
+                )} */}
               </li>
             );
           })}

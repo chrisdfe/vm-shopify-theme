@@ -5,10 +5,10 @@
 @import '../_mixins.scss';
 
 .content-section.content-section--faq {
-  padding-top: 0;
-  padding-bottom: 5rem;
+  // padding-top: 0;
+  // padding-bottom: 5rem;
 
-  @include respond-to('medium-down') {
-    padding-bottom: 3rem;
-  }
+  // @include respond-to('medium-down') {
+  //   padding-bottom: 3rem;
+  // }
 }

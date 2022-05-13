@@ -17,11 +17,11 @@ function TypographyPage() {
     <StyleguideLayout page="typography" pageNumber="01" title="Typography">
       <StyleguideSubsection number="01a" title="Fonts" sectionId="fonts">
         <StyleguideSubsectionRow title="Orpheus Pro">
-          <FontExample font="orpheus-pro" weight="bold" />
+          <FontExample font="orpheus-pro" weight="normal" />
         </StyleguideSubsectionRow>
 
-        <StyleguideSubsectionRow title="Poppins">
-          <FontExample font="poppins" weight="normal" />
+        <StyleguideSubsectionRow title="Proxima Nova">
+          <FontExample font="proxima-nova" weight="normal" />
         </StyleguideSubsectionRow>
       </StyleguideSubsection>
 
@@ -33,7 +33,7 @@ function TypographyPage() {
           <>
             <p>Headings are used for page and section titles.</p>
             <p>
-              All Headings use <b>Orpheus Pro Bold.</b>
+              All Headings use <b>Orpheus Pro Regular.</b>
             </p>
           </>
         }
@@ -84,7 +84,7 @@ function TypographyPage() {
               more details
             </p>{" "}
             <p>
-              All subheadings use <b>Poppins Semibold</b> and are in{" "}
+              All subheadings use <b>Proxima Nova Semibold</b> and are in{" "}
               <b>all Caps</b>.
             </p>
           </>
@@ -126,6 +126,30 @@ function TypographyPage() {
 
       <StyleguideSubsection
         number="01d"
+        title="Labels"
+        sectionId="labels"
+        description={
+          <>
+            <p>
+              Labels are primariliy used in form components - buttons, inputs.
+            </p>
+          </>
+        }
+      >
+        <StyleguideSubsectionRow
+          title="Label"
+          dataRows={[
+            { title: "size", value: "16px" },
+            { title: "line height", value: "1.4 (22.4px)" },
+            { title: "spacing", value: "80 (0.08em)" },
+          ]}
+        >
+          <h4>{QUICK_BROWN_FOX}</h4>
+        </StyleguideSubsectionRow>
+      </StyleguideSubsection>
+
+      <StyleguideSubsection
+        number="01e"
         title="Paragraph Text"
         sectionId="paragraphs"
         description={
@@ -136,7 +160,7 @@ function TypographyPage() {
             </p>
 
             <p>
-              All paragraph text uses <b>Poppins Regular</b> and <b>bold</b>.
+              All paragraph text uses <b>Proxima Nova Regular</b>, and occasionally <em>italics</em> and <b>bold</b> for emphasis.
             </p>
           </>
         }

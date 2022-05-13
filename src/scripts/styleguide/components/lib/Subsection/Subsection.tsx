@@ -1,8 +1,15 @@
 import React from "react";
+import { ReactNode } from 'react';
 
 import "./Subsection.scss";
 
-// import { PageSectionContext } from "../Layout/PageSectionManager/PageSectionManager";
+interface Props {
+  number: string,
+  title: string,
+  children: ReactNode
+  description?: ReactNode,
+  sectionId?: string,
+}
 
 function StyleguideSubsection({
   number,
@@ -10,7 +17,7 @@ function StyleguideSubsection({
   sectionId,
   description,
   children,
-}) {
+}: Props) {
   return (
     <div className="vm-styleguide-subsection">
       <div className="container">
