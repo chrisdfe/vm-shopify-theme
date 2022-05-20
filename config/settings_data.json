@@ -662,7 +662,7 @@
             "type": "filter",
             "settings": {
               "filter_name": "Shop by Setting",
-              "filter_tags": "Bezel, Cluster, Double Shank, Halo, Solitaire, Split-Shank, Three Stone, Toi et Moi, Unique",
+              "filter_tags": "Bezel, Cluster, Double Shank, Halo, Semi-Halo, Solitaire, Split Shank, Three Stone, Toi et Moi",
               "enable_filter_swatches": false
             }
           },
@@ -678,7 +678,7 @@
             "type": "filter",
             "settings": {
               "filter_name": "Shop by Color",
-              "filter_tags": "Colorless, White, Salt & Pepper, Black, Blue, Teal, Green, Pink, Red, Purple, Orange, Multi-color, Champagnes & Browns",
+              "filter_tags": "Colorless, Pink, Red, Orange, Green, Teal, Blue, Purple, Multi-color, Champagnes & Browns, Salt & Pepper, Black,",
               "enable_filter_swatches": false
             }
           },
@@ -717,9 +717,9 @@
           "featured_collection_image": true,
           "collection_tags": false,
           "collection_sort": true,
-          "products_per_row": 3,
+          "products_per_row": 4,
           "pagination_limit": 48,
-          "toggle": false,
+          "toggle": true,
           "byod_filter_enable": true,
           "pagination_limit_build": 48
         }
@@ -1715,7 +1715,8 @@
         ],
         "settings": {
           "hide_section_list": false,
-          "title": "What makes Valerie Madison Jewelry different?"
+          "title": "What makes Valerie Madison Jewelry different?",
+          "color_region": "light"
         }
       },
       "product-recommendations": {
@@ -3392,14 +3393,14 @@
             "type": "background_block",
             "settings": {
               "background_color": "light",
-              "banner_image_desktop": "shopify:\/\/shop_images\/Flat_Band_on_Tyler-4x5-val-edited.jpg"
+              "banner_image_desktop": "shopify:\/\/shop_images\/Something-Blue-ALL-RINGS2-4x5_copy.jpg"
             }
           },
           "95beecd3-2bab-4b22-b737-ed9a5c1dbf17": {
             "type": "background_block",
             "settings": {
               "background_color": "light-alt",
-              "banner_image_desktop": "shopify:\/\/shop_images\/BANDS_Masculine_jpg_6803dcb7-2096-47cc-a5b7-12c57f2e1a85.jpg"
+              "banner_image_desktop": "shopify:\/\/shop_images\/OOAK576_Luna_sapphire_blue_pear-2.jpg"
             }
           }
         },
@@ -3409,13 +3410,13 @@
         ],
         "settings": {
           "banner_wrapper_background_color": "light-alt",
-          "pretext": "Modern & Classic",
-          "heading": "Bands",
-          "cta_link": "shopify:\/\/collections\/masculine-wedding-bands",
+          "pretext": "Something New",
+          "heading": "Something Blue",
+          "cta_link": "shopify:\/\/collections\/new-arrivals",
           "cta_text": "Shop now",
-          "text_position": "right-block",
+          "text_position": "center",
           "text_color": "dark-alt",
-          "banner_image_mobile": "shopify:\/\/shop_images\/Flat_Band_on_Tyler-4x5-val-edited.jpg",
+          "banner_image_mobile": "shopify:\/\/shop_images\/Something-Blue-ALL-RINGS2-4x5_copy.jpg",
           "text_color_mobile": "dark-alt",
           "content_background_color_mobile": "light-alt"
         }
@@ -4010,15 +4011,23 @@
           "a649c73a-209c-48df-bffc-b28f00d3c4e4": {
             "type": "upcoming-date",
             "settings": {
-              "date": "More dates coming soon!",
-              "time": ""
+              "date": "Friday, July 29",
+              "time": "4:00-6:00pm"
+            }
+          },
+          "1fa24276-f437-472a-845b-c224959fde75": {
+            "type": "upcoming-date",
+            "settings": {
+              "date": "Friday, August 26",
+              "time": "4:00-6:00pm"
             }
           }
         },
         "block_order": [
           "bedf200f-6f49-408b-a592-54058d9e6802",
           "69a248c7-2269-473f-a52f-45e48c117dee",
-          "a649c73a-209c-48df-bffc-b28f00d3c4e4"
+          "a649c73a-209c-48df-bffc-b28f00d3c4e4",
+          "1fa24276-f437-472a-845b-c224959fde75"
         ],
         "settings": {
           "title": "Upcoming Dates",
