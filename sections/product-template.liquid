@@ -66,14 +66,16 @@
           {% unless show_description_above_add_to_cart %}
             {% if product.description != blank %}
               <div class="product-info">
-                <button class="vm-accordion-button" data-accordion-button-id="product-description">
+                <button class="vm-accordion-button"
+                    data-accordion-button-id="product-description">
                   <span>description</span>
                   <span class="vm-accordion-button__arrow">
                     {% render "icon.carat" %}
                   </span>
                 </button>
                 
-                <div class="vm-accordion-content" data-accordion-id="product-description">
+                <div class="vm-accordion-content"
+                    data-accordion-id="product-description">
                   <div class="vm-accordion-content__inner">
                     <div class="description">
                       {{ product.description | split: '<!-- split -->' | first }}

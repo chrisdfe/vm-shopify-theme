@@ -20,7 +20,7 @@
     color: $vm-color-sea-green;
     border-bottom: 1px solid $vm-color-sea-green;
   }
-  
+
   .vm-accordion-button__arrow {
     transform: rotate(-90deg);
     transition: all 0.2s;
@@ -35,8 +35,8 @@
 
 .vm-accordion-content {
   display: none;
-  transition: height 0.4s;
   overflow-y: hidden;
+  transition: height 0.4s;
 
   &.is-open {
     display: block;

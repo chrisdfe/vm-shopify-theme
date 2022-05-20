@@ -469,25 +469,6 @@
       "mega-menu-1": {
         "type": "mega-menu-1",
         "blocks": {
-          "19251629-9dd4-4100-a316-877b5086b6a5": {
-            "type": "column",
-            "settings": {
-              "richtext_top": "",
-              "image_caption_top": "",
-              "image_link_top": "",
-              "menu_1": "",
-              "menu_1_link": "",
-              "menu_2": "",
-              "menu_2_link": "",
-              "menu_3": "",
-              "menu_3_link": "",
-              "menu_4": "",
-              "menu_4_link": "",
-              "image_caption_bottom": "",
-              "image_link_bottom": "",
-              "richtext_bottom": ""
-            }
-          },
           "89c82cf2-e452-4010-a7a2-fc3c9e3d7dd9": {
             "type": "column",
             "settings": {
@@ -544,13 +525,32 @@
               "image_link_bottom": "",
               "richtext_bottom": ""
             }
+          },
+          "19251629-9dd4-4100-a316-877b5086b6a5": {
+            "type": "column",
+            "settings": {
+              "richtext_top": "",
+              "image_caption_top": "",
+              "image_link_top": "",
+              "menu_1": "",
+              "menu_1_link": "",
+              "menu_2": "",
+              "menu_2_link": "",
+              "menu_3": "",
+              "menu_3_link": "",
+              "menu_4": "",
+              "menu_4_link": "",
+              "image_caption_bottom": "",
+              "image_link_bottom": "",
+              "richtext_bottom": ""
+            }
           }
         },
         "block_order": [
-          "19251629-9dd4-4100-a316-877b5086b6a5",
           "89c82cf2-e452-4010-a7a2-fc3c9e3d7dd9",
           "396cb187-a7c8-431f-9b50-7c86a37d239b",
-          "8908700f-c81c-47a6-809d-d7c5cf21c961"
+          "8908700f-c81c-47a6-809d-d7c5cf21c961",
+          "19251629-9dd4-4100-a316-877b5086b6a5"
         ],
         "settings": {
           "parent": "Wedding & Engagement"
@@ -1272,25 +1272,6 @@
       "mega-menu-3": {
         "type": "mega-menu-3",
         "blocks": {
-          "a50c6125-6f65-4d99-914a-685ff55c5ec0": {
-            "type": "column",
-            "settings": {
-              "richtext_top": "",
-              "image_caption_top": "",
-              "image_link_top": "",
-              "menu_1": "",
-              "menu_1_link": "",
-              "menu_2": "",
-              "menu_2_link": "",
-              "menu_3": "",
-              "menu_3_link": "",
-              "menu_4": "",
-              "menu_4_link": "",
-              "image_caption_bottom": "",
-              "image_link_bottom": "",
-              "richtext_bottom": ""
-            }
-          },
           "47d145a4-b12b-4e17-860c-625091745268": {
             "type": "column",
             "settings": {
@@ -1328,12 +1309,71 @@
               "image_link_bottom": "",
               "richtext_bottom": ""
             }
+          },
+          "287a9339-4955-43c5-b1c1-2937c408d74e": {
+            "type": "column",
+            "settings": {
+              "richtext_top": "",
+              "image_caption_top": "",
+              "image_link_top": "",
+              "menu_1": "work-with-us",
+              "menu_1_link": "",
+              "menu_2": "",
+              "menu_2_link": "",
+              "menu_3": "",
+              "menu_3_link": "",
+              "menu_4": "",
+              "menu_4_link": "",
+              "image_caption_bottom": "",
+              "image_link_bottom": "",
+              "richtext_bottom": ""
+            }
+          },
+          "0771641c-f85e-4749-9999-d60be4cb3ee3": {
+            "type": "column",
+            "settings": {
+              "richtext_top": "",
+              "image_caption_top": "",
+              "image_link_top": "",
+              "menu_1": "",
+              "menu_1_link": "",
+              "menu_2": "",
+              "menu_2_link": "",
+              "menu_3": "",
+              "menu_3_link": "",
+              "menu_4": "",
+              "menu_4_link": "",
+              "image_caption_bottom": "",
+              "image_link_bottom": "",
+              "richtext_bottom": ""
+            }
+          },
+          "a50c6125-6f65-4d99-914a-685ff55c5ec0": {
+            "type": "column",
+            "settings": {
+              "richtext_top": "",
+              "image_caption_top": "",
+              "image_link_top": "",
+              "menu_1": "",
+              "menu_1_link": "",
+              "menu_2": "",
+              "menu_2_link": "",
+              "menu_3": "",
+              "menu_3_link": "",
+              "menu_4": "",
+              "menu_4_link": "",
+              "image_caption_bottom": "",
+              "image_link_bottom": "",
+              "richtext_bottom": ""
+            }
           }
         },
         "block_order": [
-          "a50c6125-6f65-4d99-914a-685ff55c5ec0",
           "47d145a4-b12b-4e17-860c-625091745268",
-          "532c00fc-0a53-4c3b-9aeb-9e16deb238b8"
+          "532c00fc-0a53-4c3b-9aeb-9e16deb238b8",
+          "287a9339-4955-43c5-b1c1-2937c408d74e",
+          "0771641c-f85e-4749-9999-d60be4cb3ee3",
+          "a50c6125-6f65-4d99-914a-685ff55c5ec0"
         ],
         "settings": {
           "parent": "Custom & Heirloom"
@@ -1408,6 +1448,25 @@
       "mega-menu-4": {
         "type": "mega-menu-4",
         "blocks": {
+          "52dc380e-3ede-4746-aeec-6df2c9962df5": {
+            "type": "column",
+            "settings": {
+              "richtext_top": "",
+              "image_caption_top": "",
+              "image_link_top": "",
+              "menu_1": "",
+              "menu_1_link": "",
+              "menu_2": "",
+              "menu_2_link": "",
+              "menu_3": "",
+              "menu_3_link": "",
+              "menu_4": "",
+              "menu_4_link": "",
+              "image_caption_bottom": "",
+              "image_link_bottom": "",
+              "richtext_bottom": ""
+            }
+          },
           "df8f2b20-2ab9-44d3-a4bc-a02fabadc497": {
             "type": "column",
             "settings": {
@@ -1467,6 +1526,7 @@
           }
         },
         "block_order": [
+          "52dc380e-3ede-4746-aeec-6df2c9962df5",
           "df8f2b20-2ab9-44d3-a4bc-a02fabadc497",
           "f29a3256-abfc-41b8-8483-5567a70b7932",
           "mega-menu-4-0"
@@ -3121,6 +3181,15 @@
               "description": "I fell in love with vintage and ethically made fine jewelry in college. To adorn yourself in it marries the stunning beauty our planet provides us with a sentimental meaning you attach. As a sales associate, I am excited to share the craftsmanship at VM. When not at work, you can find me practicing minimalism with maximalist design, lounging with my cat Miss Cleo, collecting tea, and learning how to parallel park!"
             }
           },
+          "f62a180d-b055-4279-be36-2ff13a08212f": {
+            "type": "team_member",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Nia-Headshot-2x3-1600x2400px-V2.jpg",
+              "title": "Nia",
+              "job_title": "Jewelry Sales Associate",
+              "description": "I’m a life long lover of sparkles, gems and all things pretty, so I’m thrilled to be working with all the beautiful jewelry here at VM. In my spare time, I teach yoga and dabble in graphic design. When I’m not working, you can find me thrifting around local markets, cooking, or candle making!"
+            }
+          },
           "7b3b1866-850a-4e2b-bbb2-b5be4f9d5bb0": {
             "type": "team_member",
             "settings": {
@@ -3208,6 +3277,7 @@
           "3a6eca3c-c1d0-4897-a323-7a083d69f370",
           "9c18c131-7a70-41c9-986f-0b5bb41916b5",
           "c95ab9d1-1311-4c9b-959d-9ac15d6603c6",
+          "f62a180d-b055-4279-be36-2ff13a08212f",
           "7b3b1866-850a-4e2b-bbb2-b5be4f9d5bb0",
           "f41d0541-dc50-4627-be73-bb5bc0d48a67",
           "e6c1bdfc-589c-4d27-86fb-b4511eed9b80",
@@ -3220,7 +3290,7 @@
         ],
         "settings": {
           "title": "Our Team",
-          "description": "These are the lovely folks that make VM a wonderful place to work in and serve our clients."
+          "description": "These are the lovely folks that make VM a wonderful place to work in and serve our clients. Send an email to joinus@valeriemadison.com if you are interested in becoming a part of our team."
         }
       },
       "our-story-visit-the-store": {
@@ -3923,17 +3993,10 @@
       "eternity-bracelets-upcoming-dates": {
         "type": "eternity-bracelets-upcoming-dates",
         "blocks": {
-          "da0d1ed9-b0ea-4f15-942a-5315ebdc1d68": {
-            "type": "upcoming-date",
-            "settings": {
-              "date": "Saturday, May 7th",
-              "time": "10:00-2:00pm"
-            }
-          },
           "bedf200f-6f49-408b-a592-54058d9e6802": {
             "type": "upcoming-date",
             "settings": {
-              "date": "Friday, June 17th",
+              "date": "Friday, June 17",
               "time": "4:00-6:00pm"
             }
           },
@@ -3943,12 +4006,19 @@
               "date": "Friday, July 1",
               "time": "4:00-6:00pm"
             }
+          },
+          "a649c73a-209c-48df-bffc-b28f00d3c4e4": {
+            "type": "upcoming-date",
+            "settings": {
+              "date": "More dates coming soon!",
+              "time": ""
+            }
           }
         },
         "block_order": [
-          "da0d1ed9-b0ea-4f15-942a-5315ebdc1d68",
           "bedf200f-6f49-408b-a592-54058d9e6802",
-          "69a248c7-2269-473f-a52f-45e48c117dee"
+          "69a248c7-2269-473f-a52f-45e48c117dee",
+          "a649c73a-209c-48df-bffc-b28f00d3c4e4"
         ],
         "settings": {
           "title": "Upcoming Dates",

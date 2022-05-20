@@ -30,16 +30,22 @@
   </li>
   {% endcapture %}
 
+  <div class="header-desktop__logo-row">
+    {% render "header.logo" %}
+
+    {% render 'header.desktop.nav' with {
+      extra_links: extra_links
+    } %}
+  </div>
+
   <div class="header-desktop__navbar">
     {% render 'header.desktop.nav' with {
       linklist: section.settings.main_linklist
     } %}
   
-    {% render "header.logo" %}
     
     {% render 'header.desktop.nav' with {
       linklist: section.settings.main_linklist2,
-      extra_links: extra_links
     } %}
   </div>
 </header>

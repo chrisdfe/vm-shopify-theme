@@ -36,6 +36,8 @@
 .header-dropdown__content {
   display: flex;
   padding: get-vm-spacer(2);
+  // align-items: center;
+  justify-content: center;
 
   ul {
     list-style-type: none;
@@ -61,5 +63,5 @@
   padding-right: 0 get-vm-spacer(1);
   flex-grow: 0;
   flex-shrink: 0;
-  flex-basis: 25%;
+  flex-basis: 220px;
 }

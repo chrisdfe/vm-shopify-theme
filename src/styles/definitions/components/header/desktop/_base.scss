@@ -23,6 +23,7 @@ $header-desktop-nav-width: calc(
     width: $header-desktop-logo-width;
     position: relative;
     top: 2px;
+    margin-left: calc(50% - #{math.div($header-desktop-logo-width, 2)});
 
     svg {
       width: $header-desktop-logo-width;
@@ -30,18 +31,30 @@ $header-desktop-nav-width: calc(
     }
   }
 
+  .header-desktop__logo-row {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;    
+    padding: get-vm-spacer(0.5) get-vm-spacer(2);
+
+    .header-desktop__nav {
+      margin-left: auto;
+    }
+  }
+
   .header-desktop__navbar {
     display: flex;
     position: relative;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     padding: 0 get-vm-spacer(2);
   }
 
   .header-desktop__nav {
     padding: 0;
     margin: 0;
-    width: $header-desktop-nav-width;
+    // width: $header-desktop-nav-width;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -62,10 +75,6 @@ $header-desktop-nav-width: calc(
       &:last-child {
         margin-right: 0;
       }
-    }
-    
-    &:last-child {
-      justify-content: flex-end;
     }
   }
 
@@ -105,7 +114,7 @@ $header-desktop-nav-width: calc(
   }
 
   .header-desktop__nav-link {
-    padding: get-vm-spacer(1.5) 0;
+    padding: get-vm-spacer(1) get-vm-spacer(1);
     margin-right: 5px;
 
     &:after {

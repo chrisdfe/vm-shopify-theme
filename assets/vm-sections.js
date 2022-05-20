@@ -596,7 +596,10 @@
                 }
                 var toElement = event.relatedTarget;
                 // If the mouse is no longer within the header content, area hide the dropdown
-                if (toElement && !toElement.closest(".header-content-wrapper")) {
+                // if (toElement && !toElement.closest(".header-content-wrapper")) {
+                if (toElement &&
+                    !toElement.closest(".header-desktop__navbar") &&
+                    !toElement.closest('.vm-header-drawer__content')) {
                     _this.closeCurrentOpenDropdown();
                 }
             };
@@ -712,6 +715,8 @@
                 _this.buttonElements.forEach(function (buttonElement) {
                     buttonElement.addEventListener("click", _this.onButtonClick);
                 });
+                var defaultOpenState = _this.contentElement.getAttribute("data-accordion-is-open");
+                _this.toggle(defaultOpenState === 'true');
                 return _this;
             };
             this.onButtonClick = function () {

@@ -35,6 +35,9 @@ export default class Accordion {
       buttonElement.addEventListener("click", this.onButtonClick);
     });
 
+    const defaultOpenState = this.contentElement.getAttribute("data-accordion-is-open");
+    this.toggle(defaultOpenState === 'true',);
+
     return this;
   };
 

@@ -101,7 +101,11 @@ export default class DropdownManager {
     const toElement = event.relatedTarget as Element;
 
     // If the mouse is no longer within the header content, area hide the dropdown
-    if (toElement && !toElement.closest(".header-content-wrapper")) {
+    // if (toElement && !toElement.closest(".header-content-wrapper")) {
+    if (toElement &&
+      !toElement.closest(".header-desktop__navbar") &&
+      !toElement.closest('.vm-header-drawer__content')
+    ) {
       this.closeCurrentOpenDropdown();
     }
   };

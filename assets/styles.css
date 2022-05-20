@@ -1530,7 +1530,7 @@ p:empty,
 .paragraph-1 p {
   font-family: proxima-nova, sans-serif;
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: 0;
   line-height: 1.6;
   text-transform: none;
@@ -6546,22 +6546,32 @@ body.menu-is-open {
   width: 150px;
   position: relative;
   top: 2px;
+  margin-left: calc(50% - 75px);
 }
 .header-desktop .header__logo svg {
   width: 150px;
   height: 30px;
 }
+.header-desktop .header-desktop__logo-row {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 2rem;
+}
+.header-desktop .header-desktop__logo-row .header-desktop__nav {
+  margin-left: auto;
+}
 .header-desktop .header-desktop__navbar {
   display: flex;
   position: relative;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding: 0 2rem;
 }
 .header-desktop .header-desktop__nav {
   padding: 0;
   margin: 0;
-  width: calc( 50% - 75px );
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -6580,9 +6590,6 @@ body.menu-is-open {
 }
 .header-desktop .header-desktop__nav li:last-child {
   margin-right: 0;
-}
-.header-desktop .header-desktop__nav:last-child {
-  justify-content: flex-end;
 }
 .header-desktop .header-desktop__nav-link,
 .header-desktop .header-desktop__nav-button {
@@ -6628,7 +6635,7 @@ body.menu-is-open {
   opacity: 1;
 }
 .header-desktop .header-desktop__nav-link {
-  padding: 1.5rem 0;
+  padding: 1rem 1rem;
   margin-right: 5px;
 }
 .header-desktop .header-desktop__nav-link:after {
@@ -7204,6 +7211,7 @@ body.menu-is-open {
 .header-dropdown__content {
   display: flex;
   padding: 2rem;
+  justify-content: center;
 }
 .header-dropdown__content ul {
   list-style-type: none;
@@ -7225,7 +7233,7 @@ body.menu-is-open {
   padding-right: 0 1rem;
   flex-grow: 0;
   flex-shrink: 0;
-  flex-basis: 25%;
+  flex-basis: 220px;
 }
 
 .vm-header-drawer:not(.vm-mobile-only-drawer) {
@@ -8624,8 +8632,8 @@ button.shopify-payment-button__more-options:hover {
 
 .vm-accordion-content {
   display: none;
-  transition: height 0.4s;
   overflow-y: hidden;
+  transition: height 0.4s;
 }
 .vm-accordion-content.is-open {
   display: block;
@@ -10196,7 +10204,7 @@ a.tag {
   color: #dec1a8;
   font-size: 30px;
   font-family: orpheuspro, serif;
-  font-weight: bold;
+  font-weight: 400;
   text-align: right;
 }
 
@@ -13524,7 +13532,7 @@ div#disqus_thread li {
 }
 
 .product_section .product_form {
-  margin-bottom: 2rem;
+  margin-bottom: 0.5rem;
 }
 @media only screen and (max-width: 800px) {
   .product_section .product_form,
