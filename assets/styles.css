@@ -13425,8 +13425,8 @@ div#disqus_thread li {
 .sale_banner_product,
 .new_banner_product,
 .preorder_banner_product {
-  padding: 1rem;
-  text-align: center;
+  padding: 1rem 0 0;
+  text-align: left;
 }
 
 .recommended-products__title {

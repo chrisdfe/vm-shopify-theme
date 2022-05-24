@@ -44,30 +44,9 @@
     
   {% paginate collection.products by page_limit %}
 
-
-  <div class="u-hidden-large-up">
+  <div>
     {% include "collection.breadcrumbs" %}
     {% include "collection.head" %}
-  </div>
-
-  <div class="row">
-    {% render 'sidebar' %}
-    
-    <div class="twelve columns medium-down--one-whole">
-      <div class="u-hidden-medium-down">
-        {% include "collection.breadcrumbs" %}
-      </div>
-
-      {% assign has_custom_banner = false %}
-
-      {% for block in section.blocks %}
-        {% if block.type == "collection_banner" %}
-          {% if block.settings.collection.id == collection.id %}
-            {% assign has_custom_banner = true %}
-          {% endif %}
-        {% endif %}
-      {% endfor %}
-        
       {% for block in section.blocks %}
         {% if block.type == "collection_banner" %}
           {% assign is_current_collection_banner = false %}
@@ -101,10 +80,22 @@
           {% endif %}
         {% endif %}
       {% endfor %}
+  </div>
 
-      <div class="u-hidden-medium-down">
-        {% include "collection.head" %}
-      </div>
+  <div class="row">
+    {% render 'sidebar' %}
+    
+    <div class="twelve columns medium-down--one-whole">
+
+      {% assign has_custom_banner = false %}
+
+      {% for block in section.blocks %}
+        {% if block.type == "collection_banner" %}
+          {% if block.settings.collection.id == collection.id %}
+            {% assign has_custom_banner = true %}
+          {% endif %}
+        {% endif %}
+      {% endfor %}
 
       {% if collection.products.size == 0 %}
         <div class="section clearfix collection-matrix">

@@ -1,13 +1,13 @@
 <div class="product-banners-wrapper">
   {% if product.available and settings.sale_banner_enabled and product.compare_at_price_max > product.price %}
-    <div class="sale_banner_product">{{ 'collections.general.sale' | t }}</div>
+    <div class="sale_banner_product"><h5>{{ 'collections.general.sale' | t }}</h5></div>
   {% endif %}
 
   {% if collection_handles contains 'new' %}
-    <div class="new_banner_product">{{ 'collections.general.new' | t }}</div>
+    <div class="new_banner_product"><h5>{{ 'collections.general.new' | t }}</h5></div>
   {% endif %}
 
   {% if collection_handles contains 'pre-order' %}
-    <div class="preorder_banner_product">{{ 'collections.general.pre_order' | t }}</div>
+    <div class="preorder_banner_product"><h5>{{ 'collections.general.pre_order' | t }}</h5></div>
   {% endif %}
 </div>
