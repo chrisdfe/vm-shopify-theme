@@ -1,0 +1,28 @@
+{% comment %}
+title: text,
+link_list: link_list,
+show_view_all_link: checkbox,
+view_all_url: text,
+{% endcomment %}
+
+<div class="header-dropdown__column">
+  <div class="header-desktop__mega-menu header-desktop__mega-menu--nav-link-list">
+
+    <h3>{{ title }}</h3>
+
+    {% if link_list %}
+      <ul>
+        {% for link in link_list.links %}
+        <li>
+          <a href="{{ link.url }}">{{ link.title }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+
+    {% if show_view_all_link and view_all_url %}
+      <h5><a href="{{ view_all_url }}">View All</a></h5>
+    {% endif %}
+  
+  </div>
+</div>

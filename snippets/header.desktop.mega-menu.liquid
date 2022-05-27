@@ -12,76 +12,25 @@
     data-dropdown-id="{{ section.settings.parent | handleize }}"
     data-dropdown-activation-type="hover"
     >
-
     <div class="header-dropdown__content">
       {% for block in section.blocks %}
-        <div
-          class="header-dropdown__column"
-          {{ block.shopify_attributes }}>
-          
-          {% if block.type == 'column' %}
-            {% if block.settings.richtext_top %}
-              {% render "header.desktop.dropdown-richtext" with {
-                text: block.settings.richtext_top
-              } %}
-            {% endif %}
-
-            {% if block.settings.image_top != nil or block.settings.image_caption_top != blank %}
-              {% render "header.desktop.dropdown-image" with {
-                image_link: block.settings.image_link_top,
-                image: block.settings.image_top,
-                image_caption: block.settings.image_caption_top
-              } %}
-            {% endif %}
-
-            {% if block.settings.menu_1 != blank %}
-              {% render "header.desktop.dropdown-linklist" with {
-                title: linklists[block.settings.menu_1].title,
-                title_link: block.settings.menu_1_link,
-                links: linklists[block.settings.menu_1].links
-              } %}
-            {% endif %}
-
-            {% if block.settings.menu_2 != blank %}
-              {% render "header.desktop.dropdown-linklist" with {
-                title: linklists[block.settings.menu_2].title,
-                title_link: block.settings.menu_2_link,
-                links: linklists[block.settings.menu_2].links
-              } %}
-            {% endif %}
-              
-            {% if block.settings.menu_3 != blank %}
-              {% render "header.desktop.dropdown-linklist" with {
-                title: linklists[block.settings.menu_3].title,
-                title_link: block.settings.menu_3_link,
-                links: linklists[block.settings.menu_3].links
-              } %}
-            {% endif %}
-              
-            {% if block.settings.menu_4 != blank %}
-              {% render "header.desktop.dropdown-linklist" with {
-                title: linklists[block.settings.menu_4].title,
-                title_link: block.settings.menu_4_link,
-                links: linklists[block.settings.menu_4].links
-              } %}
-            {% endif %}
-
-            {% if block.settings.image_bottom != nil or block.settings.image_caption_bottom != blank %}
-              {% render "header.desktop.dropdown-image" with {
-                image_link: block.settings.image_link_bottom,
-                image: block.settings.image_bottom,
-                image_caption: block.settings.image_caption_bottom
-              } %}
-            {% endif %}
-
-            {% if block.settings.richtext_bottom %}
-              {% render "header.desktop.dropdown-richtext" with {
-                text: block.settings.richtext_bottom
-              } %}
-            {% endif %}
-
-          {% endif %}
-        </div>
+        {% if block.type == "nav_link_list" %}
+          {% render "header.desktop.mega-menu.nav-link-list" with {
+            title: block.settings.title,
+            link_list: block.settings.link_list,
+            show_view_all_link: block.settings.show_view_all_link,
+            view_all_url: block.settings.view_all_url,
+            columns_desktop: block.settings.columns_desktop,
+          } %}
+        {% elsif block.type == "image" %}
+          {% render "header.desktop.mega-menu.image" with {
+            image: block.settings.image,
+            url: block.settings.url,
+            cta_text: block.settings.cta_text,
+            cta_subtext: block.settings.cta_subtext,
+            columns_desktop: block.settings.columns_desktop,
+          } %}
+        {% endif %}
       {% endfor %}
     </div>
 

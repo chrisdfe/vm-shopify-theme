@@ -1,7 +1,7 @@
 @use "sass:math";
 
-$header-desktop-logo-width: 150px;
-$header-desktop-logo-height: 30px;
+$header-desktop-logo-width: 260px;
+$header-desktop-logo-height: 55px;
 $header-desktop-nav-width: calc(
   50% - #{math.div($header-desktop-logo-width, 2)}
 );
