@@ -122,6 +122,7 @@
     "mega_menu_3": true,
     "mega_menu_4": true,
     "mega_menu_5": false,
+    "mega_menu_6": false,
     "search_option": "everything",
     "search_pagination_type": "infinite_scroll",
     "enable_autocomplete": true,
@@ -311,24 +312,11 @@
         "type": "header",
         "settings": {
           "promo_text": "",
-          "social_icons_header": true,
-          "phone_number": "(206) 395-6359",
-          "top_bar_menu": "",
-          "show_cart": true,
-          "cart_icon": "bag",
-          "logo_display_width": 205,
-          "logo_display_width_percent": 45,
           "logo": "shopify:\/\/shop_images\/logo_173a67f6-34c1-4670-82e7-e7a2e1e4f697.png",
           "logo_mobile": "shopify:\/\/shop_images\/mobile-logo-seagreen_256x256_79182b2b-7668-4862-8b08-f67f60755daf.png",
-          "main_linklist": "menu-left-of-logo",
-          "main_linklist2": "menu-right-of-logo",
-          "vertical_menu": false,
-          "search_enabled": true,
+          "main_linklist": "navbar-menu-2022",
           "show_locale_selector": true,
-          "show_currency_selector": true,
-          "menu_position": "inline",
-          "menu_alignment": "center",
-          "menu_top_padding": 0
+          "show_currency_selector": true
         }
       },
       "1489285524898": {
@@ -1442,7 +1430,7 @@
           "d8715b21-50a3-48ce-8574-f457f22b34b7"
         ],
         "settings": {
-          "parent": ""
+          "parent": "test"
         }
       },
       "1578277933549": {
@@ -4002,6 +3990,116 @@
           "color_region": "light",
           "padding_top": "default",
           "padding_bottom": "default"
+        }
+      },
+      "mega-menu-6": {
+        "type": "mega-menu-6",
+        "blocks": {
+          "mega-menu-6-0": {
+            "type": "column",
+            "settings": {
+              "richtext_top": "<p>Add description, images, menus and links to your mega menu<\/p>",
+              "image_caption_top": "",
+              "image_link_top": "",
+              "menu_1": "",
+              "menu_1_link": "",
+              "menu_2": "",
+              "menu_2_link": "",
+              "menu_3": "",
+              "menu_3_link": "",
+              "menu_4": "",
+              "menu_4_link": "",
+              "image_caption_bottom": "",
+              "image_link_bottom": "",
+              "richtext_bottom": ""
+            }
+          },
+          "mega-menu-6-1": {
+            "type": "column",
+            "settings": {
+              "richtext_top": "<p>A column with no settings can be used as a spacer<\/p>",
+              "image_caption_top": "",
+              "image_link_top": "",
+              "menu_1": "",
+              "menu_1_link": "",
+              "menu_2": "",
+              "menu_2_link": "",
+              "menu_3": "",
+              "menu_3_link": "",
+              "menu_4": "",
+              "menu_4_link": "",
+              "image_caption_bottom": "",
+              "image_link_bottom": "",
+              "richtext_bottom": ""
+            }
+          },
+          "mega-menu-6-2": {
+            "type": "column",
+            "settings": {
+              "richtext_top": "",
+              "image_caption_top": "",
+              "image_link_top": "",
+              "menu_1": "",
+              "menu_1_link": "",
+              "menu_2": "",
+              "menu_2_link": "",
+              "menu_3": "",
+              "menu_3_link": "",
+              "menu_4": "",
+              "menu_4_link": "",
+              "image_caption_bottom": "",
+              "image_link_bottom": "",
+              "richtext_bottom": ""
+            }
+          },
+          "mega-menu-6-3": {
+            "type": "column",
+            "settings": {
+              "richtext_top": "<p>Link to your collections, sales and even external links<\/p>",
+              "image_caption_top": "",
+              "image_link_top": "",
+              "menu_1": "",
+              "menu_1_link": "",
+              "menu_2": "",
+              "menu_2_link": "",
+              "menu_3": "",
+              "menu_3_link": "",
+              "menu_4": "",
+              "menu_4_link": "",
+              "image_caption_bottom": "",
+              "image_link_bottom": "",
+              "richtext_bottom": ""
+            }
+          },
+          "mega-menu-6-4": {
+            "type": "column",
+            "settings": {
+              "richtext_top": "<p>Add up to five columns<\/p>",
+              "image_caption_top": "",
+              "image_link_top": "",
+              "menu_1": "",
+              "menu_1_link": "",
+              "menu_2": "",
+              "menu_2_link": "",
+              "menu_3": "",
+              "menu_3_link": "",
+              "menu_4": "",
+              "menu_4_link": "",
+              "image_caption_bottom": "",
+              "image_link_bottom": "",
+              "richtext_bottom": ""
+            }
+          }
+        },
+        "block_order": [
+          "mega-menu-6-0",
+          "mega-menu-6-1",
+          "mega-menu-6-2",
+          "mega-menu-6-3",
+          "mega-menu-6-4"
+        ],
+        "settings": {
+          "parent": "test2"
         }
       }
     },
