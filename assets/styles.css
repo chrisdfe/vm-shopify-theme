@@ -1879,6 +1879,7 @@ textarea {
   border: 1px solid #1c4747;
   outline: none;
   background: #fff;
+  border-radius: 0;
   color: #5f6a7d;
   font-size: 13px;
   font-family: proxima-nova, sans-serif;
@@ -7165,6 +7166,13 @@ body.menu-is-open {
   }
 }
 
+.header__search-form__search-bar {
+  display: flex;
+}
+.header__search-form__search-bar .input-wrapper {
+  flex-grow: 1;
+}
+
 .vm-header-dropdown:not(.vm-desktop-only-header-dropdown) {
   position: absolute;
   width: 100%;
@@ -8133,6 +8141,12 @@ input.action_button[type=button]:active {
   text-decoration: underline;
 }
 
+.button.button--square {
+  height: 44px;
+  width: 44px;
+  padding: 0;
+}
+
 .button.button--inverted {
   background: #fff;
   color: #1c4747;
@@ -8153,11 +8167,6 @@ input.action_button[type=button]:active {
   background-color: transparent;
   border-color: #dec1a8;
   color: #dec1a8;
-}
-
-.button.button--square {
-  width: 44px;
-  padding: 0;
 }
 
 /* Animation for checkmark on add to cart button */
@@ -9245,6 +9254,12 @@ input.action_button[type=button]:active {
   text-decoration: underline;
 }
 
+.button.button--square {
+  height: 44px;
+  width: 44px;
+  padding: 0;
+}
+
 .button.button--inverted {
   background: #fff;
   color: #1c4747;
@@ -9265,11 +9280,6 @@ input.action_button[type=button]:active {
   background-color: transparent;
   border-color: #dec1a8;
   color: #dec1a8;
-}
-
-.button.button--square {
-  width: 44px;
-  padding: 0;
 }
 
 /* Animation for checkmark on add to cart button */
@@ -11007,6 +11017,8 @@ section.image-list .image-list__item img {
   position: relative;
   width: 100%;
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .search__container input[type=text] {
   display: inline-block;
@@ -11090,12 +11102,8 @@ form.search_form,
   border-bottom: 1px solid #dec1a8;
 }
 
-.header__search-form .header__search-form__search-bar {
-  display: flex;
-}
 .header__search-form .input-wrapper {
   position: relative;
-  flex-grow: 1;
 }
 .header__search-form .search-submit {
   position: absolute;

@@ -181,7 +181,22 @@
                 _this.inputElement.addEventListener("keyup", _this.onSearchInputKeyup);
                 _this.searchFormElement.addEventListener("submit", _this.onSearchFormSubmit);
                 // Clicking outside makes the results disappear.
-                document.addEventListener("click", _this.onDocumentClick);
+                // document.addEventListener("click", this.onDocumentClick);
+                // if this search autocomplete is inside of a dropdown then set up autofocus
+                if (_this.searchFormElement.closest("[data-dropdown-id]")) {
+                    window.addEventListener("header-dropdown:opened", function (evt) {
+                        var dropdown = evt.detail.dropdown;
+                        if (dropdown.id === "search") {
+                            _this.inputElement.focus();
+                        }
+                    });
+                    window.addEventListener("header-dropdown:closed", function (evt) {
+                        var dropdown = evt.detail.dropdown;
+                        if (dropdown.id === "search") {
+                            _this.inputElement.blur();
+                        }
+                    });
+                }
                 return _this;
             };
             this.showDropdown = function () {
@@ -200,12 +215,7 @@
             // TODO - reconsider whether this is the right behavior
             this.onSearchFormSubmit = function (event) {
                 event.preventDefault();
-                var value = _this.inputElement.value;
-                var cleanedValue = encodeURI(value);
-                var newUrl = cleanedValue
-                    ? "".concat(_this.searchPath).concat(cleanedValue, "*")
-                    : "/search";
-                window.location.href = newUrl;
+                _this.fetchAndDisplaySearchResults();
             };
             this.onSearchInputKeyup = debounce(function () {
                 _this.searchValue = _this.inputElement.value;
@@ -216,10 +226,18 @@
                 if (_this.searchValue.length < 3) {
                     return;
                 }
-                _this.fetchSearchResults(_this.searchValue).then(function (_a) {
+                _this.fetchAndDisplaySearchResults();
+            }, 250);
+            this.getSearchUrl = function (searchValue) {
+                var cleanedValue = encodeURI(searchValue);
+                var searchURL = _this.searchPath + cleanedValue;
+                var fullSearchUrl = "".concat(searchURL, "*&view=json");
+                return fullSearchUrl;
+            };
+            this.fetchAndDisplaySearchResults = function () {
+                return _this.fetchSearchResults(_this.searchValue).then(function (_a) {
                     var searchValue = _a.searchValue, searchUrl = _a.searchUrl, resultsList = _a.resultsList, totalResults = _a.totalResults;
                     if (searchValue !== _this.searchValue) {
-                        console.log("stale request", searchValue, _this.searchValue);
                         return;
                     }
                     var renderedContents = renderSearchResults({
@@ -231,12 +249,6 @@
                     _this.resultsListElement.innerHTML = renderedContents;
                     _this.showDropdown();
                 });
-            }, 250);
-            this.getSearchUrl = function (searchValue) {
-                var cleanedValue = encodeURI(searchValue);
-                var searchURL = _this.searchPath + cleanedValue;
-                var fullSearchUrl = "".concat(searchURL, "*&view=json");
-                return fullSearchUrl;
             };
             this.fetchSearchResults = function (searchValue) {
                 var searchUrl = _this.getSearchUrl(searchValue);
@@ -596,6 +608,7 @@
                 }
                 var toElement = event.relatedTarget;
                 // If the mouse is no longer within the header content, area hide the dropdown
+                // if (toElement && !toElement.closest(".header-content-wrapper")) {
                 if (toElement &&
                     !toElement.closest(".header-desktop__navbar") &&
                     !toElement.closest('.vm-header-drawer__content')) {
@@ -604,7 +617,6 @@
             };
             this.onDropdownButtonClick = function (event, dropdown) {
                 event.preventDefault();
-                console.log('hello');
                 var currentOpenDropdown = _this.getCurrentOpenDropdown();
                 if (currentOpenDropdown) {
                     _this.closeDropdown(currentOpenDropdown);
@@ -626,20 +638,13 @@
             this.openDropdown = function (dropdown) {
                 _this.currentDropdownId = dropdown.id;
                 dropdown.open();
-                // TODO - custom behavior like this does not belong here, long term
-                if (dropdown.id === 'search') {
-                    var searchTermsElement = dropdown.dropdownElement.querySelector('.search-terms');
-                    searchTermsElement.focus();
-                }
                 _this.headerUnderlay.show();
+                window.dispatchEvent(new CustomEvent("header-dropdown:opened", { detail: { dropdown: dropdown } }));
             };
             this.closeDropdown = function (dropdown) {
                 dropdown.close();
                 _this.currentDropdownId = null;
-                if (dropdown.id === 'search') {
-                    var searchTermsElement = dropdown.dropdownElement.querySelector('.search-terms');
-                    searchTermsElement.blur();
-                }
+                window.dispatchEvent(new CustomEvent("header-dropdown:closed", { detail: { dropdown: dropdown } }));
                 _this.headerUnderlay.hide();
             };
         }

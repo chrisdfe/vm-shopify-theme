@@ -85,6 +85,12 @@ input.action_button[type='button'] {
   }
 }
 
+.button.button--square {
+  height: 44px;
+  width: 44px;
+  padding: 0;
+}
+
 .button.button--inverted {
   background: $vm-color-white;
   color: $vm-color-sea-green;

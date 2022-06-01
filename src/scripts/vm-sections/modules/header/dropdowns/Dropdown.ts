@@ -1,12 +1,10 @@
-import TransitionTimer from "../../../utils/TransitionTimer";
-
 const ACTIVE_BUTTON_CLASSNAME = "is-active";
 const OPEN_CLASSNAME = "is-open";
 
 type HeaderDropdownCallback = (event: Event, dropdown: HeaderDropdown) => void;
 
 interface Props {
-  dropdownElement: Element;
+  dropdownElement: HTMLElement;
 
   onDropdownButtonMouseOver: HeaderDropdownCallback;
   onDropdownButtonClick: HeaderDropdownCallback;
@@ -20,8 +18,8 @@ export default class HeaderDropdown {
 
   isOpen = false;
 
-  dropdownElement: Element;
-  buttonElements: Element[];
+  dropdownElement: HTMLElement;
+  buttonElements: HTMLElement[];
 
   onDropdownButtonMouseOver: HeaderDropdownCallback;
   onDropdownButtonClick: HeaderDropdownCallback;

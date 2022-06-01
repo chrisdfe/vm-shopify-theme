@@ -10,7 +10,7 @@
   margin-bottom: 0;
 
   .search-terms {
-    $height: 50px;
+    $height: 44px;
     height: $height;
     min-height: $height;
     border: 0 none;
@@ -32,5 +32,13 @@
     .search__results {
       margin-top: 30px;
     }
+  }
+}
+
+.header__search-form__search-bar {
+  display: flex;
+
+  .input-wrapper {
+    flex-grow: 1;
   }
 }

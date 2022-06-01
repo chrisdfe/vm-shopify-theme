@@ -1,6 +1,8 @@
 import debounce from "../../utils/debounce";
 import { getCDNImageUrl } from "./utils";
 
+import { DropdownEventPayload } from '../header/dropdowns/DropdownManager';
+
 type ShopifyGlobal = {
   translation: {
     coming_soon_text: string;
@@ -225,7 +227,25 @@ export default class SearchAutocomplete {
     this.searchFormElement.addEventListener("submit", this.onSearchFormSubmit);
 
     // Clicking outside makes the results disappear.
-    document.addEventListener("click", this.onDocumentClick);
+    // document.addEventListener("click", this.onDocumentClick);
+
+    // if this search autocomplete is inside of a dropdown then set up autofocus
+    if (this.searchFormElement.closest("[data-dropdown-id]")) {
+      window.addEventListener("header-dropdown:opened", evt => {
+        const { dropdown } = (evt as CustomEvent<DropdownEventPayload>).detail;
+
+        if (dropdown.id === "search") {
+          this.inputElement.focus();
+        }
+      })
+
+      window.addEventListener("header-dropdown:closed", evt => {
+        const { dropdown } = (evt as CustomEvent<DropdownEventPayload>).detail;
+        if (dropdown.id === "search") {
+          this.inputElement.blur();
+        }
+      })
+    }
 
     return this;
   };
@@ -238,7 +258,7 @@ export default class SearchAutocomplete {
     this.resultsListElement.classList.add("u-hidden");
   };
 
-  unload = () => {};
+  unload = () => { };
 
   onDocumentClick = (event) => {
     if (
@@ -252,15 +272,7 @@ export default class SearchAutocomplete {
   // TODO - reconsider whether this is the right behavior
   onSearchFormSubmit = (event) => {
     event.preventDefault();
-
-    const value = this.inputElement.value;
-    const cleanedValue = encodeURI(value);
-
-    const newUrl = cleanedValue
-      ? `${this.searchPath}${cleanedValue}*`
-      : "/search";
-
-    window.location.href = newUrl;
+    this.fetchAndDisplaySearchResults();
   };
 
   onSearchInputKeyup = debounce(() => {
@@ -275,10 +287,20 @@ export default class SearchAutocomplete {
       return;
     }
 
+    this.fetchAndDisplaySearchResults();
+  }, 250);
+
+  getSearchUrl = (searchValue) => {
+    const cleanedValue = encodeURI(searchValue);
+    const searchURL = this.searchPath + cleanedValue;
+    const fullSearchUrl = `${searchURL}*&view=json`;
+    return fullSearchUrl;
+  };
+
+  private fetchAndDisplaySearchResults = () =>
     this.fetchSearchResults(this.searchValue).then(
       ({ searchValue, searchUrl, resultsList, totalResults }) => {
         if (searchValue !== this.searchValue) {
-          console.log("stale request", searchValue, this.searchValue);
           return;
         }
 
@@ -293,16 +315,8 @@ export default class SearchAutocomplete {
         this.showDropdown();
       }
     );
-  }, 250);
 
-  getSearchUrl = (searchValue) => {
-    const cleanedValue = encodeURI(searchValue);
-    const searchURL = this.searchPath + cleanedValue;
-    const fullSearchUrl = `${searchURL}*&view=json`;
-    return fullSearchUrl;
-  };
-
-  fetchSearchResults = (searchValue) => {
+  private fetchSearchResults = (searchValue) => {
     const searchUrl = this.getSearchUrl(searchValue);
 
     return fetch(searchUrl)

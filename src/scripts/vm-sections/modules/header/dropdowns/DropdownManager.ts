@@ -7,12 +7,16 @@ interface Props {
   onDropdownOpen: (dropdown: HeaderDropdown) => void;
 }
 
+export type DropdownEventPayload = {
+  dropdown: HeaderDropdown
+}
+
 export default class DropdownManager {
   currentDropdownId = null;
 
-  headerContentWrapperElement: Element;
+  headerContentWrapperElement: HTMLElement;
 
-  dropdownElements: NodeListOf<Element>;
+  dropdownElements: NodeListOf<HTMLElement>;
   dropdownIds: string[];
   dropdownMap: { [dropdownId: string]: HeaderDropdown };
 
@@ -141,11 +145,15 @@ export default class DropdownManager {
     dropdown.open();
 
     this.headerUnderlay.show();
+
+    window.dispatchEvent(new CustomEvent<DropdownEventPayload>("header-dropdown:opened", { detail: { dropdown } }))
   };
 
   private closeDropdown = (dropdown: HeaderDropdown) => {
     dropdown.close();
     this.currentDropdownId = null;
+
+    window.dispatchEvent(new CustomEvent<DropdownEventPayload>("header-dropdown:closed", { detail: { dropdown } }))
 
     this.headerUnderlay.hide();
   };
