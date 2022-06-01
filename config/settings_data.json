@@ -618,7 +618,7 @@
             "type": "filter",
             "settings": {
               "filter_name": "Shop by Stone",
-              "filter_tags": "Diamond, White Diamond, Brown Diamond, Gemstone, Gray Diamond, Moissanite, Salt and Pepper Diamond, Rose Cut Diamond, Ruby, Sapphire, Spinel, Garnet",
+              "filter_tags": "Diamond, White Diamond, Brown Diamond, Gemstone, Gray Diamond, Moissanite, Salt and Pepper Diamond, Rose Cut Diamond, Ruby, Sapphire, Spinel, Garnet, Turquoise",
               "enable_filter_swatches": false
             }
           },
@@ -626,7 +626,7 @@
             "type": "filter",
             "settings": {
               "filter_name": "Shop by Color",
-              "filter_tags": "Colorless, Pink, Red, Orange, Green, Teal, Blue, Purple, Multi-color, Champagnes & Browns, Salt & Pepper, Black,",
+              "filter_tags": "Colorless, Pink, Red, Orange, Green, Teal, Blue, Purple, Multi-color, Champagnes & Browns, Salt & Pepper, Black",
               "enable_filter_swatches": false
             }
           },

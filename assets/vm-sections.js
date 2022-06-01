@@ -596,7 +596,6 @@
                 }
                 var toElement = event.relatedTarget;
                 // If the mouse is no longer within the header content, area hide the dropdown
-                // if (toElement && !toElement.closest(".header-content-wrapper")) {
                 if (toElement &&
                     !toElement.closest(".header-desktop__navbar") &&
                     !toElement.closest('.vm-header-drawer__content')) {
@@ -605,6 +604,7 @@
             };
             this.onDropdownButtonClick = function (event, dropdown) {
                 event.preventDefault();
+                console.log('hello');
                 var currentOpenDropdown = _this.getCurrentOpenDropdown();
                 if (currentOpenDropdown) {
                     _this.closeDropdown(currentOpenDropdown);
@@ -626,11 +626,20 @@
             this.openDropdown = function (dropdown) {
                 _this.currentDropdownId = dropdown.id;
                 dropdown.open();
+                // TODO - custom behavior like this does not belong here, long term
+                if (dropdown.id === 'search') {
+                    var searchTermsElement = dropdown.dropdownElement.querySelector('.search-terms');
+                    searchTermsElement.focus();
+                }
                 _this.headerUnderlay.show();
             };
             this.closeDropdown = function (dropdown) {
                 dropdown.close();
                 _this.currentDropdownId = null;
+                if (dropdown.id === 'search') {
+                    var searchTermsElement = dropdown.dropdownElement.querySelector('.search-terms');
+                    searchTermsElement.blur();
+                }
                 _this.headerUnderlay.hide();
             };
         }
