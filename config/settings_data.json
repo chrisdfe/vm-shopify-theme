@@ -457,68 +457,30 @@
       "mega-menu-1": {
         "type": "mega-menu-1",
         "blocks": {
-          "89c82cf2-e452-4010-a7a2-fc3c9e3d7dd9": {
-            "type": "column",
+          "86a293ad-0000-46bf-b505-3dc450ae7291": {
+            "type": "nav_link_list",
             "settings": {
-              "richtext_top": "",
-              "image_caption_top": "",
-              "image_link_top": "",
-              "menu_1": "engagement-rings",
-              "menu_1_link": "",
-              "menu_2": "",
-              "menu_2_link": "",
-              "menu_3": "",
-              "menu_3_link": "",
-              "menu_4": "",
-              "menu_4_link": "",
-              "image_caption_bottom": "",
-              "image_link_bottom": "",
-              "richtext_bottom": ""
+              "title": "In Stock",
+              "link_list": "header-navbar-may-2022-updates",
+              "show_view_all_link": true,
+              "view_all_url": "shopify:\/\/pages\/about",
+              "columns_desktop": "1"
             }
           },
-          "396cb187-a7c8-431f-9b50-7c86a37d239b": {
-            "type": "column",
+          "69e7ee4b-8e0c-4c33-b858-f909292ae2d9": {
+            "type": "image",
             "settings": {
-              "richtext_top": "",
-              "image_caption_top": "",
-              "image_link_top": "",
-              "menu_1": "wedding-bands",
-              "menu_1_link": "",
-              "menu_2": "",
-              "menu_2_link": "",
-              "menu_3": "",
-              "menu_3_link": "",
-              "menu_4": "",
-              "menu_4_link": "",
-              "image_caption_bottom": "",
-              "image_link_bottom": "",
-              "richtext_bottom": ""
-            }
-          },
-          "8908700f-c81c-47a6-809d-d7c5cf21c961": {
-            "type": "column",
-            "settings": {
-              "richtext_top": "",
-              "image_caption_top": "",
-              "image_link_top": "",
-              "menu_1": "bands-for-him-them",
-              "menu_1_link": "",
-              "menu_2": "",
-              "menu_2_link": "",
-              "menu_3": "",
-              "menu_3_link": "",
-              "menu_4": "",
-              "menu_4_link": "",
-              "image_caption_bottom": "",
-              "image_link_bottom": "",
-              "richtext_bottom": ""
+              "image": "shopify:\/\/shop_images\/Something-Blue-ZARA-cornflower-blue-sapphire-ring-4x5.jpg",
+              "url": "shopify:\/\/pages\/faqs",
+              "cta_text": "Check this out",
+              "cta_subtext": "Here is the subtext underneath",
+              "columns_desktop": "1"
             }
           }
         },
         "block_order": [
-          "89c82cf2-e452-4010-a7a2-fc3c9e3d7dd9",
-          "396cb187-a7c8-431f-9b50-7c86a37d239b",
-          "8908700f-c81c-47a6-809d-d7c5cf21c961"
+          "86a293ad-0000-46bf-b505-3dc450ae7291",
+          "69e7ee4b-8e0c-4c33-b858-f909292ae2d9"
         ],
         "settings": {
           "parent": "Wedding & Engagement"
@@ -618,7 +580,7 @@
             "type": "filter",
             "settings": {
               "filter_name": "Shop by Stone",
-              "filter_tags": "Diamond, White Diamond, Brown Diamond, Gemstone, Gray Diamond, Moissanite, Salt and Pepper Diamond, Rose Cut Diamond, Ruby, Sapphire, Spinel, Garnet, Turquoise",
+              "filter_tags": "Diamond, White Diamond, Brown Diamond, Gemstone, Gray Diamond, Moissanite, Salt and Pepper Diamond, Rose Cut Diamond, Ruby, Sapphire, Spinel, Garnet",
               "enable_filter_swatches": false
             }
           },
@@ -626,7 +588,7 @@
             "type": "filter",
             "settings": {
               "filter_name": "Shop by Color",
-              "filter_tags": "Colorless, Pink, Red, Orange, Green, Teal, Blue, Purple, Multi-color, Champagnes & Browns, Salt & Pepper, Black",
+              "filter_tags": "Colorless, Pink, Red, Orange, Green, Teal, Blue, Purple, Multi-color, Champagnes & Browns, Salt & Pepper, Black,",
               "enable_filter_swatches": false
             }
           },
