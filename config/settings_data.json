@@ -489,69 +489,8 @@
       "mega-menu-2": {
         "type": "mega-menu-2",
         "blocks": {
-          "9c9b6135-be0a-4019-a52d-b273b37d4333": {
-            "type": "column",
-            "settings": {
-              "richtext_top": "",
-              "image_caption_top": "",
-              "image_link_top": "",
-              "menu_1": "about-vm",
-              "menu_1_link": "",
-              "menu_2": "",
-              "menu_2_link": "",
-              "menu_3": "",
-              "menu_3_link": "",
-              "menu_4": "",
-              "menu_4_link": "",
-              "image_caption_bottom": "",
-              "image_link_bottom": "",
-              "richtext_bottom": ""
-            }
-          },
-          "19c77f33-dbcb-4e88-b872-3ac4c5d10492": {
-            "type": "column",
-            "settings": {
-              "richtext_top": "",
-              "image_caption_top": "",
-              "image_link_top": "",
-              "menu_1": "learn-with-us",
-              "menu_1_link": "",
-              "menu_2": "",
-              "menu_2_link": "",
-              "menu_3": "",
-              "menu_3_link": "",
-              "menu_4": "",
-              "menu_4_link": "",
-              "image_caption_bottom": "",
-              "image_link_bottom": "",
-              "richtext_bottom": ""
-            }
-          },
-          "6624135a-a3ae-458d-8675-b13b0d6fa01c": {
-            "type": "column",
-            "settings": {
-              "richtext_top": "",
-              "image_top": "shopify:\/\/shop_images\/storefront.jpg",
-              "image_caption_top": "Visit our Seattle Jewelry Store!",
-              "image_link_top": "https:\/\/www.valeriemadison.com\/pages\/our-story#visit-the-store",
-              "menu_1": "",
-              "menu_1_link": "",
-              "menu_2": "",
-              "menu_2_link": "",
-              "menu_3": "",
-              "menu_3_link": "",
-              "menu_4": "",
-              "menu_4_link": "",
-              "image_caption_bottom": "",
-              "image_link_bottom": "",
-              "richtext_bottom": ""
-            }
-          }
         },
         "block_order": [
-          "9c9b6135-be0a-4019-a52d-b273b37d4333",
-          "19c77f33-dbcb-4e88-b872-3ac4c5d10492",
-          "6624135a-a3ae-458d-8675-b13b0d6fa01c"
         ],
         "settings": {
           "parent": "About Us"
@@ -1182,68 +1121,8 @@
       "mega-menu-3": {
         "type": "mega-menu-3",
         "blocks": {
-          "47d145a4-b12b-4e17-860c-625091745268": {
-            "type": "column",
-            "settings": {
-              "richtext_top": "",
-              "image_caption_top": "",
-              "image_link_top": "",
-              "menu_1": "custom-designs",
-              "menu_1_link": "",
-              "menu_2": "",
-              "menu_2_link": "",
-              "menu_3": "",
-              "menu_3_link": "",
-              "menu_4": "",
-              "menu_4_link": "",
-              "image_caption_bottom": "",
-              "image_link_bottom": "",
-              "richtext_bottom": ""
-            }
-          },
-          "532c00fc-0a53-4c3b-9aeb-9e16deb238b8": {
-            "type": "column",
-            "settings": {
-              "richtext_top": "",
-              "image_caption_top": "",
-              "image_link_top": "",
-              "menu_1": "custom-heirloom",
-              "menu_1_link": "",
-              "menu_2": "",
-              "menu_2_link": "",
-              "menu_3": "",
-              "menu_3_link": "",
-              "menu_4": "",
-              "menu_4_link": "",
-              "image_caption_bottom": "",
-              "image_link_bottom": "",
-              "richtext_bottom": ""
-            }
-          },
-          "287a9339-4955-43c5-b1c1-2937c408d74e": {
-            "type": "column",
-            "settings": {
-              "richtext_top": "",
-              "image_caption_top": "",
-              "image_link_top": "",
-              "menu_1": "work-with-us",
-              "menu_1_link": "",
-              "menu_2": "",
-              "menu_2_link": "",
-              "menu_3": "",
-              "menu_3_link": "",
-              "menu_4": "",
-              "menu_4_link": "",
-              "image_caption_bottom": "",
-              "image_link_bottom": "",
-              "richtext_bottom": ""
-            }
-          }
         },
         "block_order": [
-          "47d145a4-b12b-4e17-860c-625091745268",
-          "532c00fc-0a53-4c3b-9aeb-9e16deb238b8",
-          "287a9339-4955-43c5-b1c1-2937c408d74e"
         ],
         "settings": {
           "parent": "Custom & Heirloom"
@@ -1318,48 +1197,8 @@
       "mega-menu-4": {
         "type": "mega-menu-4",
         "blocks": {
-          "f29a3256-abfc-41b8-8483-5567a70b7932": {
-            "type": "column",
-            "settings": {
-              "richtext_top": "",
-              "image_caption_top": "",
-              "image_link_top": "",
-              "menu_1": "featured",
-              "menu_1_link": "",
-              "menu_2": "",
-              "menu_2_link": "",
-              "menu_3": "",
-              "menu_3_link": "",
-              "menu_4": "",
-              "menu_4_link": "",
-              "image_caption_bottom": "",
-              "image_link_bottom": "",
-              "richtext_bottom": ""
-            }
-          },
-          "mega-menu-4-0": {
-            "type": "column",
-            "settings": {
-              "richtext_top": "",
-              "image_caption_top": "",
-              "image_link_top": "",
-              "menu_1": "shop-by-style",
-              "menu_1_link": "",
-              "menu_2": "",
-              "menu_2_link": "",
-              "menu_3": "",
-              "menu_3_link": "",
-              "menu_4": "",
-              "menu_4_link": "",
-              "image_caption_bottom": "",
-              "image_link_bottom": "",
-              "richtext_bottom": ""
-            }
-          }
         },
         "block_order": [
-          "f29a3256-abfc-41b8-8483-5567a70b7932",
-          "mega-menu-4-0"
         ],
         "settings": {
           "parent": "Jewelry"
@@ -1368,28 +1207,9 @@
       "mega-menu-5": {
         "type": "mega-menu-5",
         "blocks": {
-          "d8715b21-50a3-48ce-8574-f457f22b34b7": {
-            "type": "column",
-            "settings": {
-              "richtext_top": "",
-              "image_caption_top": "",
-              "image_link_top": "",
-              "menu_1": "",
-              "menu_1_link": "",
-              "menu_2": "",
-              "menu_2_link": "",
-              "menu_3": "",
-              "menu_3_link": "",
-              "menu_4": "",
-              "menu_4_link": "",
-              "image_caption_bottom": "",
-              "image_link_bottom": "",
-              "richtext_bottom": ""
-            }
           }
         },
         "block_order": [
-          "d8715b21-50a3-48ce-8574-f457f22b34b7"
         ],
         "settings": {
           "parent": "test"

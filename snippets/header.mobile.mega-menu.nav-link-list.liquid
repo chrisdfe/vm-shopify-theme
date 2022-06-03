@@ -5,9 +5,11 @@ show_view_all_link: checkbox,
 view_all_url: text,
 {% endcomment %}
 
-<div class="header-desktop__mega-menu header-desktop__mega-menu--nav-link-list">
+<div class="mobile-menu-list-item mobile-menu-list-item--nav-link-list">
 
-  <h4>{{ title }}</h4>
+  {% if title %}
+    <h4>{{ title }}</h4>
+  {% endif %}
 
   {% if link_list %}
     <ul>

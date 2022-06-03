@@ -1,4 +1,6 @@
 export default class PromoBanner {
+  closeButtonElements: HTMLElement[];
+
   constructor() {
     // this.element = document.querySelector(".promo-banner");
   }
@@ -11,15 +13,18 @@ export default class PromoBanner {
 
     this.showPromoBanner();
 
-    document
-      .querySelectorAll(".js-promo-banner-close")
-      .forEach((closeButton) => {
-        closeButton.addEventListener("click", () => {
-          this.hidePromoBanner();
-        });
-      });
+    this.closeButtonElements = Array.from(document.querySelectorAll(".js-promo-banner-close"));
+    this.closeButtonElements.forEach((closeButton) => {
+      closeButton.addEventListener("click", this.hidePromoBanner);
+    });
 
     return this;
+  }
+
+  unload() {
+    this.closeButtonElements.forEach((closeButton) => {
+      closeButton.removeEventListener("click", this.hidePromoBanner);
+    });
   }
 
   showPromoBanner = () => {

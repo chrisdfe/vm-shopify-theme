@@ -13,25 +13,45 @@
     data-dropdown-activation-type="hover"
     >
     <div class="header-dropdown__content">
-      {% for block in section.blocks %}
-        {% if block.type == "nav_link_list" %}
-          {% render "header.desktop.mega-menu.nav-link-list" with {
-            title: block.settings.title,
-            link_list: block.settings.link_list,
-            show_view_all_link: block.settings.show_view_all_link,
-            view_all_url: block.settings.view_all_url,
-            columns_desktop: block.settings.columns_desktop,
-          } %}
-        {% elsif block.type == "image" %}
-          {% render "header.desktop.mega-menu.image" with {
-            image: block.settings.image,
-            url: block.settings.url,
-            cta_text: block.settings.cta_text,
-            cta_subtext: block.settings.cta_subtext,
-            columns_desktop: block.settings.columns_desktop,
-          } %}
-        {% endif %}
-      {% endfor %}
+      <div class="container">
+        <div class="row row--justify-content-center">
+
+          {% for block in section.blocks %}
+            {% assign columns = "one" %}
+            
+            {% if block.settings.columns_desktop == "2" %}
+              {% assign columns = "two" %}
+            {% elsif block.settings.columns_desktop == "3" %}
+              {% assign columns = "three" %}
+            {% elsif block.settings.columns_desktop == "4" %}
+              {% assign columns = "four" %}
+            {% elsif block.settings.columns_desktop == "6" %}
+              {% assign columns = "six" %}
+            {% endif %}
+
+            <div class="{{ columns }} columns">
+              <div class="header-dropdown__column" {{ block.shopify_attributes }}>
+                {% if block.type == "nav_link_list" %}
+                  {% render "header.desktop.mega-menu.nav-link-list" with {
+                    title: block.settings.title,
+                    link_list: block.settings.link_list,
+                    show_view_all_link: block.settings.show_view_all_link,
+                    view_all_url: block.settings.view_all_url,
+                  } %}
+                {% elsif block.type == "image" %}
+                  {% render "header.desktop.mega-menu.image" with {
+                    image: block.settings.image,
+                    url: block.settings.url,
+                    cta_text: block.settings.cta_text,
+                    cta_subtext: block.settings.cta_subtext,
+                  } %}
+                {% endif %}
+              </div>
+            </div>
+          {% endfor %}
+
+        </div>
+      </div>
     </div>
 
   </div>

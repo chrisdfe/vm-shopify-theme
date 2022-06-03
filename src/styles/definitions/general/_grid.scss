@@ -20,10 +20,17 @@
   flex-wrap: wrap;
   margin-right: -(math.div($gutter, 2));
   margin-left: -(math.div($gutter, 2));
-  // width: 100%;
 
   &.row--reverse {
     flex-direction: row-reverse;
+  }
+
+  &.row--align-items-center {
+    align-items: center;
+  }
+
+  &.row--justify-content-center {
+    justify-content: center;
   }
 
   @include respond-to('medium-down') {

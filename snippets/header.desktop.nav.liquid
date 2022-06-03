@@ -1,10 +1,5 @@
 <ul class="header-desktop__nav">
   {% for link in linklists[linklist].links %}
-    {% assign is_dropdown = false %}
-    {% if linklists[link.handle] != empty %}
-      {% assign is_dropdown = true %}
-    {% endif %}
-
     <li>
       <a
         href="{{ link.url }}"

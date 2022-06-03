@@ -317,14 +317,17 @@
                 return;
             }
             this.showPromoBanner();
-            document
-                .querySelectorAll(".js-promo-banner-close")
-                .forEach(function (closeButton) {
-                closeButton.addEventListener("click", function () {
-                    _this.hidePromoBanner();
-                });
+            this.closeButtonElements = Array.from(document.querySelectorAll(".js-promo-banner-close"));
+            this.closeButtonElements.forEach(function (closeButton) {
+                closeButton.addEventListener("click", _this.hidePromoBanner);
             });
             return this;
+        };
+        PromoBanner.prototype.unload = function () {
+            var _this = this;
+            this.closeButtonElements.forEach(function (closeButton) {
+                closeButton.removeEventListener("click", _this.hidePromoBanner);
+            });
         };
         return PromoBanner;
     }());
@@ -525,15 +528,8 @@
                 _this.activationType = (_this.dropdownElement.getAttribute("data-dropdown-activation-type") || "hover");
                 _this.buttonElements.forEach(function (element) {
                     element.classList.add("is-dropdown-button");
-                    // if (this.activationType === "hover") {
-                    element.addEventListener("mouseover", function (event) {
-                        _this.onDropdownButtonMouseOver(event, _this);
-                    });
-                    // } else {
-                    element.addEventListener("click", function (event) {
-                        _this.onDropdownButtonClick(event, _this);
-                    });
-                    // }
+                    element.addEventListener("mouseover", _this.onDropdownButtonMouseOverInternal);
+                    element.addEventListener("click", _this.onDropdownButtonClickInternal);
                 });
                 return _this;
             };
@@ -543,13 +539,6 @@
                     buttonElement.classList.add(ACTIVE_BUTTON_CLASSNAME);
                 });
                 _this.dropdownElement.classList.add(OPEN_CLASSNAME$1);
-                // this.dropdownElement.classList.add("animated", "animated--snappy", "fadeInDown");
-                // this.dropdownElement.addEventListener("animationend", () => {
-                // this.dropdownElement.classList.remove("animated", "animated--snappy", "fadeInDown");
-                // }, { once: true });
-                // new TransitionTimer(10).start().then(() => {
-                //   this.dropdownElement.classList.add(VISIBLE_CLASSNAME);
-                // });
             };
             this.close = function () {
                 _this.isOpen = false;
@@ -557,21 +546,28 @@
                     buttonElement.classList.remove(ACTIVE_BUTTON_CLASSNAME);
                 });
                 _this.dropdownElement.classList.remove(OPEN_CLASSNAME$1);
-                // this.dropdownElement.classList.add("animated", "animated--snappy", "fadeOutUp");
-                // this.dropdownElement.addEventListener("animationend", () => {
-                //   this.dropdownElement.classList.remove("animated", "animated--snappy", "fadeOutUp");
-                // }, { once: true })
-                // new TransitionTimer(200).start().then(() => {
-                //   this.dropdownElement.classList.remove(OPEN_CLASSNAME);
-                // });
             };
             this.toggle = function (shouldOpen) {
                 shouldOpen ? _this.open() : _this.close();
+            };
+            this.onDropdownButtonMouseOverInternal = function (event) {
+                _this.onDropdownButtonMouseOver(event, _this);
+            };
+            this.onDropdownButtonClickInternal = function (event) {
+                _this.onDropdownButtonClick(event, _this);
             };
             this.dropdownElement = dropdownElement;
             this.onDropdownButtonMouseOver = onDropdownButtonMouseOver;
             this.onDropdownButtonClick = onDropdownButtonClick;
         }
+        HeaderDropdown.prototype.unload = function () {
+            var _this = this;
+            this.buttonElements.forEach(function (element) {
+                element.classList.remove("is-dropdown-button");
+                element.removeEventListener("mouseover", _this.onDropdownButtonMouseOverInternal);
+                element.removeEventListener("click", _this.onDropdownButtonClickInternal);
+            });
+        };
         return HeaderDropdown;
     }());
 
@@ -651,9 +647,7 @@
         DropdownManager.prototype.initialize = function () {
             var _this = this;
             this.headerContentWrapperElement = document.querySelector(".header-content-wrapper");
-            this.headerContentWrapperElement.addEventListener("mouseout", function (event) {
-                _this.onHeaderMouseOut(event);
-            });
+            this.headerContentWrapperElement.addEventListener("mouseout", this.onHeaderMouseOut);
             this.headerUnderlay = new HeaderDropdownUnderlay();
             this.dropdownElements = document.querySelectorAll(".vm-header-dropdown");
             this.dropdownMap = Array.from(this.dropdownElements).reduce(function (acc, dropdownElement) {
@@ -667,23 +661,61 @@
             }, {});
             this.dropdownIds = Object.keys(this.dropdownMap);
             document.body.addEventListener("click", this.onBodyClick);
-            document.documentElement.addEventListener("mouseleave", function () {
-                _this.closeCurrentOpenDropdown();
-            });
+            document.documentElement.addEventListener("mouseleave", this.closeCurrentOpenDropdown);
             return this;
+        };
+        DropdownManager.prototype.unload = function () {
+            var _this = this;
+            this.headerContentWrapperElement.removeEventListener("mouseout", this.onHeaderMouseOut);
+            this.dropdownIds.forEach(function (dropdownId) {
+                var dropdown = _this.dropdownMap[dropdownId];
+                dropdown.unload();
+            });
+            document.documentElement.removeEventListener("mouseleave", this.closeCurrentOpenDropdown);
+        };
+        DropdownManager.prototype.reset = function () {
+            this.unload();
+            this.initialize();
         };
         return DropdownManager;
     }());
 
+    var HEADER_SECTIONS = [
+        'header',
+        'mega-menu-1',
+        'mega-menu-2',
+        'mega-menu-3',
+        'mega-menu-4',
+        'mega-menu-5',
+        'mega-menu-6',
+    ];
     var HeaderWrapper = /** @class */ (function () {
         function HeaderWrapper(headerWrapperElement) {
+            var _this = this;
             this.headerWrapperElement = null;
             this.headerWrapperElement = headerWrapperElement;
+            document.addEventListener("shopify:section:load", function (event) {
+                // @ts-ignore
+                console.log('shopify:section:load', event.detail.sectionId);
+                // @ts-ignore
+                if (HEADER_SECTIONS.includes(event.detail.sectionId)) {
+                    _this.reset();
+                }
+            });
         }
         HeaderWrapper.prototype.initialize = function () {
             this.promoBanner = new PromoBanner().initialize();
             this.drawerManager = new HeaderDrawerManager().initialize();
             this.dropdownManager = new DropdownManager().initialize();
+        };
+        HeaderWrapper.prototype.unload = function () {
+            // this.promoBanner.reset();
+            // this.drawerManager.reset();
+            this.dropdownManager.reset();
+        };
+        HeaderWrapper.prototype.reset = function () {
+            this.unload();
+            this.initialize();
         };
         HeaderWrapper.findAndInitialize = function () {
             return findAndInitialize(HeaderWrapper);

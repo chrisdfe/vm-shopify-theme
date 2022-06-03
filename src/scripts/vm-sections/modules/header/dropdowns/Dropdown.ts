@@ -49,19 +49,21 @@ export default class HeaderDropdown {
     this.buttonElements.forEach((element) => {
       element.classList.add("is-dropdown-button");
 
-      // if (this.activationType === "hover") {
-      element.addEventListener("mouseover", (event) => {
-        this.onDropdownButtonMouseOver(event, this);
-      });
-      // } else {
-      element.addEventListener("click", (event) => {
-        this.onDropdownButtonClick(event, this);
-      });
-      // }
+      element.addEventListener("mouseover", this.onDropdownButtonMouseOverInternal);
+      element.addEventListener("click", this.onDropdownButtonClickInternal);
     });
 
     return this;
   };
+
+  unload() {
+    this.buttonElements.forEach((element) => {
+      element.classList.remove("is-dropdown-button");
+
+      element.removeEventListener("mouseover", this.onDropdownButtonMouseOverInternal);
+      element.removeEventListener("click", this.onDropdownButtonClickInternal);
+    });
+  }
 
   open = () => {
     this.isOpen = true;
@@ -70,15 +72,6 @@ export default class HeaderDropdown {
     })
 
     this.dropdownElement.classList.add(OPEN_CLASSNAME)
-    // this.dropdownElement.classList.add("animated", "animated--snappy", "fadeInDown");
-
-    // this.dropdownElement.addEventListener("animationend", () => {
-    // this.dropdownElement.classList.remove("animated", "animated--snappy", "fadeInDown");
-    // }, { once: true });
-
-    // new TransitionTimer(10).start().then(() => {
-    //   this.dropdownElement.classList.add(VISIBLE_CLASSNAME);
-    // });
   };
 
   close = () => {
@@ -88,18 +81,17 @@ export default class HeaderDropdown {
     })
 
     this.dropdownElement.classList.remove(OPEN_CLASSNAME);
-    // this.dropdownElement.classList.add("animated", "animated--snappy", "fadeOutUp");
-
-    // this.dropdownElement.addEventListener("animationend", () => {
-    //   this.dropdownElement.classList.remove("animated", "animated--snappy", "fadeOutUp");
-    // }, { once: true })
-
-    // new TransitionTimer(200).start().then(() => {
-    //   this.dropdownElement.classList.remove(OPEN_CLASSNAME);
-    // });
   };
 
   toggle = (shouldOpen: boolean) => {
     shouldOpen ? this.open() : this.close();
   };
+
+  private onDropdownButtonMouseOverInternal = (event) => {
+    this.onDropdownButtonMouseOver(event, this);
+  }
+
+  private onDropdownButtonClickInternal = (event) => {
+    this.onDropdownButtonClick(event, this);
+  }
 }
