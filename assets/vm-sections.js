@@ -661,7 +661,7 @@
             }, {});
             this.dropdownIds = Object.keys(this.dropdownMap);
             document.body.addEventListener("click", this.onBodyClick);
-            document.documentElement.addEventListener("mouseleave", this.closeCurrentOpenDropdown);
+            // document.documentElement.addEventListener("mouseleave", this.closeCurrentOpenDropdown);
             return this;
         };
         DropdownManager.prototype.unload = function () {
@@ -696,7 +696,7 @@
             this.headerWrapperElement = headerWrapperElement;
             document.addEventListener("shopify:section:load", function (event) {
                 // @ts-ignore
-                console.log('shopify:section:load', event.detail.sectionId);
+                console.log("shopify:section:load", event.detail.sectionId);
                 // @ts-ignore
                 if (HEADER_SECTIONS.includes(event.detail.sectionId)) {
                     _this.reset();

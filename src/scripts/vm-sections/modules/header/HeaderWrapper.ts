@@ -14,6 +14,7 @@ const HEADER_SECTIONS = [
   'mega-menu-5',
   'mega-menu-6',
 ];
+
 export default class HeaderWrapper {
   static selector = ".header-wrapper";
 
@@ -28,7 +29,8 @@ export default class HeaderWrapper {
 
     document.addEventListener("shopify:section:load", (event) => {
       // @ts-ignore
-      console.log('shopify:section:load', event.detail.sectionId);
+      console.log("shopify:section:load", event.detail.sectionId);
+
       // @ts-ignore
       if (HEADER_SECTIONS.includes(event.detail.sectionId)) {
         this.reset();

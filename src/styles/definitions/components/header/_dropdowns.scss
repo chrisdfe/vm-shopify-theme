@@ -34,10 +34,7 @@
 
 // TODO - move to mega-menu
 .header-dropdown__content {
-  display: flex;
   padding: get-vm-spacer(2);
-  // align-items: center;
-  justify-content: center;
 
   ul {
     list-style-type: none;

@@ -1,2 +1,4 @@
-{% include "header.desktop.mega-menu" %}
-{% include "header.mobile.mega-menu" %}
+{% if section.settings.parent != blank %}
+  {% include "header.desktop.mega-menu" %}
+  {% include "header.mobile.mega-menu" %}
+{% endif %}

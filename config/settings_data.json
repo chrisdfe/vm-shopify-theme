@@ -310,11 +310,28 @@
       },
       "header": {
         "type": "header",
+        "blocks": {
+          "48822781-8118-4659-bbeb-0cd9816911ee": {
+            "type": "mega_menu_group",
+            "settings": {
+              "title": "In Stock"
+            }
+          },
+          "064b9580-f55f-43b3-b120-4092989aa0ce": {
+            "type": "mega_menu_group",
+            "settings": {
+              "title": "Engagement"
+            }
+          }
+        },
+        "block_order": [
+          "48822781-8118-4659-bbeb-0cd9816911ee",
+          "064b9580-f55f-43b3-b120-4092989aa0ce"
+        ],
         "settings": {
           "promo_text": "",
           "logo": "shopify:\/\/shop_images\/logo_173a67f6-34c1-4670-82e7-e7a2e1e4f697.png",
           "logo_mobile": "shopify:\/\/shop_images\/mobile-logo-seagreen_256x256_79182b2b-7668-4862-8b08-f67f60755daf.png",
-          "main_linklist": "navbar-menu-2022",
           "show_locale_selector": true,
           "show_currency_selector": true
         }
@@ -461,10 +478,10 @@
             "type": "nav_link_list",
             "settings": {
               "title": "In Stock",
-              "link_list": "header-navbar-may-2022-updates",
+              "link_list": "header-navbar-in-stock",
               "show_view_all_link": true,
               "view_all_url": "shopify:\/\/pages\/about",
-              "columns_desktop": "1"
+              "columns_desktop": "4"
             }
           },
           "69e7ee4b-8e0c-4c33-b858-f909292ae2d9": {
@@ -474,7 +491,7 @@
               "url": "shopify:\/\/pages\/faqs",
               "cta_text": "Check this out",
               "cta_subtext": "Here is the subtext underneath",
-              "columns_desktop": "1"
+              "columns_desktop": "4"
             }
           }
         },
@@ -483,17 +500,28 @@
           "69e7ee4b-8e0c-4c33-b858-f909292ae2d9"
         ],
         "settings": {
-          "parent": "Wedding & Engagement"
+          "parent": "In Stock"
         }
       },
       "mega-menu-2": {
         "type": "mega-menu-2",
         "blocks": {
+          "250d00da-2528-4e7f-b9bd-0dbad194c939": {
+            "type": "nav_link_list",
+            "settings": {
+              "title": "Featured",
+              "link_list": "header-navbar-engagement-featured",
+              "show_view_all_link": true,
+              "view_all_url": "",
+              "columns_desktop": "1"
+            }
+          }
         },
         "block_order": [
+          "250d00da-2528-4e7f-b9bd-0dbad194c939"
         ],
         "settings": {
-          "parent": "About Us"
+          "parent": "Engagement"
         }
       },
       "collection-template": {
@@ -1120,10 +1148,6 @@
       },
       "mega-menu-3": {
         "type": "mega-menu-3",
-        "blocks": {
-        },
-        "block_order": [
-        ],
         "settings": {
           "parent": "Custom & Heirloom"
         }
@@ -1196,18 +1220,13 @@
       },
       "mega-menu-4": {
         "type": "mega-menu-4",
-        "blocks": {
-        },
-        "block_order": [
-        ],
         "settings": {
-          "parent": "Jewelry"
         }
       },
       "mega-menu-5": {
         "type": "mega-menu-5",
         "blocks": {
-          }
+
         },
         "block_order": [
         ],
@@ -3777,108 +3796,9 @@
       "mega-menu-6": {
         "type": "mega-menu-6",
         "blocks": {
-          "mega-menu-6-0": {
-            "type": "column",
-            "settings": {
-              "richtext_top": "<p>Add description, images, menus and links to your mega menu<\/p>",
-              "image_caption_top": "",
-              "image_link_top": "",
-              "menu_1": "",
-              "menu_1_link": "",
-              "menu_2": "",
-              "menu_2_link": "",
-              "menu_3": "",
-              "menu_3_link": "",
-              "menu_4": "",
-              "menu_4_link": "",
-              "image_caption_bottom": "",
-              "image_link_bottom": "",
-              "richtext_bottom": ""
-            }
-          },
-          "mega-menu-6-1": {
-            "type": "column",
-            "settings": {
-              "richtext_top": "<p>A column with no settings can be used as a spacer<\/p>",
-              "image_caption_top": "",
-              "image_link_top": "",
-              "menu_1": "",
-              "menu_1_link": "",
-              "menu_2": "",
-              "menu_2_link": "",
-              "menu_3": "",
-              "menu_3_link": "",
-              "menu_4": "",
-              "menu_4_link": "",
-              "image_caption_bottom": "",
-              "image_link_bottom": "",
-              "richtext_bottom": ""
-            }
-          },
-          "mega-menu-6-2": {
-            "type": "column",
-            "settings": {
-              "richtext_top": "",
-              "image_caption_top": "",
-              "image_link_top": "",
-              "menu_1": "",
-              "menu_1_link": "",
-              "menu_2": "",
-              "menu_2_link": "",
-              "menu_3": "",
-              "menu_3_link": "",
-              "menu_4": "",
-              "menu_4_link": "",
-              "image_caption_bottom": "",
-              "image_link_bottom": "",
-              "richtext_bottom": ""
-            }
-          },
-          "mega-menu-6-3": {
-            "type": "column",
-            "settings": {
-              "richtext_top": "<p>Link to your collections, sales and even external links<\/p>",
-              "image_caption_top": "",
-              "image_link_top": "",
-              "menu_1": "",
-              "menu_1_link": "",
-              "menu_2": "",
-              "menu_2_link": "",
-              "menu_3": "",
-              "menu_3_link": "",
-              "menu_4": "",
-              "menu_4_link": "",
-              "image_caption_bottom": "",
-              "image_link_bottom": "",
-              "richtext_bottom": ""
-            }
-          },
-          "mega-menu-6-4": {
-            "type": "column",
-            "settings": {
-              "richtext_top": "<p>Add up to five columns<\/p>",
-              "image_caption_top": "",
-              "image_link_top": "",
-              "menu_1": "",
-              "menu_1_link": "",
-              "menu_2": "",
-              "menu_2_link": "",
-              "menu_3": "",
-              "menu_3_link": "",
-              "menu_4": "",
-              "menu_4_link": "",
-              "image_caption_bottom": "",
-              "image_link_bottom": "",
-              "richtext_bottom": ""
-            }
-          }
+
         },
         "block_order": [
-          "mega-menu-6-0",
-          "mega-menu-6-1",
-          "mega-menu-6-2",
-          "mega-menu-6-3",
-          "mega-menu-6-4"
         ],
         "settings": {
           "parent": "test2"

@@ -51,7 +51,7 @@ export default class DropdownManager {
 
     document.body.addEventListener("click", this.onBodyClick);
 
-    document.documentElement.addEventListener("mouseleave", this.closeCurrentOpenDropdown);
+    // document.documentElement.addEventListener("mouseleave", this.closeCurrentOpenDropdown);
 
     return this;
   }
@@ -65,7 +65,7 @@ export default class DropdownManager {
     this.dropdownIds.forEach(dropdownId => {
       const dropdown = this.dropdownMap[dropdownId];
       dropdown.unload();
-    })
+    });
 
     document.documentElement.removeEventListener("mouseleave", this.closeCurrentOpenDropdown);
   }

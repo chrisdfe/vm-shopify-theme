@@ -7226,9 +7226,7 @@ body.menu-is-open {
 }
 
 .header-dropdown__content {
-  display: flex;
   padding: 2rem;
-  justify-content: center;
 }
 .header-dropdown__content ul {
   list-style-type: none;
