@@ -601,7 +601,7 @@
           "1587338269920": {
             "type": "filter",
             "settings": {
-              "filter_name": "Shop by Category",
+              "filter_name": "Shop by Type",
               "filter_tags": "Contour Bands, Straight Bands, Diamond Bands, Gold Bands, Textured Bands, Masculine, Unisex, Gemstone Essentials, Zodiac, Studs, Hoops, Engravable, Bridal Earrings",
               "enable_filter_swatches": false
             }
@@ -618,7 +618,7 @@
             "type": "filter",
             "settings": {
               "filter_name": "Shop by Stone",
-              "filter_tags": "Diamond, White Diamond, Brown Diamond, Gemstone, Gray Diamond, Moissanite, Salt and Pepper Diamond, Rose Cut Diamond, Ruby, Sapphire, Spinel, Garnet, Turquoise",
+              "filter_tags": "Diamond, Gemstone, Moissanite, Salt and Pepper Diamond, Rose Cut Diamond, Ruby, Sapphire, Spinel, Garnet, Turquoise",
               "enable_filter_swatches": false
             }
           },
@@ -626,7 +626,7 @@
             "type": "filter",
             "settings": {
               "filter_name": "Shop by Color",
-              "filter_tags": "Colorless, Pink, Red, Orange, Green, Teal, Blue, Purple, Multi-color, Champagnes & Browns, Salt & Pepper, Black",
+              "filter_tags": "Colorless, Pink, Red, Orange, Green, Teal, Blue, Purple, Multi-color, Champagnes & Browns, Salt & Pepper, Gray, Black",
               "enable_filter_swatches": false
             }
           },
@@ -3260,15 +3260,14 @@
           "398fe46e-43dd-41e3-8d73-51f91275cd68": {
             "type": "background_block",
             "settings": {
-              "background_color": "light",
-              "banner_image_desktop": "shopify:\/\/shop_images\/Something-Blue-ALL-RINGS2-4x5_copy.jpg"
+              "background_color": "light"
             }
           },
           "95beecd3-2bab-4b22-b737-ed9a5c1dbf17": {
             "type": "background_block",
             "settings": {
               "background_color": "light-alt",
-              "banner_image_desktop": "shopify:\/\/shop_images\/OOAK576_Luna_sapphire_blue_pear-2.jpg"
+              "banner_image_desktop": "shopify:\/\/shop_images\/Gemini-Constellation-Pendant-and-Moonstone-Pendant-Square.jpg"
             }
           }
         },
@@ -3278,13 +3277,13 @@
         ],
         "settings": {
           "banner_wrapper_background_color": "light-alt",
-          "pretext": "Something New",
-          "heading": "Something Blue",
-          "cta_link": "shopify:\/\/collections\/new-arrivals",
+          "pretext": "It's",
+          "heading": "Gemini Season",
+          "cta_link": "https:\/\/www.valeriemadison.com\/collections\/fine-jewelry\/zodiac?sort_by=best-selling",
           "cta_text": "Shop now",
-          "text_position": "center",
+          "text_position": "left-block",
           "text_color": "dark-alt",
-          "banner_image_mobile": "shopify:\/\/shop_images\/Something-Blue-ALL-RINGS2-4x5_copy.jpg",
+          "banner_image_mobile": "shopify:\/\/shop_images\/Gemini-Constellation-Pendant-and-Moonstone-Pendant-Square.jpg",
           "text_color_mobile": "dark-alt",
           "content_background_color_mobile": "light-alt"
         }
@@ -3379,7 +3378,7 @@
             "type": "faq_item",
             "settings": {
               "title": "How much does it cost?",
-              "answer": "Custom Heirloom Reworks start at $1,600 - most reworks are $2,500-$6,000"
+              "answer": "Custom Heirloom Reworks start at $1,800 - most reworks are $2,500-$6,000"
             }
           },
           "c2aaf9f9-313f-4c0b-87a6-6d519e7a4eb2": {
