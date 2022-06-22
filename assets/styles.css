@@ -4965,312 +4965,6 @@ a.plyr__control::before {
   background: #fff !important;
 }
 
-/* Components - Flickity
-================================================== */
-/*! Flickity v2.0.10
-http://flickity.metafizzy.co
----------------------------------------------- */
-.arrow {
-  position: relative;
-  top: -1px;
-  left: 2px;
-}
-
-.flickity-enabled {
-  position: relative;
-}
-
-.flickity-enabled:focus {
-  outline: 0;
-}
-
-.flickity-viewport {
-  overflow: hidden;
-  position: relative;
-  height: 100%;
-}
-
-.flickity-slider {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-
-.flickity-enabled.is-draggable {
-  -webkit-tap-highlight-color: transparent;
-  tap-highlight-color: transparent;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.flickity-enabled.is-draggable .flickity-viewport {
-  cursor: move;
-  cursor: grab;
-}
-
-.flickity-enabled.is-draggable .flickity-viewport.is-pointer-down {
-  cursor: grabbing;
-}
-
-.flickity-prev-next-button {
-  position: absolute;
-  top: 50%;
-  width: 44px;
-  height: 44px;
-  border: none;
-  border-radius: 50%;
-  background: #fff;
-  background: rgba(255, 255, 255, 0.75);
-  cursor: pointer;
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
-
-.flickity-prev-next-button:hover {
-  background: #fff;
-}
-
-.flickity-prev-next-button:focus {
-  outline: 0;
-  box-shadow: 0 0 0 5px #09f;
-}
-
-.flickity-prev-next-button:active {
-  opacity: 0.6;
-}
-
-.flickity-prev-next-button.previous {
-  left: 10px;
-}
-
-.flickity-prev-next-button.next {
-  right: 10px;
-}
-
-.flickity-rtl .flickity-prev-next-button.previous {
-  left: auto;
-  right: 10px;
-}
-
-.flickity-rtl .flickity-prev-next-button.next {
-  right: auto;
-  left: 10px;
-}
-
-.flickity-prev-next-button:disabled {
-  opacity: 0.3;
-  cursor: auto;
-}
-
-.flickity-prev-next-button svg {
-  position: absolute;
-  left: 20%;
-  top: 20%;
-  width: 60%;
-  height: 60%;
-}
-
-.flickity-prev-next-button .arrow {
-  fill: #333;
-}
-
-.flickity-page-dots {
-  position: absolute;
-  width: 100%;
-  bottom: -25px;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  text-align: center;
-  line-height: 1;
-}
-
-.flickity-rtl .flickity-page-dots {
-  direction: rtl;
-}
-
-.flickity-page-dots .dot {
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  margin: 0 8px;
-  background: #333;
-  border-radius: 50%;
-  opacity: 0.25;
-  cursor: pointer;
-}
-
-.flickity-page-dots .dot.is-selected {
-  opacity: 1;
-}
-
-.flickity-enabled {
-  position: relative;
-  overflow: hidden;
-}
-.flickity-enabled:focus {
-  outline: none;
-}
-
-.flickity-viewport {
-  overflow: hidden;
-  position: relative;
-  height: 100%;
-}
-
-.flickity-slider {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-
-/* draggable */
-.flickity-enabled.is-draggable {
-  -webkit-tap-highlight-color: transparent;
-  tap-highlight-color: transparent;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.flickity-enabled.is-draggable .flickity-viewport {
-  cursor: move;
-  cursor: grab;
-}
-
-.flickity-enabled.is-draggable .flickity-viewport.is-pointer-down {
-  cursor: grabbing;
-}
-
-/* ---- previous/next buttons ---- */
-.flickity-prev-next-button {
-  opacity: 1;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 32px;
-  border: none;
-  cursor: pointer;
-  border-radius: 0;
-  height: auto;
-  max-width: 11%;
-  -webkit-transform: none;
-          transform: none;
-  transition: opacity 0.1s;
-}
-.flickity-prev-next-button .arrow {
-  fill: #1c4747;
-}
-.flickity-prev-next-button:hover, .flickity-prev-next-button:active {
-  opacity: 1;
-}
-.flickity-prev-next-button:hover .arrow, .flickity-prev-next-button:active .arrow {
-  fill: #dec1a8;
-}
-.flickity-prev-next-button:hover {
-  background: white;
-  border: none;
-}
-.flickity-prev-next-button:focus {
-  outline: none;
-}
-.flickity-prev-next-button.next:focus, .flickity-prev-next-button.previous:focus {
-  opacity: 1;
-}
-.flickity-prev-next-button.previous {
-  left: -1px;
-}
-.flickity-prev-next-button.next {
-  right: -1px;
-}
-.flickity-prev-next-button:disabled {
-  filter: alpha(opacity=10);
-  /* IE8 */
-  opacity: 0.1;
-  cursor: auto;
-}
-.flickity-prev-next-button svg {
-  position: relative;
-  top: 50%;
-  -webkit-transform: translateY(-50.1%);
-  transform: translateY(-50.1%);
-  padding: 10px 0;
-  position: absolute;
-  left: 20%;
-  width: 32px;
-  height: 60%;
-}
-
-/* right to left */
-.flikity-rtl .flickity-prev-next-button.previous {
-  left: auto;
-  right: -1px;
-}
-.flikity-rtl .flickity-prev-next-button.next {
-  right: auto;
-  left: -1px;
-}
-
-/* ---- page dots ---- */
-.flickity-page-dots {
-  position: absolute;
-  width: 100%;
-  bottom: -25px;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  text-align: center;
-  line-height: 1;
-  opacity: 1;
-}
-.flickity-page-dots .dot {
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  margin: 0 8px;
-  background: transparent;
-  border: 1px solid #1c4747;
-  border-radius: 50%;
-  cursor: pointer;
-  opacity: 1;
-}
-.flickity-page-dots .dot.is-selected {
-  opacity: 1;
-  background: #1c4747;
-}
-
-.flickity-rtl .flickity-page-dots {
-  direction: rtl;
-}
-
-/* Custom sliders */
-.flickity-slider > li {
-  list-style-type: none;
-  width: 100%;
-  text-align: center;
-}
-
-/* General Flickity styling */
-img[data-flickity-lazyload] {
-  width: auto;
-}
-
-.slideshow_animation--fade .flickity-slider {
-  -webkit-transform: none !important;
-          transform: none !important;
-}
-.slideshow_animation--fade .gallery-cell {
-  left: 0 !important;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-  z-index: -1;
-}
-.slideshow_animation--fade .gallery-cell.is-selected {
-  opacity: 1;
-  z-index: 0;
-}
-
 /* Lazyframe */
 .lazyframe {
   position: relative;
@@ -5958,522 +5652,6 @@ img[data-flickity-lazyload] {
     opacity: 1;
   }
 }
-/*
- *  Remodal - v1.0.6
- *  Responsive, lightweight, fast, synchronized with CSS animations, fully customizable modal window plugin with declarative configuration and hash tracking.
- *  http://vodkabears.github.io/remodal/
- *
- *  Made by Ilya Makarov
- *  Under MIT License
- */
-/* ==========================================================================
-   Remodal's necessary styles
-   ========================================================================== */
-/* Hide scroll bar */
-html.remodal-is-locked {
-  overflow: hidden;
-  touch-action: none;
-}
-
-/* Anti FOUC */
-.remodal,
-[data-remodal-id] {
-  display: none;
-}
-
-/* Necessary styles of the overlay */
-.remodal-overlay {
-  position: fixed;
-  z-index: 9999;
-  top: -5000px;
-  right: -5000px;
-  bottom: -5000px;
-  left: -5000px;
-  display: none;
-}
-
-/* Necessary styles of the wrapper */
-.remodal-wrapper {
-  position: fixed;
-  z-index: 10000;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  display: none;
-  overflow: auto;
-  text-align: center;
-  -webkit-overflow-scrolling: touch;
-}
-
-.remodal-wrapper:after {
-  display: inline-block;
-  height: 100%;
-  margin-left: -0.05em;
-  content: "";
-}
-
-/* Fix iPad, iPhone glitches */
-.remodal-overlay,
-.remodal-wrapper {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
-
-/* Necessary styles of the modal dialog */
-.remodal {
-  position: relative;
-  outline: none;
-  -webkit-text-size-adjust: 100%;
-  -moz-text-size-adjust: 100%;
-  text-size-adjust: 100%;
-}
-
-.size-chart-remodal {
-  max-height: calc(100vh - 20px);
-}
-.size-chart-remodal .size-chart-wrap {
-  max-height: calc( 100vh - 70px );
-  overflow-y: scroll;
-}
-
-.remodal img {
-  max-width: 100%;
-}
-
-.remodal-is-initialized {
-  /* Disable Anti-FOUC */
-  display: inline-block;
-}
-
-/* ==========================================================================
-   Remodal's default mobile first theme
-   ========================================================================== */
-/* Default theme styles for the background */
-.remodal-bg.remodal-is-opening,
-.remodal-bg.remodal-is-opened {
-  -webkit-filter: blur(3px);
-          filter: blur(3px);
-}
-
-/* Default theme styles of the overlay */
-.remodal-overlay {
-  background: rgba(43, 46, 56, 0.9);
-}
-
-.remodal-overlay.remodal-is-opening,
-.remodal-overlay.remodal-is-closing {
-  -webkit-animation-duration: 0.3s;
-          animation-duration: 0.3s;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-}
-
-.remodal-overlay.remodal-is-opening {
-  -webkit-animation-name: remodal-overlay-opening-keyframes;
-          animation-name: remodal-overlay-opening-keyframes;
-}
-
-.remodal-overlay.remodal-is-closing {
-  -webkit-animation-name: remodal-overlay-closing-keyframes;
-          animation-name: remodal-overlay-closing-keyframes;
-}
-
-/* Default theme styles of the wrapper */
-.remodal-wrapper {
-  padding: 10px 10px 0;
-}
-
-/* Default theme styles of the modal dialog */
-.remodal {
-  width: 100%;
-  margin-bottom: 10px;
-  padding: 35px;
-  -webkit-transform: translate3d(0, 0, 0);
-          transform: translate3d(0, 0, 0);
-  background: #fff;
-}
-@media only screen and (max-width: 480px) {
-  .remodal {
-    overflow-x: scroll;
-  }
-}
-
-.remodal.remodal-is-opening,
-.remodal.remodal-is-closing {
-  -webkit-animation-duration: 0.3s;
-          animation-duration: 0.3s;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-}
-
-.remodal.remodal-is-opening {
-  -webkit-animation-name: remodal-opening-keyframes;
-          animation-name: remodal-opening-keyframes;
-}
-
-.remodal.remodal-is-closing {
-  -webkit-animation-name: remodal-closing-keyframes;
-          animation-name: remodal-closing-keyframes;
-}
-
-/* Vertical align of the modal dialog */
-.remodal,
-.remodal-wrapper:after {
-  vertical-align: middle;
-}
-
-/* Close button */
-.remodal-close {
-  position: absolute;
-  top: 0;
-  right: 0;
-  display: block;
-  overflow: visible;
-  width: 35px;
-  height: 35px;
-  margin: 0;
-  padding: 0;
-  cursor: pointer;
-  transition: color 0.2s;
-  text-decoration: none;
-  color: #95979c;
-  border: 0;
-  outline: 0;
-  background: transparent;
-  z-index: 1000;
-}
-
-.remodal-close:hover,
-.remodal-close:focus {
-  color: #2b2e38;
-}
-
-.remodal-close:before {
-  font-family: Arial, "Helvetica CY", "Nimbus Sans L", sans-serif !important;
-  font-size: 25px;
-  line-height: 35px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: block;
-  width: 35px;
-  content: "×";
-  text-align: center;
-}
-
-/* Dialog buttons */
-.remodal-confirm,
-.remodal-cancel {
-  font: inherit;
-  display: inline-block;
-  overflow: visible;
-  min-width: 110px;
-  margin: 0;
-  padding: 12px 0;
-  cursor: pointer;
-  transition: background 0.2s;
-  text-align: center;
-  vertical-align: middle;
-  text-decoration: none;
-  border: 0;
-  outline: 0;
-}
-
-.remodal-confirm {
-  color: #fff;
-  background: #81c784;
-}
-
-.remodal-confirm:hover,
-.remodal-confirm:focus {
-  background: #66bb6a;
-}
-
-.remodal-cancel {
-  color: #fff;
-  background: #e57373;
-}
-
-.remodal-cancel:hover,
-.remodal-cancel:focus {
-  background: #ef5350;
-}
-
-/* Remove inner padding and border in Firefox 4+ for the button tag. */
-.remodal-confirm::-moz-focus-inner,
-.remodal-cancel::-moz-focus-inner,
-.remodal-close::-moz-focus-inner {
-  padding: 0;
-  border: 0;
-}
-
-/* Keyframes
-   ========================================================================== */
-@-webkit-keyframes remodal-opening-keyframes {
-  from {
-    -webkit-transform: scale(1.05);
-            transform: scale(1.05);
-    opacity: 0;
-  }
-  to {
-    -webkit-transform: none;
-            transform: none;
-    opacity: 1;
-  }
-}
-@keyframes remodal-opening-keyframes {
-  from {
-    -webkit-transform: scale(1.05);
-            transform: scale(1.05);
-    opacity: 0;
-  }
-  to {
-    -webkit-transform: none;
-            transform: none;
-    opacity: 1;
-  }
-}
-@-webkit-keyframes remodal-closing-keyframes {
-  from {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    opacity: 1;
-  }
-  to {
-    -webkit-transform: scale(0.95);
-            transform: scale(0.95);
-    opacity: 0;
-  }
-}
-@keyframes remodal-closing-keyframes {
-  from {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    opacity: 1;
-  }
-  to {
-    -webkit-transform: scale(0.95);
-            transform: scale(0.95);
-    opacity: 0;
-  }
-}
-@-webkit-keyframes remodal-overlay-opening-keyframes {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-@keyframes remodal-overlay-opening-keyframes {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-@-webkit-keyframes remodal-overlay-closing-keyframes {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-@keyframes remodal-overlay-closing-keyframes {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-/* Components - Fancybox
-================================================== */
-.fancybox-bg {
-  opacity: 1;
-  background-color: rgba(43, 46, 56, 0.9);
-}
-@media only screen and (max-width: 480px) {
-  .fancybox-bg {
-    background-color: rgba(255, 255, 255, 0.99);
-  }
-}
-
-@media only screen and (min-width: 481px) {
-  .fancybox-toolbar {
-    display: none;
-  }
-}
-
-@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-  .fancybox-slide {
-    text-align: left;
-    padding: 44px 0;
-  }
-}
-
-/* Add border around images */
-@media only screen and (min-width: 481px) {
-  .fancybox-slide--image {
-    padding: 44px;
-  }
-}
-.fancybox-slide--image .fancybox-image {
-  -o-object-fit: cover;
-  object-fit: cover;
-  font-family: "object-fit: cover";
-  height: 100%;
-}
-.fancybox-slide--image .fancybox-image-wrap {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-.fancybox-slide--image .fancybox-content {
-  padding: 0;
-  background-color: white;
-}
-@media only screen and (min-width: 481px) {
-  .fancybox-slide--image .fancybox-content {
-    box-shadow: 0px 0px 0px 30px white;
-  }
-}
-@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-  .fancybox-slide--image .fancybox-content {
-    position: relative !important;
-    width: 100%;
-    height: 100%;
-  }
-}
-.fancybox-slide--image .fancybox-close-small {
-  top: -30px;
-  right: -30px;
-}
-
-.fancybox-is-scaling .fancybox-image-wrap,
-.fancybox-can-pan .fancybox-image-wrap {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-}
-
-/* Hide elements while zooming or when zoomed-in */
-.fancybox-is-scaling .fancybox-item,
-.fancybox-can-pan .fancybox-item {
-  display: none !important;
-}
-
-/* Style close button */
-.fancybox-close,
-.fancybox-close-small {
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  width: 36px;
-  height: 36px;
-  z-index: 2;
-  color: #95979c;
-  background-color: transparent;
-}
-.fancybox-close svg,
-.fancybox-close-small svg {
-  display: none;
-}
-.fancybox-close:hover,
-.fancybox-close-small:hover {
-  color: black;
-}
-@media only screen and (max-width: 480px) {
-  .fancybox-close,
-.fancybox-close-small {
-    display: none;
-  }
-}
-@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-  .fancybox-close,
-.fancybox-close-small {
-    display: block !important;
-  }
-}
-
-.fancybox-close:before,
-.fancybox-close-small:before {
-  font-family: Arial, "Helvetica CY", "Nimbus Sans L", sans-serif !important;
-  font-size: 25px;
-  line-height: 35px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: block;
-  width: 35px;
-  content: "×";
-  text-align: center;
-}
-
-.fancybox-button {
-  min-height: auto;
-}
-@media only screen and (max-width: 480px) {
-  .fancybox-button {
-    background-color: white;
-  }
-  .fancybox-button svg path {
-    fill: #95979c;
-  }
-}
-
-/* Style navigation elements */
-.fancybox-content:hover .fancybox-nav {
-  opacity: 1;
-}
-
-.fancybox-nav {
-  transition: opacity 0.2s linear;
-  opacity: 0;
-  position: absolute;
-  top: 0;
-  width: 50px;
-  height: 100%;
-  cursor: pointer;
-  text-decoration: none;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.fancybox-nav span {
-  pointer-events: none;
-}
-
-.fancybox-next {
-  right: 0;
-}
-
-.fancybox-prev {
-  left: 0;
-}
-
-.fancybox-nav span {
-  position: absolute;
-  width: 36px;
-  height: 36px;
-  cursor: pointer;
-}
-
-@media only screen and (max-width: 1024px) {
-  .touchevents .fancybox-nav {
-    display: none;
-  }
-}
-
-.size-chart-wrap img {
-  height: auto;
-  max-width: 100%;
-}
-
 /* Definitions - Components
 ================================================== */
 /* Components - Header
@@ -7402,10 +6580,6 @@ body.menu-is-open {
   }
 }
 
-.sidebar {
-  margin: 2rem 0;
-}
-
 .sidebar a,
 .sidebar a:visited {
   text-decoration: none;
@@ -7496,13 +6670,6 @@ body.menu-is-open {
 .sidebar_content .toggle_list li {
   line-height: 1.2;
   margin-bottom: 1rem;
-}
-
-.sidebar .newsletter {
-  margin-bottom: 20px;
-}
-.sidebar .newsletter form {
-  width: 100%;
 }
 
 .sidebar li ul {
@@ -10104,22 +9271,6 @@ a.tag {
 }
 .product_gallery_nav .media-badge .media-badge__outline {
   stroke: rgba(28, 71, 71, 0.05);
-}
-
-.gallery-wrap.product-height-set model-viewer {
-  margin: 0 auto;
-}
-.gallery-wrap.product-height-set .product_gallery img,
-.gallery-wrap.product-height-set .product_gallery .plyr--html5 video {
-  width: 100%;
-}
-.gallery-wrap.product-height-set .product_gallery img {
-  -o-object-fit: contain;
-  object-fit: contain;
-  font-family: "object-fit: contain";
-}
-.gallery-wrap.product-height-set .product_gallery .plyr--youtube .plyr__video-embed {
-  height: 100%;
 }
 
 /* #Color regions
@@ -13477,6 +12628,37 @@ div#disqus_thread li {
   margin: 2px 0;
 }
 
+.product-page__images-modal-wrapper {
+  display: none;
+}
+.product-page__images-modal-wrapper .product-page__images-modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100000000;
+  overflow-y: scroll;
+}
+.product-page__images-modal-wrapper .product-page__images-modal__underlay {
+  position: fixed;
+  background: rgba(255, 255, 255, 0.5);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100000001;
+}
+.product-page__images-modal-wrapper .product-page__images-modal__content {
+  position: relative;
+  padding: 3rem;
+  z-index: 100000002;
+  overflow-y: scroll;
+}
+.product-page__images-modal-wrapper.is-active {
+  display: block;
+}
+
 /* Quantity Box for Product Page */
 .product-quantity-box label {
   margin-bottom: 0.5em;
@@ -13667,7 +12849,6 @@ div.collection_title_tags {
   margin-bottom: 2rem;
 }
 
-/* Shipping Estimate Box */
 .shipping_estimate #fromDate,
 .shipping_estimate #toDate,
 .product .description h6 em a {
@@ -13754,6 +12935,11 @@ p.checkout_button {
   margin-bottom: 0;
 }
 
+.product-page__product-image-cell {
+  cursor: zoom-in;
+  aspect-ratio: 1/1;
+}
+
 @media only screen and (max-width: 800px) {
   .purchase-details__buttons.purchase-details__spb--true {
     margin-left: 0;
@@ -13769,6 +12955,7 @@ p.checkout_button {
     max-width: 100%;
   }
 }
+
 .purchase-details__buttons.product-is-unavailable .add_to_cart,
 .purchase-details__buttons.product-is-unavailable .shopify-payment-button {
   opacity: 0.5;

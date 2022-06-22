@@ -1,0 +1,42 @@
+<div class="product-page__images-modal-wrapper">
+  <div class="product-page__images-modal">
+    <div class="product-page__images-modal__underlay"></div>
+
+    <div class="product-page__images-modal__content-wrapper">
+      <div class="product-page__images-modal__content">
+      
+        <div class="container">
+          <div class="row">
+            <div class="one-fourth columns">
+              {% for media in product.media %}
+                <div class="product-page__images-modal__product-image-cell"
+                  data-product-id="{{ product.id }}"
+                  data-media-type="{{ media.media_type }}"
+                  data-thumb="{{ image_large }}"
+                  data-title="{% if image_alt contains 'youtube' or image_alt contains 'vimeo' %}{{ product.title }}{% else %}{{ image_alt | escape }}{% endif %}">
+                  {% render "product.image" with {
+                    media: media
+                  } %}
+                </div>
+              {% endfor %}
+            </div>
+
+            <div class="three-fourths columns">
+              {% for media in product.media %}
+                <div class="product-page__images-modal__product-image-cell"
+                  data-product-id="{{ product.id }}"
+                  data-media-type="{{ media.media_type }}"
+                  data-thumb="{{ image_large }}"
+                  data-title="{% if image_alt contains 'youtube' or image_alt contains 'vimeo' %}{{ product.title }}{% else %}{{ image_alt | escape }}{% endif %}">
+                  {% render "product.image" with {
+                    media: media
+                  } %}
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

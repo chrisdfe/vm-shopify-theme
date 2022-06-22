@@ -139,25 +139,3 @@
     }
   }
 }
-
-// Set product media height
-.gallery-wrap {
-  &.product-height-set {
-    model-viewer {
-      margin: 0 auto;
-    }
-
-    .product_gallery img,
-    .product_gallery .plyr--html5 video {
-      width: 100%;
-    }
-
-    .product_gallery img {
-      @include object-fit(contain);
-    }
-
-    .product_gallery .plyr--youtube .plyr__video-embed {
-      height: 100%;
-    }
-  }
-}

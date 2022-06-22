@@ -1,6 +1,6 @@
 import debounce from "../../../utils/debounce";
 
-import BodyScroll from "../modules/BodyScroll";
+import BodyScroll from "../../../utils/BodyScroll";
 import DrawerUnderlay from "./DrawerUnderlay";
 
 import HeaderDrawer from "./Drawer";
@@ -16,7 +16,6 @@ export default class HeaderDrawerManager {
   drawerIdMap: { [drawerId: string]: HeaderDrawer };
 
   drawerUnderlay: DrawerUnderlay;
-  bodyScroll: BodyScroll;
 
   initialize() {
     this.drawerElements = document.querySelectorAll("[data-drawer-id]");
@@ -33,7 +32,6 @@ export default class HeaderDrawerManager {
       {}
     );
 
-    this.bodyScroll = new BodyScroll();
     this.drawerUnderlay = new DrawerUnderlay();
 
     document.body.addEventListener("click", this.onBodyClick);
@@ -95,7 +93,7 @@ export default class HeaderDrawerManager {
     drawer.open();
     this.currentOpenDrawerId = drawer.id;
 
-    this.bodyScroll.lock();
+    BodyScroll.lock();
     this.drawerUnderlay.show();
   };
 
@@ -103,7 +101,7 @@ export default class HeaderDrawerManager {
     drawer.close();
     this.currentOpenDrawerId = null;
 
-    this.bodyScroll.unlock();
+    BodyScroll.unlock();
     this.drawerUnderlay.hide();
   };
 }

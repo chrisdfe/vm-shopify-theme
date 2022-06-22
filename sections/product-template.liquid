@@ -26,6 +26,8 @@
             video_looping: section.settings.video_looping,
             set_product_height: section.settings.set_product_height
           %}
+
+        {% render "product.images-modal" %}
         </div>
         
         <div class="seven columns medium-down--one-whole">
@@ -113,20 +115,6 @@
     }
   </style>
   {% endif %}
-{% endif %}
-
-{% if section.settings.set_product_height %}
-  {% style %}
-    .gallery-wrap model-viewer {
-        min-height: {{section.settings.product_height}}px;
-    }
-
-    .gallery-wrap .product_gallery img,
-    .gallery-wrap .product_gallery .plyr--html5 video,
-    .gallery-wrap .product_gallery .plyr--youtube {
-        max-height: {{section.settings.product_height}}px;
-    }
-  {% endstyle %}
 {% endif %}
 
 {% if section.settings.enable_gift == true %}

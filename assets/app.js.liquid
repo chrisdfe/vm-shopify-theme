@@ -1,23 +1,8 @@
 $(function () {
   utils.enableDisclosure();
-  var oldFlickityCreate = window.Flickity.prototype._create;
-
-  window.Flickity.prototype._create = function () {
-    var that = this;
-    if (this.element.addEventListener) {
-      this.element.addEventListener('load', function () {
-        that.onresize();
-      }, true);
-    }
-    this._create = oldFlickityCreate;
-    return oldFlickityCreate.apply(this, arguments);
-  };
-
-  // Call to flickity fix for sliders on IOS
-  imageFunctions.flickityIosFix();
 
   objectFitImages();
-  header.loadMegaMenu();
+
   header.init();
   searchAutocomplete.init();
   videoSection.init();
@@ -29,89 +14,6 @@ $(function () {
 
   if (Currency.show_multiple_currencies || Currency.native_multi_currency) {
     currencyConverter.init();
-  }
-
-  // Challenge page scroll
-
-  // Return the pathname of the current URL
-  var pathname = location.pathname;
-
-  // If the pathname starts with '/challenge', animate scroll
-  if (pathname.startsWith('/challenge')) {
-    $('html, body').animate({
-      scrollTop: 0
-    }, 'slow');
-  }
-
-  // Setup a timer
-  // var resizeTimeout;
-
-  // Listen for resize events
-  // window.addEventListener('resize', function (event) {
-  //   // If timer is null, reset it to 66ms and run your functions.
-  //   // Otherwise, wait until timer is cleared
-  //   if (!resizeTimeout) {
-  //     resizeTimeout = setTimeout(function() {
-  //       // Reset timeout
-  //       resizeTimeout = null;
-
-  //       // Run our resize functions
-  //       if($(window).width() <= 798) {
-  //         cart.init();
-  //       }
-  //     }, 66);
-  //   }
-  // }, false);
-
-  //Lightbox default options
-  //https://fancyapps.com/fancybox/3/docs/#options
-  $.fancybox.defaults.animationEffect = 'fade';
-  $.fancybox.defaults.transitionEffect = 'fade';
-  $.fancybox.defaults.hash = false;
-  $.fancybox.defaults.infobar = false;
-  $.fancybox.defaults.toolbar = false;
-  $.fancybox.defaults.arrows = false;
-  $.fancybox.defaults.loop = true;
-  $.fancybox.defaults.smallBtn = true;
-  $.fancybox.defaults.live = false;
-  $.fancybox.defaults.zoom = false;
-  $.fancybox.defaults.mobile.preventCaptionOverlap = false;
-  $.fancybox.defaults.mobile.toolbar = true;
-  $.fancybox.defaults.mobile.buttons = ['close'];
-  $.fancybox.defaults.mobile.clickSlide = 'close';
-  $.fancybox.defaults.mobile.clickContent = 'zoom';
-  $.fancybox.defaults.afterLoad = function (instance, slide) {
-    if (instance.current.type == 'image') {
-      slide.$content.wrapInner("<div class='fancybox-image-wrap'></div>")
-    }
-    if (instance.group.length > 1) {
-      slide.$content.find('.fancybox-image-wrap').append('<a title="Previous" class="fancybox-item fancybox-nav fancybox-prev" href="javascript:;" data-fancybox-prev><span>' + svgArrowSizeLeft + '</span></a><a title="Next" class="fancybox-item fancybox-nav fancybox-next" href="javascript:;" data-fancybox-next><span>' + svgArrowSizeRight + '</span></a>')
-    }
-  }
-
-  //backwards compatibility with custom lightboxes
-  $('.lightbox[rel="gallery"]').fancybox();
-
-  // Wraps YouTube and Vimeo iframes in lazyframe wrapper
-  // Does not target iframes already embedded in responsive video wrapper
-  $('iframe[src*="youtube.com"]:not(.plyr__video-wrapper iframe[src*="youtube.com"], .lazyframe iframe[src*="youtube.com"])').wrap('<div class="lazyframe" data-ratio="16:9"></div>');
-  $('iframe[src*="vimeo.com"]:not(.plyr__video-wrapper iframe[src*="vimeo.com"], .lazyframe iframe[src*="vimeo.com"])').wrap('<div class="lazyframe" data-ratio="16:9"></div>');
-
-  // Prevent header overlap on dynamically generated policy pages. Add pagecontent tag to match current page structure.
-  $('.shopify-policy__container').parent().prepend('<a name="pagecontent" id="pagecontent"></a>');
-
-  //Add classes to determine column size
-  $('.shopify-policy__container').addClass('ten offset-by-three columns');
-
-  //Add featured divider beneath page title
-  $('.shopify-policy__title').append('<div class="feature_divider"></div>');
-
-  //Search input hiding
-  //get current input
-  var currentValue = $(".search_form input[name='q']").val()
-  //return amount without *
-  if ($(".search_form input[name='q']").length > 0) {
-    $(".search_form input[name='q']").val(currentValue.replace('*', ''));
   }
 
   $('#sort-by').val($('#sort-by').data('default-sort'));
@@ -182,15 +84,6 @@ $(function () {
     $('html,body').animate({ scrollTop: $("#new-comment").offset().top - 140 }, 'slow');
   }
 
-  //backwards compatibility with flexslider
-  $('.slider, .flexslider').find('li').unwrap();
-  $('.slider, .flexslider').flickity({
-    pageDots: usePageDots,
-    imagesLoaded: true,
-    arrowShape: arrowSize,
-    lazyLoad: 2
-  });
-
   utils.createAccordion('.toggle-all--true', 'h4.toggle', 'ul.toggle_list');
   utils.createAccordion('.footer_menu', 'h6', 'ul');
   utils.createAccordion('.footer_content', 'h6', 'div.toggle_content');
@@ -213,13 +106,6 @@ $(function () {
     $(this).attr('aria-expanded', $(this).attr('aria-expanded') == 'true' ? 'false' : 'true');
   });
 
-  if ($(window).width() >= 959) {
-    var modal_width = '870px';
-    if ($(window).width() >= 1200 || $('html').hasClass('ie')) {
-      modal_width = '1110px'
-    }
-  }
-
   if (Shopify.theme_settings.collection_swatches) {
     if ($(window).width() > 798) {
       $('body').on('mouseenter', '.collection_swatches', function () {
@@ -229,6 +115,7 @@ $(function () {
           }
         });
       });
+
       $('body').on('mouseenter', '.swatch span', function () {
         if ($(this).data("image").indexOf("no-image") == -1) {
           $(this).parents('.thumbnail').find('.image__container img:not(.secondary)').attr('src', $(this).data("image"));
@@ -290,10 +177,6 @@ $(function () {
       }
     })
   }
-
-  $('.maps').click(function () {
-    $('.maps iframe').css("pointer-events", "auto");
-  });
 
   if (Shopify.theme_settings.pagination_type == 'load_more') {
     enableLoadMoreProducts();
@@ -828,32 +711,14 @@ $(document)
   });
 
 $(document)
-  .on('shopify:block:deselect', function (e) {
-
-    var $parentSection = $('#shopify-section-' + e.detail.sectionId);
-
-    if ($parentSection.hasClass('slideshow-section') || $parentSection.hasClass('testimonial-section')) {
-      sliderBlock.deselect($parentSection);
-    }
-  });
-
-$(document)
   .on('shopify:section:load', function (e) {
 
     var $parentSection = $('#shopify-section-' + e.detail.sectionId);
 
     utils.enableDisclosure();
 
-    if ($parentSection.hasClass('image-gallery-section')) {
-      gallery.init($parentSection);
-    }
-
     if ($parentSection.hasClass('cart-section')) {
       cart.init();
-    }
-
-    if ($parentSection.hasClass('slideshow-section')) {
-      slideshow.init();
     }
 
     if (Shopify.theme_settings.enable_autocomplete) {
@@ -913,12 +778,6 @@ $(document)
       productPage.init();
     }
 
-    if ($parentSection.hasClass('article-template-section')) {
-      if (window.location.pathname.indexOf('/comments') != -1) {
-        $('html,body').animate({ scrollTop: $("#new-comment").offset().top - 140 }, 'slow');
-      }
-    }
-
     if ($parentSection.hasClass('collection-template-section')) {
       collectionSidebarFilter.init();
       recentlyViewed.init();
@@ -933,11 +792,11 @@ $(document)
 
     if ($parentSection.hasClass('header-section')) {
       header.init();
-      header.loadMegaMenu();
+
     }
 
     if ($parentSection.hasClass('mega-menu-section')) {
-      header.loadMegaMenu();
+
     }
 
     if ($parentSection.hasClass('page-details-section')) {
@@ -969,11 +828,7 @@ $(document)
 
     if ($parentSection.hasClass('header-section')) {
       header.unload($target);
-      header.unloadMegaMenu();
-    }
 
-    if ($parentSection.hasClass('slideshow-section')) {
-      slideshow.unload($target);
     }
 
     if ($parentSection.hasClass('search-section')) {
@@ -987,40 +842,5 @@ $(document)
     if ($parentSection.hasClass('featured-products-section')) {
       productPage.unload($parentSection);
     }
-
-    if ($parentSection.hasClass('mega-menu-section')) {
-      header.unloadMegaMenu();
-    }
-
   });
 
-$(document)
-  .on('shopify:section:select', function (e) {
-
-    var $parentSection = $('#shopify-section-' + e.detail.sectionId);
-
-    if ($parentSection.hasClass('mega-menu-section')) {
-      var megaMenuParent = $('.header .' + e.detail.sectionId).data('dropdown');
-      setTimeout(function () {
-        $('a.mega-menu-parent[data-dropdown-rel="' + megaMenuParent + '"]').trigger('mouseenter');
-        $('a.mega-menu-parent[data-dropdown-rel="' + megaMenuParent + '"]').parents('header').addClass('editor-hover--true');
-        // header.removeDataAttributes('.header .mega-menu.vm-header-dropdown-container .dropdown_column');
-      }, 10);
-    }
-
-    var evt = document.createEvent('UIEvents');
-    evt.initUIEvent('resize', true, false, window, 0);
-    window.dispatchEvent(evt);
-  });
-
-$(document)
-  .on('shopify:section:deselect', function (e) {
-
-    var $parentSection = $('#shopify-section-' + e.detail.sectionId);
-
-    if ($parentSection.hasClass('mega-menu-section')) {
-      var megaMenuParent = $('.header .' + e.detail.sectionId).data('dropdown');
-      $('a.mega-menu-parent[data-dropdown-rel="' + megaMenuParent + '"]').trigger('mouseout');
-      $('a.mega-menu-parent[data-dropdown-rel="' + megaMenuParent + '"]').parents('header').removeClass('editor-hover--true');
-    }
-  });

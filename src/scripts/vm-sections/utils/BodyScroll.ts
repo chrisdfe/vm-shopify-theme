@@ -1,9 +1,9 @@
 class BodyScroll {
-  lock = () => {
+  static lock = () => {
     document.body.classList.add("menu-is-open");
   };
 
-  unlock = () => {
+  static unlock = () => {
     document.body.classList.remove("menu-is-open");
   };
 }

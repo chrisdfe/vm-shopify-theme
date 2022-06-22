@@ -347,13 +347,13 @@
 
     var BodyScroll = /** @class */ (function () {
         function BodyScroll() {
-            this.lock = function () {
-                document.body.classList.add("menu-is-open");
-            };
-            this.unlock = function () {
-                document.body.classList.remove("menu-is-open");
-            };
         }
+        BodyScroll.lock = function () {
+            document.body.classList.add("menu-is-open");
+        };
+        BodyScroll.unlock = function () {
+            document.body.classList.remove("menu-is-open");
+        };
         return BodyScroll;
     }());
 
@@ -469,13 +469,13 @@
             this.openDrawer = function (drawer) {
                 drawer.open();
                 _this.currentOpenDrawerId = drawer.id;
-                _this.bodyScroll.lock();
+                BodyScroll.lock();
                 _this.drawerUnderlay.show();
             };
             this.closeDrawer = function (drawer) {
                 drawer.close();
                 _this.currentOpenDrawerId = null;
-                _this.bodyScroll.unlock();
+                BodyScroll.unlock();
                 _this.drawerUnderlay.hide();
             };
         }
@@ -490,7 +490,6 @@
                 }).initialize();
                 return _assign(_assign({}, acc), (_a = {}, _a[drawer.id] = drawer, _a));
             }, {});
-            this.bodyScroll = new BodyScroll();
             this.drawerUnderlay = new HeaderDrawerUnderlay();
             document.body.addEventListener("click", this.onBodyClick);
             window.addEventListener("resize", this.onWindowResize);
@@ -877,6 +876,52 @@
         return ProductCardsManager;
     }());
 
+    var ProductPage = /** @class */ (function () {
+        function ProductPage() {
+            var _this = this;
+            this.imageCellElements = [];
+            this.state = {
+                modalIsOpen: false
+            };
+            this.onImageCellClick = function (e) {
+                (_this.state.modalIsOpen ? _this.closeModal : _this.openModal)();
+            };
+            this.onModalUnderlayClick = function (e) {
+                _this.closeModal();
+            };
+            this.openModal = function () {
+                BodyScroll.lock();
+                _this.modalWrapperElement.classList.add('is-active');
+                _this.state.modalIsOpen = true;
+            };
+            this.closeModal = function () {
+                BodyScroll.unlock();
+                _this.modalWrapperElement.classList.remove('is-active');
+                _this.state.modalIsOpen = false;
+            };
+            return this;
+        }
+        ProductPage.prototype.initialize = function () {
+            var _this = this;
+            this.imageCellElements = Array.from(document.querySelectorAll('.product-page__product-image-cell'));
+            this.imageCellElements.forEach(function (imageCell) {
+                imageCell.addEventListener("click", _this.onImageCellClick);
+            });
+            this.modalWrapperElement = document.querySelector('.product-page__images-modal-wrapper');
+            this.modalUnderlayElement = document.querySelector('.product-page__images-modal__underlay');
+            this.modalUnderlayElement.addEventListener('click', this.onModalUnderlayClick);
+        };
+        ProductPage.prototype.unload = function () {
+            var _this = this;
+            this.imageCellElements.forEach(function (imageCell) {
+                imageCell.removeEventListener("click", _this.onImageCellClick);
+            });
+            this.modalUnderlayElement.removeEventListener('click', this.onModalUnderlayClick);
+        };
+        ProductPage.isOnProductPage = function () { return !!document.querySelector('.product-template'); };
+        return ProductPage;
+    }());
+
     // import intersections from "../vm-sections/modules/intersections";
     // modules with 'legacy' (i.e turbo 6) support
     // attached to window and use api that app.js.liquid and utilities.js.liquid expect
@@ -890,5 +935,8 @@
     // intersections.init();
     new AccordionManager().initialize();
     new ProductCardsManager().initialize();
+    if (ProductPage.isOnProductPage()) {
+        new ProductPage().initialize();
+    }
 
 })();
