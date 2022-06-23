@@ -228,7 +228,7 @@
     "disqus_enabled": false,
     "disqus_shortname": "",
     "checkout_header_image": "",
-    "checkout_logo_image": "shopify:\/\/shop_images\/Valerie-Madison-on-pinkish-cream.png",
+    "checkout_logo_image": "shopify:\/\/shop_images\/Logo-on-Cream-for-Shopify-Checkout.png",
     "checkout_logo_position": "center",
     "checkout_logo_size": "medium",
     "checkout_body_background_image": "",
@@ -563,7 +563,7 @@
           "1587338269920": {
             "type": "filter",
             "settings": {
-              "filter_name": "Shop by Category",
+              "filter_name": "Shop by Type",
               "filter_tags": "Contour Bands, Straight Bands, Diamond Bands, Gold Bands, Textured Bands, Masculine, Unisex, Gemstone Essentials, Zodiac, Studs, Hoops, Engravable, Bridal Earrings",
               "enable_filter_swatches": false
             }
@@ -572,7 +572,7 @@
             "type": "filter",
             "settings": {
               "filter_name": "Shop by Setting",
-              "filter_tags": "Bezel, Cluster, Double Shank, Halo, Semi-Halo, Solitaire, Split Shank, Three Stone, Toi et Moi",
+              "filter_tags": "Bezel, Cluster, Double Shank, Halo, Negative Space, Semi-Halo, Solitaire, Split Shank, Three Stone, Toi et Moi",
               "enable_filter_swatches": false
             }
           },
@@ -580,7 +580,7 @@
             "type": "filter",
             "settings": {
               "filter_name": "Shop by Stone",
-              "filter_tags": "Diamond, White Diamond, Brown Diamond, Gemstone, Gray Diamond, Moissanite, Salt and Pepper Diamond, Rose Cut Diamond, Ruby, Sapphire, Spinel, Garnet",
+              "filter_tags": "Diamond, Gemstone, Moissanite, Salt and Pepper Diamond, Rose Cut Diamond, Ruby, Sapphire, Spinel, Garnet, Turquoise",
               "enable_filter_swatches": false
             }
           },
@@ -588,7 +588,7 @@
             "type": "filter",
             "settings": {
               "filter_name": "Shop by Color",
-              "filter_tags": "Colorless, Pink, Red, Orange, Green, Teal, Blue, Purple, Multi-color, Champagnes & Browns, Salt & Pepper, Black,",
+              "filter_tags": "Colorless, Pink, Red, Orange, Green, Teal, Blue, Purple, Multi-color, Champagnes & Browns, Salt & Pepper, Gray, Black",
               "enable_filter_swatches": false
             }
           },
@@ -1442,7 +1442,7 @@
             "type": "image",
             "settings": {
               "image": "shopify:\/\/shop_images\/Duo-Bracelet-J_L-4x5_5f4ef2c0-f9ea-43a5-9609-83d124a681ec.jpg",
-              "link": "shopify:\/\/collections\/all-bracelets",
+              "link": "shopify:\/\/collections\/bracelets-and-anklets",
               "title": "<b>Bracelets<\/b>"
             }
           }
@@ -2811,7 +2811,7 @@
             "settings": {
               "image": "shopify:\/\/shop_images\/Shopify-all-earrings-on-marble_4728434a-34e1-4797-a0ad-e3e172e8af15.jpg",
               "name": "Test title 2",
-              "collection": "all-bracelets"
+              "collection": "bracelets-and-anklets"
             }
           }
         },
@@ -2999,8 +2999,8 @@
             "settings": {
               "image": "shopify:\/\/shop_images\/VMFJ-2020-17.jpg",
               "title": "Lauren",
-              "job_title": "GEMOLOGIST, SENIOR SALES ASSOCIATE",
-              "description": "I am the staff gemologist (aka gem nerd) and sales associate who can help answer all your jewelry questions, write your appraisal, or source the perfect stone for your ring.  When I’m not in the studio you can find me teaching fitness classes, making Spotify playlists, writing, or watching the newest episode of Dateline."
+              "job_title": "DIRECTOR OF DIAMONDS & GEMSTONES",
+              "description": "I am the staff gemologist (aka gem nerd) and Director of Diamonds & Gemstones who can help answer all your jewelry questions, write your appraisal, or source the perfect stone for your ring.  When I’m not in the studio you can find me teaching fitness classes, making Spotify playlists, writing, or watching the newest episode of Dateline."
             }
           },
           "c95ab9d1-1311-4c9b-959d-9ac15d6603c6": {
@@ -3053,8 +3053,8 @@
             "settings": {
               "image": "shopify:\/\/shop_images\/Megan_Cosgrove_Headshot.jpg",
               "title": "Megan",
-              "job_title": "Customer Service Specialist & Associate Buyer",
-              "description": "As the face of VM’s Customer Service Department, I strive to make your experience memorable and stress-free. When I am not helping customers via email, chat or over the phone, I am cultivating our in-store merchandise to offer the best sourced gifts for our local shoppers. My sense of humor and colorful personality helps ensure that you will be taken care of no matter what!"
+              "job_title": "Customer Service Specialist",
+              "description": "As the face of VM’s Customer Service Department, I strive to make your experience memorable and stress-free. My sense of humor and colorful personality helps ensure that you will be taken care of no matter what!"
             }
           },
           "b9bb3a8d-56e2-4b2f-99d5-7c1ddde5cba5": {
@@ -3219,34 +3219,33 @@
       "1629483439e1253581": {
         "type": "homepage-banner",
         "blocks": {
-          "398fe46e-43dd-41e3-8d73-51f91275cd68": {
-            "type": "background_block",
-            "settings": {
-              "background_color": "light",
-              "banner_image_desktop": "shopify:\/\/shop_images\/Something-Blue-ALL-RINGS2-4x5_copy.jpg"
-            }
-          },
           "95beecd3-2bab-4b22-b737-ed9a5c1dbf17": {
             "type": "background_block",
             "settings": {
               "background_color": "light-alt",
-              "banner_image_desktop": "shopify:\/\/shop_images\/OOAK576_Luna_sapphire_blue_pear-2.jpg"
+              "banner_image_desktop": "shopify:\/\/shop_images\/Crescent-Bands-Modeled-Zara-slate-blue-sapphire-ring.jpg"
+            }
+          },
+          "398fe46e-43dd-41e3-8d73-51f91275cd68": {
+            "type": "background_block",
+            "settings": {
+              "background_color": "light"
             }
           }
         },
         "block_order": [
-          "398fe46e-43dd-41e3-8d73-51f91275cd68",
-          "95beecd3-2bab-4b22-b737-ed9a5c1dbf17"
+          "95beecd3-2bab-4b22-b737-ed9a5c1dbf17",
+          "398fe46e-43dd-41e3-8d73-51f91275cd68"
         ],
         "settings": {
           "banner_wrapper_background_color": "light-alt",
-          "pretext": "Something New",
-          "heading": "Something Blue",
-          "cta_link": "shopify:\/\/collections\/new-arrivals",
+          "pretext": "Accent your engagement ring with the",
+          "heading": "Crescent Band",
+          "cta_link": "https:\/\/www.valeriemadison.com\/collections\/wedding-bands\/contour-bands?sort_by=title-ascending",
           "cta_text": "Shop now",
-          "text_position": "center",
+          "text_position": "right-block",
           "text_color": "dark-alt",
-          "banner_image_mobile": "shopify:\/\/shop_images\/Something-Blue-ALL-RINGS2-4x5_copy.jpg",
+          "banner_image_mobile": "shopify:\/\/shop_images\/Crescent-Bands-Modeled-Zara-slate-blue-sapphire-ring.jpg",
           "text_color_mobile": "dark-alt",
           "content_background_color_mobile": "light-alt"
         }
@@ -3341,7 +3340,7 @@
             "type": "faq_item",
             "settings": {
               "title": "How much does it cost?",
-              "answer": "Custom Heirloom Reworks start at $1,600 - most reworks are $2,500-$6,000"
+              "answer": "Custom Heirloom Reworks start at $1,800 - most reworks are $2,500-$6,000"
             }
           },
           "c2aaf9f9-313f-4c0b-87a6-6d519e7a4eb2": {
@@ -3824,13 +3823,6 @@
       "eternity-bracelets-upcoming-dates": {
         "type": "eternity-bracelets-upcoming-dates",
         "blocks": {
-          "bedf200f-6f49-408b-a592-54058d9e6802": {
-            "type": "upcoming-date",
-            "settings": {
-              "date": "Friday, June 17",
-              "time": "4:00-6:00pm"
-            }
-          },
           "69a248c7-2269-473f-a52f-45e48c117dee": {
             "type": "upcoming-date",
             "settings": {
@@ -3854,7 +3846,6 @@
           }
         },
         "block_order": [
-          "bedf200f-6f49-408b-a592-54058d9e6802",
           "69a248c7-2269-473f-a52f-45e48c117dee",
           "a649c73a-209c-48df-bffc-b28f00d3c4e4",
           "1fa24276-f437-472a-845b-c224959fde75"
@@ -3929,9 +3920,9 @@
       "1638989716bc82a38f": {
         "type": "featured-collection",
         "settings": {
-          "title": "About to say Yes?",
-          "title_cta_text": "Our picks for a spring or summer engagement",
-          "collection": "engagement-rings",
+          "title": "Say Yes To Color",
+          "title_cta_text": "Vibrant gemstone engagement rings",
+          "collection": "gemstone-bridal-1",
           "products_per": 3,
           "products_limit": 9,
           "color_region": "light-alt",
