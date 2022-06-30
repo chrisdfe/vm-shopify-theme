@@ -8,23 +8,29 @@
         <div class="row">
           <div class="sixteen columns">
     
+            {% assign extra_classes = "" %}
             {% if current_tags %}
-              <h1 class="blog-title blog-tags--true">
-                <a href="/blogs/{{ blog.handle }}/tagged/{{ current_tags | handleize }}" title="{{ blog.title | escape }}">{{ current_tags }}</a>
-              </h1>
-            {% else %}
+              {% assign extra_classes = "u-margin-bottom-1" %}
+            {% endif %}
 
             {% include "page-heading" with {
               title: blog.title
               with_banner_padding: true,
-              align: "center"
+              align: "center",
+              extra_classes: extra_classes
             } %}
-          
-              {% if section.settings.subtitle and section.settings.subtitle != blank %}
-                <p class="subtitle">{{ section.settings.subtitle }}</p>
-              {% endif %}
+
+            {% if current_tags %}
+            <div class="u-margin-bottom-5 u-text-align-center">
+              <h5>
+                <a href="/blogs/{{ blog.handle }}/tagged/{{ current_tags | handleize }}" title="{{ blog.title | escape }}">{{ current_tags }}</a> articles
+              </h5>
+            </div>
             {% endif %}
             
+            {% if section.settings.subtitle and section.settings.subtitle != blank %}
+              <p class="subtitle">{{ section.settings.subtitle }}</p>
+            {% endif %}
           </div>
         </div>
       </div>
