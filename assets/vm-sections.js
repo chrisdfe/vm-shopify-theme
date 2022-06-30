@@ -96,7 +96,7 @@
             return "\n      <span class=\"was_price\">".concat(item.compare, "</span> ").concat(item.price, "\n    ");
         }
         if (item.price_varies && item.price_min > 0) {
-            return "".concat(Shopify.translation.from_text, " ").concat(item.price);
+            return "<span class=\"from-text\">".concat(Shopify.translation.from_text, "</span> ").concat(item.price);
         }
         if (item.price > 0 || item.raw_price > 0) {
             return item.price;

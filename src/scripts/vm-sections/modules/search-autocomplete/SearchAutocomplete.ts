@@ -32,7 +32,7 @@ function getSearchResultItemPrice(item) {
   }
 
   if (item.price_varies && item.price_min > 0) {
-    return `${Shopify.translation.from_text} ${item.price}`;
+    return `<span class="from-text">${Shopify.translation.from_text}</span> ${item.price}`;
   }
 
   if (item.price > 0 || item.raw_price > 0) {
