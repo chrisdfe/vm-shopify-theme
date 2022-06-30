@@ -2,28 +2,30 @@
 image: image_picker,
 {% endcomment %}
 
-<div class="header-desktop__mega-menu header-desktop__mega-menu--image">
+<div class="mobile-menu-list-item mobile-menu-list-item--image">
   {% if url != blank %}
     <a href="{{ url }}">
   {% endif %}
 
   {% if image != blank %}
-    <img src="{{ image.src | image_url }}" alt="{{ image.alt }}" />
+    <div class="mobile-menu-list-item--image__image-wrapper">
+      <img src="{{ image.src | image_url }}" alt="{{ image.alt }}" />
+    </div>
   {% endif %}
-  
+    
   {% if url != blank %}
     {% if cta_text != blank %}
-      <div class="u-text-align-center">
+      <div class="mobile-menu-list-item--image__text-wrapper">
         <h5>{{ cta_text }}</h5>
         
         {% if cta_subtext != blank %}
-          <p>{{ cta_subtext }}</p>
+        <p>{{ cta_subtext }}</p>
         {% endif %}
       </div>
     {% endif %}
   {% endif %}
-  
+    
   {% if url != blank %}
-  </a>
+    </a>
   {% endif %}
 </div>

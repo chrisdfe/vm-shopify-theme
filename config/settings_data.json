@@ -228,7 +228,7 @@
     "disqus_enabled": false,
     "disqus_shortname": "",
     "checkout_header_image": "",
-    "checkout_logo_image": "shopify:\/\/shop_images\/Valerie-Madison-on-pinkish-cream.png",
+    "checkout_logo_image": "shopify:\/\/shop_images\/Logo-on-Cream-for-Shopify-Checkout.png",
     "checkout_logo_position": "center",
     "checkout_logo_size": "medium",
     "checkout_body_background_image": "",
@@ -297,24 +297,69 @@
           "page-team-template-2"
         ],
         "settings": {
-          "image": "",
           "image_position": "left",
           "title": "Meet the team",
           "text": "<p>Every email, every DM, every phone call; you'll interact with us directly. Valerie and Liz initially met when Liz was a custom order client a while back.&nbsp;Liz has been on&nbsp;the other&nbsp;side of the custom order process and can help you find the answers to your questions. Omar is our studio pup and loves coming to our events to help be a greeter. <br><a href=\"\/pages\/visit-us\" title=\"Studio Appointments\">We invite you to our studio <\/a>&nbsp;where you can meet all of us in person!&nbsp;<\/p>",
           "text_position": "center",
           "employee_per_row": 3,
-          "member_color": "#fff",
+          "member_color": "#ffffff",
           "member_accent_color": "#d54d4d",
-          "member_overlay_color": "#000"
+          "member_overlay_color": "#000000"
         }
       },
       "header": {
         "type": "header",
+        "blocks": {
+          "48822781-8118-4659-bbeb-0cd9816911ee": {
+            "type": "mega_menu_group",
+            "disabled": true,
+            "settings": {
+              "title": "In Stock"
+            }
+          },
+          "064b9580-f55f-43b3-b120-4092989aa0ce": {
+            "type": "mega_menu_group",
+            "settings": {
+              "title": "Engagement"
+            }
+          },
+          "a576377c-6914-468f-8031-0d9cfb842a5c": {
+            "type": "mega_menu_group",
+            "settings": {
+              "title": "Wedding"
+            }
+          },
+          "da2f0aba-4aeb-49b5-8ea2-beee036f2ca9": {
+            "type": "mega_menu_group",
+            "settings": {
+              "title": "Fine Jewelry"
+            }
+          },
+          "e6aa6e68-5786-42cc-a9d5-e479f88782ff": {
+            "type": "mega_menu_group",
+            "settings": {
+              "title": "Custom"
+            }
+          },
+          "738b4509-cd54-4656-8443-5b3e8aa4baae": {
+            "type": "mega_menu_group",
+            "settings": {
+              "title": "About VM"
+            }
+          }
+        },
+        "block_order": [
+          "48822781-8118-4659-bbeb-0cd9816911ee",
+          "064b9580-f55f-43b3-b120-4092989aa0ce",
+          "a576377c-6914-468f-8031-0d9cfb842a5c",
+          "da2f0aba-4aeb-49b5-8ea2-beee036f2ca9",
+          "e6aa6e68-5786-42cc-a9d5-e479f88782ff",
+          "738b4509-cd54-4656-8443-5b3e8aa4baae"
+        ],
         "settings": {
           "promo_text": "",
           "logo": "shopify:\/\/shop_images\/logo_173a67f6-34c1-4670-82e7-e7a2e1e4f697.png",
           "logo_mobile": "shopify:\/\/shop_images\/mobile-logo-seagreen_256x256_79182b2b-7668-4862-8b08-f67f60755daf.png",
-          "main_linklist": "navbar-menu-2022",
           "show_locale_selector": true,
           "show_currency_selector": true
         }
@@ -457,142 +502,107 @@
       "mega-menu-1": {
         "type": "mega-menu-1",
         "blocks": {
-          "89c82cf2-e452-4010-a7a2-fc3c9e3d7dd9": {
-            "type": "column",
+          "86a293ad-0000-46bf-b505-3dc450ae7291": {
+            "type": "nav_link_list",
             "settings": {
-              "richtext_top": "",
-              "image_caption_top": "",
-              "image_link_top": "",
-              "menu_1": "engagement-rings",
-              "menu_1_link": "",
-              "menu_2": "",
-              "menu_2_link": "",
-              "menu_3": "",
-              "menu_3_link": "",
-              "menu_4": "",
-              "menu_4_link": "",
-              "image_caption_bottom": "",
-              "image_link_bottom": "",
-              "richtext_bottom": ""
+              "title": "In Stock",
+              "link_list": "header-navbar-in-stock",
+              "show_view_all_link": true,
+              "view_all_url": "https:\/\/www.valeriemadison.com\/collections\/in-stock",
+              "has_border": false,
+              "columns_desktop": "4"
             }
           },
-          "396cb187-a7c8-431f-9b50-7c86a37d239b": {
-            "type": "column",
+          "69e7ee4b-8e0c-4c33-b858-f909292ae2d9": {
+            "type": "image",
             "settings": {
-              "richtext_top": "",
-              "image_caption_top": "",
-              "image_link_top": "",
-              "menu_1": "wedding-bands",
-              "menu_1_link": "",
-              "menu_2": "",
-              "menu_2_link": "",
-              "menu_3": "",
-              "menu_3_link": "",
-              "menu_4": "",
-              "menu_4_link": "",
-              "image_caption_bottom": "",
-              "image_link_bottom": "",
-              "richtext_bottom": ""
-            }
-          },
-          "8908700f-c81c-47a6-809d-d7c5cf21c961": {
-            "type": "column",
-            "settings": {
-              "richtext_top": "",
-              "image_caption_top": "",
-              "image_link_top": "",
-              "menu_1": "bands-for-him-them",
-              "menu_1_link": "",
-              "menu_2": "",
-              "menu_2_link": "",
-              "menu_3": "",
-              "menu_3_link": "",
-              "menu_4": "",
-              "menu_4_link": "",
-              "image_caption_bottom": "",
-              "image_link_bottom": "",
-              "richtext_bottom": ""
+              "image": "shopify:\/\/shop_images\/4x5-Packaging-Zodiac-Diamond-Charm-Hi-RES.jpg",
+              "url": "shopify:\/\/collections\/in-stock",
+              "cta_text": "Ready to Ship",
+              "cta_subtext": "in 2-4 business days",
+              "has_border": false,
+              "columns_desktop": "4"
             }
           }
         },
         "block_order": [
-          "89c82cf2-e452-4010-a7a2-fc3c9e3d7dd9",
-          "396cb187-a7c8-431f-9b50-7c86a37d239b",
-          "8908700f-c81c-47a6-809d-d7c5cf21c961"
+          "86a293ad-0000-46bf-b505-3dc450ae7291",
+          "69e7ee4b-8e0c-4c33-b858-f909292ae2d9"
         ],
         "settings": {
-          "parent": "Wedding & Engagement"
+          "parent": "In Stock",
+          "is_visible": false
         }
       },
       "mega-menu-2": {
         "type": "mega-menu-2",
         "blocks": {
-          "9c9b6135-be0a-4019-a52d-b273b37d4333": {
-            "type": "column",
+          "250d00da-2528-4e7f-b9bd-0dbad194c939": {
+            "type": "nav_link_list",
             "settings": {
-              "richtext_top": "",
-              "image_caption_top": "",
-              "image_link_top": "",
-              "menu_1": "about-vm",
-              "menu_1_link": "",
-              "menu_2": "",
-              "menu_2_link": "",
-              "menu_3": "",
-              "menu_3_link": "",
-              "menu_4": "",
-              "menu_4_link": "",
-              "image_caption_bottom": "",
-              "image_link_bottom": "",
-              "richtext_bottom": ""
+              "title": "Featured",
+              "link_list": "header-navbar-engagement-featured",
+              "show_view_all_link": true,
+              "view_all_url": "shopify:\/\/collections\/engagement-rings",
+              "has_border": true,
+              "columns_desktop": "one-fifth"
             }
           },
-          "19c77f33-dbcb-4e88-b872-3ac4c5d10492": {
-            "type": "column",
+          "f4925414-3584-41de-92fc-e798130e0204": {
+            "type": "nav_link_list",
             "settings": {
-              "richtext_top": "",
-              "image_caption_top": "",
-              "image_link_top": "",
-              "menu_1": "learn-with-us",
-              "menu_1_link": "",
-              "menu_2": "",
-              "menu_2_link": "",
-              "menu_3": "",
-              "menu_3_link": "",
-              "menu_4": "",
-              "menu_4_link": "",
-              "image_caption_bottom": "",
-              "image_link_bottom": "",
-              "richtext_bottom": ""
+              "title": "Setting",
+              "link_list": "header-navbar-engagement-featured-1",
+              "show_view_all_link": false,
+              "view_all_url": "",
+              "has_border": true,
+              "columns_desktop": "one-fifth"
             }
           },
-          "6624135a-a3ae-458d-8675-b13b0d6fa01c": {
-            "type": "column",
+          "5837128e-b826-4181-b66a-de69285a22ef": {
+            "type": "nav_link_list",
             "settings": {
-              "richtext_top": "",
-              "image_top": "shopify:\/\/shop_images\/storefront.jpg",
-              "image_caption_top": "Visit our Seattle Jewelry Store!",
-              "image_link_top": "https:\/\/www.valeriemadison.com\/pages\/our-story#visit-the-store",
-              "menu_1": "",
-              "menu_1_link": "",
-              "menu_2": "",
-              "menu_2_link": "",
-              "menu_3": "",
-              "menu_3_link": "",
-              "menu_4": "",
-              "menu_4_link": "",
-              "image_caption_bottom": "",
-              "image_link_bottom": "",
-              "richtext_bottom": ""
+              "title": "Stone",
+              "link_list": "header-navbar-engagement-stone",
+              "show_view_all_link": false,
+              "view_all_url": "",
+              "has_border": true,
+              "columns_desktop": "one-fifth"
+            }
+          },
+          "a2b4e8bb-5095-4ed9-911b-59233ccb0081": {
+            "type": "nav_link_list",
+            "settings": {
+              "title": "Shape",
+              "link_list": "header-navbar-engagement-shape",
+              "show_view_all_link": true,
+              "view_all_url": "",
+              "has_border": true,
+              "columns_desktop": "one-fifth"
+            }
+          },
+          "52007a09-f4c1-4fda-baab-1cfecdcf21a2": {
+            "type": "nav_link_list",
+            "settings": {
+              "title": "Collection",
+              "link_list": "header-navbar-engagement-collection",
+              "show_view_all_link": true,
+              "view_all_url": "shopify:\/\/collections\/engagement-rings",
+              "has_border": false,
+              "columns_desktop": "one-fifth"
             }
           }
         },
         "block_order": [
-          "9c9b6135-be0a-4019-a52d-b273b37d4333",
-          "19c77f33-dbcb-4e88-b872-3ac4c5d10492",
-          "6624135a-a3ae-458d-8675-b13b0d6fa01c"
+          "250d00da-2528-4e7f-b9bd-0dbad194c939",
+          "f4925414-3584-41de-92fc-e798130e0204",
+          "5837128e-b826-4181-b66a-de69285a22ef",
+          "a2b4e8bb-5095-4ed9-911b-59233ccb0081",
+          "52007a09-f4c1-4fda-baab-1cfecdcf21a2"
         ],
         "settings": {
-          "parent": "About Us"
+          "parent": "Engagement",
+          "is_visible": true
         }
       },
       "collection-template": {
@@ -610,7 +620,7 @@
             "type": "filter",
             "settings": {
               "filter_name": "Shop by Setting",
-              "filter_tags": "Bezel, Cluster, Double Shank, Halo, Semi-Halo, Solitaire, Split Shank, Three Stone, Toi et Moi",
+              "filter_tags": "Bezel, Cluster, Double Shank, Halo, Negative Space, Semi-Halo, Solitaire, Split Shank, Three Stone, Toi et Moi",
               "enable_filter_swatches": false
             }
           },
@@ -1220,71 +1230,60 @@
       "mega-menu-3": {
         "type": "mega-menu-3",
         "blocks": {
-          "47d145a4-b12b-4e17-860c-625091745268": {
-            "type": "column",
+          "e884a2c2-1fc2-461e-bf2f-27fe59a01cd9": {
+            "type": "nav_link_list",
             "settings": {
-              "richtext_top": "",
-              "image_caption_top": "",
-              "image_link_top": "",
-              "menu_1": "custom-designs",
-              "menu_1_link": "",
-              "menu_2": "",
-              "menu_2_link": "",
-              "menu_3": "",
-              "menu_3_link": "",
-              "menu_4": "",
-              "menu_4_link": "",
-              "image_caption_bottom": "",
-              "image_link_bottom": "",
-              "richtext_bottom": ""
+              "title": "Featured",
+              "link_list": "header-navbar-wedding-featured",
+              "show_view_all_link": true,
+              "view_all_url": "shopify:\/\/collections\/wedding-bands",
+              "has_border": true,
+              "columns_desktop": "4"
             }
           },
-          "532c00fc-0a53-4c3b-9aeb-9e16deb238b8": {
-            "type": "column",
+          "58949278-bc3f-413c-8725-caeac743cb95": {
+            "type": "nav_link_list",
             "settings": {
-              "richtext_top": "",
-              "image_caption_top": "",
-              "image_link_top": "",
-              "menu_1": "custom-heirloom",
-              "menu_1_link": "",
-              "menu_2": "",
-              "menu_2_link": "",
-              "menu_3": "",
-              "menu_3_link": "",
-              "menu_4": "",
-              "menu_4_link": "",
-              "image_caption_bottom": "",
-              "image_link_bottom": "",
-              "richtext_bottom": ""
+              "title": "Type",
+              "link_list": "header-navbar-wedding-type",
+              "show_view_all_link": false,
+              "view_all_url": "shopify:\/\/collections\/wedding-bands",
+              "has_border": true,
+              "columns_desktop": "4"
             }
           },
-          "287a9339-4955-43c5-b1c1-2937c408d74e": {
-            "type": "column",
+          "fe62b15d-8a64-4afa-a248-5e69d6043396": {
+            "type": "nav_link_list",
             "settings": {
-              "richtext_top": "",
-              "image_caption_top": "",
-              "image_link_top": "",
-              "menu_1": "work-with-us",
-              "menu_1_link": "",
-              "menu_2": "",
-              "menu_2_link": "",
-              "menu_3": "",
-              "menu_3_link": "",
-              "menu_4": "",
-              "menu_4_link": "",
-              "image_caption_bottom": "",
-              "image_link_bottom": "",
-              "richtext_bottom": ""
+              "title": "Style",
+              "link_list": "header-navbar-wedding-style",
+              "show_view_all_link": false,
+              "view_all_url": "",
+              "has_border": true,
+              "columns_desktop": "4"
+            }
+          },
+          "29023a85-aa1e-4862-942f-82becb162ed0": {
+            "type": "nav_link_list",
+            "settings": {
+              "title": "Collection",
+              "link_list": "header-navbar-wedding-collection",
+              "show_view_all_link": false,
+              "view_all_url": "",
+              "has_border": false,
+              "columns_desktop": "4"
             }
           }
         },
         "block_order": [
-          "47d145a4-b12b-4e17-860c-625091745268",
-          "532c00fc-0a53-4c3b-9aeb-9e16deb238b8",
-          "287a9339-4955-43c5-b1c1-2937c408d74e"
+          "e884a2c2-1fc2-461e-bf2f-27fe59a01cd9",
+          "58949278-bc3f-413c-8725-caeac743cb95",
+          "fe62b15d-8a64-4afa-a248-5e69d6043396",
+          "29023a85-aa1e-4862-942f-82becb162ed0"
         ],
         "settings": {
-          "parent": "Custom & Heirloom"
+          "parent": "Wedding",
+          "is_visible": true
         }
       },
       "page-stockists-template": {
@@ -1356,81 +1355,131 @@
       "mega-menu-4": {
         "type": "mega-menu-4",
         "blocks": {
-          "f29a3256-abfc-41b8-8483-5567a70b7932": {
-            "type": "column",
+          "c75d3e27-d54b-4ba4-9c36-d8eeb1bcd334": {
+            "type": "nav_link_list",
             "settings": {
-              "richtext_top": "",
-              "image_caption_top": "",
-              "image_link_top": "",
-              "menu_1": "featured",
-              "menu_1_link": "",
-              "menu_2": "",
-              "menu_2_link": "",
-              "menu_3": "",
-              "menu_3_link": "",
-              "menu_4": "",
-              "menu_4_link": "",
-              "image_caption_bottom": "",
-              "image_link_bottom": "",
-              "richtext_bottom": ""
+              "title": "Featured",
+              "link_list": "header-navbar-fine-jewelry-featured",
+              "show_view_all_link": true,
+              "view_all_url": "shopify:\/\/collections\/fine-jewelry",
+              "has_border": false,
+              "columns_desktop": "one-fifth"
             }
           },
-          "mega-menu-4-0": {
-            "type": "column",
+          "68ee30c7-41af-46f8-878c-4e74d845fa6d": {
+            "type": "image",
             "settings": {
-              "richtext_top": "",
-              "image_caption_top": "",
-              "image_link_top": "",
-              "menu_1": "shop-by-style",
-              "menu_1_link": "",
-              "menu_2": "",
-              "menu_2_link": "",
-              "menu_3": "",
-              "menu_3_link": "",
-              "menu_4": "",
-              "menu_4_link": "",
-              "image_caption_bottom": "",
-              "image_link_bottom": "",
-              "richtext_bottom": ""
+              "image": "shopify:\/\/shop_images\/VM_Tapered_Hoops.jpg",
+              "url": "https:\/\/www.valeriemadison.com\/collections\/fine-jewelry\/earrings",
+              "cta_text": "Earrings",
+              "cta_subtext": "Studs, Hoops, and Dangles",
+              "has_border": false,
+              "columns_desktop": "one-fifth"
+            }
+          },
+          "b421a334-e2d2-4a70-a7cb-2882d7a0d20a": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Copy_of_Rainbow_Gemstone_Pendants_2.jpg",
+              "url": "https:\/\/www.valeriemadison.com\/collections\/fine-jewelry\/necklaces",
+              "cta_text": "Necklaces",
+              "cta_subtext": "Pendants & Chains",
+              "has_border": false,
+              "columns_desktop": "one-fifth"
+            }
+          },
+          "825cd61e-65c1-42d4-a03f-a00e26fa60a2": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Bracelet-4x5.jpg",
+              "url": "https:\/\/www.valeriemadison.com\/collections\/fine-jewelry\/bracelets",
+              "cta_text": "Bracelets & Anklets",
+              "cta_subtext": "",
+              "has_border": false,
+              "columns_desktop": "one-fifth"
+            }
+          },
+          "06b4bb6e-c56a-45c8-8999-019ad4824a15": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/4x5-Engraved-Signet-Rings.jpg",
+              "url": "shopify:\/\/collections\/all-rings-excluding-engagement-wedding",
+              "cta_text": "Rings",
+              "cta_subtext": "Signets & More",
+              "has_border": false,
+              "columns_desktop": "one-fifth"
             }
           }
         },
         "block_order": [
-          "f29a3256-abfc-41b8-8483-5567a70b7932",
-          "mega-menu-4-0"
+          "c75d3e27-d54b-4ba4-9c36-d8eeb1bcd334",
+          "68ee30c7-41af-46f8-878c-4e74d845fa6d",
+          "b421a334-e2d2-4a70-a7cb-2882d7a0d20a",
+          "825cd61e-65c1-42d4-a03f-a00e26fa60a2",
+          "06b4bb6e-c56a-45c8-8999-019ad4824a15"
         ],
         "settings": {
-          "parent": "Jewelry"
+          "parent": "Fine Jewelry",
+          "is_visible": true
         }
       },
       "mega-menu-5": {
         "type": "mega-menu-5",
         "blocks": {
-          "d8715b21-50a3-48ce-8574-f457f22b34b7": {
-            "type": "column",
+          "1f4d6ca4-3d8f-4e81-8a46-2fd4134d25c9": {
+            "type": "nav_link_list",
             "settings": {
-              "richtext_top": "",
-              "image_caption_top": "",
-              "image_link_top": "",
-              "menu_1": "",
-              "menu_1_link": "",
-              "menu_2": "",
-              "menu_2_link": "",
-              "menu_3": "",
-              "menu_3_link": "",
-              "menu_4": "",
-              "menu_4_link": "",
-              "image_caption_bottom": "",
-              "image_link_bottom": "",
-              "richtext_bottom": ""
+              "title": "Get Inspired",
+              "link_list": "header-navbar-custom-get-inspired",
+              "show_view_all_link": false,
+              "view_all_url": "",
+              "has_border": true,
+              "columns_desktop": "4"
+            }
+          },
+          "93fdc8c3-2f30-4e42-9688-680be1130a7c": {
+            "type": "nav_link_list",
+            "settings": {
+              "title": "Custom",
+              "link_list": "header-navbar-custom-custom",
+              "show_view_all_link": false,
+              "view_all_url": "",
+              "has_border": true,
+              "columns_desktop": "4"
+            }
+          },
+          "8b2eec05-a86f-4567-b250-7bb9a05938ac": {
+            "type": "nav_link_list",
+            "settings": {
+              "title": "Heirloom",
+              "link_list": "header-navbar-custom-heirloom",
+              "show_view_all_link": false,
+              "view_all_url": "",
+              "has_border": false,
+              "columns_desktop": "4"
+            }
+          },
+          "f05e510c-26f7-45d8-a71a-7e639a4d8cb4": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/4x5-store.jpg",
+              "url": "https:\/\/calendly.com\/valeriemadison",
+              "cta_text": "Schedule an appointment",
+              "cta_subtext": "",
+              "has_border": false,
+              "columns_desktop": "4"
             }
           }
         },
         "block_order": [
-          "d8715b21-50a3-48ce-8574-f457f22b34b7"
+          "1f4d6ca4-3d8f-4e81-8a46-2fd4134d25c9",
+          "93fdc8c3-2f30-4e42-9688-680be1130a7c",
+          "8b2eec05-a86f-4567-b250-7bb9a05938ac",
+          "f05e510c-26f7-45d8-a71a-7e639a4d8cb4"
         ],
         "settings": {
-          "parent": "test"
+          "parent": "Custom",
+          "is_visible": true
         }
       },
       "1578277933549": {
@@ -1480,7 +1529,7 @@
             "type": "image",
             "settings": {
               "image": "shopify:\/\/shop_images\/Duo-Bracelet-J_L-4x5_5f4ef2c0-f9ea-43a5-9609-83d124a681ec.jpg",
-              "link": "shopify:\/\/collections\/all-bracelets",
+              "link": "shopify:\/\/collections\/bracelets-and-anklets",
               "title": "<b>Bracelets<\/b>"
             }
           }
@@ -2849,7 +2898,7 @@
             "settings": {
               "image": "shopify:\/\/shop_images\/Shopify-all-earrings-on-marble_4728434a-34e1-4797-a0ad-e3e172e8af15.jpg",
               "name": "Test title 2",
-              "collection": "all-bracelets"
+              "collection": "bracelets-and-anklets"
             }
           }
         },
@@ -3037,8 +3086,8 @@
             "settings": {
               "image": "shopify:\/\/shop_images\/VMFJ-2020-17.jpg",
               "title": "Lauren",
-              "job_title": "GEMOLOGIST, SENIOR SALES ASSOCIATE",
-              "description": "I am the staff gemologist (aka gem nerd) and sales associate who can help answer all your jewelry questions, write your appraisal, or source the perfect stone for your ring.  When I’m not in the studio you can find me teaching fitness classes, making Spotify playlists, writing, or watching the newest episode of Dateline."
+              "job_title": "DIRECTOR OF DIAMONDS & GEMSTONES",
+              "description": "I am the staff gemologist (aka gem nerd) and Director of Diamonds & Gemstones who can help answer all your jewelry questions, write your appraisal, or source the perfect stone for your ring.  When I’m not in the studio you can find me teaching fitness classes, making Spotify playlists, writing, or watching the newest episode of Dateline."
             }
           },
           "c95ab9d1-1311-4c9b-959d-9ac15d6603c6": {
@@ -3091,8 +3140,8 @@
             "settings": {
               "image": "shopify:\/\/shop_images\/Megan_Cosgrove_Headshot.jpg",
               "title": "Megan",
-              "job_title": "Customer Service Specialist & Associate Buyer",
-              "description": "As the face of VM’s Customer Service Department, I strive to make your experience memorable and stress-free. When I am not helping customers via email, chat or over the phone, I am cultivating our in-store merchandise to offer the best sourced gifts for our local shoppers. My sense of humor and colorful personality helps ensure that you will be taken care of no matter what!"
+              "job_title": "Customer Service Specialist",
+              "description": "As the face of VM’s Customer Service Department, I strive to make your experience memorable and stress-free. My sense of humor and colorful personality helps ensure that you will be taken care of no matter what!"
             }
           },
           "b9bb3a8d-56e2-4b2f-99d5-7c1ddde5cba5": {
@@ -3257,33 +3306,33 @@
       "1629483439e1253581": {
         "type": "homepage-banner",
         "blocks": {
+          "95beecd3-2bab-4b22-b737-ed9a5c1dbf17": {
+            "type": "background_block",
+            "settings": {
+              "background_color": "light-alt",
+              "banner_image_desktop": "shopify:\/\/shop_images\/June-Launch-Group-Shot-5-vals-edits.jpg"
+            }
+          },
           "398fe46e-43dd-41e3-8d73-51f91275cd68": {
             "type": "background_block",
             "settings": {
               "background_color": "light"
             }
-          },
-          "95beecd3-2bab-4b22-b737-ed9a5c1dbf17": {
-            "type": "background_block",
-            "settings": {
-              "background_color": "light-alt",
-              "banner_image_desktop": "shopify:\/\/shop_images\/Gemini-Constellation-Pendant-and-Moonstone-Pendant-Square.jpg"
-            }
           }
         },
         "block_order": [
-          "398fe46e-43dd-41e3-8d73-51f91275cd68",
-          "95beecd3-2bab-4b22-b737-ed9a5c1dbf17"
+          "95beecd3-2bab-4b22-b737-ed9a5c1dbf17",
+          "398fe46e-43dd-41e3-8d73-51f91275cd68"
         ],
         "settings": {
           "banner_wrapper_background_color": "light-alt",
-          "pretext": "It's",
-          "heading": "Gemini Season",
-          "cta_link": "https:\/\/www.valeriemadison.com\/collections\/fine-jewelry\/zodiac?sort_by=best-selling",
-          "cta_text": "Shop now",
-          "text_position": "left-block",
+          "pretext": "new",
+          "heading": "Colorful Sapphires",
+          "cta_link": "shopify:\/\/collections\/gemstone-bridal-1",
+          "cta_text": "Shop gemstone rings",
+          "text_position": "right-block",
           "text_color": "dark-alt",
-          "banner_image_mobile": "shopify:\/\/shop_images\/Gemini-Constellation-Pendant-and-Moonstone-Pendant-Square.jpg",
+          "banner_image_mobile": "shopify:\/\/shop_images\/June-Launch-Group-Shot-5-vals-edits.jpg",
           "text_color_mobile": "dark-alt",
           "content_background_color_mobile": "light-alt"
         }
@@ -3861,13 +3910,6 @@
       "eternity-bracelets-upcoming-dates": {
         "type": "eternity-bracelets-upcoming-dates",
         "blocks": {
-          "bedf200f-6f49-408b-a592-54058d9e6802": {
-            "type": "upcoming-date",
-            "settings": {
-              "date": "Friday, June 17",
-              "time": "4:00-6:00pm"
-            }
-          },
           "69a248c7-2269-473f-a52f-45e48c117dee": {
             "type": "upcoming-date",
             "settings": {
@@ -3891,7 +3933,6 @@
           }
         },
         "block_order": [
-          "bedf200f-6f49-408b-a592-54058d9e6802",
           "69a248c7-2269-473f-a52f-45e48c117dee",
           "a649c73a-209c-48df-bffc-b28f00d3c4e4",
           "1fa24276-f437-472a-845b-c224959fde75"
@@ -3966,9 +4007,9 @@
       "1638989716bc82a38f": {
         "type": "featured-collection",
         "settings": {
-          "title": "About to say Yes?",
-          "title_cta_text": "Our picks for a spring or summer engagement",
-          "collection": "engagement-rings",
+          "title": "Say Yes To Color",
+          "title_cta_text": "Vibrant gemstone engagement rings",
+          "collection": "gemstone-bridal-1",
           "products_per": 3,
           "products_limit": 9,
           "color_region": "light-alt",
@@ -3994,111 +4035,60 @@
       "mega-menu-6": {
         "type": "mega-menu-6",
         "blocks": {
-          "mega-menu-6-0": {
-            "type": "column",
+          "bfd772a5-c05e-477f-abb3-1e27183d23ba": {
+            "type": "image",
             "settings": {
-              "richtext_top": "<p>Add description, images, menus and links to your mega menu<\/p>",
-              "image_caption_top": "",
-              "image_link_top": "",
-              "menu_1": "",
-              "menu_1_link": "",
-              "menu_2": "",
-              "menu_2_link": "",
-              "menu_3": "",
-              "menu_3_link": "",
-              "menu_4": "",
-              "menu_4_link": "",
-              "image_caption_bottom": "",
-              "image_link_bottom": "",
-              "richtext_bottom": ""
+              "image": "shopify:\/\/shop_images\/4x5-Valerie-Silk-Hi-Res.jpg",
+              "url": "",
+              "cta_text": "",
+              "cta_subtext": "",
+              "has_border": false,
+              "columns_desktop": "4"
             }
           },
-          "mega-menu-6-1": {
-            "type": "column",
+          "76852eb9-70d9-459a-87c5-0d0b89309019": {
+            "type": "nav_link_list",
             "settings": {
-              "richtext_top": "<p>A column with no settings can be used as a spacer<\/p>",
-              "image_caption_top": "",
-              "image_link_top": "",
-              "menu_1": "",
-              "menu_1_link": "",
-              "menu_2": "",
-              "menu_2_link": "",
-              "menu_3": "",
-              "menu_3_link": "",
-              "menu_4": "",
-              "menu_4_link": "",
-              "image_caption_bottom": "",
-              "image_link_bottom": "",
-              "richtext_bottom": ""
+              "title": "Find Out More",
+              "link_list": "header-navbar-about-vm-find-out-more",
+              "show_view_all_link": false,
+              "view_all_url": "",
+              "has_border": true,
+              "columns_desktop": "4"
             }
           },
-          "mega-menu-6-2": {
-            "type": "column",
+          "09e23370-d2fe-47a1-b554-ef619d824eae": {
+            "type": "nav_link_list",
             "settings": {
-              "richtext_top": "",
-              "image_caption_top": "",
-              "image_link_top": "",
-              "menu_1": "",
-              "menu_1_link": "",
-              "menu_2": "",
-              "menu_2_link": "",
-              "menu_3": "",
-              "menu_3_link": "",
-              "menu_4": "",
-              "menu_4_link": "",
-              "image_caption_bottom": "",
-              "image_link_bottom": "",
-              "richtext_bottom": ""
+              "title": "Resources",
+              "link_list": "header-navbar-about-vm-resources",
+              "show_view_all_link": false,
+              "view_all_url": "",
+              "has_border": false,
+              "columns_desktop": "4"
             }
           },
-          "mega-menu-6-3": {
-            "type": "column",
+          "93b65dbd-692f-4a1e-bc39-bf95e585a770": {
+            "type": "image",
             "settings": {
-              "richtext_top": "<p>Link to your collections, sales and even external links<\/p>",
-              "image_caption_top": "",
-              "image_link_top": "",
-              "menu_1": "",
-              "menu_1_link": "",
-              "menu_2": "",
-              "menu_2_link": "",
-              "menu_3": "",
-              "menu_3_link": "",
-              "menu_4": "",
-              "menu_4_link": "",
-              "image_caption_bottom": "",
-              "image_link_bottom": "",
-              "richtext_bottom": ""
-            }
-          },
-          "mega-menu-6-4": {
-            "type": "column",
-            "settings": {
-              "richtext_top": "<p>Add up to five columns<\/p>",
-              "image_caption_top": "",
-              "image_link_top": "",
-              "menu_1": "",
-              "menu_1_link": "",
-              "menu_2": "",
-              "menu_2_link": "",
-              "menu_3": "",
-              "menu_3_link": "",
-              "menu_4": "",
-              "menu_4_link": "",
-              "image_caption_bottom": "",
-              "image_link_bottom": "",
-              "richtext_bottom": ""
+              "image": "shopify:\/\/shop_images\/4x5-Something-Blue-Gemmas-Hi-Res.jpg",
+              "url": "",
+              "cta_text": "",
+              "cta_subtext": "",
+              "has_border": false,
+              "columns_desktop": "4"
             }
           }
         },
         "block_order": [
-          "mega-menu-6-0",
-          "mega-menu-6-1",
-          "mega-menu-6-2",
-          "mega-menu-6-3",
-          "mega-menu-6-4"
+          "bfd772a5-c05e-477f-abb3-1e27183d23ba",
+          "76852eb9-70d9-459a-87c5-0d0b89309019",
+          "09e23370-d2fe-47a1-b554-ef619d824eae",
+          "93b65dbd-692f-4a1e-bc39-bf95e585a770"
         ],
         "settings": {
-          "parent": "test2"
+          "parent": "About VM",
+          "is_visible": true
         }
       }
     },

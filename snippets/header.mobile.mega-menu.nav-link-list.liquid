@@ -3,12 +3,16 @@ title: text,
 link_list: link_list,
 show_view_all_link: checkbox,
 view_all_url: text,
+parent: text,
 {% endcomment %}
 
-<div class="header-desktop__mega-menu header-desktop__mega-menu--nav-link-list">
+<div class="mobile-menu-list-item mobile-menu-list-item--nav-link-list">
 
-  <h4>{{ title }}</h4>
-
+  {% assign accordion_id = "vm-mobile-accordion--" | append: parent %}
+  {% assign accordion_id = accordion_id | append: "--" | append: title | handleize %}
+  
+  <h5>{{ title }}</h5>
+  
   {% if link_list %}
     <ul>
       {% for link in link_list.links %}
@@ -20,9 +24,7 @@ view_all_url: text,
   {% endif %}
 
   {% if show_view_all_link and view_all_url %}
-    <div class="u-margin-top-2">
-      <a href="{{ view_all_url }}" class="cta-link cta-link-3 cta-link--dark-alt">View All</a>
-    </div>
+    <h6 class="u-margin-top-1 u-margin-bottom-0"><a href="{{ view_all_url }}">View All</a></h6>
   {% endif %}
 
 </div>

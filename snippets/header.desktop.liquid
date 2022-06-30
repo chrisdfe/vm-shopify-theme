@@ -1,46 +1,58 @@
 <header class="header-desktop">
-  {% capture extra_links %}
-  <li>
-    <a
-      href="{{ routes.account_url }}"
-      class="header-desktop__nav-button"
-      title="{{ 'layout.customer.my_account' | t }} {% if customer %}({{ customer.email }}){% endif %}">
-      {% render "icon.user" %}
-      <span>{% if customer %}{{ 'layout.customer.my_account' | t }}{% else %}{{ 'layout.customer.log_in' | t }}{% endif %}</span>
-    </a>
-  </li>
-
-  <li>
-    <button
-      class="header-desktop__nav-button header-desktop__nav-button--square header-desktop__nav-button--search"
-      data-dropdown-button-id="search"
-      title="{{ 'general.search.title' | t | escape }}"
-      >
-      {% render "icon.magnifying-glass" %}
-    </button>
-  </li>
-  
-  <li>
-    <button
-      class="header-desktop__nav-button header-desktop__nav-button--square header-desktop__nav-button--cart"
-      data-drawer-button-id="cart">
-      {% render "icon.bag" %}
-      <span class="cart_count">{{ cart.item_count }}</span>
-    </button>
-  </li>
-  {% endcapture %}
-
   <div class="header-desktop__logo-row">
     {% render "header.logo" %}
 
-    {% render 'header.desktop.nav' with {
-      extra_links: extra_links
-    } %}
+    <div class="header-desktop__nav">
+      <ul>
+        <li>
+          <a
+            href="{{ routes.account_url }}"
+            class="header-desktop__nav-button"
+            title="{{ 'layout.customer.my_account' | t }} {% if customer %}({{ customer.email }}){% endif %}">
+            {% render "icon.user" %}
+            <span>{% if customer %}{{ 'layout.customer.my_account' | t }}{% else %}{{ 'layout.customer.log_in' | t }}{% endif %}</span>
+          </a>
+        </li>
+
+        <li>
+          <button
+            class="header-desktop__nav-button header-desktop__nav-button--square header-desktop__nav-button--search"
+            data-dropdown-button-id="search"
+            title="{{ 'general.search.title' | t | escape }}"
+            >
+            {% render "icon.magnifying-glass" %}
+          </button>
+        </li>
+        
+        <li>
+          <button
+            class="header-desktop__nav-button header-desktop__nav-button--square header-desktop__nav-button--cart"
+            data-drawer-button-id="cart">
+            {% render "icon.bag" %}
+            <span class="cart_count">{{ cart.item_count }}</span>
+          </button>
+        </li>
+      </ul>
+    </div>
   </div>
 
   <div class="header-desktop__navbar">
-    {% render 'header.desktop.nav' with {
-      linklist: section.settings.main_linklist
-    } %}
+    <div class="header-desktop__nav">
+      <ul>
+        {% for block in section.blocks %}
+          {% if block.settings.title != blank %}
+            <li {{ block.shopify_attributes }}>
+              <button class="header-desktop__nav-link"
+                data-dropdown-button-id="{{ block.settings.title | handleize }}">
+                {{ block.settings.title }}
+                <span class="header-desktop__nav-link__dropdown-arrow">
+                  {% render "icon.carat" %}
+                </span>
+              </button>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
   </div>
 </header>

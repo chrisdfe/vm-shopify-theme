@@ -118,15 +118,6 @@
       "info": "100 x 50px recommended"
     },
     {
-     "type": "header",
-     "content": "Menus"
-    },
-    {
-      "type": "link_list",
-      "id": "main_linklist",
-      "label": "Main menu"
-    },
-    {
       "type": "header",
       "content": "Language selector",
       "info": "To add a language, go to your [language settings.](/admin/settings/languages)"
@@ -147,6 +138,20 @@
       "id": "show_currency_selector",
       "label": "Show currency selector",
       "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "mega_menu_group",
+      "name": "Mega Menu Group",
+      "settings": [
+      {
+          "type": "text",
+          "id": "title",
+          "info": "The dropdown button title on desktop & the accordion title on mobile",
+          "label": "Title"
+        }
+      ]
     }
   ]
 }

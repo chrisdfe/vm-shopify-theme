@@ -1,11 +1,7 @@
 import debounce from "../../../utils/debounce";
+
 import DropdownUnderlay from "./DropdownUnderlay";
-
 import HeaderDropdown from "./Dropdown";
-
-interface Props {
-  onDropdownOpen: (dropdown: HeaderDropdown) => void;
-}
 
 export type DropdownEventPayload = {
   dropdown: HeaderDropdown
@@ -26,11 +22,10 @@ export default class DropdownManager {
     this.headerContentWrapperElement = document.querySelector(
       ".header-content-wrapper"
     );
+
     this.headerContentWrapperElement.addEventListener(
       "mouseout",
-      (event: MouseEventInit) => {
-        this.onHeaderMouseOut(event as MouseEvent);
-      }
+      this.onHeaderMouseOut
     );
 
     this.headerUnderlay = new DropdownUnderlay();
@@ -53,11 +48,28 @@ export default class DropdownManager {
 
     document.body.addEventListener("click", this.onBodyClick);
 
-    document.documentElement.addEventListener("mouseleave", () => {
-      this.closeCurrentOpenDropdown();
-    });
+    // document.body.addEventListener("shopify:section:load")
 
     return this;
+  }
+
+  unload() {
+    this.headerContentWrapperElement.removeEventListener(
+      "mouseout",
+      this.onHeaderMouseOut
+    );
+
+    this.dropdownIds.forEach(dropdownId => {
+      const dropdown = this.dropdownMap[dropdownId];
+      dropdown.unload();
+    });
+
+    document.documentElement.removeEventListener("mouseleave", this.closeCurrentOpenDropdown);
+  }
+
+  reset() {
+    this.unload();
+    this.initialize();
   }
 
   private onBodyClick = (event: Event) => {
