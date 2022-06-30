@@ -505,23 +505,23 @@
         "blocks": {
           "86a293ad-0000-46bf-b505-3dc450ae7291": {
             "type": "nav_link_list",
-            "disabled": true,
             "settings": {
               "title": "In Stock",
               "link_list": "header-navbar-in-stock",
               "show_view_all_link": true,
               "view_all_url": "https:\/\/www.valeriemadison.com\/collections\/in-stock",
+              "has_border": false,
               "columns_desktop": "4"
             }
           },
           "69e7ee4b-8e0c-4c33-b858-f909292ae2d9": {
             "type": "image",
-            "disabled": true,
             "settings": {
               "image": "shopify:\/\/shop_images\/4x5-Packaging-Zodiac-Diamond-Charm-Hi-RES.jpg",
               "url": "shopify:\/\/collections\/in-stock",
               "cta_text": "Ready to Ship",
               "cta_subtext": "in 2-4 business days",
+              "has_border": false,
               "columns_desktop": "4"
             }
           }
@@ -531,7 +531,8 @@
           "69e7ee4b-8e0c-4c33-b858-f909292ae2d9"
         ],
         "settings": {
-          "parent": "In Stock"
+          "parent": "In Stock",
+          "is_visible": false
         }
       },
       "mega-menu-2": {
@@ -544,7 +545,8 @@
               "link_list": "header-navbar-engagement-featured",
               "show_view_all_link": true,
               "view_all_url": "shopify:\/\/collections\/engagement-rings",
-              "columns_desktop": "3"
+              "has_border": true,
+              "columns_desktop": "one-fifth"
             }
           },
           "f4925414-3584-41de-92fc-e798130e0204": {
@@ -554,7 +556,8 @@
               "link_list": "header-navbar-engagement-featured-1",
               "show_view_all_link": false,
               "view_all_url": "",
-              "columns_desktop": "3"
+              "has_border": true,
+              "columns_desktop": "one-fifth"
             }
           },
           "5837128e-b826-4181-b66a-de69285a22ef": {
@@ -564,7 +567,8 @@
               "link_list": "header-navbar-engagement-stone",
               "show_view_all_link": false,
               "view_all_url": "",
-              "columns_desktop": "3"
+              "has_border": true,
+              "columns_desktop": "one-fifth"
             }
           },
           "a2b4e8bb-5095-4ed9-911b-59233ccb0081": {
@@ -572,9 +576,10 @@
             "settings": {
               "title": "Shape",
               "link_list": "header-navbar-engagement-shape",
-              "show_view_all_link": false,
+              "show_view_all_link": true,
               "view_all_url": "",
-              "columns_desktop": "3"
+              "has_border": true,
+              "columns_desktop": "one-fifth"
             }
           },
           "52007a09-f4c1-4fda-baab-1cfecdcf21a2": {
@@ -584,7 +589,8 @@
               "link_list": "header-navbar-engagement-collection",
               "show_view_all_link": true,
               "view_all_url": "shopify:\/\/collections\/engagement-rings",
-              "columns_desktop": "3"
+              "has_border": false,
+              "columns_desktop": "one-fifth"
             }
           }
         },
@@ -596,7 +602,8 @@
           "52007a09-f4c1-4fda-baab-1cfecdcf21a2"
         ],
         "settings": {
-          "parent": "Engagement"
+          "parent": "Engagement",
+          "is_visible": true
         }
       },
       "collection-template": {
@@ -1231,6 +1238,7 @@
               "link_list": "header-navbar-wedding-featured",
               "show_view_all_link": true,
               "view_all_url": "shopify:\/\/collections\/wedding-bands",
+              "has_border": true,
               "columns_desktop": "4"
             }
           },
@@ -1241,6 +1249,7 @@
               "link_list": "header-navbar-wedding-type",
               "show_view_all_link": false,
               "view_all_url": "shopify:\/\/collections\/wedding-bands",
+              "has_border": true,
               "columns_desktop": "4"
             }
           },
@@ -1251,6 +1260,7 @@
               "link_list": "header-navbar-wedding-style",
               "show_view_all_link": false,
               "view_all_url": "",
+              "has_border": true,
               "columns_desktop": "4"
             }
           },
@@ -1261,6 +1271,7 @@
               "link_list": "header-navbar-wedding-collection",
               "show_view_all_link": false,
               "view_all_url": "",
+              "has_border": false,
               "columns_desktop": "4"
             }
           }
@@ -1272,7 +1283,8 @@
           "29023a85-aa1e-4862-942f-82becb162ed0"
         ],
         "settings": {
-          "parent": "Wedding"
+          "parent": "Wedding",
+          "is_visible": true
         }
       },
       "page-stockists-template": {
@@ -1351,7 +1363,8 @@
               "link_list": "header-navbar-fine-jewelry-featured",
               "show_view_all_link": true,
               "view_all_url": "shopify:\/\/collections\/fine-jewelry",
-              "columns_desktop": "3"
+              "has_border": false,
+              "columns_desktop": "one-fifth"
             }
           },
           "68ee30c7-41af-46f8-878c-4e74d845fa6d": {
@@ -1361,7 +1374,8 @@
               "url": "https:\/\/www.valeriemadison.com\/collections\/fine-jewelry\/earrings",
               "cta_text": "Earrings",
               "cta_subtext": "Studs, Hoops, and Dangles",
-              "columns_desktop": "3"
+              "has_border": false,
+              "columns_desktop": "one-fifth"
             }
           },
           "b421a334-e2d2-4a70-a7cb-2882d7a0d20a": {
@@ -1371,7 +1385,8 @@
               "url": "https:\/\/www.valeriemadison.com\/collections\/fine-jewelry\/necklaces",
               "cta_text": "Necklaces",
               "cta_subtext": "Pendants & Chains",
-              "columns_desktop": "3"
+              "has_border": false,
+              "columns_desktop": "one-fifth"
             }
           },
           "825cd61e-65c1-42d4-a03f-a00e26fa60a2": {
@@ -1381,7 +1396,8 @@
               "url": "https:\/\/www.valeriemadison.com\/collections\/fine-jewelry\/bracelets",
               "cta_text": "Bracelets & Anklets",
               "cta_subtext": "",
-              "columns_desktop": "3"
+              "has_border": false,
+              "columns_desktop": "one-fifth"
             }
           },
           "06b4bb6e-c56a-45c8-8999-019ad4824a15": {
@@ -1391,7 +1407,8 @@
               "url": "shopify:\/\/collections\/all-rings-excluding-engagement-wedding",
               "cta_text": "Rings",
               "cta_subtext": "Signets & More",
-              "columns_desktop": "3"
+              "has_border": false,
+              "columns_desktop": "one-fifth"
             }
           }
         },
@@ -1403,7 +1420,8 @@
           "06b4bb6e-c56a-45c8-8999-019ad4824a15"
         ],
         "settings": {
-          "parent": "Fine Jewelry"
+          "parent": "Fine Jewelry",
+          "is_visible": true
         }
       },
       "mega-menu-5": {
@@ -1416,17 +1434,8 @@
               "link_list": "header-navbar-custom-get-inspired",
               "show_view_all_link": false,
               "view_all_url": "",
-              "columns_desktop": "2"
-            }
-          },
-          "9fc0a9fe-0313-412a-882f-91f71855fea5": {
-            "type": "image",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/Amara-marisol.jpg",
-              "url": "shopify:\/\/pages\/custom-engagement-rings",
-              "cta_text": "",
-              "cta_subtext": "",
-              "columns_desktop": "2"
+              "has_border": true,
+              "columns_desktop": "4"
             }
           },
           "93fdc8c3-2f30-4e42-9688-680be1130a7c": {
@@ -1436,17 +1445,8 @@
               "link_list": "header-navbar-custom-custom",
               "show_view_all_link": false,
               "view_all_url": "",
-              "columns_desktop": "2"
-            }
-          },
-          "53739c1f-941d-423d-adb4-e6fe6fca44c4": {
-            "type": "image",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/Heirloom-Rework-Example.jpg",
-              "url": "shopify:\/\/pages\/heirloom-reworks",
-              "cta_text": "",
-              "cta_subtext": "",
-              "columns_desktop": "2"
+              "has_border": true,
+              "columns_desktop": "4"
             }
           },
           "8b2eec05-a86f-4567-b250-7bb9a05938ac": {
@@ -1456,7 +1456,8 @@
               "link_list": "header-navbar-custom-heirloom",
               "show_view_all_link": false,
               "view_all_url": "",
-              "columns_desktop": "2"
+              "has_border": false,
+              "columns_desktop": "4"
             }
           },
           "f05e510c-26f7-45d8-a71a-7e639a4d8cb4": {
@@ -1466,20 +1467,20 @@
               "url": "https:\/\/calendly.com\/valeriemadison",
               "cta_text": "Schedule an appointment",
               "cta_subtext": "",
-              "columns_desktop": "2"
+              "has_border": false,
+              "columns_desktop": "4"
             }
           }
         },
         "block_order": [
           "1f4d6ca4-3d8f-4e81-8a46-2fd4134d25c9",
-          "9fc0a9fe-0313-412a-882f-91f71855fea5",
           "93fdc8c3-2f30-4e42-9688-680be1130a7c",
-          "53739c1f-941d-423d-adb4-e6fe6fca44c4",
           "8b2eec05-a86f-4567-b250-7bb9a05938ac",
           "f05e510c-26f7-45d8-a71a-7e639a4d8cb4"
         ],
         "settings": {
-          "parent": "Custom"
+          "parent": "Custom",
+          "is_visible": true
         }
       },
       "1578277933549": {
@@ -4042,6 +4043,7 @@
               "url": "",
               "cta_text": "",
               "cta_subtext": "",
+              "has_border": false,
               "columns_desktop": "4"
             }
           },
@@ -4052,6 +4054,7 @@
               "link_list": "header-navbar-about-vm-find-out-more",
               "show_view_all_link": false,
               "view_all_url": "",
+              "has_border": true,
               "columns_desktop": "4"
             }
           },
@@ -4062,6 +4065,7 @@
               "link_list": "header-navbar-about-vm-resources",
               "show_view_all_link": false,
               "view_all_url": "",
+              "has_border": false,
               "columns_desktop": "4"
             }
           },
@@ -4072,6 +4076,7 @@
               "url": "",
               "cta_text": "",
               "cta_subtext": "",
+              "has_border": false,
               "columns_desktop": "4"
             }
           }
@@ -4083,7 +4088,8 @@
           "93b65dbd-692f-4a1e-bc39-bf95e585a770"
         ],
         "settings": {
-          "parent": "About VM"
+          "parent": "About VM",
+          "is_visible": true
         }
       }
     },
