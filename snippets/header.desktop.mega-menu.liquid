@@ -6,6 +6,7 @@
 {% endcomment %}
 
 
+{% if section.settings.is_visible %}
 <div class="mega-menu-desktop">
   <div
     class="vm-header-dropdown"
@@ -17,7 +18,7 @@
         <div class="row row--justify-content-center">
 
           {% for block in section.blocks %}
-            {% assign columns = "one" %}
+            {% assign columns = block.settings.columns_desktop %}
             
             {% if block.settings.columns_desktop == "2" %}
               {% assign columns = "two" %}
@@ -26,11 +27,14 @@
             {% elsif block.settings.columns_desktop == "4" %}
               {% assign columns = "four" %}
             {% elsif block.settings.columns_desktop == "6" %}
-              {% assign columns = "six" %}
+              {% assign columns = "six" %}       
             {% endif %}
 
-            <div class="{{ columns }} columns">
-              <div class="header-dropdown__column" {{ block.shopify_attributes }}>
+            <div class="header-dropdown__column
+                        {% if block.settings.has_border %}header-dropdown__column--has-border{% endif %}
+                        {{ columns }} columns">
+              <div class="header-dropdown__column-inner"
+                {{ block.shopify_attributes }}>
                 {% if block.type == "nav_link_list" %}
                   {% render "header.desktop.mega-menu.nav-link-list" with {
                     title: block.settings.title,
@@ -56,3 +60,4 @@
 
   </div>
 </div>
+{% endif %}

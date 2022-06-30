@@ -20,7 +20,9 @@ view_all_url: text,
   {% endif %}
 
   {% if show_view_all_link and view_all_url %}
-    <h6 class="u-margin-top-2"><a href="{{ view_all_url }}">View All</a></h6>
+    <div class="u-margin-top-2">
+      <a href="{{ view_all_url }}" class="cta-link cta-link-3 cta-link--dark-alt">View All</a>
+    </div>
   {% endif %}
 
 </div>

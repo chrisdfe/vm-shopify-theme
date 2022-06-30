@@ -1,11 +1,7 @@
 import debounce from "../../../utils/debounce";
+
 import DropdownUnderlay from "./DropdownUnderlay";
-
 import HeaderDropdown from "./Dropdown";
-
-interface Props {
-  onDropdownOpen: (dropdown: HeaderDropdown) => void;
-}
 
 export type DropdownEventPayload = {
   dropdown: HeaderDropdown
@@ -26,6 +22,7 @@ export default class DropdownManager {
     this.headerContentWrapperElement = document.querySelector(
       ".header-content-wrapper"
     );
+
     this.headerContentWrapperElement.addEventListener(
       "mouseout",
       this.onHeaderMouseOut
@@ -51,7 +48,7 @@ export default class DropdownManager {
 
     document.body.addEventListener("click", this.onBodyClick);
 
-    // document.documentElement.addEventListener("mouseleave", this.closeCurrentOpenDropdown);
+    // document.body.addEventListener("shopify:section:load")
 
     return this;
   }

@@ -3,22 +3,6 @@ import { getCDNImageUrl } from "./utils";
 
 import { DropdownEventPayload } from '../header/dropdowns/DropdownManager';
 
-type ShopifyGlobal = {
-  translation: {
-    coming_soon_text: string;
-    from_text: string;
-    all_results: string;
-  };
-  theme_settings: {
-    display_sold_out_price: boolean;
-    sold_out_text: string;
-    free_text: string;
-    search_items_to_display: string;
-  };
-};
-
-declare var Shopify: ShopifyGlobal;
-
 /*============================================================================
   Search autocomplete
 ==============================================================================*/
@@ -269,9 +253,11 @@ export default class SearchAutocomplete {
     }
   };
 
-  // TODO - reconsider whether this is the right behavior
   onSearchFormSubmit = (event) => {
     event.preventDefault();
+    console.log("search");
+    const url = this.getSearchPageUrl(this.searchValue + "*");
+    window.location.assign(url);
     this.fetchAndDisplaySearchResults();
   };
 
@@ -289,6 +275,11 @@ export default class SearchAutocomplete {
 
     this.fetchAndDisplaySearchResults();
   }, 250);
+
+  getSearchPageUrl = (searchValue) => {
+    const cleanedValue = encodeURI(searchValue);
+    return this.searchPath + cleanedValue;
+  }
 
   getSearchUrl = (searchValue) => {
     const cleanedValue = encodeURI(searchValue);

@@ -212,9 +212,11 @@
                     _this.hideDropdown();
                 }
             };
-            // TODO - reconsider whether this is the right behavior
             this.onSearchFormSubmit = function (event) {
                 event.preventDefault();
+                console.log("search");
+                var url = _this.getSearchPageUrl(_this.searchValue + "*");
+                window.location.assign(url);
                 _this.fetchAndDisplaySearchResults();
             };
             this.onSearchInputKeyup = debounce(function () {
@@ -228,6 +230,10 @@
                 }
                 _this.fetchAndDisplaySearchResults();
             }, 250);
+            this.getSearchPageUrl = function (searchValue) {
+                var cleanedValue = encodeURI(searchValue);
+                return _this.searchPath + cleanedValue;
+            };
             this.getSearchUrl = function (searchValue) {
                 var cleanedValue = encodeURI(searchValue);
                 var searchURL = _this.searchPath + cleanedValue;
@@ -350,13 +356,13 @@
 
     var BodyScroll = /** @class */ (function () {
         function BodyScroll() {
-            this.lock = function () {
-                document.body.classList.add("menu-is-open");
-            };
-            this.unlock = function () {
-                document.body.classList.remove("menu-is-open");
-            };
         }
+        BodyScroll.lock = function () {
+            document.body.classList.add("menu-is-open");
+        };
+        BodyScroll.unlock = function () {
+            document.body.classList.remove("menu-is-open");
+        };
         return BodyScroll;
     }());
 
@@ -472,13 +478,13 @@
             this.openDrawer = function (drawer) {
                 drawer.open();
                 _this.currentOpenDrawerId = drawer.id;
-                _this.bodyScroll.lock();
+                BodyScroll.lock();
                 _this.drawerUnderlay.show();
             };
             this.closeDrawer = function (drawer) {
                 drawer.close();
                 _this.currentOpenDrawerId = null;
-                _this.bodyScroll.unlock();
+                BodyScroll.unlock();
                 _this.drawerUnderlay.hide();
             };
         }
@@ -493,7 +499,6 @@
                 }).initialize();
                 return _assign(_assign({}, acc), (_a = {}, _a[drawer.id] = drawer, _a));
             }, {});
-            this.bodyScroll = new BodyScroll();
             this.drawerUnderlay = new HeaderDrawerUnderlay();
             document.body.addEventListener("click", this.onBodyClick);
             window.addEventListener("resize", this.onWindowResize);
@@ -661,7 +666,7 @@
             }, {});
             this.dropdownIds = Object.keys(this.dropdownMap);
             document.body.addEventListener("click", this.onBodyClick);
-            // document.documentElement.addEventListener("mouseleave", this.closeCurrentOpenDropdown);
+            // document.body.addEventListener("shopify:section:load")
             return this;
         };
         DropdownManager.prototype.unload = function () {

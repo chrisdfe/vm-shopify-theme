@@ -3,28 +3,27 @@ image: image_picker,
 {% endcomment %}
 
 <div class="header-desktop__mega-menu header-desktop__mega-menu--image">
-  {% if image != blank %}
-    {% if url != blank %}
+  {% if url != blank %}
     <a href="{{ url }}">
-    {% endif %}
+  {% endif %}
 
+  {% if image != blank %}
     <img src="{{ image.src | image_url }}" alt="{{ image.alt }}" />
-
-    {% if url != blank %}
-    </a>
-    {% endif %}
   {% endif %}
   
   {% if url != blank %}
     {% if cta_text != blank %}
       <div class="u-text-align-center">
-        <h5><a href="{{ url }}">{{ cta_text }}</a></h5>
+        <h5>{{ cta_text }}</h5>
         
         {% if cta_subtext != blank %}
-          <p><a href="{{ url }}">{{ cta_subtext }}</a></p>
+          <p>{{ cta_subtext }}</p>
         {% endif %}
       </div>
     {% endif %}
   {% endif %}
-
+  
+  {% if url != blank %}
+  </a>
+  {% endif %}
 </div>

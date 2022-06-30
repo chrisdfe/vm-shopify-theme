@@ -14,6 +14,12 @@
       "id": "parent",
       "label": "Link title",
       "info": "The mega menu will appear below this parent link"
+    },
+    {
+      "type": "checkbox",
+      "id": "is_visible",
+      "label": "Is visible?",
+      "default": true
     }
   ],
   "blocks": [
@@ -42,6 +48,11 @@
           "label": "View All URL"
         },
         {
+          "type": "checkbox",
+          "id": "has_border",
+          "label": "Display seperator line? (desktop)"
+        },
+        {
           "type": "select",
           "id": "columns_desktop",
           "label": "Column span (desktop)",
@@ -52,7 +63,7 @@
             },
             {
               "value": "2",
-              "label": "2/16"
+              "label": "2/16 (1/8th width)"
             },
             {
               "value": "3",
@@ -60,11 +71,19 @@
             },
             {
               "value": "4",
-              "label": "4/16"
+              "label": "4/16 (1/4 width)"
             },
             {
               "value": "6",
               "label": "6/16"
+            },
+            {
+              "value": "one-fifth",
+              "label": "1/5 width"
+            },
+            {
+              "value": "one-sixth",
+              "label": "1/6 width"
             }
           ],
           "default": "4"
@@ -96,6 +115,11 @@
           "label": "CTA Subtext"
         },
         {
+          "type": "checkbox",
+          "id": "has_border",
+          "label": "Display seperator line? (desktop)"
+        },
+        {
           "type": "select",
           "id": "columns_desktop",
           "label": "Column span (desktop)",
@@ -106,7 +130,7 @@
             },
             {
               "value": "2",
-              "label": "2/16"
+              "label": "2/16 (1/8th width)"
             },
             {
               "value": "3",
@@ -114,11 +138,19 @@
             },
             {
               "value": "4",
-              "label": "4/16"
+              "label": "4/16 (1/4 width)"
             },
             {
               "value": "6",
               "label": "6/16"
+            },
+            {
+              "value": "one-fifth",
+              "label": "1/5 width"
+            },
+            {
+              "value": "one-sixth",
+              "label": "1/6 width"
             }
           ],
           "default": "4"
