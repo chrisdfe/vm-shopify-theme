@@ -15344,14 +15344,23 @@ button.update {
 /* #Policy pages
 ================================================== */
 .container .shopify-policy__container {
-  margin: 0;
-  max-width: none;
+  margin: 5rem auto;
+  max-width: 75%;
   padding-left: 0;
   padding-right: 0;
 }
 
 .shopify-policy__container .shopify-policy__title {
   text-align: left;
+}
+  
+@media only screen and (max-width: 800px) {
+.container .shopify-policy__container {
+  margin: 1rem 0;
+  max-width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+}
 }
 
 /* Pages - Search

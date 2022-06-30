@@ -297,15 +297,14 @@
           "page-team-template-2"
         ],
         "settings": {
-          "image": "",
           "image_position": "left",
           "title": "Meet the team",
           "text": "<p>Every email, every DM, every phone call; you'll interact with us directly. Valerie and Liz initially met when Liz was a custom order client a while back.&nbsp;Liz has been on&nbsp;the other&nbsp;side of the custom order process and can help you find the answers to your questions. Omar is our studio pup and loves coming to our events to help be a greeter. <br><a href=\"\/pages\/visit-us\" title=\"Studio Appointments\">We invite you to our studio <\/a>&nbsp;where you can meet all of us in person!&nbsp;<\/p>",
           "text_position": "center",
           "employee_per_row": 3,
-          "member_color": "#fff",
+          "member_color": "#ffffff",
           "member_accent_color": "#d54d4d",
-          "member_overlay_color": "#000"
+          "member_overlay_color": "#000000"
         }
       },
       "header": {
@@ -3311,7 +3310,7 @@
             "type": "background_block",
             "settings": {
               "background_color": "light-alt",
-              "banner_image_desktop": "shopify:\/\/shop_images\/Crescent-Bands-Modeled-Zara-slate-blue-sapphire-ring.jpg"
+              "banner_image_desktop": "shopify:\/\/shop_images\/June-Launch-Group-Shot-5-vals-edits.jpg"
             }
           },
           "398fe46e-43dd-41e3-8d73-51f91275cd68": {
@@ -3327,13 +3326,13 @@
         ],
         "settings": {
           "banner_wrapper_background_color": "light-alt",
-          "pretext": "Accent your engagement ring with the",
-          "heading": "Crescent Band",
-          "cta_link": "https:\/\/www.valeriemadison.com\/collections\/wedding-bands\/contour-bands?sort_by=title-ascending",
-          "cta_text": "Shop now",
+          "pretext": "new",
+          "heading": "Colorful Sapphires",
+          "cta_link": "shopify:\/\/collections\/gemstone-bridal-1",
+          "cta_text": "Shop gemstone rings",
           "text_position": "right-block",
           "text_color": "dark-alt",
-          "banner_image_mobile": "shopify:\/\/shop_images\/Crescent-Bands-Modeled-Zara-slate-blue-sapphire-ring.jpg",
+          "banner_image_mobile": "shopify:\/\/shop_images\/June-Launch-Group-Shot-5-vals-edits.jpg",
           "text_color_mobile": "dark-alt",
           "content_background_color_mobile": "light-alt"
         }
