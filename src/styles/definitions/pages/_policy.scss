@@ -2,10 +2,17 @@
 ================================================== */
 
 .container .shopify-policy__container {
-  margin: 0;
-  max-width: none;
+  margin: 5rem auto;
+  max-width: 75%;
   padding-left: 0;
   padding-right: 0;
+
+  @include respond-to("medium-down") {
+    margin: 1rem 0;
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 .shopify-policy__container {

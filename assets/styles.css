@@ -15349,18 +15349,17 @@ button.update {
   padding-left: 0;
   padding-right: 0;
 }
+@media only screen and (max-width: 800px) {
+  .container .shopify-policy__container {
+    margin: 1rem 0;
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
 
 .shopify-policy__container .shopify-policy__title {
   text-align: left;
-}
-  
-@media only screen and (max-width: 800px) {
-.container .shopify-policy__container {
-  margin: 1rem 0;
-  max-width: 100%;
-  padding-left: 0;
-  padding-right: 0;
-}
 }
 
 /* Pages - Search
