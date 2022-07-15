@@ -608,11 +608,19 @@
       "collection-template": {
         "type": "collection-template",
         "blocks": {
+          "facc7b1f-89d3-4498-be43-ea237d279ec2": {
+            "type": "filter",
+            "settings": {
+              "filter_name": "Shop by Category",
+              "filter_tags": "Earrings, Necklaces, Bracelets, Anklets, Rings",
+              "enable_filter_swatches": false
+            }
+          },
           "1587338269920": {
             "type": "filter",
             "settings": {
               "filter_name": "Shop by Type",
-              "filter_tags": "Contour Bands, Straight Bands, Diamond Bands, Gold Bands, Textured Bands, Masculine, Unisex, Gemstone Essentials, Zodiac, Studs, Hoops, Engravable, Bridal Earrings",
+              "filter_tags": "Chains, Contour Bands, Straight Bands, Diamond Bands, Gold Bands, Textured Bands, Masculine, Unisex, Gemstone Essentials, Zodiac, Studs, Hoops, Engravable, Bridal Earrings",
               "enable_filter_swatches": false
             }
           },
@@ -648,23 +656,44 @@
               "enable_filter_swatches": false
             }
           },
-          "00b040df-eb55-4de1-9b8c-ecbffa39f12e": {
+          "97cfb537-e337-4177-96eb-1da0e8f3b47d": {
             "type": "collection_banner",
             "settings": {
-              "collection": "masculine-wedding-bands",
-              "heading": "",
-              "banner_image_desktop": "shopify:\/\/shop_images\/Masculine-Bands-1200x400px.jpg",
-              "banner_image_mobile": "shopify:\/\/shop_images\/Masculine-bands-2x1.jpg"
+              "collection": "engagement-rings",
+              "heading": "engagement rings",
+              "banner_image_desktop": "shopify:\/\/shop_images\/Engagement_Mobile.jpg",
+              "banner_image_mobile": "shopify:\/\/shop_images\/Engagement_Mobile_e2245112-3cf2-4f0a-b120-7c63593fe775.jpg"
+            }
+          },
+          "98019c05-7bc1-4292-a723-6005633a8eb3": {
+            "type": "collection_banner",
+            "settings": {
+              "collection": "wedding-bands",
+              "heading": "Wedding bands",
+              "banner_image_desktop": "shopify:\/\/shop_images\/Wedding.jpg",
+              "banner_image_mobile": "shopify:\/\/shop_images\/Wedding_Mobile.jpg"
+            }
+          },
+          "2e51ff12-a190-4618-a852-832b47be5097": {
+            "type": "collection_banner",
+            "settings": {
+              "collection": "fine-jewelry",
+              "heading": "Fine Jewelry",
+              "banner_image_desktop": "shopify:\/\/shop_images\/Bracelets_ff49901a-31e1-4822-ac6e-f9542e57639d.jpg",
+              "banner_image_mobile": "shopify:\/\/shop_images\/Bracelets_Mobile_86fd1c16-8456-4e7d-96b1-41f76814cdf4.jpg"
             }
           }
         },
         "block_order": [
+          "facc7b1f-89d3-4498-be43-ea237d279ec2",
           "1587338269920",
           "1554411533737",
           "1553112159812",
           "b1e3cb86-ca09-4541-a5ea-43343399c8f9",
           "1567199940929",
-          "00b040df-eb55-4de1-9b8c-ecbffa39f12e"
+          "97cfb537-e337-4177-96eb-1da0e8f3b47d",
+          "98019c05-7bc1-4292-a723-6005633a8eb3",
+          "2e51ff12-a190-4618-a852-832b47be5097"
         ],
         "settings": {
           "is_timed_collection": false,
@@ -1392,7 +1421,7 @@
             "type": "image",
             "settings": {
               "image": "shopify:\/\/shop_images\/Bracelet-4x5.jpg",
-              "url": "https:\/\/www.valeriemadison.com\/collections\/fine-jewelry\/bracelets",
+              "url": "https:\/\/www.valeriemadison.com\/collections\/fine-jewelry\/bracelets-and-anklets",
               "cta_text": "Bracelets & Anklets",
               "cta_subtext": "",
               "has_border": false,
@@ -3310,13 +3339,15 @@
             "type": "background_block",
             "settings": {
               "background_color": "light-alt",
-              "banner_image_desktop": "shopify:\/\/shop_images\/June-Launch-Group-Shot-5-vals-edits.jpg"
+              "banner_image_desktop": "shopify:\/\/shop_images\/4-Herrringbone-close-up.jpg"
             }
           },
           "398fe46e-43dd-41e3-8d73-51f91275cd68": {
             "type": "background_block",
+            "disabled": true,
             "settings": {
-              "background_color": "light"
+              "background_color": "light",
+              "banner_image_desktop": "shopify:\/\/shop_images\/Modeled_Herringbone_and_Emerald_Pear_Bezel_1x1_57502548-0225-4dfb-bcb5-40639700c8d3.jpg"
             }
           }
         },
@@ -3326,13 +3357,13 @@
         ],
         "settings": {
           "banner_wrapper_background_color": "light-alt",
-          "pretext": "new",
-          "heading": "Colorful Sapphires",
-          "cta_link": "shopify:\/\/collections\/gemstone-bridal-1",
-          "cta_text": "Shop gemstone rings",
-          "text_position": "right-block",
+          "pretext": "Summer Refresh",
+          "heading": "The Newest Additions",
+          "cta_link": "https:\/\/www.valeriemadison.com\/collections\/fine-jewelry\/New",
+          "cta_text": "Shop new arrivals",
+          "text_position": "center",
           "text_color": "dark-alt",
-          "banner_image_mobile": "shopify:\/\/shop_images\/June-Launch-Group-Shot-5-vals-edits.jpg",
+          "banner_image_mobile": "shopify:\/\/shop_images\/4-Herrringbone-close-up.jpg",
           "text_color_mobile": "dark-alt",
           "content_background_color_mobile": "light-alt"
         }
@@ -3910,18 +3941,11 @@
       "eternity-bracelets-upcoming-dates": {
         "type": "eternity-bracelets-upcoming-dates",
         "blocks": {
-          "69a248c7-2269-473f-a52f-45e48c117dee": {
-            "type": "upcoming-date",
-            "settings": {
-              "date": "Friday, July 1",
-              "time": "4:00-6:00pm"
-            }
-          },
           "a649c73a-209c-48df-bffc-b28f00d3c4e4": {
             "type": "upcoming-date",
             "settings": {
               "date": "Friday, July 29",
-              "time": "4:00-6:00pm"
+              "time": "4:00-7:00pm"
             }
           },
           "1fa24276-f437-472a-845b-c224959fde75": {
@@ -3933,7 +3957,6 @@
           }
         },
         "block_order": [
-          "69a248c7-2269-473f-a52f-45e48c117dee",
           "a649c73a-209c-48df-bffc-b28f00d3c4e4",
           "1fa24276-f437-472a-845b-c224959fde75"
         ],

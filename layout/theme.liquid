@@ -2,6 +2,15 @@
 <!DOCTYPE html>
 <html lang="{{ shop.locale }}">
   <head>
+  
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PS57H96');</script>
+<!-- End Google Tag Manager -->
+  
     <meta name="msvalidate.01" content="2F4167E1DD73CDF67EF6C947B04FF484" />
    
       <!-- Affirm -->
@@ -109,6 +118,7 @@
       gtag('config', 'AW-661470598');
     </script>
 	<meta name="google-site-verification" content="mPusJI9Es4fGe6l9F9tSCvfkOaCfOPpPz-sbSDYN0as" />
+  
   </head>
 
   {% if template contains "index" %}
@@ -165,8 +175,7 @@
     </style>
   </noscript>
 
-  <body
-    class="{% if template == '404' %}error-404{% else %}{{ template | replace: '.', '-' | handle }}{% endif %}"
+  <body class="{% if template == '404' %}error-404{% else %}{{ template | replace: '.', '-' | handle }}{% endif %}"
       data-money-format="
       {%- if settings.currency_format == 'money_with_currency_format' -%}
         {{ shop.money_with_currency_format | strip_html }}
@@ -175,7 +184,12 @@
       {%- endif -%}"
       data-shop-currency="{{ shop.currency }}"
       data-shop-url="{{ shop.url }}">
-
+  
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PS57H96"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  
     <div class="header-wrapper">
       <div class="header-dropdown-underlay"></div>
       <div class="header-drawer-underlay"></div>
