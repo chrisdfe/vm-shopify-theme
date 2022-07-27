@@ -3,10 +3,12 @@
       <div class="sixteen columns">
         {% if collection.previous_product or collection.next_product or section.settings.product_breadcrumb %}
           <div class="breadcrumb-collection">
-            {% if collection.previous_product or collection.next_product %}
+            <!-- {% if collection.previous_product or collection.next_product %}
               <div class="nav_arrows breadcrumb_text">
                 {% if collection.previous_product %}
-                  <a href="{{ collection.previous_product }}" title="{{ 'products.general.previous_product_html' | t }}" class="breadcrumb_link"><span class="icon-left-arrow"> {{ 'products.general.previous_product_html' | t }}</span></a>
+                  <a href="{{ collection.previous_product }}" title="{{ 'products.general.previous_product_html' | t }}" class="breadcrumb_link">
+                    {{ 'products.general.previous_product_html' | t }}</span>
+                  </a>
                 {% endif %}
                 {% if collection.previous_product and collection.next_product %}<span class="breadcrumb-divider"> | </span>{% endif %}
 
@@ -14,7 +16,7 @@
                   <a href="{{collection.next_product}}" title="{{ 'products.general.next_product_html' | t }}" class="breadcrumb_link">{{ 'products.general.next_product_html' | t }} <span class="icon-right-arrow"></span></a>
                 {% endif %}
               </div>
-            {% endif %}
+            {% endif %} -->
 
             {% if section.settings.product_breadcrumb %}
               {% render 'product.breadcrumb' %}

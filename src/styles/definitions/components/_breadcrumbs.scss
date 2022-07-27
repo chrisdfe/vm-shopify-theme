@@ -15,6 +15,17 @@
   }
 }
 
+.carat-icon-wrapper {
+
+  &.carat-icon-wrapper--left svg {
+    transform: rotate(90deg);
+  }
+
+  &.carat-icon-wrapper--right svg {
+    transform: rotate(-90deg);
+  }
+}
+
 // TODO - consolidate all these different breadcrumbs
 .breadcrumb_text,
 .article-pagination {

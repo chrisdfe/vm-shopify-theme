@@ -8,6 +8,7 @@ export default class ProductPage {
   imageCellElements: HTMLElement[] = [];
   modalWrapperElement: HTMLElement;
   modalUnderlayElement: HTMLElement;
+  stickyContentElement: HTMLElement;
 
   state: ProductPageState = {
     modalIsOpen: false
@@ -18,6 +19,11 @@ export default class ProductPage {
   }
 
   initialize() {
+    this.setupImages();
+    this.setStickyContentTop();
+  }
+
+  setupImages() {
     this.imageCellElements = Array.from(document.querySelectorAll('.product-page__product-image-cell'));
 
     this.imageCellElements.forEach(imageCell => {
@@ -28,6 +34,14 @@ export default class ProductPage {
     this.modalUnderlayElement = document.querySelector('.product-page__images-modal__underlay');
 
     this.modalUnderlayElement.addEventListener('click', this.onModalUnderlayClick);
+  }
+
+  setStickyContentTop() {
+    this.stickyContentElement = document.querySelector('.product-content-wrapper');
+    const header = document.querySelector('.header');
+    const headerHeight = header.getBoundingClientRect().height;
+    const stickyElementTop = headerHeight + 16;
+    this.stickyContentElement.style.top = `${stickyElementTop}px`;
   }
 
   unload() {

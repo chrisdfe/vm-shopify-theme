@@ -1,6 +1,11 @@
 /* Pages - Product
 ================================================== */
 
+.product-content-wrapper {
+  position: sticky;
+  top: 0;
+}
+
 .vendor {
   margin-bottom: 6px;
 }
@@ -60,14 +65,13 @@
   
   .product-page__images-modal__underlay {
     position: fixed;
-    background: rgba(#fff, 0.5);
+    background: rgba(#fff, 0.8);
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
     z-index: $modal-z-index + 1;
   }
-  
 
   .product-page__images-modal__content {
     position: relative;

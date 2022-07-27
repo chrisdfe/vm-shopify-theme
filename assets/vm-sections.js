@@ -96,7 +96,7 @@
             return "\n      <span class=\"was_price\">".concat(item.compare, "</span> ").concat(item.price, "\n    ");
         }
         if (item.price_varies && item.price_min > 0) {
-            return "".concat(Shopify.translation.from_text, " ").concat(item.price);
+            return "<span class=\"from-text\">".concat(Shopify.translation.from_text, "</span> ").concat(item.price);
         }
         if (item.price > 0 || item.raw_price > 0) {
             return item.price;
@@ -940,6 +940,10 @@
             return this;
         }
         ProductPage.prototype.initialize = function () {
+            this.setupImages();
+            this.setStickyContentTop();
+        };
+        ProductPage.prototype.setupImages = function () {
             var _this = this;
             this.imageCellElements = Array.from(document.querySelectorAll('.product-page__product-image-cell'));
             this.imageCellElements.forEach(function (imageCell) {
@@ -948,6 +952,13 @@
             this.modalWrapperElement = document.querySelector('.product-page__images-modal-wrapper');
             this.modalUnderlayElement = document.querySelector('.product-page__images-modal__underlay');
             this.modalUnderlayElement.addEventListener('click', this.onModalUnderlayClick);
+        };
+        ProductPage.prototype.setStickyContentTop = function () {
+            this.stickyContentElement = document.querySelector('.product-content-wrapper');
+            var header = document.querySelector('.header');
+            var headerHeight = header.getBoundingClientRect().height;
+            var stickyElementTop = headerHeight + 16;
+            this.stickyContentElement.style.top = "".concat(stickyElementTop, "px");
         };
         ProductPage.prototype.unload = function () {
             var _this = this;

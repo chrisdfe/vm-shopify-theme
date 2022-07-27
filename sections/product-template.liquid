@@ -31,64 +31,66 @@
         </div>
         
         <div class="seven columns medium-down--one-whole">
-          {% assign collection_handles = product.collections | map: 'handle' %}
-          {% assign variant = product.selected_or_first_available_variant %}
+          <div class="product-content-wrapper">
+            {% assign collection_handles = product.collections | map: 'handle' %}
+            {% assign variant = product.selected_or_first_available_variant %}
 
-          {% include "product.banners" %}
+            {% include "product.banners" %}
 
-          {% include "product.vendor" %}
+            {% include "product.vendor" %}
 
-          {% include "product.sku" %}
-  
-          {% include "product.title" %}
-          
-          {% include "product.reviews-badge" %}
+            {% include "product.sku" %}
+    
+            {% include "product.title" %}
+            
+            {% include "product.reviews-badge" %}
 
-          {% include "product.size-chart" %}
-          
-          {% include "product.price" %}
+            {% include "product.size-chart" %}
+            
+            {% include "product.price" %}
 
-          {% if show_description_above_add_to_cart %}
-            {% if product.description != blank %}
-              <div class="product-info">
-                <div class="product-description">
-                  {{ product.description | split: '<!-- split -->' | first }}
+            {% if show_description_above_add_to_cart %}
+              {% if product.description != blank %}
+                <div class="product-info">
+                  <div class="product-description">
+                    {{ product.description | split: '<!-- split -->' | first }}
+                  </div>
                 </div>
-              </div>
+              {% endif %}
             {% endif %}
-          {% endif %}
 
-          {% unless collection_handles contains 'coming-soon' %}
-            {% render 'product.form', context: 'product' %}
-            {% render 'product.notify-me', product: product %}
-          {% endunless %}
+            {% unless collection_handles contains 'coming-soon' %}
+              {% render 'product.form', context: 'product' %}
+              {% render 'product.notify-me', product: product %}
+            {% endunless %}
 
-          {% render 'storemods-shipping-estimate' %}
-          
-          {% unless show_description_above_add_to_cart %}
-            {% if product.description != blank %}
-              <div class="product-info">
-                <button class="vm-accordion-button"
-                    data-accordion-button-id="product-description">
-                  <span>details</span>
-                  <span class="vm-accordion-button__arrow">
-                    {% render "icon.carat" %}
-                  </span>
-                </button>
-                
-                <div class="vm-accordion-content"
-                    data-accordion-id="product-description">
-                  <div class="vm-accordion-content__inner">
-                    <div class="description">
-                      {{ product.description | split: '<!-- split -->' | first }}
+            {% render 'storemods-shipping-estimate' %}
+            
+            {% unless show_description_above_add_to_cart %}
+              {% if product.description != blank %}
+                <div class="product-info">
+                  <button class="vm-accordion-button"
+                      data-accordion-button-id="product-description">
+                    <span>details</span>
+                    <span class="vm-accordion-button__arrow">
+                      {% render "icon.carat" %}
+                    </span>
+                  </button>
+                  
+                  <div class="vm-accordion-content"
+                      data-accordion-id="product-description">
+                    <div class="vm-accordion-content__inner">
+                      <div class="description">
+                        {{ product.description | split: '<!-- split -->' | first }}
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            {% endif %}
-          {% endunless %}
+              {% endif %}
+            {% endunless %}
 
-          {% include 'product.links' %}
+            {% include 'product.links' %}
+          </div>
         </div>
 
         {% include 'product.blocks' %}
