@@ -682,6 +682,15 @@
               "banner_image_desktop": "shopify:\/\/shop_images\/Bracelets_ff49901a-31e1-4822-ac6e-f9542e57639d.jpg",
               "banner_image_mobile": "shopify:\/\/shop_images\/Bracelets_Mobile_86fd1c16-8456-4e7d-96b1-41f76814cdf4.jpg"
             }
+          },
+          "195759c2-eefe-4bc4-8a00-78d3121672bc": {
+            "type": "collection_banner",
+            "settings": {
+              "collection": "create-your-own-diamond-or-gemstone-ring",
+              "heading": "DYO",
+              "banner_image_desktop": "shopify:\/\/shop_images\/DSC_8113_copy.jpg",
+              "banner_image_mobile": "shopify:\/\/shop_images\/DSC_8113_copy_2.jpg"
+            }
           }
         },
         "block_order": [
@@ -693,7 +702,8 @@
           "1567199940929",
           "97cfb537-e337-4177-96eb-1da0e8f3b47d",
           "98019c05-7bc1-4292-a723-6005633a8eb3",
-          "2e51ff12-a190-4618-a852-832b47be5097"
+          "2e51ff12-a190-4618-a852-832b47be5097",
+          "195759c2-eefe-4bc4-8a00-78d3121672bc"
         ],
         "settings": {
           "is_timed_collection": false,
@@ -3339,7 +3349,7 @@
             "type": "background_block",
             "settings": {
               "background_color": "light-alt",
-              "banner_image_desktop": "shopify:\/\/shop_images\/4-Herrringbone-close-up.jpg"
+              "banner_image_desktop": "shopify:\/\/shop_images\/Cropped-for-Shopify-Diamond-Drop-Necklace-modeled-on-Val.jpg"
             }
           },
           "398fe46e-43dd-41e3-8d73-51f91275cd68": {
@@ -3357,13 +3367,13 @@
         ],
         "settings": {
           "banner_wrapper_background_color": "light-alt",
-          "pretext": "Summer Refresh",
-          "heading": "The Newest Additions",
-          "cta_link": "https:\/\/www.valeriemadison.com\/collections\/fine-jewelry\/New",
-          "cta_text": "Shop new arrivals",
+          "pretext": "New styles",
+          "heading": "Fresh Additions",
+          "cta_link": "https:\/\/www.valeriemadison.com\/collections\/fine-jewelry\/necklaces",
+          "cta_text": "Shop new necklaces",
           "text_position": "center",
-          "text_color": "dark-alt",
-          "banner_image_mobile": "shopify:\/\/shop_images\/4-Herrringbone-close-up.jpg",
+          "text_color": "light",
+          "banner_image_mobile": "shopify:\/\/shop_images\/SQUARE-Diamond-Drop-Necklace-modeled-on-Val.jpg",
           "text_color_mobile": "dark-alt",
           "content_background_color_mobile": "light-alt"
         }
@@ -3440,7 +3450,7 @@
         ],
         "settings": {
           "title": "How does it work?",
-          "image": "shopify:\/\/shop_images\/Heirloom-reworks_569497cb-cd65-45aa-ac2d-bc7142182752.jpg"
+          "image": "shopify:\/\/shop_images\/JoshEmily22.jpg"
         }
       },
       "heirloom-reworks-cta": {
@@ -3954,11 +3964,27 @@
               "date": "Friday, August 26",
               "time": "4:00-6:00pm"
             }
+          },
+          "5590c058-2a3e-4366-a6c3-e434396aa48e": {
+            "type": "upcoming-date",
+            "settings": {
+              "date": "Friday, September 30",
+              "time": "4:00-6:00pm"
+            }
+          },
+          "6741e976-29ed-4885-b4e3-0ec5c97b22af": {
+            "type": "upcoming-date",
+            "settings": {
+              "date": "Friday, October 28",
+              "time": "4:00-6:00pm"
+            }
           }
         },
         "block_order": [
           "a649c73a-209c-48df-bffc-b28f00d3c4e4",
-          "1fa24276-f437-472a-845b-c224959fde75"
+          "1fa24276-f437-472a-845b-c224959fde75",
+          "5590c058-2a3e-4366-a6c3-e434396aa48e",
+          "6741e976-29ed-4885-b4e3-0ec5c97b22af"
         ],
         "settings": {
           "title": "Upcoming Dates",
@@ -4009,7 +4035,7 @@
         "settings": {
           "title": "Diamond Requirements",
           "description": "The criteria required for VM to consider using an heirloom stone are as follows:",
-          "image": "shopify:\/\/shop_images\/Philip-Berry-Custom-Vera-Engagement-Ring-Heirloom-Rework.jpg"
+          "image": "shopify:\/\/shop_images\/DSC_6385.jpg"
         }
       },
       "163546741951c79e41": {
