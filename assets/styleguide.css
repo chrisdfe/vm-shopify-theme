@@ -8,7 +8,7 @@
   --vm-color-sea-green: #1c4747;
   --vm-color-plum: #714457;
   --vm-color-sand: #dec1a8;
-  --vm-color-cream: #f8f4f4;
+  --vm-color-cream: #faf6f4;
   --vm-color-white: #fff;
 }
 
@@ -72,7 +72,7 @@
   --vm-color-sea-green: #1c4747;
   --vm-color-plum: #714457;
   --vm-color-sand: #dec1a8;
-  --vm-color-cream: #f8f4f4;
+  --vm-color-cream: #faf6f4;
   --vm-color-white: #fff;
 }
 
@@ -147,7 +147,7 @@
   --vm-color-sea-green: #1c4747;
   --vm-color-plum: #714457;
   --vm-color-sand: #dec1a8;
-  --vm-color-cream: #f8f4f4;
+  --vm-color-cream: #faf6f4;
   --vm-color-white: #fff;
 }
 
@@ -195,10 +195,10 @@
   padding: 3rem;
 }
 .vm-styleguide__color-region-example.vm-styleguide__color-region-example--region-light {
-  border-color: #f8f4f4;
+  border-color: #faf6f4;
 }
 .vm-styleguide__color-region-example.vm-styleguide__color-region-example--region-light-alt {
-  border-color: #f8f4f4;
+  border-color: #faf6f4;
 }
 .vm-styleguide__color-region-example.vm-styleguide__color-region-example--region-dark {
   border-color: #714457;
@@ -217,7 +217,7 @@
   --vm-color-sea-green: #1c4747;
   --vm-color-plum: #714457;
   --vm-color-sand: #dec1a8;
-  --vm-color-cream: #f8f4f4;
+  --vm-color-cream: #faf6f4;
   --vm-color-white: #fff;
 }
 
@@ -285,26 +285,6 @@
   text-align: center;
 }
 
-.vm-styleguide__subsection {
-  margin: 2rem 0;
-}
-
-.vm-styleguide__subsection-title {
-  position: relative;
-  margin-bottom: 5rem;
-}
-.vm-styleguide__subsection-title sup {
-  position: absolute;
-  top: 0.5em;
-  left: -2.5em;
-  right: auto;
-  color: #dec1a8;
-}
-
-.vm-styleguide__content-section-description {
-  margin: 5rem 0;
-}
-
 .vm-styleguide__subsection-row {
   margin-bottom: 7rem;
 }
@@ -341,8 +321,28 @@
   text-transform: lowercase;
 }
 
+.vm-styleguide__subsection {
+  margin: 2rem 0;
+}
+
+.vm-styleguide__subsection-title {
+  position: relative;
+  margin-bottom: 5rem;
+}
+.vm-styleguide__subsection-title sup {
+  position: absolute;
+  top: 0.5em;
+  left: -2.5em;
+  right: auto;
+  color: #dec1a8;
+}
+
+.vm-styleguide__content-section-description {
+  margin: 5rem 0;
+}
+
 .vm-styleguide-sidebar {
-  background-color: #f8f4f4;
+  background-color: #faf6f4;
   flex-basis: 300px;
   flex-grow: 0;
   flex-shrink: 0;

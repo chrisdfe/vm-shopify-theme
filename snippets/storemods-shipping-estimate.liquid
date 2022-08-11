@@ -41,47 +41,46 @@ Allow it to be adjusted by category, or allow for custom override.
   {% if contains_estimate == true and day_start >= 1 and day_end >= 1 %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/datejs/1.0/date.min.js"></script>
     
-    <button class="vm-accordion-button" data-accordion-button-id="shipping-estimate">
-      shipping estimate
-      <span class="vm-accordion-button__arrow">
-        {% render "icon.carat" %}
-      </span>      
-    </button>
+    {% render "accordion.button" with {
+      title: "shipping estimate",
+      accordion_id: "shipping-estimate"
+    } %}
 
-    <div class="vm-accordion-content"
-      data-accordion-id="shipping-estimate"
-      data-accordion-is-open="true">
-      <div class="vm-accordion-content__inner">
-        <p class="shipping_estimate">
-          {% if product.type == "OOAK and RTS" and product.tags contains "Ring Resizing" %}
-            {{ settings.estimate_text_resizable_rings }}
-          {% else %}
-            {{ settings.estimate_text_other }}
-          {% endif  %}
-          
-          
-        {% if settings.enable_estimate_date %}
-          If purchased today, this item will ship between <span class="estimate" id="fromDate"></span> <span class="estimate" id="toDate"></span><noscript>{{tag}}</noscript>
+    {% capture accordion_content %}
+      <p class="shipping_estimate">
+        {% if product.type == "OOAK and RTS" and product.tags contains "Ring Resizing" %}
+          {{ settings.estimate_text_resizable_rings }}
+        {% else %}
+          {{ settings.estimate_text_other }}
+        {% endif  %}
+        
+        
+      {% if settings.enable_estimate_date %}
+        If purchased today, this item will ship between <span class="estimate" id="fromDate"></span> <span class="estimate" id="toDate"></span><noscript>{{tag}}</noscript>
 
-          <script>// <![CDATA[
-          var fromDate = Date.today().addDays({{day_start}});
-          if (fromDate.is().saturday() || fromDate.is().sunday()) { 
-            fromDate = fromDate.next().monday();
-          }
-          var toDate = Date.today().addDays({{day_end}});
-                
-          if (toDate.toString('dddd MMMM dS') == fromDate.toString('dddd MMMM dS')) { 
-            toDate = Date.parse(fromDate.toString('dddd MMMM dS')).addDays({{day_end}});
-          }
-          if (toDate.is().saturday() || toDate.is().sunday()) { 
-            toDate = toDate.next().monday(); 
-          }
-          document.getElementById('fromDate').innerHTML = fromDate.toString('dddd MMMM dS');
-          document.getElementById('toDate').innerHTML = " and " + toDate.toString('dddd MMMM dS');
-        // ]]></script>
-          {% endif %}
-        </p>
-      </div>
-    </div>
+        <script>// <![CDATA[
+        var fromDate = Date.today().addDays({{day_start}});
+        if (fromDate.is().saturday() || fromDate.is().sunday()) { 
+          fromDate = fromDate.next().monday();
+        }
+        var toDate = Date.today().addDays({{day_end}});
+              
+        if (toDate.toString('dddd MMMM dS') == fromDate.toString('dddd MMMM dS')) { 
+          toDate = Date.parse(fromDate.toString('dddd MMMM dS')).addDays({{day_end}});
+        }
+        if (toDate.is().saturday() || toDate.is().sunday()) { 
+          toDate = toDate.next().monday(); 
+        }
+        document.getElementById('fromDate').innerHTML = fromDate.toString('dddd MMMM dS');
+        document.getElementById('toDate').innerHTML = " and " + toDate.toString('dddd MMMM dS');
+      // ]]></script>
+        {% endif %}
+      </p>
+    {% endcapture %}
+    
+    {% render "accordion.content" with {
+      accordion_id: "shipping-estimate",
+      content: accordion_content
+    } %}
   {% endif %}
 {% endif %}

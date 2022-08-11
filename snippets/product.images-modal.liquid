@@ -1,38 +1,51 @@
-<div class="product-page__images-modal-wrapper">
-  <div class="product-page__images-modal">
-    <div class="product-page__images-modal__underlay"></div>
+<div class="product-images-modal-wrapper">
+  <div class="product-images-modal">
+    <div class="product-images-modal__underlay"></div>
 
-    <div class="product-page__images-modal__content-wrapper">
-      <div class="product-page__images-modal__content">
+    <div class="product-images-modal__content-wrapper">
+      
+      <div class="product-images-modal__content">
+
+        <div class="product-images-modal__close-button-wrapper">
+          <button class="button button--square button--inverted product-images-modal__close-button">
+            {% render "icon.close" %}
+          </button>
+        </div>
       
         <div class="container">
           <div class="row">
-            <div class="one-fourth columns">
-              {% for media in product.media %}
-                <div class="product-page__images-modal__product-image-cell"
-                  data-product-id="{{ product.id }}"
-                  data-media-type="{{ media.media_type }}"
-                  data-thumb="{{ image_large }}"
-                  data-title="{% if image_alt contains 'youtube' or image_alt contains 'vimeo' %}{{ product.title }}{% else %}{{ image_alt | escape }}{% endif %}">
-                  {% render "product.image" with {
-                    media: media
-                  } %}
-                </div>
-              {% endfor %}
+            <div class="one-fifth columns">
+              <div class="product-images-modal__thumbnail-list">
+                {% for media in product.media %}
+                  <div class="product-images-modal__thumbnail"
+                    data-index="{{ forloop.index0 | json }}"
+                    data-product-id="{{ product.id }}"
+                    data-media-type="{{ media.media_type }}"
+                    data-thumb="{{ image_large }}"
+                    data-title="{% if image_alt contains 'youtube' or image_alt contains 'vimeo' %}{{ product.title }}{% else %}{{ image_alt | escape }}{% endif %}">
+                    {% render "product.image" with {
+                      media: media
+                    } %}
+                  </div>
+                {% endfor %}
+              </div>
             </div>
 
-            <div class="three-fourths columns">
-              {% for media in product.media %}
-                <div class="product-page__images-modal__product-image-cell"
-                  data-product-id="{{ product.id }}"
-                  data-media-type="{{ media.media_type }}"
-                  data-thumb="{{ image_large }}"
-                  data-title="{% if image_alt contains 'youtube' or image_alt contains 'vimeo' %}{{ product.title }}{% else %}{{ image_alt | escape }}{% endif %}">
-                  {% render "product.image" with {
-                    media: media
-                  } %}
-                </div>
-              {% endfor %}
+            <div class="four-fifths columns">
+              <div class="product-images-modal__image-cell-list">
+                {% for media in product.media %}
+                  <div class="product-images-modal__image-cell"
+                    data-index="{{ forloop.index0 | json }}"
+                    data-product-id="{{ product.id }}"
+                    data-media-type="{{ media.media_type }}"
+                    data-thumb="{{ image_large }}"
+                    data-title="{% if image_alt contains 'youtube' or image_alt contains 'vimeo' %}{{ product.title }}{% else %}{{ image_alt | escape }}{% endif %}">
+                    {% render "product.image" with {
+                      media: media
+                    } %}
+                  </div>
+                {% endfor %}
+              </div>
             </div>
           </div>
         </div>

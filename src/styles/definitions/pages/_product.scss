@@ -49,11 +49,11 @@
   }
 }
 
-.product-page__images-modal-wrapper {
+.product-images-modal-wrapper {
   display: none;
   $modal-z-index: 100000000;
-  
-  .product-page__images-modal {
+
+  .product-images-modal {
     position: fixed;
     top: 0;
     right: 0;
@@ -62,10 +62,10 @@
     z-index: $modal-z-index;
     overflow-y: scroll;
   }
-  
-  .product-page__images-modal__underlay {
+
+  .product-images-modal__underlay {
     position: fixed;
-    background: rgba(#fff, 0.8);
+    background: rgba($vm-color-sea-green, 0.6);
     top: 0;
     right: 0;
     bottom: 0;
@@ -73,7 +73,7 @@
     z-index: $modal-z-index + 1;
   }
 
-  .product-page__images-modal__content {
+  .product-images-modal__content {
     position: relative;
     padding: get-vm-spacer(3);
     z-index: $modal-z-index + 2;
@@ -81,8 +81,30 @@
   }
 
   &.is-active {
-    display: block
+    display: block;
   }
+}
+
+.product-images-modal__close-button-wrapper {
+  position: absolute;
+  top: get-vm-spacer(2);
+  right: 1rem;
+}
+
+.product-images-modal__thumbnail-list {
+  padding: get-vm-spacer(1);
+}
+
+.product-images-modal__thumbnail {
+  cursor: pointer;
+  padding: get-vm-spacer(1);
+}
+
+.product-images-modal__image-cell-list {
+}
+
+.product-images-modal__image-cell {
+  padding: get-vm-spacer(1);
 }
 
 /* Quantity Box for Product Page */
@@ -140,7 +162,7 @@
       color: $vm-button-hover-text-color;
     }
 
-    @include respond-to('medium-down') {
+    @include respond-to("medium-down") {
       display: inline;
       display: initial;
       margin: 0;
@@ -167,7 +189,6 @@
 }
 
 .product_section {
-
   .product_form {
     margin-bottom: get-vm-spacer(0.5);
   }
@@ -175,8 +196,8 @@
   .product_form,
   .contact-form {
     // max-width: 400px;
-  
-    @include respond-to('medium-down') {
+
+    @include respond-to("medium-down") {
       max-width: 100%;
     }
   }
@@ -197,7 +218,7 @@
   .caption.align-center,
   .caption.align-right,
   .caption.align-left {
-    @include respond-to('small-down') {
+    @include respond-to("small-down") {
       text-align: center;
     }
   }
@@ -270,7 +291,7 @@ div {
     vertical-align: top;
     line-height: 1;
 
-    @include respond-to('small-down') {
+    @include respond-to("small-down") {
       padding: 10px 0 0 5px;
     }
 
@@ -288,7 +309,7 @@ div {
   padding: 0 10px;
   text-align: center;
 
-  @include respond-to('small-down') {
+  @include respond-to("small-down") {
     line-height: initial;
     text-align: left;
   }
@@ -306,7 +327,6 @@ div {
 
 /* SM - Hide Paypal Button */
 .product {
-
   .shopify-payment-button,
   .shopify-payment-button__more-options,
   .shopify-payment-button__button--branded {
@@ -317,7 +337,6 @@ div {
 
 // Hacky solution to make add to cart button + ring size dropdown line up
 .purchase-details {
-
   .columns,
   .column {
     display: flex;
@@ -328,22 +347,19 @@ div {
       width: 100%;
     }
   }
-  
-  .line-item-property__field {
 
+  .line-item-property__field {
     select {
       margin-bottom: 0;
     }
-  
-    @include respond-to('large-up') {
-    
+
+    @include respond-to("large-up") {
       &:last-child {
         margin-bottom: 0;
       }
     }
   }
 }
-
 
 .product_section .smart-payment-button--true.product_form {
   max-width: 100%;
@@ -377,7 +393,7 @@ div {
   margin-right: 5px;
   width: calc(50% - 12px);
 
-  @include respond-to('small-down') {
+  @include respond-to("small-down") {
     width: 100%;
   }
 
@@ -394,7 +410,7 @@ div {
 .smart-payment-button--true .product-quantity-box.purchase-details__quantity {
   width: calc(50% - 6px);
 
-  @include respond-to('medium-down') {
+  @include respond-to("medium-down") {
     width: 100%;
     margin-right: 0;
 
@@ -408,22 +424,19 @@ p.checkout_button {
   margin-bottom: 0;
 }
 
-
 .product-page__product-image-cell {
   cursor: zoom-in;
-  aspect-ratio: 1/1;  
+  aspect-ratio: 1/1;
 }
 
 .purchase-details__buttons.purchase-details__spb--true {
-
-  @include respond-to('medium-down') {
+  @include respond-to("medium-down") {
     margin-left: 0;
     margin-bottom: 0;
   }
 
   .action_button.action_button--secondary {
-
-    @include respond-to('medium-down') {
+    @include respond-to("medium-down") {
       @include flex(1 0 100%);
       margin-right: 0px;
       margin-top: 0;

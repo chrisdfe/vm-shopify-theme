@@ -53,9 +53,10 @@ textarea {
   padding: 0 10px;
   margin: 0;
   line-height: 22px;
-  border: 1px solid $vm-border-color;
+  border: 0 none;
+  border-bottom: 1px solid $vm-border-color;
   outline: none;
-  background: #fff;
+  background: transparent;
   border-radius: 0;
   color: $vm-color-sea-green;
   font-size: $vm-paragraph-3-font-size;
@@ -69,38 +70,6 @@ textarea {
   @include respond-to('small-down') {
     font-size: 16px;
   }
-}
-input[type='text']:active,
-input[type='text']:focus,
-input[type='password']:active,
-input[type='password']:focus,
-input[type='email']:active,
-input[type='email']:focus,
-input[type='search']:active,
-input[type='search']:focus,
-input[type='url']:active,
-input[type='url']:focus,
-input[type='tel']:active,
-input[type='tel']:focus,
-input[type='number']:active,
-input[type='number']:focus,
-input[type='date']:active,
-input[type='date']:focus,
-input[type='month']:active,
-input[type='month']:focus,
-input[type='week']:active,
-input[type='week']:focus,
-input[type='time']:active,
-input[type='time']:focus,
-input[type='range']:active,
-input[type='range']:focus,
-input[type='color']:active,
-input[type='color']:focus,
-select:active,
-select:focus,
-textarea:active,
-textarea:focus {
-
 }
 
 input[type='number']::-webkit-outer-spin-button,
@@ -135,7 +104,7 @@ select::-ms-expand {
 
 select {
   // background: #fff url('select.png') no-repeat 96% 50%;
-  background: #fff url("data:image/svg+xml;utf8,%3Csvg%20id%3D%22Layer_1%22%20data-name%3D%22Layer%201%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpolygon%20points%3D%2212%2016.44%206.93%2011.05%208.03%2010.02%2012%2014.25%2015.97%2010.02%2017.07%2011.05%2012%2016.44%22%20fill%3D%22%231c4747%22%2F%3E%3C%2Fsvg%3E") no-repeat 98% 48%;
+  background: $vm-color-cream url("data:image/svg+xml;utf8,%3Csvg%20id%3D%22Layer_1%22%20data-name%3D%22Layer%201%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpolygon%20points%3D%2212%2016.44%206.93%2011.05%208.03%2010.02%2012%2014.25%2015.97%2010.02%2017.07%2011.05%2012%2016.44%22%20fill%3D%22%231c4747%22%2F%3E%3C%2Fsvg%3E") no-repeat 98% 48%;
   background-size: 34px 23px;
   appearance: none;
   text-indent: 0.01px;

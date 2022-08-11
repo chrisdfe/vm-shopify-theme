@@ -5,12 +5,16 @@
 
 .container {
   position: relative;
-  max-width: $site-width;
+  max-width: $grid-widescreen;
   margin: 0 auto;
   padding: 0 $gutter;
 
   .container {
     padding: 0;
+  }
+
+  @include respond-to("large-down") {
+    max-width: $grid-large;
   }
 }
 
@@ -33,7 +37,7 @@
     justify-content: center;
   }
 
-  @include respond-to('medium-down') {
+  @include respond-to("medium-down") {
     &.row--mobile-collapse {
       flex-direction: column;
 
@@ -58,7 +62,7 @@
   flex-basis: $width;
 }
 
-@mixin container-column-generator($breakpoint: '') {
+@mixin container-column-generator($breakpoint: "") {
   /* Base Grid */
   .#{$breakpoint}one {
     @include column-width(percentage(math.div(1, 16)));
@@ -170,8 +174,8 @@
   }
 }
 
-@mixin grid-push-generator($breakpoint: '') {
-  $prefix: '#{$breakpoint}--';
+@mixin grid-push-generator($breakpoint: "") {
+  $prefix: "#{$breakpoint}--";
 
   @include respond-to($breakpoint) {
     .#{$prefix}offset-by-zero {
@@ -237,16 +241,16 @@ $breakpoint-has-push: ($medium-down);
 // /*================ Build Responsive Grid Classes ================*/
 @each $breakpoint in $breakpoint-has-widths {
   @include respond-to($breakpoint) {
-    @include container-column-generator('#{$breakpoint}--');
-    @include responsive-display-helper('#{$breakpoint}--');
-    @include responsive-text-align-helper('#{$breakpoint}--');
+    @include container-column-generator("#{$breakpoint}--");
+    @include responsive-display-helper("#{$breakpoint}--");
+    @include responsive-text-align-helper("#{$breakpoint}--");
   }
 }
 
 // /*================ Build Grid Push Classes ================*/
 
 //Styles applied only on larger screen sizes
-@include respond-to('small-up') {
+@include respond-to("small-up") {
   /* Offsets */
   .offset-by-one {
     margin-left: percentage(math.div(1, 16));
@@ -307,7 +311,7 @@ $breakpoint-has-push: ($medium-down);
     margin-right: get-vm-spacer(5);
   }
 
-  @include respond-to('medium-down') {
+  @include respond-to("medium-down") {
     .row {
       margin: 0;
     }

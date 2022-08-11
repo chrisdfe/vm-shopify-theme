@@ -914,23 +914,54 @@
         return ProductCardsManager;
     }());
 
-    var ProductPage = /** @class */ (function () {
-        function ProductPage() {
+    var ProductPageImages = /** @class */ (function () {
+        function ProductPageImages() {
             var _this = this;
             this.imageCellElements = [];
             this.state = {
                 modalIsOpen: false
             };
+            this.onModalThumbnailClick = function (e) {
+                var thumbnailWrapper = e.target.closest('.product-images-modal__thumbnail');
+                var indexAsString = thumbnailWrapper.getAttribute("data-index");
+                var index = parseInt(indexAsString, 10);
+                var imageCell = _this.modalImageCellElementList[index];
+                _this.modalElement.scrollTo({
+                    top: imageCell.getBoundingClientRect().top,
+                    behavior: 'smooth'
+                });
+                // console.log('typeof index', typeof index);
+                // const scrollTop = this.modalImageScrollTopIndicies[index];
+            };
             this.onImageCellClick = function (e) {
                 (_this.state.modalIsOpen ? _this.closeModal : _this.openModal)();
             };
             this.onModalUnderlayClick = function (e) {
+                console.log("onmodalunderlayclick");
                 _this.closeModal();
+            };
+            this.onModalCloseButtonClick = function (e) {
+                _this.closeModal();
+            };
+            this.onKeyPressed = function (e) {
+                if (e.key === "Escape" && _this.state.modalIsOpen) {
+                    _this.closeModal();
+                }
+            };
+            this.setModalImageScrollTopIndicies = function () {
+                _this.modalImageScrollTopIndicies = _this.modalImageCellElementList.reduce(function (acc, element, index) {
+                    var _a;
+                    var scrollTop = element.getBoundingClientRect().top;
+                    return _assign(_assign({}, acc), (_a = {}, _a[index] = scrollTop, _a));
+                }, {});
+                console.log("this.modalImageScrollTopIndicies");
+                console.log(_this.modalImageScrollTopIndicies);
             };
             this.openModal = function () {
                 BodyScroll.lock();
                 _this.modalWrapperElement.classList.add('is-active');
                 _this.state.modalIsOpen = true;
+                _this.setModalImageScrollTopIndicies();
             };
             this.closeModal = function () {
                 BodyScroll.unlock();
@@ -939,19 +970,51 @@
             };
             return this;
         }
-        ProductPage.prototype.initialize = function () {
+        ProductPageImages.prototype.initialize = function () {
             this.setupImages();
-            this.setStickyContentTop();
+            return this;
         };
-        ProductPage.prototype.setupImages = function () {
+        ProductPageImages.prototype.setupImages = function () {
             var _this = this;
             this.imageCellElements = Array.from(document.querySelectorAll('.product-page__product-image-cell'));
             this.imageCellElements.forEach(function (imageCell) {
                 imageCell.addEventListener("click", _this.onImageCellClick);
             });
-            this.modalWrapperElement = document.querySelector('.product-page__images-modal-wrapper');
-            this.modalUnderlayElement = document.querySelector('.product-page__images-modal__underlay');
+            this.modalWrapperElement = document.querySelector('.product-images-modal-wrapper');
+            this.modalElement = document.querySelector('.product-images-modal');
+            this.modalUnderlayElement = document.querySelector('.product-images-modal__underlay');
+            this.modalUnderlayElement = document.querySelector('.product-images-modal__underlay');
+            this.modalThumbnailElementList =
+                Array.from(document.querySelectorAll('.product-images-modal__thumbnail'));
+            this.modalImageCellElementList =
+                Array.from(document.querySelectorAll('.product-images-modal__image-cell'));
+            this.closeButtonElement = document.querySelector('.product-images-modal__close-button');
+            // Add event listeners
             this.modalUnderlayElement.addEventListener('click', this.onModalUnderlayClick);
+            this.closeButtonElement.addEventListener('click', this.onModalCloseButtonClick);
+            this.modalThumbnailElementList.forEach(function (element) {
+                element.addEventListener('click', _this.onModalThumbnailClick);
+            });
+            document.addEventListener("keydown", this.onKeyPressed);
+        };
+        ProductPageImages.prototype.unload = function () {
+            var _this = this;
+            this.imageCellElements.forEach(function (imageCell) {
+                imageCell.removeEventListener("click", _this.onImageCellClick);
+            });
+            this.modalUnderlayElement.removeEventListener('click', this.onModalUnderlayClick);
+        };
+        ProductPageImages.isOnProductPage = function () { return !!document.querySelector('.product-template'); };
+        return ProductPageImages;
+    }());
+
+    var ProductPage = /** @class */ (function () {
+        function ProductPage() {
+            return this;
+        }
+        ProductPage.prototype.initialize = function () {
+            this.setStickyContentTop();
+            this.productPageImages = new ProductPageImages().initialize();
         };
         ProductPage.prototype.setStickyContentTop = function () {
             this.stickyContentElement = document.querySelector('.product-content-wrapper');
@@ -961,11 +1024,6 @@
             this.stickyContentElement.style.top = "".concat(stickyElementTop, "px");
         };
         ProductPage.prototype.unload = function () {
-            var _this = this;
-            this.imageCellElements.forEach(function (imageCell) {
-                imageCell.removeEventListener("click", _this.onImageCellClick);
-            });
-            this.modalUnderlayElement.removeEventListener('click', this.onModalUnderlayClick);
         };
         ProductPage.isOnProductPage = function () { return !!document.querySelector('.product-template'); };
         return ProductPage;

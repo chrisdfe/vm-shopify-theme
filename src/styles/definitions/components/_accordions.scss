@@ -22,13 +22,38 @@
   }
 
   .vm-accordion-button__arrow {
-    transform: rotate(-90deg);
-    transition: all 0.2s;
+    $arrow-size: 0.5rem;
+    // transform: rotate(-90deg);
+    // transition: all 0.2s;
+    display: flex;
+    position: relative;
+    width: $arrow-size;
+    height: $arrow-size;
+
+    span {
+      top: calc(50% - 1px);
+      left: calc(50% - 1px);
+      position: absolute;
+      display: block;
+      width: $arrow-size;
+      // border-bottom: 2px solid $vm-color-sea-green;
+      height: 2px;
+      background: $vm-border-color;
+      transition: transform 0.2s;
+      border-radius: 2px;
+    }
+
+    span:nth-child(2) {
+      transform: rotate(90deg);
+    }
   }
 
   &.is-open {
     .vm-accordion-button__arrow {
-      transform: rotate(0);
+    
+      span:nth-child(2) {
+        transform: rotate(0);
+      }
     }
   }
 }

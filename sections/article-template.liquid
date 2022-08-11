@@ -4,28 +4,24 @@
 - Uses blocks
 {% endcomment %}
 
-{% if section.settings.wide_display == false %}
 <div class="container">
   <div class="twelve columns offset-by-two medium-down--one-whole equal-columns--outside-trim">
-{% endif %}
 
-{% if article.image and section.settings.featured_image == 'banner' %}
-  <header class="banner center page-banner dark-overlay-{{ section.settings.image_darken }} full-width--{{ section.settings.wide_display }}">
-    {% render 'image-element',
-            image: article.image,
-            alt: article.image.alt,
-            stretch_width: true
-    %}
-    <div class="caption captionOverlay--true">
-      <h1 class="headline">{{ article.title }}</h1>
-    </div>
-  </header>
-{% endif %}
+    {% if article.image and section.settings.featured_image == 'banner' %}
+      <header class="banner center page-banner dark-overlay-{{ section.settings.image_darken }} full-width--{{ section.settings.wide_display }}">
+        {% render 'image-element',
+                image: article.image,
+                alt: article.image.alt,
+                stretch_width: true
+        %}
+        <div class="caption captionOverlay--true">
+          <h1 class="headline">{{ article.title }}</h1>
+        </div>
+      </header>
+    {% endif %}
 
-{% if section.settings.wide_display == false %}
   </div>
 </div>
-{% endif %}
 
 <a name="pagecontent" id="pagecontent"></a>
 
@@ -79,6 +75,7 @@
             </div>
           {% endif %}
           
+          {% comment %}
           {% if section.settings.blog_pagination %}
             <div class="article-pagination right">
               {% if blog.next_article %}
@@ -92,6 +89,7 @@
               {% endif %}
             </div>
           {% endif %}
+          {% endcomment %}
         </div>
 
         {% unless article.image and section.settings.featured_image == 'banner' %}
@@ -339,8 +337,6 @@
         </div>
       {% endif %}
     </div>
-
-    {% render "blog-sidebar", blog_handle: blog.handle %}
   </div>
 {% endpaginate %}
 </div>
