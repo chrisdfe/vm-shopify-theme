@@ -2716,11 +2716,8 @@
           "page-grid-template-2"
         ],
         "settings": {
-          "image_position": "left",
-          "text_position": "center",
-          "employee_per_row": 3,
-          "member_color": "#ffffff",
-          "member_overlay_color": "#000000"
+          "cta_text": "Contact for Pricing",
+          "cta_mailto_body": "Hi there, I’d love to use this ring as inspiration for my future custom order. Can you share an estimated quote for this design? My desired budget is _______."
         }
       },
       "page-team-template-new": {
