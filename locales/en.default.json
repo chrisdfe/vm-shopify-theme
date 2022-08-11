@@ -434,5 +434,12 @@
         "other": "{{ count }} items"
       }
     }
+  },
+  "shopify": {
+    "checkout": {
+      "shop_policies": {
+        "refund_policy": "Return and Exchange Policy"
+      }
+    }
   }
 }

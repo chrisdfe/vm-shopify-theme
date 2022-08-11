@@ -17,7 +17,7 @@
   }
 
   @include respond-to("medium-down") {
-    margin: get-vm-spacer(3);
+    margin: get-vm-spacer(3) 0;
 
     &.page-heading--with-breadcrumbs {
       margin: 0 0 get-vm-spacer(3);

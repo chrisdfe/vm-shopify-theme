@@ -6,160 +6,53 @@
 
 <a name="pagecontent" id="pagecontent"></a>
 
-<!-- {% if page.title %}
-  <div class="sixteen columns page clearfix">
-    <div class="page-heading">
-      <h1 class="page-heading__title">
-        {{ page.title }}
-      </h1>
-	</div>
-  </div>
-{% endif %} -->
-
+<div class="row">
   <div class="sixteen columns">
-    <div class="team-page__content--{{ section.settings.image_position }} {% if section.settings.image != blank and section.settings.text != blank %}teamPage__content--multiple{% endif %}">
-      {% if section.settings.image != blank %}
-        <div class="team-page__image">
-          {% render 'image-element',
-                  image: section.settings.image,
-                  alt: section.settings.image.alt,
-                  progressive: true
-          %}
-        </div>
-      {% endif %}
-        <div class="team-page__text">
-          <span class="team-page__container content-section">
-            {% if section.settings.title %}
-              <h2>{{ section.settings.title }}</h2>
-            {% endif %}
-            
-            <h2 class="heading--with-accent">{{ page.title }}</h2>
-            
-            {% render 'page-multi-column', content: page.content %}
-
-          </span>
-          
-        </div>
-    </div>
+    {% render "page-heading" with {
+      title: page.title,
+      align: "center",
+    } %}
   </div>
+</div>
 
-<div class="section">
-  <div class="sixteen columns">
- 
+<div class="row row--justify-content-center">
+  <div class="ten medium-down--one-whole columns u-margin-top-1 u-margin-bottom-4">
+    {% render 'page-multi-column', content: page.content %}
+  </div>
+</div>
 
-    <div class="row team-members equal-columns--clear">
+<div class="sixteen columns">
+  <div class="row">
+  {% assign email_body = section.settings.cta_mailto_body %}
+
     {% for block in section.blocks %}
-        {% capture name %}{{ block.settings.title }}{% endcapture %}
-        {% capture link_title %}{{ block.settings.link_title }}{% endcapture %}
-        {% capture link_url %}{{ block.settings.link_url }}{% endcapture %}
-        {% capture title %}{{ block.settings.job_title }}{% endcapture %}
-        {% capture description %}{{ block.settings.description }}{% endcapture %}
-
-        {% if section.settings.employee_per_row == 2 %}
-          {% assign perRow = 'eight columns' %}
-          {% capture alphaOmegaCycle %}
-            {% cycle 'alpha', 'omega' %}
-          {% endcapture %}
-        {% elsif section.settings.employee_per_row == 3 %}
-          {% assign perRow = 'one-third column' %}
-          {% capture alphaOmegaCycle %}
-            {% cycle 'alpha', '', 'omega' %}
-          {% endcapture %}
-        {% else %}
-          {% assign perRow = 'four columns' %}
-          {% capture alphaOmegaCycle %}
-            {% cycle 'alpha', '', '', 'omega' %}
-          {% endcapture %}
-        {% endif %}
-
-        <div class="{{ perRow }} {{ alphaOmegaCycle }} medium-down--one-half">
-          <div class="relative product_image">
-            <div class="image__container center">
-              {% render 'image-element',
-                image: block.settings.image,
-                alt: block.settings.image.alt,
-              %}
-            </div>
+      <div class="one-third columns medium-down--one-half">
+        <div class="product_image">
+          <div class="image__container center">
+            {% render 'image-element',
+              image: block.settings.image,
+              alt: block.settings.image.alt,
+            %}
           </div>
-
-          <div class="product-details">
-            <h5 class="title" itemprop="name">{{ block.settings.job_title }}</h5>
-            {% if description != blank %}
-              <p>{{description}}</p>
-            {% endif %}
-            {% if link_title != blank and link_url != blank %}
-              <a href="{{link_url}}">{{link_title}}</a>
-            {% endif %}
-          </div>
-          {% comment %}
-          <figure class="team-member__wrap">
-            {% if block.settings.image %}
-              {% render 'image-element',
-                      image: block.settings.image,
-                      alt: block.settings.image.alt
-              %}
-            {% else %}
-              {% capture i %}{% cycle "1", "2", "3", "4", "5", "6" %}{% endcapture %}
-              {{ 'collection-' | append: i | placeholder_svg_tag: 'placeholder-svg' }}
-            {% endif %}
-
-            <figcaption class="team-member__overlay">
-              <div class="team-member__details no_bar">
-                {% if title != blank %}
-                  <h4 class="team-member__title no_bar">{{title}}</h4>
-                {% endif %}
-                {% if description != blank %}
-                  <p>{{description}}</p>
-                {% endif %}
-                {% if link_title != blank and link_url != blank %}
-                  <a href="{{link_url}}">{{link_title}}</a>
-                {% endif %}
-              </div>
-            </figcaption>
-          </figure>
-          {% endcomment %}
         </div>
-          {% comment %}
-          {% if section.settings.employee_per_row == 2 %}
-          {% cycle '', '<br class="clear product_clear" />' %}
-          {% elsif section.settings.employee_per_row == 3 %}
-          {% cycle '', '', '<br class="clear product_clear" />' %}
-          {% else %}
-          {% cycle '', '', '', '<br class="clear product_clear" />' %}
+
+        <div class="product-details">
+          <h5 class="title" itemprop="name">
+            {{ block.settings.title }}
+          </h5>
+          
+          {% if description != blank %}
+            <p>{{ block.settings.description }}</p>
           {% endif %}
-          {% endcomment %}
-        {% endfor %}
+
+          {% assign email_subject = block.settings.title %}
+
+          <a href="mailto:{{ section.settings.cta_mailto_email }}?subject={{ email_subject }}&body={{ email_body }}">{{ section.settings.cta_text }}</a>
+        </div>
+      </div>
+    {% endfor %}
   </div>
 </div>
-</div>
-
-<style>
-  .team-member__details h4,
-  .team-member__details p {
-    color: {{ section.settings.member_color }};
-  }
-
-
-  {% assign hover_bg = section.settings.member_overlay_color | color_extract: 'alpha' %}
-  .team-member__overlay {
-    {% if hover_bg != 0 %}
-      background-color: {{ section.settings.member_overlay_color | color_modify: 'alpha', 0.8 }}
-    {% endif %}
-  }
-  
-  /* Remove Bar from page.Grid*/
-.team-member__details.no_bar h4:after {
-  background: none;
-}
-
-.team-member__title.no_bar:after {
-  margin-top: 0px;
-}
-
-.team-member__profile.columns.no_title, .team-member__profile.column.no_title {
-    margin-bottom: 0px;
-}
-</style>
 
 {% schema %}
 
@@ -168,70 +61,21 @@
   "class": "team-section",
   "settings": [
     {
-      "type": "image_picker",
-      "id": "image",
-      "label": "Image"
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA Text",
+      "default": "Contact for Pricing"
     },
     {
-      "type": "select",
-      "id": "image_position",
-      "label": "Image position",
-      "options": [
-        {
-          "value": "left",
-          "label": "Left"
-        },
-        {
-          "value": "right",
-          "label": "Right"
-        }
-      ],
-      "default": "left"
+      "type": "text",
+      "id": "cta_mailto_email",
+      "label": "Mailto link email (e.g custom@valeriemadison.com)",
+      "default": "custom@valeriemadison.com"
     },
     {
-      "type": "select",
-      "id": "text_position",
-      "label": "Text alignment",
-      "options": [
-        {
-          "value": "center",
-          "label": "Center"
-        },
-        {
-          "value": "left",
-          "label": "Left"
-        },
-        {
-          "value": "right",
-          "label": "Right"
-        }
-      ],
-      "default": "center"
-    },
-    {
-      "type": "header",
-      "content": "Employees"
-    },
-    {
-      "type": "range",
-      "id": "employee_per_row",
-      "label": "Images per row",
-      "min": 2,
-      "max": 4,
-      "step": 1,
-      "default": 3
-    },
-    {
-      "type": "color",
-      "id": "member_color",
-      "label": "Text",
-      "default": "#fff"
-    },
-    {
-      "type": "color",
-      "id": "member_overlay_color",
-      "label": "Overlay",
-      "default": "#000"
+      "type": "textarea",
+      "id": "cta_mailto_body",
+      "label": "Prepopulated email body"
     }
   ],
   "blocks": [
@@ -247,7 +91,7 @@
         },
         {
           "type": "text",
-          "id": "job_title",
+          "id": "title",
           "label": "Featured Item Title",
           "default": "Featured Past Ring"
         },
@@ -269,32 +113,7 @@
         }
       ]
     }
-  ],
-  "default": {
-    "blocks": [
-      {
-        "type": "featured-ring",
-        "settings": {
-          "job_title": "Featured Item Title",
-          "description": "<p>Your Item Description.</p>"
-        }
-      },
-      {
-        "type": "featured-ring",
-        "settings": {
-          "job_title": "Featured Item Title",
-          "description": "<p>Your Item Description.</p>"
-        }
-      },
-      {
-        "type": "featured-ring",
-        "settings": {
-          "job_title": "Featured Item Title",
-          "description": "<p>Your Item Description.</p>"
-        }
-      }
-    ]
-  }
+  ]
 }
 
 {% endschema %}

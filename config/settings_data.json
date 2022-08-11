@@ -1850,7 +1850,7 @@
           "rv_products_style": "grid",
           "rv_max_display": 3,
           "rv_per": 3,
-          "custom_ring_size_text": "If your ring size isn't shown above, <a href=\"mailto:hello@valeriemadison.com\">contact us<\/a> for a custom order",
+          "custom_ring_size_text": "Don’t see the size you need? Fear not, we are happy to offer inclusive sizing. Please <a href=\"mailto:sales@valeriemadison.com\">email us<\/a> to begin your custom order.",
           "enable_qty": false,
           "enable_ring_size": true,
           "include_quarter_sizes": true,
@@ -1879,6 +1879,7 @@
       },
       "1591661011742": {
         "type": "logo-bar",
+        "disabled": true,
         "blocks": {
           "1591661011742-3": {
             "type": "logo_image",
@@ -1985,646 +1986,689 @@
       "page-grid-template": {
         "type": "page-grid-template",
         "blocks": {
+          "35c476d5-0033-4e93-8982-d5e0e0eb09d7": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/8950_Robinson.jpg",
+              "title": "2.17ct emerald cut blue sapphire and diamond zara engagement ring",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com",
+              "link_title": "Contact for Pricing"
+            }
+          },
           "1600971768975": {
             "type": "featured-ring",
             "settings": {
               "image": "shopify:\/\/shop_images\/5601_Cody_Scott.jpg",
-              "job_title": "2.53ct Round Cut NEAR COLORLESS Diamond Ella Engagement Ring",
+              "title": "2.53ct Round Cut NEAR COLORLESS Diamond Ella Engagement Ring",
               "description": "",
               "link_url": "mailto:custom@valeriemadison.com?subject=1.05ct Eva Brown Square Diamond Engagement Ring with Pavé Diamonds&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
-              "link_title": "Click here to send this as inspiration for your custom order"
-            }
-          },
-          "1601324394662": {
-            "type": "featured-ring",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/Screen_Shot_2021-12-30_at_10.48.57_AM.png",
-              "job_title": "1.76ct Pear Cut Blue\/Gray Sapphire & Diamond Zara Engagement Ring",
-              "description": "",
-              "link_url": "mailto:custom@valeriemadison.com?subject=1.8ct Zara Gray Sapphire Three Stone Engagement Ring&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
-              "link_title": "Click here to send this as inspiration for your custom order"
-            }
-          },
-          "b7b414bf-3fbf-4e82-b121-aa7e76088992": {
-            "type": "featured-ring",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/6026-Ryan-Hooper.jpg",
-              "job_title": "0.91CT Emerald Cut Near Colorless Diamond Zara Engagement Ring",
-              "description": "",
-              "link_url": "mailto:custom@valeriemadison.com",
-              "link_title": "Click here to send this as inspiration for your custom order."
-            }
-          },
-          "a68e219f-e504-44bf-8e7c-cc8aaf9d9849": {
-            "type": "featured-ring",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/6970_Liu.jpg",
-              "job_title": "1.50ct oval cut blue sapphire & diamond Zara engagement ring",
-              "description": "",
-              "link_url": "mailto:custom@valeriemadison.com",
-              "link_title": "Click here to send this as inspiration for your custom order."
-            }
-          },
-          "a05be93b-bef1-4fb9-8b5c-f33d557c5d76": {
-            "type": "featured-ring",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/6458_Fenley.jpg",
-              "job_title": "1.50CT PEAR CUT NEAR COLORLESS DIAMOND VERA WITH PAVÉ ENGAGEMENT RING",
-              "description": "",
-              "link_url": "mailto:custom@valeriemadison.com",
-              "link_title": "Click here to send this as inspiration for your custom order."
+              "link_title": "Contact for Pricing"
             }
           },
           "52f2a8b1-1d33-4bb3-a1da-ba076275604b": {
             "type": "featured-ring",
             "settings": {
               "image": "shopify:\/\/shop_images\/OOAK383-Luna-teal-sapphire-pear.jpg",
-              "job_title": "1.11CT Pear Cut Teal Sapphire Luna Engagement Ring",
+              "title": "1.11CT Pear Cut Teal Sapphire Luna Engagement Ring",
               "description": "",
               "link_url": "mailto:custom@valeriemadison.com",
-              "link_title": "Click here to send this as inspiration for your custom order."
-            }
-          },
-          "c21146f0-71e1-4e94-b9b6-ab07686451c3": {
-            "type": "featured-ring",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/5526_Clark_Pingul.jpg",
-              "job_title": "1.0CT Oval Cut pink Sapphire and diamond Zara Engagement Ring",
-              "description": "",
-              "link_url": "mailto:custom@valeriemadison.com",
-              "link_title": "Click here to send this as inspiration for your custom order."
-            }
-          },
-          "5c12153d-9fd8-4110-9cee-68cc700a3181": {
-            "type": "featured-ring",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/7970_Yigzaw.jpg",
-              "job_title": "2.24CT Oval Cut Teal Sapphire Eva Engagement Ring",
-              "description": "",
-              "link_url": "mailto:custom@valeriemadison.com",
-              "link_title": "Click here to send this as inspiration for your custom order."
-            }
-          },
-          "40b53f1e-1c3e-4a72-9167-7de84ed53ba9": {
-            "type": "featured-ring",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/5988_Ware.jpg",
-              "job_title": "1.68ct emerald cut violet\/purple sapphire Marisol engagement ring",
-              "description": "",
-              "link_url": "mailto:custom@valeriemadison.com?subject=Luna 0.9ct Padparadscha Sapphire Engagement Ring&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
-              "link_title": "Click here to send this as inspiration for your custom order"
-            }
-          },
-          "2f9e7e25-62fb-4be7-92f9-4a17f041ef0b": {
-            "type": "featured-ring",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/6480_Roussell.jpg",
-              "job_title": "1.91CT OVAL CUT NEAR COLORLESS DIAMOND ZARA ENGAGEMENT RING",
-              "description": "",
-              "link_url": "mailto:custom@valeriemadison.com",
-              "link_title": "Click here to send this as inspiration for your custom order"
-            }
-          },
-          "2505ffeb-d5c8-4f1e-987f-3567d1d93de3": {
-            "type": "featured-ring",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/5537_Richard_Francis.jpg",
-              "job_title": "2.50ct Radiant Cut Blue Sapphire & Diamond Zara Engagement Ring",
-              "description": "",
-              "link_url": "mailto:custom@valeriemadison.com?subject=2ct Zara Lilac Spinel & Diamond Engagement Ring&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
-              "link_title": "Click here to send this as inspiration for your custom order"
-            }
-          },
-          "1600904795953": {
-            "type": "featured-ring",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/CUSTOM_Bella-Peach-oval-sapphire.jpg",
-              "job_title": "2.0ct Oval Cut Peach Sapphire & Diamond Bella Engagement Ring",
-              "description": "",
-              "link_url": "mailto:custom@valeriemadison.com?subject=1.17ct Marisol Vintage Emerald & Diamond Halo Engagement Ring&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
-              "link_title": "Click here to send this as inspiration for your custom order"
-            }
-          },
-          "c14cdffa-2103-4c5f-8ef4-bebde5c835ac": {
-            "type": "featured-ring",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/Zara-with-baguettes-hexagon-raspberry-sapphire-and-diamond-baguette-ring_0b1b6df6-599d-4631-a056-293d20e0205f.jpg",
-              "job_title": "1.13CT Hexagon Cut Terrecotta Sapphire & diamond zara engagement ring",
-              "description": "",
-              "link_url": "mailto:custom@valeriemadison.com",
-              "link_title": "Click here to send this as inspiration for your custom order."
-            }
-          },
-          "a1cdfd41-7902-4af3-ab89-21a0be6d900d": {
-            "type": "featured-ring",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/8433_Hutchinson.jpg",
-              "job_title": "1.50ct emerald cut near colorless diamond zara engagement ring",
-              "description": "<p>Click here to send this as inspiration for your custom order. <\/p>",
-              "link_url": "mailto:custom@valeriemadison.com",
-              "link_title": ""
-            }
-          },
-          "f733facd-ec19-4e0f-bb9b-ecfbaadd5594": {
-            "type": "featured-ring",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/VAL_2738-sq.jpg",
-              "job_title": "1.60 tcw Emerald Cut NEAR COLORLESS Diamond  Zara Engagement Ring",
-              "description": "<p><\/p><p><\/p>",
-              "link_url": "mailto:custom@valeriemadison.com?subject=1.60 tcw Three Stone Diamond Engagement Ring&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
-              "link_title": "Click here to send this as inspiration for your custom order"
-            }
-          },
-          "dc82587e-be56-444f-9fad-dd8b3baaff08": {
-            "type": "featured-ring",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/8703_Jones.jpg",
-              "job_title": "1.54ct Old European Cut Antique Diamond Zara engagement ring",
-              "description": "",
-              "link_url": "mailto:custom@valeriemadison.com",
-              "link_title": "Click here to send this as inspiration for your custom order."
-            }
-          },
-          "d6b7aea6-dfa4-4eb9-bf98-b4cf45c7cdce": {
-            "type": "featured-ring",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/7758_Naumov.jpg",
-              "job_title": "1.22ct pear cut teal SAPPHIRE AND DIAMOND ZARA ENGAGEMENT RING",
-              "description": "",
-              "link_url": "mailto:custom@valeriemadison.com",
-              "link_title": "Click here to send this as inspiration for your custom order."
-            }
-          },
-          "a997de41-c821-4f2e-bef9-532468a41e8b": {
-            "type": "featured-ring",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/7298_Stuart.jpg",
-              "job_title": "2.85CT Emerald Cut Teal Sapphire & Diamond Engagement ring",
-              "description": "",
-              "link_url": "mailto:custom@valeriemadison.com",
-              "link_title": "Click here to send this as inspiration for your custom order."
-            }
-          },
-          "1600971298274": {
-            "type": "featured-ring",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/6351_Ruiz.jpg",
-              "job_title": "2.25ct Asscher Cut Sapphire Rey engagement ring",
-              "description": "",
-              "link_url": "mailto:custom@valeriemadison.com?subject=1.21ct Juno Champagne Shield Diamond Engagement Ring&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
-              "link_title": "Click here to send this as inspiration for your custom order"
-            }
-          },
-          "22248c50-c98a-4f32-8403-bb27bb95e42c": {
-            "type": "featured-ring",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/8893_Foster.jpg",
-              "job_title": "1.72ct Round cut faint yellow halo supernova engagement ring",
-              "description": "",
-              "link_url": "mailto:custom@valeriemadison.com",
-              "link_title": "Cick here to send this as inspiration for your custom order."
-            }
-          },
-          "25f26937-528f-4fe6-838f-6c939fdcc358": {
-            "type": "featured-ring",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/6939_Seaks.jpg",
-              "job_title": "1.81CT Hexagon Cut Green Sapphire Selena engagement ring",
-              "description": "",
-              "link_url": "mailto:custom@valeriemadison.com",
-              "link_title": "Click here to send this as inspiration for your custom order."
-            }
-          },
-          "f805bfba-2ab8-4ce4-8270-41244082cf2e": {
-            "type": "featured-ring",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/7463_Longfellow.jpg",
-              "job_title": "0.90CT Round Cut Near Colorless Diamond Selena Engagement Ring",
-              "description": "",
-              "link_url": "mailto:custom@valeriemadison.com",
-              "link_title": "Click here to send this as inspiration for your custom order."
-            }
-          },
-          "6eb108e0-a484-4eb1-b20e-4fc7425896e8": {
-            "type": "featured-ring",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/8195-Silvas.jpg",
-              "job_title": "2.22ct Near Colorless emerald cut diamond vera engagement ring",
-              "description": "",
-              "link_url": "mailto:custom@valeriemadison.com",
-              "link_title": "Click here to send this as inspiration for your custom order."
-            }
-          },
-          "1600904777648": {
-            "type": "featured-ring",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/Peyton_Nielsen_-_Custom_Zara_with_emerald_cut_ruby_center_and_cadillac_diamond_sides.jpg",
-              "job_title": "1.28ct Emerald Cut Ruby & Diamond Zara Engagement Ring",
-              "description": "",
-              "link_url": "mailto:custom@valeriemadison.com?subject=0.65ct Luna Half Moon Salt & Pepper Bezel Diamond Engagement Ring&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
-              "link_title": "Click here to send this as inspiration for your custom order"
-            }
-          },
-          "640bb445-c1bd-4dc8-9d7a-d58cc777904c": {
-            "type": "featured-ring",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/7367_Lechleider.jpg",
-              "job_title": "2.0CT  Oval Cut Colorless Diamond Zara Engagement Ring",
-              "description": "",
-              "link_url": "mailto:custom@valeriemadison.com",
-              "link_title": "Click here to send this as inspiration for your custom order."
-            }
-          },
-          "11b31845-91b8-4f18-b096-df44448c5f7e": {
-            "type": "featured-ring",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/7597_Sandberg.jpg",
-              "job_title": "1.41CT Oval Cut Teal Montana Sapphire Marisol Engagement Ring",
-              "description": "",
-              "link_url": "mailto:custom@valeriemadison.com",
-              "link_title": "Click here to send this as inspiration for your custom order."
-            }
-          },
-          "46369783-ee33-47c9-ad9c-a0e709b27a57": {
-            "type": "featured-ring",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/7000_Hennessy_1.jpg",
-              "job_title": "1.08CT ROSE CUT NEAR COLORLESS MARQUISE CUT DIAMOND  ENGAGEMENT RING",
-              "description": "",
-              "link_url": "mailto:custom@valeriemadison.com",
-              "link_title": "Click here to send this as inspiration for your custom order."
-            }
-          },
-          "5da0f710-2539-47b5-a3a1-b1d1ddd98e96": {
-            "type": "featured-ring",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/2000px-OOAK504-Eva-pink-emerald-cut-sapphire.jpg",
-              "job_title": "1.28CT Emerald Cut Pink Sapphire Eva W\/PAVÉ Engagement Ring",
-              "description": "",
-              "link_url": "mailto:custom@valeriemadison.com",
-              "link_title": "Click here to send this as inspiration for your custom order."
-            }
-          },
-          "1601324393407": {
-            "type": "featured-ring",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/6129_Topel.jpg",
-              "job_title": "2.52ct. Radiant Cut Blue Sapphire & Diamond Engagement Ring",
-              "description": "",
-              "link_url": "mailto:custom@valeriemadison.com?subject=1ct Zara Pink Sapphire Three Stone Engagement Ring in Rose Gold&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
-              "link_title": "Click here to send this as inspiration for your custom order"
-            }
-          },
-          "7cbdf742-2cad-4698-8958-289c9b4f5cbc": {
-            "type": "featured-ring",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/OOAK478_Marisol_teal_pear_sapphire.jpg",
-              "job_title": "1.07CT PEAR CUT TEAL SAPPHIRE MARISOL ENGAGEMENT RING",
-              "description": "",
-              "link_url": "mailto:custom@valeriemadison.com",
-              "link_title": "Click here to send this as inspiration for your custom order."
-            }
-          },
-          "da4aa41c-8ee2-4602-8af2-cd0ab9e118da": {
-            "type": "featured-ring",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/Don_Koberg_-_Custom_Bella_ring_with_radiant_cut_diamond_center.jpg",
-              "job_title": "1.29ct Cushion Cut NEAR COLORLESS  Diamond Bella Engagement Ring",
-              "description": "",
-              "link_url": "mailto:custom@valeriemadison.com",
-              "link_title": "Click here to send this as inspiration for your custom order"
-            }
-          },
-          "9e2c28d0-7615-4deb-9820-5254063adafc": {
-            "type": "featured-ring",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/WB-Eva-champagne-marquise-diamond.jpg",
-              "job_title": "1.0CT Marquise Cut Champagne Diamond Eva Ring",
-              "description": "",
-              "link_url": "mailto:custom@valeriemadison.com",
-              "link_title": "Click here to send this as inspiration for your custom order."
-            }
-          },
-          "1600972038157": {
-            "type": "featured-ring",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/5699_Williams.jpg",
-              "job_title": "3.3ct Oval Cut Light Blue Sapphire Selena Engagement Ring",
-              "description": "",
-              "link_url": "mailto:custom@valeriemadison.com?subject=1.5ct Pink Sapphire SuperNova Engagement Ring&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
-              "link_title": "Click here to send this as inspiration for your custom order"
-            }
-          },
-          "1600971535955": {
-            "type": "featured-ring",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/6270_Peppler.jpg",
-              "job_title": "1.20ct Pear Cut NEAR COLORLESS Diamond Vera Engagement Ring",
-              "description": "",
-              "link_url": "mailto:custom@valeriemadison.com?subject=0.95ct Selena Rose Cut Brown Diamond Halo Engagement Ring&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
-              "link_title": "Click here to send this as inspiration for your custom order"
-            }
-          },
-          "c408e48c-2512-4d0e-9eff-d05514d0b209": {
-            "type": "featured-ring",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/7553_Shurtleff.jpg",
-              "job_title": "1.15 Radiant Cut Pink Sapphire Bella Engagement Ring",
-              "description": "",
-              "link_url": "mailto:custom@valeriemadison.com",
-              "link_title": "Click here to send this as inspiration for your custom order"
-            }
-          },
-          "f4343759-5787-4f52-8d68-a5de937c0946": {
-            "type": "featured-ring",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/7097_Darst.jpg",
-              "job_title": "2.04CT Emerald cut teal sapphire rey engagement ring",
-              "description": "",
-              "link_url": "mailto:custom@valeriemadison.com",
-              "link_title": "Click here to send this as inspiration for your custom order."
-            }
-          },
-          "72f62934-075e-40a6-822e-83aa2cfea146": {
-            "type": "featured-ring",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/6646_George.jpg",
-              "job_title": "1.35CT Marquise Cut Sapphire Eva Engagement Ring",
-              "description": "",
-              "link_url": "mailto:custom@valeriemadison.com",
-              "link_title": "Click here to send this as inspiration for your custom order."
-            }
-          },
-          "f21c9164-a14e-4748-a4a6-e41cf3a21655": {
-            "type": "featured-ring",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/5639_Justin_Zhong_1.jpg",
-              "job_title": "0.88CT RC Pear CUT NEAR COLORLESS DIAMOND EVA WITH PAVÉ ENGAGEMENT RING",
-              "description": "",
-              "link_url": "mailto:custom@valeriemadison.com",
-              "link_title": "Click here to send this as inspiration for your custom order."
-            }
-          },
-          "e794913f-58c7-4b75-8b2f-cf50a9a25621": {
-            "type": "featured-ring",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/7121_Byrne.jpg",
-              "job_title": "1.64CT Gray\/Blue Oval Cut Sapphire & Diamond Zara engagement ring",
-              "description": "",
-              "link_url": "mailto:custom@valeriemadison.com",
-              "link_title": "Click here to send this as inspiration for your custom order."
-            }
-          },
-          "1600972039473": {
-            "type": "featured-ring",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/Woods_Custom-Selena-oval-peach-sapphire.jpg",
-              "job_title": "1.93ct Oval Cut Peachy\/Pink Sapphire Selena Right Hand Ring",
-              "description": "",
-              "link_url": "mailto:custom@valeriemadison.com?subject=0.70ct SuperNova Green Sapphire Engagement Ring&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
-              "link_title": "Click here to send this as inspiration for your custom order"
-            }
-          },
-          "f8be2d68-96d4-4e9d-917b-278ccb41ce2e": {
-            "type": "featured-ring",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/9117_Harris.jpg",
-              "job_title": "1.46ct Black spinel and colorless diamond bella engagement ring",
-              "description": "",
-              "link_url": "mailto:custom@valeriemadison.com?subject=1.44ct Eva Salt & Pepper Kite Diamond Engagement Ring&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
-              "link_title": "Click here to send this as inspiration for your custom order"
-            }
-          },
-          "1600904785265": {
-            "type": "featured-ring",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/5686_Jon_Kauffman.jpg",
-              "job_title": "1.2ct Radiant Cut Green Sapphire & Diamond Zara Engagement Ring",
-              "description": "",
-              "link_url": "mailto:custom@valeriemadison.com?subject=1ct Eva Salt & Pepper Diamond Engagement Ring with Pavé Diamonds&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
-              "link_title": "Click here to send this as inspiration for your custom order"
-            }
-          },
-          "1600971770447": {
-            "type": "featured-ring",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/6849_Ozumerzifon.jpg",
-              "job_title": "2.53ct EMERALD CUT Teal Sapphire BEZEL Ring",
-              "description": "",
-              "link_url": "mailto:custom@valeriemadison.com?subject=0.90ct Eva Teal Montana Sapphire and Diamond Pavé Engagement Ring&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
-              "link_title": "Click here to send this as inspiration for your custom order"
-            }
-          },
-          "dc51abab-15f7-4ef1-97ea-571fe750d825": {
-            "type": "featured-ring",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/7529_Cantor_1.jpg",
-              "job_title": "2.37ct Oval Cut Peach Sapphire Ella RING",
-              "description": "",
-              "link_url": "mailto:custom@valeriemadison.com",
-              "link_title": "Click here to send this as inspiration for your next custom order."
-            }
-          },
-          "10128707-79bb-4a7a-b34b-da016e30342b": {
-            "type": "featured-ring",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/Custom_Selena_Ruby.jpg",
-              "job_title": "1.11ct Oval Cut Ruby Selena Engagement Ring",
-              "description": "",
-              "link_url": "mailto:custom@valeriemadison.com?subject=[ADD PRODUCT SPECS HERE]&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
-              "link_title": "Click here to send this as inspiration for your custom order"
-            }
-          },
-          "01706f5b-bb86-4100-ac94-0f06c99ec419": {
-            "type": "featured-ring",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/DSC_3030.jpg",
-              "job_title": "0.54CT Round Colorless Diamond Juno Engagement Ring",
-              "description": "",
-              "link_url": "mailto:custom@valeriemadison.com",
-              "link_title": "Click here to send this as inspiration for your custom order."
-            }
-          },
-          "1601324391888": {
-            "type": "featured-ring",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/Green_Sapphire_Diamond_Ring.jpg",
-              "job_title": "2.0ct Radiant Cut Green Sapphire & Diamond Zara Engagement Ring",
-              "description": "",
-              "link_url": "mailto:custom@valeriemadison.com",
-              "link_title": "Click here to send this as inspiration for your custom order."
-            }
-          },
-          "1600904797123": {
-            "type": "featured-ring",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/8068-Pietila.jpg",
-              "job_title": "0.82ct pear cut pink Sapphire eva engagement ring",
-              "description": "",
-              "link_url": "mailto:custom@valeriemadison.com?subject=1.12ct Marisol Teal Blue Sapphire and Diamond Engagement Ring&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
-              "link_title": "Click here to send this as inspiration for your custom order."
-            }
-          },
-          "1600971767616": {
-            "type": "featured-ring",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/VAL_49782.jpg",
-              "job_title": "2.0ct Cushion Cut Teal Eva Engagement Ring with Pavé Diamonds",
-              "description": "",
-              "link_url": "mailto:custom@valeriemadison.com?subject=2ct Eva Teal Cushion Sapphire Diamond Engagement Ring with Pavé Diamonds&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
-              "link_title": "Click here to send this as inspiration for your custom order"
-            }
-          },
-          "page-grid-template-1": {
-            "type": "featured-ring",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/6491_Grubbs.jpg",
-              "job_title": "1.02CT PEAR CUT FAINT YELLOW DIAMOND VERA Engagement Ring",
-              "description": "",
-              "link_url": "mailto:custom@valeriemadison.com?subject=0.59ct Eva Colorless Trillion Diamond Engagement Ring&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
-              "link_title": "Click here to send this as inspiration for your custom order"
-            }
-          },
-          "e5d03b69-cb0c-4bae-b518-bbe5de7fb6e3": {
-            "type": "featured-ring",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/VAL_1403-sq.jpg",
-              "job_title": "1.0ct Oval Cut Purple Sapphire Selena Ring",
-              "description": "",
-              "link_url": "mailto:custom@valeriemadison.com?subject=1ct Selena Purple Sapphire Ring&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
-              "link_title": "Click here to send this as inspiration for your custom order"
-            }
-          },
-          "e03d56ae-aca9-49b5-a1c6-a36830ac6550": {
-            "type": "featured-ring",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/6423_Ashby.jpg",
-              "job_title": "1.50CT ROSE CUT CUSHION COLORLESS DIAMOND SELENA ENGAGEMENT RING",
-              "description": "",
-              "link_url": "mailto:custom@valeriemadison.com",
-              "link_title": "Click here to send this as inspiration for your custom order"
-            }
-          },
-          "1600971009918": {
-            "type": "featured-ring",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/Green_Sapphire_Semi_Halo_Engagement_Ring.jpg",
-              "job_title": "1.6ct Pear Cut Green Sapphire & Diamond E\/W Luna Engagement Ring",
-              "description": "",
-              "link_url": "mailto:custom@valeriemadison.com?subject=1.6ct Luna Green Pear Sapphire & canadian Diamond Cluster Engagement Ring&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
-              "link_title": "Click here to send this as inspiration for your custom order"
-            }
-          },
-          "1600971534671": {
-            "type": "featured-ring",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/5644_MIchael_Miner.jpg",
-              "job_title": "0.83ct Round Cut COLORLESS Diamond Selena Engagement Ring",
-              "description": "",
-              "link_url": "mailto:custom@valeriemadison.com?subject=1ct Selena Blue Sapphire Engagement Ring&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
-              "link_title": "Click here to send this as inspiration for your custom order"
-            }
-          },
-          "46943720-18f2-4be1-8cfb-c95f390e1c99": {
-            "type": "featured-ring",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/5732_Troy_Allen_Lindsey.jpg",
-              "job_title": "0.94CT  CUSHION CUT COLORLESS DIAMOND BELLA ENGAGMENT RING",
-              "description": "",
-              "link_url": "mailto:custom@valeriemadison.com",
-              "link_title": "Click here to send this as inspiration for your custom order."
-            }
-          },
-          "6ac6b0d0-0577-44ab-b180-c7e057c830c8": {
-            "type": "featured-ring",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/7126_Moulton_1.jpg",
-              "job_title": "1.51CT Pear Cut Near Colorless Diamond Bezel engagement Ring",
-              "description": "",
-              "link_url": "mailto:custom@valeriemadison.com",
-              "link_title": "Click here to send this as inspiration for your custom order."
-            }
-          },
-          "1600971296892": {
-            "type": "featured-ring",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/5681_Arijit_Deb.jpg",
-              "job_title": "1.14ct Cushion Cut Yellow Diamond Zara Engagement Ring",
-              "description": "",
-              "link_url": "mailto:custom@valeriemadison.com?subject=1ct Juno Rose Cut Octagon Diamond Engagement Ring in white gold&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
-              "link_title": "Click here to send this as inspiration for your custom order"
-            }
-          },
-          "1600971533421": {
-            "type": "featured-ring",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/Selena_Pink_Sapphire_halo_engagement_ring.jpg",
-              "job_title": "1.01ct Oval Cut Selena Padparadscha Pink Oval Sapphire and Diamond Halo Engagement Ring",
-              "description": "",
-              "link_url": "mailto:custom@valeriemadison.com?subject=1.01ct Selena Padparadscha Pink Oval Sapphire and Diamond Halo Engagement Ring&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
-              "link_title": "Click here to send this as inspiration for your custom order"
-            }
-          },
-          "1602216749512": {
-            "type": "featured-ring",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/VAL_1342-sq.jpg",
-              "job_title": "1.50ct Oval Cut Blue Sapphire & Diamond Bella Engagement Ring",
-              "description": "",
-              "link_url": "mailto:custom@valeriemadison.com?subject=1.5ct Bella Sapphire & Diamond Engagement Ring&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
-              "link_title": "Click here to send this as inspiration for your custom order"
-            }
-          },
-          "1600971011621": {
-            "type": "featured-ring",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/VAL_1980.JPG",
-              "job_title": "1.2ct Pear Cut Light Blue Sapphire & Diamond E\/W Luna Engagement Ring",
-              "description": "",
-              "link_url": "mailto:custom@valeriemadison.com?subject=1.2ct Luna Diamond Blue Pear Sapphire & Canadian diamond Cluster Engagement Ring in White Gold&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
-              "link_title": "Click here to send this as inspiration for your custom order"
-            }
-          },
-          "page-grid-template-2": {
-            "type": "featured-ring",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/0.63ct-Bella-white-Diamond-Engagement-Ring-size-6.jpg",
-              "job_title": "0.63ct Round Rose Cut COLORLESS Diamond Bella Engagement Ring",
-              "description": "",
-              "link_url": "mailto:custom@valeriemadison.com?subject=0.63ct Bella Rose White Diamond Cluster Engagement Ring&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
-              "link_title": "Click here to send this as inspiration for your custom order."
-            }
-          },
-          "049de5c1-1d8f-403a-b03b-8549e2fe8e80": {
-            "type": "featured-ring",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/9112_Morse_1.jpg",
-              "job_title": "1.06ct Hexagon Cut Teal Sapphire Eva Engagement Ring",
-              "description": "",
-              "link_url": "mailto:custom@valeriemadison.com",
-              "link_title": "Click here to send this as inspiration for your custom order."
+              "link_title": "Contact for Pricing"
             }
           },
           "3935afa8-144b-49f6-86d7-0309a65978a0": {
             "type": "featured-ring",
             "settings": {
               "image": "shopify:\/\/shop_images\/9484_Peschon.jpg",
-              "job_title": "2.28ct elongated radiant cut blue sapphire zARA ENGAGEMENT RING",
+              "title": "2.28ct elongated radiant cut blue sapphire zARA ENGAGEMENT RING",
               "description": "",
               "link_url": "mailto:custom@valeriemadison.com",
-              "link_title": "Click here to send this as inspiration for your custom order."
+              "link_title": "Contact for Pricing"
+            }
+          },
+          "6eb108e0-a484-4eb1-b20e-4fc7425896e8": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/8195-Silvas.jpg",
+              "title": "2.22ct Near Colorless emerald cut diamond vera engagement ring",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com",
+              "link_title": "Contact for Pricing"
+            }
+          },
+          "42c6a299-e186-4b4b-a80c-e183dcedf977": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/10448_Connor.jpg",
+              "title": "1.0CT marquise Cut Near Colorless Diamond Bella Engagement Ring",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com",
+              "link_title": "Contact for Pricing"
+            }
+          },
+          "8695263b-4283-4c4c-b7ab-2d491121259b": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/10373_Velez.jpg",
+              "title": "1.47 teal radiant cut and 0.95ct  pink pear cut sapphire Gemma engagement ring",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com",
+              "link_title": "Contact for Pricing"
+            }
+          },
+          "6ac6b0d0-0577-44ab-b180-c7e057c830c8": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/7126_Moulton_1.jpg",
+              "title": "1.51CT Pear Cut Near Colorless Diamond Bezel engagement Ring",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com",
+              "link_title": "Contact for Pricing"
+            }
+          },
+          "d6b7aea6-dfa4-4eb9-bf98-b4cf45c7cdce": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/7758_Naumov.jpg",
+              "title": "1.22ct pear cut teal SAPPHIRE AND DIAMOND ZARA ENGAGEMENT RING",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com",
+              "link_title": "Contact for Pricing"
+            }
+          },
+          "536a64e0-8a3d-4408-8b6c-e26242c171c0": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/9836_O_Brien.jpg",
+              "title": "1.60ct hexagon cut teal sapphire stella engagement ring",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com",
+              "link_title": "Contact for Pricing"
+            }
+          },
+          "deabb6e1-1fa9-4063-8043-0aea86350f87": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/9802_Batobato.jpg",
+              "title": "1.01ct pear cut near colorless diamond Lena engagement ring",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com",
+              "link_title": "Contact for Pricing"
+            }
+          },
+          "1f0a733a-037f-4f48-a3de-aae167abd7a7": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/10062_MacCary.jpg",
+              "title": "0.66CT OLD EUROPEAN CUT DIAMOND BELLA  ENGAGEMENT RING",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com",
+              "link_title": "Contact for Pricing"
+            }
+          },
+          "1600904777648": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Peyton_Nielsen_-_Custom_Zara_with_emerald_cut_ruby_center_and_cadillac_diamond_sides.jpg",
+              "title": "1.28ct Emerald Cut Ruby & Diamond Zara Engagement Ring",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com?subject=0.65ct Luna Half Moon Salt & Pepper Bezel Diamond Engagement Ring&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
+              "link_title": "Contact for Pricing"
+            }
+          },
+          "5da0f710-2539-47b5-a3a1-b1d1ddd98e96": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/2000px-OOAK504-Eva-pink-emerald-cut-sapphire.jpg",
+              "title": "1.28CT Emerald Cut Pink Sapphire Eva W\/PAVÉ Engagement Ring",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com",
+              "link_title": "Contact for Pricing"
+            }
+          },
+          "1601324394662": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Screen_Shot_2021-12-30_at_10.48.57_AM.png",
+              "title": "1.76ct Pear Cut Blue\/Gray Sapphire & Diamond Zara Engagement Ring",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com?subject=1.8ct Zara Gray Sapphire Three Stone Engagement Ring&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
+              "link_title": "Contact for Pricing"
+            }
+          },
+          "5c12153d-9fd8-4110-9cee-68cc700a3181": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/7970_Yigzaw.jpg",
+              "title": "2.24CT Oval Cut Teal Sapphire Eva Engagement Ring",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com",
+              "link_title": "Contact for Pricing"
+            }
+          },
+          "a68e219f-e504-44bf-8e7c-cc8aaf9d9849": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/6970_Liu.jpg",
+              "title": "1.50ct oval cut blue sapphire & diamond Zara engagement ring",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com",
+              "link_title": "Contact for Pricing"
+            }
+          },
+          "a05be93b-bef1-4fb9-8b5c-f33d557c5d76": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/6458_Fenley.jpg",
+              "title": "1.50CT PEAR CUT NEAR COLORLESS DIAMOND VERA  ENGAGEMENT RING",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com",
+              "link_title": "Contact for Pricing"
+            }
+          },
+          "c21146f0-71e1-4e94-b9b6-ab07686451c3": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/5526_Clark_Pingul.jpg",
+              "title": "1.0CT Oval Cut pink Sapphire and diamond Zara Engagement Ring",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com",
+              "link_title": "Contact for Pricing"
+            }
+          },
+          "049de5c1-1d8f-403a-b03b-8549e2fe8e80": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/9112_Morse_1.jpg",
+              "title": "1.06ct Hexagon Cut Teal Sapphire Eva Engagement Ring",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com",
+              "link_title": "Contact for Pricing"
+            }
+          },
+          "b7b414bf-3fbf-4e82-b121-aa7e76088992": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/6026-Ryan-Hooper.jpg",
+              "title": "0.91CT Emerald Cut Near Colorless Diamond Zara Engagement Ring",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com",
+              "link_title": "Contact for Pricing"
+            }
+          },
+          "40b53f1e-1c3e-4a72-9167-7de84ed53ba9": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/5988_Ware.jpg",
+              "title": "1.68ct emerald cut violet\/purple sapphire Marisol engagement ring",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com?subject=Luna 0.9ct Padparadscha Sapphire Engagement Ring&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
+              "link_title": "Contact for Pricing"
+            }
+          },
+          "2f9e7e25-62fb-4be7-92f9-4a17f041ef0b": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/6480_Roussell.jpg",
+              "title": "1.91CT OVAL CUT NEAR COLORLESS DIAMOND ZARA ENGAGEMENT RING",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com",
+              "link_title": "Contact for Pricing"
+            }
+          },
+          "2505ffeb-d5c8-4f1e-987f-3567d1d93de3": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/5537_Richard_Francis.jpg",
+              "title": "2.50ct Radiant Cut Blue Sapphire & Diamond Zara Engagement Ring",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com?subject=2ct Zara Lilac Spinel & Diamond Engagement Ring&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
+              "link_title": "Contact for Pricing"
+            }
+          },
+          "1600904795953": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/CUSTOM_Bella-Peach-oval-sapphire.jpg",
+              "title": "2.0ct Oval Cut Peach Sapphire & Diamond Bella Engagement Ring",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com?subject=1.17ct Marisol Vintage Emerald & Diamond Halo Engagement Ring&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
+              "link_title": "Contact for Pricing"
+            }
+          },
+          "c14cdffa-2103-4c5f-8ef4-bebde5c835ac": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Zara-with-baguettes-hexagon-raspberry-sapphire-and-diamond-baguette-ring_0b1b6df6-599d-4631-a056-293d20e0205f.jpg",
+              "title": "1.13CT Hexagon Cut Terrecotta Sapphire & diamond zara ring",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com",
+              "link_title": "Contact for Pricing"
+            }
+          },
+          "a1cdfd41-7902-4af3-ab89-21a0be6d900d": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/8433_Hutchinson.jpg",
+              "title": "1.50ct emerald cut near colorless diamond zara engagement ring",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com",
+              "link_title": "Contact for Pricing"
+            }
+          },
+          "f733facd-ec19-4e0f-bb9b-ecfbaadd5594": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/VAL_2738-sq.jpg",
+              "title": "1.60 tcw Emerald Cut NEAR COLORLESS Diamond  Zara Engagement Ring",
+              "description": "<p><\/p><p><\/p>",
+              "link_url": "mailto:custom@valeriemadison.com?subject=1.60 tcw Three Stone Diamond Engagement Ring&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
+              "link_title": "Contact for Pricing"
+            }
+          },
+          "dc82587e-be56-444f-9fad-dd8b3baaff08": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/8703_Jones.jpg",
+              "title": "1.54ct Old European Cut Antique Diamond Zara engagement ring",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com",
+              "link_title": "Contact for Pricing"
+            }
+          },
+          "a997de41-c821-4f2e-bef9-532468a41e8b": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/7298_Stuart.jpg",
+              "title": "2.85CT Emerald Cut Teal Sapphire & Diamond Engagement ring",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com",
+              "link_title": "Contact for Pricing"
+            }
+          },
+          "25f26937-528f-4fe6-838f-6c939fdcc358": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/6939_Seaks.jpg",
+              "title": "1.81CT Hexagon Cut Green Sapphire Selena engagement ring",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com",
+              "link_title": "Contact for Pricing"
+            }
+          },
+          "1600971298274": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/6351_Ruiz.jpg",
+              "title": "2.25ct Asscher Cut Sapphire Rey engagement ring",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com?subject=1.21ct Juno Champagne Shield Diamond Engagement Ring&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
+              "link_title": "Contact for Pricing"
+            }
+          },
+          "11b31845-91b8-4f18-b096-df44448c5f7e": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/7597_Sandberg.jpg",
+              "title": "1.41CT Oval Cut Teal Montana Sapphire Marisol Engagement Ring",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com",
+              "link_title": "Contact for Pricing"
+            }
+          },
+          "f805bfba-2ab8-4ce4-8270-41244082cf2e": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/7463_Longfellow.jpg",
+              "title": "0.90CT Round Cut Near Colorless Diamond Selena Engagement Ring",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com",
+              "link_title": "Contact for Pricing"
+            }
+          },
+          "640bb445-c1bd-4dc8-9d7a-d58cc777904c": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/7367_Lechleider.jpg",
+              "title": "2.0CT  Oval Cut Colorless Diamond Zara Engagement Ring",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com",
+              "link_title": "Contact for Pricing"
+            }
+          },
+          "7cbdf742-2cad-4698-8958-289c9b4f5cbc": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/OOAK478_Marisol_teal_pear_sapphire.jpg",
+              "title": "1.07CT PEAR CUT TEAL SAPPHIRE MARISOL ENGAGEMENT RING",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com",
+              "link_title": "Contact for Pricing"
+            }
+          },
+          "46369783-ee33-47c9-ad9c-a0e709b27a57": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/7000_Hennessy_1.jpg",
+              "title": "1.08CT ROSE CUT NEAR COLORLESS MARQUISE CUT DIAMOND  ENGAGEMENT RING",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com",
+              "link_title": "Contact for Pricing"
+            }
+          },
+          "1601324393407": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/6129_Topel.jpg",
+              "title": "2.52ct. Radiant Cut Blue Sapphire & Diamond Engagement Ring",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com?subject=1ct Zara Pink Sapphire Three Stone Engagement Ring in Rose Gold&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
+              "link_title": "Contact for Pricing"
+            }
+          },
+          "1600972038157": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/5699_Williams.jpg",
+              "title": "3.3ct Oval Cut Light Blue Sapphire Selena Engagement Ring",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com?subject=1.5ct Pink Sapphire SuperNova Engagement Ring&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
+              "link_title": "Contact for Pricing"
+            }
+          },
+          "da4aa41c-8ee2-4602-8af2-cd0ab9e118da": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Don_Koberg_-_Custom_Bella_ring_with_radiant_cut_diamond_center.jpg",
+              "title": "1.29ct Cushion Cut NEAR COLORLESS  Diamond Bella Engagement Ring",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com",
+              "link_title": "Contact for pricing"
+            }
+          },
+          "9e2c28d0-7615-4deb-9820-5254063adafc": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/WB-Eva-champagne-marquise-diamond.jpg",
+              "title": "1.0CT Marquise Cut Champagne Diamond Eva Ring",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com",
+              "link_title": "Contact for Pricing"
+            }
+          },
+          "f4343759-5787-4f52-8d68-a5de937c0946": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/7097_Darst.jpg",
+              "title": "2.04CT Emerald cut teal sapphire rey engagement ring",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com",
+              "link_title": "Contact for Pricing"
+            }
+          },
+          "1600971535955": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/6270_Peppler.jpg",
+              "title": "1.20ct Pear Cut NEAR COLORLESS Diamond Vera Engagement Ring",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com?subject=0.95ct Selena Rose Cut Brown Diamond Halo Engagement Ring&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
+              "link_title": "Contact for Pricing"
+            }
+          },
+          "c408e48c-2512-4d0e-9eff-d05514d0b209": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/7553_Shurtleff.jpg",
+              "title": "1.15 Radiant Cut Pink Sapphire Bella Engagement Ring",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com",
+              "link_title": "Contact for Pricing"
+            }
+          },
+          "e794913f-58c7-4b75-8b2f-cf50a9a25621": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/7121_Byrne.jpg",
+              "title": "1.64CT Gray\/Blue Oval Cut Sapphire & Diamond Zara engagement ring",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com",
+              "link_title": "Contact for Pricing"
+            }
+          },
+          "72f62934-075e-40a6-822e-83aa2cfea146": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/6646_George.jpg",
+              "title": "1.35CT Marquise Cut Sapphire Eva Engagement Ring",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com",
+              "link_title": "Contact for Pricing"
+            }
+          },
+          "f21c9164-a14e-4748-a4a6-e41cf3a21655": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/5639_Justin_Zhong_1.jpg",
+              "title": "0.88CT RC Pear CUT NEAR COLORLESS DIAMOND EVA WITH PAVÉ ENGAGEMENT RING",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com",
+              "link_title": "Contact for Pricing"
+            }
+          },
+          "1600972039473": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Woods_Custom-Selena-oval-peach-sapphire.jpg",
+              "title": "1.93ct Oval Cut Peachy\/Pink Sapphire Selena Right Hand Ring",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com?subject=0.70ct SuperNova Green Sapphire Engagement Ring&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
+              "link_title": "Contact for Pricing"
+            }
+          },
+          "f8be2d68-96d4-4e9d-917b-278ccb41ce2e": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/9117_Harris.jpg",
+              "title": "1.46ct Black spinel and colorless diamond bella engagement ring",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com?subject=1.44ct Eva Salt & Pepper Kite Diamond Engagement Ring&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
+              "link_title": "Contact for Pricing"
+            }
+          },
+          "1600971770447": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/6849_Ozumerzifon.jpg",
+              "title": "2.53ct EMERALD CUT Teal Sapphire BEZEL Ring",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com?subject=0.90ct Eva Teal Montana Sapphire and Diamond Pavé Engagement Ring&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
+              "link_title": "Contact for Pricing"
+            }
+          },
+          "dc51abab-15f7-4ef1-97ea-571fe750d825": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/7529_Cantor_1.jpg",
+              "title": "2.37ct Oval Cut Peach Sapphire Ella RING",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com",
+              "link_title": "Contact for Pricing"
+            }
+          },
+          "10128707-79bb-4a7a-b34b-da016e30342b": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Custom_Selena_Ruby.jpg",
+              "title": "1.11ct Oval Cut Ruby Selena Engagement Ring",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com?subject=[ADD PRODUCT SPECS HERE]&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
+              "link_title": "Contact for Pricing"
+            }
+          },
+          "01706f5b-bb86-4100-ac94-0f06c99ec419": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/DSC_3030.jpg",
+              "title": "0.54CT Round Colorless Diamond Juno Engagement Ring",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com",
+              "link_title": "Contact for Pricing"
+            }
+          },
+          "1601324391888": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Green_Sapphire_Diamond_Ring.jpg",
+              "title": "2.0ct Radiant Cut Green Sapphire & Diamond Zara Engagement Ring",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com",
+              "link_title": "Contact for Pricing"
+            }
+          },
+          "1600904797123": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/8068-Pietila.jpg",
+              "title": "0.82ct pear cut pink Sapphire eva engagement ring",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com?subject=1.12ct Marisol Teal Blue Sapphire and Diamond Engagement Ring&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
+              "link_title": "Contact for Pricing"
+            }
+          },
+          "1600971767616": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/VAL_49782.jpg",
+              "title": "2.0ct Cushion Cut Teal Eva Engagement Ring with Pavé Diamonds",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com?subject=2ct Eva Teal Cushion Sapphire Diamond Engagement Ring with Pavé Diamonds&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
+              "link_title": "Contact for Pricing"
+            }
+          },
+          "page-grid-template-1": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/6491_Grubbs.jpg",
+              "title": "1.02CT PEAR CUT FAINT YELLOW DIAMOND VERA Engagement Ring",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com?subject=0.59ct Eva Colorless Trillion Diamond Engagement Ring&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
+              "link_title": "Contact for Pricing"
+            }
+          },
+          "e5d03b69-cb0c-4bae-b518-bbe5de7fb6e3": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/VAL_1403-sq.jpg",
+              "title": "1.0ct Oval Cut Purple Sapphire Selena Ring",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com?subject=1ct Selena Purple Sapphire Ring&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
+              "link_title": "Contact for Pricing"
+            }
+          },
+          "e03d56ae-aca9-49b5-a1c6-a36830ac6550": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/6423_Ashby.jpg",
+              "title": "1.50CT ROSE CUT CUSHION COLORLESS DIAMOND SELENA ENGAGEMENT RING",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com",
+              "link_title": "Contact for Pricing"
+            }
+          },
+          "1600971009918": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Green_Sapphire_Semi_Halo_Engagement_Ring.jpg",
+              "title": "1.6ct Pear Cut Green Sapphire & Diamond E\/W Luna Engagement Ring",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com?subject=1.6ct Luna Green Pear Sapphire & canadian Diamond Cluster Engagement Ring&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
+              "link_title": "Contact for Pricing"
+            }
+          },
+          "1600971534671": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/5644_MIchael_Miner.jpg",
+              "title": "0.83ct Round Cut COLORLESS Diamond Selena Engagement Ring",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com?subject=1ct Selena Blue Sapphire Engagement Ring&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
+              "link_title": "Contact for Pricing"
+            }
+          },
+          "46943720-18f2-4be1-8cfb-c95f390e1c99": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/5732_Troy_Allen_Lindsey.jpg",
+              "title": "0.94CT  CUSHION CUT COLORLESS DIAMOND BELLA ENGAGMENT RING",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com",
+              "link_title": "Contact for Pricing"
+            }
+          },
+          "1600971296892": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/5681_Arijit_Deb.jpg",
+              "title": "1.14ct Cushion Cut Yellow Diamond Zara Engagement Ring",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com?subject=1ct Juno Rose Cut Octagon Diamond Engagement Ring in white gold&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
+              "link_title": "Contact for Pricing"
+            }
+          },
+          "1600971533421": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Selena_Pink_Sapphire_halo_engagement_ring.jpg",
+              "title": "1.01ct Oval Cut Selena Padparadscha Pink Oval Sapphire and Diamond Halo Engagement Ring",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com?subject=1.01ct Selena Padparadscha Pink Oval Sapphire and Diamond Halo Engagement Ring&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
+              "link_title": "Contact for Pricing"
+            }
+          },
+          "1600971011621": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/VAL_1980.JPG",
+              "title": "1.2ct Pear Cut Light Blue Sapphire & Diamond E\/W Luna Engagement Ring",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com?subject=1.2ct Luna Diamond Blue Pear Sapphire & Canadian diamond Cluster Engagement Ring in White Gold&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
+              "link_title": "Contact for Pricing"
+            }
+          },
+          "page-grid-template-2": {
+            "type": "featured-ring",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/0.63ct-Bella-white-Diamond-Engagement-Ring-size-6.jpg",
+              "title": "0.63ct Round Rose Cut COLORLESS Diamond Bella Engagement Ring",
+              "description": "",
+              "link_url": "mailto:custom@valeriemadison.com?subject=0.63ct Bella Rose White Diamond Cluster Engagement Ring&body=Hi there, I'd love to use this ring as inspiration for my future custom order.",
+              "link_title": "Contact for Pricing"
             }
           }
         },
         "block_order": [
+          "35c476d5-0033-4e93-8982-d5e0e0eb09d7",
           "1600971768975",
+          "52f2a8b1-1d33-4bb3-a1da-ba076275604b",
+          "3935afa8-144b-49f6-86d7-0309a65978a0",
+          "6eb108e0-a484-4eb1-b20e-4fc7425896e8",
+          "42c6a299-e186-4b4b-a80c-e183dcedf977",
+          "8695263b-4283-4c4c-b7ab-2d491121259b",
+          "6ac6b0d0-0577-44ab-b180-c7e057c830c8",
+          "d6b7aea6-dfa4-4eb9-bf98-b4cf45c7cdce",
+          "536a64e0-8a3d-4408-8b6c-e26242c171c0",
+          "deabb6e1-1fa9-4063-8043-0aea86350f87",
+          "1f0a733a-037f-4f48-a3de-aae167abd7a7",
+          "1600904777648",
+          "5da0f710-2539-47b5-a3a1-b1d1ddd98e96",
           "1601324394662",
-          "b7b414bf-3fbf-4e82-b121-aa7e76088992",
+          "5c12153d-9fd8-4110-9cee-68cc700a3181",
           "a68e219f-e504-44bf-8e7c-cc8aaf9d9849",
           "a05be93b-bef1-4fb9-8b5c-f33d557c5d76",
-          "52f2a8b1-1d33-4bb3-a1da-ba076275604b",
           "c21146f0-71e1-4e94-b9b6-ab07686451c3",
-          "5c12153d-9fd8-4110-9cee-68cc700a3181",
+          "049de5c1-1d8f-403a-b03b-8549e2fe8e80",
+          "b7b414bf-3fbf-4e82-b121-aa7e76088992",
           "40b53f1e-1c3e-4a72-9167-7de84ed53ba9",
           "2f9e7e25-62fb-4be7-92f9-4a17f041ef0b",
           "2505ffeb-d5c8-4f1e-987f-3567d1d93de3",
@@ -2633,32 +2677,26 @@
           "a1cdfd41-7902-4af3-ab89-21a0be6d900d",
           "f733facd-ec19-4e0f-bb9b-ecfbaadd5594",
           "dc82587e-be56-444f-9fad-dd8b3baaff08",
-          "d6b7aea6-dfa4-4eb9-bf98-b4cf45c7cdce",
           "a997de41-c821-4f2e-bef9-532468a41e8b",
-          "1600971298274",
-          "22248c50-c98a-4f32-8403-bb27bb95e42c",
           "25f26937-528f-4fe6-838f-6c939fdcc358",
-          "f805bfba-2ab8-4ce4-8270-41244082cf2e",
-          "6eb108e0-a484-4eb1-b20e-4fc7425896e8",
-          "1600904777648",
-          "640bb445-c1bd-4dc8-9d7a-d58cc777904c",
+          "1600971298274",
           "11b31845-91b8-4f18-b096-df44448c5f7e",
-          "46369783-ee33-47c9-ad9c-a0e709b27a57",
-          "5da0f710-2539-47b5-a3a1-b1d1ddd98e96",
-          "1601324393407",
+          "f805bfba-2ab8-4ce4-8270-41244082cf2e",
+          "640bb445-c1bd-4dc8-9d7a-d58cc777904c",
           "7cbdf742-2cad-4698-8958-289c9b4f5cbc",
+          "46369783-ee33-47c9-ad9c-a0e709b27a57",
+          "1601324393407",
+          "1600972038157",
           "da4aa41c-8ee2-4602-8af2-cd0ab9e118da",
           "9e2c28d0-7615-4deb-9820-5254063adafc",
-          "1600972038157",
+          "f4343759-5787-4f52-8d68-a5de937c0946",
           "1600971535955",
           "c408e48c-2512-4d0e-9eff-d05514d0b209",
-          "f4343759-5787-4f52-8d68-a5de937c0946",
+          "e794913f-58c7-4b75-8b2f-cf50a9a25621",
           "72f62934-075e-40a6-822e-83aa2cfea146",
           "f21c9164-a14e-4748-a4a6-e41cf3a21655",
-          "e794913f-58c7-4b75-8b2f-cf50a9a25621",
           "1600972039473",
           "f8be2d68-96d4-4e9d-917b-278ccb41ce2e",
-          "1600904785265",
           "1600971770447",
           "dc51abab-15f7-4ef1-97ea-571fe750d825",
           "10128707-79bb-4a7a-b34b-da016e30342b",
@@ -2672,14 +2710,10 @@
           "1600971009918",
           "1600971534671",
           "46943720-18f2-4be1-8cfb-c95f390e1c99",
-          "6ac6b0d0-0577-44ab-b180-c7e057c830c8",
           "1600971296892",
           "1600971533421",
-          "1602216749512",
           "1600971011621",
-          "page-grid-template-2",
-          "049de5c1-1d8f-403a-b03b-8549e2fe8e80",
-          "3935afa8-144b-49f6-86d7-0309a65978a0"
+          "page-grid-template-2"
         ],
         "settings": {
           "image_position": "left",
@@ -3105,10 +3139,10 @@
           "1b8dc7aa-f7bd-480a-8337-863ec34683f4": {
             "type": "team_member",
             "settings": {
-              "image": "shopify:\/\/shop_images\/Val---plum-skirt-cropped.jpg",
+              "image": "shopify:\/\/shop_images\/ABOUT-US-Val.jpg",
               "title": "Valerie",
               "job_title": "Owner, Designer, Creative Director",
-              "description": "I love my job, especially when choosing gemstones! I hand-select every stone you see in our designs with beauty and quality being my top considerations. I have a degree in Environmental Science & Resource Management making me a great advocate for our planet. I love dinosaurs, practicing my Spanish, and tending to my indoor jungle at home."
+              "description": "I pinch myself everyday to see if I'm dreaming because I love my job and hope that you can see that passion come through in every aspect of my company. From choosing gemstones to designing our company newsletters, I'm involved with all of the creative facets of my business. Outside of work, I love dinosaurs, practicing my Spanish, and tending to my indoor jungle at home."
             }
           },
           "3a6eca3c-c1d0-4897-a323-7a083d69f370": {
@@ -3349,15 +3383,14 @@
             "type": "background_block",
             "settings": {
               "background_color": "light-alt",
-              "banner_image_desktop": "shopify:\/\/shop_images\/Cropped-for-Shopify-Diamond-Drop-Necklace-modeled-on-Val.jpg"
+              "banner_image_desktop": "shopify:\/\/shop_images\/Eva---SODO-Studio-Shoot-Aug-2nd-2022--Sapphires-11-edited.png"
             }
           },
           "398fe46e-43dd-41e3-8d73-51f91275cd68": {
             "type": "background_block",
-            "disabled": true,
             "settings": {
               "background_color": "light",
-              "banner_image_desktop": "shopify:\/\/shop_images\/Modeled_Herringbone_and_Emerald_Pear_Bezel_1x1_57502548-0225-4dfb-bcb5-40639700c8d3.jpg"
+              "banner_image_desktop": "shopify:\/\/shop_images\/Sapphire-Aug-9th-Launch-Group-2.png"
             }
           }
         },
@@ -3367,13 +3400,13 @@
         ],
         "settings": {
           "banner_wrapper_background_color": "light-alt",
-          "pretext": "New styles",
-          "heading": "Fresh Additions",
-          "cta_link": "https:\/\/www.valeriemadison.com\/collections\/fine-jewelry\/necklaces",
-          "cta_text": "Shop new necklaces",
+          "pretext": "New",
+          "heading": "Sapphire Rings",
+          "cta_link": "https:\/\/www.valeriemadison.com\/collections\/engagement-rings\/new",
+          "cta_text": "See what's new",
           "text_position": "center",
-          "text_color": "light",
-          "banner_image_mobile": "shopify:\/\/shop_images\/SQUARE-Diamond-Drop-Necklace-modeled-on-Val.jpg",
+          "text_color": "dark-alt",
+          "banner_image_mobile": "shopify:\/\/shop_images\/Sapphire-Aug-9th-Launch-Group-2.png",
           "text_color_mobile": "dark-alt",
           "content_background_color_mobile": "light-alt"
         }
@@ -3951,18 +3984,11 @@
       "eternity-bracelets-upcoming-dates": {
         "type": "eternity-bracelets-upcoming-dates",
         "blocks": {
-          "a649c73a-209c-48df-bffc-b28f00d3c4e4": {
-            "type": "upcoming-date",
-            "settings": {
-              "date": "Friday, July 29",
-              "time": "4:00-7:00pm"
-            }
-          },
           "1fa24276-f437-472a-845b-c224959fde75": {
             "type": "upcoming-date",
             "settings": {
               "date": "Friday, August 26",
-              "time": "4:00-6:00pm"
+              "time": "4:00-7:00pm"
             }
           },
           "5590c058-2a3e-4366-a6c3-e434396aa48e": {
@@ -3981,7 +4007,6 @@
           }
         },
         "block_order": [
-          "a649c73a-209c-48df-bffc-b28f00d3c4e4",
           "1fa24276-f437-472a-845b-c224959fde75",
           "5590c058-2a3e-4366-a6c3-e434396aa48e",
           "6741e976-29ed-4885-b4e3-0ec5c97b22af"
