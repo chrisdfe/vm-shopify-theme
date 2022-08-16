@@ -21,7 +21,7 @@
     <div class="container">
       <div class="row product_section js-product_section" data-rv-handle="{{ product.handle }}">
 
-        <div class="nine columns medium-down--one-whole">
+        <div class="ten columns medium-down--one-whole">
           {% render 'product.images',
             video_looping: section.settings.video_looping,
             set_product_height: section.settings.set_product_height
@@ -30,7 +30,7 @@
         {% render "product.images-modal" %}
         </div>
         
-        <div class="seven columns medium-down--one-whole">
+        <div class="six columns medium-down--one-whole">
           <div class="product-content-wrapper">
             {% assign collection_handles = product.collections | map: 'handle' %}
             {% assign variant = product.selected_or_first_available_variant %}

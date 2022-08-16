@@ -2,9 +2,24 @@ import BodyScroll from '../../utils/BodyScroll';
 
 interface ProductPageImagesState {
   modalIsOpen: boolean;
+  isAnimating: boolean;
 }
 
 type ScrollTopMap = { [key: number]: number; };
+
+const SELECTORS = {
+  PRODUCT_IMAGE_CELL: ".product-page__product-image-cell",
+  MODAL_WRAPPER: ".product-images-modal-wrapper",
+  MODAL: ".product-images-modal",
+  MODAL_UNDERLAY: ".product-images-modal__underlay",
+  MODAL_CONTENT: ".product-images-modal__content",
+  MODAL_THUMBNAIL_LIST_WRAPPER: ".product-images-modal__thumbnail-list",
+  MODAL_THUMBNAIL: ".product-images-modal__thumbnail",
+  MODAL_IMAGE_CELL: ".product-images-modal__image-cell",
+  MODAL_IMAGE_CELL_LIST_WRAPPER: ".product-images-modal__image-cell-list",
+  MODAL_CLOSE_BUTTON: ".product-images-modal__close-button"
+};
+
 export default class ProductPageImages {
   imageCellElements: HTMLElement[] = [];
 
@@ -14,6 +29,8 @@ export default class ProductPageImages {
   modalUnderlayElement: HTMLElement;
 
   modalThumbnailElementList: HTMLElement[];
+
+  modalImageCellListWrapperElement: HTMLElement;
   modalImageCellElementList: HTMLElement[];
 
   closeButtonElement: HTMLElement;
@@ -21,7 +38,8 @@ export default class ProductPageImages {
   modalImageScrollTopIndicies: ScrollTopMap;
 
   state: ProductPageImagesState = {
-    modalIsOpen: false
+    modalIsOpen: false,
+    isAnimating: false
   };
 
   constructor() {
@@ -34,27 +52,28 @@ export default class ProductPageImages {
   }
 
   setupImages() {
-    this.imageCellElements = Array.from(document.querySelectorAll('.product-page__product-image-cell'));
+    this.imageCellElements = Array.from(document.querySelectorAll(SELECTORS.PRODUCT_IMAGE_CELL));
 
     this.imageCellElements.forEach(imageCell => {
       imageCell.addEventListener("click", this.onImageCellClick);
     });
 
-    this.modalWrapperElement = document.querySelector('.product-images-modal-wrapper');
-    this.modalElement = document.querySelector('.product-images-modal');
-    this.modalUnderlayElement = document.querySelector('.product-images-modal__underlay');
-    this.modalUnderlayElement = document.querySelector('.product-images-modal__underlay');
+    this.modalWrapperElement = document.querySelector(SELECTORS.MODAL_WRAPPER);
+    this.modalElement = document.querySelector(SELECTORS.MODAL);
+    this.modalUnderlayElement = document.querySelector(SELECTORS.MODAL_UNDERLAY);
+    this.modalContentElement = document.querySelector(SELECTORS.MODAL_CONTENT);
 
     this.modalThumbnailElementList =
-      Array.from(document.querySelectorAll('.product-images-modal__thumbnail'));
+      Array.from(document.querySelectorAll(SELECTORS.MODAL_THUMBNAIL));
 
+    this.modalImageCellListWrapperElement = document.querySelector(SELECTORS.MODAL_IMAGE_CELL_LIST_WRAPPER);
     this.modalImageCellElementList =
-      Array.from(document.querySelectorAll('.product-images-modal__image-cell'));
+      Array.from(document.querySelectorAll(SELECTORS.MODAL_IMAGE_CELL));
 
-    this.closeButtonElement = document.querySelector('.product-images-modal__close-button');
+    this.closeButtonElement = document.querySelector(SELECTORS.MODAL_CLOSE_BUTTON);
 
     // Add event listeners
-    this.modalUnderlayElement.addEventListener('click', this.onModalUnderlayClick);
+    this.modalContentElement.addEventListener("click", this.onModalContentClick);
     this.closeButtonElement.addEventListener('click', this.onModalCloseButtonClick);
 
     this.modalThumbnailElementList.forEach(element => {
@@ -62,6 +81,7 @@ export default class ProductPageImages {
     });
 
     document.addEventListener("keydown", this.onKeyPressed);
+    document.addEventListener('resize', this.onWindowResize);
   }
 
   unload() {
@@ -77,12 +97,13 @@ export default class ProductPageImages {
     const indexAsString = thumbnailWrapper.getAttribute("data-index");
     const index = parseInt(indexAsString, 10);
     const imageCell = this.modalImageCellElementList[index];
-    this.modalElement.scrollTo({
-      top: imageCell.getBoundingClientRect().top,
+
+    const newScrollTop = imageCell.offsetTop;
+
+    this.modalImageCellListWrapperElement.scrollTo({
+      top: newScrollTop,
       behavior: 'smooth'
     });
-    // console.log('typeof index', typeof index);
-    // const scrollTop = this.modalImageScrollTopIndicies[index];
   };
 
   onImageCellClick = (e: MouseEvent) => {
@@ -90,8 +111,19 @@ export default class ProductPageImages {
   };
 
   onModalUnderlayClick = (e: MouseEvent) => {
-    console.log("onmodalunderlayclick");
     this.closeModal();
+  };
+
+  onModalContentClick = (e: MouseEvent) => {
+    e.stopPropagation();
+    const targetElement = e.target as HTMLElement;
+
+    if (
+      !targetElement.closest(SELECTORS.MODAL_THUMBNAIL_LIST_WRAPPER) &&
+      !targetElement.closest(SELECTORS.MODAL_IMAGE_CELL_LIST_WRAPPER)
+    ) {
+      this.closeModal();
+    }
   };
 
   onModalCloseButtonClick = (e: MouseEvent) => {
@@ -104,27 +136,53 @@ export default class ProductPageImages {
     }
   };
 
-  setModalImageScrollTopIndicies = () => {
-    this.modalImageScrollTopIndicies = this.modalImageCellElementList.reduce((acc, element, index) => {
-      const scrollTop = element.getBoundingClientRect().top;
-      return { ...acc, [index]: scrollTop };
-    }, {});
-    console.log("this.modalImageScrollTopIndicies");
-    console.log(this.modalImageScrollTopIndicies);
-  };
-
-  openModal = () => {
-    BodyScroll.lock();
-    this.modalWrapperElement.classList.add('is-active');
-    this.state.modalIsOpen = true;
-
+  onWindowResize = () => {
     this.setModalImageScrollTopIndicies();
   };
 
+  setModalImageScrollTopIndicies = () => {
+    this.modalImageScrollTopIndicies = this.modalImageCellElementList.reduce((acc, element, index) => {
+      const scrollTop = element.offsetTop;
+      return { ...acc, [index]: scrollTop };
+    }, {});
+  };
+
+  openModal = () => {
+    if (this.state.isAnimating) {
+      return;
+    }
+
+    BodyScroll.lock('modal');
+
+    this.modalWrapperElement.classList.add('is-active');
+
+    this.modalElement.classList.add('animated', 'animated--snappy', 'fadeIn');
+    this.state.isAnimating = true;
+
+    this.modalElement.addEventListener('animationend', () => {
+      this.state.modalIsOpen = true;
+      this.state.isAnimating = false;
+      this.modalElement.classList.remove('animated', 'animated--snappy', 'fadeIn');
+      this.setModalImageScrollTopIndicies();
+    }, { once: true });
+  };
+
   closeModal = () => {
-    BodyScroll.unlock();
-    this.modalWrapperElement.classList.remove('is-active');
-    this.state.modalIsOpen = false;
+    if (this.state.isAnimating) {
+      return;
+    }
+
+    BodyScroll.unlock('modal');
+
+    this.modalElement.classList.add('animated', 'animated--snappy', 'fadeOut');
+    this.state.isAnimating = true;
+
+    this.modalElement.addEventListener('animationend', () => {
+      this.state.isAnimating = false;
+      this.state.modalIsOpen = false;
+      this.modalWrapperElement.classList.remove('is-active');
+      this.modalElement.classList.remove('animated', 'animated--snappy', 'fadeOut');
+    }, { once: true });
   };
 
   static isOnProductPage = () => !!document.querySelector('.product-template');

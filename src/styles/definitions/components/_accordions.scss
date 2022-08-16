@@ -12,7 +12,7 @@
   text-align: left;
   padding: get-vm-spacer(1.5) get-vm-spacer(0.5);
   border-bottom: 1px solid $vm-color-sea-green;
-  
+
   &:hover,
   &:active,
   &:focus {
@@ -22,9 +22,7 @@
   }
 
   .vm-accordion-button__arrow {
-    $arrow-size: 0.5rem;
-    // transform: rotate(-90deg);
-    // transition: all 0.2s;
+    $arrow-size: 10px;
     display: flex;
     position: relative;
     width: $arrow-size;
@@ -32,7 +30,7 @@
 
     span {
       top: calc(50% - 1px);
-      left: calc(50% - 1px);
+      left: 0;
       position: absolute;
       display: block;
       width: $arrow-size;
@@ -50,7 +48,6 @@
 
   &.is-open {
     .vm-accordion-button__arrow {
-    
       span:nth-child(2) {
         transform: rotate(0);
       }

@@ -11,54 +11,49 @@
   data-accordion-group-wrapper="mobile-mega-menu"
   data-accordion-group-option-single-open-only="false"
   >
-  <button
-    class="vm-accordion-button"
-    data-accordion-button-id="{{ section.settings.parent | handleize }}"
-    data-no-instant>
-    <span>{{ section.settings.parent }}</span>
-    <span class="vm-accordion-button__arrow">
-      {% render "icon.carat" %}
-    </span>
-  </button>
+  {% assign accordion_id = section.settings.parent | handleize %}
+  {% render "accordion.button" with {
+    accordion_id: accordion_id,
+    title: section.settings.parent
+  } %}
   
-  <div
-    class="vm-accordion-content"
-    data-accordion-id="{{ section.settings.parent | handleize }}"
-    data-accordion-group-id="mobile-mega-menu">
-    <div class="vm-accordion-content__inner">
+  {% capture accordion_content %}
+    {% for block in section.blocks %}
+      {% if block.type == "nav_link_list" %}
+        <div class="mega-menu-mobile__block" {{ block.shopify_attributes }}>
+          {% render "header.mobile.mega-menu.nav-link-list" with {
+            title: block.settings.title,
+            link_list: block.settings.link_list,
+            show_view_all_link: block.settings.show_view_all_link,
+            view_all_url: block.settings.view_all_url,
+            parent: section.settings.parent,
+          } %}
+        </div>
+      {% elsif block.type == "image" %}
+        {% assign hide_image = false %}
+        {% if block.settings.image != blank and block.settings.url == blank %}
+          {% assign hide_image = true %}
+        {% endif %}
 
-      {% for block in section.blocks %}
-        {% if block.type == "nav_link_list" %}
+        {% unless hide_image %}
           <div class="mega-menu-mobile__block" {{ block.shopify_attributes }}>
-            {% render "header.mobile.mega-menu.nav-link-list" with {
-              title: block.settings.title,
-              link_list: block.settings.link_list,
-              show_view_all_link: block.settings.show_view_all_link,
-              view_all_url: block.settings.view_all_url,
+            {% render "header.mobile.mega-menu.image" with {
+              image: block.settings.image,
+              url: block.settings.url,
+              cta_text: block.settings.cta_text,
+              cta_subtext: block.settings.cta_subtext,
               parent: section.settings.parent,
             } %}
           </div>
-        {% elsif block.type == "image" %}
-          {% assign hide_image = false %}
-          {% if block.settings.image != blank and block.settings.url == blank %}
-            {% assign hide_image = true %}
-          {% endif %}
+        {% endunless %}
+      {% endif %}
+    {% endfor %}
+  {% endcapture %}
 
-          {% unless hide_image %}
-            <div class="mega-menu-mobile__block" {{ block.shopify_attributes }}>
-              {% render "header.mobile.mega-menu.image" with {
-                image: block.settings.image,
-                url: block.settings.url,
-                cta_text: block.settings.cta_text,
-                cta_subtext: block.settings.cta_subtext,
-                parent: section.settings.parent,
-              } %}
-            </div>
-          {% endunless %}
-        {% endif %}
-      {% endfor %}
-
-    </div>
-  </div>
+  {% render "accordion.content" with {
+    accordion_id: accordion_id,
+    accordion_group_id: "mobile-mega-menu"
+    content: accordion_content
+  } %}
 </div>
 {% endif %}

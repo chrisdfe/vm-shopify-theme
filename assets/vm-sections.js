@@ -357,11 +357,15 @@
     var BodyScroll = /** @class */ (function () {
         function BodyScroll() {
         }
-        BodyScroll.lock = function () {
-            document.body.classList.add("menu-is-open");
+        BodyScroll.lock = function (type) {
+            if (type === void 0) { type = 'menu'; }
+            var className = "".concat(type, "-is-open");
+            document.body.classList.add(className);
         };
-        BodyScroll.unlock = function () {
-            document.body.classList.remove("menu-is-open");
+        BodyScroll.unlock = function (type) {
+            if (type === void 0) { type = 'menu'; }
+            var className = "".concat(type, "-is-open");
+            document.body.classList.remove(className);
         };
         return BodyScroll;
     }());
@@ -914,31 +918,50 @@
         return ProductCardsManager;
     }());
 
+    var SELECTORS = {
+        PRODUCT_IMAGE_CELL: ".product-page__product-image-cell",
+        MODAL_WRAPPER: ".product-images-modal-wrapper",
+        MODAL: ".product-images-modal",
+        MODAL_UNDERLAY: ".product-images-modal__underlay",
+        MODAL_CONTENT: ".product-images-modal__content",
+        MODAL_THUMBNAIL_LIST_WRAPPER: ".product-images-modal__thumbnail-list",
+        MODAL_THUMBNAIL: ".product-images-modal__thumbnail",
+        MODAL_IMAGE_CELL: ".product-images-modal__image-cell",
+        MODAL_IMAGE_CELL_LIST_WRAPPER: ".product-images-modal__image-cell-list",
+        MODAL_CLOSE_BUTTON: ".product-images-modal__close-button"
+    };
     var ProductPageImages = /** @class */ (function () {
         function ProductPageImages() {
             var _this = this;
             this.imageCellElements = [];
             this.state = {
-                modalIsOpen: false
+                modalIsOpen: false,
+                isAnimating: false
             };
             this.onModalThumbnailClick = function (e) {
                 var thumbnailWrapper = e.target.closest('.product-images-modal__thumbnail');
                 var indexAsString = thumbnailWrapper.getAttribute("data-index");
                 var index = parseInt(indexAsString, 10);
                 var imageCell = _this.modalImageCellElementList[index];
-                _this.modalElement.scrollTo({
-                    top: imageCell.getBoundingClientRect().top,
+                var newScrollTop = imageCell.offsetTop;
+                _this.modalImageCellListWrapperElement.scrollTo({
+                    top: newScrollTop,
                     behavior: 'smooth'
                 });
-                // console.log('typeof index', typeof index);
-                // const scrollTop = this.modalImageScrollTopIndicies[index];
             };
             this.onImageCellClick = function (e) {
                 (_this.state.modalIsOpen ? _this.closeModal : _this.openModal)();
             };
             this.onModalUnderlayClick = function (e) {
-                console.log("onmodalunderlayclick");
                 _this.closeModal();
+            };
+            this.onModalContentClick = function (e) {
+                e.stopPropagation();
+                var targetElement = e.target;
+                if (!targetElement.closest(SELECTORS.MODAL_THUMBNAIL_LIST_WRAPPER) &&
+                    !targetElement.closest(SELECTORS.MODAL_IMAGE_CELL_LIST_WRAPPER)) {
+                    _this.closeModal();
+                }
             };
             this.onModalCloseButtonClick = function (e) {
                 _this.closeModal();
@@ -948,25 +971,44 @@
                     _this.closeModal();
                 }
             };
+            this.onWindowResize = function () {
+                _this.setModalImageScrollTopIndicies();
+            };
             this.setModalImageScrollTopIndicies = function () {
                 _this.modalImageScrollTopIndicies = _this.modalImageCellElementList.reduce(function (acc, element, index) {
                     var _a;
-                    var scrollTop = element.getBoundingClientRect().top;
+                    var scrollTop = element.offsetTop;
                     return _assign(_assign({}, acc), (_a = {}, _a[index] = scrollTop, _a));
                 }, {});
-                console.log("this.modalImageScrollTopIndicies");
-                console.log(_this.modalImageScrollTopIndicies);
             };
             this.openModal = function () {
-                BodyScroll.lock();
+                if (_this.state.isAnimating) {
+                    return;
+                }
+                BodyScroll.lock('modal');
                 _this.modalWrapperElement.classList.add('is-active');
-                _this.state.modalIsOpen = true;
-                _this.setModalImageScrollTopIndicies();
+                _this.modalElement.classList.add('animated', 'animated--snappy', 'fadeIn');
+                _this.state.isAnimating = true;
+                _this.modalElement.addEventListener('animationend', function () {
+                    _this.state.modalIsOpen = true;
+                    _this.state.isAnimating = false;
+                    _this.modalElement.classList.remove('animated', 'animated--snappy', 'fadeIn');
+                    _this.setModalImageScrollTopIndicies();
+                }, { once: true });
             };
             this.closeModal = function () {
-                BodyScroll.unlock();
-                _this.modalWrapperElement.classList.remove('is-active');
-                _this.state.modalIsOpen = false;
+                if (_this.state.isAnimating) {
+                    return;
+                }
+                BodyScroll.unlock('modal');
+                _this.modalElement.classList.add('animated', 'animated--snappy', 'fadeOut');
+                _this.state.isAnimating = true;
+                _this.modalElement.addEventListener('animationend', function () {
+                    _this.state.isAnimating = false;
+                    _this.state.modalIsOpen = false;
+                    _this.modalWrapperElement.classList.remove('is-active');
+                    _this.modalElement.classList.remove('animated', 'animated--snappy', 'fadeOut');
+                }, { once: true });
             };
             return this;
         }
@@ -976,26 +1018,28 @@
         };
         ProductPageImages.prototype.setupImages = function () {
             var _this = this;
-            this.imageCellElements = Array.from(document.querySelectorAll('.product-page__product-image-cell'));
+            this.imageCellElements = Array.from(document.querySelectorAll(SELECTORS.PRODUCT_IMAGE_CELL));
             this.imageCellElements.forEach(function (imageCell) {
                 imageCell.addEventListener("click", _this.onImageCellClick);
             });
-            this.modalWrapperElement = document.querySelector('.product-images-modal-wrapper');
-            this.modalElement = document.querySelector('.product-images-modal');
-            this.modalUnderlayElement = document.querySelector('.product-images-modal__underlay');
-            this.modalUnderlayElement = document.querySelector('.product-images-modal__underlay');
+            this.modalWrapperElement = document.querySelector(SELECTORS.MODAL_WRAPPER);
+            this.modalElement = document.querySelector(SELECTORS.MODAL);
+            this.modalUnderlayElement = document.querySelector(SELECTORS.MODAL_UNDERLAY);
+            this.modalContentElement = document.querySelector(SELECTORS.MODAL_CONTENT);
             this.modalThumbnailElementList =
-                Array.from(document.querySelectorAll('.product-images-modal__thumbnail'));
+                Array.from(document.querySelectorAll(SELECTORS.MODAL_THUMBNAIL));
+            this.modalImageCellListWrapperElement = document.querySelector(SELECTORS.MODAL_IMAGE_CELL_LIST_WRAPPER);
             this.modalImageCellElementList =
-                Array.from(document.querySelectorAll('.product-images-modal__image-cell'));
-            this.closeButtonElement = document.querySelector('.product-images-modal__close-button');
+                Array.from(document.querySelectorAll(SELECTORS.MODAL_IMAGE_CELL));
+            this.closeButtonElement = document.querySelector(SELECTORS.MODAL_CLOSE_BUTTON);
             // Add event listeners
-            this.modalUnderlayElement.addEventListener('click', this.onModalUnderlayClick);
+            this.modalContentElement.addEventListener("click", this.onModalContentClick);
             this.closeButtonElement.addEventListener('click', this.onModalCloseButtonClick);
             this.modalThumbnailElementList.forEach(function (element) {
                 element.addEventListener('click', _this.onModalThumbnailClick);
             });
             document.addEventListener("keydown", this.onKeyPressed);
+            document.addEventListener('resize', this.onWindowResize);
         };
         ProductPageImages.prototype.unload = function () {
             var _this = this;

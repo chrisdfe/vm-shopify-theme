@@ -496,7 +496,7 @@ a.cta-link.cta-link--body-text:hover {
 ================================================== */
 .container {
   position: relative;
-  max-width: 1440px;
+  max-width: 1600px;
   margin: 0 auto;
   padding: 0 30px;
 }
@@ -5749,6 +5749,10 @@ body.menu-is-open {
   overflow-y: hidden;
 }
 
+body.modal-is-open {
+  overflow-y: hidden;
+}
+
 .header-dropdown-underlay {
   position: fixed;
   top: 0;
@@ -7420,10 +7424,15 @@ input.action_button[type=button]:active {
   text-decoration: underline;
 }
 
-.button.button--square {
+.button.button--square,
+.button.button--circle {
   height: 44px;
   width: 44px;
   padding: 0;
+}
+
+.button.button--circle {
+  border-radius: 22px;
 }
 
 .button.button--inverted {
@@ -7925,15 +7934,15 @@ button.shopify-payment-button__more-options:hover {
 .vm-accordion-button .vm-accordion-button__arrow {
   display: flex;
   position: relative;
-  width: 0.5rem;
-  height: 0.5rem;
+  width: 10px;
+  height: 10px;
 }
 .vm-accordion-button .vm-accordion-button__arrow span {
   top: calc(50% - 1px);
-  left: calc(50% - 1px);
+  left: 0;
   position: absolute;
   display: block;
-  width: 0.5rem;
+  width: 10px;
   height: 2px;
   background: #1c4747;
   transition: -webkit-transform 0.2s;
@@ -8573,10 +8582,15 @@ input.action_button[type=button]:active {
   text-decoration: underline;
 }
 
-.button.button--square {
+.button.button--square,
+.button.button--circle {
   height: 44px;
   width: 44px;
   padding: 0;
+}
+
+.button.button--circle {
+  border-radius: 22px;
 }
 
 .button.button--inverted {
@@ -10256,7 +10270,7 @@ section.image-list .image-list__item img {
   width: 200px;
   padding-top: 3px;
 }
-@media only screen and (min-width: 1441px) {
+@media only screen and (min-width: 1601px) {
   .menu li.search_container {
     margin-left: 15px;
   }
@@ -10373,7 +10387,7 @@ form.search_form,
 .content-section.content-section--is-full-width .content-section--image-text-columns__text-wrapper {
   padding: 3rem;
 }
-@media only screen and (min-width: 1441px) {
+@media only screen and (min-width: 1601px) {
   .content-section.content-section--is-full-width .content-section--image-text-columns__text-wrapper p {
     max-width: 75%;
   }
@@ -12645,11 +12659,10 @@ div#disqus_thread li {
   bottom: 0;
   left: 0;
   z-index: 100000000;
-  overflow-y: scroll;
 }
 .product-images-modal-wrapper .product-images-modal__underlay {
   position: fixed;
-  background: rgba(28, 71, 71, 0.6);
+  background: #faf6f4;
   top: 0;
   right: 0;
   bottom: 0;
@@ -12660,7 +12673,6 @@ div#disqus_thread li {
   position: relative;
   padding: 3rem;
   z-index: 100000002;
-  overflow-y: scroll;
 }
 .product-images-modal-wrapper.is-active {
   display: block;
@@ -12668,21 +12680,41 @@ div#disqus_thread li {
 
 .product-images-modal__close-button-wrapper {
   position: absolute;
-  top: 2rem;
-  right: 1rem;
+  top: 3rem;
+  left: 1rem;
+}
+
+.product-images-modal__thumbnail-list-wrapper {
+  display: flex;
+  height: calc(100vh - 6rem);
+  align-items: center;
+  justify-content: center;
 }
 
 .product-images-modal__thumbnail-list {
-  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .product-images-modal__thumbnail {
   cursor: pointer;
-  padding: 1rem;
+  padding: 0.5rem;
+  width: 50%;
+  border: 2px solid transparent;
+}
+.product-images-modal__image-cell-list {
+  overflow-y: scroll;
+  height: calc(100vh - 6rem);
 }
 
 .product-images-modal__image-cell {
-  padding: 1rem;
+  margin: 1rem;
+}
+.product-images-modal__image-cell:first-child {
+  margin-top: 0;
+}
+.product-images-modal__image-cell:last-child {
+  margin-bottom: 0;
 }
 
 /* Quantity Box for Product Page */
@@ -12961,9 +12993,16 @@ p.checkout_button {
   margin-bottom: 0;
 }
 
+.product-page__product-image-cell-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .product-page__product-image-cell {
   cursor: zoom-in;
   aspect-ratio: 1/1;
+  width: 50%;
+  padding: 0.5rem;
 }
 
 @media only screen and (max-width: 800px) {
@@ -13090,7 +13129,7 @@ p.checkout_button {
     display: none;
   }
 }
-@media only screen and (min-width: 1441px) {
+@media only screen and (min-width: 1601px) {
   .product-list .thumbnail .thumbnail-overlay,
 .slider-gallery .thumbnail .thumbnail-overlay,
 .list-collections .thumbnail .thumbnail-overlay {

@@ -13,6 +13,12 @@ body.menu-is-open {
   overflow-y: hidden;
 }
 
+body.modal-is-open {
+  // position: fixed;
+  // width: 100%;
+  overflow-y: hidden;
+}
+
 .header-dropdown-underlay {
   // background-color: rgba($vm-color-sea-green, 0.7);
   position: fixed;

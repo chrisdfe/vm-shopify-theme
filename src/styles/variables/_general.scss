@@ -8,32 +8,33 @@ $gutter: 30px;
 $grid-small: 480px;
 $grid-medium: 800px;
 $grid-large: 1200px;
-$grid-widescreen: 1440px;
+// $grid-widescreen: 1440px;
+$grid-widescreen: 1600px;
 
-$small: 'small';
-$small-down: 'small-down';
-$small-up: 'small-up';
-$medium: 'medium';
-$medium-down: 'medium-down';
-$medium-up: 'medium-up';
-$large: 'large';
-$large-down: 'large-down';
-$large-up: 'large-up';
-$widescreen-up: 'widescreen-up';
-$widescreen-down: 'widescreen-down';
+$small: "small";
+$small-down: "small-down";
+$small-up: "small-up";
+$medium: "medium";
+$medium-down: "medium-down";
+$medium-up: "medium-up";
+$large: "large";
+$large-down: "large-down";
+$large-up: "large-up";
+$widescreen-up: "widescreen-up";
+$widescreen-down: "widescreen-down";
 
 // The `$breakpoints` list is used to build our media queries.
 // You can use these in the media-query mixin.
 $breakpoints: (
-  $small-down '(max-width: #{$grid-small})',
-  $small '(min-width: #{$grid-small + 1}) and (max-width: #{$grid-medium})',
-  $small-up '(min-width: #{$grid-small + 1})',
-  $medium-down '(max-width: #{$grid-medium})',
-  $medium '(min-width: #{$grid-medium + 1}) and (max-width: #{$grid-large})',
-  $medium-up '(min-width: #{$grid-medium + 1})',
-  $large-down '(max-width: #{$grid-large})',
-  $large '(min-width: #{$grid-large + 1}) and (max-width: #{$grid-widescreen})',
-  $large-up '(min-width: #{$grid-large + 1})',
-  $widescreen-down '(max-width: #{$grid-widescreen})',
-  $widescreen-up '(min-width: #{$grid-widescreen + 1})'
+  $small-down "(max-width: #{$grid-small})",
+  $small "(min-width: #{$grid-small + 1}) and (max-width: #{$grid-medium})",
+  $small-up "(min-width: #{$grid-small + 1})",
+  $medium-down "(max-width: #{$grid-medium})",
+  $medium "(min-width: #{$grid-medium + 1}) and (max-width: #{$grid-large})",
+  $medium-up "(min-width: #{$grid-medium + 1})",
+  $large-down "(max-width: #{$grid-large})",
+  $large "(min-width: #{$grid-large + 1}) and (max-width: #{$grid-widescreen})",
+  $large-up "(min-width: #{$grid-large + 1})",
+  $widescreen-down "(max-width: #{$grid-widescreen})",
+  $widescreen-up "(min-width: #{$grid-widescreen + 1})"
 );
