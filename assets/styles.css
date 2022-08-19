@@ -9115,12 +9115,6 @@ ul.tabs {
 
 /* Components - Swatch
 ================================================== */
-/* SASS variables for swatch dimensions */
-.swatch-element.swatch--active {
-  border-color: black;
-  box-shadow: 0px 0px 0px 2px white;
-}
-
 .selector-wrapper label {
   margin-bottom: 0.5em;
 }
@@ -9143,29 +9137,25 @@ ul.tabs {
   margin-bottom: 1em;
 }
 
+.swatch {
+  /* Hide radio buttons.*/
+}
 .swatch .option_title {
   margin: 0.5em 0;
 }
-
-/* Hide radio buttons.*/
 .swatch input {
   display: none;
 }
-
 .swatch label {
   float: left;
   min-width: 40px;
-  /*     min-height: $swatch-element-size; */
   margin: 0;
   font-size: 13px;
   text-align: center;
-  /* line-height: $swatch-element-size; */
-  /* white-space:nowrap; */
   text-transform: uppercase;
   cursor: pointer;
   padding: 10px;
 }
-
 .swatch .color label {
   min-width: 34px;
   height: 34px !important;
@@ -9179,31 +9169,6 @@ ul.tabs {
   min-width: 40px;
   min-height: 40px;
   border-radius: 3px;
-}
-
-.swatch-element.color {
-  padding: 3px;
-}
-
-.swatch-element.color,
-.swatch-element.color label {
-  border-radius: 50%;
-  border: #e2e2e2 1px solid;
-}
-
-.swatch-element.color label {
-  padding: 0;
-  margin: 0;
-  width: 34px;
-  height: 34px;
-}
-
-.swatch_options input:checked + .swatch-element {
-  border-color: black;
-  box-shadow: 0px 0px 0px 2px white;
-}
-
-.swatch .swatch-element {
   float: left;
   -webkit-transform: translateZ(0);
   -webkit-font-smoothing: antialiased;
@@ -9211,8 +9176,33 @@ ul.tabs {
   margin: 0px 8px 8px 0;
   position: relative;
 }
+.swatch-element.color {
+  padding: 3px;
+}
+.swatch-element.color, .swatch-element.color label {
+  border-radius: 50%;
+  border: #e2e2e2 1px solid;
+}
+.swatch-element.color label {
+  padding: 0;
+  margin: 0;
+  width: 34px;
+  height: 34px;
+}
+.swatch-element.swatch--active {
+  border-color: #1c4747;
+  box-shadow: 0 0 0 2px white;
+}
 
-.crossed-out {
+.swatch_options input:checked + .swatch-element {
+  border-color: #1c4747;
+  box-shadow: 0 0 0 2px white;
+}
+
+.swatch {
+  /* Tooltips */
+}
+.swatch .swatch-element .crossed-out {
   background-image: linear-gradient(to bottom left, transparent 50%, #999 50%, #999 calc(50% + 1px), transparent 50%), linear-gradient(to bottom right, transparent 50%, #999 50%, #999 calc(50% + 1px), transparent 50%);
   position: absolute;
   left: 0;
@@ -9220,12 +9210,8 @@ ul.tabs {
   top: 0;
   bottom: 0;
   margin: auto;
-}
-
-.swatch .swatch-element .crossed-out {
   display: none;
 }
-
 .swatch .swatch-element.soldout .crossed-out {
   border-radius: 50%;
   display: block;
@@ -9236,15 +9222,17 @@ ul.tabs {
   object-fit: fill;
   font-family: "object-fit: fill";
 }
-
 .swatch .swatch-element.soldout label {
   filter: alpha(opacity=60);
-  -khtml-opacity: 0.6;
-  -moz-opacity: 0.6;
   opacity: 0.6;
 }
-
-/* Tooltips */
+.swatch .swatch-element:hover .tooltip {
+  filter: alpha(opacity=100);
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
 .swatch .tooltip {
   text-align: center;
   background: #333;
@@ -9266,12 +9254,12 @@ ul.tabs {
   visibility: hidden;
   /* Animations */
   -webkit-transform: translateY(10px);
-  transform: translateY(10px);
+          transform: translateY(10px);
   transition: all 0.25s ease-out;
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
   z-index: 10000;
+  /* CSS triangle */
 }
-
 .swatch .tooltip:before {
   bottom: -20px;
   content: " ";
@@ -9281,14 +9269,12 @@ ul.tabs {
   position: absolute;
   width: 100%;
 }
-
-/* CSS triangle */
 .swatch .tooltip:after {
+  content: " ";
   border-left: solid transparent 10px;
   border-right: solid transparent 10px;
   border-top: solid rgba(51, 51, 51, 0.9) 10px;
   bottom: -10px;
-  content: " ";
   height: 0;
   left: 50%;
   margin-left: -13px;
@@ -9296,14 +9282,43 @@ ul.tabs {
   width: 0;
 }
 
-.swatch .swatch-element:hover .tooltip {
-  filter: alpha(opacity=100);
-  -khtml-opacity: 1;
-  -moz-opacity: 1;
-  opacity: 1;
-  visibility: visible;
-  -webkit-transform: translateY(0px);
-  transform: translateY(0px);
+.vm-select-buttons__options {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.vm-select-button {
+  position: relative;
+  margin: 0 8px 8px 0;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+.vm-select-button input,
+.vm-select-button label {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.vm-select-button input {
+  opacity: 0;
+  z-index: 9000;
+  cursor: pointer;
+}
+.vm-select-button label {
+  border: #e2e2e2 1px solid;
+  min-width: 40px;
+  min-height: 40px;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.vm-select-button input:checked + label {
+  border: 1px solid #1c4747;
+  box-shadow: 0 0 0 2px white;
 }
 
 /* Components - Buttons

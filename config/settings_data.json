@@ -158,8 +158,8 @@
     "enable_engravement": true,
     "monogram_title": "What would you like to have engraved?",
     "monogram_subtext": "",
-    "monogram_field": "Monogram",
-    "engravement_collection": "personalized",
+    "monogram_field": "Engraving",
+    "engravement_collection": "",
     "quick_shop_enabled": false,
     "quick_shop_style": "popup",
     "product_thumbs": true,
@@ -3163,10 +3163,10 @@
           "c95ab9d1-1311-4c9b-959d-9ac15d6603c6": {
             "type": "team_member",
             "settings": {
-              "image": "shopify:\/\/shop_images\/Amara_bdb00853-e64d-428f-ba4b-81e986a23ab0.jpg",
+              "image": "shopify:\/\/shop_images\/Amara-2x3.jpg",
               "title": "Amara",
               "job_title": "Custom Sales Specialist",
-              "description": "I fell in love with vintage and ethically made fine jewelry in college. To adorn yourself in it marries the stunning beauty our planet provides us with a sentimental meaning you attach. As a sales associate, I am excited to share the craftsmanship at VM. When not at work, you can find me practicing minimalism with maximalist design, lounging with my cat Miss Cleo, collecting tea, and learning how to parallel park!"
+              "description": "To adorn yourself in jewelry marries the stunning beauty our planet provides us with a sentimental meaning you attach. As a custom sales specialist, I will guide you through the process of creating your dream family heirlooms with care and transparency. Outside of work I love lounging with my husband and cat Miss Cleo, taking long walks, curating my wardrobe, reading, and dreaming of maximalist interiors."
             }
           },
           "f62a180d-b055-4279-be36-2ff13a08212f": {
@@ -3212,15 +3212,6 @@
               "title": "Megan",
               "job_title": "Customer Service Specialist",
               "description": "As the face of VM’s Customer Service Department, I strive to make your experience memorable and stress-free. My sense of humor and colorful personality helps ensure that you will be taken care of no matter what!"
-            }
-          },
-          "b9bb3a8d-56e2-4b2f-99d5-7c1ddde5cba5": {
-            "type": "team_member",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/VMFJ-2020-15.jpg",
-              "title": "Laura",
-              "job_title": "CONTENT CREATOR",
-              "description": "I get to take pictures of sparkly things for a living! Each day I wake up feeling blessed, with the intention of bringing more beauty into the world through my work at VM. I focus on contributing in creative and playful ways that add value to the company. After hours, my time is spent going on spontaneous adventures and decorating unconventional cakes for friends and family."
             }
           },
           "cf3bd9f0-e995-42ed-a2e9-527e40187beb": {
@@ -3270,7 +3261,6 @@
           "f41d0541-dc50-4627-be73-bb5bc0d48a67",
           "e6c1bdfc-589c-4d27-86fb-b4511eed9b80",
           "403aa6d2-005e-4604-a369-5efa4062f6ab",
-          "b9bb3a8d-56e2-4b2f-99d5-7c1ddde5cba5",
           "cf3bd9f0-e995-42ed-a2e9-527e40187beb",
           "4362dbc0-cab4-4110-afd2-e469c7319d14",
           "97a96a55-9052-47a8-83df-1f5e01539e7d",
