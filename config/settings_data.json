@@ -505,33 +505,21 @@
           "86a293ad-0000-46bf-b505-3dc450ae7291": {
             "type": "nav_link_list",
             "settings": {
-              "title": "In Stock",
-              "link_list": "header-navbar-in-stock",
-              "show_view_all_link": true,
-              "view_all_url": "https:\/\/www.valeriemadison.com\/collections\/in-stock",
-              "has_border": false,
-              "columns_desktop": "4"
-            }
-          },
-          "69e7ee4b-8e0c-4c33-b858-f909292ae2d9": {
-            "type": "image",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/4x5-Packaging-Zodiac-Diamond-Charm-Hi-RES.jpg",
-              "url": "shopify:\/\/collections\/in-stock",
-              "cta_text": "Ready to Ship",
-              "cta_subtext": "in 2-4 business days",
+              "title": "All Sapphire Jewelry",
+              "link_list": "",
+              "show_view_all_link": false,
+              "view_all_url": "https:\/\/www.valeriemadison.com\/collections\/all-sapphire-jewelry",
               "has_border": false,
               "columns_desktop": "4"
             }
           }
         },
         "block_order": [
-          "86a293ad-0000-46bf-b505-3dc450ae7291",
-          "69e7ee4b-8e0c-4c33-b858-f909292ae2d9"
+          "86a293ad-0000-46bf-b505-3dc450ae7291"
         ],
         "settings": {
           "parent": "In Stock",
-          "is_visible": false
+          "is_visible": true
         }
       },
       "mega-menu-2": {
@@ -3370,14 +3358,14 @@
             "type": "background_block",
             "settings": {
               "background_color": "light-alt",
-              "banner_image_desktop": "shopify:\/\/shop_images\/Eva---SODO-Studio-Shoot-Aug-2nd-2022--Sapphires-11-edited.png"
+              "banner_image_desktop": "shopify:\/\/shop_images\/Aug-17-Banner-1.jpg"
             }
           },
           "398fe46e-43dd-41e3-8d73-51f91275cd68": {
             "type": "background_block",
             "settings": {
               "background_color": "light",
-              "banner_image_desktop": "shopify:\/\/shop_images\/Sapphire-Aug-9th-Launch-Group-2.png"
+              "banner_image_desktop": "shopify:\/\/shop_images\/Aug-17-Banner-2.jpg"
             }
           }
         },
@@ -3387,13 +3375,13 @@
         ],
         "settings": {
           "banner_wrapper_background_color": "light-alt",
-          "pretext": "New",
-          "heading": "Sapphire Rings",
-          "cta_link": "https:\/\/www.valeriemadison.com\/collections\/engagement-rings\/new",
+          "pretext": "Fresh",
+          "heading": "Fine Jewelry",
+          "cta_link": "https:\/\/www.valeriemadison.com\/collections\/fine-jewelry\/new?sort_by=price-ascending",
           "cta_text": "See what's new",
           "text_position": "center",
           "text_color": "dark-alt",
-          "banner_image_mobile": "shopify:\/\/shop_images\/Sapphire-Aug-9th-Launch-Group-2.png",
+          "banner_image_mobile": "shopify:\/\/shop_images\/Aug-17-banner-for-mobile.jpg",
           "text_color_mobile": "dark-alt",
           "content_background_color_mobile": "light-alt"
         }
