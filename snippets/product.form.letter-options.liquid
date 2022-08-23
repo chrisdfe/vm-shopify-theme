@@ -1,0 +1,25 @@
+{% assign letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" | split: "" %}
+
+<div class="line-item-property__field u-margin-bottom-1">
+  <div class="vm-select-buttons">
+    <h6>Choose a letter</h6>
+    
+    <div class="vm-select-buttons__options">
+      {% for letter in letters %}
+        <div class="vm-select-button">
+          <input
+            type="radio"
+            aria-label="{{ letter }}"
+            name="properties[Engraved Letter]"
+            tabindex="0"
+            value="{{ letter }}"
+            {% if forloop.first %}checked{% endif %}
+          />
+          <label name="properties[Engraved Letter]">
+            {{ letter }}
+          </label>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
