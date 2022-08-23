@@ -1,5 +1,4 @@
-{% if product.tags contains 'chain options' %}
-{% assign letters = "abcdefghijklmnopqrstuvwxyz" | split: "" %}
+{% assign letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" | split: "" %}
 
 <div class="line-item-property__field u-margin-bottom-1">
   <div class="vm-select-buttons">
@@ -7,7 +6,7 @@
     
     <div class="vm-select-buttons__options">
       {% for letter in letters %}
-        <div class="vm-select-button vm-select-button--no-text-transform">
+        <div class="vm-select-button">
           <input
             type="radio"
             aria-label="{{ letter }}"
@@ -24,4 +23,3 @@
     </div>
   </div>
 </div>
-{% endif %}

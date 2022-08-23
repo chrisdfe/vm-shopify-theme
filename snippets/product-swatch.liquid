@@ -34,6 +34,8 @@
       <div tabindex="0"  value="{{ value | escape }}" data-value="{{ value | escape }}" data-id="{{ variant.id }}" class="swatch-element {% if is_color %}color {% endif %}{{ value | handle }}-swatch {% if variant.available %}available{% else %}soldout{% endif %}">
         {% if is_color %}
           <div class="tooltip">{{ value }}</div>
+        {% endif %}
+        {% if is_color %}
           <label {% if variant.featured_image %}
                     data-image="{{ variant.featured_image | product_img_url: '600x' }}"
                   {% endif %}

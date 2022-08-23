@@ -9312,6 +9312,7 @@ ul.tabs {
   min-width: 40px;
   min-height: 40px;
   border-radius: 3px;
+  text-transform: uppercase;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -9319,6 +9320,9 @@ ul.tabs {
 .vm-select-button input:checked + label {
   border: 1px solid #1c4747;
   box-shadow: 0 0 0 2px white;
+}
+.vm-select-button.vm-select-button--no-text-transform label {
+  text-transform: none;
 }
 
 /* Components - Buttons

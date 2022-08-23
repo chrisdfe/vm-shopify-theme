@@ -519,7 +519,7 @@
         ],
         "settings": {
           "parent": "In Stock",
-          "is_visible": true
+          "is_visible": false
         }
       },
       "mega-menu-2": {

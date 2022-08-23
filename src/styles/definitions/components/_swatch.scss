@@ -221,6 +221,7 @@ $swatch-label-size: 34px;
     min-width: $swatch-element-size;
     min-height: $swatch-element-size;
     border-radius: 3px;
+    text-transform: uppercase;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -230,5 +231,11 @@ $swatch-label-size: 34px;
     // background: red;
     border: 1px solid $vm-color-sea-green;
     box-shadow: 0 0 0 2px rgba(255, 255, 255, 1);
+  }
+
+  &.vm-select-button--no-text-transform {
+    label {
+      text-transform: none;
+    }
   }
 }
