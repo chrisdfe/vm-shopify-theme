@@ -47,7 +47,7 @@
 </div>
 {% endif %}
 
-<footer class="footer">
+<footer class="footer color-region--dark">
   <div class="container footer-menu-wrap">
     <div class="row">
       {% for block in section.blocks %}
@@ -132,30 +132,39 @@
               {% endif %}
             </div>
           {% elsif block.type == 'link_list' %}
-            <div class="footer_menu">
-              {% if block.settings.menu != blank %}
-                <h6>
-                  {{ linklists[block.settings.menu].title }}<span class="right icon-down-arrow"></span>
-                </h6>
+            <div class="footer__link-list">
+              {% capture footer_column_links %}
+                <ul>
+                  {% for link in linklists[block.settings.menu].links %}
+                    <li>
+                      <p class="paragraph-3">
+                        <a href="{{ link.url }}">{{ link.title }}</a>
+                      </p>
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endcapture %}
 
-                <div class="toggle_content">
-                  <ul>
-                    {% for link in linklists[block.settings.menu].links %}
-                      <li><p class="paragraph-3"><a href="{{ link.url }}">{{ link.title }}</a></p></li>
-                    {% endfor %}
-                  </ul>
-                </div>
-              {% else %}
-                <h6>
-                  Menu title<span class="right icon-down-arrow"></span>
-                </h6>
-
-                <div class="toggle_content">
-                  <ul>
-                    <li><p>{{ 'homepage.onboarding.no_content' | t }}</p></li>
-                  </ul>
-                </div>
-              {% endif %}
+              <!-- mobile -->
+              <div class="u-hidden-medium-up">
+                {% assign accordion_id = linklists[block.settings.menu].title | handleize %}
+                
+                {% render "accordion.button" with {
+                  title: linklists[block.settings.menu].title,
+                  accordion_id: accordion_id
+                } %}
+                
+                {% render "accordion.content" with {
+                  content: footer_column_links,
+                  accordion_id: accordion_id
+                } %}
+              </div>
+              
+              <!-- desktop -->
+              <div class="u-hidden-medium-down">
+                <h6 class="u-text-color-sand">{{ linklists[block.settings.menu].title }}</h6>
+                {{ footer_column_links }}
+              </div>
             </div>
           {% elsif block.type == 'text' %}
             <div class="footer_content footer-text {% if block.settings.title == blank %}no-footer-title{% endif %}">
@@ -247,15 +256,7 @@
   </div>
 </footer>
 
-<style>
-  .news {background: {{  section.settings.background-color_newsletter}};}
-  .news h2 {color: {{  section.settings.text-color}};}
-  .news .newsletter-text p {color: {{  section.settings.text-color1}};}
-  .news .action_button.sign_up{background: {{  section.settings.sign_up}};border: 1px solid {{  section.settings.sign_up_boder}};}
-  .news .action_button.sign_up:hover{background: {{  section.settings.sign_up_hover}};}
-</style>
 <div class="klaviyo-form-UjzDya"></div>
- 
     {% if section.settings.enable_klaviyo == true %}
     <!-- Klaviyo Code -->
     <script async type="text/javascript" src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=KT9qEt"></script>

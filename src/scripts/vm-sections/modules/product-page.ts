@@ -1,11 +1,13 @@
-import ProductPageImages from './product-page/product-images-modal';
+import ProductImagesDesktop from './product-page/product-images-desktop';
+import ProductImagesMobile from './product-page/product-images-mobile';
 
 interface ProductPageState {
   modalIsOpen: boolean;
 }
 
 export default class ProductPage {
-  productPageImages: ProductPageImages;
+  productImagesDesktop: ProductImagesDesktop;
+  productImagesMobile: ProductImagesMobile;
 
   stickyContentElement: HTMLElement;
 
@@ -16,7 +18,8 @@ export default class ProductPage {
   initialize() {
     this.setStickyContentTop();
 
-    this.productPageImages = new ProductPageImages().initialize();
+    this.productImagesDesktop = new ProductImagesDesktop().initialize();
+    this.productImagesMobile = new ProductImagesMobile().initialize();
   }
 
   setStickyContentTop() {

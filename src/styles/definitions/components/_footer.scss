@@ -38,34 +38,6 @@
     margin-bottom: 0;
   }
 
-  .toggle_content {
-    @include respond-to('medium-up') {
-      //override display: none from mobile view
-      display: block !important;
-    }
-  }
-
-  .footer-menu-wrap h6 {
-    margin: 0;
-    padding: 0 0 5px 0;
-    color: $vm-footer-heading-color;
-
-    @include respond-to('medium-down') {
-      border: 0 none;
-      padding: 1rem 0;
-    }
-
-    & > span {
-      display: none;
-
-      @include respond-to('medium-down') {
-        display: inline-block;
-        transition: transform 0.3s linear;
-        // perspective: 1000;
-      }
-    }
-  }
-
   .input-row {
     @include flex-direction(column);
     margin-left: 0px;
@@ -85,7 +57,7 @@
     margin-top: 1rem;
   }
 
-  @include respond-to('medium-down') {
+  @include respond-to("medium-down") {
     padding: $vm-content-section-mobile-padding 0;
   }
 }
@@ -100,7 +72,7 @@
   .toggle_content {
     padding-top: 0;
 
-    @include respond-to('medium-down') {
+    @include respond-to("medium-down") {
       display: block;
       padding-top: 20px;
     }
@@ -139,7 +111,7 @@
   margin: 10px 0 6px 0;
   padding-top: 10px;
 
-  @include respond-to('medium-up') {
+  @include respond-to("medium-up") {
     float: right;
     text-align: right;
   }
@@ -156,7 +128,7 @@
 
 /* Currency / language switcher in footer */
 .footer-menu__disclosure {
-  @include respond-to('medium') {
+  @include respond-to("medium") {
     @include justify-content(flex-start);
   }
 
@@ -189,7 +161,7 @@
     text-transform: uppercase;
 
     &:hover,
-    &[aria-current='true'] {
+    &[aria-current="true"] {
       opacity: 0.5;
     }
   }
@@ -230,7 +202,7 @@ h4 span,
 
 /* Footer and mobile menu accordion (mobile only) */
 
-@include respond-to('medium-down') {
+@include respond-to("medium-down") {
   .footer-menu-wrap,
   .sidebar,
   #mobile_menu {
@@ -265,7 +237,7 @@ h4 span,
   }
 }
 
-@include respond-to('medium-up') {
+@include respond-to("medium-up") {
   h4.toggle {
     pointer-events: none;
   }
@@ -293,7 +265,7 @@ h4 span,
 }
 
 footer .footer-social-icons {
-  @include respond-to('medium-down') {
+  @include respond-to("medium-down") {
     display: none;
   }
 }
@@ -302,7 +274,7 @@ footer .footer-social-icons--mobile.columns {
   display: none;
   padding-left: 0;
 
-  @include respond-to('medium-down') {
+  @include respond-to("medium-down") {
     display: block;
 
     > ul {
@@ -321,12 +293,12 @@ footer .social_icons {
     display: inline-block;
     margin-bottom: 1em;
 
-    @include respond-to('small-down') {
+    @include respond-to("small-down") {
       margin-bottom: 0;
     }
   }
 
-  @include respond-to('medium-down') {
+  @include respond-to("medium-down") {
     padding-left: 0;
     text-align: center;
   }

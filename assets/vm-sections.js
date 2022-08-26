@@ -918,7 +918,7 @@
         return ProductCardsManager;
     }());
 
-    var SELECTORS = {
+    var SELECTORS$1 = {
         PRODUCT_IMAGE_CELL: ".product-page__product-image-cell",
         MODAL_WRAPPER: ".product-images-modal-wrapper",
         MODAL: ".product-images-modal",
@@ -930,8 +930,8 @@
         MODAL_IMAGE_CELL_LIST_WRAPPER: ".product-images-modal__image-cell-list",
         MODAL_CLOSE_BUTTON: ".product-images-modal__close-button"
     };
-    var ProductPageImages = /** @class */ (function () {
-        function ProductPageImages() {
+    var ProductImagesDesktop = /** @class */ (function () {
+        function ProductImagesDesktop() {
             var _this = this;
             this.imageCellElements = [];
             this.state = {
@@ -958,8 +958,8 @@
             this.onModalContentClick = function (e) {
                 e.stopPropagation();
                 var targetElement = e.target;
-                if (!targetElement.closest(SELECTORS.MODAL_THUMBNAIL_LIST_WRAPPER) &&
-                    !targetElement.closest(SELECTORS.MODAL_IMAGE_CELL_LIST_WRAPPER)) {
+                if (!targetElement.closest(SELECTORS$1.MODAL_THUMBNAIL_LIST_WRAPPER) &&
+                    !targetElement.closest(SELECTORS$1.MODAL_IMAGE_CELL_LIST_WRAPPER)) {
                     _this.closeModal();
                 }
             };
@@ -1010,28 +1010,27 @@
                     _this.modalElement.classList.remove('animated', 'animated--snappy', 'fadeOut');
                 }, { once: true });
             };
-            return this;
         }
-        ProductPageImages.prototype.initialize = function () {
+        ProductImagesDesktop.prototype.initialize = function () {
             this.setupImages();
             return this;
         };
-        ProductPageImages.prototype.setupImages = function () {
+        ProductImagesDesktop.prototype.setupImages = function () {
             var _this = this;
-            this.imageCellElements = Array.from(document.querySelectorAll(SELECTORS.PRODUCT_IMAGE_CELL));
+            this.imageCellElements = Array.from(document.querySelectorAll(SELECTORS$1.PRODUCT_IMAGE_CELL));
             this.imageCellElements.forEach(function (imageCell) {
                 imageCell.addEventListener("click", _this.onImageCellClick);
             });
-            this.modalWrapperElement = document.querySelector(SELECTORS.MODAL_WRAPPER);
-            this.modalElement = document.querySelector(SELECTORS.MODAL);
-            this.modalUnderlayElement = document.querySelector(SELECTORS.MODAL_UNDERLAY);
-            this.modalContentElement = document.querySelector(SELECTORS.MODAL_CONTENT);
+            this.modalWrapperElement = document.querySelector(SELECTORS$1.MODAL_WRAPPER);
+            this.modalElement = document.querySelector(SELECTORS$1.MODAL);
+            this.modalUnderlayElement = document.querySelector(SELECTORS$1.MODAL_UNDERLAY);
+            this.modalContentElement = document.querySelector(SELECTORS$1.MODAL_CONTENT);
             this.modalThumbnailElementList =
-                Array.from(document.querySelectorAll(SELECTORS.MODAL_THUMBNAIL));
-            this.modalImageCellListWrapperElement = document.querySelector(SELECTORS.MODAL_IMAGE_CELL_LIST_WRAPPER);
+                Array.from(document.querySelectorAll(SELECTORS$1.MODAL_THUMBNAIL));
+            this.modalImageCellListWrapperElement = document.querySelector(SELECTORS$1.MODAL_IMAGE_CELL_LIST_WRAPPER);
             this.modalImageCellElementList =
-                Array.from(document.querySelectorAll(SELECTORS.MODAL_IMAGE_CELL));
-            this.closeButtonElement = document.querySelector(SELECTORS.MODAL_CLOSE_BUTTON);
+                Array.from(document.querySelectorAll(SELECTORS$1.MODAL_IMAGE_CELL));
+            this.closeButtonElement = document.querySelector(SELECTORS$1.MODAL_CLOSE_BUTTON);
             // Add event listeners
             this.modalContentElement.addEventListener("click", this.onModalContentClick);
             this.closeButtonElement.addEventListener('click', this.onModalCloseButtonClick);
@@ -1041,15 +1040,59 @@
             document.addEventListener("keydown", this.onKeyPressed);
             document.addEventListener('resize', this.onWindowResize);
         };
-        ProductPageImages.prototype.unload = function () {
+        ProductImagesDesktop.prototype.unload = function () {
             var _this = this;
             this.imageCellElements.forEach(function (imageCell) {
                 imageCell.removeEventListener("click", _this.onImageCellClick);
             });
             this.modalUnderlayElement.removeEventListener('click', this.onModalUnderlayClick);
         };
-        ProductPageImages.isOnProductPage = function () { return !!document.querySelector('.product-template'); };
-        return ProductPageImages;
+        ProductImagesDesktop.isOnProductPage = function () { return !!document.querySelector('.product-template'); };
+        return ProductImagesDesktop;
+    }());
+
+    var SELECTORS = {
+        PRODUCT_IMAGE: '.product-images-mobile__image',
+        DOTS: '.product-images-mobile__dots',
+        DOT: '.product-images-mobile__dots__dot'
+    };
+    var ProductImagesMobile = /** @class */ (function () {
+        function ProductImagesMobile() {
+            var _this = this;
+            this.state = {
+                currentImageIndex: 0
+            };
+            this.onDotClick = function (e) {
+                var imageIndex = e.target.getAttribute('data-image-index');
+                var imageIndexAsInt = parseInt(imageIndex, 10);
+                _this.switchToImage(imageIndexAsInt);
+            };
+            this.switchToImage = function (index) {
+                if (index === _this.state.currentImageIndex)
+                    return;
+                _this.toggleImageVisibility(_this.state.currentImageIndex, false);
+                _this.toggleDotActiveState(_this.state.currentImageIndex, false);
+                _this.state.currentImageIndex = index;
+                _this.toggleImageVisibility(_this.state.currentImageIndex, true);
+                _this.toggleDotActiveState(_this.state.currentImageIndex, true);
+            };
+            this.toggleImageVisibility = function (index, visible) {
+                _this.imageElements[index].classList.toggle('is-active', visible);
+            };
+            this.toggleDotActiveState = function (index, isActive) {
+                _this.dotElements[index].classList.toggle('is-active', isActive);
+            };
+        }
+        ProductImagesMobile.prototype.initialize = function () {
+            var _this = this;
+            this.imageElements = Array.from(document.querySelectorAll(SELECTORS.PRODUCT_IMAGE));
+            this.dotElements = Array.from(document.querySelectorAll(SELECTORS.DOT));
+            this.dotElements.forEach(function (element) {
+                element.addEventListener('click', _this.onDotClick);
+            });
+            return this;
+        };
+        return ProductImagesMobile;
     }());
 
     var ProductPage = /** @class */ (function () {
@@ -1058,7 +1101,8 @@
         }
         ProductPage.prototype.initialize = function () {
             this.setStickyContentTop();
-            this.productPageImages = new ProductPageImages().initialize();
+            this.productImagesDesktop = new ProductImagesDesktop().initialize();
+            this.productImagesMobile = new ProductImagesMobile().initialize();
         };
         ProductPage.prototype.setStickyContentTop = function () {
             this.stickyContentElement = document.querySelector('.product-content-wrapper');

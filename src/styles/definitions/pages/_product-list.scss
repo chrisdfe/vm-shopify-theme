@@ -1,9 +1,9 @@
 .thumbnail {
-
   .image__container {
     position: relative;
   }
 }
+
 .product-list .thumbnail,
 .slider-gallery .thumbnail,
 .list-collections .thumbnail {
@@ -30,11 +30,11 @@
       bottom: 0;
     }
 
-    @include respond-to('medium-down') {
+    @include respond-to("medium-down") {
       display: none;
     }
 
-    @include respond-to('widescreen-up') {
+    @include respond-to("widescreen-up") {
       line-height: 1.5;
     }
   }
@@ -51,13 +51,13 @@
     text-align: left;
     margin-top: 10px;
 
-    @include respond-to('medium-down') {
+    @include respond-to("medium-down") {
       display: block;
     }
   }
 }
 
-@include respond-to('large-down') {
+@include respond-to("large-down") {
   .touchevents {
     .product-info__caption {
       display: block;
@@ -224,7 +224,6 @@ input.secondary_button {
 
 .thumbnail .title,
 .thumbnail .price .money {
-
 }
 
 .thumbnail .price,
@@ -283,7 +282,7 @@ input.secondary_button {
   padding-top: 20px;
   padding-left: 40px;
 
-  @include respond-to('medium-down') {
+  @include respond-to("medium-down") {
     padding-left: 0;
   }
 }

@@ -1,6 +1,6 @@
 import BodyScroll from '../../utils/BodyScroll';
 
-interface ProductPageImagesState {
+interface ProductImagesDesktopState {
   modalIsOpen: boolean;
   isAnimating: boolean;
 }
@@ -20,7 +20,7 @@ const SELECTORS = {
   MODAL_CLOSE_BUTTON: ".product-images-modal__close-button"
 };
 
-export default class ProductPageImages {
+export default class ProductImagesDesktop {
   imageCellElements: HTMLElement[] = [];
 
   modalWrapperElement: HTMLElement;
@@ -37,14 +37,10 @@ export default class ProductPageImages {
 
   modalImageScrollTopIndicies: ScrollTopMap;
 
-  state: ProductPageImagesState = {
+  state: ProductImagesDesktopState = {
     modalIsOpen: false,
     isAnimating: false
   };
-
-  constructor() {
-    return this;
-  }
 
   initialize() {
     this.setupImages();

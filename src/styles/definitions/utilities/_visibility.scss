@@ -11,6 +11,12 @@
   }
 }
 
+.u-hidden-medium-up {
+  @include respond-to("medium-up") {
+    display: none;
+  }
+}
+
 .u-hidden-large-up {
   @include respond-to("large-up") {
     display: none;

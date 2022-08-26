@@ -75,6 +75,29 @@
   }
 }
 
+.color-region--dark {
+  .vm-accordion-button {
+    color: $vm-color-sand;
+    border-bottom-color: $vm-color-sand;
+
+    .vm-accordion-button__arrow span {
+      background: $vm-color-sand;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      background: transparent;
+      // color: $vm-color-white;
+      // border-bottom-color: $vm-color-white;
+
+      // .vm-accordion-button__arrow span {
+      //   background: $vm-color-white;
+      // }
+    }
+  }
+}
+
 // TODO - go through and make sure none of this is used anymore
 //        and then delete
 ul.tabs {

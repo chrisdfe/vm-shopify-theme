@@ -12,7 +12,9 @@
 {% endif %}
 
 <div class="product product-name--{{ product.handle }}">
+  {% comment %}
   {% include "product.breadcrumbs" %}
+  {% endcomment %}
 
   <div 
     class="product-{{ product.id }}"
@@ -22,12 +24,15 @@
       <div class="row product_section js-product_section" data-rv-handle="{{ product.handle }}">
 
         <div class="ten columns medium-down--one-whole">
-          {% render 'product.images',
+          {% render 'product.desktop.images',
             video_looping: section.settings.video_looping,
             set_product_height: section.settings.set_product_height
           %}
 
-        {% render "product.images-modal" %}
+          {% render 'product.mobile.images',
+            video_looping: section.settings.video_looping,
+            set_product_height: section.settings.set_product_height
+          %}
         </div>
         
         <div class="six columns medium-down--one-whole">

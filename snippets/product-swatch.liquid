@@ -20,38 +20,74 @@
   {% endif %}
 {% endfor %}
 
-<div class="swatch clearfix" data-option-index="{{ option_index }}">
-  <div class="option_title">{{ swatch }}</div>
-  {% assign values = '' %}
-  {% for variant in product.variants %}
-    {% assign value = variant.options[option_index] %}
-    {% unless values contains value %}
-      {% assign values = values | join: ',' %}
-      {% assign values = values | append: ',' | append: value %}
-      {% assign values = values | split: ',' %}
+<div
+  class="vm-select-buttons"
+  data-option-index="{{ option_index }}"
+>
+  <h6>{{ swatch }}</h6>
 
-      <input id="swatch-{{ option_index }}-{{ value | handle }}-{{ product.id }}{% if section.id %}-{{ section.id }}{% endif %}" type="radio" name="option-{{ option_index }}" aria-label="{{ value | escape }}" tabindex="0" value="{{ value | escape }}"{% if forloop.first %} checked{% endif %} />
-      <div tabindex="0"  value="{{ value | escape }}" data-value="{{ value | escape }}" data-id="{{ variant.id }}" class="swatch-element {% if is_color %}color {% endif %}{{ value | handle }}-swatch {% if variant.available %}available{% else %}soldout{% endif %}">
-        {% if is_color %}
-          <div class="tooltip">{{ value }}</div>
-        {% endif %}
-        {% if is_color %}
-          <label {% if variant.featured_image %}
-                    data-image="{{ variant.featured_image | product_img_url: '600x' }}"
-                  {% endif %}
-                  for="swatch-{{ option_index }}-{{ value | handle }}-{{ product.id }}{% if section.id %}-{{ section.id }}{% endif %}" style="background-image: url({{ value | handle | append: '.' | append: file_extension | asset_img_url: '50x' | prepend: 'https:' }}); background-color: {{ value | split: ' ' | last | handle }};">
-            <img class="crossed-out" src="{{ 'soldout.png' | asset_url }}" aria-label="sold out" alt="sold out"/>
-          </label>
-        {% else %}
-          <label {% if variant.featured_image %}
-                    data-image="{{ variant.featured_image | product_img_url: '600x' }}"
-                  {% endif %}
-                  for="swatch-{{ option_index }}-{{ value | handle }}-{{ product.id }}{% if section.id %}-{{ section.id }}{% endif %}">
-            {{ value }}
-            <img class="crossed-out" src="{{ 'soldout.png' | asset_url }}" aria-label="sold out" alt="sold out"/>
-          </label>
-        {% endif %}
-      </div>
-    {% endunless %}
-  {% endfor %}
+  <p class="vm-select-buttons__color-name u-margin-bottom-0"></p>
+
+  {% assign values = '' %}
+
+  <div class="vm-select-buttons__options">
+    {% for variant in product.variants %}
+      {% assign value = variant.options[option_index] %}
+      {% unless values contains value %}
+        {% assign values = values | join: ',' %}
+        {% assign values = values | append: ',' | append: value %}
+        {% assign values = values | split: ',' %}
+
+        <div
+          tabindex="0"
+          value="{{ value | escape }}"
+          data-value="{{ value | escape }}"
+          data-id="{{ variant.id }}"
+          class="
+            vm-select-button
+            {% if is_color %}vm-select-button--color{% endif %}
+            {{ value | handle }}-swatch
+            vm-select-button--{% if variant.available %}available{% else %}soldout{% endif %}
+            "
+          >
+            {% capture input_name %}swatch-{{ option_index }}-{{ value | handle }}-{{ product.id }}{% if section.id %}-{{ section.id }}{% endif %}{% endcapture %}
+            <input
+              id="{{ input_name }}"
+              type="radio"
+              name="option-{{ option_index }}"
+              aria-label="{{ value | escape }}"
+              tabindex="0"
+              value="{{ value | escape }}"
+              {% if forloop.first %}checked{% endif %}
+            />
+
+            <label
+              {% if variant.featured_image %}
+                data-image="{{ variant.featured_image | product_img_url: '600x' }}"
+              {% endif %}
+              for="{{ input_name }}"
+            >
+              {% unless is_color %}{{ value }}{% endunless %}
+            </label>
+            
+            {% if is_color %}
+              {% assign background_image = value | handle | append: '.' | append: file_extension | asset_img_url: '50x' | prepend: 'https:' %}
+              {% assign background_color = value | split: ' ' | last | handle %}
+              <div
+                class="vm-select-button--color__background-color"
+                style="background-image: url({{ background_image }}); background-color: {{ background_color }};"
+              >
+              </div>
+            {% endif %}
+
+              <img
+                class="crossed-out"
+                src="{{ 'soldout.png' | asset_url }}"
+                aria-label="sold out"
+                alt="sold out"
+              />
+        </div>
+      {% endunless %}
+    {% endfor %}
+  </div>
 </div>
