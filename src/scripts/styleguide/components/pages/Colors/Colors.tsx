@@ -41,6 +41,7 @@ function ColorsPieChart() {
 
   return (
     <div ref={ref}>
+      {/* @ts-ignore - the types must be out of sync somehow */}
       <PieChart
         lineWidth={40}
         reveal={isVisible ? 100 : 0}

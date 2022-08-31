@@ -5,10 +5,10 @@ import ColorRegionExample from "../../../lib/ColorRegionExample";
 
 interface Props {
   region: string,
-  children: ReactNode
+  children?: ReactNode;
 }
 
-export default function ColorRegionWrapper({ region, children }) {
+export default function ColorRegionWrapper({ region, children }: Props) {
   return (
     <div className="vm-styleguide__component-example__color-region">
       <ColorRegionExample region={region}>{children}</ColorRegionExample>

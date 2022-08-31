@@ -195,7 +195,13 @@
 
               <div class="sidebar__collection-filter">
 
-                <h4 class="toggle subheading-2">{{ block.settings.filter_name }}<span class="right icon-down-arrow"></span></h4>
+                <h4 class="toggle subheading-2">
+                  {{ block.settings.filter_name }}
+                  <span class="vm-accordion-button__arrow">
+                    <span></span>
+                    <span></span>
+                  </span>
+                </h4>
 
                 {% if block.settings.filter_name != blank and headline_length > 0 %}
                   <ul class="toggle_list" >

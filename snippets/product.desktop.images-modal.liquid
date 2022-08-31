@@ -11,7 +11,10 @@
             <div class="one-fifth columns">
               <div class="product-images-modal__thumbnail-list-column">
                 <div class="product-images-modal__close-button-wrapper">
-                  <button class="button button--circle button--inverted product-images-modal__close-button">
+                  <button
+                    class="button button--circle button--inverted product-images-modal__close-button"
+                    data-product-images-modal-toggle
+                  >
                     {% render "icon.close" %}
                   </button>
                 </div>
@@ -19,15 +22,17 @@
                 <div class="product-images-modal__thumbnail-list-wrapper">
                   <div class="product-images-modal__thumbnail-list">
                     {% for media in product.media %}
-                      <div class="product-images-modal__thumbnail"
-                        data-index="{{ forloop.index0 | json }}"
-                        data-product-id="{{ product.id }}"
-                        data-media-type="{{ media.media_type }}"
-                        data-thumb="{{ image_large }}"
-                        data-title="{% if image_alt contains 'youtube' or image_alt contains 'vimeo' %}{{ product.title }}{% else %}{{ image_alt | escape }}{% endif %}">
-                        {% render "product.image" with {
-                          media: media
-                        } %}
+                      <div class="product-images-modal__thumbnail-wrapper">
+                        <div class="product-images-modal__thumbnail"
+                          data-index="{{ forloop.index0 | json }}"
+                          data-product-id="{{ product.id }}"
+                          data-media-type="{{ media.media_type }}"
+                          data-thumb="{{ image_large }}"
+                          data-title="{% if image_alt contains 'youtube' or image_alt contains 'vimeo' %}{{ product.title }}{% else %}{{ image_alt | escape }}{% endif %}">
+                          {% render "product.image" with {
+                            media: media
+                          } %}
+                        </div>
                       </div>
                     {% endfor %}
                   </div>

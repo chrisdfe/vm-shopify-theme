@@ -21,12 +21,15 @@
 {% endfor %}
 
 <div
-  class="vm-select-buttons"
+  class="
+    vm-select-buttons
+    {% if is_color %}vm-select-buttons--color{% endif %}
+  "
   data-option-index="{{ option_index }}"
 >
   <h6>{{ swatch }}</h6>
 
-  <p class="vm-select-buttons__color-name u-margin-bottom-0"></p>
+  <p class="vm-select-buttons__color-name paragraph-3"></p>
 
   {% assign values = '' %}
 

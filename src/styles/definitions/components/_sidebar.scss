@@ -29,7 +29,7 @@
     padding: 0;
   }
 
-  @include respond-to('medium-down') {
+  @include respond-to("medium-down") {
     padding-right: 0;
     margin: 0 0 get-vm-spacer(3);
   }
@@ -47,14 +47,6 @@
 .sidebar .meta {
   margin-left: 2px;
 }
-
-// .sidebar .spr-badge {
-//   color: {{ settings.regular_color }};
-// }
-
-// .sidebar .recently-viewed-list .brand {
-//   color: {{ settings.regular_color }};
-// }
 
 .toggle-all--true {
   h4.toggle {
@@ -155,8 +147,8 @@
   margin-bottom: 0;
 }
 
-.sidebar input.sign_up[type='submit'],
-.sidebar input.contact_email[type='email'] {
+.sidebar input.sign_up[type="submit"],
+.sidebar input.contact_email[type="email"] {
   width: 100% !important;
   margin-left: 0;
 }
@@ -216,11 +208,11 @@
     color: $vm-link-hover-color;
   }
 
-  input[type='checkbox'] {
+  input[type="checkbox"] {
     display: none;
   }
 
-  input.styled-checkbox[type='checkbox'] {
+  input.styled-checkbox[type="checkbox"] {
     -webkit-appearance: none;
     -moz-appearance: none;
     box-sizing: border-box;
@@ -285,11 +277,11 @@
     vertical-align: middle;
 
     &:before {
-      font-family: Arial, 'Helvetica CY', 'Nimbus Sans L', sans-serif !important;
+      font-family: Arial, "Helvetica CY", "Nimbus Sans L", sans-serif !important;
       font-size: 20px;
       line-height: $size;
       display: block;
-      content: '\00d7';
+      content: "\00d7";
       text-align: center;
     }
   }
@@ -321,7 +313,7 @@
     .rv-container a.product-info__caption.hidden {
       display: none;
 
-      @include respond-to('medium-down') {
+      @include respond-to("medium-down") {
         display: block;
       }
     }
@@ -332,7 +324,7 @@
   }
 
   .product-list .thumbnail {
-    @include respond-to('medium-down') {
+    @include respond-to("medium-down") {
       .title,
       .price,
       .brand {

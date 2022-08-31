@@ -918,8 +918,12 @@
         return ProductCardsManager;
     }());
 
-    var SELECTORS$1 = {
-        PRODUCT_IMAGE_CELL: ".product-page__product-image-cell",
+    var ATTRIBUTES = {
+        MODAL_TOGGLE_ELEMENT_INDEX: 'data-product-images-modal-toggle-index'
+    };
+    var SELECTORS$2 = {
+        MODAL_TOGGLE_ELEMENT: "[data-product-images-modal-toggle]",
+        MODAL_TOGGLE_ELEMENT_INDEX: "[".concat(ATTRIBUTES.MODAL_TOGGLE_ELEMENT_INDEX, "]"),
         MODAL_WRAPPER: ".product-images-modal-wrapper",
         MODAL: ".product-images-modal",
         MODAL_UNDERLAY: ".product-images-modal__underlay",
@@ -933,38 +937,36 @@
     var ProductImagesDesktop = /** @class */ (function () {
         function ProductImagesDesktop() {
             var _this = this;
-            this.imageCellElements = [];
+            this.modalToggleElements = [];
             this.state = {
                 modalIsOpen: false,
-                isAnimating: false
+                isAnimating: false,
+                selectedModalImageIndex: 0
             };
             this.onModalThumbnailClick = function (e) {
-                var thumbnailWrapper = e.target.closest('.product-images-modal__thumbnail');
+                var thumbnailWrapper = e.target.closest(SELECTORS$2.MODAL_THUMBNAIL);
                 var indexAsString = thumbnailWrapper.getAttribute("data-index");
                 var index = parseInt(indexAsString, 10);
-                var imageCell = _this.modalImageCellElementList[index];
-                var newScrollTop = imageCell.offsetTop;
-                _this.modalImageCellListWrapperElement.scrollTo({
-                    top: newScrollTop,
-                    behavior: 'smooth'
-                });
+                _this.setSelectedModalImage(index);
             };
-            this.onImageCellClick = function (e) {
-                (_this.state.modalIsOpen ? _this.closeModal : _this.openModal)();
-            };
-            this.onModalUnderlayClick = function (e) {
-                _this.closeModal();
+            this.onModalToggleElementClick = function (e) {
+                var element = e.target.closest(SELECTORS$2.MODAL_TOGGLE_ELEMENT);
+                if (_this.state.modalIsOpen) {
+                    _this.closeModal();
+                }
+                else {
+                    var imageIndexAsString = element.getAttribute(ATTRIBUTES.MODAL_TOGGLE_ELEMENT_INDEX);
+                    var imageIndex = (imageIndexAsString) ? parseInt(imageIndexAsString) : 0;
+                    _this.openModal(imageIndex);
+                }
             };
             this.onModalContentClick = function (e) {
                 e.stopPropagation();
                 var targetElement = e.target;
-                if (!targetElement.closest(SELECTORS$1.MODAL_THUMBNAIL_LIST_WRAPPER) &&
-                    !targetElement.closest(SELECTORS$1.MODAL_IMAGE_CELL_LIST_WRAPPER)) {
+                if (!targetElement.closest(SELECTORS$2.MODAL_THUMBNAIL_LIST_WRAPPER) &&
+                    !targetElement.closest(SELECTORS$2.MODAL_IMAGE_CELL_LIST_WRAPPER)) {
                     _this.closeModal();
                 }
-            };
-            this.onModalCloseButtonClick = function (e) {
-                _this.closeModal();
             };
             this.onKeyPressed = function (e) {
                 if (e.key === "Escape" && _this.state.modalIsOpen) {
@@ -974,14 +976,42 @@
             this.onWindowResize = function () {
                 _this.setModalImageScrollTopIndicies();
             };
-            this.setModalImageScrollTopIndicies = function () {
-                _this.modalImageScrollTopIndicies = _this.modalImageCellElementList.reduce(function (acc, element, index) {
-                    var _a;
-                    var scrollTop = element.offsetTop;
-                    return _assign(_assign({}, acc), (_a = {}, _a[index] = scrollTop, _a));
-                }, {});
+            this.onModalImagesWheel = function () {
+                var currentScrollTop = _this.modalImageCellListWrapperElement.scrollTop;
+                var currentImageIndex = 0;
+                for (var index = _this.modalImageScrollTopIndicies.length - 1; index >= 0; index--) {
+                    var scrollTop = _this.modalImageScrollTopIndicies[index];
+                    if (currentScrollTop > scrollTop) {
+                        currentImageIndex = index;
+                        break;
+                    }
+                }
+                if (currentImageIndex != _this.state.selectedModalImageIndex) {
+                    _this.setSelectedModalImage(currentImageIndex, { scroll: false });
+                }
             };
-            this.openModal = function () {
+            this.setModalImageScrollTopIndicies = function () {
+                _this.modalImageScrollTopIndicies = _this.modalImageCellElementList.map(function (element, index) {
+                    return element.offsetTop;
+                });
+            };
+            this.setSelectedModalImage = function (index, _a) {
+                var _b = _a === void 0 ? {} : _a, _c = _b.scroll, scroll = _c === void 0 ? true : _c;
+                _this.modalThumbnailElementList[_this.state.selectedModalImageIndex].classList.remove('is-active');
+                _this.state.selectedModalImageIndex = index;
+                _this.modalThumbnailElementList[_this.state.selectedModalImageIndex].classList.add('is-active');
+                if (scroll) {
+                    _this.scrollToSelectedModalImage();
+                }
+            };
+            this.scrollToSelectedModalImage = function () {
+                var newScrollTop = _this.modalImageScrollTopIndicies[_this.state.selectedModalImageIndex];
+                _this.modalImageCellListWrapperElement.scrollTo({
+                    top: newScrollTop,
+                    behavior: 'smooth'
+                });
+            };
+            this.openModal = function (imageIndex) {
                 if (_this.state.isAnimating) {
                     return;
                 }
@@ -989,6 +1019,7 @@
                 _this.modalWrapperElement.classList.add('is-active');
                 _this.modalElement.classList.add('animated', 'animated--snappy', 'fadeIn');
                 _this.state.isAnimating = true;
+                _this.setSelectedModalImage(imageIndex);
                 _this.modalElement.addEventListener('animationend', function () {
                     _this.state.modalIsOpen = true;
                     _this.state.isAnimating = false;
@@ -1012,46 +1043,43 @@
             };
         }
         ProductImagesDesktop.prototype.initialize = function () {
-            this.setupImages();
-            return this;
-        };
-        ProductImagesDesktop.prototype.setupImages = function () {
             var _this = this;
-            this.imageCellElements = Array.from(document.querySelectorAll(SELECTORS$1.PRODUCT_IMAGE_CELL));
-            this.imageCellElements.forEach(function (imageCell) {
-                imageCell.addEventListener("click", _this.onImageCellClick);
+            this.modalToggleElements = Array.from(document.querySelectorAll(SELECTORS$2.MODAL_TOGGLE_ELEMENT));
+            this.modalToggleElements.forEach(function (element) {
+                element.addEventListener("click", _this.onModalToggleElementClick);
             });
-            this.modalWrapperElement = document.querySelector(SELECTORS$1.MODAL_WRAPPER);
-            this.modalElement = document.querySelector(SELECTORS$1.MODAL);
-            this.modalUnderlayElement = document.querySelector(SELECTORS$1.MODAL_UNDERLAY);
-            this.modalContentElement = document.querySelector(SELECTORS$1.MODAL_CONTENT);
+            this.modalWrapperElement = document.querySelector(SELECTORS$2.MODAL_WRAPPER);
+            this.modalElement = document.querySelector(SELECTORS$2.MODAL);
+            this.modalContentElement = document.querySelector(SELECTORS$2.MODAL_CONTENT);
             this.modalThumbnailElementList =
-                Array.from(document.querySelectorAll(SELECTORS$1.MODAL_THUMBNAIL));
-            this.modalImageCellListWrapperElement = document.querySelector(SELECTORS$1.MODAL_IMAGE_CELL_LIST_WRAPPER);
+                Array.from(document.querySelectorAll(SELECTORS$2.MODAL_THUMBNAIL));
+            this.modalImageCellListWrapperElement =
+                document.querySelector(SELECTORS$2.MODAL_IMAGE_CELL_LIST_WRAPPER);
             this.modalImageCellElementList =
-                Array.from(document.querySelectorAll(SELECTORS$1.MODAL_IMAGE_CELL));
-            this.closeButtonElement = document.querySelector(SELECTORS$1.MODAL_CLOSE_BUTTON);
+                Array.from(document.querySelectorAll(SELECTORS$2.MODAL_IMAGE_CELL));
             // Add event listeners
             this.modalContentElement.addEventListener("click", this.onModalContentClick);
-            this.closeButtonElement.addEventListener('click', this.onModalCloseButtonClick);
             this.modalThumbnailElementList.forEach(function (element) {
                 element.addEventListener('click', _this.onModalThumbnailClick);
             });
+            this.modalImageCellListWrapperElement.addEventListener('wheel', this.onModalImagesWheel);
             document.addEventListener("keydown", this.onKeyPressed);
             document.addEventListener('resize', this.onWindowResize);
+            return this;
         };
         ProductImagesDesktop.prototype.unload = function () {
             var _this = this;
-            this.imageCellElements.forEach(function (imageCell) {
-                imageCell.removeEventListener("click", _this.onImageCellClick);
+            this.modalToggleElements.forEach(function (element) {
+                element.removeEventListener("click", _this.onModalToggleElementClick);
             });
-            this.modalUnderlayElement.removeEventListener('click', this.onModalUnderlayClick);
+            document.removeEventListener("keydown", this.onKeyPressed);
+            document.removeEventListener('resize', this.onWindowResize);
         };
         ProductImagesDesktop.isOnProductPage = function () { return !!document.querySelector('.product-template'); };
         return ProductImagesDesktop;
     }());
 
-    var SELECTORS = {
+    var SELECTORS$1 = {
         PRODUCT_IMAGE: '.product-images-mobile__image',
         DOTS: '.product-images-mobile__dots',
         DOT: '.product-images-mobile__dots__dot'
@@ -1085,14 +1113,60 @@
         }
         ProductImagesMobile.prototype.initialize = function () {
             var _this = this;
-            this.imageElements = Array.from(document.querySelectorAll(SELECTORS.PRODUCT_IMAGE));
-            this.dotElements = Array.from(document.querySelectorAll(SELECTORS.DOT));
+            this.imageElements = Array.from(document.querySelectorAll(SELECTORS$1.PRODUCT_IMAGE));
+            this.dotElements = Array.from(document.querySelectorAll(SELECTORS$1.DOT));
             this.dotElements.forEach(function (element) {
                 element.addEventListener('click', _this.onDotClick);
             });
             return this;
         };
         return ProductImagesMobile;
+    }());
+
+    var SELECTORS = {
+        SWATCH_FIELD: ".vm-select-buttons.vm-select-buttons--color",
+        SELECT_BUTTON: ".vm-select-button",
+        COLOR_NAME_TEXT: ".vm-select-buttons__color-name"
+    };
+    var ProductColorSwatches = /** @class */ (function () {
+        function ProductColorSwatches() {
+            this.getSelectedValue = function (inputs) {
+                var checkedInput = inputs.find(function (input) { return input.checked; });
+                return checkedInput ? checkedInput.value : '';
+            };
+        }
+        ProductColorSwatches.prototype.initialize = function () {
+            var _this = this;
+            this.selectButtonGroups =
+                Array.from(document.querySelectorAll(SELECTORS.SWATCH_FIELD)).map(function (wrapper) {
+                    var optionIndexAsString = wrapper.getAttribute('data-option-index');
+                    var optionIndex = parseInt(optionIndexAsString);
+                    var colorNameText = wrapper.querySelector(SELECTORS.COLOR_NAME_TEXT);
+                    var buttons = Array.from(wrapper.querySelectorAll(SELECTORS.SELECT_BUTTON));
+                    var inputs = buttons.map(function (buttonElement) { return buttonElement.querySelector('input'); });
+                    buttons.forEach(function (buttonElement) {
+                        buttonElement.addEventListener('mouseout', function (e) {
+                            var selectedValue = _this.getSelectedValue(inputs);
+                            colorNameText.innerText = selectedValue;
+                        });
+                        buttonElement.addEventListener('mouseover', function (e) {
+                            var element = e.target.closest(SELECTORS.SELECT_BUTTON);
+                            var inputElement = element.querySelector('input');
+                            var value = inputElement.getAttribute('value');
+                            colorNameText.innerText = value;
+                        });
+                    });
+                    return {
+                        optionIndex: optionIndex,
+                        wrapper: wrapper,
+                        colorNameText: colorNameText,
+                        buttons: buttons,
+                        inputs: inputs
+                    };
+                });
+            return this;
+        };
+        return ProductColorSwatches;
     }());
 
     var ProductPage = /** @class */ (function () {
@@ -1103,6 +1177,7 @@
             this.setStickyContentTop();
             this.productImagesDesktop = new ProductImagesDesktop().initialize();
             this.productImagesMobile = new ProductImagesMobile().initialize();
+            this.productColorSwatches = new ProductColorSwatches().initialize();
         };
         ProductPage.prototype.setStickyContentTop = function () {
             this.stickyContentElement = document.querySelector('.product-content-wrapper');

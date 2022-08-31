@@ -1,5 +1,6 @@
 import ProductImagesDesktop from './product-page/product-images-desktop';
 import ProductImagesMobile from './product-page/product-images-mobile';
+import ProductColorSwatches from './product-page/product-color-swatches';
 
 interface ProductPageState {
   modalIsOpen: boolean;
@@ -8,6 +9,7 @@ interface ProductPageState {
 export default class ProductPage {
   productImagesDesktop: ProductImagesDesktop;
   productImagesMobile: ProductImagesMobile;
+  productColorSwatches: ProductColorSwatches;
 
   stickyContentElement: HTMLElement;
 
@@ -20,6 +22,7 @@ export default class ProductPage {
 
     this.productImagesDesktop = new ProductImagesDesktop().initialize();
     this.productImagesMobile = new ProductImagesMobile().initialize();
+    this.productColorSwatches = new ProductColorSwatches().initialize();
   }
 
   setStickyContentTop() {

@@ -5,7 +5,7 @@ import "./component-example.scss";
 import ColorRegionWrapper from "./ColorRegionWrapper";
 
 interface Props {
-  children: ReactNode,
+  children?: ReactNode,
   omitLightRegions?: boolean,
   omitDarkRegions?: boolean,
 }

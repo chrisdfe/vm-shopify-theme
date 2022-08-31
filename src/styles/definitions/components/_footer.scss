@@ -174,17 +174,6 @@ h4 span,
   perspective: 1000;
 }
 
-.footer-menu-wrap,
-#mobile_menu,
-.sidebar {
-  -webkit-transform: translate3d(0, 0, 0);
-
-  .active span:not(.currency-code),
-  span.active {
-    transform: rotateX(180deg);
-  }
-}
-
 .sidebar span.menu-toggle {
   float: right;
   display: inline-block;

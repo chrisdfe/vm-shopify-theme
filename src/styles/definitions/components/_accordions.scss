@@ -20,37 +20,40 @@
     color: $vm-color-sea-green;
     border-bottom: 1px solid $vm-color-sea-green;
   }
+}
 
-  .vm-accordion-button__arrow {
-    $arrow-size: 10px;
-    display: flex;
-    position: relative;
+.vm-accordion-button__arrow {
+  $arrow-size: 10px;
+  display: flex;
+  position: relative;
+  width: $arrow-size;
+  height: $arrow-size;
+
+  span {
+    top: calc(50% - 1px);
+    left: 0;
+    position: absolute;
+    display: block;
     width: $arrow-size;
-    height: $arrow-size;
-
-    span {
-      top: calc(50% - 1px);
-      left: 0;
-      position: absolute;
-      display: block;
-      width: $arrow-size;
-      // border-bottom: 2px solid $vm-color-sea-green;
-      height: 2px;
-      background: $vm-border-color;
-      transition: transform 0.2s;
-      border-radius: 2px;
-    }
-
-    span:nth-child(2) {
-      transform: rotate(90deg);
-    }
+    // border-bottom: 2px solid $vm-color-sea-green;
+    height: 2px;
+    background: $vm-border-color;
+    transition: transform 0.2s;
+    border-radius: 2px;
   }
 
-  &.is-open {
-    .vm-accordion-button__arrow {
-      span:nth-child(2) {
-        transform: rotate(0);
-      }
+  span:nth-child(2) {
+    transform: rotate(90deg);
+  }
+}
+
+// .toggle.active is for targeting the collection page sidebar filter accordions
+// ultimately they should be converted over to a regular .vm-accordion
+.vm-accordion-button.is-open,
+.toggle.active {
+  .vm-accordion-button__arrow {
+    span:nth-child(2) {
+      transform: rotate(0);
     }
   }
 }

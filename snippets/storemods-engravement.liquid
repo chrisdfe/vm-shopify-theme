@@ -37,15 +37,16 @@
 {% if settings.enable_engravement %}
   {% for collection in product.collections %}
     {% if collection.handle == settings.engravement_collection %}
-		{% capture contains_engrave_collection %}true{% endcapture %}
-	{% endif %}
+		  {% capture contains_engrave_collection %}true{% endcapture %}
+	  {% endif %}
 	{% endfor %}
-   {% if contains_engrave_collection == "true" or product.tags  contains 'engraved' or product.tags  contains 'Engraved' %}
-  <p class="line-item-property__field">
-    <label for="{{settings.monogram_field}}">{{ settings.monogram_title }}</label>
-    <input id="{{settings.monogram_field}}" type="text" placeholder="{{ settings.monogram_subtext }}" name="properties[{{settings.monogram_field}}]">
-  </p>
-  {%endif%}
+
+  {% if contains_engrave_collection == "true" or product.tags  contains 'engraved' or product.tags  contains 'Engraved' %}
+    <p class="line-item-property__field">
+      <label for="{{settings.monogram_field}}">{{ settings.monogram_title }}</label>
+      <input id="{{settings.monogram_field}}" type="text" placeholder="{{ settings.monogram_subtext }}" name="properties[{{settings.monogram_field}}]">
+    </p>
+  {% endif %}
 {%endif%}
     
     

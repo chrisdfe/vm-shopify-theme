@@ -106,11 +106,15 @@
   flex-wrap: wrap;
 }
 
+.product-images-modal__thumbnail-wrapper {
+  width: 50%;
+  padding: 3px;
+}
+
 .product-images-modal__thumbnail {
   cursor: pointer;
-  padding: get-vm-spacer(0.5);
-  width: 50%;
   border: 2px solid transparent;
+  transition: border-color 0.2s;
 
   &.is-active {
     border-color: $vm-color-sea-green;

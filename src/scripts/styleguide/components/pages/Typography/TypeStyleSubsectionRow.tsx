@@ -7,12 +7,12 @@ interface Props {
   size: number;
   lineHeight: number;
   spacing: number;
-  children: ReactNode;
+  children?: ReactNode;
   uses?: ReactNode[];
   avoids?: ReactNode[];
 }
 
-const calculateLineHeight = (lineHeight, fontSize) => Math.round((lineHeight * fontSize) * 100) / 100
+const calculateLineHeight = (lineHeight, fontSize) => Math.round((lineHeight * fontSize) * 100) / 100;
 
 export default function TypeStyleSubsectionRow({ title, size, lineHeight, spacing, uses, avoids, children }: Props) {
   return (
@@ -29,5 +29,5 @@ export default function TypeStyleSubsectionRow({ title, size, lineHeight, spacin
     >
       {children}
     </StyleguideSubsectionRow>
-  )
+  );
 }

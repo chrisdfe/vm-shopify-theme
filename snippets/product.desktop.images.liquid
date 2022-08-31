@@ -18,18 +18,29 @@ quickshop: <boolean>
     {% assign image_list = list | split: "^" %}
 
     {% for media in product.media %}
-      <div class="product-page__product-image-cell"
-        data-product-id="{{ product.id }}"
-        data-media-type="{{ media.media_type }}"
-        data-thumb="{{ image_large }}"
-        data-title="{% if image_alt contains 'youtube' or image_alt contains 'vimeo' %}{{ product.title }}{% else %}{{ image_alt | escape }}{% endif %}">
-        {% render "product.image" with {
-          media: media
-        } %}
-      </div>
+      {% if forloop.index0 < 6 %}
+        <div class="product-page__product-image-cell"
+          data-product-images-modal-toggle
+          data-product-images-modal-toggle-index="{{ forloop.index0 }}"
+          data-product-id="{{ product.id }}"
+          data-media-type="{{ media.media_type }}"
+          data-thumb="{{ image_large }}"
+          data-title="{% if image_alt contains 'youtube' or image_alt contains 'vimeo' %}{{ product.title }}{% else %}{{ image_alt | escape }}{% endif %}">
+          {% render "product.image" with {
+            media: media
+          } %}
+        </div>
+      {% endif %}
     {% endfor %}
     
   </div>
+
+  {% assign product_image_count = product.media | size %}
+  {% if product_image_count > 6 %}
+    <div class="u-text-align-center u-margin-top-2 u-margin-bottom-2">
+      <button class="button product-page__sell-all-button" data-product-images-modal-toggle>see all {{ product_image_count }} images</button>
+    </div>
+  {% endif %}
 
   {% render "product.desktop.images-modal" %}
 </div>
