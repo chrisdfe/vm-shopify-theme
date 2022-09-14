@@ -207,6 +207,11 @@
   color: #dec1a8;
 }
 
+.vm-styleguide__component-example__color-region {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
 /* #Variables
 ================================================== */
 /* variables/general
@@ -278,11 +283,6 @@
 }
 .vm-styleguide__font-example.vm-styleguide__font-example--weight-bold {
   font-weight: 700;
-}
-
-.vm-styleguide__component-example__color-region {
-  margin-bottom: 2rem;
-  text-align: center;
 }
 
 .vm-styleguide__subsection-row {

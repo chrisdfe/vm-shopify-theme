@@ -26,6 +26,7 @@
     {% if is_color %}vm-select-buttons--color{% endif %}
   "
   data-option-index="{{ option_index }}"
+  data-option="{{ option }}"
 >
   <h6>{{ swatch }}</h6>
 
@@ -83,12 +84,12 @@
               </div>
             {% endif %}
 
-              <img
-                class="crossed-out"
-                src="{{ 'soldout.png' | asset_url }}"
-                aria-label="sold out"
-                alt="sold out"
-              />
+            <img
+              class="crossed-out"
+              src="{{ 'soldout.png' | asset_url }}"
+              aria-label="sold out"
+              alt="sold out"
+            />
         </div>
       {% endunless %}
     {% endfor %}

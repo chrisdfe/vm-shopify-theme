@@ -918,12 +918,12 @@
         return ProductCardsManager;
     }());
 
-    var ATTRIBUTES = {
+    var ATTRIBUTES$1 = {
         MODAL_TOGGLE_ELEMENT_INDEX: 'data-product-images-modal-toggle-index'
     };
-    var SELECTORS$2 = {
+    var SELECTORS$3 = {
         MODAL_TOGGLE_ELEMENT: "[data-product-images-modal-toggle]",
-        MODAL_TOGGLE_ELEMENT_INDEX: "[".concat(ATTRIBUTES.MODAL_TOGGLE_ELEMENT_INDEX, "]"),
+        MODAL_TOGGLE_ELEMENT_INDEX: "[".concat(ATTRIBUTES$1.MODAL_TOGGLE_ELEMENT_INDEX, "]"),
         MODAL_WRAPPER: ".product-images-modal-wrapper",
         MODAL: ".product-images-modal",
         MODAL_UNDERLAY: ".product-images-modal__underlay",
@@ -944,18 +944,18 @@
                 selectedModalImageIndex: 0
             };
             this.onModalThumbnailClick = function (e) {
-                var thumbnailWrapper = e.target.closest(SELECTORS$2.MODAL_THUMBNAIL);
+                var thumbnailWrapper = e.target.closest(SELECTORS$3.MODAL_THUMBNAIL);
                 var indexAsString = thumbnailWrapper.getAttribute("data-index");
                 var index = parseInt(indexAsString, 10);
                 _this.setSelectedModalImage(index);
             };
             this.onModalToggleElementClick = function (e) {
-                var element = e.target.closest(SELECTORS$2.MODAL_TOGGLE_ELEMENT);
+                var element = e.target.closest(SELECTORS$3.MODAL_TOGGLE_ELEMENT);
                 if (_this.state.modalIsOpen) {
                     _this.closeModal();
                 }
                 else {
-                    var imageIndexAsString = element.getAttribute(ATTRIBUTES.MODAL_TOGGLE_ELEMENT_INDEX);
+                    var imageIndexAsString = element.getAttribute(ATTRIBUTES$1.MODAL_TOGGLE_ELEMENT_INDEX);
                     var imageIndex = (imageIndexAsString) ? parseInt(imageIndexAsString) : 0;
                     _this.openModal(imageIndex);
                 }
@@ -963,8 +963,8 @@
             this.onModalContentClick = function (e) {
                 e.stopPropagation();
                 var targetElement = e.target;
-                if (!targetElement.closest(SELECTORS$2.MODAL_THUMBNAIL_LIST_WRAPPER) &&
-                    !targetElement.closest(SELECTORS$2.MODAL_IMAGE_CELL_LIST_WRAPPER)) {
+                if (!targetElement.closest(SELECTORS$3.MODAL_THUMBNAIL_LIST_WRAPPER) &&
+                    !targetElement.closest(SELECTORS$3.MODAL_IMAGE_CELL_LIST_WRAPPER)) {
                     _this.closeModal();
                 }
             };
@@ -1044,19 +1044,20 @@
         }
         ProductImagesDesktop.prototype.initialize = function () {
             var _this = this;
-            this.modalToggleElements = Array.from(document.querySelectorAll(SELECTORS$2.MODAL_TOGGLE_ELEMENT));
+            this.modalToggleElements = Array.from(document.querySelectorAll(SELECTORS$3.MODAL_TOGGLE_ELEMENT));
             this.modalToggleElements.forEach(function (element) {
                 element.addEventListener("click", _this.onModalToggleElementClick);
             });
-            this.modalWrapperElement = document.querySelector(SELECTORS$2.MODAL_WRAPPER);
-            this.modalElement = document.querySelector(SELECTORS$2.MODAL);
-            this.modalContentElement = document.querySelector(SELECTORS$2.MODAL_CONTENT);
+            this.modalWrapperElement = document.querySelector(SELECTORS$3.MODAL_WRAPPER);
+            this.modalElement = document.querySelector(SELECTORS$3.MODAL);
+            this.modalContentElement = document.querySelector(SELECTORS$3.MODAL_CONTENT);
             this.modalThumbnailElementList =
-                Array.from(document.querySelectorAll(SELECTORS$2.MODAL_THUMBNAIL));
+                Array.from(document.querySelectorAll(SELECTORS$3.MODAL_THUMBNAIL));
             this.modalImageCellListWrapperElement =
-                document.querySelector(SELECTORS$2.MODAL_IMAGE_CELL_LIST_WRAPPER);
+                document.querySelector(SELECTORS$3.MODAL_IMAGE_CELL_LIST_WRAPPER);
             this.modalImageCellElementList =
-                Array.from(document.querySelectorAll(SELECTORS$2.MODAL_IMAGE_CELL));
+                Array.from(document.querySelectorAll(SELECTORS$3.MODAL_IMAGE_CELL));
+            this.setModalImageScrollTopIndicies();
             // Add event listeners
             this.modalContentElement.addEventListener("click", this.onModalContentClick);
             this.modalThumbnailElementList.forEach(function (element) {
@@ -1079,51 +1080,130 @@
         return ProductImagesDesktop;
     }());
 
-    var SELECTORS$1 = {
+    var SELECTORS$2 = {
+        PRODUCT_IMAGES_CONTAINER: '.product-images-mobile__images-container',
+        PRODUCT_IMAGES_CONTAINER_INNER: '.product-images-mobile__images-container__inner',
         PRODUCT_IMAGE: '.product-images-mobile__image',
         DOTS: '.product-images-mobile__dots',
         DOT: '.product-images-mobile__dots__dot'
     };
+    var getScreenCoordinatesDiff = function (a, b) { return ({
+        x: Math.floor(a.x - b.x),
+        y: Math.floor(a.y - b.y)
+    }); };
+    var SWIPE_PERCENTAGE_THRESHOLD = 40;
     var ProductImagesMobile = /** @class */ (function () {
         function ProductImagesMobile() {
             var _this = this;
+            this.elements = {
+                imagesContainer: null,
+                imagesContainerInner: null,
+                images: [],
+                dots: []
+            };
             this.state = {
-                currentImageIndex: 0
+                currentImageIndex: 0,
+                isSwiping: false,
+                touchStartCoordinates: null,
+                currentTouchCoordinates: null
+            };
+            this.setImageContainerDimensions = function () {
+                _this.imageContainerDimensions = {
+                    width: _this.elements.imagesContainer.getBoundingClientRect().width,
+                    offsetTop: _this.elements.imagesContainer.getBoundingClientRect().top
+                };
+            };
+            this.onContainerTouchStart = function (e) {
+                // e.preventDefault();
+                var touch = e.touches[0];
+                _this.state.touchStartCoordinates = {
+                    x: touch.clientX,
+                    y: touch.clientY
+                };
+                _this.state.currentTouchCoordinates = _assign({}, _this.state.touchStartCoordinates);
+                console.log(_this.imageContainerDimensions.width);
+            };
+            this.onContainerTouchMove = function (e) {
+                // prevent vertical scroll
+                e.preventDefault();
+                var touch = e.touches[0];
+                _this.state.currentTouchCoordinates = {
+                    x: touch.clientX,
+                    y: touch.clientY
+                };
+                var difference = _this.getCurrentCoordinatesDiff();
+                _this.elements.imagesContainerInner.classList.add('is-active');
+                var clampThreshold = _this.imageContainerDimensions.width * 0.95;
+                var clampedXDiff = Math.max(Math.min(difference.x, clampThreshold), -clampThreshold);
+                _this.setImageContainerInnerOffset(clampedXDiff);
+            };
+            this.onContainerTouchEnd = function (e) {
+                // e.preventDefault();
+                _this.elements.imagesContainerInner.classList.remove('is-active');
+                _this.setImageContainerInnerOffset();
+                var difference = _this.getCurrentCoordinatesDiff();
+                console.log('difference.x', difference.x);
+                // Attempt to switch to image if user has swiped far enough
+                if (Math.abs(difference.x) >= SWIPE_PERCENTAGE_THRESHOLD) {
+                    console.log('switching to new image');
+                    var newImageIndex = _this.state.currentImageIndex + (difference.x > 0 ? -1 : 1);
+                    console.log(newImageIndex);
+                    if (newImageIndex >= 0 && newImageIndex <= _this.elements.images.length - 1) {
+                        _this.switchToImage(newImageIndex);
+                    }
+                }
+                _this.state.touchStartCoordinates = null;
+                _this.state.currentTouchCoordinates = null;
             };
             this.onDotClick = function (e) {
                 var imageIndex = e.target.getAttribute('data-image-index');
                 var imageIndexAsInt = parseInt(imageIndex, 10);
                 _this.switchToImage(imageIndexAsInt);
             };
+            this.getCurrentCoordinatesDiff = function () {
+                var _a = _this.state, currentTouchCoordinates = _a.currentTouchCoordinates, touchStartCoordinates = _a.touchStartCoordinates;
+                return getScreenCoordinatesDiff(currentTouchCoordinates, touchStartCoordinates);
+            };
             this.switchToImage = function (index) {
                 if (index === _this.state.currentImageIndex)
                     return;
-                _this.toggleImageVisibility(_this.state.currentImageIndex, false);
                 _this.toggleDotActiveState(_this.state.currentImageIndex, false);
                 _this.state.currentImageIndex = index;
-                _this.toggleImageVisibility(_this.state.currentImageIndex, true);
+                _this.setImageContainerInnerOffset();
                 _this.toggleDotActiveState(_this.state.currentImageIndex, true);
             };
-            this.toggleImageVisibility = function (index, visible) {
-                _this.imageElements[index].classList.toggle('is-active', visible);
+            this.getCurrentImageIndexPixelOffset = function () { return (_this.imageContainerDimensions.width * _this.state.currentImageIndex); };
+            this.setImageContainerInnerOffset = function (xDiff) {
+                if (xDiff === void 0) { xDiff = 0; }
+                var containerInnerOffset = _this.getCurrentImageIndexPixelOffset();
+                _this.elements.imagesContainerInner.style.transform = "translateX(".concat((-containerInnerOffset) + xDiff, "px)");
             };
             this.toggleDotActiveState = function (index, isActive) {
-                _this.dotElements[index].classList.toggle('is-active', isActive);
+                _this.elements.dots[index].classList.toggle('is-active', isActive);
             };
         }
         ProductImagesMobile.prototype.initialize = function () {
             var _this = this;
-            this.imageElements = Array.from(document.querySelectorAll(SELECTORS$1.PRODUCT_IMAGE));
-            this.dotElements = Array.from(document.querySelectorAll(SELECTORS$1.DOT));
-            this.dotElements.forEach(function (element) {
+            this.elements.imagesContainer = document.querySelector(SELECTORS$2.PRODUCT_IMAGES_CONTAINER);
+            this.elements.imagesContainer.addEventListener('touchstart', this.onContainerTouchStart);
+            this.elements.imagesContainer.addEventListener('touchend', this.onContainerTouchEnd);
+            this.elements.imagesContainer.addEventListener('touchmove', this.onContainerTouchMove);
+            this.setImageContainerDimensions();
+            window.addEventListener('resize', this.setImageContainerDimensions);
+            this.elements.imagesContainerInner = document.querySelector(SELECTORS$2.PRODUCT_IMAGES_CONTAINER_INNER);
+            this.elements.images = Array.from(document.querySelectorAll(SELECTORS$2.PRODUCT_IMAGE));
+            this.elements.dots = Array.from(document.querySelectorAll(SELECTORS$2.DOT));
+            this.elements.dots.forEach(function (element) {
                 element.addEventListener('click', _this.onDotClick);
             });
             return this;
         };
+        ProductImagesMobile.prototype.unload = function () {
+        };
         return ProductImagesMobile;
     }());
 
-    var SELECTORS = {
+    var SELECTORS$1 = {
         SWATCH_FIELD: ".vm-select-buttons.vm-select-buttons--color",
         SELECT_BUTTON: ".vm-select-button",
         COLOR_NAME_TEXT: ".vm-select-buttons__color-name"
@@ -1138,11 +1218,11 @@
         ProductColorSwatches.prototype.initialize = function () {
             var _this = this;
             this.selectButtonGroups =
-                Array.from(document.querySelectorAll(SELECTORS.SWATCH_FIELD)).map(function (wrapper) {
+                Array.from(document.querySelectorAll(SELECTORS$1.SWATCH_FIELD)).map(function (wrapper) {
                     var optionIndexAsString = wrapper.getAttribute('data-option-index');
                     var optionIndex = parseInt(optionIndexAsString);
-                    var colorNameText = wrapper.querySelector(SELECTORS.COLOR_NAME_TEXT);
-                    var buttons = Array.from(wrapper.querySelectorAll(SELECTORS.SELECT_BUTTON));
+                    var colorNameText = wrapper.querySelector(SELECTORS$1.COLOR_NAME_TEXT);
+                    var buttons = Array.from(wrapper.querySelectorAll(SELECTORS$1.SELECT_BUTTON));
                     var inputs = buttons.map(function (buttonElement) { return buttonElement.querySelector('input'); });
                     buttons.forEach(function (buttonElement) {
                         buttonElement.addEventListener('mouseout', function (e) {
@@ -1150,7 +1230,7 @@
                             colorNameText.innerText = selectedValue;
                         });
                         buttonElement.addEventListener('mouseover', function (e) {
-                            var element = e.target.closest(SELECTORS.SELECT_BUTTON);
+                            var element = e.target.closest(SELECTORS$1.SELECT_BUTTON);
                             var inputElement = element.querySelector('input');
                             var value = inputElement.getAttribute('value');
                             colorNameText.innerText = value;
@@ -1169,6 +1249,61 @@
         return ProductColorSwatches;
     }());
 
+    var ATTRIBUTES = {
+        productOptionIndex: 'data-option-index',
+        productOption: 'data-option'
+    };
+    var SELECTORS = {
+        productOptionElement: "[".concat(ATTRIBUTES.productOption, "]")
+    };
+    var ProductVariants = /** @class */ (function () {
+        function ProductVariants() {
+            var _this = this;
+            this.initialize = function () {
+                var productDataElement = document.querySelector('[data-product]');
+                var productDataAsString = productDataElement.getAttribute('data-product');
+                _this.productData = JSON.parse(productDataAsString);
+                console.log(_this.productData);
+                _this.currentSelectedOptions = new Array(_this.productData.options.length);
+                _this.productOptionElements = Array.from(document.querySelectorAll('[data-option]'));
+                _this.productOptionElements.forEach(function (element, elementIndex) {
+                    var input = element.querySelector('input');
+                    console.log('input', input.value);
+                    _this.currentSelectedOptions[elementIndex] = input.value;
+                    element.addEventListener('change', _this.onProductOptionChange);
+                });
+                console.log('this.currentSelectedOptions', _this.currentSelectedOptions);
+                _this.setCurrentSelectedVariant();
+                console.log('this.currentSelectedVariant', _this.currentSelectedVariant);
+                return _this;
+            };
+            this.unload = function () { };
+            this.onProductOptionChange = function (e) {
+                var _a;
+                var target = e.target;
+                var value = target.value;
+                var productOptionElement = target.closest(SELECTORS.productOptionElement);
+                var optionIndexAsString = productOptionElement.getAttribute(ATTRIBUTES.productOptionIndex);
+                var optionIndex = parseInt(optionIndexAsString, 10);
+                _this.currentSelectedOptions[optionIndex] = value;
+                _this.setCurrentSelectedVariant();
+                ((_a = _this.currentSelectedVariant) === null || _a === void 0 ? void 0 : _a.available) === true;
+            };
+            this.setCurrentSelectedVariant = function () {
+                _this.currentSelectedVariant = _this.productData.variants.find(function (variant) {
+                    for (var _i = 0, _a = _this.currentSelectedOptions; _i < _a.length; _i++) {
+                        var option = _a[_i];
+                        if (!variant.options.includes(option)) {
+                            return false;
+                        }
+                    }
+                    return true;
+                });
+            };
+        }
+        return ProductVariants;
+    }());
+
     var ProductPage = /** @class */ (function () {
         function ProductPage() {
             return this;
@@ -1178,6 +1313,7 @@
             this.productImagesDesktop = new ProductImagesDesktop().initialize();
             this.productImagesMobile = new ProductImagesMobile().initialize();
             this.productColorSwatches = new ProductColorSwatches().initialize();
+            this.productVariants = new ProductVariants().initialize();
         };
         ProductPage.prototype.setStickyContentTop = function () {
             this.stickyContentElement = document.querySelector('.product-content-wrapper');

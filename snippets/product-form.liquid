@@ -8,28 +8,31 @@
 
 {% assign variant = product.selected_or_first_available_variant %}
 
-<div class="clearfix product_form init smart-payment-button--{{ show_payment_button }} {% if product.variants.size > 1 or product.options.size > 1 %}product_form_options{% endif %} product_form--{{ settings.product_form_style }}"
-      id="product-form-{{ product.id }}"
-      data-product-form
-      data-options-size="{{ product.options.size }}"
-      data-money-format="{{ shop.money_format | strip_html }}"
-      data-shop-currency="{{ shop.currency }}"
-      data-select-id="product-select-{{ product.id }}{{ product-form }}{{ section.id }}{{ block.id }}"
-      data-enable-state="{% if template contains 'product' %}true{% else %}false{% endif %}"
-      data-product="{{ product | json | escape }}"
-      {% if settings.limit_quantity or settings.display_inventory_left %}
-        data-variant-inventory='[{%- for v in product.variants -%}{"id":{{v.id}},"inventory_quantity":{{v.inventory_quantity}},"inventory_management":"{{v.inventory_management}}","inventory_policy":"{{v.inventory_policy}}"}{% if forloop.last == false %},{% endif %}{%- endfor -%}]'
-      {% endif %}
-      data-product-id="{{ product.id }}"
-      >
+<div
+  class="product_form init
+    smart-payment-button--{{ show_payment_button }}
+    {% if product.variants.size > 1 or product.options.size > 1 %}product_form_options{% endif %}"
+  id="product-form-{{ product.id }}"
+  data-product-form
+  data-options-size="{{ product.options.size }}"
+  data-money-format="{{ shop.money_format | strip_html }}"
+  data-shop-currency="{{ shop.currency }}"
+  data-select-id="product-select-{{ product.id }}{{ product-form }}{{ section.id }}{{ block.id }}"
+  data-enable-state="{% if template contains 'product' %}true{% else %}false{% endif %}"
+  data-product="{{ product | json | escape }}"
+  {% if settings.limit_quantity or settings.display_inventory_left %}
+    data-variant-inventory='[{%- for v in product.variants -%}{"id":{{v.id}},"inventory_quantity":{{v.inventory_quantity}},"inventory_management":"{{v.inventory_management}}","inventory_policy":"{{v.inventory_policy}}"}{% if forloop.last == false %},{% endif %}{%- endfor -%}]'
+  {% endif %}
+  data-product-id="{{ product.id }}"
+>
   {% form 'product', product %}
+
   {% unless product.tags contains 'Design Your Own Ring' %}	
   	{% render 'storemods-ringsize' %}
   {% endunless %}
+
   {% render 'storemods-engravement' %}
   
-  
-
   {% if product.options.size > 1 %}
     <div class="select">
       <select id="product-select-{{ product.id }}{{ product-form }}{{ section.id }}{{ block.id }}" name="id" class="multi_select">
@@ -67,85 +70,100 @@
     {% if section.settings.enable_ring_size == true %}
       {% render 'storemods-ringsize', min_size:section.settings.minimum_ring_size, max_size:section.settings.maximum_ring_size %}
     {% endif %}
+
     {% if section.settings.enable_prong_style == true %}
-          <p class="line-item-property__field">
-               <label for="{{section.settings.dropdown_prong_style_label | strip | replace: ' ', '-'}}">{{section.settings.dropdown_prong_style_label | strip }}</label>
-               <select required class="required" id="{{section.settings.dropdown_prong_style_label | strip | replace: ' ', '-'}}" name="properties[{{section.settings.dropdown_prong_style_label | strip }}]">
-                 <option value="" selected disabled hidden>Select {{section.settings.dropdown_prong_style_label | strip }}</option>
-                 {% assign options = section.settings.dropdown_variant_prong_style | split: "," %}
-                 {% capture num %}{{ options | size | minus: 1 }}{% endcapture %}
-                 {% for i in (0..num) %}
-                 <option value="{{ options[i] | strip }}">{{ options[i] | strip }}</option>  
-                 {% endfor %}
-               </select>
-          </p>
+      <p class="line-item-property__field">
+        <label for="{{section.settings.dropdown_prong_style_label | strip | replace: ' ', '-'}}">{{section.settings.dropdown_prong_style_label | strip }}</label>
+        <select required class="required" id="{{section.settings.dropdown_prong_style_label | strip | replace: ' ', '-'}}" name="properties[{{section.settings.dropdown_prong_style_label | strip }}]">
+          <option value="" selected disabled hidden>Select {{section.settings.dropdown_prong_style_label | strip }}</option>
+          {% assign options = section.settings.dropdown_variant_prong_style | split: "," %}
+          {% capture num %}{{ options | size | minus: 1 }}{% endcapture %}
+          {% for i in (0..num) %}
+          <option value="{{ options[i] | strip }}">{{ options[i] | strip }}</option>  
+          {% endfor %}
+        </select>
+      </p>
   	{% endif %}
+
     {% if section.settings.enable_prong_orientation == true %}
-          <p class="line-item-property__field">
-               <label for="{{section.settings.dropdown_prong_orientation_label | strip | replace: ' ', '-'}}">{{section.settings.dropdown_prong_orientation_label | strip }}</label>
-               <select required class="required" id="{{section.settings.dropdown_prong_orientation_label | strip | replace: ' ', '-'}}" name="properties[{{section.settings.dropdown_prong_orientation_label | strip }}]">
-                 <option value="" selected disabled hidden>Select {{section.settings.dropdown_prong_orientation_label | strip }}</option>
-                 {% assign options = section.settings.dropdown_variant_prong_orientation | split: "," %}
-                 {% capture num %}{{ options | size | minus: 1 }}{% endcapture %}
-                 {% for i in (0..num) %}
-                 <option value="{{ options[i] | strip }}">{{ options[i] | strip }}</option>  
-                 {% endfor %}
-               </select>
-          </p>
+      <p class="line-item-property__field">
+        <label for="{{section.settings.dropdown_prong_orientation_label | strip | replace: ' ', '-'}}">{{section.settings.dropdown_prong_orientation_label | strip }}</label>
+        <select required class="required" id="{{section.settings.dropdown_prong_orientation_label | strip | replace: ' ', '-'}}" name="properties[{{section.settings.dropdown_prong_orientation_label | strip }}]">
+          <option value="" selected disabled hidden>Select {{section.settings.dropdown_prong_orientation_label | strip }}</option>
+          {% assign options = section.settings.dropdown_variant_prong_orientation | split: "," %}
+          {% capture num %}{{ options | size | minus: 1 }}{% endcapture %}
+          {% for i in (0..num) %}
+          <option value="{{ options[i] | strip }}">{{ options[i] | strip }}</option>  
+          {% endfor %}
+        </select>
+      </p>
   	{% endif %}
+    
     {% if section.settings.enable_stone_orientation == true %}
-          <p class="line-item-property__field">
-               <label for="{{section.settings.dropdown_stone_orientation_label | strip | replace: ' ', '-'}}">{{section.settings.dropdown_stone_orientation_label | strip }}</label>
-               <select required class="required" id="{{section.settings.dropdown_stone_orientation_label | strip | replace: ' ', '-'}}" name="properties[{{section.settings.dropdown_stone_orientation_label | strip }}]">
-                <option value="" selected disabled hidden>Select {{section.settings.dropdown_stone_orientation_label | strip }}</option>
-                 {% assign options = section.settings.dropdown_variant_stone_orientation | split: "," %}
-                 {% capture num %}{{ options | size | minus: 1 }}{% endcapture %}
-                 {% for i in (0..num) %}
-                 <option value="{{ options[i] | strip }}">{{ options[i] | strip }}</option>  
-                 {% endfor %}
-               </select>
-          </p>
+      <p class="line-item-property__field">
+        <label for="{{section.settings.dropdown_stone_orientation_label | strip | replace: ' ', '-'}}">{{section.settings.dropdown_stone_orientation_label | strip }}</label>
+        <select required class="required" id="{{section.settings.dropdown_stone_orientation_label | strip | replace: ' ', '-'}}" name="properties[{{section.settings.dropdown_stone_orientation_label | strip }}]">
+        <option value="" selected disabled hidden>Select {{section.settings.dropdown_stone_orientation_label | strip }}</option>
+          {% assign options = section.settings.dropdown_variant_stone_orientation | split: "," %}
+          {% capture num %}{{ options | size | minus: 1 }}{% endcapture %}
+          {% for i in (0..num) %}
+          <option value="{{ options[i] | strip }}">{{ options[i] | strip }}</option>  
+          {% endfor %}
+        </select>
+      </p>
   	{% endif %}
+
     {% comment %} Custom Field Options {% endcomment %}
     {% for block in section.blocks %}
-      	{% if block.type == 'add_custom_ring_options' and block.settings.enable_variant_id == true %}
-          <p class="line-item-property__field">
-               <label for="{{block.settings.variant_name | strip | replace: ' ', '-'}}">{{block.settings.variant_name | strip }}</label>
-               <select required class="required" id="{{block.settings.variant_name | strip | replace: ' ', '-'}}" name="properties[{{block.settings.variant_name | strip }}]">
-                <option value="" selected disabled hidden>Select {{block.settings.variant_name | strip }}</option>
-                 {% assign options = block.settings.dropdown_variant_id | split: "," %}
-                 {% capture num %}{{ options | size | minus: 1 }}{% endcapture %}
-                 {% for i in (0..num) %}
-                 <option value="{{ options[i] | strip }}">{{ options[i] | strip }}</option>  
-                 {% endfor %}
-               </select>
-          </p>
+      {% if block.type == 'add_custom_ring_options' and block.settings.enable_variant_id == true %}
+        <p class="line-item-property__field">
+          <label for="{{block.settings.variant_name | strip | replace: ' ', '-'}}">{{block.settings.variant_name | strip }}</label>
+          <select required class="required" id="{{block.settings.variant_name | strip | replace: ' ', '-'}}" name="properties[{{block.settings.variant_name | strip }}]">
+          <option value="" selected disabled hidden>Select {{block.settings.variant_name | strip }}</option>
+            {% assign options = block.settings.dropdown_variant_id | split: "," %}
+            {% capture num %}{{ options | size | minus: 1 }}{% endcapture %}
+            {% for i in (0..num) %}
+            <option value="{{ options[i] | strip }}">{{ options[i] | strip }}</option>  
+            {% endfor %}
+          </select>
+        </p>
   		{% endif %}
     {% endfor %}
   
-  {% if section.settings.enable_agreement == true %}
-          <p class="line-item-property__field">
-            <input type="hidden" name="properties[{{section.settings.agreement_label | strip }}]" value="No">
-            <label for="{{section.settings.agreement_label | strip | replace: ' ', '-'}}"><input id="{{section.settings.agreement_label | strip | replace: ' ', '-'}}" type="checkbox" name="properties[{{section.settings.agreement_label | strip }}]" value="Yes" required="Yes"> {{section.settings.agreement_label | strip }}</label>
-            <span class="agreement_description">{{section.settings.agreement_description | strip }}</span>
-  </p>
-  	{% endif %}
+    {% if section.settings.enable_agreement == true %}
+      <p class="line-item-property__field">
+        <input type="hidden" name="properties[{{section.settings.agreement_label | strip }}]" value="No">
+        <label for="{{section.settings.agreement_label | strip | replace: ' ', '-'}}"><input id="{{section.settings.agreement_label | strip | replace: ' ', '-'}}" type="checkbox" name="properties[{{section.settings.agreement_label | strip }}]" value="Yes" required="Yes"> {{section.settings.agreement_label | strip }}</label>
+        <span class="agreement_description">{{section.settings.agreement_description | strip }}</span>
+      </p>
+    {% endif %}
+
    <input type="hidden" id="buildring" name="buildring" value="false"/>
   {% endif %}
    <!-- End Of Build Your Own Ring - Addon -->
    
     {% if product.tags contains section.settings.final_sale_tag %}
-   <!-- Final Sale Agreement -->
-    <p class="line-item-property__field">
-      <input type="hidden" name="properties[{{section.settings.final_sale_label | strip_html | strip | remove: "*" }}]" value="No">
-      <label for="{{section.settings.final_sale_label | strip | replace: ' ', '-' | remove: "*"}}"><input id="{{section.settings.final_sale_label | strip | replace: ' ', '-' | remove: "*"}}" type="checkbox" name="properties[{{section.settings.final_sale_label | strip | remove: "*" }}]" value="Yes" required="Yes"> {{section.settings.final_sale_label | strip }}</label>
-      <span class="agreement_description">{{section.settings.final_sale_description | strip }}</span>
-    </p>
-   <!-- End Final Sale Agreement -->
+      <!-- Final Sale Agreement -->
+      <p class="line-item-property__field">
+        <input
+          type="hidden"
+          name="properties[{{section.settings.final_sale_label | strip_html | strip | remove: "*" }}]" value="No">
+        <label
+          for="{{section.settings.final_sale_label | strip | replace: ' ', '-' | remove: "*"}}">
+          <input
+            id="{{section.settings.final_sale_label | strip | replace: ' ', '-' | remove: "*"}}" 
+            type="checkbox"
+            name="properties[{{section.settings.final_sale_label | strip | remove: "*" }}]"
+            value="Yes"
+            required="Yes">{{section.settings.final_sale_label | strip }}
+        </label>
+        <span class="agreement_description">{{section.settings.final_sale_description | strip }}</span>
+      </p>
+      <!-- End Final Sale Agreement -->
   	{% endif %}
   
   {% if section.settings.enable_gift == true %}
-	<!-- Gift Option -->
+	  <!-- Gift Option -->
     <p class="line-item-property__field gift_option">
       <input type="hidden" name="properties[{{section.settings.gift_text}}]" value="Yes">
       <input id="this-is-a-gift" type="checkbox" name="properties[{{section.settings.gift_text}}]" value="Yes">
@@ -175,18 +193,17 @@
 
   <div class="purchase-details">
     {% if settings.display_product_quantity %}
-     {% assign product_list = product.tags | join: ',' %}
-      	{% unless product_list contains 'Engagement' or product_list contains 'engagement' %}
-          <div class="purchase-details__quantity product-quantity-box">
-            <label for="quantity">{{ 'products.product.quantity' | t }}</label>
-            <span class="ss-icon product-minus js-change-quantity" data-func="minus"><span class="icon-minus"></span></span>
-            <input type="number" min="1" size="2" class="quantity" name="quantity" id="quantity" value="1" {% if settings.limit_quantity and variant.inventory_management != blank and variant.inventory_policy == "deny" %}max="{{ variant.inventory_quantity }}"{% endif %} />
-            <span class="ss-icon product-plus js-change-quantity" data-func="plus"><span class="icon-plus"></span></span>
-          </div>
-      	{% endunless %}
-      	
-      	
+      {% assign product_list = product.tags | join: ',' %}
+      {% unless product_list contains 'Engagement' or product_list contains 'engagement' %}
+        <div class="purchase-details__quantity product-quantity-box">
+          <label for="quantity">{{ 'products.product.quantity' | t }}</label>
+          <span class="ss-icon product-minus js-change-quantity" data-func="minus"><span class="icon-minus"></span></span>
+          <input type="number" min="1" size="2" class="quantity" name="quantity" id="quantity" value="1" {% if settings.limit_quantity and variant.inventory_management != blank and variant.inventory_policy == "deny" %}max="{{ variant.inventory_quantity }}"{% endif %} />
+          <span class="ss-icon product-plus js-change-quantity" data-func="plus"><span class="icon-plus"></span></span>
+        </div>
+      {% endunless %}  	
     {% endif %}
+
     <div class="purchase-details__buttons purchase-details__spb--{{ show_payment_button }} {% if product.available == false %}product-is-unavailable{% endif %}">
       {% if settings.cart_action == 'reload_page' %}
         <input type="hidden" name="return_to" value="back" />

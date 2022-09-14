@@ -12518,6 +12518,11 @@ div#disqus_thread li {
 .product_section {
   padding-top: 2rem;
 }
+@media only screen and (max-width: 800px) {
+  .product_section {
+    padding-top: 0rem;
+  }
+}
 
 .modal_price {
   padding-bottom: 8px;
@@ -12651,11 +12656,28 @@ div#disqus_thread li {
   margin: 0 -30px 1rem;
 }
 
-.product-images-mobile__image {
-  display: none;
+.product-images-mobile__images-container {
+  overflow-x: hidden;
 }
-.product-images-mobile__image.is-active {
+
+.product-images-mobile__images-container__inner {
+  transition: -webkit-transform 0.2s;
+  transition: transform 0.2s;
+  transition: transform 0.2s, -webkit-transform 0.2s;
+  display: flex;
+  flex-direction: row;
+}
+.product-images-mobile__images-container__inner.is-active {
+  transition: none;
+}
+
+.product-images-mobile__image {
   display: block;
+  width: 100%;
+  height: auto;
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: 100%;
 }
 
 .product-images-mobile__dots {
@@ -12668,7 +12690,7 @@ div#disqus_thread li {
 .product-images-mobile__dots__dot {
   width: 8px;
   height: 8px;
-  background-color: rgba(28, 71, 71, 0.5);
+  background-color: rgba(28, 71, 71, 0.2);
   border-radius: 50%;
   margin: 0 5px;
   transition: background-color 0.2s;

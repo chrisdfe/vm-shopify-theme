@@ -66,6 +66,7 @@ export default class ProductImagesDesktop {
     this.modalImageCellElementList =
       Array.from(document.querySelectorAll(SELECTORS.MODAL_IMAGE_CELL));
 
+    this.setModalImageScrollTopIndicies();
 
     // Add event listeners
     this.modalContentElement.addEventListener("click", this.onModalContentClick);
@@ -78,6 +79,7 @@ export default class ProductImagesDesktop {
 
     document.addEventListener("keydown", this.onKeyPressed);
     document.addEventListener('resize', this.onWindowResize);
+
 
     return this;
   }
