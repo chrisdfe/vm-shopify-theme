@@ -12,122 +12,6 @@
 #Plyr setup
 
 /*============================================================================
-  Image functions
-==============================================================================*/
-
-var usePageDots = Shopify.theme_settings.page_dots_enabled;
-
-var imageFunctions = {
-  zoom: function (zoomParent, enableTouch, magnify) {
-    zoomParent.find('img')
-      .wrap('<span style="display:block"></span>')
-      .css('display', 'block')
-      .parent()
-      .zoom({
-        touch: enableTouch,
-        magnify: magnify ? magnify : 1
-      });
-  },
-  fullWidth: function (images, imageContainer) {
-    $(images).each(function () {
-      var $image = $(this),
-        alt = $image.attr('alt'),
-        src = $image.attr('src');
-
-      if (alt.indexOf("[") >= 0) {
-
-        //remove from description
-        $image.remove();
-
-        //find shortcode values and remove from alt
-        var shortcodes = alt.match(/\[(.*?)\]/ig);
-        alt = alt.replace(/\[(.*?)\]/ig, '');
-
-        //remove brackets from shortcode to be used as classes
-        var captionClass = $.map(shortcodes, function (value, index) {
-          value = value.replace(/[\[\]']+/g, '');
-          return value;
-        });
-
-        //markup for caption
-
-        var caption = [
-          '<div class="position-' + (captionClass.length ? captionClass : 'center') + ' caption js-caption">',
-          '<div class="caption-content caption-background-false align-' + (captionClass.length ? captionClass : 'center') + '">',
-          '<p class="headline">' + alt + '</p>',
-          '</div>',
-          '</div>'
-        ].join('');
-
-        //image attributes added
-        $image.attr({
-          alt: alt,
-          class: 'lazyload {{ settings.image_loading_style }}',
-          src: src,
-          dataSizes: 'auto'
-        });
-
-        var image = $image.prop('outerHTML')
-        var banner = '<div class="banner">' + image + caption + '</div>'
-
-        $(imageContainer).append(banner);
-      }
-    })
-  },
-  showSecondaryImage: function () {
-    if ($(window).width() > 798) {
-      $('.has-secondary-media-swap').off().on('mouseenter', function () {
-        $(this).find('.image-element__wrap img').toggleClass('secondary-media-hidden');
-        $(this).find('[data-html5-video]').toggleClass('secondary-media-hidden');
-        $(this).find('.external-video__container').toggleClass('secondary-media-hidden');
-        videoFeature.enableVideoOnHover($(this));
-      });
-
-      $('.has-secondary-media-swap').on('mouseleave', function () {
-        $(this).find('.image-element__wrap img').toggleClass('secondary-media-hidden');
-        $(this).find('[data-html5-video]').toggleClass('secondary-media-hidden');
-        $(this).find('.external-video__container').toggleClass('secondary-media-hidden');
-        videoFeature.disableVideoOnHover($(this));
-      });
-    }
-  },
-  //Fix for flickity issue on IOS, where you can't swipe through the slider
-  flickityIosFix: function () {
-    var touchingCarousel = false,
-      touchStartCoords;
-
-    document.body.addEventListener('touchstart', function (e) {
-      if (e.target.closest('.flickity-slider')) {
-        touchingCarousel = true;
-      } else {
-        touchingCarousel = false;
-        return;
-      }
-
-      touchStartCoords = {
-        x: e.touches[0].pageX,
-        y: e.touches[0].pageY
-      }
-    });
-
-    document.body.addEventListener('touchmove', function (e) {
-      if (!(touchingCarousel && e.cancelable)) {
-        return;
-      }
-
-      var moveVector = {
-        x: e.touches[0].pageX - touchStartCoords.x,
-        y: e.touches[0].pageY - touchStartCoords.y
-      };
-
-      if (Math.abs(moveVector.x) > 7)
-        e.preventDefault()
-
-    }, { passive: false });
-  }
-}
-
-/*============================================================================
   Recently viewed
 ==============================================================================*/
 
@@ -157,7 +41,6 @@ var recentlyViewed = {
     }
 
     if (productHandle) {
-
       if (!$.inArray(productHandle, rvProductArray) !== -1) {
         displayProducts = [];
         rvProductArray.unshift(productHandle);
@@ -206,6 +89,7 @@ var recentlyViewed = {
     }
 
   },
+
   getCookieProducts: function (rvCookie, productHandle) {
 
     if (!rvCookie && productHandle) {
@@ -216,13 +100,13 @@ var recentlyViewed = {
     }
 
     return rvCookie;
-
   },
+
   setCookieProducts: function (rvProductArray) {
     Cookies.set('recentlyViewed', escape(rvProductArray.join(',')), { expires: 30, path: '/' });
   },
-  getProductInformation: function (parent, displayProducts, productHandle) {
 
+  getProductInformation: function (parent, displayProducts, productHandle) {
     // Add data-attribute 'recently-viewed-items-loaded="true" to parent container
     $(parent).attr('data-recently-viewed-items-loaded', 'true');
 
@@ -255,17 +139,6 @@ var recentlyViewed = {
             if (Currency.show_multiple_currencies) {
               currencyConverter.convertCurrencies();
             }
-
-            // Initialize show secondary media on hover feature
-            if (Shopify.theme_settings.collection_secondary_image) {
-              imageFunctions.showSecondaryImage();
-            }
-
-            var $video = rvProduct.find('[data-html5-video] video, [data-youtube-video]');
-            if ($video.length > 0) {
-              videoFeature.setupPlayerForRecentlyViewedProducts(rvProduct.find('[data-html5-video] video, [data-youtube-video]'))
-            }
-
           },
           error: function (x, t, m) {
             console.log(x);
@@ -276,14 +149,7 @@ var recentlyViewed = {
         });
       }
 
-      if ($(parent).find('.rv-main').hasClass('js-rv-slider')) {
-        if (displayProducts.length <= productLimit) {
-          $('.js-rv-slider .gallery-cell').eq(displayProducts.length).nextAll().addBack().remove();
-        } else {
-          $('.js-rv-slider .gallery-cell').eq(productLimit).nextAll().addBack().remove();
-        }
-        recentlyViewed.createSlider(parent, productLimit);
-      } else if ($(parent).find('.rv-main').hasClass('js-rv-grid')) {
+      if ($(parent).find('.rv-main').hasClass('js-rv-grid')) {
         if (displayProducts.length <= productLimit) {
           $('.js-rv-grid .thumbnail').eq(displayProducts.length).nextAll().addBack().remove();
         } else {
@@ -292,81 +158,6 @@ var recentlyViewed = {
       }
     });
   },
-
-  createSlider: function (el, productsAvailable) {
-
-    var products_per_slide = $('.js-rv-slider').data('products-per-slide');
-    var products_limit = $('.js-rv-slider').data('products-limit');
-    var products_available = productsAvailable;
-    var indexProductsAvailable = productsAvailable - 1;
-    var rvProductstoShow = $('.js-rv-slider').find('.gallery-cell');
-    var cellAlign,
-      draggable,
-      prevNext,
-      initialIndex;
-
-    if (products_per_slide == "2" && products_available > products_per_slide && products_limit > products_per_slide || products_per_slide == "4" && products_available > products_per_slide && products_limit > products_per_slide || products_per_slide == "6" && products_available > products_per_slide && products_limit > products_per_slide) {
-      cellAlign = "left";
-    } else {
-      cellAlign = "center";
-    }
-
-    if (products_available > products_per_slide && products_limit > products_per_slide) {
-      draggable = true;
-      prevNext = true;
-    } else {
-      draggable = false;
-      prevNext = false;
-    }
-
-    if (products_per_slide == "2" && products_available > products_per_slide || products_per_slide == "4" && products_available > products_per_slide || products_per_slide == "6" && products_available > products_per_slide) {
-      initialIndex = 0;
-    } else if (products_per_slide == "3" && products_available) {
-      initialIndex = 1;
-    } else if (products_per_slide == "5" && products_available) {
-      initialIndex = 2;
-    } else if (products_per_slide == "7" && products_available) {
-      initialIndex = 3;
-    }
-
-    if ($(window).width() <= 798) {
-
-      cellAlign = "center";
-      initialIndex = 1;
-
-      if (rvProductstoShow.length <= 2) {
-        draggable = false;
-        prevNext = false;
-        wrapAround = false;
-      } else if (products_available > 3 && products_limit > 3) {
-        draggable = true;
-        prevNext = true;
-        wrapAround = true;
-      } else {
-        draggable = false;
-        prevNext = false;
-        wrapAround = false;
-      }
-
-      $('.js-rv-slider').parents('.even-num-slides').removeClass('even-num-slides');
-    }
-
-    $('.js-rv-slider').flickity({
-      "lazyLoad": 2,
-      "imagesLoaded": true,
-      "draggable": draggable,
-      "prevNextButtons": prevNext,
-      "wrapAround": true,
-      "cellAlign": cellAlign,
-      "pageDots": usePageDots,
-      "contain": true,
-      "freeScroll": true,
-      "arrowShape": arrowSize,
-      "initialIndex": initialIndex
-    });
-
-    $('.js-rv-slider').addClass('slider-initialized');
-  }
 }
 
 /* ===============================================
@@ -375,7 +166,7 @@ var recentlyViewed = {
 
 //Collection template
 
-var enableLoadMoreProducts = function () {
+const enableLoadMoreProducts = function () {
   $('body').on('click', '.js-load-more a', function (e) {
     enableInfiniteScroll();
     e.stopPropagation();
@@ -383,9 +174,9 @@ var enableLoadMoreProducts = function () {
   });
 }
 
-var enableInfiniteScroll = function () {
+constenableInfiniteScroll = function () {
   if ($('.collection-matrix').length) {
-    var infiniteScroll = new Waypoint.Infinite({
+    new Waypoint.Infinite({
       element: $('.collection-matrix')[0],
       items: '.collection-matrix',
       more: '.load-more__btn',
@@ -407,19 +198,10 @@ var enableInfiniteScroll = function () {
         if (Currency.show_multiple_currencies) {
           currencyConverter.convertCurrencies();
         }
+
         // Initialize shopify payment buttons
         if (Shopify.PaymentButton) {
           Shopify.PaymentButton.init();
-        }
-        productPage.init();
-
-        hideNoScript();
-
-        videoFeature.init();
-
-        // Initialize show secondary media on hover feature
-        if (Shopify.theme_settings.collection_secondary_image) {
-          imageFunctions.showSecondaryImage();
         }
       }
     })
@@ -438,7 +220,7 @@ const enableLoadMoreSearch = function () {
 
 const enableInfiniteSearchScroll = function () {
   if ($('.search-matrix').length) {
-    var infiniteSearchScroll = new Waypoint.Infinite({
+    new Waypoint.Infinite({
       element: $('.search-matrix')[0],
       items: '.search-matrix',
       more: '.load-more__btn',
@@ -464,25 +246,11 @@ const enableInfiniteSearchScroll = function () {
         if (Shopify.PaymentButton) {
           Shopify.PaymentButton.init();
         }
-        productPage.init();
-
-        hideNoScript();
-
-        videoFeature.init();
-
-        // Initialize show secondary media on hover feature
-        if (Shopify.theme_settings.collection_secondary_image) {
-          imageFunctions.showSecondaryImage();
-        }
       }
-    })
+    });
   }
 }
 
-var hideNoScript = function () {
-  // Used to ensure noscript elements are hidden when JS is present.
-  $('.image__container .noscript').addClass('hidden');
-}
 
 /*============================================================================
   Filter Products with AJAX
@@ -621,6 +389,9 @@ const quickFilter = {
         if (Shopify.PaymentButton) {
           Shopify.PaymentButton.init();
         }
+
+        // fire global event to allow VM code to hook into this stuff
+        window.dispatchEvent(new Event('collection-filters-updated'))
       },
       error: function (x, t, m) {
         console.log(x);
@@ -639,7 +410,6 @@ const quickFilter = {
     urlString = path + tags + query;
 
     quickFilter.updateView(urlString);
-
   }
 }
 
@@ -696,22 +466,6 @@ var collectionSidebarFilter = {
   Misc
 ==============================================================================*/
 
-const arrowSize = {
-  x0: 10,
-  x1: 60, y1: 50,
-  x2: 62, y2: 40,
-  x3: 22
-}
-const svgArrowSizeLeft = '<svg viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 62,90 L 22,50  L 62,10 L 60,0 Z" class="arrow"></path></svg>';
-
-const svgArrowSizeRight = '<svg viewBox="0 0 100 100"><path d="M 10,50 L 60,100 L 62,90 L 22,50  L 62,10 L 60,0 Z" class="arrow" transform="translate(100, 100) rotate(180) "></path></svg>';
-
-function isScreenSizeLarge() {
-  if ($(window).width() > 1024) {
-    return true
-  }
-}
-
 const utils = {
   createAccordion: function (container, tab, content) {
     var $container = $(container);
@@ -749,47 +503,7 @@ const utils = {
     });
   },
 
-  mobileAccordion: function (container, tab, content) {
-    $container = $(container);
-    $tab = $(container).find(tab);
-    $content = $(container).find(content);
-
-    $(tab + '.active').next().slideToggle();
-
-    $('body').on('click', tab, function (e) {
-      e.preventDefault();
-      $(this).toggleClass('active');
-      $(this).next().slideToggle();
-    });
-  },
-
-  mobileParentActiveAccordion: function (container, tab, content) {
-    $container = $(container);
-    $tab = $(container).find(tab);
-    $content = $(container).find(content);
-
-    $(tab + '.active').parent().next().slideToggle();
-
-    $('body').on('click', tab, function (e) {
-      e.preventDefault();
-      $(this).toggleClass('active');
-      $(this).parent().next().slideToggle();
-    });
-  },
-  initializeTabs: function () {
-    $('ul.tabs > li > a').attr('data-no-instant', true);
-    $('body').on('click', 'ul.tabs > li > a', function (e) {
-      e.preventDefault();
-      var contentLocation = $(this).attr('href');
-      if (contentLocation.charAt(0) == "#") {
-        $('ul.tabs > li > a.active').removeClass('active');
-        $(this).addClass('active');
-        $(this).parents('ul.tabs').next().find(contentLocation).show().css({ 'display': 'block' }).addClass('active').siblings().hide().removeClass('active');
-      }
-    });
-  },
   enableDisclosure: function () {
-
     var $disclosure = $('[data-disclosure]');
     var $toggle = $('[data-disclosure-toggle]');
     var $disclosureWrap = $('.disclosure__list-wrap');
@@ -864,246 +578,5 @@ const utils = {
   unload: function ($target) {
     $('[data-disclosure]').off();
     $('[data-disclosure-toggle]').off();
-  }
-}
-
-var sliderBlock = {
-  select: function (blockId, $parentSection) {
-    var $blocks = $parentSection.find('.gallery-cell');
-    var blockIdsArray = $blocks.map(function () {
-      return String($(this).data('block-id'));
-    });
-
-    var $slider = $parentSection.find('[data-slider-id]');
-    var settings = {
-      slideshowTextAnimation: $slider.data('slideshow-text-animation')
-    }
-    var flkty = $slider.data('flickity');
-
-    $slider.flickity('pausePlayer');
-
-    for (var i = 0; i < blockIdsArray.length; i++) {
-      if (blockIdsArray[i] === blockId) {
-        var currentSlide = i;
-        if (currentSlide !== flkty.selectedIndex) {
-          $slider.flickity('select', parseInt(currentSlide), false, true);
-        }
-      }
-    }
-  },
-  deselect: function ($parentSection) {
-    var $slider = $parentSection.find('.flexslider').data('flexslider');
-    if ($slider) {
-      $slider.flickity('unpausePlayer');
-    }
-  }
-}
-
-/*============================================================================
-Product media controls
-==============================================================================*/
-
-var productMedia = {
-  models: [],
-  setupMedia: function () {
-
-    var config = {
-      // Default control list
-      controls: [
-        'zoom-in',
-        'zoom-out',
-        'fullscreen'
-      ],
-      focusOnPlay: false
-    }
-
-    $($('model-viewer', $('.js-product-gallery, .js-gallery-modal'))).each(function (index, model) {
-      model = new Shopify.ModelViewerUI(model, config);
-      productMedia.models.push(model)
-    })
-
-    $('.product-gallery__model model-viewer').on('mousedown', function () {
-      productMedia.hideModelIcon(this);
-    })
-  },
-  showModelIcon: function (slide) {
-    $(slide).find('.button--poster, .model-icon-button-control').show();
-  },
-  hideModelIcon: function (slide) {
-    $(slide).find('.button--poster, .model-icon-button-control').hide();
-  }
-}
-
-/*============================================================================
-Plyr setup
-==============================================================================*/
-
-var videoEl = {
-  playButtonIcon: '<button type="button" class="plyr__control plyr__control--overlaid" aria-label="Play, {title}" data-plyr="play"><svg class="play-icon-button-control" width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="60" height="60" fill="white"/><path fill-rule="evenodd" clip-rule="evenodd" d="M23 20V40L39 29.4248L23 20Z" fill="#323232"/></svg><span class="plyr__sr-only">Play</span></button>',
-  playButton: '<button type="button" class="plyr__controls__item plyr__control" aria-label="Play, {title}" data-plyr="play"><svg class="icon--pressed" role="presentation"><use xlink:href="#plyr-pause"></use></svg><svg class="icon--not-pressed" role="presentation"><use xlink:href="#plyr-play"></use></svg><span class="label--pressed plyr__tooltip" role="tooltip">Pause</span><span class="label--not-pressed plyr__tooltip" role="tooltip">Play</span></button>',
-  muteButton: '<button type="button" class="plyr__controls__item plyr__control" aria-label="Mute" data-plyr="mute"><svg class="icon--pressed" role="presentation"><use xlink:href="#plyr-muted"></use></svg><svg class="icon--not-pressed" role="presentation"><use xlink:href="#plyr-volume"></use></svg><span class="label--pressed plyr__tooltip" role="tooltip">Unmute</span><span class="label--not-pressed plyr__tooltip" role="tooltip">Mute</span></button>',
-  progressInput: '<div class="plyr__controls__item plyr__progress__container"><div class="plyr__progress"><input data-plyr="seek" type="range" min="0" max="100" step="0.01" value="0" aria-label="Seek"><progress class="plyr__progress__buffer" min="0" max="100" value="0">% buffered</progress><span role="tooltip" class="plyr__tooltip">00:00</span></div></div>',
-  volume: '<div class="plyr__controls__item plyr__volume"><input data-plyr="volume" type="range" min="0" max="1" step="0.05" value="1" autocomplete="off" aria-label="Volume"></div>',
-  fullscreen: '<button type="button" class="plyr__controls__item plyr__control" data-plyr="fullscreen"><svg class="icon--pressed" role="presentation"><use xlink:href="#plyr-exit-fullscreen"></use></svg><svg class="icon--not-pressed" role="presentation"><use xlink:href="#plyr-enter-fullscreen"></use></svg><span class="label--pressed plyr__tooltip" role="tooltip">Exit fullscreen</span><span class="label--not-pressed plyr__tooltip" role="tooltip">Enter fullscreen</span></button>'
-}
-
-var videoControls = videoEl.playButtonIcon + '<div class="plyr__controls">' + videoEl.playButton + videoEl.progressInput + videoEl.muteButton + videoEl.volume + videoEl.fullscreen + '</div>';
-var globalVideoPlayers = [];
-var videoPlayers = [];
-var videosInRecommendedProductsPlayer;
-
-const videoFeature = {
-  init: function () {
-
-    this.setupVideoPlayer();
-    this.setupRecommendedVideoPlayer();
-
-  },
-  setupVideoPlayer: function () {
-    var productVideos = document.querySelectorAll('[data-html5-video] video, [data-youtube-video]');
-
-    var setupVideoPlayers = Plyr.setup(productVideos, {
-      controls: videoControls,
-      ratio: this.aspect_ratio,
-      fullscreen: {
-        enabled: true,
-        fallback: true,
-        iosNative: true
-      },
-      storage: {
-        enabled: false
-      }
-    });
-
-    // Moves players into global array so that we can target them for play/pause on global level
-    if (globalVideoPlayers) {
-      $.each(setupVideoPlayers, function (index, player) {
-        globalVideoPlayers.push(player);
-      })
-    }
-
-    var videoLooping = $('[data-video-loop]').data('video-loop') || false;
-    $.each(setupVideoPlayers, function (index, player) {
-      player.loop = videoLooping;
-      videoPlayers.push(player);
-    });
-
-    this.setupListeners();
-  },
-  setupPlayerForRecentlyViewedProducts: function (video) {
-
-    if (video) {
-      var recentlyViewedProductPlayer = new Plyr(video, {
-        controls: videoControls,
-        ratio: this.aspect_ratio,
-        fullscreen: {
-          enabled: true,
-          fallback: true,
-          iosNative: true
-        },
-        storage: {
-          enabled: false
-        }
-      });
-
-      if (videoPlayers !== null) {
-        videoPlayers.push(recentlyViewedProductPlayer);
-        this.setupListeners();
-      }
-
-    }
-  },
-  setupRecommendedVideoPlayer: function () {
-    var videosInRecommendedProducts = document.querySelectorAll('[data-product-recommendations-container] [data-html5-video] video, [data-product-recommendations-container] [data-youtube-video]');
-
-    // Only run Plyr.setup if videosInRecommendedProducts exists
-    if (videosInRecommendedProducts.length > 0) {
-      videosInRecommendedProductsPlayer = Plyr.setup(videosInRecommendedProducts, {
-        controls: videoControls,
-        fullscreen: {
-          enabled: true,
-          fallback: true,
-          iosNative: true
-        },
-        storage: {
-          enabled: false
-        }
-      });
-      if (videoPlayers !== null) {
-        var combinedArray = videoPlayers.concat(videosInRecommendedProductsPlayer);
-        videoPlayers = combinedArray;
-      } else {
-        videoPlayers = videosInRecommendedProductsPlayer;
-      }
-    }
-
-    this.setupListeners();
-  },
-  setupListeners: function () {
-    // Adds plyr video id to video wrapper
-    $.each(videoPlayers, function (index, player) {
-      var id = player.id || player.media.dataset.plyrVideoId;
-      var $video;
-
-      if (player.isHTML5) {
-        $video = $(player.elements.wrapper).find('video');
-        $video.attr('data-plyr-video-id', id);
-      }
-    })
-
-    // When a video is playing, pause any other instances
-    $.each(globalVideoPlayers, function (index, player) {
-      player.on('play', function (event) {
-        var instance = event.detail.plyr;
-        $.each(globalVideoPlayers, function (index, player) {
-          if (instance.id != player.id) {
-            player.pause();
-          }
-        })
-      })
-    })
-  },
-  enableVideoOnHover: function ($thumbnail) {
-    var $html5Video = $thumbnail.find('[data-html5-video]');
-    var $youtubeVideo = $thumbnail.find('[data-youtube-video]');
-    var videoID;
-
-    if ($html5Video.length > 0) {
-      videoID = $html5Video.find('[data-plyr-video-id]').data('plyr-video-id');
-    } else if ($youtubeVideo.length > 0) {
-      videoID = $youtubeVideo.find('iframe').attr('id');
-    }
-
-    if (videoID) {
-      $.each(videoPlayers, function (index, player) {
-
-        if (player.id == videoID || player.media.id == videoID) {
-          player.toggleControls(false);
-          player.muted = true;
-          player.play();
-        }
-      })
-    }
-  },
-  disableVideoOnHover: function ($thumbnail) {
-    var $html5Video = $thumbnail.find('[data-html5-video]');
-    var $youtubeVideo = $thumbnail.find('[data-youtube-video]');
-    var videoID;
-
-    if ($html5Video.length > 0) {
-      videoID = $html5Video.find('[data-plyr-video-id]').data('plyr-video-id');
-    } else if ($youtubeVideo.length > 0) {
-      videoID = $youtubeVideo.find('iframe').attr('id');
-    }
-
-    if (videoID) {
-      $.each(videoPlayers, function (index, player) {
-        if (player.id == videoID || player.media.id == videoID) {
-          if (player.playing) {
-            player.pause();
-          }
-        }
-      })
-    }
   }
 }

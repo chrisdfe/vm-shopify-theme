@@ -27,21 +27,6 @@
   font-size: smaller;
 }
 
-//Add default spacing to allow room for stars (from Shopify review app)
-.slider-gallery .shopify-product-reviews-badge {
-  height: 30px;
-  display: block;
-}
-
-//Add spacing below review stars (from Shopify review app)
-.spr-badge + .feature_divider {
-  margin-top: 15px;
-}
-
-.spr-badge {
-  padding: 5px 0;
-}
-
 .thumbnail .spr-badge-caption {
   display: none;
 }
@@ -628,29 +613,6 @@ p.close {
   font-weight: 700;
 }
 
-@media only screen and (max-width: 600px) {
-  .caption-content a.action_button.first_button {
-    // width:45%!important;
-  }
-
-  .caption-content a.action_button.second_button {
-    // width:45%!important;
-    // font-size:15px
-  }
-}
-
-@media only screen and (min-width: 800px) {
-  .menu .mega-menu__image-caption-link .image-element__wrap img {
-    // max-width: calc((100vw / 5) - 60px);
-  }
-  // .mega-menu:last-child
-  //   .mega-menu__image-caption-link
-  //   .image-element__wrap
-  //   img {
-  //   max-width: initial;
-  // }
-}
-
 @media (max-width: 767px) {
   .gallerynewsec h2.title {
     font-size: 20px;
@@ -671,4 +633,107 @@ p.close {
   .gallerylist li:last-child {
     margin: 0;
   }
+}
+
+.new {
+  position: relative;
+  display: inline;
+  padding: 5px;
+  border-radius: 2px;
+  font-size: 12px;
+}
+
+#estimated-shipping,
+.excluding_tax {
+  display: block;
+}
+
+.cart_page_image {
+  text-align: center;
+  margin: 1rem 0 2rem;
+  display: block;
+  border-width: 0 !important;
+
+  img {
+    width: 100%;
+    display: block;
+  }
+}
+
+.cart_content_info {
+  padding: 0;
+
+  h5 {
+    padding: 0;
+    margin-bottom: 10px;
+    margin-top: 0;
+  }
+
+  .price_total {
+    clear: both;
+    padding: 0;
+    margin-bottom: 20px;
+    font-size: 20px;
+  }
+}
+
+.subtotal {
+  padding-top: 20px;
+  padding-left: 40px;
+
+  @include respond-to("medium-down") {
+    padding-left: 0;
+  }
+}
+
+.continue-shopping {
+  display: block;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.subtotal_amount {
+  font-size: 1.4em;
+  font-weight: bold;
+}
+
+button.update {
+  width: 30%;
+  float: right;
+}
+
+.size_chart {
+  float: right;
+  padding-top: 5px;
+}
+
+#size-chart {
+  display: none;
+}
+
+#size-chart h5 {
+  padding: 15px 0 0 0;
+  text-align: center;
+}
+
+.price_total_text {
+  font-weight: normal;
+  display: none;
+}
+
+.was_price {
+  text-decoration: line-through;
+  color: $vm-was-price-color;
+  text-shadow: none;
+  font-weight: normal;
+  opacity: 0.7;
+}
+
+.cart_savings {
+  text-align: left;
+}
+
+.savings {
+  // font-size: {{ settings.regular_font_size }}px;
+  display: block;
 }

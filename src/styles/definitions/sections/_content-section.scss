@@ -10,8 +10,7 @@
     top: -$vm-content-section-padding * 2;
   }
 
-
-  @include respond-to('large-up') {
+  @include respond-to("large-up") {
     &.content-section--is-full-width {
       .container {
         max-width: none !important;
@@ -20,7 +19,7 @@
     }
   }
 
-  @include respond-to('medium-down') {
+  @include respond-to("medium-down") {
     padding: $vm-content-section-mobile-padding 0;
 
     .content-section__anchor {
@@ -32,7 +31,7 @@
   &.content-section--2x-padding {
     padding: ($vm-content-section-padding * 2) 0;
 
-    @include respond-to('medium-down') {
+    @include respond-to("medium-down") {
       padding: ($vm-content-section-mobile-padding * 2) 0;
     }
   }
@@ -40,7 +39,7 @@
   &.content-section--2x-padding-top {
     padding-top: ($vm-content-section-padding * 2);
 
-    @include respond-to('medium-down') {
+    @include respond-to("medium-down") {
       padding-top: ($vm-content-section-mobile-padding * 2);
     }
   }
@@ -48,7 +47,7 @@
   &.content-section--2x-padding-bottom {
     padding-bottom: ($vm-content-section-padding * 2);
 
-    @include respond-to('medium-down') {
+    @include respond-to("medium-down") {
       padding-bottom: ($vm-content-section-mobile-padding * 2);
     }
   }
@@ -84,7 +83,7 @@
     }
   }
 
-  @include respond-to('medium-down') {
+  @include respond-to("medium-down") {
     &.content-section__heading--mobile-align-left {
       text-align: left;
       align-items: baseline;
@@ -103,11 +102,11 @@
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  margin-bottom: get-vm-spacer(2);
+  margin-bottom: get-vm-spacer(3);
   width: 100%;
 
-  @include respond-to('medium-down') {
-    margin-bottom: get-vm-spacer(1);
+  @include respond-to("medium-down") {
+    margin-bottom: get-vm-spacer(2);
     align-items: flex-start;
     flex-direction: column;
 
@@ -125,14 +124,14 @@
   margin-bottom: 0;
 
   // &.heading--with-accent {
-    // margin-bottom: get-vm-spacer(2);
+  // margin-bottom: get-vm-spacer(2);
   // }
 
   &.content-section__heading__title--align-center {
     text-align: center;
   }
 
-  @include respond-to('medium-down') {
+  @include respond-to("medium-down") {
     &.content-section__heading__title--align-left {
       text-align: left;
     }

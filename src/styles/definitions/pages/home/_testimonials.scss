@@ -1,19 +1,13 @@
 /* #Home page - testimonials
 ================================================== */
 
-.content-section.content-section--vm-testimonials {
-}
-
-.vm-testimonials {
-}
-
 .vm-testimonial-slide {
   display: none;
   min-height: 370px;
   transition: all 500ms ease;
 
   .vm-testimonial-slide__content {
-    padding: 0 2rem;
+    padding: 0 8rem;
   }
 
   .vm-testimonial-slide__testimonial {
@@ -28,7 +22,7 @@
     display: block;
   }
 
-  @include respond-to('medium-down') {
+  @include respond-to("medium-down") {
     .vm-testimonial-slide__title {
       @include vm-heading-2();
     }
@@ -48,13 +42,18 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0 8rem;
+
+  @include respond-to("medium-down") {
+    padding: 0;
+  }
 }
 
 .vm-testimonial__slide-index-indicator {
   margin: 0;
 
   .divider {
-    color: #dec1a8;
+    color: $vm-color-sand;
   }
 }
 
@@ -85,13 +84,11 @@
 .color-region--dark,
 .color-region--dark-alt {
   .vm-testimonial__slide-button {
-
     svg {
       fill: #fff;
     }
 
     &:hover {
-
       svg {
         fill: $vm-color-sand;
       }

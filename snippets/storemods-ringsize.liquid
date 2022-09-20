@@ -22,7 +22,7 @@ Example: <!--[ringsize="3.5-9"]-->
       {% assign last_ringsize = ringsize_list[1] | plus: 0 %}
     {% endif %}
 
-    <p class="line-item-property__field">
+  <p class="line-item-property__field">
     <label for="ring-size">{{ settings.ring_size_title }}</label>
     <select required class="required" id="ring-size" name="properties[Ring Size]">
       {% if first_ringsize >= 1 and last_ringsize >= 1 %}

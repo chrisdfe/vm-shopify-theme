@@ -8,27 +8,37 @@ quickshop: <boolean>
 
 <div class="u-hidden-medium-down">
   <div class="product-page__product-image-cell-list">
-    {% assign featured_image = product.selected_or_first_available_variant.featured_image | default: product.featured_image %}
-    {% capture list %}
-      {% for image in product.images %}
-        {% comment %}Loop through images only once{% endcomment %}
-        {{ image.id }}`~`{{ image.alt }}`~`{{ image | img_url: '100x' }}`~`{{ image | img_url: '200x' }}`~`{{ image | img_url: '400x' }}`~`{{ image | img_url: '600x' }}`~`{{ image | img_url: '800x' }}`~`{{ image | img_url: '1200x' }}`~`{{ image | img_url: '2000x' }}`~`{{-image.width-}}px`~`{{-image.height-}}px{{ image | product_img_url: '5000x' }}{% if forloop.last == false %}^{% endif %}
-      {% endfor %}
-    {% endcapture %}
-    {% assign image_list = list | split: "^" %}
-
     {% for media in product.media %}
       {% if forloop.index0 < 6 %}
         <div class="product-page__product-image-cell"
           data-product-images-modal-toggle
           data-product-images-modal-toggle-index="{{ forloop.index0 }}"
-          data-product-id="{{ product.id }}"
-          data-media-type="{{ media.media_type }}"
-          data-thumb="{{ image_large }}"
-          data-title="{% if image_alt contains 'youtube' or image_alt contains 'vimeo' %}{{ product.title }}{% else %}{{ image_alt | escape }}{% endif %}">
-          {% render "product.image" with {
-            media: media
-          } %}
+          data-smooth-lazy-loading>
+          {% if media.media_type == 'video' %}
+            <video
+              muted="muted"
+              loop="loop"
+              autoplay="true">
+              {% for source in media.sources %}
+                <source src="{{ source.url }}" type="{{ source.mime_type }}" />
+              {% endfor %}
+              <img
+                src="{{ media.preview_image | img_url: "600x600", crop: 'center'}}"
+                alt="{{ alt_text }}"
+                loading="lazy"
+              />
+            </video>
+          {% else %}
+            <div class="image--zoom-hover">
+              <picture class="image--zoom-hover__image-wrapper">
+                <img
+                  src="{{ media | img_url: "600x600", crop: 'center'}}"
+                  alt="{{ alt_text }}"
+                  loading="lazy"
+                />
+              </picture>
+            </div>
+          {% endif %}
         </div>
       {% endif %}
     {% endfor %}
@@ -38,7 +48,7 @@ quickshop: <boolean>
   {% assign product_image_count = product.media | size %}
   {% if product_image_count > 6 %}
     <div class="u-text-align-center u-margin-top-2 u-margin-bottom-2">
-      <button class="button product-page__sell-all-button" data-product-images-modal-toggle>see all {{ product_image_count }} images</button>
+      <button class="button product-page__see-all-button" data-product-images-modal-toggle>see all {{ product_image_count }} images</button>
     </div>
   {% endif %}
 

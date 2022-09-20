@@ -1,3 +1,4 @@
+import debounce from '../../utils/debounce';
 import BodyScroll from '../../utils/BodyScroll';
 
 interface ProductImagesDesktopState {
@@ -37,7 +38,6 @@ export default class ProductImagesDesktop {
   modalImageCellListWrapperElement: HTMLElement;
   modalImageCellElementList: HTMLElement[];
 
-
   modalImageScrollTopIndicies: number[];
 
   state: ProductImagesDesktopState = {
@@ -45,6 +45,8 @@ export default class ProductImagesDesktop {
     isAnimating: false,
     selectedModalImageIndex: 0,
   };
+
+  debouncedSetModalImageScrollTopIndicies: () => void;
 
   initialize() {
     this.modalToggleElements = Array.from(document.querySelectorAll(SELECTORS.MODAL_TOGGLE_ELEMENT));
@@ -80,18 +82,27 @@ export default class ProductImagesDesktop {
     document.addEventListener("keydown", this.onKeyPressed);
     document.addEventListener('resize', this.onWindowResize);
 
+    this.debouncedSetModalImageScrollTopIndicies = debounce(this.setModalImageScrollTopIndicies, 100);
+    window.addEventListener('resize', this.debouncedSetModalImageScrollTopIndicies);
 
     return this;
   }
 
-  unload() {
+  unload = () => {
+    // remove event listeners
+    this.modalContentElement.removeEventListener("click", this.onModalContentClick);
+
     this.modalToggleElements.forEach(element => {
       element.removeEventListener("click", this.onModalToggleElementClick);
     });
 
+    this.modalImageCellListWrapperElement.removeEventListener('wheel', this.onModalImagesWheel);
+
     document.removeEventListener("keydown", this.onKeyPressed);
     document.removeEventListener('resize', this.onWindowResize);
-  }
+
+    window.removeEventListener('resize', this.debouncedSetModalImageScrollTopIndicies);
+  };
 
   onModalThumbnailClick = (e: MouseEvent) => {
     const thumbnailWrapper = (e.target as HTMLElement).closest(SELECTORS.MODAL_THUMBNAIL);
@@ -103,11 +114,13 @@ export default class ProductImagesDesktop {
 
   onModalToggleElementClick = (e: MouseEvent) => {
     const element = (e.target as HTMLElement).closest(SELECTORS.MODAL_TOGGLE_ELEMENT);
+
     if (this.state.modalIsOpen) {
       this.closeModal();
     } else {
       const imageIndexAsString = element.getAttribute(ATTRIBUTES.MODAL_TOGGLE_ELEMENT_INDEX);
       const imageIndex = (imageIndexAsString) ? parseInt(imageIndexAsString) : 0;
+      console.log('imageIndex', imageIndex);
       this.openModal(imageIndex);
     }
   };
@@ -152,6 +165,7 @@ export default class ProductImagesDesktop {
   };
 
   setModalImageScrollTopIndicies = () => {
+    console.log('setModalImageScrollTopIndicies');
     this.modalImageScrollTopIndicies = this.modalImageCellElementList.map((element, index) => {
       return element.offsetTop;
     });
@@ -197,6 +211,7 @@ export default class ProductImagesDesktop {
       this.state.isAnimating = false;
       this.modalElement.classList.remove('animated', 'animated--snappy', 'fadeIn');
       this.setModalImageScrollTopIndicies();
+      this.scrollToSelectedModalImage();
     }, { once: true });
   };
 

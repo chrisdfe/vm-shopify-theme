@@ -4,8 +4,8 @@ import DropdownUnderlay from "./DropdownUnderlay";
 import HeaderDropdown from "./Dropdown";
 
 export type DropdownEventPayload = {
-  dropdown: HeaderDropdown
-}
+  dropdown: HeaderDropdown;
+};
 
 export default class DropdownManager {
   currentDropdownId = null;
@@ -14,7 +14,7 @@ export default class DropdownManager {
 
   dropdownElements: NodeListOf<HTMLElement>;
   dropdownIds: string[];
-  dropdownMap: { [dropdownId: string]: HeaderDropdown };
+  dropdownMap: { [dropdownId: string]: HeaderDropdown; };
 
   headerUnderlay: DropdownUnderlay;
 
@@ -158,14 +158,14 @@ export default class DropdownManager {
 
     this.headerUnderlay.show();
 
-    window.dispatchEvent(new CustomEvent<DropdownEventPayload>("header-dropdown:opened", { detail: { dropdown } }))
+    window.dispatchEvent(new CustomEvent<DropdownEventPayload>("header-dropdown:opened", { detail: { dropdown } }));
   };
 
   private closeDropdown = (dropdown: HeaderDropdown) => {
     dropdown.close();
     this.currentDropdownId = null;
 
-    window.dispatchEvent(new CustomEvent<DropdownEventPayload>("header-dropdown:closed", { detail: { dropdown } }))
+    window.dispatchEvent(new CustomEvent<DropdownEventPayload>("header-dropdown:closed", { detail: { dropdown } }));
 
     this.headerUnderlay.hide();
   };

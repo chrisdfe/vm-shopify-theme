@@ -35,7 +35,7 @@ $header-desktop-nav-width: calc(
     display: flex;
     position: relative;
     align-items: center;
-    justify-content: center;    
+    justify-content: center;
     padding: get-vm-spacer(0.5) get-vm-spacer(2);
 
     .header-desktop__nav {
@@ -58,12 +58,12 @@ $header-desktop-nav-width: calc(
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    
+
     ul {
       padding: 0;
       margin: 0;
     }
-    
+
     li {
       display: inline-block;
       margin: 0;
@@ -71,7 +71,7 @@ $header-desktop-nav-width: calc(
       position: relative;
       vertical-align: top;
       margin-right: get-vm-spacer(0.5);
-      
+
       &:last-child {
         margin-right: 0;
       }
@@ -121,20 +121,21 @@ $header-desktop-nav-width: calc(
       content: "";
       position: absolute;
       bottom: 0;
-      height: 4px;
-      background: $vm-color-sand;
+      height: 2px;
+      background: $vm-color-sea-green;
       left: 0;
       right: 0;
-      transform: scaleX(0);
-      transform-origin: 0;
-      transition: transform 0.2s;
+      // transform: scaleY(0);
+      // transform-origin: 100%;
+      opacity: 0;
+      transition: opacity 0.2s;
     }
 
     .vm-icon {
       &.vm-icon--carat {
         margin-right: -6px;
       }
-  
+
       &.vm-icon--user {
         margin-left: -6px;
       }
@@ -142,15 +143,16 @@ $header-desktop-nav-width: calc(
 
     &:hover,
     &.is-active {
-      color: $vm-color-sand;
+      // color: $vm-color-sand;
 
       &:after {
-        transform: scaleX(1);
+        // transform: scaleY(1);
+        opacity: 1;
       }
 
-      svg {
-        fill: $vm-color-sand;
-      }
+      // svg {
+      //   fill: $vm-color-sand;
+      // }
     }
   }
 
@@ -158,16 +160,16 @@ $header-desktop-nav-width: calc(
     height: 44px;
     padding: 0 get-vm-spacer(1);
     transition: all 0.2s;
-    
+
     .vm-icon.vm-icon--user,
     .vm-icon.vm-icon--bag {
       margin-left: -6px;
     }
-    
+
     &:hover {
       background-color: $vm-color-cream;
     }
-    
+
     &.header-desktop__nav-button--square {
       padding: 0;
       width: 44px;

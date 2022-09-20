@@ -1,11 +1,9 @@
-import ProductImagesDesktop from './product-page/product-images-desktop';
-import ProductImagesMobile from './product-page/product-images-mobile';
-import ProductColorSwatches from './product-page/product-color-swatches';
-import ProductVariants from './product-page/product-variants';
+import ProductImagesDesktop from './product-images-desktop';
+import ProductImagesMobile from './product-images-mobile';
+import ProductColorSwatches from './product-color-swatches';
+import ProductVariants from './product-variants';
 
-interface ProductPageState {
-  modalIsOpen: boolean;
-}
+import initializeProductRecommendations from './product-recommendations';
 
 export default class ProductPage {
   productImagesDesktop: ProductImagesDesktop;
@@ -25,7 +23,12 @@ export default class ProductPage {
     this.productImagesDesktop = new ProductImagesDesktop().initialize();
     this.productImagesMobile = new ProductImagesMobile().initialize();
     this.productColorSwatches = new ProductColorSwatches().initialize();
-    this.productVariants = new ProductVariants().initialize();
+    if (ProductVariants.shouldInitialize()) {
+      this.productVariants = new ProductVariants().initialize();
+    }
+
+    // functionality ported straight over from turbo
+    initializeProductRecommendations();
   }
 
   setStickyContentTop() {

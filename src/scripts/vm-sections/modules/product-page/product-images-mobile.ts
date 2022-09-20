@@ -1,18 +1,16 @@
-import BodyScroll from '../../utils/BodyScroll';
-
 interface ScreenCoordinates {
   x: number;
   y: number;
 }
 
-interface ProductImagesMobileElementsMap {
+interface ElementsMap {
   imagesContainer: HTMLElement;
   imagesContainerInner: HTMLElement;
   images: HTMLElement[];
   dots: HTMLElement[];
 }
 
-interface ProductImagesMobileState {
+interface State {
   currentImageIndex: number;
   isSwiping: boolean;
   touchStartCoordinates?: ScreenCoordinates;
@@ -35,14 +33,14 @@ const getScreenCoordinatesDiff = (a: ScreenCoordinates, b: ScreenCoordinates) =>
 const SWIPE_PERCENTAGE_THRESHOLD = 40;
 
 export default class ProductImagesMobile {
-  elements: ProductImagesMobileElementsMap = {
+  elements: ElementsMap = {
     imagesContainer: null,
     imagesContainerInner: null,
     images: [],
     dots: []
   };
 
-  state: ProductImagesMobileState = {
+  state: State = {
     currentImageIndex: 0,
     isSwiping: false,
     touchStartCoordinates: null,
@@ -77,9 +75,9 @@ export default class ProductImagesMobile {
     return this;
   }
 
-  unload() {
+  unload = () => {
 
-  }
+  };
 
   setImageContainerDimensions = () => {
     this.imageContainerDimensions = {
@@ -89,8 +87,6 @@ export default class ProductImagesMobile {
   };
 
   onContainerTouchStart = (e: TouchEvent) => {
-    // e.preventDefault();
-
     const touch = e.touches[0];
 
     this.state.touchStartCoordinates = {
@@ -99,12 +95,12 @@ export default class ProductImagesMobile {
     };
 
     this.state.currentTouchCoordinates = { ...this.state.touchStartCoordinates };
-    console.log(this.imageContainerDimensions.width);
   };
 
   onContainerTouchMove = (e: TouchEvent) => {
     // prevent vertical scroll
     e.preventDefault();
+
     const touch = e.touches[0];
 
     this.state.currentTouchCoordinates = {
@@ -122,21 +118,16 @@ export default class ProductImagesMobile {
   };
 
   onContainerTouchEnd = (e: TouchEvent) => {
-    // e.preventDefault();
-
     this.elements.imagesContainerInner.classList.remove('is-active');
     this.setImageContainerInnerOffset();
 
     const difference = this.getCurrentCoordinatesDiff();
 
-    console.log('difference.x', difference.x);
     // Attempt to switch to image if user has swiped far enough
     if (Math.abs(difference.x) >= SWIPE_PERCENTAGE_THRESHOLD) {
-      console.log('switching to new image');
       const newImageIndex = this.state.currentImageIndex + (
         difference.x > 0 ? -1 : 1
       );
-      console.log(newImageIndex);
 
       if (newImageIndex >= 0 && newImageIndex <= this.elements.images.length - 1) {
         this.switchToImage(newImageIndex);

@@ -34,12 +34,17 @@ input.action_button[type="button"] {
 
   &:hover {
     background-color: $vm-button-hover-background-color;
-    border: 1px solid $vm-button-hover-border-color;
+    border-color: $vm-button-hover-border-color;
     color: $vm-button-hover-text-color;
   }
 
   &:active {
     outline: 0;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    pointer-events: none;
   }
 }
 
@@ -104,6 +109,18 @@ input.action_button[type="button"] {
     background-color: $vm-button-hover-background-color;
     border: 1px solid $vm-button-hover-border-color;
     color: $vm-button-hover-text-color;
+  }
+}
+
+.button.button--bare {
+  background: transparent;
+  color: $vm-color-sea-green;
+  border: 0 none;
+
+  &:hover {
+    background-color: $vm-color-white;
+    border: 0 none;
+    color: $vm-color-sea-green;
   }
 }
 

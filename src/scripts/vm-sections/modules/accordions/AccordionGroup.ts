@@ -1,6 +1,5 @@
 import Accordion from './Accordion';
 
-
 type AccordionGroupOptions = {
   singleAccordionOpenOnly: boolean;
 };
@@ -11,7 +10,7 @@ type AccordionGroupState = {
 
 type AccordionMap = {
   [id: string]: Accordion;
-}
+};
 
 export default class AccordionGroup {
   id: string;
@@ -26,7 +25,7 @@ export default class AccordionGroup {
 
   constructor(id: string, options = {}) {
     this.id = id;
-    this.options = { ...this.options, ...options }
+    this.options = { ...this.options, ...options };
   }
 
   initialize() {
@@ -51,7 +50,7 @@ export default class AccordionGroup {
     if (this.options.singleAccordionOpenOnly) {
       this.closeAllAccordionsExcept(accordion.id);
     }
-  }
+  };
 
   private closeAllAccordionsExcept(targetAccordionId: string) {
     Object.keys(this.accordionMap).forEach(accordionId => {
@@ -59,6 +58,6 @@ export default class AccordionGroup {
         const accordion = this.accordionMap[accordionId];
         accordion.close();
       }
-    })
+    });
   }
 }

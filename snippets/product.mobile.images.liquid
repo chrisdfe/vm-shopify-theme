@@ -11,9 +11,29 @@
             data-thumb="{{ image_large }}"
             data-title="{% if image_alt contains 'youtube' or image_alt contains 'vimeo' %}{{ product.title }}{% else %}{{ image_alt | escape }}{% endif %}">
 
-            {% render "product.image" with {
-              media: media
-            } %}
+            {% if media.media_type == 'video' %}
+              <video
+                muted="muted"
+                loop="loop"
+                autoplay="true">
+                {% for source in media.sources %}
+                  <source src="{{ source.url }}" type="{{ source.mime_type }}" />
+                {% endfor %}
+                <img
+                  src="{{ media.preview_image | img_url: "600x600", crop: 'center'}}"
+                  alt="{{ alt_text }}"
+                  loading="lazy"
+                />
+              </video>
+            {% else %}
+              <picture>
+                <img
+                  src="{{ media | img_url: "600x600", crop: 'center'}}"
+                  alt="{{ alt_text }}"
+                  loading="lazy"
+                />
+              </picture>
+            {% endif %}
           </div>
         {% endfor %}
       </div>

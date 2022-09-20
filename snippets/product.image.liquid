@@ -46,13 +46,9 @@
       </div>
       
     {% endif %}
-  {% when 'external_video' %}
-    <div class="product-gallery__video" data-youtube-video>
-      {{ media | external_video_tag }}
-    </div>
   {% when 'video' %}
     <div class="product-gallery__video" data-html5-video>
-      {{ media | video_tag: controls: true, image_size: '600x' }}
+      {{ media | video_tag: controls: false, image_size: '800x', autoplay: true, loop: true }}
     </div>
   {% else %}
     {{ media | media_tag }}

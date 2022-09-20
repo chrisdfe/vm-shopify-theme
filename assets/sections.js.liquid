@@ -1,77 +1,3 @@
-const videoSection = {
-  init: function () {
-    var e = $("[data-video-element]").get(),
-      g = Plyr.setup(e, { controls: videoControls, fullscreen: { enabled: !0, fallback: !0, iosNative: !0 }, storage: { enabled: !1 } });
-    $.each(g, function (e, t) {
-      var a = t.id;
-      t.isHTML5 && $(t.elements.wrapper).find("video").attr("data-plyr-video-id", a),
-        t.on("play", function (e) {
-          var a = e.detail.plyr;
-          $.each(g, function (e, t) {
-            a.id != t.id && t.pause();
-          });
-        }),
-        globalVideoPlayers && globalVideoPlayers.push(t);
-    }),
-      $("[data-video-element]").each(function (e, t) {
-        var a = $(t),
-          o = a.parents(".shopify-section").attr("id", i),
-          n = o.find(a),
-          l = n.parents(".video-wrapper"),
-          s = l.find("[data-play-button]"),
-          r = l.find("[data-secondary-button]"),
-          d = l.find("[data-video-text]"),
-          c = l.find("[data-video-text-container]"),
-          p = l.find(".video-wrapper__image"),
-          m = l.data("poster-image-uploaded"),
-          u = l.data("aspect-ratio"),
-          i = l.data("video-src"),
-          y = l.data("autoplay"),
-          f = l.data("autoloop"),
-          h = l.data("mute-video");
-        $.each(g, function (e, t) {
-          var a, i;
-          if ((t.isYouTube || t.isVimeo ? ((a = l.attr("id")), (i = $(t.elements.original).attr("id"))) : t.isHTML5 && ((a = l.find("[data-plyr-video-id]").data("plyr-video-id")), (i = t.id), (n = o.find(".plyr--video"))), i == a))
-            return (
-              l.removeClass("play-button-icon--visible"),
-              y
-                ? 768 < $(window).width() || t.isYouTube || t.isVimeo
-                  ? ((t.autoplay = !0), p.hide(), n.show(), c.hasClass("display-text-over-video--false") ? d.hide() : d.show(), s.hide())
-                  : $(window).width() < 768 &&
-                  t.isHTML5 &&
-                  (p.hide(),
-                    n.show(),
-                    s.show(),
-                    t.on("play", function () {
-                      n.show(), s.hide();
-                    }))
-                : m
-                  ? (p.show(), n.hide())
-                  : (p.hide(), n.show()),
-              p.on("click", function () {
-                $(this).hide(), n.show(), t.play();
-              }),
-              h && (t.muted = !0),
-              u && (t.ratio = u),
-              f && (t.loop = !0),
-              s &&
-              s.on("click", function () {
-                t.play();
-              }),
-              t.on("play", function () {
-                p.hide(), l.removeClass("play-button-icon--visible"), n.show(), c.hasClass("display-text-over-video--false") ? c.hide() : c.show(), s && s.hide(), r && r.hide();
-              }),
-              t.on("pause", function () {
-                (!s.is(":hidden") && 0 != s.length) || l.addClass("play-button-icon--visible");
-              }),
-              ((!t.playing && s.is(":hidden")) || 0 == s.length) && l.addClass("play-button-icon--visible"),
-              !1
-            );
-        });
-      });
-  },
-};
-
 const selectCallback = function (i, e) {
   var t,
     a,
@@ -83,15 +9,19 @@ const selectCallback = function (i, e) {
     d = Shopify.translation.notify_email,
     c = Shopify.translation.notify_email_send,
     p = r.data("url");
-  i
-    ? null != i.title && ((t = i.title.replace(/"/g, "&quot;")), (a = Shopify.translation.notify_message_first + t + Shopify.translation.notify_message_last + p))
-    : (a = Shopify.translation.notify_message_first + Shopify.translation.notify_message_last + p);
+
+  if (i) {
+    null != i.title && ((t = i.title.replace(/"/g, "&quot;")), (a = Shopify.translation.notify_message_first + t + Shopify.translation.notify_message_last + p))
+  } else {
+    a = Shopify.translation.notify_message_first + Shopify.translation.notify_message_last + p
+  }
+
   var m,
     u,
     y =
-      (r.hasClass("customer--true")
-        ? '<input type="hidden" class="notify_email" name="contact[email]" id="contact[email]" value="{{ customer.email }}" />'
-        : '<input required type="email" class="notify_email" name="contact[email]" id="contact[email]" placeholder="' + d + '" value="{{ contact.fields.email }}" />') +
+      (r.hasClass("customer--true") ?
+        '<input type="hidden" class="notify_email" name="contact[email]" id="contact[email]" value="{{ customer.email }}" />' :
+        '<input required type="email" class="notify_email" name="contact[email]" id="contact[email]" placeholder="' + d + '" value="{{ contact.fields.email }}" />') +
       '<input type="hidden" name="challenge" value="false" /><input type="hidden" name="contact[body]" class="notify_form_message" data-body="' +
       a +
       '" value="' +
@@ -109,7 +39,7 @@ const selectCallback = function (i, e) {
           a = Flickity.data(this);
         t.is(":visible") && null != a && ((e = $('[data-image-id="' + i.featured_media.id + '"]').data("index")), a.select(e, !1, !0));
       }),
-      "false" == $("#buildring").val() && ($("#buildring").val("true")),
+      "false" == $("#buildring").val() && $("#buildring").val("true"),
       i)
   )
     if (
@@ -125,9 +55,9 @@ const selectCallback = function (i, e) {
         g.length && (g.get(0).checked = !0);
       }
     else $(".notify_form_message", o).attr("value", $(".notify_form_message", o).data("body") + " - " + t);
-  i && 1 == i.available
-    ? (i.price < i.compare_at_price
-      ? ($(".was_price", o).html('<span class="money">' + Shopify.formatMoney(i.compare_at_price, $("body").data("money-format")) + "</span>"),
+  i && 1 == i.available ?
+    (i.price < i.compare_at_price ?
+      ($(".was_price", o).html('<span class="money">' + Shopify.formatMoney(i.compare_at_price, $("body").data("money-format")) + "</span>"),
         $(".savings", o).html(
           Shopify.translation.savings_text +
           " " +
@@ -136,33 +66,33 @@ const selectCallback = function (i, e) {
           Shopify.formatMoney(i.compare_at_price - i.price, $("body").data("money-format")) +
           "</span>)"
         ),
-        $(".current_price", o).parent().addClass("sale"))
-      : ($(".was_price", o).html(""), $(".savings", o).html(""), $(".current_price", o).parent().removeClass("sale")),
-      i.inventory_management && 0 < i.inventory_quantity
-        ? (Shopify.theme_settings.display_inventory_left &&
+        $(".current_price", o).parent().addClass("sale")) :
+      ($(".was_price", o).html(""), $(".savings", o).html(""), $(".current_price", o).parent().removeClass("sale")),
+      i.inventory_management && 0 < i.inventory_quantity ?
+        (Shopify.theme_settings.display_inventory_left &&
           ((items_left_text = 1 == i.inventory_quantity ? Shopify.translation.one_item_left : Shopify.translation.items_left_text),
             (m = parseInt(Shopify.theme_settings.inventory_threshold)),
             i.inventory_quantity <= m ? $(".items_left", o).html(i.inventory_quantity + " " + items_left_text) : $(".items_left", o).html("")),
-          Shopify.theme_settings.limit_quantity && "deny" == i.inventory_policy && $(".quantity", o).attr("max", i.inventory_quantity))
-        : ($(".items_left", o).text(""), $(".quantity", o).removeAttr("max")),
+          Shopify.theme_settings.limit_quantity && "deny" == i.inventory_policy && $(".quantity", o).attr("max", i.inventory_quantity)) :
+        ($(".items_left", o).text(""), $(".quantity", o).removeAttr("max")),
       $(".sold_out", o).text(""),
-      0 < i.price
-        ? $(".current_price", o)
+      0 < i.price ?
+        $(".current_price", o)
           .removeClass("sold_out")
-          .html('<span class="money">' + Shopify.formatMoney(i.price, $("body").data("money-format")) + "</span>")
-        : $(".current_price", o).removeClass("sold_out").html(Shopify.theme_settings.free_text),
+          .html('<span class="money">' + Shopify.formatMoney(i.price, $("body").data("money-format")) + "</span>") :
+        $(".current_price", o).removeClass("sold_out").html(Shopify.theme_settings.free_text),
       $(".add_to_cart", o).removeClass("disabled").removeAttr("disabled").find("span").text($(".add_to_cart", o).data("label")),
       $(".shopify-payment-button", o).removeClass("disabled"),
       $(".purchase-details__buttons", o).removeClass("product-is-unavailable"),
       $(".modal_price", o).removeClass("variant-unavailable"),
       n.hide(),
-      r.empty())
-    : ((u = i ? Shopify.theme_settings.sold_out_text : Shopify.translation.unavailable_text),
-      i
-        ? (0 < i.price ? $(".current_price", o).html('<span class="money">' + Shopify.formatMoney(i.price, $("body").data("money-format")) + "</span>") : $(".current_price", o).html(Shopify.theme_settings.free_text),
+      r.empty()) :
+    ((u = i ? Shopify.theme_settings.sold_out_text : Shopify.translation.unavailable_text),
+      i ?
+        (0 < i.price ? $(".current_price", o).html('<span class="money">' + Shopify.formatMoney(i.price, $("body").data("money-format")) + "</span>") : $(".current_price", o).html(Shopify.theme_settings.free_text),
           Shopify.theme_settings.display_sold_out_price && $(".current_price", o).parents(".price__container--display-price-true").addClass("has-margin-right"),
-          $(".modal_price", o).removeClass("variant-unavailable"))
-        : ($(".modal_price", o).addClass("variant-unavailable"),
+          $(".modal_price", o).removeClass("variant-unavailable")) :
+        ($(".modal_price", o).addClass("variant-unavailable"),
           $(".current_price", o).html(""),
           $(".was_price", o).html(""),
           $(".savings", o).html(""),
@@ -180,149 +110,4 @@ const selectCallback = function (i, e) {
     Currency.show_multiple_currencies && currencyConverter.convertCurrencies(),
     $(".affirm-as-low-as").attr("data-amount", i.price),
     $("span[itemprop=price]").attr("content", parseFloat(Math.round(100 * i.price) / 1e4).toFixed(2));
-};
-
-const productPage = {
-  init: function () {
-    "?contact_posted=true" === window.location.search && ($(".notify_form .contact-form").hide(), $(".notify_form .contact-form").prev(".message").html(Shopify.translation.notify_success_text)),
-      $(".notify_form .contact-form").each(function () {
-        var t = $(this);
-        t.on("submit", function (e) {
-          "true" !== $('input[name="challenge"]', t).val() &&
-            ($.ajax({
-              type: t.attr("method"),
-              url: t.attr("action"),
-              data: t.serialize(),
-              success: function (e) {
-                t.fadeOut("slow", function () {
-                  t.prev(".message").html(Shopify.translation.notify_success_text);
-                });
-              },
-              error: function (e) {
-                $('input[name="challenge"]', t).val("true"), t.submit();
-              },
-            }),
-              e.preventDefault());
-        });
-      }),
-      "swatches" == Shopify.theme_settings.product_form_style &&
-      $("body").on("change", ".swatch :radio", function () {
-        var e,
-          t = $(this).closest(".swatch").attr("data-option-index"),
-          a = $(this).val(),
-          i = $(this).closest(".product_form form");
-        e = i.siblings(".notify_form").length ? i.siblings(".notify_form") : $(".js-notify-form");
-        var o,
-          n = i.find(".swatch_options input:checked").eq(0).val(),
-          l = i.find(".swatch_options input:checked").eq(1).val() || "",
-          s = i.find(".swatch_options input:checked").eq(2).val() || "";
-        (o = n && l && s ? n + " / " + l + " / " + s : n && l ? n + " / " + l : n),
-          e.find(".notify_form_message").attr("value", e.find(".notify_form_message").data("body") + " - " + o),
-          $(this).closest("form").find(".single-option-selector").eq(t).val(a).trigger("change");
-      }),
-      $(".js-product_section .product_form_options").each(function () {
-        $(this).find(".selector-wrapper select").length != $(this).data("options-size") &&
-          new Shopify.OptionSelectors($(this).data("select-id"), { product: $(this).data("product"), onVariantSelected: selectCallback, enableHistoryState: $(this).data("enable-state") });
-      }),
-      $(".product-recommendations-container").length && productPage.loadProductRecommendations(),
-      this.initializeQuantityBox();
-  },
-  loadProductRecommendations: function () {
-    var e = $(".meta-related-recommended-collection"),
-      t = $(".product-recommendations"),
-      a = t.data("productId"),
-      i = t.data("limit"),
-      o = t.data("enabled"),
-      n = e.data("enabled"),
-      l = $("[data-product-recommendations-container]"),
-      s = $(".js-recommended-products-slider");
-    if (e.length) {
-      if (!n) return void l.empty();
-      l.html(e.html()),
-        s.length && this.recommendedProductsSlider(),
-        $("[data-product-recommendations-container] .js-product_section .product_form_options").each(function () {
-          0 === $(this).find("select").length && new Shopify.OptionSelectors($(this).data("select-id"), { product: $(this).data("product"), onVariantSelected: selectCallback, enableHistoryState: $(this).data("enable-state") });
-        }),
-        Shopify.PaymentButton && Shopify.PaymentButton.init(),
-        $(".recommended-products-section").empty();
-    } else if (t.length) {
-      if (!o) return void l.empty();
-      $.ajax({
-        type: "GET",
-        url: "/recommendations/products?section_id=product-recommendations&limit=" + i + "&product_id=" + a,
-        success: function (e) {
-          var t = $(e).find(".product-recommendations").html();
-          l.empty(),
-            l.html(t),
-            s.length && productPage.recommendedProductsSlider(),
-            $("[data-product-recommendations-container] .js-product_section .product_form_options").each(function () {
-              new Shopify.OptionSelectors($(this).data("select-id"), { product: $(this).data("product"), onVariantSelected: selectCallback, enableHistoryState: $(this).data("enable-state") });
-            }),
-            Currency.show_multiple_currencies && currencyConverter.convertCurrencies(),
-            Shopify.PaymentButton && Shopify.PaymentButton.init(),
-            0 === $("[data-recommended-product-count]").data() && $("[data-product-recommendations-container]").hide(),
-            videoFeature.setupRecommendedVideoPlayer(),
-            Shopify.theme_settings.collection_secondary_image && imageFunctions.showSecondaryImage(),
-            hideNoScript();
-        },
-      });
-    } else l.hide();
-  },
-  productSwatches: function () {
-    var e;
-    "swatches" == Shopify.theme_settings.product_form_style &&
-      ($(".js-product_section").length &&
-        ((e = $(".js-product_section").find(".product_form")).addClass("is-visible"),
-          e.each(function () {
-            var e = $(this).data("product"),
-              t = ".product-" + $(this).data("product-id") + " .js-product_section";
-            1 < $(this).find(".swatch_options .swatch").length && Shopify.linkOptionSelectors(e, t);
-          })),
-        1 < $(".js-product_section").length &&
-        $("body").on("click", ".swatch-element", function () {
-          var e = $(this).data("value").toString();
-          $(this)
-            .siblings('input[value="' + e.replace(/\"/g, '\\"') + '"]')
-            .prop("checked", !0)
-            .trigger("change");
-          var t = $(this).parents(".product_form").data("product"),
-            a = ".product-" + $(this).parents(".product_form").data("product-id") + " .js-product_section";
-          1 < $(this).parents(".product_form").find(".swatch_options .swatch").length && Shopify.linkOptionSelectors(t, a);
-        }));
-  },
-  recommendedProductsSlider: function () {
-    $(".js-recommended-products-slider .products-slider").each(function (e, t) {
-      var a,
-        i,
-        o,
-        n = $(this).data("products-per-slide"),
-        l = $(this).data("products-limit"),
-        s = $(this).data("products-available"),
-        r = ("2" == n && n < s && n < l) || ("4" == n && n < s && n < l) || ("6" == n && n < s && n < l) ? "left" : "center",
-        d = (i = a = n < s && n < l);
-      ("2" == n && n < s) || ("4" == n && n < s) || ("6" == n && n < s) ? (o = 0) : "3" == n && s ? (o = 1) : "5" == n && s ? (o = 2) : "7" == n && s && (o = 3),
-        $(window).width() <= 798 && ((r = "center"), (d = i = a = !0), (o = 1), $(this).parents(".even-num-slides").removeClass("even-num-slides")),
-        $(this).flickity({ lazyLoad: 2, imagesLoaded: !0, draggable: a, cellAlign: r, prevNextButtons: i, wrapAround: d, pageDots: usePageDots, contain: !0, freeScroll: !0, arrowShape: arrowSize, initialIndex: o });
-    });
-  },
-  initializeQuantityBox: function () {
-    $("body").on("click", ".js-change-quantity", function () {
-      var e = $(this),
-        t = $(this).siblings("input"),
-        a = parseInt(t.val()),
-        i = 1e29,
-        o = t.attr("min") || 0;
-      return (
-        null != t.attr("max") && (i = t.attr("max")),
-        isNaN(a) || a < o
-          ? (t.val(o), !1)
-          : i < a
-            ? (t.val(i), !1)
-            : ("plus" == e.data("func") ? a < i && t.val(a + 1) : (o < a && t.val(a - 1), e.parents(".cart_item").length && a - 1 == 0 && e.closest(".cart_item").addClass("animated fadeOutUp")), void t.trigger("change"))
-      );
-    });
-  },
-  unload: function (e) {
-    $("body").off("click", ".js-change-quantity");
-  },
 };

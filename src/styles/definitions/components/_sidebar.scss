@@ -305,20 +305,6 @@
     float: left;
   }
 
-  .toggle_list {
-    .rv-container a:hover {
-      border-color: transparent;
-    }
-
-    .rv-container a.product-info__caption.hidden {
-      display: none;
-
-      @include respond-to("medium-down") {
-        display: block;
-      }
-    }
-  }
-
   .recently-viewed__title {
     display: none;
   }

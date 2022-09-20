@@ -2,19 +2,29 @@
 image: image_picker,
 {% endcomment %}
 
-<div class="header-desktop__mega-menu header-desktop__mega-menu--image">
+<div
+  class="header-desktop__mega-menu header-desktop__mega-menu--image
+  {% if url != blank %}image--zoom-hover{% endif %}">
   {% if url != blank %}
     <a href="{{ url }}">
   {% endif %}
-
+  
   {% if image != blank %}
-    <img src="{{ image.src | image_url }}" alt="{{ image.alt }}" />
+    {% if url != blank %}
+    <div class="image--zoom-hover__image-wrapper">
+    {% endif %}
+      
+      <img src="{{ image.src | image_url }}" alt="{{ image.alt }}" />
+
+    {% if url != blank %}
+    </div>
+    {% endif %}
   {% endif %}
   
   {% if url != blank %}
     {% if cta_text != blank %}
-      <div class="u-text-align-center">
-        <h5>{{ cta_text }}</h5>
+      <div class="u-text-align-center u-margin-top-1">
+        <h5 class="u-margin-bottom-0">{{ cta_text }}</h5>
         
         {% if cta_subtext != blank %}
           <p>{{ cta_subtext }}</p>

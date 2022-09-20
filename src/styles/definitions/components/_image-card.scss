@@ -4,24 +4,16 @@
 .image-card {
   margin-bottom: get-vm-spacer(3);
 
-  .image-card__link,
-  img {
+  .image-card__link {
     transition: all 0.4s;
   }
-  
+
   .image-card__link {
     color: $vm-color-sea-green;
-    
+
     &:hover {
       color: $vm-color-sand;
-
-      img {
-        transform: scale(1.02) translateX(2px);
-      }
     }
-  }
-
-  .image-card__image {
   }
 
   .image-card__title {
@@ -31,7 +23,6 @@
   .image-card__content {
     margin: get-vm-spacer(1) 0 0;
   }
-
 }
 
 .image-card.image-card--desktop-no-margin {

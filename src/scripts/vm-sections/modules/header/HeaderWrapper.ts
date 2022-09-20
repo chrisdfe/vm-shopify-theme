@@ -1,5 +1,7 @@
 import findAndInitialize from "../../utils/findAndInitialize";
 
+import { ShopifyEvent } from '../../types';
+
 import PromoBanner from "./modules/PromoBanner";
 
 import DrawerManager from "./drawers/DrawerManager";
@@ -15,32 +17,27 @@ const HEADER_SECTIONS = [
   'mega-menu-6',
 ];
 
-export default class HeaderWrapper {
-  static selector = ".header-wrapper";
+const SELECTORS = {
+  wrapper: ".header-wrapper"
+};
 
+export default class Header {
   headerWrapperElement = null;
 
   promoBanner: PromoBanner;
   drawerManager: DrawerManager;
   dropdownManager: DropdownManager;
 
-  constructor(headerWrapperElement) {
-    this.headerWrapperElement = headerWrapperElement;
+  initialize() {
+    this.headerWrapperElement = document.querySelector(SELECTORS.wrapper);
 
-    document.addEventListener("shopify:section:load", (event) => {
-      // @ts-ignore
-      console.log("shopify:section:load", event.detail.sectionId);
-
-      // @ts-ignore
+    document.addEventListener("shopify:section:load", (event: ShopifyEvent) => {
       if (HEADER_SECTIONS.includes(event.detail.sectionId)) {
         this.reset();
       }
-    })
-  }
+    });
 
-  initialize() {
     this.promoBanner = new PromoBanner().initialize();
-
     this.drawerManager = new DrawerManager().initialize();
     this.dropdownManager = new DropdownManager().initialize();
   }
@@ -54,9 +51,5 @@ export default class HeaderWrapper {
   reset() {
     this.unload();
     this.initialize();
-  }
-
-  static findAndInitialize() {
-    return findAndInitialize(HeaderWrapper);
   }
 }

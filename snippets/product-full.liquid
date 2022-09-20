@@ -6,17 +6,18 @@
     <div class="product_section js-product_section">
       <div class="product-images half">
         {% render 'product-images', image_width: 'full' %}
-        <div class="banner_holder">
-          {% if settings.sale_banner_enabled and product.compare_at_price_max > product.price %}
-            <div class="sale_banner_product">{{ 'collections.general.sale' | t }}</div>
-          {% endif %}
-          {% if collection_handles contains 'new' %}
-            <div class="new_banner_product">{{ 'collections.general.new' | t }}</div>
-          {% endif %}
-          {% if collection_handles contains 'pre-order' %}
-            <div class="preorder_banner_product">{{ 'collections.general.pre_order' | t }}</div>
-          {% endif %}
-        </div>
+
+        {% if settings.sale_banner_enabled and product.compare_at_price_max > product.price %}
+          <div class="sale_banner_product">{{ 'collections.general.sale' | t }}</div>
+        {% endif %}
+
+        {% if collection_handles contains 'new' %}
+          <div class="new_banner_product">{{ 'collections.general.new' | t }}</div>
+        {% endif %}
+
+        {% if collection_handles contains 'pre-order' %}
+          <div class="preorder_banner_product">{{ 'collections.general.pre_order' | t }}</div>
+        {% endif %}
       </div>
       <div class="product-details half">
 

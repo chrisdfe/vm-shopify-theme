@@ -1,25 +1,22 @@
 // import intersections from "../vm-sections/modules/intersections";
 import SearchAutocompleteManager from "../vm-sections/modules/search-autocomplete/SearchAutocompleteManager";
-import header from "../vm-sections/modules/header";
-import cart from "../vm-sections/modules/cart";
+import HeaderWrapper from "../vm-sections/modules/header";
+import Cart from "../vm-sections/modules/Cart";
 import AccordionManager from "../vm-sections/modules/accordions/AccordionManager";
 import ProductCardsManager from "../vm-sections/modules/product-cards/ProductCardsManager";
 import ProductPage from "../vm-sections/modules/product-page";
+import SmoothLazyLoadingImagesManager from "../vm-sections/modules/smooth-lazy-loaded-images";
 
-// modules with 'legacy' (i.e turbo 6) support
-// attached to window and use api that app.js.liquid and utilities.js.liquid expect
-// @ts-ignore
-window.header = header;
-// @ts-ignore
-window.searchAutocomplete = new SearchAutocompleteManager();
-// @ts-ignore
-window.cart = cart;
+import initializeProductQuantityBox from "../vm-sections/modules/product-quantity-box";
 
-// VM modules
-// intersections.init();
+new HeaderWrapper().initialize();
+new Cart().initialize();
+new SearchAutocompleteManager().initialize();
 new AccordionManager().initialize();
-
 new ProductCardsManager().initialize();
+new SmoothLazyLoadingImagesManager().initialize();
+
+initializeProductQuantityBox();
 
 if (ProductPage.isOnProductPage()) {
   new ProductPage().initialize();

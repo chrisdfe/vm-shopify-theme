@@ -18,7 +18,7 @@
   }
 
   @include respond-to("medium-down") {
-    aspect-ratio: 2 / 1; 
+    aspect-ratio: 2 / 1;
   }
 }
 
@@ -26,11 +26,7 @@
   margin: get-vm-spacer(2) 0;
 
   .page-heading__title {
-    margin-bottom: 0;
-    
-    @include respond-to("medium-down") {
-      margin-bottom: get-vm-spacer(1);
-    }
+    margin-bottom: get-vm-spacer(1);
   }
 
   .sort_by {

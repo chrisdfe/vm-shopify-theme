@@ -277,7 +277,7 @@
     var SearchAutocompleteManager = /** @class */ (function () {
         function SearchAutocompleteManager() {
             var _this = this;
-            this.init = function () {
+            this.initialize = function () {
                 var searchFormElements = document.querySelectorAll("form.search_form, form.search, form.header_search_form, form.header__search-form");
                 _this.searchAutocompletes = Array.from(searchFormElements).map(function (searchFormElement) {
                     return new SearchAutocomplete(searchFormElement).init();
@@ -291,16 +291,6 @@
         }
         return SearchAutocompleteManager;
     }());
-
-    function findAndInitialize(klass) {
-        var element = document.querySelector(klass.selector);
-        if (element) {
-            var klassInstance = new klass(element);
-            klassInstance.initialize();
-            return klassInstance;
-        }
-        return null;
-    }
 
     var PromoBanner = /** @class */ (function () {
         function PromoBanner() {
@@ -353,6 +343,15 @@
 
       return _assign.apply(this, arguments);
     };
+    function __spreadArray(to, from, pack) {
+      if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+        if (ar || !(i in from)) {
+          if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+          ar[i] = from[i];
+        }
+      }
+      return to.concat(ar || Array.prototype.slice.call(from));
+    }
 
     var BodyScroll = /** @class */ (function () {
         function BodyScroll() {
@@ -698,63 +697,55 @@
         'mega-menu-5',
         'mega-menu-6',
     ];
-    var HeaderWrapper = /** @class */ (function () {
-        function HeaderWrapper(headerWrapperElement) {
-            var _this = this;
+    var SELECTORS$6 = {
+        wrapper: ".header-wrapper"
+    };
+    var Header = /** @class */ (function () {
+        function Header() {
             this.headerWrapperElement = null;
-            this.headerWrapperElement = headerWrapperElement;
+        }
+        Header.prototype.initialize = function () {
+            var _this = this;
+            this.headerWrapperElement = document.querySelector(SELECTORS$6.wrapper);
             document.addEventListener("shopify:section:load", function (event) {
-                // @ts-ignore
-                console.log("shopify:section:load", event.detail.sectionId);
-                // @ts-ignore
                 if (HEADER_SECTIONS.includes(event.detail.sectionId)) {
                     _this.reset();
                 }
             });
-        }
-        HeaderWrapper.prototype.initialize = function () {
             this.promoBanner = new PromoBanner().initialize();
             this.drawerManager = new HeaderDrawerManager().initialize();
             this.dropdownManager = new DropdownManager().initialize();
         };
-        HeaderWrapper.prototype.unload = function () {
+        Header.prototype.unload = function () {
             // this.promoBanner.reset();
             // this.drawerManager.reset();
             this.dropdownManager.reset();
         };
-        HeaderWrapper.prototype.reset = function () {
+        Header.prototype.reset = function () {
             this.unload();
             this.initialize();
         };
-        HeaderWrapper.findAndInitialize = function () {
-            return findAndInitialize(HeaderWrapper);
-        };
-        HeaderWrapper.selector = ".header-wrapper";
-        return HeaderWrapper;
+        return Header;
     }());
 
-    var header = {
-        init: function () {
-            HeaderWrapper.findAndInitialize();
-        },
-        loadMegaMenu: function () { },
-        loadMobileMegaMenu: function () { },
-        unloadMegaMenu: function () { },
-        unload: function () { }
-    };
-
-    var cart = {
-      init: function init() {
-        $("#cart_form .tos_agree").length && $("body").on("click", "#cart_form input[type='submit']", function () {
-          if (!$(this).parents("form").find(".tos_agree").is(":checked")) {
-            var e = '<p class="warning animated bounceIn">' + Shopify.translation.agree_to_terms_warning + "</p>";
-            return 0 == $("p.warning").length && $(this).before(e), !1;
-          }
-
-          $(this).submit();
-        });
-      }
-    };
+    var Cart = /** @class */ (function () {
+        function Cart() {
+            this.initialize = function () {
+                if ($("#cart_form .tos_agree")) {
+                    $("body").on("click", "#cart_form input[type='submit']", function () {
+                        if (!$(this).parents("form").find(".tos_agree").is(":checked")) {
+                            var e = '<p class="warning animated bounceIn">' +
+                                Shopify.translation.agree_to_terms_warning +
+                                "</p>";
+                            return 0 == $("p.warning").length && $(this).before(e);
+                        }
+                        $(this).submit();
+                    });
+                }
+            };
+        }
+        return Cart;
+    }());
 
     var OPEN_CLASSNAME = "is-open";
     var Accordion = /** @class */ (function () {
@@ -899,29 +890,83 @@
         return AccordionManager;
     }());
 
+    var SELECTORS$5 = {
+        PRODUCT_CARD: '.product-card',
+        MEDIA_WRAPPER: '.product-card__media',
+        PRIMARY_MEDIA: '.product-card__primary-media',
+        SECONDARY_MEDIA: '.product-card__primary-media'
+    };
+    var IS_HOVERED_CLASSNAME = 'is-hovered';
+    var ProductCard = /** @class */ (function () {
+        function ProductCard(el) {
+            var _this = this;
+            this.initialize = function () {
+                _this.mediaWrapperElement = _this.element.querySelector(SELECTORS$5.MEDIA_WRAPPER);
+                _this.primaryMedia = _this.mediaWrapperElement.children[0];
+                _this.secondaryMedia = _this.mediaWrapperElement.children[1];
+                if (_this.secondaryMedia.tagName === 'VIDEO') {
+                    _this.secondaryMedia.pause();
+                }
+                _this.element.addEventListener('mouseover', _this.onLinkMouseOver);
+                _this.element.addEventListener('mouseout', _this.onLinkMouseOut);
+                return _this;
+            };
+            this.unload = function () {
+                _this.element.removeEventListener('mouseover', _this.onLinkMouseOver);
+                _this.element.removeEventListener('mouseout', _this.onLinkMouseOut);
+            };
+            this.onLinkMouseOver = function () {
+                _this.element.classList.add(IS_HOVERED_CLASSNAME);
+                if (_this.secondaryMedia.tagName === 'VIDEO') {
+                    _this.secondaryMedia.play();
+                }
+            };
+            this.onLinkMouseOut = function () {
+                _this.element.classList.remove(IS_HOVERED_CLASSNAME);
+                if (_this.secondaryMedia.tagName === 'VIDEO') {
+                    console.log('pausing');
+                    _this.secondaryMedia.currentTime = 0;
+                    _this.secondaryMedia.pause();
+                }
+            };
+            this.element = el;
+        }
+        return ProductCard;
+    }());
     var ProductCardsManager = /** @class */ (function () {
         function ProductCardsManager() {
             var _this = this;
-            this.setProductCardHeights = function () {
+            this.initialize = function () {
+                _this.setProductCards();
+                window.addEventListener('product-recommendations-loaded', _this.reset);
+                window.addEventListener('collection-filters-updated', _this.reset);
+            };
+            this.unload = function () {
                 _this.productCards.forEach(function (productCard) {
-                    var imageWrapElement = productCard.querySelector(".product_image");
-                    imageWrapElement.style.height = 'auto';
-                    imageWrapElement.style.height = imageWrapElement.clientHeight + 'px';
+                    productCard.unload();
                 });
+                window.removeEventListener('product-recommendations-loaded', _this.reset);
+                window.removeEventListener('collection-filters-updated', _this.reset);
+            };
+            this.setProductCards = function () {
+                _this.productCards =
+                    Array.from(document.querySelectorAll(SELECTORS$5.PRODUCT_CARD))
+                        .map(function (element) { return new ProductCard(element).initialize(); });
+            };
+            this.reset = function () {
+                _this.productCards.forEach(function (productCard) {
+                    productCard.unload();
+                });
+                _this.setProductCards();
             };
         }
-        ProductCardsManager.prototype.initialize = function () {
-            this.productCards = Array.from(document.querySelectorAll('.product-wrap'));
-            window.addEventListener('DOMContentLoaded', this.setProductCardHeights);
-            window.addEventListener('resize', debounce(this.setProductCardHeights, 5));
-        };
         return ProductCardsManager;
     }());
 
     var ATTRIBUTES$1 = {
         MODAL_TOGGLE_ELEMENT_INDEX: 'data-product-images-modal-toggle-index'
     };
-    var SELECTORS$3 = {
+    var SELECTORS$4 = {
         MODAL_TOGGLE_ELEMENT: "[data-product-images-modal-toggle]",
         MODAL_TOGGLE_ELEMENT_INDEX: "[".concat(ATTRIBUTES$1.MODAL_TOGGLE_ELEMENT_INDEX, "]"),
         MODAL_WRAPPER: ".product-images-modal-wrapper",
@@ -943,28 +988,40 @@
                 isAnimating: false,
                 selectedModalImageIndex: 0
             };
+            this.unload = function () {
+                // remove event listeners
+                _this.modalContentElement.removeEventListener("click", _this.onModalContentClick);
+                _this.modalToggleElements.forEach(function (element) {
+                    element.removeEventListener("click", _this.onModalToggleElementClick);
+                });
+                _this.modalImageCellListWrapperElement.removeEventListener('wheel', _this.onModalImagesWheel);
+                document.removeEventListener("keydown", _this.onKeyPressed);
+                document.removeEventListener('resize', _this.onWindowResize);
+                window.removeEventListener('resize', _this.debouncedSetModalImageScrollTopIndicies);
+            };
             this.onModalThumbnailClick = function (e) {
-                var thumbnailWrapper = e.target.closest(SELECTORS$3.MODAL_THUMBNAIL);
+                var thumbnailWrapper = e.target.closest(SELECTORS$4.MODAL_THUMBNAIL);
                 var indexAsString = thumbnailWrapper.getAttribute("data-index");
                 var index = parseInt(indexAsString, 10);
                 _this.setSelectedModalImage(index);
             };
             this.onModalToggleElementClick = function (e) {
-                var element = e.target.closest(SELECTORS$3.MODAL_TOGGLE_ELEMENT);
+                var element = e.target.closest(SELECTORS$4.MODAL_TOGGLE_ELEMENT);
                 if (_this.state.modalIsOpen) {
                     _this.closeModal();
                 }
                 else {
                     var imageIndexAsString = element.getAttribute(ATTRIBUTES$1.MODAL_TOGGLE_ELEMENT_INDEX);
                     var imageIndex = (imageIndexAsString) ? parseInt(imageIndexAsString) : 0;
+                    console.log('imageIndex', imageIndex);
                     _this.openModal(imageIndex);
                 }
             };
             this.onModalContentClick = function (e) {
                 e.stopPropagation();
                 var targetElement = e.target;
-                if (!targetElement.closest(SELECTORS$3.MODAL_THUMBNAIL_LIST_WRAPPER) &&
-                    !targetElement.closest(SELECTORS$3.MODAL_IMAGE_CELL_LIST_WRAPPER)) {
+                if (!targetElement.closest(SELECTORS$4.MODAL_THUMBNAIL_LIST_WRAPPER) &&
+                    !targetElement.closest(SELECTORS$4.MODAL_IMAGE_CELL_LIST_WRAPPER)) {
                     _this.closeModal();
                 }
             };
@@ -991,6 +1048,7 @@
                 }
             };
             this.setModalImageScrollTopIndicies = function () {
+                console.log('setModalImageScrollTopIndicies');
                 _this.modalImageScrollTopIndicies = _this.modalImageCellElementList.map(function (element, index) {
                     return element.offsetTop;
                 });
@@ -1025,6 +1083,7 @@
                     _this.state.isAnimating = false;
                     _this.modalElement.classList.remove('animated', 'animated--snappy', 'fadeIn');
                     _this.setModalImageScrollTopIndicies();
+                    _this.scrollToSelectedModalImage();
                 }, { once: true });
             };
             this.closeModal = function () {
@@ -1044,19 +1103,19 @@
         }
         ProductImagesDesktop.prototype.initialize = function () {
             var _this = this;
-            this.modalToggleElements = Array.from(document.querySelectorAll(SELECTORS$3.MODAL_TOGGLE_ELEMENT));
+            this.modalToggleElements = Array.from(document.querySelectorAll(SELECTORS$4.MODAL_TOGGLE_ELEMENT));
             this.modalToggleElements.forEach(function (element) {
                 element.addEventListener("click", _this.onModalToggleElementClick);
             });
-            this.modalWrapperElement = document.querySelector(SELECTORS$3.MODAL_WRAPPER);
-            this.modalElement = document.querySelector(SELECTORS$3.MODAL);
-            this.modalContentElement = document.querySelector(SELECTORS$3.MODAL_CONTENT);
+            this.modalWrapperElement = document.querySelector(SELECTORS$4.MODAL_WRAPPER);
+            this.modalElement = document.querySelector(SELECTORS$4.MODAL);
+            this.modalContentElement = document.querySelector(SELECTORS$4.MODAL_CONTENT);
             this.modalThumbnailElementList =
-                Array.from(document.querySelectorAll(SELECTORS$3.MODAL_THUMBNAIL));
+                Array.from(document.querySelectorAll(SELECTORS$4.MODAL_THUMBNAIL));
             this.modalImageCellListWrapperElement =
-                document.querySelector(SELECTORS$3.MODAL_IMAGE_CELL_LIST_WRAPPER);
+                document.querySelector(SELECTORS$4.MODAL_IMAGE_CELL_LIST_WRAPPER);
             this.modalImageCellElementList =
-                Array.from(document.querySelectorAll(SELECTORS$3.MODAL_IMAGE_CELL));
+                Array.from(document.querySelectorAll(SELECTORS$4.MODAL_IMAGE_CELL));
             this.setModalImageScrollTopIndicies();
             // Add event listeners
             this.modalContentElement.addEventListener("click", this.onModalContentClick);
@@ -1066,21 +1125,15 @@
             this.modalImageCellListWrapperElement.addEventListener('wheel', this.onModalImagesWheel);
             document.addEventListener("keydown", this.onKeyPressed);
             document.addEventListener('resize', this.onWindowResize);
+            this.debouncedSetModalImageScrollTopIndicies = debounce(this.setModalImageScrollTopIndicies, 100);
+            window.addEventListener('resize', this.debouncedSetModalImageScrollTopIndicies);
             return this;
-        };
-        ProductImagesDesktop.prototype.unload = function () {
-            var _this = this;
-            this.modalToggleElements.forEach(function (element) {
-                element.removeEventListener("click", _this.onModalToggleElementClick);
-            });
-            document.removeEventListener("keydown", this.onKeyPressed);
-            document.removeEventListener('resize', this.onWindowResize);
         };
         ProductImagesDesktop.isOnProductPage = function () { return !!document.querySelector('.product-template'); };
         return ProductImagesDesktop;
     }());
 
-    var SELECTORS$2 = {
+    var SELECTORS$3 = {
         PRODUCT_IMAGES_CONTAINER: '.product-images-mobile__images-container',
         PRODUCT_IMAGES_CONTAINER_INNER: '.product-images-mobile__images-container__inner',
         PRODUCT_IMAGE: '.product-images-mobile__image',
@@ -1107,6 +1160,8 @@
                 touchStartCoordinates: null,
                 currentTouchCoordinates: null
             };
+            this.unload = function () {
+            };
             this.setImageContainerDimensions = function () {
                 _this.imageContainerDimensions = {
                     width: _this.elements.imagesContainer.getBoundingClientRect().width,
@@ -1114,14 +1169,12 @@
                 };
             };
             this.onContainerTouchStart = function (e) {
-                // e.preventDefault();
                 var touch = e.touches[0];
                 _this.state.touchStartCoordinates = {
                     x: touch.clientX,
                     y: touch.clientY
                 };
                 _this.state.currentTouchCoordinates = _assign({}, _this.state.touchStartCoordinates);
-                console.log(_this.imageContainerDimensions.width);
             };
             this.onContainerTouchMove = function (e) {
                 // prevent vertical scroll
@@ -1138,16 +1191,12 @@
                 _this.setImageContainerInnerOffset(clampedXDiff);
             };
             this.onContainerTouchEnd = function (e) {
-                // e.preventDefault();
                 _this.elements.imagesContainerInner.classList.remove('is-active');
                 _this.setImageContainerInnerOffset();
                 var difference = _this.getCurrentCoordinatesDiff();
-                console.log('difference.x', difference.x);
                 // Attempt to switch to image if user has swiped far enough
                 if (Math.abs(difference.x) >= SWIPE_PERCENTAGE_THRESHOLD) {
-                    console.log('switching to new image');
                     var newImageIndex = _this.state.currentImageIndex + (difference.x > 0 ? -1 : 1);
-                    console.log(newImageIndex);
                     if (newImageIndex >= 0 && newImageIndex <= _this.elements.images.length - 1) {
                         _this.switchToImage(newImageIndex);
                     }
@@ -1184,26 +1233,24 @@
         }
         ProductImagesMobile.prototype.initialize = function () {
             var _this = this;
-            this.elements.imagesContainer = document.querySelector(SELECTORS$2.PRODUCT_IMAGES_CONTAINER);
+            this.elements.imagesContainer = document.querySelector(SELECTORS$3.PRODUCT_IMAGES_CONTAINER);
             this.elements.imagesContainer.addEventListener('touchstart', this.onContainerTouchStart);
             this.elements.imagesContainer.addEventListener('touchend', this.onContainerTouchEnd);
             this.elements.imagesContainer.addEventListener('touchmove', this.onContainerTouchMove);
             this.setImageContainerDimensions();
             window.addEventListener('resize', this.setImageContainerDimensions);
-            this.elements.imagesContainerInner = document.querySelector(SELECTORS$2.PRODUCT_IMAGES_CONTAINER_INNER);
-            this.elements.images = Array.from(document.querySelectorAll(SELECTORS$2.PRODUCT_IMAGE));
-            this.elements.dots = Array.from(document.querySelectorAll(SELECTORS$2.DOT));
+            this.elements.imagesContainerInner = document.querySelector(SELECTORS$3.PRODUCT_IMAGES_CONTAINER_INNER);
+            this.elements.images = Array.from(document.querySelectorAll(SELECTORS$3.PRODUCT_IMAGE));
+            this.elements.dots = Array.from(document.querySelectorAll(SELECTORS$3.DOT));
             this.elements.dots.forEach(function (element) {
                 element.addEventListener('click', _this.onDotClick);
             });
             return this;
         };
-        ProductImagesMobile.prototype.unload = function () {
-        };
         return ProductImagesMobile;
     }());
 
-    var SELECTORS$1 = {
+    var SELECTORS$2 = {
         SWATCH_FIELD: ".vm-select-buttons.vm-select-buttons--color",
         SELECT_BUTTON: ".vm-select-button",
         COLOR_NAME_TEXT: ".vm-select-buttons__color-name"
@@ -1218,11 +1265,11 @@
         ProductColorSwatches.prototype.initialize = function () {
             var _this = this;
             this.selectButtonGroups =
-                Array.from(document.querySelectorAll(SELECTORS$1.SWATCH_FIELD)).map(function (wrapper) {
+                Array.from(document.querySelectorAll(SELECTORS$2.SWATCH_FIELD)).map(function (wrapper) {
                     var optionIndexAsString = wrapper.getAttribute('data-option-index');
                     var optionIndex = parseInt(optionIndexAsString);
-                    var colorNameText = wrapper.querySelector(SELECTORS$1.COLOR_NAME_TEXT);
-                    var buttons = Array.from(wrapper.querySelectorAll(SELECTORS$1.SELECT_BUTTON));
+                    var colorNameText = wrapper.querySelector(SELECTORS$2.COLOR_NAME_TEXT);
+                    var buttons = Array.from(wrapper.querySelectorAll(SELECTORS$2.SELECT_BUTTON));
                     var inputs = buttons.map(function (buttonElement) { return buttonElement.querySelector('input'); });
                     buttons.forEach(function (buttonElement) {
                         buttonElement.addEventListener('mouseout', function (e) {
@@ -1230,7 +1277,7 @@
                             colorNameText.innerText = selectedValue;
                         });
                         buttonElement.addEventListener('mouseover', function (e) {
-                            var element = e.target.closest(SELECTORS$1.SELECT_BUTTON);
+                            var element = e.target.closest(SELECTORS$2.SELECT_BUTTON);
                             var inputElement = element.querySelector('input');
                             var value = inputElement.getAttribute('value');
                             colorNameText.innerText = value;
@@ -1251,48 +1298,96 @@
 
     var ATTRIBUTES = {
         productOptionIndex: 'data-option-index',
-        productOption: 'data-option'
+        productOption: 'data-option',
+        productData: 'data-product'
     };
-    var SELECTORS = {
-        productOptionElement: "[".concat(ATTRIBUTES.productOption, "]")
+    var SELECTORS$1 = {
+        PRODUCT_OPTION: "[".concat(ATTRIBUTES.productOption, "]"),
+        ADD_TO_CART_BUTTON: '.button.add_to_cart',
+        CURRENT_PRICE: '.current_price',
+        WAS_PRICE: '.current_price',
+        SALE_SAVINGS: '.current_price'
     };
     var ProductVariants = /** @class */ (function () {
         function ProductVariants() {
             var _this = this;
             this.initialize = function () {
-                var productDataElement = document.querySelector('[data-product]');
-                var productDataAsString = productDataElement.getAttribute('data-product');
-                _this.productData = JSON.parse(productDataAsString);
-                console.log(_this.productData);
-                _this.currentSelectedOptions = new Array(_this.productData.options.length);
-                _this.productOptionElements = Array.from(document.querySelectorAll('[data-option]'));
-                _this.productOptionElements.forEach(function (element, elementIndex) {
-                    var input = element.querySelector('input');
-                    console.log('input', input.value);
-                    _this.currentSelectedOptions[elementIndex] = input.value;
+                _this.productData = _this.getProductData();
+                _this.moneyFormat = document.body.getAttribute('data-money-format');
+                _this.elements = {
+                    productOptions: Array.from(document.querySelectorAll('[data-option]')),
+                    addToCartButton: document.querySelector(SELECTORS$1.ADD_TO_CART_BUTTON),
+                    currentPrice: document.querySelector(SELECTORS$1.CURRENT_PRICE),
+                    wasPrice: document.querySelector(SELECTORS$1.WAS_PRICE),
+                    saleSavings: document.querySelector(SELECTORS$1.SALE_SAVINGS)
+                };
+                _this.currentSelectedOptions = _this.elements.productOptions.map(function (element) {
+                    return element.querySelector('input').value;
+                });
+                _this.setCurrentSelectedVariant();
+                // add event listeners
+                _this.elements.productOptions.forEach(function (element) {
                     element.addEventListener('change', _this.onProductOptionChange);
                 });
-                console.log('this.currentSelectedOptions', _this.currentSelectedOptions);
-                _this.setCurrentSelectedVariant();
-                console.log('this.currentSelectedVariant', _this.currentSelectedVariant);
                 return _this;
             };
-            this.unload = function () { };
+            this.unload = function () {
+                // remove event listeners
+                _this.elements.productOptions.forEach(function (element) {
+                    element.removeEventListener('change', _this.onProductOptionChange);
+                });
+            };
+            this.getProductData = function () {
+                var productDataElement = document.querySelector('[data-product]');
+                var productDataAsString = productDataElement.getAttribute('data-product');
+                return JSON.parse(productDataAsString);
+            };
             this.onProductOptionChange = function (e) {
                 var _a;
                 var target = e.target;
                 var value = target.value;
-                var productOptionElement = target.closest(SELECTORS.productOptionElement);
+                var productOptionElement = target.closest(SELECTORS$1.PRODUCT_OPTION);
                 var optionIndexAsString = productOptionElement.getAttribute(ATTRIBUTES.productOptionIndex);
                 var optionIndex = parseInt(optionIndexAsString, 10);
                 _this.currentSelectedOptions[optionIndex] = value;
                 _this.setCurrentSelectedVariant();
-                ((_a = _this.currentSelectedVariant) === null || _a === void 0 ? void 0 : _a.available) === true;
+                var variantIsAvailable = ((_a = _this.currentSelectedVariant) === null || _a === void 0 ? void 0 : _a.available) === true;
+                if (variantIsAvailable) {
+                    _this.elements.addToCartButton.removeAttribute('disabled');
+                    _this.elements.addToCartButton.innerText = Shopify.translation.add_to_cart;
+                }
+                else {
+                    _this.elements.addToCartButton.setAttribute('disabled', 'disabled');
+                    _this.elements.addToCartButton.innerText = Shopify.translation.unavailable_text;
+                }
+                _this.elements.currentPrice.innerHTML =
+                    Shopify.formatMoney(_this.currentSelectedVariant.price, _this.moneyFormat);
+                _this.elements.productOptions.forEach(function (productOptionElement, otherOptionIndex) {
+                    productOptionElement.querySelectorAll('input').forEach(function (inputElement) {
+                        var optionValue = inputElement.value;
+                        var fullVariantOptionValue = __spreadArray([], _this.currentSelectedOptions, true).map(function (otherOptionValue, index) {
+                            if (index === otherOptionIndex) {
+                                return optionValue;
+                            }
+                            return otherOptionValue;
+                        });
+                        var variantForOption = _this.findVariantByOption(fullVariantOptionValue);
+                        if (!(variantForOption === null || variantForOption === void 0 ? void 0 : variantForOption.available)) {
+                            // TODO: not this
+                            inputElement.disabled = true;
+                            inputElement.closest('.vm-select-button').classList.add('vm-select-button--soldout');
+                        }
+                        else {
+                            inputElement.disabled = false;
+                            inputElement.closest('.vm-select-button').classList.remove('vm-select-button--soldout');
+                        }
+                    });
+                });
             };
-            this.setCurrentSelectedVariant = function () {
-                _this.currentSelectedVariant = _this.productData.variants.find(function (variant) {
-                    for (var _i = 0, _a = _this.currentSelectedOptions; _i < _a.length; _i++) {
-                        var option = _a[_i];
+            this.findVariantByOption = function (optionValues) {
+                return _this.productData.variants.find(function (variant) {
+                    for (var _i = 0, optionValues_1 = optionValues; _i < optionValues_1.length; _i++) {
+                        var option = optionValues_1[_i];
                         if (!variant.options.includes(option)) {
                             return false;
                         }
@@ -1300,9 +1395,67 @@
                     return true;
                 });
             };
+            this.setCurrentSelectedVariant = function () {
+                _this.currentSelectedVariant = _this.findVariantByOption(_this.currentSelectedOptions);
+            };
         }
+        ProductVariants.shouldInitialize = function () {
+            return document.querySelector("[".concat(ATTRIBUTES.productData, "]")) != null;
+        };
         return ProductVariants;
     }());
+
+    // @ts-nocheck
+    // functionality ported straight over from turbo
+    function initialize() {
+        var e = $(".meta-related-recommended-collection"), t = $(".product-recommendations"), a = t.data("productId"), i = t.data("limit"), o = t.data("enabled"), n = e.data("enabled"), l = $("[data-product-recommendations-container]"); $(".js-recommended-products-slider");
+        if (e.length) {
+            if (!n) {
+                l.empty();
+                return;
+            }
+            l.html(e.html()),
+                $("[data-product-recommendations-container] .js-product_section .product_form_options").each(function () {
+                    0 === $(this).find("select").length && new Shopify.OptionSelectors($(this).data("select-id"), {
+                        product: $(this).data("product"),
+                        onVariantSelected: selectCallback,
+                        enableHistoryState: $(this).data("enable-state")
+                    });
+                }),
+                Shopify.PaymentButton && Shopify.PaymentButton.init(),
+                $(".recommended-products-section").empty();
+        }
+        else if (t.length) {
+            if (!o)
+                return void l.empty();
+            $.ajax({
+                type: "GET",
+                url: "/recommendations/products?section_id=product-recommendations&limit=" + i + "&product_id=" + a,
+                success: function (e) {
+                    var t = $(e).find(".product-recommendations").html();
+                    l.empty();
+                    l.html(t);
+                    $("[data-product-recommendations-container] .js-product_section .product_form_options").each(function () {
+                        new Shopify.OptionSelectors($(this).data("select-id"), {
+                            product: $(this).data("product"),
+                            onVariantSelected: selectCallback,
+                            enableHistoryState: $(this).data("enable-state")
+                        });
+                    });
+                    Currency.show_multiple_currencies && currencyConverter.convertCurrencies();
+                    Shopify.PaymentButton && Shopify.PaymentButton.init();
+                    if ($("[data-recommended-product-count]").data() === 0) {
+                        $("[data-product-recommendations-container]").hide();
+                    }
+                    else {
+                        window.dispatchEvent(new Event('product-recommendations-loaded'));
+                    }
+                }
+            });
+        }
+        else
+            l.hide();
+    }
 
     var ProductPage = /** @class */ (function () {
         function ProductPage() {
@@ -1313,7 +1466,11 @@
             this.productImagesDesktop = new ProductImagesDesktop().initialize();
             this.productImagesMobile = new ProductImagesMobile().initialize();
             this.productColorSwatches = new ProductColorSwatches().initialize();
-            this.productVariants = new ProductVariants().initialize();
+            if (ProductVariants.shouldInitialize()) {
+                this.productVariants = new ProductVariants().initialize();
+            }
+            // functionality ported straight over from turbo
+            initialize();
         };
         ProductPage.prototype.setStickyContentTop = function () {
             this.stickyContentElement = document.querySelector('.product-content-wrapper');
@@ -1328,19 +1485,107 @@
         return ProductPage;
     }());
 
+    var SELECTORS = {
+        LAZY_LOADED_IMAGE: "[data-smooth-lazy-loading]"
+    };
+    var IS_LOADING_CLASSNAME = 'is-loading';
+    var LazyLoadedImage = /** @class */ (function () {
+        function LazyLoadedImage(el) {
+            var _this = this;
+            this.hasCompletelyLoaded = false;
+            this.initialize = function () {
+                // this.elementsToLoad = Array.from(this.element.querySelectorAll('img'));
+                _this.elementsToLoad = Array.from(_this.element.querySelectorAll('img, video'));
+                if (_this.elementsToLoad.length === 0)
+                    return;
+                _this.hasLoaded = new Array(_this.elementsToLoad).map(function () { return false; });
+                _this.element.classList.add(IS_LOADING_CLASSNAME);
+                _this.elementsToLoad.forEach(function (element, elementIndex) {
+                    var onLoad = function () {
+                        _this.onLoad(elementIndex);
+                    };
+                    if (element.tagName === "IMG") {
+                        if (element.complete) {
+                            onLoad();
+                        }
+                        else {
+                            element.addEventListener('load', onLoad, { once: true });
+                        }
+                    }
+                    else if (element.tagName === "VIDEO") {
+                        if (element.readyState === 4) {
+                            onLoad();
+                        }
+                        else {
+                            element.addEventListener('loadeddata', onLoad, { once: true });
+                        }
+                    }
+                });
+                return _this;
+            };
+            this.unload = function () { };
+            this.onLoad = function (elementIndex) {
+                _this.hasLoaded[elementIndex] = true;
+                _this.hasCompletelyLoaded = _this.hasLoaded.filter(function (hasLoaded) { return !hasLoaded; }).length === 0;
+                if (_this.hasCompletelyLoaded) {
+                    _this.element.classList.remove(IS_LOADING_CLASSNAME);
+                }
+            };
+            this.element = el;
+        }
+        return LazyLoadedImage;
+    }());
+    var SmoothLazyLoadedImagesManager = /** @class */ (function () {
+        function SmoothLazyLoadedImagesManager() {
+            var _this = this;
+            this.initialize = function () {
+                _this.setLazyLoadedImages();
+                window.addEventListener('product-recommendations-loaded', _this.reset);
+                window.addEventListener('collection-filters-updated', _this.reset);
+            };
+            this.unload = function () {
+                window.removeEventListener('product-recommendations-loaded', _this.reset);
+                window.removeEventListener('collection-filters-updated', _this.reset);
+            };
+            this.setLazyLoadedImages = function () {
+                _this.lazyLoadedImages =
+                    Array.from(document.querySelectorAll(SELECTORS.LAZY_LOADED_IMAGE))
+                        .map(function (element) { return new LazyLoadedImage(element).initialize(); });
+            };
+            this.reset = function () {
+                console.log('resetting lazy loaded images');
+                _this.lazyLoadedImages.forEach(function (lazyLoadedImage) {
+                    lazyLoadedImage.unload();
+                });
+                // TODO - don't completely replace
+                _this.setLazyLoadedImages();
+            };
+        }
+        return SmoothLazyLoadedImagesManager;
+    }());
+
+    // @ts-nocheck
+    // functionality copied straight over from turbo
+    function initializeQuantityBox() {
+        $("body").on("click", ".js-change-quantity", function () {
+            var e = $(this), t = $(this).siblings("input"), a = parseInt(t.val()), i = 1e29, o = t.attr("min") || 0;
+            return (null != t.attr("max") && (i = t.attr("max")),
+                isNaN(a) || a < o ?
+                    (t.val(o), !1) :
+                    i < a ?
+                        (t.val(i), !1) :
+                        ("plus" == e.data("func") ? a < i && t.val(a + 1) : (o < a && t.val(a - 1), e.parents(".cart_item").length && a - 1 == 0 && e.closest(".cart_item").addClass("animated fadeOutUp")), void t.trigger("change")));
+        });
+    }
+
     // import intersections from "../vm-sections/modules/intersections";
-    // modules with 'legacy' (i.e turbo 6) support
-    // attached to window and use api that app.js.liquid and utilities.js.liquid expect
-    // @ts-ignore
-    window.header = header;
-    // @ts-ignore
-    window.searchAutocomplete = new SearchAutocompleteManager();
-    // @ts-ignore
-    window.cart = cart;
-    // VM modules
-    // intersections.init();
+    new Header().initialize();
+    new Cart().initialize();
+    new SearchAutocompleteManager().initialize();
     new AccordionManager().initialize();
     new ProductCardsManager().initialize();
+    new SmoothLazyLoadedImagesManager().initialize();
+    initializeQuantityBox();
     if (ProductPage.isOnProductPage()) {
         new ProductPage().initialize();
     }

@@ -1,6 +1,42 @@
 /* General - Images
 ================================================== */
 
+picture {
+  display: block;
+  line-height: 0;
+}
+
+[data-smooth-lazy-loading] {
+  opacity: 1;
+  transition: opacity 0.2s;
+
+  &.is-loading {
+    opacity: 0;
+  }
+}
+
+.image--zoom-hover {
+  img {
+    transition: transform 0.5s;
+  }
+
+  &:hover {
+    img {
+      transform: scale(1.02) translateX(2px);
+    }
+  }
+
+  .image--zoom-hover__image-wrapper {
+    line-height: 0;
+    overflow: hidden;
+    display: block;
+  }
+
+  img[data-smooth-lazy-loading] {
+    transition: opacity 0.2s, transform 0.4s;
+  }
+}
+
 // TODO - get rid of this silliness.
 // Original comment from turbo theme
 /*

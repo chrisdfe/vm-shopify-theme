@@ -7,6 +7,7 @@ interface Props {
 }
 
 const OPEN_CLASSNAME = "is-open";
+const IS_ANIMATED_CLASSNAME = 'is-animated';
 
 export default class Accordion {
   id: string;
@@ -36,7 +37,7 @@ export default class Accordion {
     });
 
     const defaultOpenState = this.contentElement.getAttribute("data-accordion-is-open");
-    this.toggle(defaultOpenState === 'true',);
+    this.toggle(defaultOpenState === 'true');
 
     return this;
   };
@@ -54,7 +55,7 @@ export default class Accordion {
     }
 
     return accordionGroupId;
-  }
+  };
 
   open = () => {
     this.isOpen = true;

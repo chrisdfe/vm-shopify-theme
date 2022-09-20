@@ -11,7 +11,8 @@ $vm-button-background-color: $vm-color-sea-green;
 $vm-button-border-color: transparent;
 $vm-button-text-color: $vm-color-white;
 
-$vm-button-hover-background-color: $vm-color-sand;
+$vm-button-hover-background-color: rgba($vm-color-sea-green, 0.6);
+// $vm-button-hover-background-color: $vm-color-sand;
 $vm-button-hover-border-color: transparent;
 $vm-button-hover-text-color: $vm-color-white;
 

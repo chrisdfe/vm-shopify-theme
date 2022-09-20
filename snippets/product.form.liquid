@@ -41,7 +41,10 @@
 
   {% if product.options.size > 1 %}
     <div class="select">
-      <select id="product-select-{{ product.id }}{{ product-form }}{{ section.id }}{{ block.id }}" name="id" class="multi_select">
+      <select
+        id="product-select-{{ product.id }}{{ product-form }}{{ section.id }}{{ block.id }}"
+        name="id"
+        class="multi_select">
         {% for v in product.variants %}
           <option {% if v == variant %}selected="selected"{% endif %} value="{{ v.id }}" data-sku="{{ v.sku }}">{{ v.title }}</option>
         {% endfor %}
@@ -70,6 +73,7 @@
       {% endfor %}
     </div>
   {% endif %}
+
 
   {% render "product.form.chain-letter-options" %}
   

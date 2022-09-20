@@ -18,7 +18,7 @@ $vm-homepage-banner-height-mobile: 800px;
     background-color: $vm-color-cream;
   }
 
-  @include respond-to('medium-down') {
+  @include respond-to("medium-down") {
     padding: 0;
   }
 }
@@ -32,6 +32,8 @@ $vm-homepage-banner-height-mobile: 800px;
   object-fit: cover;
   color: $vm-color-white;
   max-height: 80vh;
+  aspect-ratio: 2/1;
+  overflow: hidden;
 
   picture {
     display: flex;
@@ -39,7 +41,6 @@ $vm-homepage-banner-height-mobile: 800px;
 
   img {
     width: 100%;
-    // height: 100%;
     object-fit: cover;
     object-position: center;
   }
@@ -141,10 +142,12 @@ $vm-homepage-banner-height-mobile: 800px;
     }
   }
 
-  @include respond-to('medium-down') {
+  @include respond-to("medium-down") {
     flex-direction: column;
     height: auto;
     max-height: none;
+    aspect-ratio: unset;
+    overflow: visible;
 
     .homepage-banner__content-wrapper,
     &.homepage-banner--text-position-right-block
@@ -253,8 +256,9 @@ $vm-homepage-banner-height-mobile: 800px;
     height: $vm-homepage-banner-height-mobile;
   }
 
-  @include respond-to('medium-down') {
+  @include respond-to("medium-down") {
     display: none;
+    aspect-ratio: 1/1;
 
     &.homepage-banner__block--mobile {
       display: flex;

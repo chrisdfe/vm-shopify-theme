@@ -1,0 +1,114 @@
+{% assign secondary_image = product.media[1] %}
+
+{% assign collection_handles = product.collections | map: 'handle' %}
+{% assign alt_text = product.featured_image.alt %}
+
+<div class="product-card"
+  {% if settings.collection_secondary_image != blank and secondary_image != blank %}data-has-secondary-media-swap
+  {% endif %}
+>
+  <a href="{{ product.url | within: collection }}">
+    <div class="product-card__media" data-smooth-lazy-loading>
+      <picture class="product-card__media__primary">
+        <img
+          class="product-card__media__primary"
+          src="{{ product.featured_media.preview_image | img_url: "600x600", crop: 'center'}}"
+          alt="{{ alt_text }}"
+          loading="lazy"
+        />
+      </picture>
+
+      {% if settings.collection_secondary_image != blank and product.media[1] != blank %}
+        {% assign secondary_media = product.media[1] %}
+
+        {% if product.media[1].media_type == 'video' %}
+          <video
+            class="product-card__media__secondary"
+            muted="muted"
+            autoplay="false"
+            loop="loop">
+            {% for source in secondary_media.sources %}
+              <source src="{{ source.url }}" type="{{ source.mime_type }}" />
+            {% endfor %}
+            <img
+              src="{{ secondary_media.preview_image | img_url: "600x600", crop: 'center'}}"
+              alt="{{ alt_text }}"
+              loading="lazy"
+            />
+          </video>
+        {% else %}
+          <picture class="product-card__media__secondary">
+            <img
+              src="{{ secondary_media | img_url: "1200x1200", crop: 'center'}}"
+              alt="{{ alt_text }}"
+              loading="lazy"
+            />
+          </picture>
+        {% endif %}
+      {% endif %}
+    </div>
+
+    {% assign collection_handles = product.collections | map: 'handle' %}
+
+    {% if product.available %}
+      {% if settings.sale_banner_enabled and product.compare_at_price_max > product.price %}
+        <div class="product-card__banner product-card__banner--sale">{{ 'collections.general.sale' | t }}</div>
+      {% endif %}
+    {% endif %}
+
+    {% if collection_handles contains 'new' %}
+      <div class="product-card__banner product-card__banner--new">{{ 'collections.general.new' | t }}</div>
+    {% endif %}
+
+    {% if collection_handles contains 'pre-order' %}
+      <div class="product-card__banner product-card__banner--preorder">{{ 'collections.general.pre_order' | t }}</div>
+    {% endif %}
+
+    <div class="product-card__info">
+      <h5
+        class="product-card__info__title"
+        itemprop="name">
+        {{ product.title }}
+      </h5>
+
+      {% if settings.enable_shopify_collection_badges %}
+        <div class="shopify-reviews reviewsVisibility--{{settings.enable_shopify_review_comments}}">
+          <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
+        </div>
+      {% endif %}
+
+      {% if collection_handles contains 'coming-soon' %}
+        <span class="coming-soon">{{ 'collections.general.coming_soon' | t }}</span>
+      {% else %}
+        <span class="price {% if product.compare_at_price_max > product.price %}sale{% endif %}">
+          {% unless product.available == false and settings.display_price == false %}
+            <span class="current_price">
+              {% if product.price_varies and product.price_min > 0 %}
+                <small><em>{{ 'products.general.from' | t }}</em></small>
+              {% endif %}
+              
+              {% if product.price_min > 0 %}
+                <span class="money">{% render 'price-element', price: product.price_min %}</span></span>
+              {% else %}
+                {{ settings.free_price_text }}
+              {% endif %}
+            </span>
+
+            {% assign variant = product.selected_or_first_available_variant %}
+            <span class="was_price">
+              {% if variant.price < variant.compare_at_price %}
+                <span class="money">{% render 'price-element', price: variant.compare_at_price %}</span>
+              {% endif %}
+            </span>
+          {% endunless %}
+
+          {% unless product.available %}
+            <h6 class="sold-out u-margin-bottom-0">
+              {{ settings.sold_out_text }}
+            </h6>
+          {% endunless %}
+        </span>
+      {% endif %}
+    </div>
+  </a>
+</div>

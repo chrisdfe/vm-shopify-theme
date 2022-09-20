@@ -3,18 +3,22 @@
 
 {% capture link_content %}
   {% if image %}
-    {% render "image-card.image" with { 
-      image: image,
-      title: title,
-      url: url
-    } %}
+    <div
+      class="image-card__image
+      {% if url != blank %}image--zoom-hover__image-wrapper{% endif %}">
+      {% render 'image-element',
+        image: image,
+        alt: image.alt
+      %}
+    </div>
   {% endif %}
 
   {% if title %}
-    {% render "image-card.title" with {
-      title: title,
-      title_tag: title_tag
-    } %}
+    {% if tag == "h5" %}
+      <h5 class="image-card__title">{{ title | strip_html }}</h5>
+    {% else %}
+      <h4 class="image-card__title">{{ title | strip_html }}</h4>
+    {% endif %}
   {% endif %}
 {% endcapture %}
 
@@ -24,7 +28,7 @@
   {% for modifier_class in modifier_class_list %}image-card--{{ modifier_class }}{% endfor %}
   ">
   {% if url != blank %}
-    <a class="image-card__link" href="{{ url }}">
+    <a class="image-card__link image--zoom-hover" href="{{ url }}">
       {{ link_content }}
     </a>
   {% else %}

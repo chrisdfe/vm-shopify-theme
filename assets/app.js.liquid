@@ -1,15 +1,7 @@
 $(function () {
   utils.enableDisclosure();
 
-  objectFitImages();
-
-  header.init();
-  searchAutocomplete.init();
-  videoSection.init();
-  videoFeature.setupVideoPlayer();
   collectionSidebarFilter.init();
-  cart.init();
-  productPage.init();
   recentlyViewed.init();
 
   if (Currency.show_multiple_currencies || Currency.native_multi_currency) {
@@ -85,14 +77,6 @@ $(function () {
   }
 
   utils.createAccordion('.toggle-all--true', 'h4.toggle', 'ul.toggle_list');
-  utils.createAccordion('.footer_menu', 'h6', 'ul');
-  utils.createAccordion('.footer_content', 'h6', 'div.toggle_content');
-  utils.createAccordion('.product_section .accordion-tabs', '.tabs li > a', '.tabs-content li');
-
-  utils.mobileParentActiveAccordion('#mobile_menu', 'li.sublink > a.parent-link--true span', 'li.sublink ul');
-  utils.mobileAccordion('#mobile_menu', 'li.sublink > a.parent-link--false', 'li.sublink ul');
-
-  utils.initializeTabs();
 
   //Sidebar toggle check
   if ($(window).width() <= 798) {
@@ -105,25 +89,6 @@ $(function () {
     $(this).toggleClass('active');
     $(this).attr('aria-expanded', $(this).attr('aria-expanded') == 'true' ? 'false' : 'true');
   });
-
-  if (Shopify.theme_settings.collection_swatches) {
-    if ($(window).width() > 798) {
-      $('body').on('mouseenter', '.collection_swatches', function () {
-        $('.swatch span', $(this)).each(function () {
-          if ($(this).data("image").indexOf("no-image") == -1) {
-            $('<img/>')[0].src = $(this).data("image");
-          }
-        });
-      });
-
-      $('body').on('mouseenter', '.swatch span', function () {
-        if ($(this).data("image").indexOf("no-image") == -1) {
-          $(this).parents('.thumbnail').find('.image__container img:not(.secondary)').attr('src', $(this).data("image"));
-          $(this).parents('.thumbnail').find('.image__container img:not(.secondary)').attr('srcset', $(this).data("image"));
-        }
-      });
-    }
-  }
 
   //Terms of service settings for minicart
   if (Shopify.theme_settings.display_tos_checkbox) {
@@ -160,11 +125,6 @@ $(function () {
     });
   }
 
-
-  if (Shopify.theme_settings.collection_secondary_image) {
-    imageFunctions.showSecondaryImage();
-  }
-
   // Contact form checkbox validation
   if ($('[data-is-required]').length) {
     var $checkboxGroup = $('.contact-block--checkbox input');
@@ -178,21 +138,8 @@ $(function () {
     })
   }
 
-  if (Shopify.theme_settings.pagination_type == 'load_more') {
-    enableLoadMoreProducts();
-  }
-
-  if (Shopify.theme_settings.pagination_type == 'infinite_scroll') {
-    enableInfiniteScroll();
-  }
-
-  if (Shopify.theme_settings.search_pagination_type == 'load_more') {
-    enableLoadMoreSearch();
-  }
-
-  if (Shopify.theme_settings.search_pagination_type == 'infinite_scroll') {
-    enableInfiniteSearchScroll();
-  }
+  enableLoadMoreProducts();
+  enableLoadMoreSearch();
 
   /*============================================================================
     Start of cart-related functionality
@@ -572,16 +519,12 @@ $(function () {
       return false;
     });
   }
-
-  productPage.productSwatches();
-
 });
 
 /*============================================================================
   Swatch options - second and third swatch 'sold-out' will update based on availability of previous options selected
 ==============================================================================*/
 Shopify.updateOptionsInSelector = function (selectorIndex, parent) {
-
   switch (selectorIndex) {
     case 0:
       var key = 'root';
@@ -606,50 +549,6 @@ Shopify.updateOptionsInSelector = function (selectorIndex, parent) {
       $(this).addClass('soldout').find(':radio').removeAttr('checked').attr('disabled', 'disabled');
     }
   });
-
-};
-
-Shopify.linkOptionSelectors = function (product, parent) {
-  // Building our mapping object.
-  Shopify.optionsMap = {};
-  for (var i = 0; i < product.variants.length; i++) {
-    var variant = product.variants[i];
-    if (variant.available) {
-      // Gathering values for the 1st drop-down.
-      Shopify.optionsMap['root'] = Shopify.optionsMap['root'] || [];
-      Shopify.optionsMap['root'].push(variant.option1);
-      Shopify.optionsMap['root'] = Shopify.uniq(Shopify.optionsMap['root']);
-      // Gathering values for the 2nd drop-down.
-      if (product.options.length > 1) {
-        var key = variant.option1;
-        Shopify.optionsMap[key] = Shopify.optionsMap[key] || [];
-        Shopify.optionsMap[key].push(variant.option2);
-        Shopify.optionsMap[key] = Shopify.uniq(Shopify.optionsMap[key]);
-      }
-      // Gathering values for the 3rd drop-down.
-      if (product.options.length === 3) {
-        var key = variant.option1 + ' / ' + variant.option2;
-        Shopify.optionsMap[key] = Shopify.optionsMap[key] || [];
-        Shopify.optionsMap[key].push(variant.option3);
-        Shopify.optionsMap[key] = Shopify.uniq(Shopify.optionsMap[key]);
-      }
-    }
-  }
-  // Update options right away.
-  Shopify.updateOptionsInSelector(0, parent);
-  if (product.options.length > 1) Shopify.updateOptionsInSelector(1, parent);
-  if (product.options.length === 3) Shopify.updateOptionsInSelector(2, parent);
-  // When there is an update in the first dropdown.
-  $(parent + " .single-option-selector:eq(0)").change(function () {
-    Shopify.updateOptionsInSelector(1, parent);
-    if (product.options.length === 3) Shopify.updateOptionsInSelector(2, parent);
-    return true;
-  });
-  // When there is an update in the second dropdown.
-  $(parent + " .single-option-selector:eq(1)").change(function () {
-    if (product.options.length === 3) Shopify.updateOptionsInSelector(2, parent);
-    return true;
-  });
 };
 
 //Used for cart functionality
@@ -661,14 +560,6 @@ function htmlEncode(value) {
   }
 }
 
-//Check if device is touch-enabled
-function is_touch_device() {
-  return 'ontouchstart' in window || navigator.maxTouchPoints;
-};
-
-//Differentiate between mobile and touch screen laptops
-var touch_device = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent);
-
 /* option_selection.js */
 function floatToString(t, e) { var o = t.toFixed(e).toString(); return o.match(/^\.\d+/) ? "0" + o : o } if ("undefined" == typeof Shopify) var Shopify = {}; Shopify.each = function (t, e) { for (var o = 0; o < t.length; o++)e(t[o], o) }, Shopify.map = function (t, e) { for (var o = [], i = 0; i < t.length; i++)o.push(e(t[i], i)); return o }, Shopify.arrayIncludes = function (t, e) { for (var o = 0; o < t.length; o++)if (t[o] == e) return !0; return !1 }, Shopify.uniq = function (t) { for (var e = [], o = 0; o < t.length; o++)Shopify.arrayIncludes(e, t[o]) || e.push(t[o]); return e }, Shopify.isDefined = function (t) { return "undefined" == typeof t ? !1 : !0 }, Shopify.getClass = function (t) { return Object.prototype.toString.call(t).slice(8, -1) }, Shopify.extend = function (t, e) { function o() { } o.prototype = e.prototype, t.prototype = new o, t.prototype.constructor = t, t.baseConstructor = e, t.superClass = e.prototype }, Shopify.locationSearch = function () { return window.location.search }, Shopify.locationHash = function () { return window.location.hash }, Shopify.replaceState = function (t) { window.history.replaceState({}, document.title, t) }, Shopify.urlParam = function (t) { var e = RegExp("[?&]" + t + "=([^&#]*)").exec(Shopify.locationSearch()); return e && decodeURIComponent(e[1].replace(/\+/g, " ")) }, Shopify.newState = function (t, e) { var o; return o = Shopify.urlParam(t) ? Shopify.locationSearch().replace(RegExp("(" + t + "=)[^&#]+"), "$1" + e) : "" === Shopify.locationSearch() ? "?" + t + "=" + e : Shopify.locationSearch() + "&" + t + "=" + e, o + Shopify.locationHash() }, Shopify.setParam = function (t, e) { Shopify.replaceState(Shopify.newState(t, e)) }, Shopify.Product = function (t) { Shopify.isDefined(t) && this.update(t) }, Shopify.Product.prototype.update = function (t) { for (property in t) this[property] = t[property] }, Shopify.Product.prototype.optionNames = function () { return "Array" == Shopify.getClass(this.options) ? this.options : [] }, Shopify.Product.prototype.optionValues = function (t) { if (!Shopify.isDefined(this.variants)) return null; var e = Shopify.map(this.variants, function (e) { var o = "option" + (t + 1); return void 0 == e[o] ? null : e[o] }); return null == e[0] ? null : Shopify.uniq(e) }, Shopify.Product.prototype.getVariant = function (t) { var e = null; return t.length != this.options.length ? e : (Shopify.each(this.variants, function (o) { for (var i = !0, r = 0; r < t.length; r++) { var n = "option" + (r + 1); o[n] != t[r] && (i = !1) } return 1 == i ? void (e = o) : void 0 }), e) }, Shopify.Product.prototype.getVariantById = function (t) { for (var e = 0; e < this.variants.length; e++) { var o = this.variants[e]; if (t == o.id) return o } return null }, Shopify.money_format = "${{amount}}", Shopify.formatMoney = function (t, e) { function o(t, e) { return "undefined" == typeof t ? e : t } function i(t, e, i, r) { if (e = o(e, 2), i = o(i, ","), r = o(r, "."), isNaN(t) || null == t) return 0; t = (t / 100).toFixed(e); var n = t.split("."), a = n[0].replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1" + i), s = n[1] ? r + n[1] : ""; return a + s } "string" == typeof t && (t = t.replace(".", "")); var r = "", n = /\{\{\s*(\w+)\s*\}\}/, a = e || this.money_format; switch (a.match(n)[1]) { case "amount": r = i(t, 2); break; case "amount_no_decimals": r = i(t, 0); break; case "amount_with_comma_separator": r = i(t, 2, ".", ","); break; case "amount_with_apostrophe_separator": r = i(t, 2, "'", "."); break; case "amount_no_decimals_with_comma_separator": r = i(t, 0, ".", ",") }return a.replace(n, r) }, Shopify.OptionSelectors = function (t, e) { return this.selectorDivClass = "selector-wrapper", this.selectorClass = "single-option-selector", this.variantIdFieldIdSuffix = "-variant-id", this.variantIdField = null, this.historyState = null, this.selectors = [], this.domIdPrefix = t, this.product = new Shopify.Product(e.product), this.onVariantSelected = Shopify.isDefined(e.onVariantSelected) ? e.onVariantSelected : function () { }, this.replaceSelector(t), this.initDropdown(), e.enableHistoryState && (this.historyState = new Shopify.OptionSelectors.HistoryState(this)), !0 }, Shopify.OptionSelectors.prototype.initDropdown = function () { var t = { initialLoad: !0 }, e = this.selectVariantFromDropdown(t); if (!e) { var o = this; setTimeout(function () { o.selectVariantFromParams(t) || o.fireOnChangeForFirstDropdown.call(o, t) }) } }, Shopify.OptionSelectors.prototype.fireOnChangeForFirstDropdown = function (t) { this.selectors[0].element.onchange(t) }, Shopify.OptionSelectors.prototype.selectVariantFromParamsOrDropdown = function (t) { var e = this.selectVariantFromParams(t); e || this.selectVariantFromDropdown(t) }, Shopify.OptionSelectors.prototype.replaceSelector = function (t) { var e = document.getElementById(t), o = e.parentNode; Shopify.each(this.buildSelectors(), function (t) { o.insertBefore(t, e) }), e.style.display = "none", this.variantIdField = e }, Shopify.OptionSelectors.prototype.selectVariantFromDropdown = function (t) { var e = document.getElementById(this.domIdPrefix).querySelector("[selected]"); if (e || (e = document.getElementById(this.domIdPrefix).querySelector('[selected="selected"]')), !e) return !1; var o = e.value; return this.selectVariant(o, t) }, Shopify.OptionSelectors.prototype.selectVariantFromParams = function (t) { var e = Shopify.urlParam("variant"); return this.selectVariant(e, t) }, Shopify.OptionSelectors.prototype.selectVariant = function (t, e) { var o = this.product.getVariantById(t); if (null == o) return !1; for (var i = 0; i < this.selectors.length; i++) { var r = this.selectors[i].element, n = r.getAttribute("data-option"), a = o[n]; null != a && this.optionExistInSelect(r, a) && (r.value = a) } return "undefined" != typeof jQuery ? jQuery(this.selectors[0].element).trigger("change", e) : this.selectors[0].element.onchange(e), !0 }, Shopify.OptionSelectors.prototype.optionExistInSelect = function (t, e) { for (var o = 0; o < t.options.length; o++)if (t.options[o].value == e) return !0 }, Shopify.OptionSelectors.prototype.insertSelectors = function (t, e) { Shopify.isDefined(e) && this.setMessageElement(e), this.domIdPrefix = "product-" + this.product.id + "-variant-selector"; var o = document.getElementById(t); Shopify.each(this.buildSelectors(), function (t) { o.appendChild(t) }) }, Shopify.OptionSelectors.prototype.buildSelectors = function () { for (var t = 0; t < this.product.optionNames().length; t++) { var e = new Shopify.SingleOptionSelector(this, t, this.product.optionNames()[t], this.product.optionValues(t)); e.element.disabled = !1, this.selectors.push(e) } var o = this.selectorDivClass, i = this.product.optionNames(), r = Shopify.map(this.selectors, function (t) { var e = document.createElement("div"); if (e.setAttribute("class", o), i.length > 1) { var r = document.createElement("label"); r.htmlFor = t.element.id, r.innerHTML = t.name, e.appendChild(r) } return e.appendChild(t.element), e }); return r }, Shopify.OptionSelectors.prototype.selectedValues = function () { for (var t = [], e = 0; e < this.selectors.length; e++) { var o = this.selectors[e].element.value; t.push(o) } return t }, Shopify.OptionSelectors.prototype.updateSelectors = function (t, e) { var o = this.selectedValues(), i = this.product.getVariant(o); i ? (this.variantIdField.disabled = !1, this.variantIdField.value = i.id) : this.variantIdField.disabled = !0, this.onVariantSelected(i, this, e), null != this.historyState && this.historyState.onVariantChange(i, this, e) }, Shopify.OptionSelectorsFromDOM = function (t, e) { var o = e.optionNames || [], i = e.priceFieldExists || !0, r = e.delimiter || "/", n = this.createProductFromSelector(t, o, i, r); e.product = n, Shopify.OptionSelectorsFromDOM.baseConstructor.call(this, t, e) }, Shopify.extend(Shopify.OptionSelectorsFromDOM, Shopify.OptionSelectors), Shopify.OptionSelectorsFromDOM.prototype.createProductFromSelector = function (t, e, o, i) { if (!Shopify.isDefined(o)) var o = !0; if (!Shopify.isDefined(i)) var i = "/"; var r = document.getElementById(t), n = r.childNodes, a = (r.parentNode, e.length), s = []; Shopify.each(n, function (t, r) { if (1 == t.nodeType && "option" == t.tagName.toLowerCase()) { var n = t.innerHTML.split(new RegExp("\\s*\\" + i + "\\s*")); 0 == e.length && (a = n.length - (o ? 1 : 0)); var p = n.slice(0, a), l = o ? n[a] : "", c = (t.getAttribute("value"), { available: t.disabled ? !1 : !0, id: parseFloat(t.value), price: l, option1: p[0], option2: p[1], option3: p[2] }); s.push(c) } }); var p = { variants: s }; if (0 == e.length) { p.options = []; for (var l = 0; a > l; l++)p.options[l] = "option " + (l + 1) } else p.options = e; return p }, Shopify.SingleOptionSelector = function (t, e, o, i) { this.multiSelector = t, this.values = i, this.index = e, this.name = o, this.element = document.createElement("select"); for (var r = 0; r < i.length; r++) { var n = document.createElement("option"); n.value = i[r], n.innerHTML = i[r], this.element.appendChild(n) } return this.element.setAttribute("class", this.multiSelector.selectorClass), this.element.setAttribute("data-option", "option" + (e + 1)), this.element.id = t.domIdPrefix + "-option-" + e, this.element.onchange = function (o, i) { i = i || {}, t.updateSelectors(e, i) }, !0 }, Shopify.Image = { preload: function (t, e) { for (var o = 0; o < t.length; o++) { var i = t[o]; this.loadImage(this.getSizedImageUrl(i, e)) } }, loadImage: function (t) { (new Image).src = t }, switchImage: function (t, e, o) { if (t && e) { var i = this.imageSize(e.src), r = this.getSizedImageUrl(t.src, i); o ? o(r, t, e) : e.src = r } }, imageSize: function (t) { var e = t.match(/_(1024x1024|2048x2048|pico|icon|thumb|small|compact|medium|large|grande)\./); return null != e ? e[1] : null }, getSizedImageUrl: function (t, e) { if (null == e) return t; if ("master" == e) return this.removeProtocol(t); var o = t.match(/\.(jpg|jpeg|gif|png|bmp|bitmap|tiff|tif)(\?v=\d+)?$/i); if (null != o) { var i = t.split(o[0]), r = o[0]; return this.removeProtocol(i[0] + "_" + e + r) } return null }, removeProtocol: function (t) { return t.replace(/http(s)?:/, "") } }, Shopify.OptionSelectors.HistoryState = function (t) { this.browserSupports() && this.register(t) }, Shopify.OptionSelectors.HistoryState.prototype.register = function (t) { window.addEventListener("popstate", function (e) { t.selectVariantFromParamsOrDropdown({ popStateCall: !0 }) }) }, Shopify.OptionSelectors.HistoryState.prototype.onVariantChange = function (t, e, o) { this.browserSupports() && (!t || o.initialLoad || o.popStateCall || Shopify.setParam("variant", t.id)) }, Shopify.OptionSelectors.HistoryState.prototype.browserSupports = function () { return window.history && window.history.replaceState };
 
@@ -677,23 +568,6 @@ $(document)
 
     var blockId = e.detail.blockId;
     var $parentSection = $('#shopify-section-' + e.detail.sectionId);
-
-    if ($parentSection.hasClass('slideshow-section') || $parentSection.hasClass('testimonial-section')) {
-      sliderBlock.select(blockId, $parentSection);
-    }
-
-    if ($parentSection.hasClass('recommended-products-section')) {
-      if ($('.block__recommended_products').length) {
-        productPage.unload($parentSection);
-        productPage.init();
-      }
-    }
-
-    if ($parentSection.hasClass('page-details-section')) {
-      if ($('.recently-viewed__section').length && Shopify.theme_settings.collection_secondary_image) {
-        imageFunctions.showSecondaryImage();
-      }
-    }
 
     if ($parentSection.hasClass('product-template')) {
       if (Shopify.theme_settings.enable_shopify_review_comments) {
@@ -712,25 +586,11 @@ $(document)
 
 $(document)
   .on('shopify:section:load', function (e) {
-
     var $parentSection = $('#shopify-section-' + e.detail.sectionId);
 
     utils.enableDisclosure();
 
-    if ($parentSection.hasClass('cart-section')) {
-      cart.init();
-    }
-
-    if (Shopify.theme_settings.enable_autocomplete) {
-      if ($parentSection.hasClass('search-section')) {
-        searchAutocomplete.init();
-      }
-    }
-
     if ($parentSection.hasClass('featured-products-section')) {
-      productPage.init();
-      videoFeature.init();
-      productPage.productSwatches();
       if (Shopify.theme_settings.enable_shopify_review_comments) {
         if ($('.shopify-product-reviews-badge').length) {
           SPR.$(document).ready(function () {
@@ -744,23 +604,13 @@ $(document)
       }
     }
 
-    if ($parentSection.hasClass('featured-collection-section')) {
-      videoFeature.init();
-    }
-
-    if ($parentSection.hasClass('video-section')) {
-      videoSection.init();
-    }
-
     if ($parentSection.hasClass('recently-viewed__section')) {
       recentlyViewed.init();
     }
 
     if ($parentSection.hasClass('product-template')) {
-      productPage.init();
-      videoFeature.init();
-      productPage.productSwatches();
       recentlyViewed.init();
+
       if (Shopify.theme_settings.enable_shopify_review_comments) {
         if ($('#shopify-product-reviews').length || $('.shopify-product-reviews-badge').length) {
           SPR.$(document).ready(function () {
@@ -774,10 +624,6 @@ $(document)
       }
     }
 
-    if ($parentSection.hasClass('recommended-products-section')) {
-      productPage.init();
-    }
-
     if ($parentSection.hasClass('collection-template-section')) {
       collectionSidebarFilter.init();
       recentlyViewed.init();
@@ -785,18 +631,9 @@ $(document)
 
     if ($parentSection.hasClass('search-template-section')) {
       if (Shopify.theme_settings.enable_autocomplete) {
-        searchAutocomplete.init();
+
       }
       collectionSidebarFilter.init();
-    }
-
-    if ($parentSection.hasClass('header-section')) {
-      header.init();
-
-    }
-
-    if ($parentSection.hasClass('mega-menu-section')) {
-
     }
 
     if ($parentSection.hasClass('page-details-section')) {
@@ -816,7 +653,6 @@ $(document)
       };
 
       recentlyViewed.init();
-      productPage.init();
     }
   });
 
@@ -828,19 +664,10 @@ $(document)
 
     if ($parentSection.hasClass('header-section')) {
       header.unload($target);
-
     }
 
     if ($parentSection.hasClass('search-section')) {
       searchAutocomplete.unload($target);
-    }
-
-    if ($parentSection.hasClass('product-template')) {
-      productPage.unload($parentSection);
-    }
-
-    if ($parentSection.hasClass('featured-products-section')) {
-      productPage.unload($parentSection);
     }
   });
 

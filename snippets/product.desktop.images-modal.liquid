@@ -12,7 +12,7 @@
               <div class="product-images-modal__thumbnail-list-column">
                 <div class="product-images-modal__close-button-wrapper">
                   <button
-                    class="button button--circle button--inverted product-images-modal__close-button"
+                    class="button button--circle button--bare product-images-modal__close-button"
                     data-product-images-modal-toggle
                   >
                     {% render "icon.close" %}
@@ -22,16 +22,27 @@
                 <div class="product-images-modal__thumbnail-list-wrapper">
                   <div class="product-images-modal__thumbnail-list">
                     {% for media in product.media %}
-                      <div class="product-images-modal__thumbnail-wrapper">
-                        <div class="product-images-modal__thumbnail"
+                      <div class="product-images-modal__thumbnail-wrapper" data-smooth-lazy-loading>
+                        <div
+                          class="product-images-modal__thumbnail"
                           data-index="{{ forloop.index0 | json }}"
                           data-product-id="{{ product.id }}"
-                          data-media-type="{{ media.media_type }}"
-                          data-thumb="{{ image_large }}"
-                          data-title="{% if image_alt contains 'youtube' or image_alt contains 'vimeo' %}{{ product.title }}{% else %}{{ image_alt | escape }}{% endif %}">
-                          {% render "product.image" with {
-                            media: media
-                          } %}
+                          data-media-type="{{ media.media_type }}">
+                          {% if media.media_type == 'video' %}
+                            <img
+                              src="{{ media.preview_image | img_url: "300x300", crop: 'center'}}"
+                              alt="{{ alt_text }}"
+                              loading="lazy"
+                            />
+                          {% else %}
+                            <picture>
+                              <img
+                                src="{{ media | img_url: "300x300", crop: 'center'}}"
+                                alt="{{ alt_text }}"
+                                loading="lazy"
+                              />
+                            </picture>
+                          {% endif %}
                         </div>
                       </div>
                     {% endfor %}
@@ -44,15 +55,30 @@
             <div class="four-fifths columns">
               <div class="product-images-modal__image-cell-list">
                 {% for media in product.media %}
-                  <div class="product-images-modal__image-cell"
-                    data-index="{{ forloop.index0 | json }}"
-                    data-product-id="{{ product.id }}"
-                    data-media-type="{{ media.media_type }}"
-                    data-thumb="{{ image_large }}"
-                    data-title="{% if image_alt contains 'youtube' or image_alt contains 'vimeo' %}{{ product.title }}{% else %}{{ image_alt | escape }}{% endif %}">
-                    {% render "product.image" with {
-                      media: media
-                    } %}
+                  <div class="product-images-modal__image-cell" data-smooth-lazy-loading>
+                    {% if media.media_type == 'video' %}
+                      <video
+                        muted="muted"
+                        loop="loop"
+                        autoplay="true">
+                        {% for source in media.sources %}
+                          <source src="{{ source.url }}" type="{{ source.mime_type }}" />
+                        {% endfor %}
+                        <img
+                          src="{{ media.preview_image | img_url: "1200x1200", crop: 'center'}}"
+                          alt="{{ alt_text }}"
+                          loading="lazy"
+                        />
+                      </video>
+                    {% else %}
+                      <picture>
+                        <img
+                          src="{{ media | img_url: "1200x1200", crop: 'center'}}"
+                          alt="{{ alt_text }}"
+                          loading="lazy"
+                        />
+                      </picture>
+                    {% endif %}
                   </div>
                 {% endfor %}
               </div>

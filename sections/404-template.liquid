@@ -2,7 +2,7 @@
 
 <div class="content">
   <div class="content-section container">
-    <div class="sixteen columns">
+    <div class="ten columns offset-by-three medium-down--one-whole medium-down--offset-by-zero">
       <section class="image-list">
         {% if section.settings.title != blank %}
           <h2>{{ section.settings.title | escape | default: 'general.404.title' }}</h2>
@@ -29,12 +29,12 @@
                     {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
                   {% endif %}
 
-                  <span>
-                    {{block.settings.title}}
-                  </span>
+                  <h5 class="u-margin-top-1">
+                    {{ block.settings.title }}
+                  </h5>
                   
                   <p>
-                    {{block.settings.icon_subtext}}
+                    {{ block.settings.icon_subtext }}
                   </p>
                 </a>
               </li>
@@ -57,9 +57,6 @@
 }
   section.image-list li.photo_block span {
     display:block;
-  }
-  section.image-list h2 {
-    font-weight: bold;
   }
 
   section.image-list span.subheading {
@@ -87,7 +84,7 @@
   }
 
   .search-404 {
-    padding: 2rem 3rem;
+    padding: 2rem 0;
   }
   
   @media (min-width:768px) {
