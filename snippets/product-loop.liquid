@@ -45,10 +45,9 @@
     <div class="row">
       {% for product in products limit: limit %}
         {% if product.id != skip_product.id %}
-          <div class="one-third medium-down--one-half column">
+          <div class="one-third large-down--one-quarter medium-down--one-half column">
             {% render 'product.card',
               product: product,
-              products_per_row: products_per_row,
               collection_group_thumb: collection_group_thumb,
               collection_group_mobile: collection_group_mobile,
             %}

@@ -9610,7 +9610,6 @@ a.tag {
      object-fit: cover;
   color: #fff;
   max-height: 80vh;
-  aspect-ratio: 2/1;
   overflow: hidden;
 }
 .homepage-banner picture {
@@ -12736,9 +12735,6 @@ div#disqus_thread li {
 /* Pages - Product
 ================================================== */
 .product-content-wrapper {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
   margin-bottom: 2rem;
 }
 
@@ -13021,6 +13017,10 @@ div#disqus_thread li {
 
 .product_section .product_form {
   margin-bottom: 0.5rem;
+}
+.product_section .product_form .select,
+.product_section .product_form .selector-wrapper {
+  display: none;
 }
 @media only screen and (max-width: 800px) {
   .product_section .product_form,

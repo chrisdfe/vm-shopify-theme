@@ -697,7 +697,7 @@
         'mega-menu-5',
         'mega-menu-6',
     ];
-    var SELECTORS$6 = {
+    var SELECTORS$5 = {
         wrapper: ".header-wrapper"
     };
     var Header = /** @class */ (function () {
@@ -706,7 +706,7 @@
         }
         Header.prototype.initialize = function () {
             var _this = this;
-            this.headerWrapperElement = document.querySelector(SELECTORS$6.wrapper);
+            this.headerWrapperElement = document.querySelector(SELECTORS$5.wrapper);
             document.addEventListener("shopify:section:load", function (event) {
                 if (HEADER_SECTIONS.includes(event.detail.sectionId)) {
                     _this.reset();
@@ -890,41 +890,52 @@
         return AccordionManager;
     }());
 
-    var SELECTORS$5 = {
+    var SELECTORS$4 = {
         PRODUCT_CARD: '.product-card',
         MEDIA_WRAPPER: '.product-card__media',
-        PRIMARY_MEDIA: '.product-card__primary-media',
-        SECONDARY_MEDIA: '.product-card__primary-media'
+        PRIMARY_MEDIA: '.product-card__media__primary',
+        SECONDARY_MEDIA: '.product-card__media__secondary'
     };
     var IS_HOVERED_CLASSNAME = 'is-hovered';
+    // taken from here: https://stackoverflow.com/a/36898221
+    var videoIsPlaying = function (video) {
+        return video.currentTime > 0 && !video.paused && !video.ended
+            && video.readyState > video.HAVE_CURRENT_DATA;
+    };
     var ProductCard = /** @class */ (function () {
         function ProductCard(el) {
             var _this = this;
             this.initialize = function () {
-                _this.mediaWrapperElement = _this.element.querySelector(SELECTORS$5.MEDIA_WRAPPER);
-                _this.primaryMedia = _this.mediaWrapperElement.children[0];
-                _this.secondaryMedia = _this.mediaWrapperElement.children[1];
-                if (_this.secondaryMedia.tagName === 'VIDEO') {
+                var _a;
+                _this.mediaWrapperElement = _this.element.querySelector(SELECTORS$4.MEDIA_WRAPPER);
+                _this.primaryMedia = _this.mediaWrapperElement.querySelector(SELECTORS$4.PRIMARY_MEDIA);
+                _this.secondaryMedia = _this.mediaWrapperElement.querySelector(SELECTORS$4.SECONDARY_MEDIA);
+                if (((_a = _this.secondaryMedia) === null || _a === void 0 ? void 0 : _a.tagName) === 'VIDEO' &&
+                    videoIsPlaying(_this.secondaryMedia)) {
                     _this.secondaryMedia.pause();
                 }
-                _this.element.addEventListener('mouseover', _this.onLinkMouseOver);
-                _this.element.addEventListener('mouseout', _this.onLinkMouseOut);
+                if (_this.secondaryMedia) {
+                    _this.element.addEventListener('mouseover', _this.onLinkMouseOver);
+                    _this.element.addEventListener('mouseout', _this.onLinkMouseOut);
+                }
                 return _this;
             };
             this.unload = function () {
-                _this.element.removeEventListener('mouseover', _this.onLinkMouseOver);
-                _this.element.removeEventListener('mouseout', _this.onLinkMouseOut);
+                if (_this.secondaryMedia) {
+                    _this.element.removeEventListener('mouseover', _this.onLinkMouseOver);
+                    _this.element.removeEventListener('mouseout', _this.onLinkMouseOut);
+                }
             };
             this.onLinkMouseOver = function () {
                 _this.element.classList.add(IS_HOVERED_CLASSNAME);
-                if (_this.secondaryMedia.tagName === 'VIDEO') {
+                if (_this.secondaryMedia.tagName === 'VIDEO' &&
+                    !videoIsPlaying(_this.secondaryMedia)) {
                     _this.secondaryMedia.play();
                 }
             };
             this.onLinkMouseOut = function () {
                 _this.element.classList.remove(IS_HOVERED_CLASSNAME);
                 if (_this.secondaryMedia.tagName === 'VIDEO') {
-                    console.log('pausing');
                     _this.secondaryMedia.currentTime = 0;
                     _this.secondaryMedia.pause();
                 }
@@ -950,7 +961,7 @@
             };
             this.setProductCards = function () {
                 _this.productCards =
-                    Array.from(document.querySelectorAll(SELECTORS$5.PRODUCT_CARD))
+                    Array.from(document.querySelectorAll(SELECTORS$4.PRODUCT_CARD))
                         .map(function (element) { return new ProductCard(element).initialize(); });
             };
             this.reset = function () {
@@ -966,7 +977,7 @@
     var ATTRIBUTES$1 = {
         MODAL_TOGGLE_ELEMENT_INDEX: 'data-product-images-modal-toggle-index'
     };
-    var SELECTORS$4 = {
+    var SELECTORS$3 = {
         MODAL_TOGGLE_ELEMENT: "[data-product-images-modal-toggle]",
         MODAL_TOGGLE_ELEMENT_INDEX: "[".concat(ATTRIBUTES$1.MODAL_TOGGLE_ELEMENT_INDEX, "]"),
         MODAL_WRAPPER: ".product-images-modal-wrapper",
@@ -1000,13 +1011,13 @@
                 window.removeEventListener('resize', _this.debouncedSetModalImageScrollTopIndicies);
             };
             this.onModalThumbnailClick = function (e) {
-                var thumbnailWrapper = e.target.closest(SELECTORS$4.MODAL_THUMBNAIL);
+                var thumbnailWrapper = e.target.closest(SELECTORS$3.MODAL_THUMBNAIL);
                 var indexAsString = thumbnailWrapper.getAttribute("data-index");
                 var index = parseInt(indexAsString, 10);
                 _this.setSelectedModalImage(index);
             };
             this.onModalToggleElementClick = function (e) {
-                var element = e.target.closest(SELECTORS$4.MODAL_TOGGLE_ELEMENT);
+                var element = e.target.closest(SELECTORS$3.MODAL_TOGGLE_ELEMENT);
                 if (_this.state.modalIsOpen) {
                     _this.closeModal();
                 }
@@ -1020,8 +1031,8 @@
             this.onModalContentClick = function (e) {
                 e.stopPropagation();
                 var targetElement = e.target;
-                if (!targetElement.closest(SELECTORS$4.MODAL_THUMBNAIL_LIST_WRAPPER) &&
-                    !targetElement.closest(SELECTORS$4.MODAL_IMAGE_CELL_LIST_WRAPPER)) {
+                if (!targetElement.closest(SELECTORS$3.MODAL_THUMBNAIL_LIST_WRAPPER) &&
+                    !targetElement.closest(SELECTORS$3.MODAL_IMAGE_CELL_LIST_WRAPPER)) {
                     _this.closeModal();
                 }
             };
@@ -1103,19 +1114,19 @@
         }
         ProductImagesDesktop.prototype.initialize = function () {
             var _this = this;
-            this.modalToggleElements = Array.from(document.querySelectorAll(SELECTORS$4.MODAL_TOGGLE_ELEMENT));
+            this.modalToggleElements = Array.from(document.querySelectorAll(SELECTORS$3.MODAL_TOGGLE_ELEMENT));
             this.modalToggleElements.forEach(function (element) {
                 element.addEventListener("click", _this.onModalToggleElementClick);
             });
-            this.modalWrapperElement = document.querySelector(SELECTORS$4.MODAL_WRAPPER);
-            this.modalElement = document.querySelector(SELECTORS$4.MODAL);
-            this.modalContentElement = document.querySelector(SELECTORS$4.MODAL_CONTENT);
+            this.modalWrapperElement = document.querySelector(SELECTORS$3.MODAL_WRAPPER);
+            this.modalElement = document.querySelector(SELECTORS$3.MODAL);
+            this.modalContentElement = document.querySelector(SELECTORS$3.MODAL_CONTENT);
             this.modalThumbnailElementList =
-                Array.from(document.querySelectorAll(SELECTORS$4.MODAL_THUMBNAIL));
+                Array.from(document.querySelectorAll(SELECTORS$3.MODAL_THUMBNAIL));
             this.modalImageCellListWrapperElement =
-                document.querySelector(SELECTORS$4.MODAL_IMAGE_CELL_LIST_WRAPPER);
+                document.querySelector(SELECTORS$3.MODAL_IMAGE_CELL_LIST_WRAPPER);
             this.modalImageCellElementList =
-                Array.from(document.querySelectorAll(SELECTORS$4.MODAL_IMAGE_CELL));
+                Array.from(document.querySelectorAll(SELECTORS$3.MODAL_IMAGE_CELL));
             this.setModalImageScrollTopIndicies();
             // Add event listeners
             this.modalContentElement.addEventListener("click", this.onModalContentClick);
@@ -1133,18 +1144,19 @@
         return ProductImagesDesktop;
     }());
 
-    var SELECTORS$3 = {
+    var SELECTORS$2 = {
         PRODUCT_IMAGES_CONTAINER: '.product-images-mobile__images-container',
         PRODUCT_IMAGES_CONTAINER_INNER: '.product-images-mobile__images-container__inner',
         PRODUCT_IMAGE: '.product-images-mobile__image',
         DOTS: '.product-images-mobile__dots',
         DOT: '.product-images-mobile__dots__dot'
     };
+    var SWIPE_PERCENTAGE_THRESHOLD = 40;
+    var TARGET_SWIPE_MOVEMENT_LENGTH = 20;
     var getScreenCoordinatesDiff = function (a, b) { return ({
         x: Math.floor(a.x - b.x),
         y: Math.floor(a.y - b.y)
     }); };
-    var SWIPE_PERCENTAGE_THRESHOLD = 40;
     var ProductImagesMobile = /** @class */ (function () {
         function ProductImagesMobile() {
             var _this = this;
@@ -1158,9 +1170,17 @@
                 currentImageIndex: 0,
                 isSwiping: false,
                 touchStartCoordinates: null,
-                currentTouchCoordinates: null
+                currentTouchCoordinates: null,
+                currentSample: []
             };
             this.unload = function () {
+                _this.elements.imagesContainer.removeEventListener('touchstart', _this.onContainerTouchStart);
+                _this.elements.imagesContainer.removeEventListener('touchend', _this.onContainerTouchEnd);
+                _this.elements.imagesContainer.removeEventListener('touchmove', _this.onContainerTouchMove);
+                window.removeEventListener('resize', _this.setImageContainerDimensions);
+                _this.elements.dots.forEach(function (element) {
+                    element.removeEventListener('click', _this.onDotClick);
+                });
             };
             this.setImageContainerDimensions = function () {
                 _this.imageContainerDimensions = {
@@ -1177,41 +1197,76 @@
                 _this.state.currentTouchCoordinates = _assign({}, _this.state.touchStartCoordinates);
             };
             this.onContainerTouchMove = function (e) {
-                // prevent vertical scroll
-                e.preventDefault();
                 var touch = e.touches[0];
-                _this.state.currentTouchCoordinates = {
+                var touchCoordinates = {
                     x: touch.clientX,
                     y: touch.clientY
                 };
-                var difference = _this.getCurrentCoordinatesDiff();
-                _this.elements.imagesContainerInner.classList.add('is-active');
-                var clampThreshold = _this.imageContainerDimensions.width * 0.95;
-                var clampedXDiff = Math.max(Math.min(difference.x, clampThreshold), -clampThreshold);
-                _this.setImageContainerInnerOffset(clampedXDiff);
+                _this.state.currentTouchCoordinates = _assign({}, touchCoordinates);
+                var averageTouchMovement = _this.getCurrentAverageTouchMovement();
+                if (averageTouchMovement.x > TARGET_SWIPE_MOVEMENT_LENGTH ||
+                    averageTouchMovement.y > TARGET_SWIPE_MOVEMENT_LENGTH) {
+                    if (averageTouchMovement.x > TARGET_SWIPE_MOVEMENT_LENGTH) {
+                        // prevent vertical scroll
+                        // e.preventDefault();
+                        _this.elements.imagesContainerInner.classList.add('is-active');
+                        var difference = _this.getCurrentTouchCoordinatesDiff();
+                        var clampThreshold = _this.imageContainerDimensions.width * 0.95;
+                        var clampedXDiff = Math.max(Math.min(difference.x, clampThreshold), -clampThreshold);
+                        _this.setImageContainerInnerOffset(clampedXDiff);
+                    }
+                    // otherwise, vertical scroll is enabled
+                }
+                else {
+                    _this.state.currentSample.push(_assign({}, touchCoordinates));
+                    // e.preventDefault();
+                }
             };
             this.onContainerTouchEnd = function (e) {
-                _this.elements.imagesContainerInner.classList.remove('is-active');
-                _this.setImageContainerInnerOffset();
-                var difference = _this.getCurrentCoordinatesDiff();
-                // Attempt to switch to image if user has swiped far enough
-                if (Math.abs(difference.x) >= SWIPE_PERCENTAGE_THRESHOLD) {
-                    var newImageIndex = _this.state.currentImageIndex + (difference.x > 0 ? -1 : 1);
-                    if (newImageIndex >= 0 && newImageIndex <= _this.elements.images.length - 1) {
-                        _this.switchToImage(newImageIndex);
+                var averageTouchMovement = _this.getCurrentAverageTouchMovement();
+                if (averageTouchMovement.x > TARGET_SWIPE_MOVEMENT_LENGTH ||
+                    averageTouchMovement.y > TARGET_SWIPE_MOVEMENT_LENGTH) {
+                    _this.elements.imagesContainerInner.classList.remove('is-active');
+                    _this.setImageContainerInnerOffset();
+                    var difference = _this.getCurrentTouchCoordinatesDiff();
+                    // Attempt to switch to image if user has swiped far enough
+                    if (Math.abs(difference.x) >= SWIPE_PERCENTAGE_THRESHOLD) {
+                        var newImageIndex = _this.state.currentImageIndex + (difference.x > 0 ? -1 : 1);
+                        if (newImageIndex >= 0 && newImageIndex <= _this.elements.images.length - 1) {
+                            _this.switchToImage(newImageIndex);
+                        }
                     }
                 }
                 _this.state.touchStartCoordinates = null;
                 _this.state.currentTouchCoordinates = null;
+                _this.state.currentSample = [];
             };
             this.onDotClick = function (e) {
                 var imageIndex = e.target.getAttribute('data-image-index');
                 var imageIndexAsInt = parseInt(imageIndex, 10);
                 _this.switchToImage(imageIndexAsInt);
             };
-            this.getCurrentCoordinatesDiff = function () {
+            this.getCurrentTouchCoordinatesDiff = function () {
                 var _a = _this.state, currentTouchCoordinates = _a.currentTouchCoordinates, touchStartCoordinates = _a.touchStartCoordinates;
                 return getScreenCoordinatesDiff(currentTouchCoordinates, touchStartCoordinates);
+            };
+            this.getCurrentAverageTouchMovement = function () {
+                if (!_this.state.currentSample.length) {
+                    return { x: 0, y: 0 };
+                }
+                var _a = _this.state.currentSample, first = _a[0], rest = _a.slice(1);
+                var movement = rest.reduce(function (acc, coordinate) { return ({
+                    x: acc.x + coordinate.x,
+                    y: acc.y + coordinate.y
+                }); }, { x: 0, y: 0 });
+                var average = {
+                    x: movement.x / rest.length,
+                    y: movement.y / rest.length
+                };
+                return {
+                    x: Math.abs(average.x - first.x),
+                    y: Math.abs(average.y - first.y)
+                };
             };
             this.switchToImage = function (index) {
                 if (index === _this.state.currentImageIndex)
@@ -1233,15 +1288,15 @@
         }
         ProductImagesMobile.prototype.initialize = function () {
             var _this = this;
-            this.elements.imagesContainer = document.querySelector(SELECTORS$3.PRODUCT_IMAGES_CONTAINER);
+            this.elements.imagesContainer = document.querySelector(SELECTORS$2.PRODUCT_IMAGES_CONTAINER);
             this.elements.imagesContainer.addEventListener('touchstart', this.onContainerTouchStart);
             this.elements.imagesContainer.addEventListener('touchend', this.onContainerTouchEnd);
             this.elements.imagesContainer.addEventListener('touchmove', this.onContainerTouchMove);
             this.setImageContainerDimensions();
             window.addEventListener('resize', this.setImageContainerDimensions);
-            this.elements.imagesContainerInner = document.querySelector(SELECTORS$3.PRODUCT_IMAGES_CONTAINER_INNER);
-            this.elements.images = Array.from(document.querySelectorAll(SELECTORS$3.PRODUCT_IMAGE));
-            this.elements.dots = Array.from(document.querySelectorAll(SELECTORS$3.DOT));
+            this.elements.imagesContainerInner = document.querySelector(SELECTORS$2.PRODUCT_IMAGES_CONTAINER_INNER);
+            this.elements.images = Array.from(document.querySelectorAll(SELECTORS$2.PRODUCT_IMAGE));
+            this.elements.dots = Array.from(document.querySelectorAll(SELECTORS$2.DOT));
             this.elements.dots.forEach(function (element) {
                 element.addEventListener('click', _this.onDotClick);
             });
@@ -1250,71 +1305,27 @@
         return ProductImagesMobile;
     }());
 
-    var SELECTORS$2 = {
-        SWATCH_FIELD: ".vm-select-buttons.vm-select-buttons--color",
-        SELECT_BUTTON: ".vm-select-button",
-        COLOR_NAME_TEXT: ".vm-select-buttons__color-name"
-    };
-    var ProductColorSwatches = /** @class */ (function () {
-        function ProductColorSwatches() {
-            this.getSelectedValue = function (inputs) {
-                var checkedInput = inputs.find(function (input) { return input.checked; });
-                return checkedInput ? checkedInput.value : '';
-            };
-        }
-        ProductColorSwatches.prototype.initialize = function () {
-            var _this = this;
-            this.selectButtonGroups =
-                Array.from(document.querySelectorAll(SELECTORS$2.SWATCH_FIELD)).map(function (wrapper) {
-                    var optionIndexAsString = wrapper.getAttribute('data-option-index');
-                    var optionIndex = parseInt(optionIndexAsString);
-                    var colorNameText = wrapper.querySelector(SELECTORS$2.COLOR_NAME_TEXT);
-                    var buttons = Array.from(wrapper.querySelectorAll(SELECTORS$2.SELECT_BUTTON));
-                    var inputs = buttons.map(function (buttonElement) { return buttonElement.querySelector('input'); });
-                    buttons.forEach(function (buttonElement) {
-                        buttonElement.addEventListener('mouseout', function (e) {
-                            var selectedValue = _this.getSelectedValue(inputs);
-                            colorNameText.innerText = selectedValue;
-                        });
-                        buttonElement.addEventListener('mouseover', function (e) {
-                            var element = e.target.closest(SELECTORS$2.SELECT_BUTTON);
-                            var inputElement = element.querySelector('input');
-                            var value = inputElement.getAttribute('value');
-                            colorNameText.innerText = value;
-                        });
-                    });
-                    return {
-                        optionIndex: optionIndex,
-                        wrapper: wrapper,
-                        colorNameText: colorNameText,
-                        buttons: buttons,
-                        inputs: inputs
-                    };
-                });
-            return this;
-        };
-        return ProductColorSwatches;
-    }());
-
     var ATTRIBUTES = {
         productOptionIndex: 'data-option-index',
         productOption: 'data-option',
         productData: 'data-product'
     };
     var SELECTORS$1 = {
+        ID_INPUT_ELEMENT: 'select[name="id"], input[name="id"]',
         PRODUCT_OPTION: "[".concat(ATTRIBUTES.productOption, "]"),
         ADD_TO_CART_BUTTON: '.button.add_to_cart',
         CURRENT_PRICE: '.current_price',
         WAS_PRICE: '.current_price',
         SALE_SAVINGS: '.current_price'
     };
-    var ProductVariants = /** @class */ (function () {
-        function ProductVariants() {
+    var ProductForm = /** @class */ (function () {
+        function ProductForm() {
             var _this = this;
             this.initialize = function () {
                 _this.productData = _this.getProductData();
                 _this.moneyFormat = document.body.getAttribute('data-money-format');
                 _this.elements = {
+                    idInputElement: document.querySelector(SELECTORS$1.ID_INPUT_ELEMENT),
                     productOptions: Array.from(document.querySelectorAll('[data-option]')),
                     addToCartButton: document.querySelector(SELECTORS$1.ADD_TO_CART_BUTTON),
                     currentPrice: document.querySelector(SELECTORS$1.CURRENT_PRICE),
@@ -1346,11 +1357,17 @@
                 var _a;
                 var target = e.target;
                 var value = target.value;
+                // Update selected variant
                 var productOptionElement = target.closest(SELECTORS$1.PRODUCT_OPTION);
                 var optionIndexAsString = productOptionElement.getAttribute(ATTRIBUTES.productOptionIndex);
                 var optionIndex = parseInt(optionIndexAsString, 10);
                 _this.currentSelectedOptions[optionIndex] = value;
                 _this.setCurrentSelectedVariant();
+                // for whatever reason shopify requires this [name='id'] input, otherwise
+                // adding this product to the cart fails.
+                _this.elements.idInputElement.value = _this.currentSelectedVariant.id;
+                console.log('setting value to: ', _this.elements.idInputElement.value);
+                // Update available/unavailable text
                 var variantIsAvailable = ((_a = _this.currentSelectedVariant) === null || _a === void 0 ? void 0 : _a.available) === true;
                 if (variantIsAvailable) {
                     _this.elements.addToCartButton.removeAttribute('disabled');
@@ -1360,6 +1377,7 @@
                     _this.elements.addToCartButton.setAttribute('disabled', 'disabled');
                     _this.elements.addToCartButton.innerText = Shopify.translation.unavailable_text;
                 }
+                // update text
                 _this.elements.currentPrice.innerHTML =
                     Shopify.formatMoney(_this.currentSelectedVariant.price, _this.moneyFormat);
                 _this.elements.productOptions.forEach(function (productOptionElement, otherOptionIndex) {
@@ -1399,10 +1417,10 @@
                 _this.currentSelectedVariant = _this.findVariantByOption(_this.currentSelectedOptions);
             };
         }
-        ProductVariants.shouldInitialize = function () {
+        ProductForm.shouldInitialize = function () {
             return document.querySelector("[".concat(ATTRIBUTES.productData, "]")) != null;
         };
-        return ProductVariants;
+        return ProductForm;
     }());
 
     // @ts-nocheck
@@ -1465,9 +1483,9 @@
             this.setStickyContentTop();
             this.productImagesDesktop = new ProductImagesDesktop().initialize();
             this.productImagesMobile = new ProductImagesMobile().initialize();
-            this.productColorSwatches = new ProductColorSwatches().initialize();
-            if (ProductVariants.shouldInitialize()) {
-                this.productVariants = new ProductVariants().initialize();
+            // this.productColorSwatches = new ProductColorSwatches().initialize();
+            if (ProductForm.shouldInitialize()) {
+                this.productForm = new ProductForm().initialize();
             }
             // functionality ported straight over from turbo
             initialize();
@@ -1513,11 +1531,14 @@
                         }
                     }
                     else if (element.tagName === "VIDEO") {
-                        if (element.readyState === 4) {
+                        var posterImage = new Image();
+                        posterImage.loading = "lazy";
+                        posterImage.src = element.getAttribute('poster');
+                        if (posterImage.complete) {
                             onLoad();
                         }
                         else {
-                            element.addEventListener('loadeddata', onLoad, { once: true });
+                            posterImage.addEventListener('load', onLoad, { once: true });
                         }
                     }
                 });

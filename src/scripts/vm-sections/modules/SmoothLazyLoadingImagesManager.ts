@@ -35,10 +35,14 @@ class LazyLoadedImage {
           element.addEventListener('load', onLoad, { once: true });
         }
       } else if (element.tagName === "VIDEO") {
-        if ((element as HTMLVideoElement).readyState === 4) {
+        const posterImage = new Image();
+        posterImage.loading = "lazy";
+        posterImage.src = (element as HTMLVideoElement).getAttribute('poster');
+
+        if ((posterImage as HTMLImageElement).complete) {
           onLoad();
         } else {
-          element.addEventListener('loadeddata', onLoad, { once: true });
+          posterImage.addEventListener('load', onLoad, { once: true });
         }
       }
     });

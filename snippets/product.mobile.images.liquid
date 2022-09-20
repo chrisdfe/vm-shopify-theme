@@ -15,7 +15,8 @@
               <video
                 muted="muted"
                 loop="loop"
-                autoplay="true">
+                autoplay="true"
+                playsinline="true">
                 {% for source in media.sources %}
                   <source src="{{ source.url }}" type="{{ source.mime_type }}" />
                 {% endfor %}

@@ -5,7 +5,7 @@ import Cart from "../vm-sections/modules/Cart";
 import AccordionManager from "../vm-sections/modules/accordions/AccordionManager";
 import ProductCardsManager from "../vm-sections/modules/product-cards/ProductCardsManager";
 import ProductPage from "../vm-sections/modules/product-page";
-import SmoothLazyLoadingImagesManager from "../vm-sections/modules/smooth-lazy-loaded-images";
+import SmoothLazyLoadingImagesManager from "../vm-sections/modules/SmoothLazyLoadingImagesManager";
 
 import initializeProductQuantityBox from "../vm-sections/modules/product-quantity-box";
 

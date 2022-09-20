@@ -2,8 +2,8 @@
 ================================================== */
 
 .product-content-wrapper {
-  position: sticky;
-  top: 0;
+  // position: sticky;
+  // top: 0;
   margin-bottom: get-vm-spacer(2);
 }
 
@@ -291,6 +291,11 @@
 .product_section {
   .product_form {
     margin-bottom: get-vm-spacer(0.5);
+
+    .select,
+    .selector-wrapper {
+      display: none;
+    }
   }
 
   .product_form,

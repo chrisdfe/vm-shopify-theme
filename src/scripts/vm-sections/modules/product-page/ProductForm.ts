@@ -1,5 +1,6 @@
 type ProductVariant = {
-  available: boolean,
+  id: string;
+  available: boolean;
   options: string[];
   price: number;
 };
@@ -16,6 +17,7 @@ const ATTRIBUTES = {
 };
 
 const SELECTORS = {
+  ID_INPUT_ELEMENT: 'select[name="id"], input[name="id"]',
   PRODUCT_OPTION: `[${ATTRIBUTES.productOption}]`,
   ADD_TO_CART_BUTTON: '.button.add_to_cart',
   CURRENT_PRICE: '.current_price',
@@ -24,6 +26,7 @@ const SELECTORS = {
 };
 
 type ElementsMap = {
+  idInputElement: HTMLSelectElement | HTMLInputElement,
   productOptions: HTMLElement[],
   addToCartButton: HTMLElement,
   currentPrice: HTMLElement,
@@ -31,7 +34,7 @@ type ElementsMap = {
   saleSavings: HTMLElement,
 };
 
-export default class ProductVariants {
+export default class ProductForm {
   productData: ProductData;
   moneyFormat: string;
 
@@ -45,6 +48,7 @@ export default class ProductVariants {
     this.moneyFormat = document.body.getAttribute('data-money-format');
 
     this.elements = {
+      idInputElement: document.querySelector(SELECTORS.ID_INPUT_ELEMENT),
       productOptions: Array.from(document.querySelectorAll('[data-option]')),
       addToCartButton: document.querySelector(SELECTORS.ADD_TO_CART_BUTTON),
       currentPrice: document.querySelector(SELECTORS.CURRENT_PRICE),
@@ -82,6 +86,8 @@ export default class ProductVariants {
   private onProductOptionChange = (e: InputEvent) => {
     const target = e.target as HTMLInputElement;
     const { value } = target;
+
+    // Update selected variant
     const productOptionElement = target.closest(SELECTORS.PRODUCT_OPTION);
     const optionIndexAsString = productOptionElement.getAttribute(ATTRIBUTES.productOptionIndex);
     const optionIndex = parseInt(optionIndexAsString, 10);
@@ -90,6 +96,12 @@ export default class ProductVariants {
 
     this.setCurrentSelectedVariant();
 
+    // for whatever reason shopify requires this [name='id'] input, otherwise
+    // adding this product to the cart fails.
+    this.elements.idInputElement.value = this.currentSelectedVariant.id;
+    console.log('setting value to: ', this.elements.idInputElement.value);
+
+    // Update available/unavailable text
     const variantIsAvailable = this.currentSelectedVariant?.available === true;
 
     if (variantIsAvailable) {
@@ -100,6 +112,7 @@ export default class ProductVariants {
       this.elements.addToCartButton.innerText = Shopify.translation.unavailable_text;
     }
 
+    // update text
     this.elements.currentPrice.innerHTML =
       Shopify.formatMoney(this.currentSelectedVariant.price, this.moneyFormat);
 

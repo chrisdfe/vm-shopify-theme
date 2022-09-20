@@ -12,7 +12,8 @@
       <picture class="product-card__media__primary">
         <img
           class="product-card__media__primary"
-          src="{{ product.featured_media.preview_image | img_url: "600x600", crop: 'center'}}"
+          srcset="{{ product.featured_media.preview_image | img_url: "450x450", crop: 'center'}} 1x, {{ product.featured_media.preview_image | img_url: "900x900", crop: 'center'}} 2x"
+          src="{{ product.featured_media.preview_image | img_url: "450x450", crop: 'center'}}"
           alt="{{ alt_text }}"
           loading="lazy"
         />
@@ -26,12 +27,15 @@
             class="product-card__media__secondary"
             muted="muted"
             autoplay="false"
+            preload="none"
+            playsinline="playsinline"
+            poster="{{ secondary_media.preview_image | img_url: "450x450", crop: 'center'}}"
             loop="loop">
             {% for source in secondary_media.sources %}
               <source src="{{ source.url }}" type="{{ source.mime_type }}" />
             {% endfor %}
             <img
-              src="{{ secondary_media.preview_image | img_url: "600x600", crop: 'center'}}"
+              src="{{ secondary_media.preview_image | img_url: "450x450", crop: 'center'}}"
               alt="{{ alt_text }}"
               loading="lazy"
             />

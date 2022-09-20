@@ -18,7 +18,10 @@ quickshop: <boolean>
             <video
               muted="muted"
               loop="loop"
-              autoplay="true">
+              autoplay="true"
+              playsinline="playsinline"
+              poster="{{ media.preview_image | img_url: "600x600", crop: 'center'}}"
+              >
               {% for source in media.sources %}
                 <source src="{{ source.url }}" type="{{ source.mime_type }}" />
               {% endfor %}
@@ -32,6 +35,7 @@ quickshop: <boolean>
             <div class="image--zoom-hover">
               <picture class="image--zoom-hover__image-wrapper">
                 <img
+                  srcset="{{ media | img_url: "450x450", crop: 'center'}} 1x, {{ media | img_url: "900x900", crop: 'center'}} 2x"
                   src="{{ media | img_url: "600x600", crop: 'center'}}"
                   alt="{{ alt_text }}"
                   loading="lazy"

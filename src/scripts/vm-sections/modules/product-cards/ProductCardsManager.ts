@@ -1,11 +1,16 @@
 const SELECTORS = {
   PRODUCT_CARD: '.product-card',
   MEDIA_WRAPPER: '.product-card__media',
-  PRIMARY_MEDIA: '.product-card__primary-media',
-  SECONDARY_MEDIA: '.product-card__primary-media',
+  PRIMARY_MEDIA: '.product-card__media__primary',
+  SECONDARY_MEDIA: '.product-card__media__secondary',
 };
 
 const IS_HOVERED_CLASSNAME = 'is-hovered';
+
+// taken from here: https://stackoverflow.com/a/36898221
+const videoIsPlaying = (video: HTMLVideoElement) =>
+  video.currentTime > 0 && !video.paused && !video.ended
+  && video.readyState > video.HAVE_CURRENT_DATA;
 
 class ProductCard {
   element: HTMLElement;
@@ -22,35 +27,46 @@ class ProductCard {
   initialize = () => {
     this.mediaWrapperElement = this.element.querySelector(SELECTORS.MEDIA_WRAPPER);
 
-    this.primaryMedia = this.mediaWrapperElement.children[0] as HTMLElement;
-    this.secondaryMedia = this.mediaWrapperElement.children[1] as HTMLElement;
+    this.primaryMedia = this.mediaWrapperElement.querySelector(SELECTORS.PRIMARY_MEDIA) as HTMLElement;
+    this.secondaryMedia = this.mediaWrapperElement.querySelector(SELECTORS.SECONDARY_MEDIA) as HTMLElement;
 
-    if (this.secondaryMedia.tagName === 'VIDEO') {
+    if (
+      this.secondaryMedia?.tagName === 'VIDEO' &&
+      videoIsPlaying(this.secondaryMedia as HTMLVideoElement)
+    ) {
       (this.secondaryMedia as HTMLVideoElement).pause();
     }
 
-    this.element.addEventListener('mouseover', this.onLinkMouseOver);
-    this.element.addEventListener('mouseout', this.onLinkMouseOut);
+    if (this.secondaryMedia) {
+      this.element.addEventListener('mouseover', this.onLinkMouseOver);
+      this.element.addEventListener('mouseout', this.onLinkMouseOut);
+    }
 
     return this;
   };
 
   unload = () => {
-    this.element.removeEventListener('mouseover', this.onLinkMouseOver);
-    this.element.removeEventListener('mouseout', this.onLinkMouseOut);
+    if (this.secondaryMedia) {
+      this.element.removeEventListener('mouseover', this.onLinkMouseOver);
+      this.element.removeEventListener('mouseout', this.onLinkMouseOut);
+    }
   };
 
   private onLinkMouseOver = () => {
     this.element.classList.add(IS_HOVERED_CLASSNAME);
-    if (this.secondaryMedia.tagName === 'VIDEO') {
+
+    if (
+      this.secondaryMedia.tagName === 'VIDEO' &&
+      !videoIsPlaying(this.secondaryMedia as HTMLVideoElement)
+    ) {
       (this.secondaryMedia as HTMLVideoElement).play();
     }
   };
 
   private onLinkMouseOut = () => {
     this.element.classList.remove(IS_HOVERED_CLASSNAME);
+
     if (this.secondaryMedia.tagName === 'VIDEO') {
-      console.log('pausing');
       (this.secondaryMedia as HTMLVideoElement).currentTime = 0;
       (this.secondaryMedia as HTMLVideoElement).pause();
     }

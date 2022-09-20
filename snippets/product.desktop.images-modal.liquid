@@ -60,11 +60,13 @@
                       <video
                         muted="muted"
                         loop="loop"
-                        autoplay="true">
+                        autoplay="true"
+                        poster="{{ media.preview_image | img_url: "1200x1200", crop: 'center'}}">
                         {% for source in media.sources %}
                           <source src="{{ source.url }}" type="{{ source.mime_type }}" />
                         {% endfor %}
                         <img
+                          srcset="{{ media.preview_image | img_url: "1200x1200", crop: 'center'}} 1x, {{ media.preview_image | img_url: "2400x2400", crop: 'center'}} 2x"
                           src="{{ media.preview_image | img_url: "1200x1200", crop: 'center'}}"
                           alt="{{ alt_text }}"
                           loading="lazy"

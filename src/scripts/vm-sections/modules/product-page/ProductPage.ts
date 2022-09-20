@@ -1,15 +1,15 @@
-import ProductImagesDesktop from './product-images-desktop';
-import ProductImagesMobile from './product-images-mobile';
-import ProductColorSwatches from './product-color-swatches';
-import ProductVariants from './product-variants';
+import ProductImagesDesktop from './ProductImagesDesktop';
+import ProductImagesMobile from './ProductImagesMobile';
+// import ProductColorSwatches from './product-color-swatches';
+import ProductForm from './ProductForm';
 
 import initializeProductRecommendations from './product-recommendations';
 
 export default class ProductPage {
   productImagesDesktop: ProductImagesDesktop;
   productImagesMobile: ProductImagesMobile;
-  productColorSwatches: ProductColorSwatches;
-  productVariants: ProductVariants;
+  // productColorSwatches: ProductColorSwatches;
+  productForm: ProductForm;
 
   stickyContentElement: HTMLElement;
 
@@ -22,9 +22,9 @@ export default class ProductPage {
 
     this.productImagesDesktop = new ProductImagesDesktop().initialize();
     this.productImagesMobile = new ProductImagesMobile().initialize();
-    this.productColorSwatches = new ProductColorSwatches().initialize();
-    if (ProductVariants.shouldInitialize()) {
-      this.productVariants = new ProductVariants().initialize();
+    // this.productColorSwatches = new ProductColorSwatches().initialize();
+    if (ProductForm.shouldInitialize()) {
+      this.productForm = new ProductForm().initialize();
     }
 
     // functionality ported straight over from turbo

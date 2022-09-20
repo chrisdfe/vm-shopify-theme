@@ -20,11 +20,12 @@
   {% endif %}
 {% endfor %}
 
+{% comment %}
+{% if is_color %}vm-select-buttons--color{% endif %}
+{% endcomment %}
+
 <div
-  class="
-    vm-select-buttons
-    {% if is_color %}vm-select-buttons--color{% endif %}
-  "
+class="vm-select-buttons"
   data-option-index="{{ option_index }}"
   data-option="{{ option }}"
 >
@@ -42,6 +43,9 @@
         {% assign values = values | append: ',' | append: value %}
         {% assign values = values | split: ',' %}
 
+        {% comment %}
+        {% if is_color %}vm-select-button--color{% endif %}
+        {% endcomment %}
         <div
           tabindex="0"
           value="{{ value | escape }}"
@@ -49,7 +53,6 @@
           data-id="{{ variant.id }}"
           class="
             vm-select-button
-            {% if is_color %}vm-select-button--color{% endif %}
             {{ value | handle }}-swatch
             vm-select-button--{% if variant.available %}available{% else %}soldout{% endif %}
             "
@@ -71,9 +74,13 @@
               {% endif %}
               for="{{ input_name }}"
             >
+              {% comment %}
               {% unless is_color %}{{ value }}{% endunless %}
+              {% endcomment %}
+              {{ value }}
             </label>
             
+            {% comment %}
             {% if is_color %}
               {% assign background_image = value | handle | append: '.' | append: file_extension | asset_img_url: '50x' | prepend: 'https:' %}
               {% assign background_color = value | split: ' ' | last | handle %}
@@ -83,6 +90,7 @@
               >
               </div>
             {% endif %}
+            {% endcomment %}
 
             <img
               class="crossed-out"
