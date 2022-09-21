@@ -36,57 +36,60 @@
             {% include "product.reviews-badge" %}
 
             {% include "product.size-chart" %}
-  
-            {% if collection_handles contains 'coming-soon' %}
-              <p class="modal_price">{{ 'collections.general.coming_soon' | t }}</p>
+
+            {% if product.tags contains "inquire-for-pricing" %}
+              <div><a class="cta-link" href="mailto:hello@valeriemadison.com">Inquire for pricing</a></div>
             {% else %}
-              <p class="modal_price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                <meta itemprop="priceCurrency" content="{{ shop.currency }}" />
-                <meta itemprop="seller" content="{{ shop.name | escape }}" />
-                <link itemprop="availability" href="http://schema.org/{% if variant.available %}InStock{% else %}OutOfStock{% endif %}">
-                <meta itemprop="itemCondition" itemtype="http://schema.org/OfferItemCondition" content="http://schema.org/NewCondition"/>
-  
-                <span class="sold_out">{% if variant.available == false %}{{ 'products.product.sold_out' | t }}{% endif %}</span>
-                <span itemprop="price" content="{{ variant.price | money_without_currency | remove: "," }}" class="{% if variant.compare_at_price > variant.price %}sale{% endif %}">
-                  <span class="current_price {% if product.available == false %}hidden{% endif %}">
-                    {% if variant.price > 0 %}
-                        {% if section.settings.hide_all_pricing == false %}
-                        {% if section.settings.pre_money_text != blank %}
-                          <span class="pre_money_text">{{ section.settings.pre_money_text}}</span>
+              {% if collection_handles contains 'coming-soon' %}
+                <p class="modal_price">{{ 'collections.general.coming_soon' | t }}</p>
+              {% else %}
+                <p class="modal_price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                  <meta itemprop="priceCurrency" content="{{ shop.currency }}" />
+                  <meta itemprop="seller" content="{{ shop.name | escape }}" />
+                  <link itemprop="availability" href="http://schema.org/{% if variant.available %}InStock{% else %}OutOfStock{% endif %}">
+                  <meta itemprop="itemCondition" itemtype="http://schema.org/OfferItemCondition" content="http://schema.org/NewCondition"/>
+    
+                  <span class="sold_out">{% if variant.available == false %}{{ 'products.product.sold_out' | t }}{% endif %}</span>
+                  <span itemprop="price" content="{{ variant.price | money_without_currency | remove: "," }}" class="{% if variant.compare_at_price > variant.price %}sale{% endif %}">
+                    <span class="current_price {% if product.available == false %}hidden{% endif %}">
+                      {% if variant.price > 0 %}
+                          {% if section.settings.hide_all_pricing == false %}
+                          {% if section.settings.pre_money_text != blank %}
+                            <span class="pre_money_text">{{ section.settings.pre_money_text}}</span>
+                          {% endif %}
+                          <span class="money">{{ variant.price | money }}</span>
                         {% endif %}
-                        <span class="money">{{ variant.price | money }}</span>
-                      {% endif %}
-                    {% else %}
-                        {% if section.settings.hide_all_pricing == false %}
-                        {% if section.settings.pre_money_text != blank %}
-                          <span class="pre_money_text">{{ section.settings.pre_money_text}}</span>
+                      {% else %}
+                          {% if section.settings.hide_all_pricing == false %}
+                          {% if section.settings.pre_money_text != blank %}
+                            <span class="pre_money_text">{{ section.settings.pre_money_text}}</span>
+                          {% endif %}
+                          {{ settings.free_price_text }}
                         {% endif %}
-                        {{ settings.free_price_text }}
                       {% endif %}
-                    {% endif %}
+                    </span>
                   </span>
-                </span>
-                <span class="was_price">
-                  {% if variant.price < variant.compare_at_price and variant.available %}
-                    {% if section.settings.hide_all_pricing == false %}{% if section.settings.pre_money_text != blank %}<span class="pre_money_text">{{ section.settings.pre_money_text}}</span>{% endif %}<span class="money">{{ variant.compare_at_price | money }}</span>{% endif %}
-                  {% endif %}
-                </span>
-  
-                {% if section.settings.display_savings %}
-                  <span class="sale savings">
+                  <span class="was_price">
                     {% if variant.price < variant.compare_at_price and variant.available %}
-                      {{ 'products.product.savings' | t }}  {{ variant.compare_at_price | minus: variant.price | times: 100 | divided_by: variant.compare_at_price }}% (<span class="money">{{ variant.compare_at_price | minus: variant.price | money }}</span>)
+                      {% if section.settings.hide_all_pricing == false %}{% if section.settings.pre_money_text != blank %}<span class="pre_money_text">{{ section.settings.pre_money_text}}</span>{% endif %}<span class="money">{{ variant.compare_at_price | money }}</span>{% endif %}
                     {% endif %}
                   </span>
-                {% endif %}
-              </p>
-  
-              {% include 'product.notify-me' %}
+    
+                  {% if section.settings.display_savings %}
+                    <span class="sale savings">
+                      {% if variant.price < variant.compare_at_price and variant.available %}
+                        {{ 'products.product.savings' | t }}  {{ variant.compare_at_price | minus: variant.price | times: 100 | divided_by: variant.compare_at_price }}% (<span class="money">{{ variant.compare_at_price | minus: variant.price | money }}</span>)
+                      {% endif %}
+                    </span>
+                  {% endif %}
+                </p>
+    
+                {% include 'product.notify-me' %}
+              {% endif %}
             {% endif %}
 
-          {% include 'storemods-shipping-estimate' %}
-            {% unless collection_handles contains 'coming-soon' %}
-              {% comment %}{% include 'product-form' with 'product' %}{% endcomment %}
+            {% unless product.tags contains "inquire-for-pricing" %}
+              {% include 'storemods-shipping-estimate' %}
             {% endunless %}
   
             {% if section.settings.product_description_position == "bottom" %}
@@ -100,44 +103,6 @@
             {% if section.settings.review_position == "next_to_gallery" %}
               <div class="shopify-reviews reviewsVisibility--{{settings.enable_shopify_review_comments}}">
                 <div id="shopify-product-reviews" data-id="{{product.id}}">{{ product.metafields.spr.reviews }}</div>
-              </div>
-            {% endif %}
-  
-            {% if section.settings.display_collections or section.settings.display_tags or section.settings.display_type %}
-              <div class="product_links">
-                {% if section.settings.display_collections %}
-                  <p>
-                    <span class="subheading-3">{{ 'products.product.collections' | t }}:</span>
-                    <span>
-                      {% for col in product.collections %}
-                        <a href="{{ col.url }}" title="{{ col.title }}">{{ col.title }}</a>{% unless forloop.last %},{% endunless %}
-                      {% endfor %}
-                    </span>
-                  </p>
-                {% endif %}
-  
-                {% if section.settings.display_type %}
-                  <p>
-                    <span class="subheading-3">{{ 'products.product.product_types' | t }}:</span>
-                    <span>{{ product.type | link_to_type }}</span>
-                  </p>
-                {% endif %}
-  
-                {% if section.settings.display_tags %}
-                  <p>
-                    {% for tag in product.tags %}
-                      {% if forloop.first %}
-                        <span class="subheading-3">{{ 'products.product.tags' | t }}:</span>
-                      {% endif %}
-  
-                      {% unless tag contains 'meta-' or tag contains 'store-' or tag contains 'final sale' or tag contains 'Ring Resizing' or tag contains 'weeks' or tag contains 'days' %}
-                        <span>
-                          <a href="/collections/{% if collection %}{{ collection.handle }}{% else %}all{% endif %}/{{ tag | handle }}" title="{{ 'products.product.products_tagged' | t: tag: tag }}">{{ tag }}</a>{% unless forloop.last %},{% endunless %}
-                          </span>
-                      {% endunless %}
-                    {% endfor %}
-                  </p>
-                {% endif %}
               </div>
             {% endif %}
   
