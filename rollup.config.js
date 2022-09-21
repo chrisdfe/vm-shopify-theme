@@ -3,6 +3,7 @@ import { babel } from '@rollup/plugin-babel';
 import replace from '@rollup/plugin-replace';
 import commonjs from '@rollup/plugin-commonjs';
 import typescript from '@rollup/plugin-typescript';
+import { terser } from 'rollup-plugin-terser';
 import scss from 'rollup-plugin-scss'
 
 import postcss from "postcss";
@@ -18,7 +19,8 @@ export default [
     plugins: [
       nodeResolve(),
       babel({ babelHelpers: 'bundled' }),
-      typescript()
+      typescript(),
+      terser()
     ]
   },
   {

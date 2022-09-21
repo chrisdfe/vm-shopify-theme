@@ -120,7 +120,6 @@ export default class ProductImagesDesktop {
     } else {
       const imageIndexAsString = element.getAttribute(ATTRIBUTES.MODAL_TOGGLE_ELEMENT_INDEX);
       const imageIndex = (imageIndexAsString) ? parseInt(imageIndexAsString) : 0;
-      console.log('imageIndex', imageIndex);
       this.openModal(imageIndex);
     }
   };
@@ -165,7 +164,6 @@ export default class ProductImagesDesktop {
   };
 
   setModalImageScrollTopIndicies = () => {
-    console.log('setModalImageScrollTopIndicies');
     this.modalImageScrollTopIndicies = this.modalImageCellElementList.map((element, index) => {
       return element.offsetTop;
     });

@@ -1,3 +1,4 @@
+// @ts-nocheck
 export default class Cart {
   initialize = () => {
     if ($("#cart_form .tos_agree")) {

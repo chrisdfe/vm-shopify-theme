@@ -12735,6 +12735,9 @@ div#disqus_thread li {
 /* Pages - Product
 ================================================== */
 .product-content-wrapper {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
   margin-bottom: 2rem;
 }
 
@@ -13145,12 +13148,15 @@ div#disqus_thread li {
 .purchase-details .column > * {
   width: 100%;
 }
+.purchase-details .line-item-property__field {
+  margin-bottom: 0;
+}
 .purchase-details .line-item-property__field select {
   margin-bottom: 0;
 }
-@media only screen and (min-width: 1201px) {
-  .purchase-details .line-item-property__field:last-child {
-    margin-bottom: 0;
+@media only screen and (max-width: 800px) {
+  .purchase-details .line-item-property__field {
+    margin-bottom: 1rem;
   }
 }
 
@@ -13865,6 +13871,11 @@ p.checkout_button {
 .vm-testimonial-slide.is-active {
   display: block;
 }
+@media only screen and (max-width: 1200px) {
+  .vm-testimonial-slide .vm-testimonial-slide__content {
+    padding: 0 2rem;
+  }
+}
 @media only screen and (max-width: 800px) {
   .vm-testimonial-slide .vm-testimonial-slide__title {
     font-family: orpheuspro, serif;
@@ -13904,6 +13915,11 @@ p.checkout_button {
   align-items: center;
   justify-content: space-between;
   padding: 0 8rem;
+}
+@media only screen and (max-width: 1200px) {
+  .vm-testimonial__buttons-wrapper {
+    padding: 0 2rem;
+  }
 }
 @media only screen and (max-width: 800px) {
   .vm-testimonial__buttons-wrapper {

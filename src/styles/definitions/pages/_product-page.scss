@@ -2,8 +2,8 @@
 ================================================== */
 
 .product-content-wrapper {
-  // position: sticky;
-  // top: 0;
+  position: sticky;
+  top: 0;
   margin-bottom: get-vm-spacer(2);
 }
 
@@ -439,14 +439,14 @@
   }
 
   .line-item-property__field {
+    margin-bottom: 0;
+
     select {
       margin-bottom: 0;
     }
 
-    @include respond-to("large-up") {
-      &:last-child {
-        margin-bottom: 0;
-      }
+    @include respond-to("medium-down") {
+      margin-bottom: get-vm-spacer(1);
     }
   }
 }

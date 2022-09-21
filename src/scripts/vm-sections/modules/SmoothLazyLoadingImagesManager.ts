@@ -85,7 +85,6 @@ export default class SmoothLazyLoadedImagesManager {
   };
 
   private reset = () => {
-    console.log('resetting lazy loaded images');
     this.lazyLoadedImages.forEach((lazyLoadedImage) => {
       lazyLoadedImage.unload();
     });
