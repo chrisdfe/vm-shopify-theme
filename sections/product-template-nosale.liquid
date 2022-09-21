@@ -42,8 +42,12 @@
 
               {% include "product.reviews-badge" %}
 
-              {% include "product.size-chart" %}
-    
+
+            {% include "product.size-chart" %}
+
+            {% if product.tags contains "inquire-for-pricing" %}
+              <div><a class="cta-link" href="mailto:hello@valeriemadison.com">Inquire for pricing</a></div>
+            {% else %}
               {% if collection_handles contains 'coming-soon' %}
                 <p class="modal_price u-margin-vertical-2">{{ 'collections.general.coming_soon' | t }}</p>
               {% else %}
@@ -64,7 +68,7 @@
                           <span class="money">{{ variant.price | money }}</span>
                         {% endif %}
                       {% else %}
-                        {% if section.settings.hide_all_pricing == false %}
+                          {% if section.settings.hide_all_pricing == false %}
                           {% if section.settings.pre_money_text != blank %}
                             <span class="pre_money_text">{{ section.settings.pre_money_text}}</span>
                           {% endif %}
@@ -91,30 +95,30 @@
     
                 {% include 'product.notify-me' %}
               {% endif %}
+            {% endif %}
 
-              {% include 'storemods-shipping-estimate' with {
-                accordion_is_open: true
-              } %}
-    
-              {% if section.settings.product_description_position == "bottom" %}
-                {% if product.description != blank %}
-                  <div class="description bottom" itemprop="description">
-                  {{ product.description | split: '<!-- split -->' | first }}
-                  </div>
-                {% endif %}
-              {% endif %}
-    
-              {% if section.settings.review_position == "next_to_gallery" %}
-                <div class="shopify-reviews reviewsVisibility--{{settings.enable_shopify_review_comments}}">
-                  <div id="shopify-product-reviews" data-id="{{product.id}}">{{ product.metafields.spr.reviews }}</div>
+            {% unless product.tags contains "inquire-for-pricing" %}
+              {% include 'storemods-shipping-estimate' %}
+            {% endunless %}
+  
+            {% if section.settings.product_description_position == "bottom" %}
+              {% if product.description != blank %}
+                <div class="description bottom" itemprop="description">
+                {{ product.description | split: '<!-- split -->' | first }}
                 </div>
               {% endif %}
-    
-              <div class="meta">
-                {% if section.settings.display_social_buttons %}
-                  {% include "social-buttons" with "product" %}
-                {% endif %}
+            {% endif %}
+  
+            {% if section.settings.review_position == "next_to_gallery" %}
+              <div class="shopify-reviews reviewsVisibility--{{settings.enable_shopify_review_comments}}">
+                <div id="shopify-product-reviews" data-id="{{product.id}}">{{ product.metafields.spr.reviews }}</div>
               </div>
+            {% endif %}
+  
+            <div class="meta">
+              {% if section.settings.display_social_buttons %}
+                {% include "social-buttons" with "product" %}
+              {% endif %}
             </div>
           </div>
         </div>

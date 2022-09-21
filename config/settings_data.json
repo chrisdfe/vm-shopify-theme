@@ -624,7 +624,7 @@
             "type": "filter",
             "settings": {
               "filter_name": "Shop by Stone",
-              "filter_tags": "Diamond, Gemstone, Moissanite, Salt and Pepper Diamond, Rose Cut Diamond, Ruby, Sapphire, Spinel, Garnet, Turquoise",
+              "filter_tags": "Diamond, Gemstone, Moissanite, Salt & Pepper, Ruby, Sapphire, Spinel, Garnet, Turquoise",
               "enable_filter_swatches": false
             }
           },
@@ -1418,7 +1418,7 @@
           "825cd61e-65c1-42d4-a03f-a00e26fa60a2": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/Bracelet-4x5.jpg",
+              "image": "shopify:\/\/shop_images\/Eternity_Bracelets_4x5_941843e3-7c83-40bd-af14-59a8cab1f256.jpg",
               "url": "https:\/\/www.valeriemadison.com\/collections\/fine-jewelry\/bracelets-and-anklets",
               "cta_text": "Bracelets & Anklets",
               "cta_subtext": "",
@@ -1532,7 +1532,7 @@
             "type": "image",
             "settings": {
               "image": "shopify:\/\/shop_images\/BANDS_DIAMOND_2022_1_copy_495b12d0-4326-49cb-8295-d06d7e18ef4d.jpg",
-              "link": "shopify:\/\/collections\/womens-wedding-bands",
+              "link": "shopify:\/\/collections\/diamond-bands",
               "title": "<b>Women's Wedding Bands<\/b>"
             }
           },
@@ -1547,7 +1547,7 @@
           "1578278006036": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/REFRESH_2022_Blue_Meridian_Dangles_33ee0f79-8274-4c04-9535-4b885d09d8c2.jpg",
+              "image": "shopify:\/\/shop_images\/Home-page-image---earrings-4x5.jpg",
               "link": "shopify:\/\/collections\/earrings",
               "title": "<b>Earrings<\/b>"
             }
@@ -1586,27 +1586,24 @@
             "type": "content-image",
             "settings": {
               "show_section": true,
-              "image_option": "shopify:\/\/shop_images\/Icon2.png",
-              "title": "Recycled Metals",
-              "icon_subtext": "<p>We use recycled metals to create our fine jewelry. This means there is no mining of precious metals required to make our jewelry! You can read more about recycled metals and why they are important to us <a href=\"https:\/\/www.valeriemadison.com\/blogs\/the-studio-blog\/what-is-recycled-gold\" title=\"https:\/\/www.valeriemadison.com\/blogs\/the-studio-blog\/what-is-recycled-gold\">here<\/a>.<\/p>"
+              "title": "Precious Metals",
+              "icon_subtext": "<p>We work exclusively with rare and valuable precious metals, with a focus on primarily recycled 14k & 18k gold. We believe gold is a luxury investment, therefore we only use solid gold - never vermeil, plated, or filled.<\/p>"
             }
           },
           "1584247981998-2": {
             "type": "content-image",
             "settings": {
               "show_section": true,
-              "image_option": "shopify:\/\/shop_images\/Icon1_19953300-5c86-4568-9901-9c6df8501237.png",
-              "title": "Made in Seattle",
-              "icon_subtext": "<p>Everything is made right here in the Emerald City. This reduces our carbon footprint compared to relying on work outsourced to other states or countries. It also boosts our local economy and ensures we can be a valuable contribution to our community. <\/p>"
+              "title": "Diamonds & Gems",
+              "icon_subtext": "<p>Working with trusted gemstone suppliers, we hand-select all of our unique natural diamonds and sapphires and are committed to disclosing all we know about a stone’s origin and treatment.<\/p>"
             }
           },
           "1584247981998-1": {
             "type": "content-image",
             "settings": {
               "show_section": true,
-              "image_option": "shopify:\/\/shop_images\/Untitled-2.png",
-              "title": "Conflict-free Diamonds",
-              "icon_subtext": "<p>We use Canadian diamonds mined to the highest standards whenever possible. When these aren&#x27;t available, we use diamonds purchased from legitimate sources not involved in funding conflict and in compliance with United Nations resolutions.<\/p>"
+              "title": "What to Expect",
+              "icon_subtext": "<p>We welcome all individuals and couples to work with us on special pieces to commemorate engagements, commitments, and beyond. Our approach is consultative and transparent. When you work with our team, you will feel at ease and confident in their expertise.<\/p>"
             }
           }
         },
@@ -1617,7 +1614,7 @@
         ],
         "settings": {
           "hide_section_list": false,
-          "title": "What makes Valerie Madison Jewelry <em>different?<\/em>",
+          "title": "The Valerie Madison Experience",
           "color_region": "light-alt"
         }
       },
@@ -1628,18 +1625,16 @@
             "type": "content-image",
             "settings": {
               "show_section": true,
-              "image_option": "shopify:\/\/shop_images\/Icon2.png",
-              "title": "Recycled Metals",
-              "icon_subtext": "<p>We use recycled metals to create our fine jewelry. This means no mining is required to make our jewelry! You can read more about recycled metals and why they are important to us <a href=\"https:\/\/www.valeriemadison.com\/blogs\/the-studio-blog\/what-is-recycled-gold\" title=\"https:\/\/www.valeriemadison.com\/blogs\/the-studio-blog\/what-is-recycled-gold\">here<\/a>.<\/p>"
+              "title": "Precious Metals",
+              "icon_subtext": "<p>We work exclusively with rare and valuable precious metals, with a focus on primarily recycled 14k & 18k gold. We believe gold is a luxury investment, therefore we only use solid gold - never vermeil, plated, or filled.<\/p>"
             }
           },
           "1584459264656": {
             "type": "content-image",
             "settings": {
               "show_section": true,
-              "image_option": "shopify:\/\/shop_images\/Icon1_19953300-5c86-4568-9901-9c6df8501237.png",
-              "title": "Made in Seattle",
-              "icon_subtext": "<p>Everything is made right here in the Emerald City. This reduces our carbon footprint compared to relying on work outsourced to other states or countries. It also boosts our local economy and ensures we can be a valuable contribution to our community. <\/p>"
+              "title": "Diamonds & Gems",
+              "icon_subtext": "<p>Working with trusted gemstone suppliers, we hand-select all of our unique natural diamonds and sapphires and are committed to disclosing all we know about a stone’s origin and treatment.<\/p>"
             }
           },
           "1584459303411": {
@@ -1647,8 +1642,8 @@
             "settings": {
               "show_section": true,
               "image_option": "shopify:\/\/shop_images\/Icon3_f481c01f-d27e-4349-9e5a-5d372adfeaf2.png",
-              "title": "Conflict-free Diamonds",
-              "icon_subtext": "<p>We use Canadian diamonds mined to the highest standards whenever possible. If not available, we use diamonds purchased from legitimate sources not involved in funding conflict and in compliance with United Nations resolutions.<\/p>"
+              "title": "What to Expect",
+              "icon_subtext": "<p>We welcome all individuals and couples to work with us on special pieces to commemorate engagements, commitments, and beyond. Our approach is consultative and transparent. When you work with our team, you will feel at ease and confident in their expertise.<\/p>"
             }
           }
         },
@@ -1659,7 +1654,7 @@
         ],
         "settings": {
           "hide_section_list": false,
-          "title": "What makes Valerie Madison Jewelry different?",
+          "title": "The Valerie Madison Experience",
           "color_region": "light"
         }
       },
@@ -3180,7 +3175,7 @@
             "settings": {
               "image": "shopify:\/\/shop_images\/Christina.png",
               "title": "Christina",
-              "job_title": "Associate Content Creator & Social Content Lead",
+              "job_title": "Social Media Specialist",
               "description": "I take video content of everything that happens at Valerie Madison to share to our growing followers on social media. I love creating a story with our beautiful and unique jewelry for everyone in the world to see. When I am not creating video content, you can find me taking photos, baking macarons, hanging out with my family and friends and exploring the latest restaurants in Seattle!"
             }
           },
@@ -3225,12 +3220,13 @@
             "settings": {
               "image": "shopify:\/\/shop_images\/VMFJ-2020-3.jpg",
               "title": "Charlotte",
-              "job_title": "INVENTORY MANAGER AND BENCH JEWELER",
+              "job_title": "Associate Production MANAGER AND BENCH JEWELER",
               "description": "I make the shiny stuff. When I’m not goldsmithing for Valerie Madison or working in my own jewelry studio, I’m either DIY renovating my mid-mod dream house or in my kitchen testing new recipes. I couldn’t remain at the top of my game in every way without the support of my handsome cat, clever dachshund puppy and my amazing husband to be."
             }
           },
           "6fbd4270-d7b7-4a6f-9bf1-0e7a9e8c2eef": {
             "type": "team_member",
+            "disabled": true,
             "settings": {
               "image": "shopify:\/\/shop_images\/Omar_4ee53a79-155e-4cb6-b349-5d1140450b70.jpg",
               "title": "Omar",
@@ -3358,38 +3354,38 @@
             "type": "background_block",
             "settings": {
               "background_color": "light-alt",
-              "banner_image_desktop": "shopify:\/\/shop_images\/Aug-17-Banner-1.jpg"
+              "banner_image_desktop": "shopify:\/\/shop_images\/Shopify-Banner-S_Ps-on-hand-1.jpg"
             }
           },
-          "398fe46e-43dd-41e3-8d73-51f91275cd68": {
+          "848208ff-1bd4-4994-9993-d92eee24b1e9": {
             "type": "background_block",
+            "disabled": true,
             "settings": {
-              "background_color": "light",
-              "banner_image_desktop": "shopify:\/\/shop_images\/Aug-17-Banner-2.jpg"
+              "background_color": "light"
             }
           }
         },
         "block_order": [
           "95beecd3-2bab-4b22-b737-ed9a5c1dbf17",
-          "398fe46e-43dd-41e3-8d73-51f91275cd68"
+          "848208ff-1bd4-4994-9993-d92eee24b1e9"
         ],
         "settings": {
-          "banner_wrapper_background_color": "light-alt",
-          "pretext": "Fresh",
-          "heading": "Fine Jewelry",
-          "cta_link": "https:\/\/www.valeriemadison.com\/collections\/fine-jewelry\/new?sort_by=price-ascending",
+          "banner_wrapper_background_color": "light",
+          "pretext": "Fall in love with",
+          "heading": "Salt & Pepper Diamonds",
+          "cta_link": "https:\/\/www.valeriemadison.com\/collections\/engagement-rings\/salt-pepper+salt-pepper?sort_by=created-descending",
           "cta_text": "See what's new",
-          "text_position": "center",
+          "text_position": "right-block",
           "text_color": "dark-alt",
-          "banner_image_mobile": "shopify:\/\/shop_images\/Aug-17-banner-for-mobile.jpg",
+          "banner_image_mobile": "shopify:\/\/shop_images\/S_Ps-on-finger-1x1.jpg",
           "text_color_mobile": "dark-alt",
-          "content_background_color_mobile": "light-alt"
+          "content_background_color_mobile": "light"
         }
       },
       "1630687320cad1aa82": {
         "type": "image-with-text",
         "settings": {
-          "image": "shopify:\/\/shop_images\/Rosy_Vibes.jpg",
+          "image": "shopify:\/\/shop_images\/Screen_Shot_2022-09-15_at_11.24.15_AM.png",
           "title": "Environmentally <em>Conscious<\/em>",
           "text": "<p>Our approach to making jewelry includes using recycled precious metals, conflict-free diamonds, and ethically-sourced gemstones to create elegant, sophisticated, and vibrant heirloom-quality pieces.<br\/><\/p><p>We are a women-operated company founded by a Black Latina and we are based in Seattle, WA where you can also shop from our retail store in person.<br\/><br\/>We're looking forward to helping you discover our unique engagement rings, wedding bands, and fine jewelry to celebrate special milestones or treat yourself.<\/p>",
           "cta_text": "Read more",
@@ -3809,85 +3805,103 @@
       "eternity-bracelets-chain-styles": {
         "type": "eternity-bracelets-chain-styles",
         "blocks": {
-          "c8a9841e-6e45-4a5e-8a5e-308a38ddcefe": {
-            "type": "chain_style",
-            "settings": {
-              "title": "Cable Chain",
-              "price": "100",
-              "has_asterisk": false
-            }
-          },
           "deb42d16-3853-444f-be62-9d61af60fbef": {
             "type": "chain_style",
             "settings": {
-              "title": "Figaro Chain",
-              "price": "160",
-              "has_asterisk": true
+              "title": "Curb Chain",
+              "price": "530",
+              "has_asterisk": false
             }
           },
           "4bd03a84-d9c1-4e98-a939-443f8a52c4e4": {
             "type": "chain_style",
             "settings": {
-              "title": "Baby Flat Chain",
-              "price": "170",
-              "has_asterisk": true
+              "title": "Rolo Chain",
+              "price": "490",
+              "has_asterisk": false
             }
           },
           "e5b67104-2a4c-46bb-b93a-71f2801686d8": {
             "type": "chain_style",
             "settings": {
               "title": "1.5mm Cable Chain",
-              "price": "180",
-              "has_asterisk": true
+              "price": "200",
+              "has_asterisk": false
             }
           },
           "1d0d9d19-8a76-4798-93b4-67c22344df96": {
             "type": "chain_style",
             "settings": {
-              "title": "Diamond Charm",
-              "price": "350",
-              "has_asterisk": true
-            }
-          },
-          "08338bc0-8637-41fa-b7a2-88cb5e3650ea": {
-            "type": "chain_style",
-            "settings": {
-              "title": "Flat Chain",
-              "price": "360",
-              "has_asterisk": true
+              "title": "Baby Flat Chain",
+              "price": "180",
+              "has_asterisk": false
             }
           },
           "d1a26eab-2a0f-4107-9657-405fc1b62646": {
             "type": "chain_style",
             "settings": {
-              "title": "Rolo Chain",
-              "price": "430",
-              "has_asterisk": true
+              "title": "XL Cable Chain",
+              "price": "210",
+              "has_asterisk": false
             }
           },
           "a1c00d91-55f9-4e80-92d4-fef2b22aa62e": {
             "type": "chain_style",
             "settings": {
-              "title": "Curb Chain",
-              "price": "480",
-              "has_asterisk": true
+              "title": "Mariner Chain",
+              "price": "340",
+              "has_asterisk": false
+            }
+          },
+          "91560518-35f9-4c00-a65c-1c5d56b402a3": {
+            "type": "chain_style",
+            "settings": {
+              "title": "1.5mm Flat Chain",
+              "price": "95",
+              "has_asterisk": false
+            }
+          },
+          "2ce41173-5d5e-463c-a608-ecf84d3c899e": {
+            "type": "chain_style",
+            "settings": {
+              "title": "Elongated Box Chain",
+              "price": "170",
+              "has_asterisk": false
+            }
+          },
+          "a483a28d-9550-48d1-bdae-7ab3eeca0b84": {
+            "type": "chain_style",
+            "settings": {
+              "title": "Figaro Chain",
+              "price": "170",
+              "has_asterisk": false
+            }
+          },
+          "c62b5649-521c-4150-90cc-7efb564f6be8": {
+            "type": "chain_style",
+            "settings": {
+              "title": "Diamond Charm Chain",
+              "price": "370",
+              "has_asterisk": false
             }
           }
         },
         "block_order": [
-          "c8a9841e-6e45-4a5e-8a5e-308a38ddcefe",
           "deb42d16-3853-444f-be62-9d61af60fbef",
           "4bd03a84-d9c1-4e98-a939-443f8a52c4e4",
           "e5b67104-2a4c-46bb-b93a-71f2801686d8",
           "1d0d9d19-8a76-4798-93b4-67c22344df96",
-          "08338bc0-8637-41fa-b7a2-88cb5e3650ea",
           "d1a26eab-2a0f-4107-9657-405fc1b62646",
-          "a1c00d91-55f9-4e80-92d4-fef2b22aa62e"
+          "a1c00d91-55f9-4e80-92d4-fef2b22aa62e",
+          "91560518-35f9-4c00-a65c-1c5d56b402a3",
+          "2ce41173-5d5e-463c-a608-ecf84d3c899e",
+          "a483a28d-9550-48d1-bdae-7ab3eeca0b84",
+          "c62b5649-521c-4150-90cc-7efb564f6be8"
         ],
         "settings": {
           "title": "Available Chain Styles",
-          "content": "Cable Chain is available in all metal colors. Luxe chains (*) are only available in 14k yellow gold.",
-          "image": "shopify:\/\/shop_images\/Eternity_Bracelet_Options_Seattle_Permanent_Jewelry_Solid_Gold_Bracelets.png"
+          "content": "All chains are available in all 14K yellow gold. *Please note chains are listed in order shown on the left.",
+          "image": "shopify:\/\/shop_images\/Eternity_Bracelets_4x5_941843e3-7c83-40bd-af14-59a8cab1f256.jpg"
         }
       },
       "eternity-bracelets-faq": {
@@ -3959,13 +3973,6 @@
       "eternity-bracelets-upcoming-dates": {
         "type": "eternity-bracelets-upcoming-dates",
         "blocks": {
-          "1fa24276-f437-472a-845b-c224959fde75": {
-            "type": "upcoming-date",
-            "settings": {
-              "date": "Friday, August 26",
-              "time": "4:00-7:00pm"
-            }
-          },
           "5590c058-2a3e-4366-a6c3-e434396aa48e": {
             "type": "upcoming-date",
             "settings": {
@@ -3982,7 +3989,6 @@
           }
         },
         "block_order": [
-          "1fa24276-f437-472a-845b-c224959fde75",
           "5590c058-2a3e-4366-a6c3-e434396aa48e",
           "6741e976-29ed-4885-b4e3-0ec5c97b22af"
         ],
