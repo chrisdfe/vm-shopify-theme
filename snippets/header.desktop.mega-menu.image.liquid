@@ -14,7 +14,13 @@ image: image_picker,
     <div class="image--zoom-hover__image-wrapper">
     {% endif %}
       
-      <img src="{{ image.src | image_url }}" alt="{{ image.alt }}" />
+      <div class="header-desktop__mega-menu--image__image-wrapper" data-smooth-lazy-loading>
+        <img
+          src="{{ image.src | img_url: '600x' }}"
+          alt="{{ image.alt }}"
+          loading="lazy"
+        />
+      </div>
 
     {% if url != blank %}
     </div>

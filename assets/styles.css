@@ -6058,6 +6058,9 @@ body.modal-is-open {
 .mega-menu-desktop .mega-menu__image-caption-link img {
   margin-bottom: 1rem;
 }
+.mega-menu-desktop .header-desktop__mega-menu--image__image-wrapper {
+  aspect-ratio: 0.8/1;
+}
 @media only screen and (max-width: 1200px) {
   .mega-menu-desktop {
     display: none;
@@ -9701,6 +9704,10 @@ a.tag {
     aspect-ratio: unset;
     overflow: visible;
   }
+  .homepage-banner picture,
+.homepage-banner img {
+    display: block;
+  }
   .homepage-banner .homepage-banner__content-wrapper, .homepage-banner.homepage-banner--text-position-right-block .homepage-banner__content-wrapper, .homepage-banner.homepage-banner--text-position-left-block .homepage-banner__content-wrapper {
     position: static;
     top: 0;
@@ -9781,7 +9788,6 @@ a.tag {
 }
 .homepage-banner__block.homepage-banner__block--mobile {
   display: none;
-  height: 800px;
 }
 @media only screen and (max-width: 800px) {
   .homepage-banner__block {
@@ -9789,7 +9795,7 @@ a.tag {
     aspect-ratio: 1/1;
   }
   .homepage-banner__block.homepage-banner__block--mobile {
-    display: flex;
+    display: block;
   }
 }
 

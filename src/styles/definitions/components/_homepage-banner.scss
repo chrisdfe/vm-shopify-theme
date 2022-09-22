@@ -148,6 +148,11 @@ $vm-homepage-banner-height-mobile: 800px;
     aspect-ratio: unset;
     overflow: visible;
 
+    picture,
+    img {
+      display: block;
+    }
+
     .homepage-banner__content-wrapper,
     &.homepage-banner--text-position-right-block
       .homepage-banner__content-wrapper,
@@ -252,7 +257,7 @@ $vm-homepage-banner-height-mobile: 800px;
 
   &.homepage-banner__block--mobile {
     display: none;
-    height: $vm-homepage-banner-height-mobile;
+    // height: $vm-homepage-banner-height-mobile;
   }
 
   @include respond-to("medium-down") {
@@ -260,7 +265,7 @@ $vm-homepage-banner-height-mobile: 800px;
     aspect-ratio: 1/1;
 
     &.homepage-banner__block--mobile {
-      display: flex;
+      display: block;
     }
   }
 }

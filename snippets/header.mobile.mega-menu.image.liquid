@@ -8,8 +8,14 @@ image: image_picker,
   {% endif %}
 
   {% if image != blank %}
-    <div class="mobile-menu-list-item--image__image-wrapper">
-      <img src="{{ image.src | image_url }}" alt="{{ image.alt }}" />
+    <div class="mobile-menu-list-item--image__image-wrapper" data-smooth-lazy-loading>
+      <picture>
+        <img
+          src="{{ image.src | img_url: '300x' }}"
+          alt="{{ cta_text }}"
+          loading="lazy"
+        />
+      </picture>
     </div>
   {% endif %}
     

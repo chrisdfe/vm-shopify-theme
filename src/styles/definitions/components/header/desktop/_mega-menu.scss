@@ -4,9 +4,13 @@
 
     img {
       margin-bottom: get-vm-spacer(1);
-    } 
+    }
   }
-  
+
+  .header-desktop__mega-menu--image__image-wrapper {
+    aspect-ratio: 0.8/1;
+  }
+
   @include respond-to("large-down") {
     display: none;
   }

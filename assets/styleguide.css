@@ -126,15 +126,21 @@
 ================================================== */
 /* Mixins - typography
 ================================================== */
-.vm-styleguide__swatch {
-  display: flex;
+.vm-styleguide__color-region-example {
+  border: 5px solid white;
+  padding: 3rem;
 }
-
-.vm-styleguide__swatch__column {
-  padding: 15px;
-  flex-grow: 1;
-  flex-shrink: 0;
-  flex-basis: 0;
+.vm-styleguide__color-region-example.vm-styleguide__color-region-example--region-light {
+  border-color: #faf6f4;
+}
+.vm-styleguide__color-region-example.vm-styleguide__color-region-example--region-light-alt {
+  border-color: #faf6f4;
+}
+.vm-styleguide__color-region-example.vm-styleguide__color-region-example--region-dark {
+  border-color: #714457;
+}
+.vm-styleguide__color-region-example.vm-styleguide__color-region-example--region-dark-alt {
+  border-color: #1c4747;
 }
 
 /* #Variables
@@ -190,26 +196,15 @@
 ================================================== */
 /* Mixins - typography
 ================================================== */
-.vm-styleguide__color-region-example {
-  border: 5px solid white;
-  padding: 3rem;
-}
-.vm-styleguide__color-region-example.vm-styleguide__color-region-example--region-light {
-  border-color: #faf6f4;
-}
-.vm-styleguide__color-region-example.vm-styleguide__color-region-example--region-light-alt {
-  border-color: #faf6f4;
-}
-.vm-styleguide__color-region-example.vm-styleguide__color-region-example--region-dark {
-  border-color: #714457;
-}
-.vm-styleguide__color-region-example.vm-styleguide__color-region-example--region-dark-alt {
-  border-color: #1c4747;
+.vm-styleguide__swatch {
+  display: flex;
 }
 
-.vm-styleguide__component-example__color-region {
-  margin-bottom: 2rem;
-  text-align: center;
+.vm-styleguide__swatch__column {
+  padding: 15px;
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: 0;
 }
 
 /* #Variables
@@ -283,6 +278,11 @@
 }
 .vm-styleguide__font-example.vm-styleguide__font-example--weight-bold {
   font-weight: 700;
+}
+
+.vm-styleguide__component-example__color-region {
+  margin-bottom: 2rem;
+  text-align: center;
 }
 
 .vm-styleguide__subsection {
