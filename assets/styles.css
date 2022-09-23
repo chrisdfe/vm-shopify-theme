@@ -1830,11 +1830,16 @@ picture {
 }
 
 [data-smooth-lazy-loading] {
-  opacity: 1;
+  opacity: 0;
+}
+[data-smooth-lazy-loading].is-animated {
   transition: opacity 0.2s;
 }
 [data-smooth-lazy-loading].is-loading {
   opacity: 0;
+}
+[data-smooth-lazy-loading].has-loaded {
+  opacity: 1;
 }
 
 .image--zoom-hover img {
@@ -8964,6 +8969,8 @@ button.disclosure__button {
   margin-bottom: 2rem;
 }
 .product-card a {
+  display: block;
+  position: relative;
   color: #1c4747;
 }
 .product-card a:hover {

@@ -31,7 +31,6 @@
   </script>
 {% endunless %}
 
-
 {% for product in products limit: limit %}
   {% if product.id == skip_product.id  %}
     {% assign forLimit = limit | plus: 1 %}
@@ -45,11 +44,22 @@
     <div class="row">
       {% for product in products limit: limit %}
         {% if product.id != skip_product.id %}
+          {% if image_loading == blank %}
+            {% if forloop.index <= 6 %}
+              {% assign current_image_loading = "eager" %}
+            {% else %}
+              {% assign current_image_loading = "lazy" %}
+            {% endif %}
+          {% else %}
+            {% assign current_image_loading = image_loading %}
+          {% endif %}
+
           <div class="one-third large-down--one-quarter medium-down--one-half column">
             {% render 'product.card',
               product: product,
               collection_group_thumb: collection_group_thumb,
               collection_group_mobile: collection_group_mobile,
+              image_loading: current_image_loading
             %}
           </div>
         {% endif %}

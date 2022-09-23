@@ -3,6 +3,8 @@
   margin-bottom: get-vm-spacer(2);
 
   a {
+    display: block;
+    position: relative;
     color: $vm-color-sea-green;
 
     &:hover {

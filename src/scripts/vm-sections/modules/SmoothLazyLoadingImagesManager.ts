@@ -2,7 +2,9 @@ const SELECTORS = {
   LAZY_LOADED_IMAGE: "[data-smooth-lazy-loading]"
 };
 
+const IS_ANIMATED_CLASSNAME = 'is-animated';
 const IS_LOADING_CLASSNAME = 'is-loading';
+const HAS_LOADED_CLASSNAME = 'has-loaded';
 
 class LazyLoadedImage {
   element: HTMLImageElement;
@@ -58,7 +60,14 @@ class LazyLoadedImage {
     this.hasCompletelyLoaded = this.hasLoaded.filter(hasLoaded => !hasLoaded).length === 0;
 
     if (this.hasCompletelyLoaded) {
+      console.log('adding:');
+      this.element.classList.add(IS_ANIMATED_CLASSNAME);
       this.element.classList.remove(IS_LOADING_CLASSNAME);
+      this.element.classList.add(HAS_LOADED_CLASSNAME);
+
+      this.element.addEventListener('transitionend', () => {
+        this.element.classList.remove(IS_ANIMATED_CLASSNAME);
+      }, { once: true });
     }
   };
 }

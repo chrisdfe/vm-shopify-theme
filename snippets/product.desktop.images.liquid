@@ -28,7 +28,6 @@ quickshop: <boolean>
               <img
                 src="{{ media.preview_image | img_url: "600x600", crop: 'center'}}"
                 alt="{{ alt_text }}"
-                loading="lazy"
               />
             </video>
           {% else %}
@@ -38,7 +37,6 @@ quickshop: <boolean>
                   srcset="{{ media | img_url: "450x450", crop: 'center'}} 1x, {{ media | img_url: "900x900", crop: 'center'}} 2x"
                   src="{{ media | img_url: "600x600", crop: 'center'}}"
                   alt="{{ alt_text }}"
-                  loading="lazy"
                 />
               </picture>
             </div>

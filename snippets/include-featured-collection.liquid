@@ -24,7 +24,8 @@
   {% render 'product-loop',
     limit: section.settings.products_limit,
     products: products,
-    products_per_row: section.settings.products_per
+    products_per_row: section.settings.products_per,
+    image_loading: "eager"
   %}
 {% endcapture %}
 

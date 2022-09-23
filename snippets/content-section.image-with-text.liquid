@@ -4,7 +4,13 @@
 
     <div class="eight columns medium-down--one-whole">
       <div class="content-section--image-text-columns__image-wrapper">
-        {{ image | img_url: 'x1800' | img_tag }}
+        <div data-smooth-lazy-loading>
+          <img
+            src="{{ image | img_url: 'x1800' }}"
+            alt="{{ title | escape }}"
+            loading="lazy"
+          />
+        </div>
       </div>
     </div>
 

@@ -3,59 +3,60 @@
 {% assign collection_handles = product.collections | map: 'handle' %}
 {% assign alt_text = product.featured_image.alt %}
 
-<div class="product-card"
-  {% if settings.collection_secondary_image != blank and secondary_image != blank %}data-has-secondary-media-swap
-  {% endif %}
->
+{% if image_loading == empty %}
+  {% assign image_loading = "lazy" %}
+{% endif %}
+
+<div class="product-card">
   <a href="{{ product.url | within: collection }}">
-    <div class="product-card__media" data-smooth-lazy-loading>
-      <picture class="product-card__media__primary">
-        <source srcset="{{ product.featured_media.preview_image | img_url: "300x300", crop: 'center'}}" media="(max-width: 400px)" />
-        <source srcset="{{ product.featured_media.preview_image | img_url: "450x450", crop: 'center'}}" media="(max-width: 1200px)" />
-        <source srcset="{{ product.featured_media.preview_image | img_url: "600x600", crop: 'center'}}" media="(max-width: 1440px)" />
-        <source srcset="{{ product.featured_media.preview_image | img_url: "900x900", crop: 'center'}}" media="(min-width: 1441px)" />
-        <img
-          src="{{ product.featured_media.preview_image | img_url: "450x450", crop: 'center'}}"
-          alt="{{ alt_text }}"
-          loading="lazy"
-        />
-      </picture>
+    <div data-smooth-lazy-loading>
+      <div class="product-card__media">
+        <picture class="product-card__media__primary">
+          <source srcset="{{ product.featured_media.preview_image | img_url: "300x300", crop: 'center'}}" media="(max-width: 400px)" />
+          <source srcset="{{ product.featured_media.preview_image | img_url: "450x450", crop: 'center'}}" media="(max-width: 1440px)" />
+          <source srcset="{{ product.featured_media.preview_image | img_url: "600x600", crop: 'center'}}" media="(min-width: 1441px)" />
+          <img
+            src="{{ product.featured_media.preview_image | img_url: "450x450", crop: 'center'}}"
+            alt="{{ alt_text }}"
+            loading="{{ image_loading }}"
+          />
+        </picture>
 
-      {% if settings.collection_secondary_image != blank and product.media[1] != blank %}
-        {% assign secondary_media = product.media[1] %}
+        {% if settings.collection_secondary_image != blank and product.media[1] != blank %}
+          {% assign secondary_media = product.media[1] %}
 
-        {% if product.media[1].media_type == 'video' %}
-          <video
-            class="product-card__media__secondary"
-            muted="muted"
-            autoplay="false"
-            preload="none"
-            playsinline="playsinline"
-            poster="{{ secondary_media.preview_image | img_url: "450x450", crop: 'center'}}"
-            loop="loop">
-            {% for source in secondary_media.sources %}
-              <source src="{{ source.url }}" type="{{ source.mime_type }}" />
-            {% endfor %}
-            <img
-              src="{{ secondary_media.preview_image | img_url: "450x450", crop: 'center'}}"
-              alt="{{ alt_text }}"
-              loading="lazy"
-            />
-          </video>
-        {% else %}
-          <picture class="product-card__media__secondary">
-            <source srcset="{{ secondary_media.preview_image | img_url: "300x300", crop: 'center'}}" media="(max-width: 400px)" />
-            <source srcset="{{ secondary_media.preview_image | img_url: "450x450", crop: 'center'}}" media="(max-width: 1200px)" />
-            <source srcset="{{ secondary_media.preview_image | img_url: "600x600", crop: 'center'}}" media="(max-width: 1440px)" />
-            <source srcset="{{ secondary_media.preview_image | img_url: "900x900", crop: 'center'}}" media="(min-width: 1441px)" />
-            <img
-              src="{{ secondary_media.preview_image | img_url: "450x450", crop: 'center'}}"
-              alt="{{ alt_text }}"
-              loading="lazy"
-            />
-          </picture>
+          {% if product.media[1].media_type == 'video' %}
+            <video
+              class="product-card__media__secondary"
+              muted="muted"
+              autoplay="false"
+              preload="none"
+              playsinline="playsinline"
+              poster="{{ secondary_media.preview_image | img_url: "450x450", crop: 'center'}}"
+              loop="loop">
+              {% for source in secondary_media.sources %}
+                <source src="{{ source.url }}" type="{{ source.mime_type }}" />
+              {% endfor %}
+              <img
+                src="{{ secondary_media.preview_image | img_url: "450x450", crop: 'center'}}"
+                alt="{{ alt_text }}"
+                loading="{{ image_loading }}"
+              />
+            </video>
+          {% else %}
+            <picture class="product-card__media__secondary">
+              <source srcset="{{ secondary_media.preview_image | img_url: "300x300", crop: 'center'}}" media="(max-width: 400px)" />
+              <source srcset="{{ secondary_media.preview_image | img_url: "450x450", crop: 'center'}}" media="(max-width: 1440px)" />
+              <source srcset="{{ secondary_media.preview_image | img_url: "600x600", crop: 'center'}}" media="(min-width: 1441px)" />
+              <img
+                src="{{ secondary_media.preview_image | img_url: "450x450", crop: 'center'}}"
+                alt="{{ alt_text }}"
+                loading="{{ image_loading }}"
+              />
+            </picture>
+          {% endif %}
         {% endif %}
-      {% endif %}
+      </div>
     </div>
 
     {% assign collection_handles = product.collections | map: 'handle' %}
