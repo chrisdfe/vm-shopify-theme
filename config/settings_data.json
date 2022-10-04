@@ -3354,10 +3354,10 @@
             "type": "background_block",
             "settings": {
               "background_color": "light-alt",
-              "banner_image_desktop": "shopify:\/\/shop_images\/Shopify-Banner-S_Ps-on-hand-1.jpg"
+              "banner_image_desktop": "shopify:\/\/shop_images\/Shopify-Banner-S_Ps-rainbow.jpg"
             }
           },
-          "848208ff-1bd4-4994-9993-d92eee24b1e9": {
+          "c8162eb0-f303-4a37-a67a-93a3242277ce": {
             "type": "background_block",
             "disabled": true,
             "settings": {
@@ -3367,17 +3367,17 @@
         },
         "block_order": [
           "95beecd3-2bab-4b22-b737-ed9a5c1dbf17",
-          "848208ff-1bd4-4994-9993-d92eee24b1e9"
+          "c8162eb0-f303-4a37-a67a-93a3242277ce"
         ],
         "settings": {
-          "banner_wrapper_background_color": "light",
-          "pretext": "Fall in love with",
+          "banner_wrapper_background_color": "light-alt",
+          "pretext": "Fresh for Fall",
           "heading": "Salt & Pepper Diamonds",
-          "cta_link": "https:\/\/www.valeriemadison.com\/collections\/engagement-rings\/salt-pepper+salt-pepper?sort_by=created-descending",
-          "cta_text": "See what's new",
+          "cta_link": "shopify:\/\/collections\/salt-pepper-diamond-rings",
+          "cta_text": "Shop Now",
           "text_position": "right-block",
           "text_color": "dark-alt",
-          "banner_image_mobile": "shopify:\/\/shop_images\/S_Ps-on-finger-1x1.jpg",
+          "banner_image_mobile": "shopify:\/\/shop_images\/Shopify-Mobile-Banner-S_Ps-rainbow.jpg",
           "text_color_mobile": "dark-alt",
           "content_background_color_mobile": "light"
         }
@@ -3824,7 +3824,7 @@
           "e5b67104-2a4c-46bb-b93a-71f2801686d8": {
             "type": "chain_style",
             "settings": {
-              "title": "1.5mm Cable Chain",
+              "title": "Cable Chain",
               "price": "200",
               "has_asterisk": false
             }
@@ -3900,7 +3900,7 @@
         ],
         "settings": {
           "title": "Available Chain Styles",
-          "content": "All chains are available in all 14K yellow gold. *Please note chains are listed in order shown on the left.",
+          "content": "All chains are available in all 14K yellow gold. *Please note chains are listed in order shown on the left from top to bottom.",
           "image": "shopify:\/\/shop_images\/Eternity_Bracelets_4x5_941843e3-7c83-40bd-af14-59a8cab1f256.jpg"
         }
       },
@@ -4046,6 +4046,7 @@
       },
       "163546741951c79e41": {
         "type": "image-with-text",
+        "disabled": true,
         "settings": {
           "image": "shopify:\/\/shop_images\/1000px-Eternity-bracelets-and-dua-band-and-crescent-band.jpg",
           "title": "<em>New<\/em> Eternity Bracelets dates",
@@ -4062,9 +4063,9 @@
       "1638989716bc82a38f": {
         "type": "featured-collection",
         "settings": {
-          "title": "Say Yes To Color",
-          "title_cta_text": "Vibrant gemstone engagement rings",
-          "collection": "gemstone-bridal-1",
+          "title": "Fresh for Fall",
+          "title_cta_text": "Salt and Pepper Diamond RIngs",
+          "collection": "salt-pepper-diamond-rings",
           "products_per": 3,
           "products_limit": 9,
           "color_region": "light-alt",
