@@ -10,7 +10,7 @@ export default class SearchAutocompleteManager {
 
     this.searchAutocompletes = Array.from(searchFormElements).map(
       (searchFormElement) => {
-        return new SearchAutocomplete(searchFormElement).init();
+        return new SearchAutocomplete(searchFormElement).initialize();
       }
     );
   };

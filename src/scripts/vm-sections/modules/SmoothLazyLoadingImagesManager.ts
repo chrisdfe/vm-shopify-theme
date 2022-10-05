@@ -60,7 +60,6 @@ class LazyLoadedImage {
     this.hasCompletelyLoaded = this.hasLoaded.filter(hasLoaded => !hasLoaded).length === 0;
 
     if (this.hasCompletelyLoaded) {
-      console.log('adding:');
       this.element.classList.add(IS_ANIMATED_CLASSNAME);
       this.element.classList.remove(IS_LOADING_CLASSNAME);
       this.element.classList.add(HAS_LOADED_CLASSNAME);

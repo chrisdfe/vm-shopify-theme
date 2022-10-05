@@ -1,175 +1,10 @@
-import debounce from "../../utils/debounce";
-import { getCDNImageUrl } from "./utils";
+import debounce, { DebouncedFunc } from 'lodash-es/debounce';
 
 import { DropdownEventPayload } from '../header/dropdowns/DropdownManager';
 
-/*============================================================================
-  Search autocomplete
-==============================================================================*/
-
-const getCollectionHandles = (item) =>
-  item.collections.map((collection) => collection.handle);
-
-function getSearchResultItemPrice(item) {
-  if (getCollectionHandles(item).includes("coming-soon")) {
-    return Shopify.translation.coming_soon_text;
-  }
-
-  if (!item.available) {
-    if (Shopify.theme_settings.display_sold_out_price) {
-      return `
-        ${item.price} <span class="sold-out-text">${Shopify.theme_settings.sold_out_text}</span>
-      `;
-    }
-
-    return `<span class="sold-out-text">${Shopify.theme_settings.sold_out_text}</span>`;
-  }
-
-  if (item.raw_compare > item.raw_price) {
-    return `
-      <span class="was_price">${item.compare}</span> ${item.price}
-    `;
-  }
-
-  if (item.price_varies && item.price_min > 0) {
-    return `<span class="from-text">${Shopify.translation.from_text}</span> ${item.price}`;
-  }
-
-  if (item.price > 0 || item.raw_price > 0) {
-    return item.price;
-  }
-
-  return Shopify.theme_settings.free_text;
-}
-
-function renderSearchResultThumbnail(item) {
-  const thumbnailSrc =
-    !!item.thumbnail && item.thumbnail !== "NULL"
-      ? item.thumbnail
-      : getCDNImageUrl("vm-logo-seagreen.png", "small");
-
-  return `
-    <div class="search-autocomplete__result__thumbnail">
-      <img src="${thumbnailSrc}" />
-    </div>
-  `;
-}
-
-const searchResultTemplates = {
-  product(item) {
-    const itemPrice = getSearchResultItemPrice(item);
-
-    return `
-      <h5>${item.title}</h5>
-      <div class="search-autocomplete__result__description">
-        ${itemPrice}
-      </div>
-    `;
-  },
-
-  article(item) {
-    return `
-      <h5>${item.title}</h5>
-      <div class="search-autocomplete__result__description">
-        <p class="paragraph-3">${item.text_content}</p>
-      </div>
-    `;
-  },
-
-  page(item) {
-    return `
-      <h5>${item.title}</h5>
-      <div class="search-autocomplete__result__description">
-        <p class="paragraph-3">${item.text_content}</p>
-      </div>
-    `;
-  },
-};
-
-function getDisplayObjectType(item) {
-  if (item.object_type === "article") {
-    return "blog post";
-  }
-
-  if (item.object_type === "product") {
-    if (
-      item.collections &&
-      item.collections.length &&
-      getCollectionHandles(item).includes("services")
-    ) {
-      return "service";
-    }
-  }
-
-  return item.object_type;
-}
-
-function renderSearchResult(item) {
-  const thumbnail = renderSearchResultThumbnail(item);
-
-  const renderFunction = searchResultTemplates[item.object_type];
-  const body = renderFunction(item);
-
-  const displayObjectType = getDisplayObjectType(item);
-
-  const fullTemplate = `
-    <li class="search-autocomplete__result search-autocomplete__result--type-${item.object_type}">
-      <a class="search-autocomplete__result-link" href="${item.url}">
-        <div class="search-autocomplete__result__thumbnail-wrapper">
-          ${thumbnail}
-        </div>  
-
-        <div class="search-autocomplete__result__body">
-          <h6 class="search-autocomplete__result__type-heading">
-            ${displayObjectType}
-          </h6>
-
-          ${body}
-        </div>
-      </a>
-    </li>
-  `;
-
-  return fullTemplate;
-}
-
-function renderSearchResults({
-  resultsList,
-  totalResults,
-  searchValue,
-  searchUrl,
-}) {
-  // If we have no results
-  if (totalResults === 0) {
-    return `
-      <li class="search-autocomplete__result search-autocomplete__result--no-results">
-        <p>No results for <b>"${searchValue}"</b>.</p>
-      </li>
-    `;
-  }
-
-  // If we have results
-  const concatenatedResults = resultsList.slice(
-    0,
-    Shopify.theme_settings.search_items_to_display
-  );
-
-  let renderedContents = concatenatedResults.reduce((acc, item, index) => {
-    return acc + renderSearchResult(item);
-  }, "");
-
-  // The Ajax request will return at the most 5 results.
-  // If there are more than 5, let's link to the search results page.
-  if (totalResults >= Shopify.theme_settings.search_items_to_display) {
-    renderedContents += `
-        <li class="search-autocomplete__result search-autocomplete__result--see-all">
-          <a class="cta-link" href="${searchUrl}*">${Shopify.translation.all_results} (${totalResults})</a>
-        </li>
-      `;
-  }
-
-  return renderedContents;
-}
+import { SearchResponse } from './types';
+import { renderSearchResults } from './renderer';
+import { camelizeJSON } from './utils';
 
 export default class SearchAutocomplete {
   shopURL: string = "";
@@ -182,13 +17,13 @@ export default class SearchAutocomplete {
 
   searchPath: string;
 
-  debouncedFetchSearchResults: () => void;
+  debouncedFetchSearchResults: DebouncedFunc<typeof this.fetchSearchResults>;
 
   constructor(searchFormElement) {
     this.searchFormElement = searchFormElement;
   }
 
-  init = () => {
+  initialize = () => {
     this.shopURL = document.querySelector("body").getAttribute("data-shop-url");
     this.searchPath = `${this.shopURL}/search?q=`;
     this.debouncedFetchSearchResults = debounce(this.fetchSearchResults, 1000);
@@ -221,14 +56,14 @@ export default class SearchAutocomplete {
         if (dropdown.id === "search") {
           this.inputElement.focus();
         }
-      })
+      });
 
       window.addEventListener("header-dropdown:closed", evt => {
         const { dropdown } = (evt as CustomEvent<DropdownEventPayload>).detail;
         if (dropdown.id === "search") {
           this.inputElement.blur();
         }
-      })
+      });
     }
 
     return this;
@@ -255,7 +90,6 @@ export default class SearchAutocomplete {
 
   onSearchFormSubmit = (event) => {
     event.preventDefault();
-    console.log("search");
     const url = this.getSearchPageUrl(this.searchValue + "*");
     window.location.assign(url);
     this.fetchAndDisplaySearchResults();
@@ -279,46 +113,36 @@ export default class SearchAutocomplete {
   getSearchPageUrl = (searchValue) => {
     const cleanedValue = encodeURI(searchValue);
     return this.searchPath + cleanedValue;
-  }
+  };
 
   getSearchUrl = (searchValue) => {
     const cleanedValue = encodeURI(searchValue);
-    const searchURL = this.searchPath + cleanedValue;
-    const fullSearchUrl = `${searchURL}*&view=json`;
+    const searchQuery = `${cleanedValue}*`;
+    const fullSearchUrl = `${this.searchPath}${searchQuery}&view=json`;
     return fullSearchUrl;
   };
 
-  private fetchAndDisplaySearchResults = () =>
-    this.fetchSearchResults(this.searchValue).then(
-      ({ searchValue, searchUrl, resultsList, totalResults }) => {
-        if (searchValue !== this.searchValue) {
-          return;
-        }
+  private fetchAndDisplaySearchResults = async () => {
+    const searchUrl = this.getSearchUrl(this.searchValue);
+    const { searchValue } = this;
+    const response = await this.fetchSearchResults(searchValue);
 
-        const renderedContents = renderSearchResults({
-          searchValue,
-          searchUrl,
-          resultsList,
-          totalResults,
-        });
+    const renderedContents = renderSearchResults({
+      searchValue,
+      searchUrl,
+      ...response
+    });
 
-        this.resultsListElement.innerHTML = renderedContents;
-        this.showDropdown();
-      }
-    );
+    this.resultsListElement.innerHTML = renderedContents;
+    this.showDropdown();
+  };
 
-  private fetchSearchResults = (searchValue) => {
+  private fetchSearchResults = async (searchValue: string): Promise<SearchResponse> => {
     const searchUrl = this.getSearchUrl(searchValue);
 
-    return fetch(searchUrl)
-      .then((response) => response.json())
-      .then((data) => {
-        return {
-          searchValue,
-          searchUrl,
-          resultsList: data.results,
-          totalResults: data.results_count,
-        };
-      });
+    const rawResponse = await fetch(searchUrl);
+    const jsonResponse = await rawResponse.json();
+    const response = camelizeJSON(jsonResponse) as unknown as SearchResponse;
+    return response;
   };
 }

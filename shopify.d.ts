@@ -12,7 +12,7 @@ declare global {
       display_sold_out_price: boolean;
       sold_out_text: string;
       free_text: string;
-      search_items_to_display: string;
+      search_items_to_display: number;
     };
     formatMoney: (amount: number, format: string) => string;
   };
