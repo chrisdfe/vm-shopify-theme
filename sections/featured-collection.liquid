@@ -3,15 +3,7 @@
 - Draggable section
 {% endcomment %}
 
-{% render "content-section.collection" with {
-  collection: section.settings.collection,
-  title: section.settings.title,
-  title_cta_text: section.settings.title_cta_text,
-  products_limit: section.settings.products_limit,
-  color_region: section.settings.color_region,
-  padding_top: section.settings.padding_top,
-  padding_bottom: section.settings.padding_bottom,
-} %}
+{% include 'include-featured-collection' %}
 
 {% schema %}
 {

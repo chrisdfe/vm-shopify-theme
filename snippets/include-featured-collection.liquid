@@ -1,5 +1,38 @@
-{% render "content-section.collection" with {
-  collection: section.settings.collection,
+{% assign settingCollection = section.settings.collection %}
+{% assign products_per = section.settings.products_per %}
+{% assign products_limit = section.settings.products_limit %}
+
+{% capture content %}
+  <div class="container">
+    <div class="row">
+
+      <div class="sixteen columns">
+        {% include "content-section.title" with {
+          title: section.settings.title,
+          with_accent: false,
+          title_link: collections[settingCollection].url,
+          title_link_text: section.settings.title_cta_text,
+          description: collections[settingCollection].description
+        } %}
+      </div>
+
+    </div>
+  </div>
+
+  {% assign products = collections[settingCollection].products %}
+
+  {% render 'product-loop',
+    limit: section.settings.products_limit,
+    products: products,
+    products_per_row: section.settings.products_per,
+    image_loading: "eager"
+  %}
+{% endcapture %}
+
+{% include "content-section" with {
   title: section.settings.title,
-  title_cta_text: section.settings.title_cta_text
+  content: content,
+  color_region: section.settings.color_region,
+  padding_top: section.settings.padding_top,
+  padding_bottom: section.settings.padding_bottom
 } %}
