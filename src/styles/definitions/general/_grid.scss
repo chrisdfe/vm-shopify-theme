@@ -236,7 +236,7 @@
 @include responsive-text-align-helper();
 
 $breakpoint-has-widths: ($large-down, $medium-down, $small-down);
-$breakpoint-has-push: ($medium-down);
+$breakpoint-has-push: ($large-down, $medium-down);
 
 // /*================ Build Responsive Grid Classes ================*/
 @each $breakpoint in $breakpoint-has-widths {

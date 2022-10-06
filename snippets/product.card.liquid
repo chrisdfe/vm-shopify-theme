@@ -26,6 +26,7 @@
           {% assign secondary_media = product.media[1] %}
 
           {% if product.media[1].media_type == 'video' %}
+            {% comment %}
             <picture class="product-card__media__secondary">
               <source srcset="{{ secondary_media.preview_image | img_url: "300x300", crop: 'center'}}" media="(max-width: 400px)" />
               <source srcset="{{ secondary_media.preview_image | img_url: "450x450", crop: 'center'}}" media="(max-width: 1440px)" />
@@ -36,7 +37,8 @@
                 loading="{{ image_loading }}"
               />
             </picture>
-            {% comment %}
+            {% endcomment %}
+
             <video
               class="product-card__media__secondary"
               muted="muted"
@@ -54,7 +56,6 @@
                 loading="{{ image_loading }}"
               />
             </video>
-            {% endcomment %}
           {% else %}
             <picture class="product-card__media__secondary">
               <source srcset="{{ secondary_media.preview_image | img_url: "300x300", crop: 'center'}}" media="(max-width: 400px)" />

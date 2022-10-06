@@ -1357,6 +1357,71 @@ a.cta-link.cta-link--body-text:hover {
     margin-left: 93.75%;
   }
 }
+@media only screen and (max-width: 1200px) and (max-width: 1200px) {
+  .large-down--offset-by-zero {
+    margin-left: 0;
+  }
+
+  .large-down--offset-by-one {
+    margin-left: 6.25%;
+  }
+
+  .large-down--offset-by-two {
+    margin-left: 12.5%;
+  }
+
+  .large-down--offset-by-three {
+    margin-left: 18.75%;
+  }
+
+  .large-down--offset-by-four {
+    margin-left: 25%;
+  }
+
+  .large-down--offset-by-five {
+    margin-left: 31.25%;
+  }
+
+  .large-down--offset-by-six {
+    margin-left: 37.5%;
+  }
+
+  .large-down--offset-by-seven {
+    margin-left: 43.75%;
+  }
+
+  .large-down--offset-by-eight {
+    margin-left: 50%;
+  }
+
+  .large-down--offset-by-nine {
+    margin-left: 56.25%;
+  }
+
+  .large-down--offset-by-ten {
+    margin-left: 62.5%;
+  }
+
+  .large-down--offset-by-eleven {
+    margin-left: 68.75%;
+  }
+
+  .large-down--offset-by-twelve {
+    margin-left: 75%;
+  }
+
+  .large-down--offset-by-thirteen {
+    margin-left: 81.25%;
+  }
+
+  .large-down--offset-by-fourteen {
+    margin-left: 87.5%;
+  }
+
+  .large-down--offset-by-fifteen {
+    margin-left: 93.75%;
+  }
+}
 @media only screen and (max-width: 800px) and (max-width: 800px) {
   .medium-down--offset-by-zero {
     margin-left: 0;
@@ -1643,7 +1708,7 @@ p:empty,
 .paragraph-1,
 .paragraph-1 p {
   font-family: proxima-nova, sans-serif;
-  font-size: 18px;
+  font-size: 19px;
   font-weight: 400;
   letter-spacing: 0;
   line-height: 1.6;
@@ -1652,7 +1717,7 @@ p:empty,
 @media only screen and (max-width: 800px) {
   .paragraph-1,
 .paragraph-1 p {
-    font-size: 16px;
+    font-size: 17px;
   }
 }
 
@@ -1819,7 +1884,7 @@ blockquote cite:before {
 .content--block-text p,
 .paragraph--block-text,
 .block-text p {
-  line-height: 2;
+  line-height: 1.6;
 }
 
 /* General - Images
@@ -10266,7 +10331,7 @@ div.container.gallery-content {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   width: 100%;
 }
 @media only screen and (max-width: 800px) {

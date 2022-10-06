@@ -1,0 +1,109 @@
+{% assign has_text_content = false %}
+{% if section.settings.subtitle != blank or section.settings.text != blank %}
+  {% assign has_text_content = true %}
+{% endif %}
+
+{% assign text_align = "left" %}
+{% if section.settings.is_centered %}
+  {% unless has_text_content %}
+    {% assign text_align = "center" %}
+  {% endunless %}
+{% endif %}
+
+
+{% capture content %}
+<div class="container">
+  <div class="row">
+
+    <div
+      class="
+        eight columns
+        large-down--twelve
+        medium-down--one-whole
+        medium-down--offset-by-zero
+      {% if section.settings.is_centered %}offset-by-four large-down--offset-by-two{% endif %}">
+      
+      {% assign extra_heading_classes = "" %}
+      {% if has_text_content %}
+        {% assign extra_heading_classes = "u-margin-top-0" %}
+      {% endif %}
+
+      {% include "page-heading", with {
+        title: section.settings.title,
+        align: text_align,
+        extra_classes: extra_heading_classes
+      } %}
+
+      <div class="block-text">
+        {% if section.settings.subtitle != blank %}
+          <p class="paragraph-1">{{ section.settings.subtitle }}</p>
+        {% endif %}
+
+        {% if section.settings.text != blank %}
+          <p class="u-margin-bottom-0">{{ section.settings.text }}</p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endcapture %}
+
+{% include "content-section" with {
+  content: content,
+  color_region: section.settings.color_region
+} %}
+
+{% schema %}
+{
+  "name": "Page Banner",
+  "settings": [
+    {
+      "id": "title",
+      "label": "Title",
+      "type": "text",
+      "default": "Page Title."
+    },
+    {
+      "id": "subtitle",
+      "label": "Subtitle",
+      "type": "textarea",
+      "default": "Aliqua consequat et velit quis duis do proident sunt aute anim. Sunt anim duis in ex id ea quis aliquip voluptate occaecat ea cupidatat duis magna. Incididunt sunt in ea fugiat magna voluptate ut officia id. Lorem duis eiusmod officia do esse minim. Cupidatat aute ullamco irure culpa fugiat voluptate culpa esse consequat in dolore ullamco."
+    },
+    {
+      "id": "text",
+      "label": "Text",
+      "type": "textarea",
+      "default": "Magna quis ex deserunt elit consequat qui proident ipsum consequat tempor qui ipsum proident nulla. Culpa sint in esse occaecat do voluptate. Velit laboris velit Lorem aliqua commodo laboris adipisicing anim sit. Laborum magna labore do laboris consequat tempor reprehenderit in reprehenderit sunt mollit ipsum dolor. Sunt aute consectetur esse adipisicing anim enim officia aute. Consectetur minim ullamco adipisicing culpa nisi exercitation ea aliqua veniam elit culpa magna ad."
+    },
+    {
+      "type": "checkbox",
+      "id": "is_centered",
+      "label": "Centered?",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "color_region",
+      "label": "Color Region",
+      "options": [
+        {
+          "value": "light",
+          "label": "Light"
+        },
+        {
+          "value": "light-alt",
+          "label": "Light - alternative"
+        },
+        {
+          "value": "dark",
+          "label": "Dark"
+        },
+        {
+          "value": "dark-alt",
+          "label": "Dark - alternative"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

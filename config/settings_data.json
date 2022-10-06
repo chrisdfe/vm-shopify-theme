@@ -4146,6 +4146,52 @@
           "parent": "About VM",
           "is_visible": true
         }
+      },
+      "page-gift-guide-template": {
+        "type": "page-gift-guide-template",
+        "blocks": {
+          "9efeaf5b-803b-41c3-b7d1-2ad6e2ef3f46": {
+            "type": "collection",
+            "settings": {
+              "title": "",
+              "subtitle": "asdfasdf",
+              "title_cta_text": "read more",
+              "collection": "bands",
+              "color_region": "light-alt"
+            }
+          },
+          "bdc91454-644c-4c56-ae5a-e613bb7ad451": {
+            "type": "image_with_text",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/S_Ps-on-finger-1x1.jpg",
+              "title": "Title",
+              "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum<\/p>",
+              "cta_text": "Read more",
+              "cta_link": "shopify:\/\/pages\/our-story",
+              "image_position": "left",
+              "is_full_width": false,
+              "color_region": "light"
+            }
+          },
+          "439e11d4-7719-4d66-94eb-2b324846496f": {
+            "type": "collection",
+            "settings": {
+              "title": "",
+              "subtitle": "asdf",
+              "title_cta_text": "",
+              "collection": "earrings",
+              "color_region": "light-alt"
+            }
+          }
+        },
+        "block_order": [
+          "9efeaf5b-803b-41c3-b7d1-2ad6e2ef3f46",
+          "bdc91454-644c-4c56-ae5a-e613bb7ad451",
+          "439e11d4-7719-4d66-94eb-2b324846496f"
+        ],
+        "settings": {
+          "title_text": "Gift Guide"
+        }
       }
     },
     "content_for_index": [

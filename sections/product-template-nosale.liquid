@@ -101,12 +101,10 @@
               {% include 'storemods-shipping-estimate' %}
             {% endunless %}
   
-            {% if section.settings.product_description_position == "bottom" %}
-              {% if product.description != blank %}
-                <div class="description bottom" itemprop="description">
-                {{ product.description | split: '<!-- split -->' | first }}
-                </div>
-              {% endif %}
+            {% if product.description != blank %}
+              <div class="description bottom" itemprop="description">
+              {{ product.description | split: '<!-- split -->' | first }}
+              </div>
             {% endif %}
   
             {% if section.settings.review_position == "next_to_gallery" %}

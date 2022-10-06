@@ -102,7 +102,7 @@
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  margin-bottom: get-vm-spacer(3);
+  margin-bottom: get-vm-spacer(2);
   width: 100%;
 
   @include respond-to("medium-down") {

@@ -1,0 +1,44 @@
+{
+  "sections": {
+    "banner": {
+      "type": "page-banner",
+      "settings": {
+        "title": "Gift Guide",
+        "color_region": "dark",
+        "is_centered": true
+      }
+    },
+    "collection": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Bands",
+        "collection": "bands",
+        "color_region": "light-alt",
+        "products_limit": 3
+      }
+    },
+    "image-with-text": {
+      "type": "image-with-text",
+      "settings": {
+        "title": "Image with text",
+        "text": "<p>Blah blah blah<\/p>",
+        "cta_link": "\/",
+        "image_position": "right"
+      }
+    },
+    "cta-cards": {
+      "type": "cta-cards",
+      "settings": {
+        "title": "CTA Cards",
+        "description": "<p>Blah blah blah<\/p>",
+        "cta_link": "\/"
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "collection",
+    "image-with-text",
+    "cta-cards"
+  ]
+}
