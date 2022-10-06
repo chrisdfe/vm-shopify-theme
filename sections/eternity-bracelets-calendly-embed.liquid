@@ -1,0 +1,50 @@
+{% capture section_content %}
+<div class="container">
+  <div class="row">
+    <div class="six medium-down--one-whole columns">
+      {% render "content-section.title" with {
+        title: section.settings.title
+      } %}
+
+      <p>
+        {{ section.settings.content }}
+      </p>
+    </div>
+
+    <div class="ten medium-down--one-whole columns">
+      {{ section.settings.calendly_embed }}
+    </div>
+  </div>
+</div>
+{% endcapture %}
+
+{% include 'content-section' with {
+  id: "eternity-bracelets-calendly",
+  image: section.settings.image
+  content: section_content
+} %}
+
+{% schema %}
+{
+  "name": "Calendly Embed",
+  "settings": [
+    {
+      "id": "title",
+      "label": "Title",
+      "type": "text",
+      "default": "Book an Appointment"
+    },
+    {
+      "id": "content",
+      "label": "Content",
+      "type": "textarea",
+      "default": "Our skilled bench jewelers will weld on a custom fit bracelet to your wrist using a painless, quick, and easy process. Because the bracelet is welded on, it does not have a clasp and therefore will “permanently” stay on (until you decide to remove it)."
+    },
+    {
+      "id": "calendly_embed",
+      "label": "Calendly Embed",
+      "type": "textarea"
+    }
+  ]
+}
+{% endschema %}

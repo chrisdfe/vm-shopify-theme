@@ -1,7 +1,5 @@
 {% capture text_content %}
-<p class="paragraph--block-text">
-  {{ section.settings.content }}
-</p>
+{{ section.settings.content }}
 {% endcapture %}
 
 {% include 'content-section.image-with-text' with {
@@ -10,7 +8,7 @@
   image_position: "right"
   image: section.settings.image
   text_content: text_content,
-  extra_classes: "u-padding-top-0"
+  extra_classes: "u-padding-top-0 u-padding-bottom-0"
 } %}
 
 {% schema %}
