@@ -1,0 +1,33 @@
+{
+  "sections": {
+    "page-heading": {
+      "type": "page-heading",
+      "settings": {
+        "title": "Gift Guide",
+        "is_centered": true
+      }
+    },
+    "collection": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Bands",
+        "collection": "bands",
+        "color_region": "light-alt"
+      }
+    },
+    "image-with-text": {
+      "type": "image-with-text",
+      "settings": {
+        "title": "Image with text",
+        "text": "<p>Blah blah blah</p>",
+        "cta_link": "/",
+        "image_position": "right"
+      }
+    }
+  },
+  "order": [
+    "page-heading",
+    "collection",
+    "image-with-text"
+  ]
+}

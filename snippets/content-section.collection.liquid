@@ -1,0 +1,43 @@
+{% if title == blank %}
+  {% assign title = collection.title %}
+{% endif %}
+
+{% if products_limit == blank %}
+  {% assign products_limit = 3 %}
+{% endif %}
+
+{% if color_region == blank %}
+  {% assign color_region = "light" %}
+{% endif %}
+
+{% capture content %}
+  <div class="container">
+    <div class="row">
+
+      <div class="sixteen columns">
+        {% render "content-section.title" with {
+          title: title,
+          with_accent: false,
+          title_link: collection.url,
+          title_link_text: title_cta_text,
+          description: description
+        } %}
+      </div>
+
+    </div>
+  </div>
+
+  {% render 'product-loop',
+    limit: products_limit,
+    products: collection.products,
+    image_loading: "eager"
+  %}
+{% endcapture %}
+
+{% render "content-section" with {
+  title: title,
+  content: content,
+  color_region: color_region,
+  padding_top: padding_top,
+  padding_bottom: padding_bottom,
+} %}
