@@ -13,8 +13,8 @@
       "settings": {
         "title": "Bands",
         "collection": "bands",
-        "color_region": "light-alt",
-        "products_limit": 3
+        "products_limit": 3,
+        "color_region": "light-alt"
       }
     },
     "image-with-text": {
