@@ -1,45 +1,84 @@
-
-{% assign align = "left" %}
-{% if section.settings.is_centered %}
-  {% assign align = "center" %}
+{% assign has_text_content = false %}
+{% if section.settings.subtitle != blank or section.settings.text != blank %}
+  {% assign has_text_content = true %}
 {% endif %}
 
-{% capture section_content %}
-  <div class="container">
-    <div class="row">
-      <div class="one-whole columns">
+{% assign text_align = "left" %}
+{% if section.settings.is_centered %}
+  {% unless has_text_content %}
+    {% assign text_align = "center" %}
+  {% endunless %}
+{% endif %}
 
-        {% render "page-heading" with {
-          title: section.settings.title,
-          align: align,
-        } %}
+
+{% capture content %}
+<div class="container">
+  <div class="row">
+
+    <div
+      class="
+        eight columns
+        large-down--twelve
+        medium-down--one-whole
+        medium-down--offset-by-zero
+      {% if section.settings.is_centered %}offset-by-four large-down--offset-by-two{% endif %}">
       
+      {% assign extra_heading_classes = "" %}
+      {% if has_text_content %}
+        {% assign extra_heading_classes = "u-margin-top-0" %}
+      {% endif %}
+
+      {% include "page-heading", with {
+        title: section.settings.title,
+        align: text_align,
+        extra_classes: extra_heading_classes
+      } %}
+
+      <div class="block-text">
+        {% if section.settings.subtitle != blank %}
+          <p class="paragraph-1">{{ section.settings.subtitle }}</p>
+        {% endif %}
+
+        {% if section.settings.text != blank %}
+          <p class="u-margin-bottom-0">{{ section.settings.text }}</p>
+        {% endif %}
       </div>
     </div>
   </div>
+</div>
 {% endcapture %}
 
-{% render "content-section" with {
-  content: section_content,
-  padding_top: section.settings.padding_top,
-  padding_bottom: section.settings.padding_bottom,
+{% include "content-section" with {
+  content: content,
   color_region: section.settings.color_region
 } %}
 
 {% schema %}
 {
-  "name": "Page Heading",
+  "name": "Page Banner",
   "settings": [
     {
-      "type": "text",
       "id": "title",
       "label": "Title",
-      "default": "Title"
+      "type": "text",
+      "default": "Page Title."
+    },
+    {
+      "id": "subtitle",
+      "label": "Subtitle",
+      "type": "textarea",
+      "default": "Aliqua consequat et velit quis duis do proident sunt aute anim. Sunt anim duis in ex id ea quis aliquip voluptate occaecat ea cupidatat duis magna. Incididunt sunt in ea fugiat magna voluptate ut officia id. Lorem duis eiusmod officia do esse minim. Cupidatat aute ullamco irure culpa fugiat voluptate culpa esse consequat in dolore ullamco."
+    },
+    {
+      "id": "text",
+      "label": "Text",
+      "type": "textarea",
+      "default": "Magna quis ex deserunt elit consequat qui proident ipsum consequat tempor qui ipsum proident nulla. Culpa sint in esse occaecat do voluptate. Velit laboris velit Lorem aliqua commodo laboris adipisicing anim sit. Laborum magna labore do laboris consequat tempor reprehenderit in reprehenderit sunt mollit ipsum dolor. Sunt aute consectetur esse adipisicing anim enim officia aute. Consectetur minim ullamco adipisicing culpa nisi exercitation ea aliqua veniam elit culpa magna ad."
     },
     {
       "type": "checkbox",
       "id": "is_centered",
-      "label": "Is centered?",
+      "label": "Centered?",
       "default": false
     },
     {
@@ -62,68 +101,6 @@
         {
           "value": "dark-alt",
           "label": "Dark - alternative"
-        }
-      ]
-    },
-{
-      "type": "select",
-      "id": "padding_top",
-      "label": "Top Padding (in spacing units)",
-      "options": [
-        {
-          "value": "default",
-          "label": "Default (5)"
-        },
-        {
-          "value": "0",
-          "label": "0"
-        },
-        {
-          "value": "2",
-          "label": "2"
-        },
-        {
-          "value": "3",
-          "label": "3"
-        },
-        {
-          "value": "8",
-          "label": "8"
-        },
-        {
-          "value": "10",
-          "label": "10"
-        }
-      ]
-    },
-    {
-      "type": "select",
-      "id": "padding_bottom",
-      "label": "Bottom Padding (in spacing units)",
-      "options": [
-        {
-          "value": "default",
-          "label": "Default (5)"
-        },
-        {
-          "value": "0",
-          "label": "0"
-        },
-        {
-          "value": "2",
-          "label": "2"
-        },
-        {
-          "value": "3",
-          "label": "3"
-        },
-        {
-          "value": "8",
-          "label": "8"
-        },
-        {
-          "value": "10",
-          "label": "10"
         }
       ]
     }

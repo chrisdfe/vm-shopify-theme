@@ -370,9 +370,9 @@
           "1489285524898-0": {
             "type": "image",
             "settings": {
-              "title": "One-of-a-kind!",
-              "testimonial": "<p>Exceptional and one-of-a-kind selection. Kind and warm reception from the staff. I look forward to acquiring another piece from you soon.<\/p>",
-              "name": "Marta",
+              "title": "Incredibly knowledgeable and understanding",
+              "testimonial": "<p>My partner and I couldn't be happier with our engagement ring. We are both small business owner, so shopping from a local small business was important to us. Every sales associate is incredibly knowledgeable and understanding. We never felt pressured or pushed in anyway.<\/p>",
+              "name": "Allen",
               "store_name": "",
               "link": "",
               "text_position": "center",
@@ -383,9 +383,9 @@
           "1489285524898-1": {
             "type": "image",
             "settings": {
-              "title": "Local & Woman-Owned",
-              "testimonial": "<p>Beautiful, distinct pieces that I will treasure forever! I found VM while looking for a sustainable, locally owned jeweler for my engagement ring. It was a huge bonus that VM is also woman and black owned. In our family of 5, we all now own at least one piece of VM jewelry which are all timeless. I love supporting our local artists and THIS one is truly special.<\/p>",
-              "name": "Keriche",
+              "title": "Transparent information",
+              "testimonial": "<p>Amara made all our custom engagement ring dreams come true! She provided transparent information without overwhelming us, patiently talked through a lot of variables and questions, sourced beautiful gemstones for us to see during our in-store visit, and made us feel incredibly cared for throughout the whole process. Never once did we feel rushed or pressured. It is an experience we will treasure forever!<\/p>",
+              "name": "Chryssi",
               "store_name": "",
               "link": "",
               "text_position": "center",
@@ -396,9 +396,9 @@
           "1489285524898-2": {
             "type": "image",
             "settings": {
-              "title": "Exceptional Experience",
-              "testimonial": "<p>I recently ordered a diamond band for my husband to celebrate our 10 year wedding anniversary.  Everything about my experience with the team at Valerie Madison - the quality, attention to detail, communication, customer service - was perfect! We will definitely shop with them again, I highly recommend VM!<\/p>",
-              "name": "Kristine",
+              "title": "Stunning classic rings",
+              "testimonial": "<p>We knew we wanted to work with a local designer and women owned business and when we found Valerie Madison the stars aligned. I also knew I wanted more of a classic solitaire style with a diamond, and Valerie Madison has not only an incredibly beautiful selection of alternative rings, they also make stunning classic rings too. Lauren was so helpful throughout the process. We can't recommend Valerie Madison enough for engagement rings and beyond!!<\/p>",
+              "name": "Ellie",
               "store_name": "",
               "link": "",
               "text_position": "center",
@@ -409,9 +409,9 @@
           "a0f89095-f4be-46a5-ad9a-2295375cfc1f": {
             "type": "image",
             "settings": {
-              "title": "Best Customer Service",
-              "testimonial": "<p>Valerie Madison makes beautiful jewelry, and has the BEST customer service. My wife and I visited the shop on a trip to Seattle and bought a one of a kind ring, it was shipped to us, and we were incredibly happy with it! Honestly can't say enough good things about this shop, the jewelry, and the people.<\/p>",
-              "name": "Joe",
+              "title": "So helpful",
+              "testimonial": "<p>I worked with Megan at VM to order a diamond wedding band to go with my VM engagement ring. She was so helpful over Instagram and email to coordinate the order and send pictures to make sure it would be a good fit! I’ve ordered several times from Valerie Madison and the jewelry is always so beautiful!!<\/p>",
+              "name": "Danielle",
               "store_name": "",
               "link": "",
               "text_position": "center",
@@ -3283,8 +3283,8 @@
       "eternity-bracelets-overview": {
         "type": "eternity-bracelets-overview",
         "settings": {
-          "title": "Permanent Sparkle",
-          "content": "Our welded, permanent jewelry offers a clasp-less bracelet that is quickly becoming a wardrobe staple. Our team will custom-fit and painlessly weld a solid gold chain to your wrist. Our styles span from dainty to chunky, so you can find the chain of your dreams. All of our chains are 14K solid gold, never plated or filled. Intended to be worn forever, but can easily be removed with scissors. Not looking for forever? Check out our chains also available as clasped styles.",
+          "title": "What does \"permanent jewelry\" mean?",
+          "content": "Our skilled bench jewelers will weld on a custom fit bracelet to your wrist using a painless, quick, and easy process. Because the bracelet is welded on, it does not have a clasp and therefore will “permanently” stay on for infinity! (Or until you decide to remove it).",
           "image": "shopify:\/\/shop_images\/Eternity-Bracelets-1000-px.jpg"
         }
       },
@@ -3973,16 +3973,24 @@
       "eternity-bracelets-upcoming-dates": {
         "type": "eternity-bracelets-upcoming-dates",
         "blocks": {
-          "dfe83ba7-6abb-4aca-9315-379fccc1305a": {
+          "5590c058-2a3e-4366-a6c3-e434396aa48e": {
+            "type": "upcoming-date",
+            "settings": {
+              "date": "Friday, September 30",
+              "time": "4:00-6:00pm"
+            }
+          },
+          "6741e976-29ed-4885-b4e3-0ec5c97b22af": {
             "type": "upcoming-date",
             "settings": {
               "date": "Friday, October 28",
-              "time": "4:00-6:00 PM"
+              "time": "4:00-6:00pm"
             }
           }
         },
         "block_order": [
-          "dfe83ba7-6abb-4aca-9315-379fccc1305a"
+          "5590c058-2a3e-4366-a6c3-e434396aa48e",
+          "6741e976-29ed-4885-b4e3-0ec5c97b22af"
         ],
         "settings": {
           "title": "Upcoming Dates",
@@ -4137,6 +4145,52 @@
         "settings": {
           "parent": "About VM",
           "is_visible": true
+        }
+      },
+      "page-gift-guide-template": {
+        "type": "page-gift-guide-template",
+        "blocks": {
+          "9efeaf5b-803b-41c3-b7d1-2ad6e2ef3f46": {
+            "type": "collection",
+            "settings": {
+              "title": "",
+              "subtitle": "asdfasdf",
+              "title_cta_text": "read more",
+              "collection": "bands",
+              "color_region": "light-alt"
+            }
+          },
+          "bdc91454-644c-4c56-ae5a-e613bb7ad451": {
+            "type": "image_with_text",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/S_Ps-on-finger-1x1.jpg",
+              "title": "Title",
+              "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum<\/p>",
+              "cta_text": "Read more",
+              "cta_link": "shopify:\/\/pages\/our-story",
+              "image_position": "left",
+              "is_full_width": false,
+              "color_region": "light"
+            }
+          },
+          "439e11d4-7719-4d66-94eb-2b324846496f": {
+            "type": "collection",
+            "settings": {
+              "title": "",
+              "subtitle": "asdf",
+              "title_cta_text": "",
+              "collection": "earrings",
+              "color_region": "light-alt"
+            }
+          }
+        },
+        "block_order": [
+          "9efeaf5b-803b-41c3-b7d1-2ad6e2ef3f46",
+          "bdc91454-644c-4c56-ae5a-e613bb7ad451",
+          "439e11d4-7719-4d66-94eb-2b324846496f"
+        ],
+        "settings": {
+          "title_text": "Gift Guide"
         }
       }
     },

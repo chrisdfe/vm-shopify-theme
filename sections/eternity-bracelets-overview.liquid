@@ -1,14 +1,16 @@
 {% capture text_content %}
-{{ section.settings.content }}
+<p class="paragraph--block-text">
+  {{ section.settings.content }}
+</p>
 {% endcapture %}
 
 {% include 'content-section.image-with-text' with {
   id: "eternity-bracelets-overview",
   title: section.settings.title,
-  image_position: "right"
+  image_position: section.settings.image_position
   image: section.settings.image
   text_content: text_content,
-  extra_classes: "u-padding-top-0 u-padding-bottom-0"
+  extra_classes: "u-padding-top-0"
 } %}
 
 {% schema %}

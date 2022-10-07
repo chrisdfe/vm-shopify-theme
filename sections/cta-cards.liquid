@@ -1,17 +1,9 @@
-{% assign align = "left" %}
-{% if section.settings.is_centered %}
-  {% assign align = "center" %}
-{% endif %}
-
 {% capture section_content %}
   <div class="container">
     <div class="row">
       <div class="one-whole columns">
 
-        {% render "page-heading" with {
-          title: section.settings.title,
-          align: align,
-        } %}
+        cta cards
       
       </div>
     </div>
@@ -20,26 +12,18 @@
 
 {% render "content-section" with {
   content: section_content,
-  padding_top: 0,
-  padding_bottom: 0,
   color_region: section.settings.color_region
 } %}
 
 {% schema %}
 {
-  "name": "Page Heading",
+  "name": "CTA Cards",
   "settings": [
     {
       "type": "text",
       "id": "title",
       "label": "Title",
       "default": "Title"
-    },
-    {
-      "type": "checkbox",
-      "id": "is_centered",
-      "label": "Is centered?",
-      "default": false
     },
     {
       "type": "select",
@@ -61,6 +45,19 @@
         {
           "value": "dark-alt",
           "label": "Dark - alternative"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "cta_card",
+      "name": "CTA Card",
+      "settings": [
+        {
+           "type": "text",
+           "id": "title",
+           "label": "Title"
         }
       ]
     }
