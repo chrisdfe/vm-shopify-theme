@@ -69,6 +69,8 @@ export default class SearchAutocomplete {
     return this;
   };
 
+  unload = () => { };
+
   showDropdown = () => {
     this.resultsListElement.classList.remove("u-hidden");
   };
@@ -76,8 +78,6 @@ export default class SearchAutocomplete {
   hideDropdown = () => {
     this.resultsListElement.classList.add("u-hidden");
   };
-
-  unload = () => { };
 
   onDocumentClick = (event) => {
     if (

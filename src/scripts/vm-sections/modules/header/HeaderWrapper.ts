@@ -1,7 +1,3 @@
-import findAndInitialize from "../../utils/findAndInitialize";
-
-import { ShopifyEvent } from '../../types';
-
 import PromoBanner from "./modules/PromoBanner";
 
 import DrawerManager from "./drawers/DrawerManager";
@@ -31,7 +27,7 @@ export default class Header {
   initialize() {
     this.headerWrapperElement = document.querySelector(SELECTORS.wrapper);
 
-    document.addEventListener("shopify:section:load", (event: ShopifyEvent) => {
+    document.addEventListener("shopify:section:load", (event: ShopifySectionLoadEvent) => {
       if (HEADER_SECTIONS.includes(event.detail.sectionId)) {
         this.reset();
       }
@@ -43,8 +39,8 @@ export default class Header {
   }
 
   unload() {
-    // this.promoBanner.reset();
-    // this.drawerManager.reset();
+    this.promoBanner.reset();
+    this.drawerManager.reset();
     this.dropdownManager.reset();
   }
 

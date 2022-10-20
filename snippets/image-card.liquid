@@ -1,15 +1,24 @@
 {% assign extra_class_list = extra_classes | split: ", " %}
 {% assign modifier_class_list = modifier_classes | split: ", " %}
 
+{% if image_aspect_ratio == blank %}
+  {% assign image_aspect_ratio = "default" %}
+{% endif %}
+
 {% capture link_content %}
   {% if image %}
     <div
       class="image-card__image
-      {% if url != blank %}image--zoom-hover__image-wrapper{% endif %}">
-      {% render 'image-element',
-        image: image,
-        alt: image.alt
-      %}
+      {% if url != blank %}image--zoom-hover__image-wrapper{% endif %}
+      image-card__image--aspect-ratio--{{ image_aspect_ratio }}
+      ">
+      <picture>
+        <img
+          srcset="{{ image | img_url: '600x600', crop: 'center' }}"
+          src="{{ image | img_url: '600x600', crop: 'center' }}"
+          alt="{{ image.alt }}"
+        />
+      </picture>
     </div>
   {% endif %}
 

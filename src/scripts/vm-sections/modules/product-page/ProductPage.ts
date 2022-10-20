@@ -3,7 +3,7 @@ import ProductImagesMobile from './ProductImagesMobile';
 // import ProductColorSwatches from './product-color-swatches';
 import ProductForm from './ProductForm';
 
-import initializeProductRecommendations from './product-recommendations';
+import ProductRecommendations from './product-recommendations';
 
 export default class ProductPage {
   productImagesDesktop: ProductImagesDesktop;
@@ -28,7 +28,7 @@ export default class ProductPage {
     }
 
     // functionality ported straight over from turbo
-    initializeProductRecommendations();
+    new ProductRecommendations().initialize();
   }
 
   setStickyContentTop() {

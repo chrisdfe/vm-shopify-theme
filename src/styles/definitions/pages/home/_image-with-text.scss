@@ -8,7 +8,7 @@
   display: flex;
   justify-content: stretch;
 
-  @include respond-to('medium-down') {
+  @include respond-to("medium-down") {
     flex-direction: column;
   }
 }
@@ -31,7 +31,7 @@
 .image-with-text__text {
   padding: get-vm-spacer(4);
 
-  @include respond-to('medium-down') {
+  @include respond-to("medium-down") {
     padding: 2rem;
   }
 }

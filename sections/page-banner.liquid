@@ -1,40 +1,37 @@
+{% assign text_align = "left" %}
+{% if section.settings.text_is_centered %}
+  {% assign text_align = "center" %}
+{% endif %}
+
 {% assign has_text_content = false %}
-{% if section.settings.subtitle != blank or section.settings.text != blank %}
+{% if section.settings.subtitle or section.settings.text %}
   {% assign has_text_content = true %}
 {% endif %}
-
-{% assign text_align = "left" %}
-{% if section.settings.is_centered %}
-  {% unless has_text_content %}
-    {% assign text_align = "center" %}
-  {% endunless %}
-{% endif %}
-
 
 {% capture content %}
 <div class="container">
   <div class="row">
-
+    
     <div
       class="
         eight columns
         large-down--twelve
         medium-down--one-whole
         medium-down--offset-by-zero
-      {% if section.settings.is_centered %}offset-by-four large-down--offset-by-two{% endif %}">
+      {% if section.settings.content_is_centered %}offset-by-four large-down--offset-by-two{% endif %}">
       
       {% assign extra_heading_classes = "" %}
       {% if has_text_content %}
-        {% assign extra_heading_classes = "u-margin-top-0" %}
+        {% assign extra_heading_classes = "u-margin-top-0 u-margin-bottom-3" %}
       {% endif %}
 
-      {% include "page-heading", with {
+      {% render "page-heading", with {
         title: section.settings.title,
         align: text_align,
         extra_classes: extra_heading_classes
       } %}
 
-      <div class="block-text">
+      <div class="block-text u-text-align-{{ text_align }}">
         {% if section.settings.subtitle != blank %}
           <p class="paragraph-1">{{ section.settings.subtitle }}</p>
         {% endif %}
@@ -43,14 +40,35 @@
           <p class="u-margin-bottom-0">{{ section.settings.text }}</p>
         {% endif %}
       </div>
+
+      {% if section.settings.cta_text and section.settings.cta_link %}
+        <div class="u-text-align-{{ text_align }} u-margin-top-3">
+          <a
+            href="{{ section.settings.cta_link }}"
+            class="
+              cta-link
+              {% if section.settings.color_region == "dark" or section.settings.color_region == "dark-alt" %}
+              cta-link--inverted
+              {% endif %}
+            ">
+            {{ section.settings.cta_text }}
+          </a>
+        </div>
+      {% endif %}
     </div>
   </div>
 </div>
 {% endcapture %}
 
-{% include "content-section" with {
+{% assign background_image = blank %}
+{% if section.settings.background_image %}
+  {% assign background_image = section.settings.background_image | img_url: "1200x" %}
+{% endif %}
+
+{% render "content-section" with {
   content: content,
-  color_region: section.settings.color_region
+  color_region: section.settings.color_region,
+  background_image: background_image
 } %}
 
 {% schema %}
@@ -76,10 +94,31 @@
       "default": "Magna quis ex deserunt elit consequat qui proident ipsum consequat tempor qui ipsum proident nulla. Culpa sint in esse occaecat do voluptate. Velit laboris velit Lorem aliqua commodo laboris adipisicing anim sit. Laborum magna labore do laboris consequat tempor reprehenderit in reprehenderit sunt mollit ipsum dolor. Sunt aute consectetur esse adipisicing anim enim officia aute. Consectetur minim ullamco adipisicing culpa nisi exercitation ea aliqua veniam elit culpa magna ad."
     },
     {
+      "id": "cta_text",
+      "label": "CTA Text",
+      "type": "text"
+    },
+    {
+      "id": "cta_link",
+      "label": "CTA Link",
+      "type": "url"
+    },
+    {
       "type": "checkbox",
-      "id": "is_centered",
-      "label": "Centered?",
+      "id": "content_is_centered",
+      "label": "Center Content?",
       "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "text_is_centered",
+      "label": "Center Text?",
+      "default": false
+    },
+    {
+      "id": "background_image",
+      "label": "Background Image",
+      "type": "image_picker"
     },
     {
       "type": "select",

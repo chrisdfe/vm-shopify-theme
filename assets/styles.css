@@ -7764,12 +7764,30 @@ button.shopify-payment-button__more-options:hover {
 }
 .image-card .image-card__link {
   transition: all 0.4s;
-}
-.image-card .image-card__link {
   color: #1c4747;
 }
 .image-card .image-card__link:hover {
   color: #dec1a8;
+}
+.image-card .image-card__image {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.image-card .image-card__image picture,
+.image-card .image-card__image img {
+  width: 100%;
+  height: 100%;
+}
+.image-card .image-card__image img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.image-card .image-card__image.image-card__image--aspect-ratio--1-1 {
+  aspect-ratio: 1/1;
+}
+.image-card .image-card__image.image-card__image--aspect-ratio--2-1 {
+  aspect-ratio: 2/1;
 }
 .image-card .image-card__title {
   margin: 1rem 0 0;
@@ -10290,10 +10308,14 @@ div.container.gallery-content {
     padding-bottom: 6rem;
   }
 }
+.content-section.content-section--has-background-image {
+  background-size: cover;
+}
 
 .content-section__heading {
   display: flex;
   flex-direction: column;
+  margin-bottom: 2rem;
 }
 .content-section__heading .content-section__heading__title-link {
   position: relative;
@@ -10331,12 +10353,10 @@ div.container.gallery-content {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  margin-bottom: 2rem;
   width: 100%;
 }
 @media only screen and (max-width: 800px) {
   .content-section__heading__title-wrapper {
-    margin-bottom: 2rem;
     align-items: flex-start;
     flex-direction: column;
   }
@@ -10375,7 +10395,8 @@ div.container.gallery-content {
 }
 
 .content-section__heading__description {
-  margin-bottom: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 0;
 }
 
 /* Image List Section
@@ -10543,7 +10564,6 @@ form.search_form,
 .content-section--image-text-columns__image-wrapper,
 .content-section--image-text-columns__text-wrapper {
   display: flex;
-  align-items: center;
   justify-content: center;
   min-height: 100%;
 }
@@ -10569,7 +10589,6 @@ form.search_form,
 
 .content-section--image-text-columns__text-wrapper {
   flex-direction: column;
-  padding: 1rem;
 }
 @media only screen and (max-width: 800px) {
   .content-section--image-text-columns__text-wrapper {

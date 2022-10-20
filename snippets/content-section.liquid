@@ -22,6 +22,14 @@
     {% if padding_top != "" and padding_top != "default" %}u-padding-top-{{ padding_top }}{% endif %}
     {% if padding_bottom != "" and padding_bottom != "default" %}u-padding-bottom-{{ padding_bottom }}{% endif %}
     {% if is_full_width %}content-section--is-full-width{% endif %}
-    color-region--{{ color_region }}">
+    {% if background_image %}content-section--has-background-image{% endif %}
+    color-region--{{ color_region }}
+    "
+  {% if background_image %}
+  style="
+    background-image: url('{{ background_image }}');
+  "
+  {% endif %}
+  >
   {{ content }}
 </div>

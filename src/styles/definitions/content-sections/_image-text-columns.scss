@@ -7,7 +7,7 @@
 .content-section--image-text-columns__image-wrapper,
 .content-section--image-text-columns__text-wrapper {
   display: flex;
-  align-items: center;
+  // align-items: center;
   justify-content: center;
   min-height: 100%;
 }
@@ -16,7 +16,7 @@
   padding-right: get-vm-spacer(2);
   padding-left: 0;
 
-  @include respond-to('medium-down') {
+  @include respond-to("medium-down") {
     padding: 0 0 get-vm-spacer(3);
   }
 
@@ -24,7 +24,7 @@
     padding-right: 0;
     padding-left: get-vm-spacer(2);
 
-    @include respond-to('medium-down') {
+    @include respond-to("medium-down") {
       padding: 0 0 get-vm-spacer(3);
     }
   }
@@ -32,16 +32,15 @@
 
 .content-section--image-text-columns__text-wrapper {
   flex-direction: column;
-  padding: get-vm-spacer(1);
+  // padding: get-vm-spacer(1);
 
-  @include respond-to('medium-down') {
+  @include respond-to("medium-down") {
     padding: 0;
   }
 }
 
 .content-section.content-section--is-full-width {
-
-  @include respond-to('large-up') {
+  @include respond-to("large-up") {
     padding: 0;
   }
 
@@ -56,7 +55,7 @@
       object-fit: cover;
     }
 
-    @include respond-to('medium-down') {
+    @include respond-to("medium-down") {
       padding-bottom: get-vm-spacer(3);
     }
   }
@@ -64,13 +63,13 @@
   .content-section--image-text-columns__text-wrapper {
     padding: get-vm-spacer(3);
 
-    @include respond-to('widescreen-up') {
+    @include respond-to("widescreen-up") {
       p {
         max-width: 75%;
       }
     }
 
-    @include respond-to('medium-down') {
+    @include respond-to("medium-down") {
       padding: 0;
     }
   }

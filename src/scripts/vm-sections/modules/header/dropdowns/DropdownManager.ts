@@ -48,8 +48,6 @@ export default class DropdownManager {
 
     document.body.addEventListener("click", this.onBodyClick);
 
-    // document.body.addEventListener("shopify:section:load")
-
     return this;
   }
 

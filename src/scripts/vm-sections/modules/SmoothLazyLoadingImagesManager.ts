@@ -8,8 +8,11 @@ const HAS_LOADED_CLASSNAME = 'has-loaded';
 
 class LazyLoadedImage {
   element: HTMLImageElement;
+  posterImage: HTMLImageElement;
 
   elementsToLoad: (HTMLImageElement | HTMLVideoElement)[];
+  unloadCallbacks: (() => void)[];
+
   hasLoaded: boolean[];
   hasCompletelyLoaded: boolean = false;
 
@@ -18,14 +21,15 @@ class LazyLoadedImage {
   }
 
   initialize = () => {
-    // this.elementsToLoad = Array.from(this.element.querySelectorAll('img'));
     this.elementsToLoad = Array.from(this.element.querySelectorAll('img, video'));
     if (this.elementsToLoad.length === 0) return;
 
     this.hasLoaded = new Array(this.elementsToLoad).map(() => false);
     this.element.classList.add(IS_LOADING_CLASSNAME);
 
-    this.elementsToLoad.forEach((element, elementIndex) => {
+    // Since 'onLoad' is defined in the function scope we need to also create an
+    // 'unload' function to clean up the load event listener
+    this.unloadCallbacks = this.elementsToLoad.map((element, elementIndex) => {
       const onLoad = () => {
         this.onLoad(elementIndex);
       };
@@ -35,24 +39,33 @@ class LazyLoadedImage {
           onLoad();
         } else {
           element.addEventListener('load', onLoad, { once: true });
-        }
-      } else if (element.tagName === "VIDEO") {
-        const posterImage = new Image();
-        posterImage.loading = "lazy";
-        posterImage.src = (element as HTMLVideoElement).getAttribute('poster');
-
-        if ((posterImage as HTMLImageElement).complete) {
-          onLoad();
-        } else {
-          posterImage.addEventListener('load', onLoad, { once: true });
+          return () => { element.removeEventListener('load', onLoad); };
         }
       }
+
+      if (element.tagName === "VIDEO") {
+        this.posterImage = new Image();
+        this.posterImage.loading = "lazy";
+        this.posterImage.src = (element as HTMLVideoElement).getAttribute('poster');
+
+        if ((this.posterImage as HTMLImageElement).complete) {
+          onLoad();
+        } else {
+          this.posterImage.addEventListener('load', onLoad, { once: true });
+          return () => { element.removeEventListener('load', onLoad); };
+        }
+      }
+
+      // no-op unload function
+      return () => { };
     });
 
     return this;
   };
 
-  unload = () => { };
+  unload = () => {
+    this.unloadCallbacks.forEach(unload => { unload(); });
+  };
 
   private onLoad = (elementIndex) => {
     this.hasLoaded[elementIndex] = true;
@@ -79,17 +92,24 @@ export default class SmoothLazyLoadedImagesManager {
 
     window.addEventListener('product-recommendations-loaded', this.reset);
     window.addEventListener('collection-filters-updated', this.reset);
+
+    window.addEventListener('shopify:section:load', this.onShopifySectionLoad);
   };
 
   unload = () => {
     window.removeEventListener('product-recommendations-loaded', this.reset);
     window.removeEventListener('collection-filters-updated', this.reset);
+    window.removeEventListener('shopify:section:load', this.onShopifySectionLoad);
   };
 
   setLazyLoadedImages = () => {
     this.lazyLoadedImages =
       Array.from(document.querySelectorAll(SELECTORS.LAZY_LOADED_IMAGE))
         .map(element => new LazyLoadedImage(element).initialize());
+  };
+
+  private onShopifySectionLoad = (event: ShopifySectionLoadEvent) => {
+    this.reset();
   };
 
   private reset = () => {

@@ -16,6 +16,12 @@ declare global {
     };
     formatMoney: (amount: number, format: string) => string;
   };
+
+  type ShopifyEvent<DetailType> = Event & {
+    detail: DetailType;
+  };
+
+  type ShopifySectionLoadEvent = ShopifyEvent<{ sectionId: string; }>;
 }
 
 export { }; 

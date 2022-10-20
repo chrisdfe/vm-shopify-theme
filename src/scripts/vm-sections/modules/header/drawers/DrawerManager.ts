@@ -13,7 +13,7 @@ export default class HeaderDrawerManager {
   drawerElements: NodeListOf<Element>;
 
   currentOpenDrawerId: string | null;
-  drawerIdMap: { [drawerId: string]: HeaderDrawer };
+  drawerIdMap: { [drawerId: string]: HeaderDrawer; };
 
   drawerUnderlay: DrawerUnderlay;
 
@@ -38,6 +38,16 @@ export default class HeaderDrawerManager {
     window.addEventListener("resize", this.onWindowResize);
 
     return this;
+  }
+
+  unload() {
+    document.body.removeEventListener("click", this.onBodyClick);
+    window.removeEventListener("resize", this.onWindowResize);
+  }
+
+  reset() {
+    this.unload();
+    this.initialize();
   }
 
   private onDrawerButtonClick = (event: Event, drawer: HeaderDrawer) => {

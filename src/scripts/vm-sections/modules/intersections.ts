@@ -26,13 +26,13 @@ function registerIntersectionObservers() {
   });
 }
 
-function init() {
-  document.addEventListener("DOMContentLoaded", registerIntersectionObservers);
-}
 
-function unload() {}
+export default class Intersections {
+  initialize() {
+    document.addEventListener("DOMContentLoaded", registerIntersectionObservers);
+  }
 
-export default {
-  init,
-  unload,
+  unload() {
+    document.removeEventListener("DOMContentLoaded", registerIntersectionObservers);
+  }
 };

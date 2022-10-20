@@ -16,7 +16,6 @@ export default class ProductColorSwatches {
   selectButtonGroups: SelectButtonGroup[];
 
   initialize() {
-
     this.selectButtonGroups =
       Array.from(
         document.querySelectorAll(SELECTORS.SWATCH_FIELD)

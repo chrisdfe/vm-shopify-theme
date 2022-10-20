@@ -1,66 +1,263 @@
+
 {% capture section_content %}
   <div class="container">
     <div class="row">
-      <div class="one-whole columns">
-
-        cta cards
-      
+      <div class="one-whole column">
+        {% render "content-section.title" with {
+          title: section.settings.title,
+          description: section.settings.description,
+          title_link: section.settings.title_link,
+          title_link_text: section.settings.title_link_text,
+        } %}
       </div>
+
+      {% assign column_class = "" %}
+      {% if section.settings.columns_per_row_desktop == "2" %}
+        {% assign column_class = "one-half" %}
+      {% else %}
+        {% assign column_class = "one-third" %}
+      {% endif %}
+
+      {% for block in section.blocks %}
+        <div class="{{ column_class }} medium-down--one-half columns">
+          {% capture card_content %}
+            <p>{{ block.settings.description }}</p>
+            <a href="{{ block.settings.cta_link }}" class="cta-link">{{ block.settings.cta_text }}</a>
+          {% endcapture %}
+
+          {% render "image-card" with {
+            image: block.settings.image,
+            title: block.settings.title,
+            card_content: card_content,
+            image_aspect_ratio: section.settings.image_aspect_ratio
+          } %}
+        </div>
+      {% endfor %}
+
     </div>
   </div>
 {% endcapture %}
 
 {% render "content-section" with {
   content: section_content,
-  color_region: section.settings.color_region
+  color_region: section.settings.color_region,
+  padding_top: section.settings.padding_top,
+  padding_bottom: section.settings.padding_bottom,
 } %}
 
 {% schema %}
-{
-  "name": "CTA Cards",
-  "settings": [
-    {
-      "type": "text",
-      "id": "title",
-      "label": "Title",
-      "default": "Title"
-    },
-    {
-      "type": "select",
-      "id": "color_region",
-      "label": "Color Region",
-      "options": [
+  {
+    "name": "CTA Cards",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Title"
+      },
+      {
+        "type": "url",
+        "id": "title_link",
+        "label": "Title Link"
+      },
+      {
+        "type": "text",
+        "id": "title_link_text",
+        "label": "Title Link Text"
+      },
+      {
+        "type": "text",
+        "id": "description",
+        "label": "Description",
+        "default": "description"
+      },
+      {
+        "type": "select",
+        "id": "columns_per_row_desktop",
+        "label": "Columns per row (desktop)",
+        "options": [
+          {
+            "value": "2",
+            "label": "2"
+          },
+          {
+            "value": "3",
+            "label": "3"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "image_aspect_ratio",
+        "label": "Image aspect ratio",
+        "options": [
+          {
+            "value": "1-1",
+            "label": "1:1 (square)"
+          },
+          {
+            "value": "2-1",
+            "label": "2:1"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "color_region",
+        "label": "Color Region",
+        "options": [
+          {
+            "value": "light",
+            "label": "Light"
+          },
+          {
+            "value": "light-alt",
+            "label": "Light - alternative"
+          },
+          {
+            "value": "dark",
+            "label": "Dark"
+          },
+          {
+            "value": "dark-alt",
+            "label": "Dark - alternative"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "padding_top",
+        "label": "Top Padding (in spacing units)",
+        "options": [
+          {
+            "value": "default",
+            "label": "Default (5)"
+          },
+          {
+            "value": "0",
+            "label": "0"
+          },
+          {
+            "value": "2",
+            "label": "2"
+          },
+          {
+            "value": "3",
+            "label": "3"
+          },
+          {
+            "value": "8",
+            "label": "8"
+          },
+          {
+            "value": "10",
+            "label": "10"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "padding_bottom",
+        "label": "Bottom Padding (in spacing units)",
+        "options": [
+          {
+            "value": "default",
+            "label": "Default (5)"
+          },
+          {
+            "value": "0",
+            "label": "0"
+          },
+          {
+            "value": "2",
+            "label": "2"
+          },
+          {
+            "value": "3",
+            "label": "3"
+          },
+          {
+            "value": "8",
+            "label": "8"
+          },
+          {
+            "value": "10",
+            "label": "10"
+          }
+        ]
+      }
+    ],
+    "blocks": [
+      {
+        "type": "cta-card",
+        "name": "CTA Card",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "text",
+            "id": "description",
+            "label": "Description"
+          },
+          {
+            "type": "text",
+            "id": "cta_text",
+            "label": "CTA Text"
+          },
+          {
+            "type": "url",
+            "id": "cta_link",
+            "label": "CTA Link"
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          }
+        ]
+      }
+    ],
+    "presets": [{
+      "name": "CTA Cards",
+      "settings": {
+        "title": "CTA Cards",
+        "description": "<p>Blah blah blah<\/p>",
+        "title_link": "\/",
+        "title_link_text": "read more",
+        "columns_per_row_desktop": "3"
+      },
+      "blocks": [
         {
-          "value": "light",
-          "label": "Light"
+          "type": "cta-card",
+          "settings": {
+            "title": "CTA Card",
+            "description": "<p>Blah blah blah<\/p>",
+            "cta_link": "\/",
+            "cta_text": "read more"
+          }
         },
         {
-          "value": "light-alt",
-          "label": "Light - alternative"
+          "type": "cta-card",
+          "settings": {
+            "title": "CTA Card",
+            "description": "<p>Blah blah blah<\/p>",
+            "cta_link": "\/",
+            "cta_text": "read more"
+          }
         },
         {
-          "value": "dark",
-          "label": "Dark"
-        },
-        {
-          "value": "dark-alt",
-          "label": "Dark - alternative"
+          "type": "cta-card",
+          "settings": {
+            "title": "CTA Card",
+            "description": "<p>Blah blah blah<\/p>",
+            "cta_link": "\/",
+            "cta_text": "read more"
+          }
         }
       ]
-    }
-  ],
-  "blocks": [
-    {
-      "type": "cta_card",
-      "name": "CTA Card",
-      "settings": [
-        {
-           "type": "text",
-           "id": "title",
-           "label": "Title"
-        }
-      ]
-    }
-  ]
-}
+    }]
+  }
 {% endschema %}
