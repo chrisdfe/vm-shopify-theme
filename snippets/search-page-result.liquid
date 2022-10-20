@@ -92,7 +92,7 @@
       
           {% if item.excerpt %}
             <div class="paragraph-3">
-              {{ item.excerpt }}
+              {{ item.excerpt | strip_html }}
             </div>
           {% else %}
             <p class="paragraph-3 u-hidden-medium-down">

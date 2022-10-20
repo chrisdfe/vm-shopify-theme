@@ -357,7 +357,7 @@
           "738b4509-cd54-4656-8443-5b3e8aa4baae"
         ],
         "settings": {
-          "promo_text": "",
+          "promo_text": "<p>Shop our  collection of champagne, peach and brown rings <a href=\"https:\/\/www.valeriemadison.com\/collections\/new-arrivals\" target=\"_blank\" title=\"https:\/\/www.valeriemadison.com\/collections\/new-arrivals\">here<\/a>.<\/p>",
           "logo": "shopify:\/\/shop_images\/logo_173a67f6-34c1-4670-82e7-e7a2e1e4f697.png",
           "logo_mobile": "shopify:\/\/shop_images\/mobile-logo-seagreen_256x256_79182b2b-7668-4862-8b08-f67f60755daf.png",
           "show_locale_selector": true,
@@ -370,9 +370,9 @@
           "1489285524898-0": {
             "type": "image",
             "settings": {
-              "title": "Incredibly knowledgeable and understanding",
-              "testimonial": "<p>My partner and I couldn't be happier with our engagement ring. We are both small business owner, so shopping from a local small business was important to us. Every sales associate is incredibly knowledgeable and understanding. We never felt pressured or pushed in anyway.<\/p>",
-              "name": "Allen",
+              "title": "One-of-a-kind!",
+              "testimonial": "<p>Exceptional and one-of-a-kind selection. Kind and warm reception from the staff. I look forward to acquiring another piece from you soon.<\/p>",
+              "name": "Marta",
               "store_name": "",
               "link": "",
               "text_position": "center",
@@ -383,9 +383,9 @@
           "1489285524898-1": {
             "type": "image",
             "settings": {
-              "title": "Transparent information",
-              "testimonial": "<p>Amara made all our custom engagement ring dreams come true! She provided transparent information without overwhelming us, patiently talked through a lot of variables and questions, sourced beautiful gemstones for us to see during our in-store visit, and made us feel incredibly cared for throughout the whole process. Never once did we feel rushed or pressured. It is an experience we will treasure forever!<\/p>",
-              "name": "Chryssi",
+              "title": "Local & Woman-Owned",
+              "testimonial": "<p>Beautiful, distinct pieces that I will treasure forever! I found VM while looking for a sustainable, locally owned jeweler for my engagement ring. It was a huge bonus that VM is also woman and black owned. In our family of 5, we all now own at least one piece of VM jewelry which are all timeless. I love supporting our local artists and THIS one is truly special.<\/p>",
+              "name": "Keriche",
               "store_name": "",
               "link": "",
               "text_position": "center",
@@ -396,9 +396,9 @@
           "1489285524898-2": {
             "type": "image",
             "settings": {
-              "title": "Stunning classic rings",
-              "testimonial": "<p>We knew we wanted to work with a local designer and women owned business and when we found Valerie Madison the stars aligned. I also knew I wanted more of a classic solitaire style with a diamond, and Valerie Madison has not only an incredibly beautiful selection of alternative rings, they also make stunning classic rings too. Lauren was so helpful throughout the process. We can't recommend Valerie Madison enough for engagement rings and beyond!!<\/p>",
-              "name": "Ellie",
+              "title": "Exceptional Experience",
+              "testimonial": "<p>I recently ordered a diamond band for my husband to celebrate our 10 year wedding anniversary.  Everything about my experience with the team at Valerie Madison - the quality, attention to detail, communication, customer service - was perfect! We will definitely shop with them again, I highly recommend VM!<\/p>",
+              "name": "Kristine",
               "store_name": "",
               "link": "",
               "text_position": "center",
@@ -409,9 +409,9 @@
           "a0f89095-f4be-46a5-ad9a-2295375cfc1f": {
             "type": "image",
             "settings": {
-              "title": "So helpful",
-              "testimonial": "<p>I worked with Megan at VM to order a diamond wedding band to go with my VM engagement ring. She was so helpful over Instagram and email to coordinate the order and send pictures to make sure it would be a good fit! I’ve ordered several times from Valerie Madison and the jewelry is always so beautiful!!<\/p>",
-              "name": "Danielle",
+              "title": "Best Customer Service",
+              "testimonial": "<p>Valerie Madison makes beautiful jewelry, and has the BEST customer service. My wife and I visited the shop on a trip to Seattle and bought a one of a kind ring, it was shipped to us, and we were incredibly happy with it! Honestly can't say enough good things about this shop, the jewelry, and the people.<\/p>",
+              "name": "Joe",
               "store_name": "",
               "link": "",
               "text_position": "center",
@@ -2991,7 +2991,7 @@
         "settings": {
           "title": "About Valerie",
           "content": "Valerie merges contemporary technology with skillful artistry to create elegant designs inspired by classic styles. With her keen eye for detail and passion for individuality, her designs celebrate not only the beauty of life and love but also the natural world and the stunning gemstones that come from it. A Valerie Madison piece features styles and stones not seen in traditional pieces, such as salt-and-pepper diamonds, rose-cut diamonds, uniquely shaped stones, vibrant hues, and more. Valerie is a Black Latina and proud to be diversifying the jewelry industry with her Seattle small business.",
-          "image": "shopify:\/\/shop_images\/Val-in-front-of-store-2.jpg"
+          "image": "shopify:\/\/shop_images\/Valerie-Arch-Transparent-1200px-1800px.png"
         }
       },
       "our-story-timeline": {
@@ -3193,8 +3193,8 @@
             "settings": {
               "image": "shopify:\/\/shop_images\/Megan_Cosgrove_Headshot.jpg",
               "title": "Megan",
-              "job_title": "Customer Service Specialist",
-              "description": "As the face of VM’s Customer Service Department, I strive to make your experience memorable and stress-free. My sense of humor and colorful personality helps ensure that you will be taken care of no matter what!"
+              "job_title": "Ecommerce Specialist",
+              "description": "I am responsible for managing our website's user experience and product launches. I strive to create a seamless shopping experience that is reminiscent of stepping into our lovely Madrona storefront. When I am not glued to my computer, you will find me chasing Biscuit (our office dog) around Seattle or trying out a new restaurant with my other half."
             }
           },
           "cf3bd9f0-e995-42ed-a2e9-527e40187beb": {
@@ -3283,9 +3283,9 @@
       "eternity-bracelets-overview": {
         "type": "eternity-bracelets-overview",
         "settings": {
-          "title": "What does \"permanent jewelry\" mean?",
-          "content": "Our skilled bench jewelers will weld on a custom fit bracelet to your wrist using a painless, quick, and easy process. Because the bracelet is welded on, it does not have a clasp and therefore will “permanently” stay on for infinity! (Or until you decide to remove it).",
-          "image": "shopify:\/\/shop_images\/Eternity-Bracelets-1000-px.jpg"
+          "title": "Permanent Sparkle",
+          "content": "<p>Our welded permanent jewelry offers a clasp-less bracelet that is quickly becoming a wardrobe staple. Our team will custom-fit and painlessly weld a solid gold chain to your wrist. Our styles span from dainty to chunky, so you can find the chain of your dreams. All of our chains are 14K solid gold, never plated or filled. Intended to be worn forever, but can easily be removed with scissors. Not looking for forever? <a href=\"https:\/\/www.valeriemadison.com\/collections\/fine-jewelry\/bracelets-and-anklets\">Check out our chains also available as clasped styles.<\/a><\/p>\n\n<p>Book an appointment below! Appointments are strongly encouraged for all chain options. This appointment is for 1-2 people total to attend. Please book another slot for more than 2 people.<\/p>\n\n<!-- Calendly inline widget begin -->\n<div class=\"calendly-inline-widget\" data-url=\"https:\/\/calendly.com\/valeriemadison\/eternity?hide_event_type_details=1&hide_gdpr_banner=1&text_color=1c4047&primary_color=1c4047\" style=\"min-width:320px;height:630px;\"><\/div>\n<script type=\"text\/javascript\" src=\"https:\/\/assets.calendly.com\/assets\/external\/widget.js\" async><\/script>\n<!-- Calendly inline widget end -->",
+          "image": "shopify:\/\/shop_images\/Eternity-Bracelets-1000x750.webp"
         }
       },
       "custom-engagement-ring-steps": {
@@ -3354,7 +3354,7 @@
             "type": "background_block",
             "settings": {
               "background_color": "light-alt",
-              "banner_image_desktop": "shopify:\/\/shop_images\/Shopify-Banner-S_Ps-rainbow.jpg"
+              "banner_image_desktop": "shopify:\/\/shop_images\/Shopify-Peach-sapphires-2x1.jpg"
             }
           },
           "c8162eb0-f303-4a37-a67a-93a3242277ce": {
@@ -3371,13 +3371,13 @@
         ],
         "settings": {
           "banner_wrapper_background_color": "light-alt",
-          "pretext": "Fresh for Fall",
-          "heading": "Salt & Pepper Diamonds",
-          "cta_link": "shopify:\/\/collections\/salt-pepper-diamond-rings",
-          "cta_text": "Shop Now",
-          "text_position": "right-block",
-          "text_color": "dark-alt",
-          "banner_image_mobile": "shopify:\/\/shop_images\/Shopify-Mobile-Banner-S_Ps-rainbow.jpg",
+          "pretext": "Just released",
+          "heading": "Pretty as a Peach",
+          "cta_link": "shopify:\/\/collections\/new-arrivals",
+          "cta_text": "shop for forever rings",
+          "text_position": "left-block",
+          "text_color": "dark",
+          "banner_image_mobile": "shopify:\/\/shop_images\/Shopify-Mobile-Peach-sapphires-1x1.jpg",
           "text_color_mobile": "dark-alt",
           "content_background_color_mobile": "light"
         }
@@ -3386,8 +3386,8 @@
         "type": "image-with-text",
         "settings": {
           "image": "shopify:\/\/shop_images\/Screen_Shot_2022-09-15_at_11.24.15_AM.png",
-          "title": "Environmentally <em>Conscious<\/em>",
-          "text": "<p>Our approach to making jewelry includes using recycled precious metals, conflict-free diamonds, and ethically-sourced gemstones to create elegant, sophisticated, and vibrant heirloom-quality pieces.<br\/><\/p><p>We are a women-operated company founded by a Black Latina and we are based in Seattle, WA where you can also shop from our retail store in person.<br\/><br\/>We're looking forward to helping you discover our unique engagement rings, wedding bands, and fine jewelry to celebrate special milestones or treat yourself.<\/p>",
+          "title": "Seattle’s only <em>BIPOC<\/em> Fine Jeweler",
+          "text": "<p>Founded by a Black Latina woman, we are strongly rooted in our craft and community. We offer a wide range of innovative designs along with exceptional customer service.<br\/><br\/>Our bridal collection ranges from bespoke diamond engagement rings and unique sapphire engagement rings to lab-grown moissanite rings. We truly offer something for everyone, from ready-to-ship designs to custom rings.<\/p><p>Our approach to making jewelry includes using recycled metals, quality accent stones, and consciously sourced stones to create elegant, sophisticated, and vibrant heirloom-quality pieces.<\/p>",
           "cta_text": "Read more",
           "cta_link": "shopify:\/\/pages\/our-story",
           "image_position": "right",
@@ -3901,7 +3901,7 @@
         "settings": {
           "title": "Available Chain Styles",
           "content": "All chains are available in all 14K yellow gold. *Please note chains are listed in order shown on the left from top to bottom.",
-          "image": "shopify:\/\/shop_images\/Eternity_Bracelets_4x5_941843e3-7c83-40bd-af14-59a8cab1f256.jpg"
+          "image": "shopify:\/\/shop_images\/eternity-bracelets-square.webp"
         }
       },
       "eternity-bracelets-faq": {
@@ -3911,14 +3911,14 @@
             "type": "faq_item",
             "settings": {
               "title": "DOES IT HURT?",
-              "answer": "No. You may feel a bit of warmth for a moment. This process involves a laser welder being in close proximity with your hand. Your skin will be shielded with a section of leather as a precaution against the unlikely possibility of machine malfunction or human error. Our technician has over 120 hours of training and experience on this machine, and we take pride in our commitment to the comfort and safety of our clients."
+              "answer": "Not at all! This process involves arc welder technology that will quickly zap the chain. We take pride in our commitment to the comfort and safety of our clients."
             }
           },
           "aef2af61-bda0-4ab4-a6e2-1c1cebff3641": {
             "type": "faq_item",
             "settings": {
               "title": "WHAT IF I NEED TO REMOVE IT OR IT BREAKS?",
-              "answer": "We ensure the integrity of our weld before your appointment is complete and have been testing them on our staff for over 6 months. However, accidents happen! If you need to remove or your welded jewelry comes off for any reason, please contact us."
+              "answer": "We ensure the integrity of our weld before your appointment is complete and have been testing them on our staff for over a  year. However, accidents happen! If you need to remove it or your welded jewelry comes off for any reason, please contact us."
             }
           },
           "a0505a76-c1c1-4d41-9cbf-e341af8e729b": {
@@ -3932,14 +3932,14 @@
             "type": "faq_item",
             "settings": {
               "title": "WHAT IF I NEED TO GET AN MRI?",
-              "answer": "Consult your doctor to know if you will be required to remove your permanent jewelry during your MRI appointment. It can easily be cut off with scissors if needed. Contact us if you need to have it reconnected."
+              "answer": "Consult your doctor to know if you will be required to remove your permanent jewelry during your MRI appointment. It can easily be cut off with scissors at the jump ring if needed. Contact us if you need to have it reconnected."
             }
           },
           "9cf3c7e0-808e-4b49-905a-a4f60242f8e9": {
             "type": "faq_item",
             "settings": {
               "title": "CAN MY CHILD GET ONE?",
-              "answer": "Minimum welding age is 10. Anyone under 14 must be accompanied by an adult."
+              "answer": "Anyone under 13 must be accompanied by an adult."
             }
           },
           "d80d2312-36b8-41b7-95e9-9822d42c09ea": {
@@ -3953,7 +3953,14 @@
             "type": "faq_item",
             "settings": {
               "title": "WHICH METALS TYPES ARE OFFERED?",
-              "answer": "Cable Chain is available in all metal colors (solid 14k Yellow, White, and Rose gold) luxe chain styles must be pre-ordered, contact us!"
+              "answer": "We offer 14k sold yellow gold - and it's our most popular choice! Any other colors \/ combinations must be special ordered in advance."
+            }
+          },
+          "02942e57-bc02-4915-9bb9-271b7c436a81": {
+            "type": "faq_item",
+            "settings": {
+              "title": "WHAT IF I'M ALLERGIC TO GOLD?",
+              "answer": "If you've ever had a reaction to gold we do not advise you wear permanent jewelry as all of our chains are solid 14k gold."
             }
           }
         },
@@ -3964,7 +3971,8 @@
           "d3892bf0-ac66-43a2-be06-9e21f9f664f7",
           "9cf3c7e0-808e-4b49-905a-a4f60242f8e9",
           "d80d2312-36b8-41b7-95e9-9822d42c09ea",
-          "2244c8aa-ae1e-4d63-a9db-4b5d2608d67f"
+          "2244c8aa-ae1e-4d63-a9db-4b5d2608d67f",
+          "02942e57-bc02-4915-9bb9-271b7c436a81"
         ],
         "settings": {
           "title": "FAQs"
@@ -3973,24 +3981,16 @@
       "eternity-bracelets-upcoming-dates": {
         "type": "eternity-bracelets-upcoming-dates",
         "blocks": {
-          "5590c058-2a3e-4366-a6c3-e434396aa48e": {
-            "type": "upcoming-date",
-            "settings": {
-              "date": "Friday, September 30",
-              "time": "4:00-6:00pm"
-            }
-          },
-          "6741e976-29ed-4885-b4e3-0ec5c97b22af": {
+          "dfe83ba7-6abb-4aca-9315-379fccc1305a": {
             "type": "upcoming-date",
             "settings": {
               "date": "Friday, October 28",
-              "time": "4:00-6:00pm"
+              "time": "4:00-6:00 PM"
             }
           }
         },
         "block_order": [
-          "5590c058-2a3e-4366-a6c3-e434396aa48e",
-          "6741e976-29ed-4885-b4e3-0ec5c97b22af"
+          "dfe83ba7-6abb-4aca-9315-379fccc1305a"
         ],
         "settings": {
           "title": "Upcoming Dates",
@@ -4147,50 +4147,22 @@
           "is_visible": true
         }
       },
-      "page-gift-guide-template": {
-        "type": "page-gift-guide-template",
-        "blocks": {
-          "9efeaf5b-803b-41c3-b7d1-2ad6e2ef3f46": {
-            "type": "collection",
-            "settings": {
-              "title": "",
-              "subtitle": "asdfasdf",
-              "title_cta_text": "read more",
-              "collection": "bands",
-              "color_region": "light-alt"
-            }
-          },
-          "bdc91454-644c-4c56-ae5a-e613bb7ad451": {
-            "type": "image_with_text",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/S_Ps-on-finger-1x1.jpg",
-              "title": "Title",
-              "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum<\/p>",
-              "cta_text": "Read more",
-              "cta_link": "shopify:\/\/pages\/our-story",
-              "image_position": "left",
-              "is_full_width": false,
-              "color_region": "light"
-            }
-          },
-          "439e11d4-7719-4d66-94eb-2b324846496f": {
-            "type": "collection",
-            "settings": {
-              "title": "",
-              "subtitle": "asdf",
-              "title_cta_text": "",
-              "collection": "earrings",
-              "color_region": "light-alt"
-            }
-          }
-        },
-        "block_order": [
-          "9efeaf5b-803b-41c3-b7d1-2ad6e2ef3f46",
-          "bdc91454-644c-4c56-ae5a-e613bb7ad451",
-          "439e11d4-7719-4d66-94eb-2b324846496f"
-        ],
+      "calendly-embed": {
+        "type": "calendly-embed",
         "settings": {
-          "title_text": "Gift Guide"
+          "title": "Book an Appointment",
+          "description": "",
+          "calendly_embed": "<!-- Calendly inline widget begin -->\n<div class=\"calendly-inline-widget\" data-url=\"https:\/\/calendly.com\/valeriemadison\/eternity?text_color=1c4047&amp;primary_color=1c4047\" style=\"min-width:320px;height:630px;\"><\/div>\n<script type=\"text\/javascript\" src=\"https:\/\/assets.calendly.com\/assets\/external\/widget.js\" async=\"\"><\/script>\n<!-- Calendly inline widget end -->",
+          "padding_top": "0",
+          "padding_bottom": "default"
+        }
+      },
+      "eternity-bracelets-calendly-embed": {
+        "type": "eternity-bracelets-calendly-embed",
+        "settings": {
+          "title": "Book an Appointment",
+          "content": "Book an appointment below! Appointments are strongly encouraged for all chain options. This appointment is for 1-2 people total to attend. Please book another slot for more than 2 people.",
+          "calendly_embed": "<!-- Calendly inline widget begin -->\n<div class=\"calendly-inline-widget\" data-url=\"https:\/\/calendly.com\/valeriemadison\/shopping?hide_event_type_details=1&hide_gdpr_banner=1&text_color=1c4047&primary_color=1c4047\" style=\"min-width:320px;height:630px;\"><\/div>\n<script type=\"text\/javascript\" src=\"https:\/\/assets.calendly.com\/assets\/external\/widget.js\" async><\/script>\n<!-- Calendly inline widget end -->"
         }
       }
     },
