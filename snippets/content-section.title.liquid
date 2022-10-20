@@ -1,9 +1,6 @@
 {% assign heading_align = heading_align | default: "left" %}
 {% assign mobile_heading_align = mobile_heading_align | default: heading_align %}
-
-{% if with_accent == blank %}
-  {% assign with_accent = false %}
-{% endif %}
+{% assign with_accent = with_accent | default: true %}
 
 {% if anchor == blank %}
   {% assign anchor = title | lowercase | handleize %}
