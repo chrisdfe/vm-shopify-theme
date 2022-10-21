@@ -3804,104 +3804,10 @@
       },
       "eternity-bracelets-chain-styles": {
         "type": "eternity-bracelets-chain-styles",
-        "blocks": {
-          "deb42d16-3853-444f-be62-9d61af60fbef": {
-            "type": "chain_style",
-            "settings": {
-              "title": "Curb Chain",
-              "price": "530",
-              "has_asterisk": false
-            }
-          },
-          "4bd03a84-d9c1-4e98-a939-443f8a52c4e4": {
-            "type": "chain_style",
-            "settings": {
-              "title": "Rolo Chain",
-              "price": "490",
-              "has_asterisk": false
-            }
-          },
-          "e5b67104-2a4c-46bb-b93a-71f2801686d8": {
-            "type": "chain_style",
-            "settings": {
-              "title": "Cable Chain",
-              "price": "200",
-              "has_asterisk": false
-            }
-          },
-          "1d0d9d19-8a76-4798-93b4-67c22344df96": {
-            "type": "chain_style",
-            "settings": {
-              "title": "Baby Flat Chain",
-              "price": "180",
-              "has_asterisk": false
-            }
-          },
-          "d1a26eab-2a0f-4107-9657-405fc1b62646": {
-            "type": "chain_style",
-            "settings": {
-              "title": "XL Cable Chain",
-              "price": "210",
-              "has_asterisk": false
-            }
-          },
-          "a1c00d91-55f9-4e80-92d4-fef2b22aa62e": {
-            "type": "chain_style",
-            "settings": {
-              "title": "Mariner Chain",
-              "price": "340",
-              "has_asterisk": false
-            }
-          },
-          "91560518-35f9-4c00-a65c-1c5d56b402a3": {
-            "type": "chain_style",
-            "settings": {
-              "title": "Dainty Cable Chain",
-              "price": "100",
-              "has_asterisk": false
-            }
-          },
-          "2ce41173-5d5e-463c-a608-ecf84d3c899e": {
-            "type": "chain_style",
-            "settings": {
-              "title": "Elongated Box Chain",
-              "price": "170",
-              "has_asterisk": false
-            }
-          },
-          "a483a28d-9550-48d1-bdae-7ab3eeca0b84": {
-            "type": "chain_style",
-            "settings": {
-              "title": "Figaro Chain",
-              "price": "170",
-              "has_asterisk": false
-            }
-          },
-          "c62b5649-521c-4150-90cc-7efb564f6be8": {
-            "type": "chain_style",
-            "settings": {
-              "title": "Diamond Charm Chain",
-              "price": "370",
-              "has_asterisk": false
-            }
-          }
-        },
-        "block_order": [
-          "deb42d16-3853-444f-be62-9d61af60fbef",
-          "4bd03a84-d9c1-4e98-a939-443f8a52c4e4",
-          "e5b67104-2a4c-46bb-b93a-71f2801686d8",
-          "1d0d9d19-8a76-4798-93b4-67c22344df96",
-          "d1a26eab-2a0f-4107-9657-405fc1b62646",
-          "a1c00d91-55f9-4e80-92d4-fef2b22aa62e",
-          "91560518-35f9-4c00-a65c-1c5d56b402a3",
-          "2ce41173-5d5e-463c-a608-ecf84d3c899e",
-          "a483a28d-9550-48d1-bdae-7ab3eeca0b84",
-          "c62b5649-521c-4150-90cc-7efb564f6be8"
-        ],
         "settings": {
           "title": "Available Chain Styles",
           "content": "All chains are available in all 14K yellow gold. *Please note chains are listed in order shown on the left from top to bottom.",
-          "image": "shopify:\/\/shop_images\/eternity-bracelets-square.webp"
+          "image": "shopify:\/\/shop_images\/chain-pricing-larger-text_688fe665-f770-4e78-a49d-b0951be28099.png"
         }
       },
       "eternity-bracelets-faq": {

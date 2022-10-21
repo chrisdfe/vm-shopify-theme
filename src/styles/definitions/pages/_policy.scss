@@ -1,22 +1,24 @@
 /* #Policy pages
 ================================================== */
 
-.container .shopify-policy__container {
-  margin: 5rem auto;
-  max-width: 75%;
+.shopify-policy__container {
+  margin: 0 auto !important;
+  max-width: 900px !important;
   padding-left: 0;
   padding-right: 0;
+
+  .shopify-policy__title {
+    margin: get-vm-spacer(5) 0;
+  }
 
   @include respond-to("medium-down") {
     margin: 1rem 0;
     max-width: 100%;
     padding-left: 0;
     padding-right: 0;
-  }
-}
 
-.shopify-policy__container {
-  .shopify-policy__title {
-    text-align: left;
+    .shopify-policy__title {
+      margin: get-vm-spacer(3) 0;
+    }
   }
 }

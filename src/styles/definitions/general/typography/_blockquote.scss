@@ -11,7 +11,7 @@ blockquote {
   border: 0;
   background: $vm-color-cream;
   padding: get-vm-spacer(3);
-  margin: 0;
+  margin: 0 0 get-vm-spacer(2);
 
   p:last-child {
     margin-bottom: 0;
@@ -27,7 +27,12 @@ blockquote {
     }
 
     &:before {
-      content: '\2014 \0020';
+      content: "\2014 \0020";
     }
+  }
+
+  @include respond-to("medium-down") {
+    padding: get-vm-spacer(1);
+    margin: 0 0 get-vm-spacer(1);
   }
 }

@@ -3,37 +3,37 @@
 <html lang="{{ shop.locale }}">
   <head>
   
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-PS57H96');</script>
-<!-- End Google Tag Manager -->
-  
-  <!-- GA4 tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-2L460T5VTY"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-2L460T5VTY');
-</script>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PS57H96');</script>
+    <!-- End Google Tag Manager -->
+      
+      <!-- GA4 tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2L460T5VTY"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-2L460T5VTY');
+    </script>
   
     <meta name="msvalidate.01" content="2F4167E1DD73CDF67EF6C947B04FF484" />
    
-      <!-- Affirm -->
-      <script>
-      _affirm_config = {
-         public_api_key:  "432OADIFH6Y6BVT1",
-         script:          "https://cdn1.affirm.com/js/v2/affirm.js",
-         session_id:      "YOUR_VISITOR_SESSION_ID"
-      };
-      (function(l,g,m,e,a,f,b){var d,c=l[m]||{},h=document.createElement(f),n=document.getElementsByTagName(f)[0],k=function(a,b,c){return function(){a[b]._.push([c,arguments])}};c[e]=k(c,e,"set");d=c[e];c[a]={};c[a]._=[];d._=[];c[a][b]=k(c,a,b);a=0;for(b="set add save post open empty reset on off trigger ready setProduct".split(" ");a<b.length;a++)d[b[a]]=k(c,e,b[a]);a=0;for(b=["get","token","url","items"];a<b.length;a++)d[b[a]]=function(){};h.async=!0;h.src=g[f];n.parentNode.insertBefore(h,n);delete g[f];d(g);l[m]=c})(window,_affirm_config,"affirm","checkout","ui","script","ready");
-      // Use your live public API Key and https://cdn1.affirm.com/js/v2/affirm.js script to point to Affirm production environment.
-          </script>
-      <!-- End Affirm -->
+    <!-- Affirm -->
+    <script>
+    _affirm_config = {
+        public_api_key:  "432OADIFH6Y6BVT1",
+        script:          "https://cdn1.affirm.com/js/v2/affirm.js",
+        session_id:      "YOUR_VISITOR_SESSION_ID"
+    };
+    (function(l,g,m,e,a,f,b){var d,c=l[m]||{},h=document.createElement(f),n=document.getElementsByTagName(f)[0],k=function(a,b,c){return function(){a[b]._.push([c,arguments])}};c[e]=k(c,e,"set");d=c[e];c[a]={};c[a]._=[];d._=[];c[a][b]=k(c,a,b);a=0;for(b="set add save post open empty reset on off trigger ready setProduct".split(" ");a<b.length;a++)d[b[a]]=k(c,e,b[a]);a=0;for(b=["get","token","url","items"];a<b.length;a++)d[b[a]]=function(){};h.async=!0;h.src=g[f];n.parentNode.insertBefore(h,n);delete g[f];d(g);l[m]=c})(window,_affirm_config,"affirm","checkout","ui","script","ready");
+    // Use your live public API Key and https://cdn1.affirm.com/js/v2/affirm.js script to point to Affirm production environment.
+        </script>
+    <!-- End Affirm -->
 
     <meta charset="utf-8">
     <meta http-equiv="cleartype" content="on">
@@ -127,42 +127,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
   </head>
 
-  {% if template contains "index" %}
-    {% assign feature_image = true %}
-  {% elsif template contains "collection" %}
-    {% assign feature_image = true %}
-  {% elsif template contains "blog" %}
-    {% assign feature_image = true %}
-  {% elsif template contains "article" %}
-    {% assign feature_image = true %}
-  {% elsif template contains "contact" %}
-    {% assign feature_image = true %}
-  {% elsif template contains "product" %}
-    {% assign feature_image = true %}
-  {% elsif template contains "gallery" %}
-    {% assign feature_image = true %}
-  {% elsif template contains "banner" %}
-    {% assign feature_image = true %}
-  {% elsif template contains "details" %}
-    {% assign feature_image = true %}
-  {% elsif template contains "faq" %}
-    {% assign feature_image = true %}
-  {% elsif template contains "search" %}
-    {% assign feature_image = true %}
-  {% elsif template contains "cart" %}
-    {% assign feature_image = true %}
-  {% elsif template contains "our-story" %}
-    {% assign feature_image = true %}
-  {% elsif template contains "eternity-bracelets" %}
-    {% assign feature_image = true %}
-  {% elsif template contains "heirloom-reworks" %}
-    {% assign feature_image = true %}
-  {% elsif template contains "styleguide" %}
-    {% assign feature_image = true %}
-  {% else %}
-    {% assign feature_image = false %}
-  {% endif %}
-  
   <noscript>
     <style>
       .product_section .product_form,
@@ -191,10 +155,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       data-shop-currency="{{ shop.currency }}"
       data-shop-url="{{ shop.url }}">
   
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PS57H96"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PS57H96"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
   
     <div class="header-wrapper">
       <div class="header-dropdown-underlay"></div>
@@ -236,16 +200,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
 
-    {% unless feature_image %}
-      <div class="container main content">
-    {% endunless %}
-
-      {{ content_for_layout }}
-    </div>
-
-    {% unless template contains 'index' or settings.secondary_newsletter_banner == false %}
-      {% section 'newsletter' %}
-    {% endunless %}
+    {{ content_for_layout }}
 
     {% section 'footer' %}
 

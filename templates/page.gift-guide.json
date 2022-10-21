@@ -4,12 +4,186 @@
       "type": "page-banner",
       "settings": {
         "title": "Gift Guide",
-        "color_region": "dark",
-        "is_centered": true
+        "subtitle": "",
+        "text": "description text goes here",
+        "cta_text": "",
+        "cta_link": "",
+        "content_is_centered": true,
+        "text_is_centered": true,
+        "background_image": "shopify:\/\/shop_images\/Cropped-for-Shopify-Diamond-Drop-Necklace-modeled-on-Val.jpg",
+        "color_region": "dark"
+      }
+    },
+    "d3c762fc-5a7d-4771-9327-fef4901b7ab4": {
+      "type": "cta-cards",
+      "blocks": {
+        "template--14824629108790__d3c762fc-5a7d-4771-9327-fef4901b7ab4-1666295812f978e159-0": {
+          "type": "cta-card",
+          "settings": {
+            "title": "CTA Card",
+            "description": "Blah blah blah",
+            "cta_text": "read more",
+            "cta_link": "\/",
+            "image": "shopify:\/\/shop_images\/Diamond_School.jpg"
+          }
+        },
+        "template--14824629108790__d3c762fc-5a7d-4771-9327-fef4901b7ab4-1666295812f978e159-1": {
+          "type": "cta-card",
+          "settings": {
+            "title": "CTA Card",
+            "description": "Blah blah blah",
+            "cta_text": "read more",
+            "cta_link": "\/",
+            "image": "shopify:\/\/shop_images\/DSC_8113.jpg"
+          }
+        },
+        "template--14824629108790__d3c762fc-5a7d-4771-9327-fef4901b7ab4-1666295812f978e159-2": {
+          "type": "cta-card",
+          "settings": {
+            "title": "CTA Card",
+            "description": "Blah blah blah",
+            "cta_text": "read more",
+            "cta_link": "\/",
+            "image": "shopify:\/\/shop_images\/Engagment-sets_1200x1268_115540fa-b69a-4622-b152-97bfe4c62651.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "template--14824629108790__d3c762fc-5a7d-4771-9327-fef4901b7ab4-1666295812f978e159-0",
+        "template--14824629108790__d3c762fc-5a7d-4771-9327-fef4901b7ab4-1666295812f978e159-1",
+        "template--14824629108790__d3c762fc-5a7d-4771-9327-fef4901b7ab4-1666295812f978e159-2"
+      ],
+      "settings": {
+        "title": "CTA Cards",
+        "title_link": "\/",
+        "title_link_text": "read more",
+        "description": "Blah blah blah",
+        "columns_per_row_desktop": "3",
+        "image_aspect_ratio": "2-1",
+        "color_region": "light-alt",
+        "padding_top": "default",
+        "padding_bottom": "default"
+      }
+    },
+    "a9f766bc-6b4a-4640-98fc-5698001395f6": {
+      "type": "image-with-text",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/vitor-monthay-EkEdHarUPTs-unsplash.jpg",
+        "title": "Image with text",
+        "text": "<p>description text here<\/p>",
+        "cta_text": "Read More",
+        "cta_link": "\/",
+        "image_position": "left",
+        "is_full_width": false,
+        "color_region": "light",
+        "padding_top": "default",
+        "padding_bottom": "0"
+      }
+    },
+    "b554734a-3803-4c45-b0b6-f23b047d0d41": {
+      "type": "image-with-text",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Giving.jpg",
+        "title": "Image with text",
+        "text": "<p>description text here<\/p>",
+        "cta_text": "Read More",
+        "cta_link": "\/",
+        "image_position": "right",
+        "is_full_width": false,
+        "color_region": "light",
+        "padding_top": "default",
+        "padding_bottom": "default"
+      }
+    },
+    "4f0303b5-5dd8-49e5-8327-2a857e9630d5": {
+      "type": "product-grid-with-text",
+      "blocks": {
+        "78920f99-3814-4b88-b67f-a8d67e9dbf3d": {
+          "type": "product-card",
+          "settings": {
+            "product": "rey-rose-cut-diamond-ring-vm412"
+          }
+        },
+        "d71ebb44-d526-4f3f-b146-7010e2c8a37b": {
+          "type": "product-card",
+          "settings": {
+            "product": "0-50ct-zoe-pear-colorless-diamond-engagement-ring-with-pave-diamonds-ooak604"
+          }
+        },
+        "33a4b4c4-bbcc-427d-be58-a084a1afe64b": {
+          "type": "product-card",
+          "settings": {
+            "product": "0-61ct-rey-hexagon-salt-and-pepper-diamond-engagement-ring-ooak587"
+          }
+        },
+        "58680e95-5100-4803-ab21-2074364a1b7a": {
+          "type": "product-card",
+          "settings": {
+            "product": "astrid-colorless-rose-cut-diamond-ring-vm408"
+          }
+        }
+      },
+      "block_order": [
+        "78920f99-3814-4b88-b67f-a8d67e9dbf3d",
+        "d71ebb44-d526-4f3f-b146-7010e2c8a37b",
+        "33a4b4c4-bbcc-427d-be58-a084a1afe64b",
+        "58680e95-5100-4803-ab21-2074364a1b7a"
+      ],
+      "settings": {
+        "title": "Product Grid with text",
+        "description": "Blah blah blah",
+        "cta_link": "\/",
+        "cta_text": "shop now",
+        "product_grid_position": "right",
+        "color_region": "light-alt",
+        "padding_top": "default",
+        "padding_bottom": "0"
+      }
+    },
+    "96b3dba3-3aa7-43da-900a-a1ade6d68f6d": {
+      "type": "product-row-with-text",
+      "blocks": {
+        "a4774af3-4535-4ab1-9dc9-86a714cf4b77": {
+          "type": "product-card",
+          "settings": {
+            "product": "vm456-0-25tcw-pave-diamond-half-eternity-band"
+          }
+        },
+        "6ba00663-84d5-476f-8440-175afabb7319": {
+          "type": "product-card",
+          "settings": {
+            "product": "diamond-baguette-sunrise-ring-vm510"
+          }
+        },
+        "5cac3d98-5076-4c68-a76d-12e7c338af6f": {
+          "type": "product-card",
+          "settings": {
+            "product": "astrid-colorless-rose-cut-diamond-ring-vm408"
+          }
+        }
+      },
+      "block_order": [
+        "a4774af3-4535-4ab1-9dc9-86a714cf4b77",
+        "6ba00663-84d5-476f-8440-175afabb7319",
+        "5cac3d98-5076-4c68-a76d-12e7c338af6f"
+      ],
+      "settings": {
+        "title": "Product row with text",
+        "description": "Blah blah blah",
+        "title_link": "\/",
+        "title_link_text": "shop now",
+        "color_region": "light-alt",
+        "padding_top": "default",
+        "padding_bottom": "default"
       }
     }
   },
   "order": [
-    "banner"
+    "banner",
+    "d3c762fc-5a7d-4771-9327-fef4901b7ab4",
+    "a9f766bc-6b4a-4640-98fc-5698001395f6",
+    "b554734a-3803-4c45-b0b6-f23b047d0d41",
+    "4f0303b5-5dd8-49e5-8327-2a857e9630d5",
+    "96b3dba3-3aa7-43da-900a-a1ade6d68f6d"
   ]
 }

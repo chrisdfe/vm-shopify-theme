@@ -1850,7 +1850,7 @@ blockquote {
   border: 0;
   background: #faf6f4;
   padding: 3rem;
-  margin: 0;
+  margin: 0 0 2rem;
 }
 blockquote p:last-child {
   margin-bottom: 0;
@@ -1875,6 +1875,12 @@ blockquote cite a:visited {
 }
 blockquote cite:before {
   content: "— ";
+}
+@media only screen and (max-width: 800px) {
+  blockquote {
+    padding: 1rem;
+    margin: 0 0 1rem;
+  }
 }
 
 /* typography/block-text
@@ -10395,7 +10401,7 @@ div.container.gallery-content {
 }
 
 .content-section__heading__description {
-  margin-top: 1rem;
+  margin-top: 2rem;
   margin-bottom: 0;
 }
 
@@ -14131,23 +14137,25 @@ p.checkout_button {
 
 /* #Policy pages
 ================================================== */
-.container .shopify-policy__container {
-  margin: 5rem auto;
-  max-width: 75%;
+.shopify-policy__container {
+  margin: 0 auto !important;
+  max-width: 900px !important;
   padding-left: 0;
   padding-right: 0;
 }
+.shopify-policy__container .shopify-policy__title {
+  margin: 5rem 0;
+}
 @media only screen and (max-width: 800px) {
-  .container .shopify-policy__container {
+  .shopify-policy__container {
     margin: 1rem 0;
     max-width: 100%;
     padding-left: 0;
     padding-right: 0;
   }
-}
-
-.shopify-policy__container .shopify-policy__title {
-  text-align: left;
+  .shopify-policy__container .shopify-policy__title {
+    margin: 3rem 0;
+  }
 }
 
 /* Pages - Search
