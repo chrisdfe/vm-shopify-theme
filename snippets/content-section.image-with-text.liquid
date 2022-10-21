@@ -1,7 +1,14 @@
+{% if mobile_reverse == blank %}
+  {% assign mobile_reverse = false %}
+{% endif %}
+
 {% capture content %}
 <div class="container">
-  <div class="row row--mobile-collapse {% if image_position == "right" %}row--reverse{% endif %}">
-
+  <div class="row row--mobile-collapse
+    {% if image_position == "right" %}row--reverse{% endif %}
+    {% if mobile_reverse %}row--mobile-reverse{% endif %}
+    ">
+    
     <div class="eight columns medium-down--one-whole">
       <div class="content-section--image-text-columns__image-wrapper">
         <div data-smooth-lazy-loading>

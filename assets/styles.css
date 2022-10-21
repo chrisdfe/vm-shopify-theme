@@ -529,7 +529,7 @@ a.cta-link.cta-link--body-text:hover {
   .row.row--mobile-collapse {
     flex-direction: column;
   }
-  .row.row--mobile-collapse.row--mobile-flip {
+  .row.row--mobile-collapse.row--mobile-reverse {
     flex-direction: column-reverse;
   }
 }
@@ -10401,7 +10401,7 @@ div.container.gallery-content {
 }
 
 .content-section__heading__description {
-  margin-top: 2rem;
+  margin-top: 1rem;
   margin-bottom: 0;
 }
 
