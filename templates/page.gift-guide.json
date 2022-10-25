@@ -337,36 +337,6 @@
         "padding_top": "default",
         "padding_bottom": "default"
       }
-    },
-    "a9f766bc-6b4a-4640-98fc-5698001395f6": {
-      "type": "image-with-text",
-      "settings": {
-        "image": "shopify:\/\/shop_images\/vitor-monthay-EkEdHarUPTs-unsplash.jpg",
-        "title": "Image with text",
-        "text": "<p>description text here<\/p>",
-        "cta_text": "Read More",
-        "cta_link": "\/",
-        "image_position": "left",
-        "is_full_width": false,
-        "color_region": "light",
-        "padding_top": "default",
-        "padding_bottom": "0"
-      }
-    },
-    "b554734a-3803-4c45-b0b6-f23b047d0d41": {
-      "type": "image-with-text",
-      "settings": {
-        "image": "shopify:\/\/shop_images\/Giving.jpg",
-        "title": "Image with text",
-        "text": "<p>description text here<\/p>",
-        "cta_text": "Read More",
-        "cta_link": "\/",
-        "image_position": "right",
-        "is_full_width": false,
-        "color_region": "light",
-        "padding_top": "default",
-        "padding_bottom": "default"
-      }
     }
   },
   "order": [
@@ -376,8 +346,6 @@
     "1347b160-8fec-4d50-8b81-52a224c21885",
     "cf8c441a-d7c6-4f9d-9500-8de8090ec957",
     "96b3dba3-3aa7-43da-900a-a1ade6d68f6d",
-    "d3c762fc-5a7d-4771-9327-fef4901b7ab4",
-    "a9f766bc-6b4a-4640-98fc-5698001395f6",
-    "b554734a-3803-4c45-b0b6-f23b047d0d41"
+    "d3c762fc-5a7d-4771-9327-fef4901b7ab4"
   ]
 }

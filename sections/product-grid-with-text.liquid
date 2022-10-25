@@ -1,16 +1,14 @@
-{% assign anchor = section.settings.title | lowercase | handleize %}
 
 {% capture section_content %}
   <div class="container">
     <div class="row image-with-text__row
       {% if section.settings.product_grid_position == "left" %}row--reverse{% endif %}">
-      <div class="one-third columns medium-down--one-whole">
+      <div class="one-half columns medium-down--one-whole">
 
         <div class="content-section--image-text-columns__text-wrapper">
           <div class="content-section--image-text-columns__text">
             {% render "content-section.title" with {
               title: section.settings.title,
-              use_anchor: false
               description: section.settings.description,
               title_link: section.settings.title_link,
               title_link_text: section.settings.title_link_text,
@@ -26,11 +24,11 @@
 
       </div>
 
-      <div class="two-thirds columns medium-down--one-whole">
+      <div class="one-half columns medium-down--one-whole">
         <div class="container">
           <div class="row">
             {% for block in section.blocks %}
-              <div class="one-third columns">
+              <div class="one-half columns">
                 {% render "product.card" with {
                   product: block.settings.product
                 } %}
@@ -46,8 +44,6 @@
 
 {% render "content-section" with {
   content: section_content,
-  use_anchor: true,
-  anchor: anchor,
   color_region: section.settings.color_region,
   padding_top: section.settings.padding_top,
   padding_bottom: section.settings.padding_bottom,

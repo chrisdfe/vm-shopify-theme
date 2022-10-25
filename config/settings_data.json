@@ -357,7 +357,7 @@
           "738b4509-cd54-4656-8443-5b3e8aa4baae"
         ],
         "settings": {
-          "promo_text": "<p>Shop our  collection of champagne, peach and brown rings <a href=\"https:\/\/www.valeriemadison.com\/collections\/new-arrivals\" target=\"_blank\" title=\"https:\/\/www.valeriemadison.com\/collections\/new-arrivals\">here<\/a>.<\/p>",
+          "promo_text": "<p>Join us for Halloween Eternity Bracelets this Friday, 10\/28. Preview chains <a href=\"https:\/\/www.valeriemadison.com\/pages\/eternity-bracelets\" target=\"_blank\" title=\"Eternity Bracelets\">here<\/a> for walk-in availbility from 4-6 PM.<\/p>",
           "logo": "shopify:\/\/shop_images\/logo_173a67f6-34c1-4670-82e7-e7a2e1e4f697.png",
           "logo_mobile": "shopify:\/\/shop_images\/mobile-logo-seagreen_256x256_79182b2b-7668-4862-8b08-f67f60755daf.png",
           "show_locale_selector": true,
@@ -3289,7 +3289,7 @@
         "settings": {
           "title": "Permanent Sparkle",
           "content": "<p>Our welded permanent jewelry offers a clasp-less bracelet that is quickly becoming a wardrobe staple. Our team will custom-fit and painlessly weld a solid gold chain to your wrist. Our styles span from dainty to chunky, so you can find the chain of your dreams. All of our chains are 14K solid gold, never plated or filled. Intended to be worn forever, but can easily be removed with scissors. Not looking for forever? <a href=\"https:\/\/www.valeriemadison.com\/collections\/fine-jewelry\/bracelets-and-anklets\">Check out our chains also available as clasped styles.<\/a><\/p>\n\n<p>Book an appointment below! Appointments are strongly encouraged for all chain options. This appointment is for 1-2 people total to attend. Please book another slot for more than 2 people.<\/p>\n\n<!-- Calendly inline widget begin -->\n<div class=\"calendly-inline-widget\" data-url=\"https:\/\/calendly.com\/valeriemadison\/eternity?hide_event_type_details=1&hide_gdpr_banner=1&text_color=1c4047&primary_color=1c4047\" style=\"min-width:320px;height:630px;\"><\/div>\n<script type=\"text\/javascript\" src=\"https:\/\/assets.calendly.com\/assets\/external\/widget.js\" async><\/script>\n<!-- Calendly inline widget end -->",
-          "image": "shopify:\/\/shop_images\/Eternity-Bracelets-1000x750.webp"
+          "image": "shopify:\/\/shop_images\/Eternity_Bracelets_4x5_941843e3-7c83-40bd-af14-59a8cab1f256.jpg"
         }
       },
       "custom-engagement-ring-steps": {
@@ -3357,15 +3357,14 @@
           "95beecd3-2bab-4b22-b737-ed9a5c1dbf17": {
             "type": "background_block",
             "settings": {
-              "background_color": "light-alt",
-              "banner_image_desktop": "shopify:\/\/shop_images\/Shopify-Peach-sapphires-2x1.jpg"
+              "background_color": "light"
             }
           },
           "c8162eb0-f303-4a37-a67a-93a3242277ce": {
             "type": "background_block",
-            "disabled": true,
             "settings": {
-              "background_color": "light"
+              "background_color": "light",
+              "banner_image_desktop": "shopify:\/\/shop_images\/Shopify-Mobile-Champagne-diamonds-dried-flowers-1-1x1.jpg"
             }
           }
         },
@@ -3376,13 +3375,13 @@
         "settings": {
           "banner_wrapper_background_color": "light-alt",
           "pretext": "Just released",
-          "heading": "Pretty as a Peach",
+          "heading": "Bring on the Bubbly",
           "cta_link": "shopify:\/\/collections\/new-arrivals",
-          "cta_text": "shop for forever rings",
+          "cta_text": "shop new rings",
           "text_position": "left-block",
           "text_color": "dark",
-          "banner_image_mobile": "shopify:\/\/shop_images\/Shopify-Mobile-Peach-sapphires-1x1.jpg",
-          "text_color_mobile": "dark-alt",
+          "banner_image_mobile": "shopify:\/\/shop_images\/Shopify-Mobile-Champagne-diamonds-dried-flowers-1-1x1.jpg",
+          "text_color_mobile": "dark",
           "content_background_color_mobile": "light"
         }
       },
@@ -3810,7 +3809,7 @@
         "type": "eternity-bracelets-chain-styles",
         "settings": {
           "title": "Available Chain Styles",
-          "content": "All chains are available in all 14K yellow gold. *Please note chains are listed in order shown on the left from top to bottom.",
+          "content": "All chains are available in 14K yellow gold.",
           "image": "shopify:\/\/shop_images\/chain-pricing-larger-text_688fe665-f770-4e78-a49d-b0951be28099.png"
         }
       },
@@ -3973,9 +3972,9 @@
       "1638989716bc82a38f": {
         "type": "featured-collection",
         "settings": {
-          "title": "Fresh for Fall",
-          "title_cta_text": "Salt and Pepper Diamond RIngs",
-          "collection": "salt-pepper-diamond-rings",
+          "title": "Fall Hues",
+          "title_cta_text": "Shop Champagne, Peach & Brown Rings",
+          "collection": "new-arrivals",
           "products_per": 3,
           "products_limit": 9,
           "color_region": "light-alt",

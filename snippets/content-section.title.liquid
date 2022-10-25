@@ -6,18 +6,12 @@
   {% assign anchor = title | lowercase | handleize %}
 {% endif %}
 
-{% if use_anchor == blank %}
-  {% assign anchor = true %}
-{% endif %}
-
 <div
   class="content-section__heading
          content-section__heading--align-{{ heading_align }}
          content-section__heading--mobile-align-{{ mobile_heading_align }}
          {{ extra_classes }}">
-  {% if use_anchor %}
   <div id="{{ anchor }}" class="content-section__anchor"></div>
-  {% endif %}
 
   {% if pretext != blank %}
     <h5 class="content-section__heading__pretext u-margin-bottom-0">
