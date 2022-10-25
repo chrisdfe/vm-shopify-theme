@@ -10,6 +10,14 @@
   {% assign id = title | downcase | handleize %}
 {% endif %}
 
+{% if use_anchor == blank %}
+  {% assign use_anchor = false %}
+{% endif %}
+
+{% if no_background_color == blank %}
+  {% assign no_background_color = false %}
+{% endif %}
+
 <div
   class="content-section
     content-section--{{ id }}
@@ -24,12 +32,13 @@
     {% if is_full_width %}content-section--is-full-width{% endif %}
     {% if background_image %}content-section--has-background-image{% endif %}
     color-region--{{ color_region }}
+    {% if no_background_color %}content-section--no-background{% endif %}
     "
-  {% if background_image %}
-  style="
-    background-image: url('{{ background_image }}');
-  "
-  {% endif %}
   >
+
+  {% if use_anchor and anchor != blank %}
+  <div id="{{ anchor }}" class="content-section__anchor"></div>
+  {% endif %}
+
   {{ content }}
 </div>

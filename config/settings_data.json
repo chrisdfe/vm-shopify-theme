@@ -383,7 +383,7 @@
           "1489285524898-1": {
             "type": "image",
             "settings": {
-              "title": "Local & Woman-Owned",
+              "title": "Truly Special",
               "testimonial": "<p>Beautiful, distinct pieces that I will treasure forever! I found VM while looking for a sustainable, locally owned jeweler for my engagement ring. It was a huge bonus that VM is also woman and black owned. In our family of 5, we all now own at least one piece of VM jewelry which are all timeless. I love supporting our local artists and THIS one is truly special.<\/p>",
               "name": "Keriche",
               "store_name": "",
@@ -646,6 +646,7 @@
           },
           "97cfb537-e337-4177-96eb-1da0e8f3b47d": {
             "type": "collection_banner",
+            "disabled": true,
             "settings": {
               "collection": "engagement-rings",
               "heading": "engagement rings",
@@ -655,6 +656,7 @@
           },
           "98019c05-7bc1-4292-a723-6005633a8eb3": {
             "type": "collection_banner",
+            "disabled": true,
             "settings": {
               "collection": "wedding-bands",
               "heading": "Wedding bands",
@@ -664,6 +666,7 @@
           },
           "2e51ff12-a190-4618-a852-832b47be5097": {
             "type": "collection_banner",
+            "disabled": true,
             "settings": {
               "collection": "fine-jewelry",
               "heading": "Fine Jewelry",
@@ -673,6 +676,7 @@
           },
           "195759c2-eefe-4bc4-8a00-78d3121672bc": {
             "type": "collection_banner",
+            "disabled": true,
             "settings": {
               "collection": "create-your-own-diamond-or-gemstone-ring",
               "heading": "DYO",

@@ -3,15 +3,288 @@
     "banner": {
       "type": "page-banner",
       "settings": {
-        "title": "Gift Guide",
+        "title": "Ultimate Gift Guide",
         "subtitle": "",
-        "text": "description text goes here",
+        "text": "Gifting made simple. Explore our curated selections to delight every person on your list this holiday season. Designed to dazzle for years to come.",
         "cta_text": "",
         "cta_link": "",
-        "content_is_centered": true,
-        "text_is_centered": true,
-        "background_image": "shopify:\/\/shop_images\/Cropped-for-Shopify-Diamond-Drop-Necklace-modeled-on-Val.jpg",
-        "color_region": "dark"
+        "content_is_centered": false,
+        "text_is_centered": false,
+        "background_image": "shopify:\/\/shop_images\/Fine_Jewelry_in_box_gold_only_BANNER.jpg",
+        "color_region": "light-alt"
+      }
+    },
+    "4f0303b5-5dd8-49e5-8327-2a857e9630d5": {
+      "type": "product-grid-with-text",
+      "blocks": {
+        "78920f99-3814-4b88-b67f-a8d67e9dbf3d": {
+          "type": "product-card",
+          "settings": {
+            "product": "vm465-graduated-diamond-necklace"
+          }
+        },
+        "d71ebb44-d526-4f3f-b146-7010e2c8a37b": {
+          "type": "product-card",
+          "settings": {
+            "product": "rose-cut-diamond-threader-earrings-vm292"
+          }
+        },
+        "58680e95-5100-4803-ab21-2074364a1b7a": {
+          "type": "product-card",
+          "settings": {
+            "product": "copy-of-14k-gold-sapphire-trio-studs-vm495"
+          }
+        },
+        "d34d45b0-8cdb-4111-93ff-22c272bc2428": {
+          "type": "product-card",
+          "settings": {
+            "product": "lily-three-stone-diamond-ring-63tcw-vm251"
+          }
+        },
+        "f0354bbe-0aec-49fd-9cf2-db36673f95b7": {
+          "type": "product-card",
+          "settings": {
+            "product": "celestial-diamond-band-vm483"
+          }
+        },
+        "f3c5e907-c6b6-4e76-8ddc-5af2a2fd9fb2": {
+          "type": "product-card",
+          "settings": {
+            "product": "letter-necklace-charm-vm502"
+          }
+        }
+      },
+      "block_order": [
+        "78920f99-3814-4b88-b67f-a8d67e9dbf3d",
+        "d71ebb44-d526-4f3f-b146-7010e2c8a37b",
+        "58680e95-5100-4803-ab21-2074364a1b7a",
+        "d34d45b0-8cdb-4111-93ff-22c272bc2428",
+        "f0354bbe-0aec-49fd-9cf2-db36673f95b7",
+        "f3c5e907-c6b6-4e76-8ddc-5af2a2fd9fb2"
+      ],
+      "settings": {
+        "title": "For Her",
+        "description": "Timeless sparkle and carefully deisgned details make for a meaningful gift meant to be handed down for generations.",
+        "cta_link": "\/",
+        "cta_text": "",
+        "product_grid_position": "right",
+        "color_region": "dark",
+        "padding_top": "default",
+        "padding_bottom": "0"
+      }
+    },
+    "19248e98-0901-479f-a6e1-1d47dcd97cae": {
+      "type": "product-grid-with-text",
+      "blocks": {
+        "6d59c19d-f745-4a98-86f7-d4b0cc2ec1bb": {
+          "type": "product-card",
+          "settings": {
+            "product": "14k-gold-curb-chain-bracelet"
+          }
+        },
+        "e4e9bdd5-d4e9-45cc-ab1b-817b0f6d7842": {
+          "type": "product-card",
+          "settings": {
+            "product": "vm383-large-round-signet"
+          }
+        },
+        "2581c346-6d3e-4fc7-89a8-2fe3dc41eda9": {
+          "type": "product-card",
+          "settings": {
+            "product": "1-10ct-rey-teal-emerald-cut-sapphire"
+          }
+        },
+        "3714f162-453e-4918-ab89-5948042755e4": {
+          "type": "product-card",
+          "settings": {
+            "product": "black-diamond-studs-5mm"
+          }
+        },
+        "af7c1e37-8d27-4315-b78f-f38bc3c1655c": {
+          "type": "product-card",
+          "settings": {
+            "product": "14k-gold-carved-tag-necklace-vm398"
+          }
+        },
+        "de064527-141a-45ec-8d97-c7856236b84c": {
+          "type": "product-card",
+          "settings": {
+            "product": "6mm-bar-wedding-bandooak450"
+          }
+        }
+      },
+      "block_order": [
+        "6d59c19d-f745-4a98-86f7-d4b0cc2ec1bb",
+        "e4e9bdd5-d4e9-45cc-ab1b-817b0f6d7842",
+        "2581c346-6d3e-4fc7-89a8-2fe3dc41eda9",
+        "3714f162-453e-4918-ab89-5948042755e4",
+        "af7c1e37-8d27-4315-b78f-f38bc3c1655c",
+        "de064527-141a-45ec-8d97-c7856236b84c"
+      ],
+      "settings": {
+        "title": "For Him",
+        "description": "Bold features and gemstones made to enhance any look. Our more masculine styles stand out from the crowd as modern classics.",
+        "cta_link": "\/",
+        "cta_text": "",
+        "product_grid_position": "left",
+        "color_region": "light-alt",
+        "padding_top": "default",
+        "padding_bottom": "default"
+      }
+    },
+    "1347b160-8fec-4d50-8b81-52a224c21885": {
+      "type": "product-grid-with-text",
+      "blocks": {
+        "3a604c37-407f-41d0-8a6a-48bc43bc2844": {
+          "type": "product-card",
+          "settings": {
+            "product": "14k-gold-medium-double-hoop-earring-vm287s"
+          }
+        },
+        "e916f85a-4806-4fe6-8e4d-edda4d0354b8": {
+          "type": "product-card",
+          "settings": {
+            "product": "turquoise-diamond-kiss-ring"
+          }
+        },
+        "7cb8fb94-876c-4c25-a8bd-830dd20ab97c": {
+          "type": "product-card",
+          "settings": {
+            "product": "14k-gold-baby-flat-chain-necklace-vm377"
+          }
+        },
+        "811ff33e-e98e-4310-96fc-9b293512be6b": {
+          "type": "product-card",
+          "settings": {
+            "product": "14k-circle-studs-vm142"
+          }
+        },
+        "c03c6e5f-cc89-4a38-9d29-81dc150481dd": {
+          "type": "product-card",
+          "settings": {
+            "product": "diamond-charm-bracelet-vm473"
+          }
+        },
+        "5248c86e-4458-4b6e-923b-8c6cc18c349f": {
+          "type": "product-card",
+          "settings": {
+            "product": "14k-gold-dangling-monstera-leaf-earrings-vm413"
+          }
+        }
+      },
+      "block_order": [
+        "3a604c37-407f-41d0-8a6a-48bc43bc2844",
+        "e916f85a-4806-4fe6-8e4d-edda4d0354b8",
+        "7cb8fb94-876c-4c25-a8bd-830dd20ab97c",
+        "811ff33e-e98e-4310-96fc-9b293512be6b",
+        "c03c6e5f-cc89-4a38-9d29-81dc150481dd",
+        "5248c86e-4458-4b6e-923b-8c6cc18c349f"
+      ],
+      "settings": {
+        "title": "Most Gifted",
+        "description": "Our most gifted pieces at Valerie Madison Jewelry. Year in and year out, these are our pieces loved by many around the country and pair well with other VM styles.",
+        "cta_link": "\/",
+        "cta_text": "",
+        "product_grid_position": "right",
+        "color_region": "dark-alt",
+        "padding_top": "default",
+        "padding_bottom": "default"
+      }
+    },
+    "cf8c441a-d7c6-4f9d-9500-8de8090ec957": {
+      "type": "product-grid-with-text",
+      "blocks": {
+        "0f6757f8-6ba8-45b4-a599-b234730ee632": {
+          "type": "product-card",
+          "settings": {
+            "product": "mixed-stacking-ring-set-vm508"
+          }
+        },
+        "afdc948a-908d-43ba-bda9-282c5b4cdece": {
+          "type": "product-card",
+          "settings": {
+            "product": "dew-drop-chain-necklace-vm499"
+          }
+        },
+        "363f040c-27f3-4484-97c7-810d710a5ad4": {
+          "type": "product-card",
+          "settings": {
+            "product": "14k-gold-initial-earring-vm162"
+          }
+        },
+        "a73f3167-bcc7-48ca-8ec4-1b152ae8a165": {
+          "type": "product-card",
+          "settings": {
+            "product": "tanzanite-stacking-ring"
+          }
+        },
+        "7c608236-b425-4d58-b03c-bce1997926c1": {
+          "type": "product-card",
+          "settings": {
+            "product": "fine-herringbone-chain-necklace-vm491"
+          }
+        },
+        "48213e82-23c9-47ff-921a-81ee178cd264": {
+          "type": "product-card",
+          "settings": {
+            "product": "14k-gold-tapered-hoops-small-vm438"
+          }
+        }
+      },
+      "block_order": [
+        "0f6757f8-6ba8-45b4-a599-b234730ee632",
+        "afdc948a-908d-43ba-bda9-282c5b4cdece",
+        "363f040c-27f3-4484-97c7-810d710a5ad4",
+        "a73f3167-bcc7-48ca-8ec4-1b152ae8a165",
+        "7c608236-b425-4d58-b03c-bce1997926c1",
+        "48213e82-23c9-47ff-921a-81ee178cd264"
+      ],
+      "settings": {
+        "title": "Under $500",
+        "description": "Classic styles for everyone on your list this year, even yourself! These pieces are great additions to a jewelry collection, or they make a wonderful foundation of solid gold for a novice fine jewelry connoisseur.",
+        "cta_link": "\/",
+        "cta_text": "",
+        "product_grid_position": "left",
+        "color_region": "light-alt",
+        "padding_top": "default",
+        "padding_bottom": "0"
+      }
+    },
+    "96b3dba3-3aa7-43da-900a-a1ade6d68f6d": {
+      "type": "product-row-with-text",
+      "blocks": {
+        "a4774af3-4535-4ab1-9dc9-86a714cf4b77": {
+          "type": "product-card",
+          "settings": {
+            "product": "vm456-0-25tcw-pave-diamond-half-eternity-band"
+          }
+        },
+        "6ba00663-84d5-476f-8440-175afabb7319": {
+          "type": "product-card",
+          "settings": {
+            "product": "mens-6mm-birch-wedding-band-vm182"
+          }
+        },
+        "5cac3d98-5076-4c68-a76d-12e7c338af6f": {
+          "type": "product-card",
+          "settings": {
+            "product": "7-diamond-wave-band-vm307"
+          }
+        }
+      },
+      "block_order": [
+        "a4774af3-4535-4ab1-9dc9-86a714cf4b77",
+        "6ba00663-84d5-476f-8440-175afabb7319",
+        "5cac3d98-5076-4c68-a76d-12e7c338af6f"
+      ],
+      "settings": {
+        "title": "Bestselling Wedding Bands",
+        "description": "",
+        "title_link": "\/",
+        "title_link_text": "shop all bands",
+        "color_region": "light-alt",
+        "padding_top": "default",
+        "padding_bottom": "0"
       }
     },
     "d3c762fc-5a7d-4771-9327-fef4901b7ab4": {
@@ -20,8 +293,8 @@
         "template--14824629108790__d3c762fc-5a7d-4771-9327-fef4901b7ab4-1666295812f978e159-0": {
           "type": "cta-card",
           "settings": {
-            "title": "CTA Card",
-            "description": "Blah blah blah",
+            "title": "Is a Diamond or Sapphire Ring Right for You?",
+            "description": "Choosing the right stone for your engagement ring brings many factors into consideration. Check out our rundown on what to consider before you make your purchase.",
             "cta_text": "read more",
             "cta_link": "\/",
             "image": "shopify:\/\/shop_images\/Diamond_School.jpg"
@@ -30,18 +303,18 @@
         "template--14824629108790__d3c762fc-5a7d-4771-9327-fef4901b7ab4-1666295812f978e159-1": {
           "type": "cta-card",
           "settings": {
-            "title": "CTA Card",
-            "description": "Blah blah blah",
+            "title": "5 tips on storing your fine jewelry like a pro",
+            "description": "Solid gold jewelry is an investment made to stand the test of time. Taking care of your pieces is key to ensuring they stay in their best and brightest shape. Our experts compiled their best tips for care.",
             "cta_text": "read more",
             "cta_link": "\/",
-            "image": "shopify:\/\/shop_images\/DSC_8113.jpg"
+            "image": "shopify:\/\/shop_images\/Jewelry-Box_2-FULL-SIZE.jpg"
           }
         },
         "template--14824629108790__d3c762fc-5a7d-4771-9327-fef4901b7ab4-1666295812f978e159-2": {
           "type": "cta-card",
           "settings": {
-            "title": "CTA Card",
-            "description": "Blah blah blah",
+            "title": "Should you get your engagement ring insured?",
+            "description": "If you’re wondering should you insure your ring, the short answer is it depends on the value of the ring. For the long answer (as well as how to get your ring insured), read on.",
             "cta_text": "read more",
             "cta_link": "\/",
             "image": "shopify:\/\/shop_images\/Engagment-sets_1200x1268_115540fa-b69a-4622-b152-97bfe4c62651.jpg"
@@ -54,10 +327,10 @@
         "template--14824629108790__d3c762fc-5a7d-4771-9327-fef4901b7ab4-1666295812f978e159-2"
       ],
       "settings": {
-        "title": "CTA Cards",
+        "title": "Educational Posts",
         "title_link": "\/",
-        "title_link_text": "read more",
-        "description": "Blah blah blah",
+        "title_link_text": "read all education blogs",
+        "description": "Need to know more before you buy? Fine jewelry is an investment and we're here to help you feel confident in your purchase from Valerie Madison. Education is a key pillar for our customers, and our knowledgeable staff is proud to share their insights. Reach out to us in the chatbox, over email or by phone for further conversation. Start out by exploring a few of our most helpful articles below that address different jewelry questions you might have top in mind.",
         "columns_per_row_desktop": "3",
         "image_aspect_ratio": "2-1",
         "color_region": "light-alt",
@@ -94,96 +367,17 @@
         "padding_top": "default",
         "padding_bottom": "default"
       }
-    },
-    "4f0303b5-5dd8-49e5-8327-2a857e9630d5": {
-      "type": "product-grid-with-text",
-      "blocks": {
-        "78920f99-3814-4b88-b67f-a8d67e9dbf3d": {
-          "type": "product-card",
-          "settings": {
-            "product": "rey-rose-cut-diamond-ring-vm412"
-          }
-        },
-        "d71ebb44-d526-4f3f-b146-7010e2c8a37b": {
-          "type": "product-card",
-          "settings": {
-            "product": "0-50ct-zoe-pear-colorless-diamond-engagement-ring-with-pave-diamonds-ooak604"
-          }
-        },
-        "33a4b4c4-bbcc-427d-be58-a084a1afe64b": {
-          "type": "product-card",
-          "settings": {
-            "product": "0-61ct-rey-hexagon-salt-and-pepper-diamond-engagement-ring-ooak587"
-          }
-        },
-        "58680e95-5100-4803-ab21-2074364a1b7a": {
-          "type": "product-card",
-          "settings": {
-            "product": "astrid-colorless-rose-cut-diamond-ring-vm408"
-          }
-        }
-      },
-      "block_order": [
-        "78920f99-3814-4b88-b67f-a8d67e9dbf3d",
-        "d71ebb44-d526-4f3f-b146-7010e2c8a37b",
-        "33a4b4c4-bbcc-427d-be58-a084a1afe64b",
-        "58680e95-5100-4803-ab21-2074364a1b7a"
-      ],
-      "settings": {
-        "title": "Product Grid with text",
-        "description": "Blah blah blah",
-        "cta_link": "\/",
-        "cta_text": "shop now",
-        "product_grid_position": "right",
-        "color_region": "light-alt",
-        "padding_top": "default",
-        "padding_bottom": "0"
-      }
-    },
-    "96b3dba3-3aa7-43da-900a-a1ade6d68f6d": {
-      "type": "product-row-with-text",
-      "blocks": {
-        "a4774af3-4535-4ab1-9dc9-86a714cf4b77": {
-          "type": "product-card",
-          "settings": {
-            "product": "vm456-0-25tcw-pave-diamond-half-eternity-band"
-          }
-        },
-        "6ba00663-84d5-476f-8440-175afabb7319": {
-          "type": "product-card",
-          "settings": {
-            "product": "diamond-baguette-sunrise-ring-vm510"
-          }
-        },
-        "5cac3d98-5076-4c68-a76d-12e7c338af6f": {
-          "type": "product-card",
-          "settings": {
-            "product": "astrid-colorless-rose-cut-diamond-ring-vm408"
-          }
-        }
-      },
-      "block_order": [
-        "a4774af3-4535-4ab1-9dc9-86a714cf4b77",
-        "6ba00663-84d5-476f-8440-175afabb7319",
-        "5cac3d98-5076-4c68-a76d-12e7c338af6f"
-      ],
-      "settings": {
-        "title": "Product row with text",
-        "description": "Blah blah blah",
-        "title_link": "\/",
-        "title_link_text": "shop now",
-        "color_region": "light-alt",
-        "padding_top": "default",
-        "padding_bottom": "default"
-      }
     }
   },
   "order": [
     "banner",
+    "4f0303b5-5dd8-49e5-8327-2a857e9630d5",
+    "19248e98-0901-479f-a6e1-1d47dcd97cae",
+    "1347b160-8fec-4d50-8b81-52a224c21885",
+    "cf8c441a-d7c6-4f9d-9500-8de8090ec957",
+    "96b3dba3-3aa7-43da-900a-a1ade6d68f6d",
     "d3c762fc-5a7d-4771-9327-fef4901b7ab4",
     "a9f766bc-6b4a-4640-98fc-5698001395f6",
-    "b554734a-3803-4c45-b0b6-f23b047d0d41",
-    "4f0303b5-5dd8-49e5-8327-2a857e9630d5",
-    "96b3dba3-3aa7-43da-900a-a1ade6d68f6d"
+    "b554734a-3803-4c45-b0b6-f23b047d0d41"
   ]
 }

@@ -7,7 +7,11 @@
   // Compensate for the sticky nav
   .content-section__anchor {
     position: relative;
-    top: -$vm-content-section-padding * 2;
+    top: -130px;
+  }
+
+  &.content-section--no-background {
+    background-color: transparent !important;
   }
 
   @include respond-to("large-up") {
@@ -22,38 +26,10 @@
   @include respond-to("medium-down") {
     padding: $vm-content-section-mobile-padding 0;
 
+    // Compensate for the sticky nav
     .content-section__anchor {
-      position: relative;
-      top: -$vm-content-section-mobile-padding;
+      top: -64px;
     }
-  }
-
-  &.content-section--2x-padding {
-    padding: ($vm-content-section-padding * 2) 0;
-
-    @include respond-to("medium-down") {
-      padding: ($vm-content-section-mobile-padding * 2) 0;
-    }
-  }
-
-  &.content-section--2x-padding-top {
-    padding-top: ($vm-content-section-padding * 2);
-
-    @include respond-to("medium-down") {
-      padding-top: ($vm-content-section-mobile-padding * 2);
-    }
-  }
-
-  &.content-section--2x-padding-bottom {
-    padding-bottom: ($vm-content-section-padding * 2);
-
-    @include respond-to("medium-down") {
-      padding-bottom: ($vm-content-section-mobile-padding * 2);
-    }
-  }
-
-  &.content-section--has-background-image {
-    background-size: cover;
   }
 }
 
@@ -119,6 +95,7 @@
 
     .content-section__heading__title-link {
       @include vm-subheading-3();
+      margin-top: get-vm-spacer(1);
     }
   }
 }
@@ -142,6 +119,6 @@
 }
 
 .content-section__heading__description {
-  margin-top: get-vm-spacer(1);
+  margin-top: get-vm-spacer(2);
   margin-bottom: 0;
 }
