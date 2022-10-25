@@ -60,16 +60,46 @@
 </div>
 {% endcapture %}
 
-{% assign background_image = blank %}
-{% if section.settings.background_image %}
-  {% assign background_image = section.settings.background_image | img_url: "1200x" %}
+{% assign background_image_desktop = blank %}
+{% if section.settings.background_image_desktop %}
+  {% assign background_image_desktop = section.settings.background_image_desktop | img_url: "1200x" %}
 {% endif %}
 
-{% render "content-section" with {
-  content: content,
-  color_region: section.settings.color_region,
-  background_image: background_image
-} %}
+{% assign background_image_mobile = blank %}
+{% if section.settings.background_image_mobile %}
+  {% assign background_image_mobile = section.settings.background_image_mobile | img_url: "800x" %}
+{% endif %}
+
+
+<div class="page-banner
+  page-banner--aspect-ratio-desktop-{{ section.settings.aspect_ratio }}
+  page-banner--aspect-ratio-mobile-{{ section.settings.aspect_ratio_mobile }}
+">
+  {% if background_image_desktop %}
+    <div
+      class="page-banner__background-image-desktop"
+      style="background-image: url('{{ background_image_desktop }}');"
+    ></div>
+
+    <div
+      class="page-banner__background-image-mobile"
+      {% if background_image_mobile %}
+        style="background-image: url('{{ background_image_mobile }}');"
+      {% else %}
+        style="background-image: url('{{ background_image_desktop }}');"
+      {% endif %}
+    ></div>
+  {% endif %}
+
+  {% render "content-section" with {
+    content: content,
+    color_region: section.settings.color_region,
+    background_image_desktop: background_image_desktop,
+    background_image_mobile: background_image_mobile,
+    extra_classes: extra_classes,
+    no_background_color: true
+  } %}
+</div>
 
 {% schema %}
 {
@@ -106,7 +136,7 @@
     {
       "type": "checkbox",
       "id": "content_is_centered",
-      "label": "Center Content?",
+      "label": "Center Content (desktop)?",
       "default": false
     },
     {
@@ -116,8 +146,53 @@
       "default": false
     },
     {
-      "id": "background_image",
-      "label": "Background Image",
+      "type": "select",
+      "id": "aspect_ratio",
+      "label": "Aspect ratio (desktop)",
+      "default": "unconstrained",
+      "options": [
+        {
+          "value": "unconstrained",
+          "label": "Unconstrained (default)"
+        },
+        {
+          "value": "2-1",
+          "label": "2:1"
+        },
+        {
+          "value": "3-1",
+          "label": "3:1"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "aspect_ratio_mobile",
+      "label": "Aspect ratio (mobile)",
+      "default": "unconstrained",
+      "options": [
+        {
+          "value": "unconstrained",
+          "label": "Unconstrained (default)"
+        },
+        {
+          "value": "1-1",
+          "label": "1:1"
+        },
+        {
+          "value": "2-1",
+          "label": "2:1"
+        }
+      ]
+    },
+    {
+      "id": "background_image_desktop",
+      "label": "Background Image (desktop)",
+      "type": "image_picker"
+    },
+    {
+      "id": "background_image_mobile",
+      "label": "Background Image (mobile)",
       "type": "image_picker"
     },
     {
