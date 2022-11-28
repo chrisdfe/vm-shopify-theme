@@ -357,7 +357,7 @@
           "738b4509-cd54-4656-8443-5b3e8aa4baae"
         ],
         "settings": {
-          "promo_text": "<p>Join us for Halloween Eternity Bracelets this Friday, 10\/28. Preview chains <a href=\"https:\/\/www.valeriemadison.com\/pages\/eternity-bracelets\" target=\"_blank\" title=\"Eternity Bracelets\">here<\/a> for walk-in availbility from 4-6 PM.<\/p>",
+          "promo_text": "<p>Last day to order <a href=\"https:\/\/www.valeriemadison.com\/collections\/diamond-bands\" target=\"_blank\" title=\"diamond bands\">diamond bands<\/a> for Christmas delivery is 11\/22 ✨<\/p>",
           "logo": "shopify:\/\/shop_images\/logo_173a67f6-34c1-4670-82e7-e7a2e1e4f697.png",
           "logo_mobile": "shopify:\/\/shop_images\/mobile-logo-seagreen_256x256_79182b2b-7668-4862-8b08-f67f60755daf.png",
           "show_locale_selector": true,
@@ -1519,7 +1519,7 @@
           "1578277933549-0": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/Oval-Vera-wide-band-and-pave-diamond-band-stack-4x5_60642f46-f994-46bd-8fc5-03db2843c2b9.jpg",
+              "image": "shopify:\/\/shop_images\/Editorial_Diamond_rings_4x5_1_1.jpg",
               "link": "shopify:\/\/collections\/engagement-rings",
               "title": "<b>Engagement Rings<\/b>"
             }
@@ -1535,7 +1535,7 @@
           "1578277933549-1": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/BANDS_DIAMOND_2022_1_copy_495b12d0-4326-49cb-8295-d06d7e18ef4d.jpg",
+              "image": "shopify:\/\/shop_images\/Editorial_Group_Contour_Bands_4x5_1.jpg",
               "link": "shopify:\/\/collections\/diamond-bands",
               "title": "<b>Women's Wedding Bands<\/b>"
             }
@@ -1543,7 +1543,7 @@
           "1578277944089": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/Woman-in-the-moon-val-edited-4x5-2000px_a8a93be3-f03d-4ea9-be86-4105e5d46d73.jpg",
+              "image": "shopify:\/\/shop_images\/Editorial_diamond_necklaces_4x5_1.jpg",
               "link": "shopify:\/\/collections\/necklaces",
               "title": "<b>Necklaces<\/b>"
             }
@@ -1551,7 +1551,7 @@
           "1578278006036": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/Home-page-image---earrings-4x5.jpg",
+              "image": "shopify:\/\/shop_images\/Tapered_Hoops_1.jpg",
               "link": "shopify:\/\/collections\/earrings",
               "title": "<b>Earrings<\/b>"
             }
@@ -1559,7 +1559,7 @@
           "1578278048532": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/Duo-Bracelet-J_L-4x5_5f4ef2c0-f9ea-43a5-9609-83d124a681ec.jpg",
+              "image": "shopify:\/\/shop_images\/Eternity_Bracelets_4x5_1.jpg",
               "link": "shopify:\/\/collections\/bracelets-and-anklets",
               "title": "<b>Bracelets<\/b>"
             }
@@ -3364,7 +3364,7 @@
             "type": "background_block",
             "settings": {
               "background_color": "light",
-              "banner_image_desktop": "shopify:\/\/shop_images\/Shopify-Mobile-Champagne-diamonds-dried-flowers-1-1x1.jpg"
+              "banner_image_desktop": "shopify:\/\/shop_images\/Diamond-Kiss-and-Dew-Drop-Chain-1x1_6f22282e-fb6f-4950-af62-7f4ba36695b6.jpg"
             }
           }
         },
@@ -3374,13 +3374,13 @@
         ],
         "settings": {
           "banner_wrapper_background_color": "light-alt",
-          "pretext": "Just released",
-          "heading": "Bring on the Bubbly",
-          "cta_link": "shopify:\/\/collections\/new-arrivals",
-          "cta_text": "shop new rings",
+          "pretext": "Looking for gifting inspo?",
+          "heading": "We've curated our favorites",
+          "cta_link": "shopify:\/\/pages\/holiday-gift-guide",
+          "cta_text": "Shop our gift guide",
           "text_position": "left-block",
           "text_color": "dark",
-          "banner_image_mobile": "shopify:\/\/shop_images\/Shopify-Mobile-Champagne-diamonds-dried-flowers-1-1x1.jpg",
+          "banner_image_mobile": "shopify:\/\/shop_images\/Diamond-Kiss-and-Dew-Drop-Chain-1x1_6f22282e-fb6f-4950-af62-7f4ba36695b6.jpg",
           "text_color_mobile": "dark",
           "content_background_color_mobile": "light"
         }
@@ -3972,8 +3972,8 @@
       "1638989716bc82a38f": {
         "type": "featured-collection",
         "settings": {
-          "title": "Fall Hues",
-          "title_cta_text": "Shop Champagne, Peach & Brown Rings",
+          "title": "Fresh off the bench",
+          "title_cta_text": "shop new designs",
           "collection": "new-arrivals",
           "products_per": 3,
           "products_limit": 9,

@@ -1,0 +1,17 @@
+{% assign show_is_this_a_gift_checkbox = true %}
+
+{% if show_is_this_a_gift_checkbox %}
+  {% assign label = "is this a gift?" %}
+  {% assign slugified_label = label | strip | replace: ' ', '-' %}
+  <p class="line-item-property__field">
+    <label
+      for="{{ slugified_label }}"
+    >{{ label }}
+    </label>
+    <input
+      type="checkbox"
+      id="{{ slugified_label }}"
+      name="properties[{{ label }}]" value="Yes"
+    />
+  </p>
+{% endif %}

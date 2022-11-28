@@ -10335,7 +10335,7 @@ div.container.gallery-content {
 }
 .content-section .content-section__anchor {
   position: relative;
-  top: -130px;
+  top: -226px;
 }
 .content-section.content-section--no-background {
   background-color: transparent !important;
@@ -10351,7 +10351,7 @@ div.container.gallery-content {
     padding: 3rem 0;
   }
   .content-section .content-section__anchor {
-    top: -64px;
+    top: -112px;
   }
 }
 

@@ -11,9 +11,9 @@
         "content_is_centered": false,
         "text_is_centered": false,
         "aspect_ratio": "3-1",
-        "aspect_ratio_mobile": "2-1",
-        "background_image_desktop": "shopify:\/\/shop_images\/Fine_Jewelry_in_box_gold_only_BANNER.jpg",
-        "background_image_mobile": "shopify:\/\/shop_images\/Shopify-Mobile-Champagne-diamonds-dried-flowers-1-1x1.jpg",
+        "aspect_ratio_mobile": "1-1",
+        "background_image_desktop": "shopify:\/\/shop_images\/Gift_Guide_Banner_fine_jewelry_box.jpg",
+        "background_image_mobile": "shopify:\/\/shop_images\/Fine_Jewelry_Mobile_Banner_1x1_8e3ee717-edea-4a85-b9aa-dbe00fa69e15.jpg",
         "color_region": "light-alt"
       }
     },
@@ -35,7 +35,7 @@
         "58680e95-5100-4803-ab21-2074364a1b7a": {
           "type": "product-card",
           "settings": {
-            "product": "copy-of-14k-gold-sapphire-trio-studs-vm495"
+            "product": "diamond-florette-studs-vm495"
           }
         },
         "d34d45b0-8cdb-4111-93ff-22c272bc2428": {
@@ -66,7 +66,7 @@
         "f3c5e907-c6b6-4e76-8ddc-5af2a2fd9fb2"
       ],
       "settings": {
-        "title": "For Her",
+        "title": "For Her\/Them",
         "description": "Timeless sparkle and carefully deisgned details make for a meaningful gift meant to be handed down for generations.",
         "cta_link": "\/",
         "cta_text": "",
@@ -94,7 +94,7 @@
         "2581c346-6d3e-4fc7-89a8-2fe3dc41eda9": {
           "type": "product-card",
           "settings": {
-            "product": "1-10ct-rey-teal-emerald-cut-sapphire"
+            "product": "0-77ct-rey-asscher-cut-peach-sapphire-ring-ooak577"
           }
         },
         "3714f162-453e-4918-ab89-5948042755e4": {
@@ -112,7 +112,7 @@
         "de064527-141a-45ec-8d97-c7856236b84c": {
           "type": "product-card",
           "settings": {
-            "product": "6mm-bar-wedding-bandooak450"
+            "product": "6mm-bar-wedding-band-vm450"
           }
         }
       },
@@ -125,7 +125,7 @@
         "de064527-141a-45ec-8d97-c7856236b84c"
       ],
       "settings": {
-        "title": "For Him",
+        "title": "For Him\/Them",
         "description": "Bold features and gemstones made to enhance any look. Our more masculine styles stand out from the crowd as modern classics.",
         "cta_link": "\/",
         "cta_text": "",
@@ -186,7 +186,7 @@
       "settings": {
         "title": "Most Gifted",
         "description": "Our most gifted pieces at Valerie Madison Jewelry. Year in and year out, these are our pieces loved by many around the country and pair well with other VM styles.",
-        "cta_link": "\/",
+        "cta_link": "\/https:\/\/www.valeriemadison.com\/collections\/fine-jewelry\/Best-Sellers",
         "cta_text": "",
         "product_grid_position": "right",
         "color_region": "dark-alt",
@@ -230,7 +230,7 @@
         "48213e82-23c9-47ff-921a-81ee178cd264": {
           "type": "product-card",
           "settings": {
-            "product": "14k-gold-tapered-hoops-small-vm438"
+            "product": "14k-gold-tapered-hoops-small-vm438-cuff-earring"
           }
         }
       },
@@ -245,12 +245,189 @@
       "settings": {
         "title": "Under $500",
         "description": "Classic styles for everyone on your list this year, even yourself! These pieces are great additions to a jewelry collection, or they make a wonderful foundation of solid gold for a novice fine jewelry connoisseur.",
+        "cta_link": "shopify:\/\/collections\/under-500",
+        "cta_text": "Shop All",
+        "product_grid_position": "left",
+        "color_region": "light-alt",
+        "padding_top": "default",
+        "padding_bottom": "0"
+      }
+    },
+    "341d5950-d263-445c-ba69-1c950015fa03": {
+      "type": "product-grid-with-text",
+      "blocks": {
+        "05fb277f-9032-4a34-8c14-3a7fa6ec9fcc": {
+          "type": "product-card",
+          "settings": {
+            "product": "diamond-station-chain-bracelet-vm503-diamond"
+          }
+        },
+        "3fecda50-0bd0-4b96-9c20-4d931b10d5d1": {
+          "type": "product-card",
+          "settings": {
+            "product": "solstice-diamond-band-vm269"
+          }
+        },
+        "ce08c672-e61a-4e6c-be80-56117f6b10ba": {
+          "type": "product-card",
+          "settings": {
+            "product": "diamond-arch-necklace-vm454"
+          }
+        },
+        "9a60b048-05ed-47dd-9fa3-c96a4c76fdd2": {
+          "type": "product-card",
+          "settings": {
+            "product": "1-tcw-14k-diamond-studs-5mm"
+          }
+        },
+        "ef04f069-5294-4134-9b51-91a5bfa4e27d": {
+          "type": "product-card",
+          "settings": {
+            "product": "diamond-kiss-ring-april-birthstone"
+          }
+        },
+        "e953368d-f229-4653-b26e-a677f77330e7": {
+          "type": "product-card",
+          "settings": {
+            "product": "vm440-rose-cut-diamond-meridian-earrings"
+          }
+        }
+      },
+      "block_order": [
+        "05fb277f-9032-4a34-8c14-3a7fa6ec9fcc",
+        "3fecda50-0bd0-4b96-9c20-4d931b10d5d1",
+        "ce08c672-e61a-4e6c-be80-56117f6b10ba",
+        "9a60b048-05ed-47dd-9fa3-c96a4c76fdd2",
+        "ef04f069-5294-4134-9b51-91a5bfa4e27d",
+        "e953368d-f229-4653-b26e-a677f77330e7"
+      ],
+      "settings": {
+        "title": "For the Diamond Lover",
+        "description": "These pieces are diamond classics, designed for those who love the finer things in life. Made with ethically-sourced diamonds for sustainable sparkle.",
+        "cta_link": "\/",
+        "cta_text": "",
+        "product_grid_position": "right",
+        "color_region": "dark",
+        "padding_top": "default",
+        "padding_bottom": "default"
+      }
+    },
+    "343b2719-cf85-4968-a8fb-e158b9d7eaa0": {
+      "type": "product-grid-with-text",
+      "blocks": {
+        "63a84415-f7f9-4947-8bf3-3a3e76630324": {
+          "type": "product-card",
+          "settings": {
+            "product": "vm446-monstera-pendant-with-emerald-charm"
+          }
+        },
+        "aa614f22-194e-401f-89a0-e08ee89a2059": {
+          "type": "product-card",
+          "settings": {
+            "product": "dua-emerald-band-vm226-em"
+          }
+        },
+        "fd05df04-2e33-48ab-a6b0-62f580e6e8d9": {
+          "type": "product-card",
+          "settings": {
+            "product": "14k-gold-dangling-monstera-leaf-earrings-vm413"
+          }
+        },
+        "99dc7a5f-8c6a-4669-98f0-3e9d4a5649fc": {
+          "type": "product-card",
+          "settings": {
+            "product": "14k-gold-leaf-studs-vm290"
+          }
+        },
+        "cca813f6-b1f3-4dc3-9150-c4adbb827d10": {
+          "type": "product-card",
+          "settings": {
+            "product": "vm436-monstera-studs"
+          }
+        },
+        "e16b767f-71d2-473f-94c6-e14998325015": {
+          "type": "product-card",
+          "settings": {
+            "product": "petite-oval-north-south-turquoise-bezel-ring-ooak608"
+          }
+        }
+      },
+      "block_order": [
+        "63a84415-f7f9-4947-8bf3-3a3e76630324",
+        "aa614f22-194e-401f-89a0-e08ee89a2059",
+        "fd05df04-2e33-48ab-a6b0-62f580e6e8d9",
+        "99dc7a5f-8c6a-4669-98f0-3e9d4a5649fc",
+        "cca813f6-b1f3-4dc3-9150-c4adbb827d10",
+        "e16b767f-71d2-473f-94c6-e14998325015"
+      ],
+      "settings": {
+        "title": "For the Plant Parents",
+        "description": "For those with a green thumb and a passion for all things that photosynthesize. Valerie channeled her love for nature to create these fauna-inspired pieces.",
         "cta_link": "\/",
         "cta_text": "",
         "product_grid_position": "left",
         "color_region": "light-alt",
         "padding_top": "default",
-        "padding_bottom": "0"
+        "padding_bottom": "default"
+      }
+    },
+    "8e6834de-b012-451f-bf22-82380680f107": {
+      "type": "product-grid-with-text",
+      "blocks": {
+        "14ef8285-8b5d-446d-95ef-a685d80016c4": {
+          "type": "product-card",
+          "settings": {
+            "product": "14k-gold-x-o-studs-vm306"
+          }
+        },
+        "5d3113ac-7b34-4176-94b8-dd395fa3d6f4": {
+          "type": "product-card",
+          "settings": {
+            "product": "letter-necklace-charm-vm502"
+          }
+        },
+        "7c81344b-e57f-45a0-8519-88c5a1a026ba": {
+          "type": "product-card",
+          "settings": {
+            "product": "heart-signet-vm385"
+          }
+        },
+        "06b5f87f-c80f-430c-b875-4e01c7b5d6f5": {
+          "type": "product-card",
+          "settings": {
+            "product": "pear-dua-diamond-ring"
+          }
+        },
+        "0c3c6dc9-15ba-4259-8c8e-4516ca84abec": {
+          "type": "product-card",
+          "settings": {
+            "product": "nimbus-sapphire-and-diamond-earrings-vm443-sap"
+          }
+        },
+        "d596b71d-6144-44a1-ae60-35a4696fdea8": {
+          "type": "product-card",
+          "settings": {
+            "product": "scorpio-diamond-constellation-charm-necklace-vm423"
+          }
+        }
+      },
+      "block_order": [
+        "14ef8285-8b5d-446d-95ef-a685d80016c4",
+        "5d3113ac-7b34-4176-94b8-dd395fa3d6f4",
+        "7c81344b-e57f-45a0-8519-88c5a1a026ba",
+        "06b5f87f-c80f-430c-b875-4e01c7b5d6f5",
+        "0c3c6dc9-15ba-4259-8c8e-4516ca84abec",
+        "d596b71d-6144-44a1-ae60-35a4696fdea8"
+      ],
+      "settings": {
+        "title": "For the Romantic",
+        "description": "For the one who loves wearing their rose-colored glasses, and adores the dreaminess of a love story. Gift them something that they can truly wear their heart on their sleeve!",
+        "cta_link": "\/",
+        "cta_text": "",
+        "product_grid_position": "right",
+        "color_region": "dark-alt",
+        "padding_top": "default",
+        "padding_bottom": "default"
       }
     },
     "96b3dba3-3aa7-43da-900a-a1ade6d68f6d": {
@@ -281,7 +458,7 @@
         "5cac3d98-5076-4c68-a76d-12e7c338af6f"
       ],
       "settings": {
-        "title": "Bestselling Wedding Bands",
+        "title": "Best Selling Wedding Bands",
         "description": "",
         "title_link": "\/",
         "title_link_text": "shop all bands",
@@ -340,36 +517,6 @@
         "padding_top": "default",
         "padding_bottom": "default"
       }
-    },
-    "a9f766bc-6b4a-4640-98fc-5698001395f6": {
-      "type": "image-with-text",
-      "settings": {
-        "image": "shopify:\/\/shop_images\/vitor-monthay-EkEdHarUPTs-unsplash.jpg",
-        "title": "Image with text",
-        "text": "<p>description text here<\/p>",
-        "cta_text": "Read More",
-        "cta_link": "\/",
-        "image_position": "left",
-        "is_full_width": false,
-        "color_region": "light",
-        "padding_top": "default",
-        "padding_bottom": "0"
-      }
-    },
-    "b554734a-3803-4c45-b0b6-f23b047d0d41": {
-      "type": "image-with-text",
-      "settings": {
-        "image": "shopify:\/\/shop_images\/Giving.jpg",
-        "title": "Image with text",
-        "text": "<p>description text here<\/p>",
-        "cta_text": "Read More",
-        "cta_link": "\/",
-        "image_position": "right",
-        "is_full_width": false,
-        "color_region": "light",
-        "padding_top": "default",
-        "padding_bottom": "default"
-      }
     }
   },
   "order": [
@@ -378,9 +525,10 @@
     "19248e98-0901-479f-a6e1-1d47dcd97cae",
     "1347b160-8fec-4d50-8b81-52a224c21885",
     "cf8c441a-d7c6-4f9d-9500-8de8090ec957",
+    "341d5950-d263-445c-ba69-1c950015fa03",
+    "343b2719-cf85-4968-a8fb-e158b9d7eaa0",
+    "8e6834de-b012-451f-bf22-82380680f107",
     "96b3dba3-3aa7-43da-900a-a1ade6d68f6d",
-    "d3c762fc-5a7d-4771-9327-fef4901b7ab4",
-    "a9f766bc-6b4a-4640-98fc-5698001395f6",
-    "b554734a-3803-4c45-b0b6-f23b047d0d41"
+    "d3c762fc-5a7d-4771-9327-fef4901b7ab4"
   ]
 }

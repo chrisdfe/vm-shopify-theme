@@ -279,11 +279,6 @@
       {{ settings.custom_scripts }}
     </script>
   {% include 'pe-disco-countdown-timer' %}
-  
-  {% comment %}clientbook chat snippet{% endcomment %}
-  <script>
-  (function (u, c, o, i, s, l, b) { if(urlCheck(window.location.href)) {window["ClientbookWebChatObject"] = {u: u,c: c,w: o,i: i,s: s,l: l,b: b,}; var ga = document.createElement("script"); ga.type = "text/javascript"; ga.async = true; ga.src = "https://s3.amazonaws.com/webchatv2stage.clientbook.com/wc.js"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ga, s); } function urlCheck(theUrl) { const blackListedUrls = []; const regexBlackListing = []; const whiteListedUrls = []; var isItGood = true; if(Array.isArray(blackListedUrls) && blackListedUrls.length > 0) { blackListedUrls.forEach(bL => { if(theUrl.includes(bL)) { isItGood = false; } }) } if(Array.isArray(whiteListedUrls) && whiteListedUrls.length > 0) { whiteListedUrls.forEach(bL => { if(!theUrl.includes(bL)) { isItGood = false; } }) } if(Array.isArray(regexBlackListing) && regexBlackListing.length > 0) { regexBlackListing.forEach(reggy => { const test = theUrl.match(reggy); if(test) { isItGood = false; } }) } return isItGood; } })('549e0c10-d668-4adf-9d59-4244e81d0e9f', '#714457', 'Hello! Please message us if you have questions. ', 'https://cdn.shopify.com/s/files/1/1077/2230/t/177/assets/vm-circle-logo.png', '', '', '')
-  </script>
 </body>
 </html>
 {% endcapture %}
