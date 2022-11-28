@@ -34,9 +34,11 @@
     &.page-banner--aspect-ratio-desktop-3-1 {
       display: flex;
       align-items: center;
+      justify-content: center;
 
       .content-section {
         padding: 0;
+        flex-grow: 1;
       }
     }
   }

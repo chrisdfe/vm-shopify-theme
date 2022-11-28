@@ -115,21 +115,26 @@
 ================================================== */
 /* Mixins - typography
 ================================================== */
-.vm-styleguide__color-region-example {
-  border: 5px solid white;
-  padding: 3rem;
+.vm-styleguide-layout {
+  display: flex;
+  flex-direction: row;
 }
-.vm-styleguide__color-region-example.vm-styleguide__color-region-example--region-light {
-  border-color: #faf6f4;
+
+.vm-styleguide-content {
+  width: calc(100% - 300px);
+  min-height: 80vh;
+  padding: 2rem;
 }
-.vm-styleguide__color-region-example.vm-styleguide__color-region-example--region-light-alt {
-  border-color: #faf6f4;
+.vm-styleguide-content .container {
+  margin-left: 0;
 }
-.vm-styleguide__color-region-example.vm-styleguide__color-region-example--region-dark {
-  border-color: #714457;
+
+.vm-styleguide__page-title {
+  margin-top: 7rem;
+  margin-bottom: 7rem;
 }
-.vm-styleguide__color-region-example.vm-styleguide__color-region-example--region-dark-alt {
-  border-color: #1c4747;
+.vm-styleguide__page-title sup {
+  color: #dec1a8;
 }
 
 /* #Variables
@@ -185,26 +190,21 @@
 ================================================== */
 /* Mixins - typography
 ================================================== */
-.vm-styleguide-layout {
-  display: flex;
-  flex-direction: row;
+.vm-styleguide__color-region-example {
+  border: 5px solid white;
+  padding: 3rem;
 }
-
-.vm-styleguide-content {
-  width: calc(100% - 300px);
-  min-height: 80vh;
-  padding: 2rem;
+.vm-styleguide__color-region-example.vm-styleguide__color-region-example--region-light {
+  border-color: #faf6f4;
 }
-.vm-styleguide-content .container {
-  margin-left: 0;
+.vm-styleguide__color-region-example.vm-styleguide__color-region-example--region-light-alt {
+  border-color: #faf6f4;
 }
-
-.vm-styleguide__page-title {
-  margin-top: 7rem;
-  margin-bottom: 7rem;
+.vm-styleguide__color-region-example.vm-styleguide__color-region-example--region-dark {
+  border-color: #714457;
 }
-.vm-styleguide__page-title sup {
-  color: #dec1a8;
+.vm-styleguide__color-region-example.vm-styleguide__color-region-example--region-dark-alt {
+  border-color: #1c4747;
 }
 
 /* #Variables

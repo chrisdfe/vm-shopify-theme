@@ -9083,9 +9083,11 @@ button.disclosure__button {
   .page-banner.page-banner--aspect-ratio-desktop-2-1, .page-banner.page-banner--aspect-ratio-desktop-3-1 {
     display: flex;
     align-items: center;
+    justify-content: center;
   }
   .page-banner.page-banner--aspect-ratio-desktop-2-1 .content-section, .page-banner.page-banner--aspect-ratio-desktop-3-1 .content-section {
     padding: 0;
+    flex-grow: 1;
   }
 }
 @media only screen and (max-width: 800px) {
