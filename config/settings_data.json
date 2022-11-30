@@ -357,7 +357,7 @@
           "738b4509-cd54-4656-8443-5b3e8aa4baae"
         ],
         "settings": {
-          "promo_text": "<p>Last day to order <a href=\"https:\/\/www.valeriemadison.com\/collections\/diamond-bands\" target=\"_blank\" title=\"diamond bands\">diamond bands<\/a> for Christmas delivery is 11\/22 ✨<\/p>",
+          "promo_text": "<p>Need Gifting Inspo? Check out our <a href=\"https:\/\/www.valeriemadison.com\/pages\/holiday-gift-guide\" title=\"https:\/\/www.valeriemadison.com\/pages\/holiday-gift-guide\">Holiday Gift Guide<\/a> <\/p>",
           "logo": "shopify:\/\/shop_images\/logo_173a67f6-34c1-4670-82e7-e7a2e1e4f697.png",
           "logo_mobile": "shopify:\/\/shop_images\/mobile-logo-seagreen_256x256_79182b2b-7668-4862-8b08-f67f60755daf.png",
           "show_locale_selector": true,
@@ -1411,7 +1411,7 @@
           "b421a334-e2d2-4a70-a7cb-2882d7a0d20a": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/Copy_of_Rainbow_Gemstone_Pendants_2.jpg",
+              "image": "shopify:\/\/shop_images\/Editorial_diamond_necklaces_4x5_1.jpg",
               "url": "https:\/\/www.valeriemadison.com\/collections\/fine-jewelry\/necklaces",
               "cta_text": "Necklaces",
               "cta_subtext": "Pendants & Chains",
@@ -1433,7 +1433,7 @@
           "06b4bb6e-c56a-45c8-8999-019ad4824a15": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/4x5-Engraved-Signet-Rings.jpg",
+              "image": "shopify:\/\/shop_images\/Signets_4x5_Justin.jpg",
               "url": "shopify:\/\/collections\/all-rings-excluding-engagement-wedding",
               "cta_text": "Rings",
               "cta_subtext": "Signets & More",
@@ -1493,7 +1493,7 @@
           "f05e510c-26f7-45d8-a71a-7e639a4d8cb4": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/4x5-store.jpg",
+              "image": "shopify:\/\/shop_images\/JoshEmily33_f2198ed2-2a9b-4648-9955-d50b75e7b503.jpg",
               "url": "https:\/\/calendly.com\/valeriemadison",
               "cta_text": "Schedule an appointment",
               "cta_subtext": "",
@@ -1858,7 +1858,7 @@
           "agreement_label": "Custom Order Agreement*",
           "agreement_description": "<p><em>By checking this box, you agree that this ring is considered a Custom Order and as such, all sales are nonrefundable and are final. We will be following your express instructions to create this ring and will be in touch with you to send CAD renderings and any additional photos and video as requested. All rings will be shipped with a Certificate of Authenticity declaring the materials used. <\/em><\/p><p><\/p><p>Turnaround time on Design Your Own Rings is 6-8 weeks.<\/p>",
           "enable_gift": false,
-          "gift_text": "This is a gift",
+          "gift_text": "This is a Gift",
           "final_sale_tag": "final sale",
           "final_sale_label": "FINAL SALE AGREEMENT*",
           "final_sale_description": "<p>By checking this box, you agree that this item is considered final sale and as such, all sales are nonrefundable and not exchangeable.<\/p>"
@@ -3356,6 +3356,7 @@
         "blocks": {
           "95beecd3-2bab-4b22-b737-ed9a5c1dbf17": {
             "type": "background_block",
+            "disabled": true,
             "settings": {
               "background_color": "light"
             }
@@ -3364,7 +3365,7 @@
             "type": "background_block",
             "settings": {
               "background_color": "light",
-              "banner_image_desktop": "shopify:\/\/shop_images\/Diamond-Kiss-and-Dew-Drop-Chain-1x1_6f22282e-fb6f-4950-af62-7f4ba36695b6.jpg"
+              "banner_image_desktop": "shopify:\/\/shop_images\/Shopify-Turquoise-Stacker-Set-Pear.jpg"
             }
           }
         },
@@ -3374,14 +3375,14 @@
         ],
         "settings": {
           "banner_wrapper_background_color": "light-alt",
-          "pretext": "Looking for gifting inspo?",
-          "heading": "We've curated our favorites",
-          "cta_link": "shopify:\/\/pages\/holiday-gift-guide",
-          "cta_text": "Shop our gift guide",
-          "text_position": "left-block",
-          "text_color": "dark",
-          "banner_image_mobile": "shopify:\/\/shop_images\/Diamond-Kiss-and-Dew-Drop-Chain-1x1_6f22282e-fb6f-4950-af62-7f4ba36695b6.jpg",
-          "text_color_mobile": "dark",
+          "pretext": "just released",
+          "heading": "Turquoise to Treasure",
+          "cta_link": "https:\/\/www.valeriemadison.com\/collections\/fine-jewelry\/turquoise?sort_by=created-descending",
+          "cta_text": "Shop the collection",
+          "text_position": "right-block",
+          "text_color": "dark-alt",
+          "banner_image_mobile": "shopify:\/\/shop_images\/Turquoise-Stacker-Set-Pear-1x1.jpg",
+          "text_color_mobile": "dark-alt",
           "content_background_color_mobile": "light"
         }
       },
