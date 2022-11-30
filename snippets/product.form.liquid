@@ -192,15 +192,48 @@
     <!-- End Final Sale Agreement -->
   {% endif %}
 
-  {% if section.settings.enable_gift == true %}
-	<!-- Gift Option -->
-    <p class="line-item-property__field gift_option">
-      <input type="hidden" name="properties[{{section.settings.gift_text}}]" value="Yes">
-      <input id="this-is-a-gift" type="checkbox" name="properties[{{section.settings.gift_text}}]" value="Yes">
-      <label for="this-is-a-gift">{{section.settings.gift_text}}</label>
+  <!-- Gift Option -->
+  {% assign show_gift_option = true %}
+  {% for collection in product.collections %}
+    {% if collection.title == "Engagement Rings" %}
+      {% assign show_gift_option = false %}
+    {% endif %}
+  {% endfor %}
+
+  {% if show_gift_option %}
+    {% assign sluggified_gift_text = section.settings.gift_text | strip | replace: " ", "-" | replace: "?", "" %}
+    <p class="line-item-property__field line-item-property__field--small-margin">
+      <input type="hidden" name="properties[{{ section.settings.gift_text }}]" value="No" />
+      
+      <label for="{{ sluggified_gift_text }}">
+        <input
+          id="{{ sluggified_gift_text }}"
+          type="checkbox"
+          name="properties[{{ section.settings.gift_text }}]"
+          value="Yes"
+        />
+      
+        {{ section.settings.gift_text }}
+      </label>
     </p>
-  	<!-- End of  Gift Option -->
+
+    {% assign sluggified_fewer_boxes_gift_text = section.settings.fewer_boxes_gift_text | strip | replace: " ", "-" | replace: "?", "" %}
+    <p class="line-item-property__field">
+      <input type="hidden" name="properties[{{ section.settings.fewer_boxes_gift_text }}]" value="No" />
+      
+      <label for="{{ sluggified_fewer_boxes_gift_text }}">
+        <input
+          id="{{ sluggified_fewer_boxes_gift_text }}"
+          type="checkbox"
+          name="properties[{{ section.settings.fewer_boxes_gift_text }}]"
+          value="Yes"
+        />
+
+        {{ section.settings.fewer_boxes_gift_text }}
+      </label>
+    </p>
   {% endif %}
+  <!-- End of  Gift Option -->
   
   {% if product.available %}
     {% if settings.display_inventory_left %}

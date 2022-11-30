@@ -2200,6 +2200,18 @@ legend,
 
 input[type=checkbox] {
   display: inline;
+  vertical-align: middle;
+}
+
+label > input[type=checkbox] {
+  padding-left: 1rem;
+}
+
+.checkbox-field {
+  position: relative;
+}
+.checkbox-field label {
+  margin-bottom: 0;
 }
 
 label span,
@@ -10335,7 +10347,7 @@ div.container.gallery-content {
 }
 .content-section .content-section__anchor {
   position: relative;
-  top: -226px;
+  top: -130px;
 }
 .content-section.content-section--no-background {
   background-color: transparent !important;
@@ -10351,7 +10363,7 @@ div.container.gallery-content {
     padding: 3rem 0;
   }
   .content-section .content-section__anchor {
-    top: -112px;
+    top: -64px;
   }
 }
 
@@ -13277,6 +13289,10 @@ div#disqus_thread li {
 .product .shopify-payment-button__button--branded {
   visibility: hidden;
   display: none;
+}
+
+.line-item-property__field.line-item-property__field--small-margin {
+  margin-bottom: 1rem;
 }
 
 .purchase-details .columns,

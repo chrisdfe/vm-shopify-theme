@@ -128,6 +128,19 @@ legend,
 
 input[type="checkbox"] {
   display: inline;
+  vertical-align: middle;
+}
+
+label > input[type="checkbox"] {
+  padding-left: get-vm-spacer(1);
+}
+
+.checkbox-field {
+  position: relative;
+
+  label {
+    margin-bottom: 0;
+  }
 }
 
 label span,

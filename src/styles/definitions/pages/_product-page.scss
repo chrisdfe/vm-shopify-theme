@@ -425,6 +425,10 @@
   }
 }
 
+.line-item-property__field.line-item-property__field--small-margin {
+  margin-bottom: get-vm-spacer(1);
+}
+
 // Hacky solution to make add to cart button + ring size dropdown line up
 .purchase-details {
   .columns,
