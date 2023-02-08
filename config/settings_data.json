@@ -357,8 +357,8 @@
           "738b4509-cd54-4656-8443-5b3e8aa4baae"
         ],
         "settings": {
-          "promo_text": "<p>Need Gifting Inspo? Check out our <a href=\"https:\/\/www.valeriemadison.com\/pages\/holiday-gift-guide\" title=\"https:\/\/www.valeriemadison.com\/pages\/holiday-gift-guide\">Holiday Gift Guide<\/a> <\/p>",
-          "logo": "shopify:\/\/shop_images\/logo_173a67f6-34c1-4670-82e7-e7a2e1e4f697.png",
+          "promo_text": "<p>Seattle, you're invited to our Valentine's event this Saturday, 10am-4pm. ❤️  <a href=\"https:\/\/emeraldcityflowers.myshopify.com\/collections\/valerie-madison-fine-jewelry-x-emerald-city-flowers\" target=\"_blank\" title=\"https:\/\/emeraldcityflowers.myshopify.com\/collections\/valerie-madison-fine-jewelry-x-emerald-city-flowers\">Preorder flowers<\/a> for pick-up or come get a <a href=\"https:\/\/www.valeriemadison.com\/pages\/eternity-bracelets-permanent-bracelet-infinity\" target=\"_blank\" title=\"https:\/\/www.valeriemadison.com\/pages\/eternity-bracelets-permanent-bracelet-infinity\">permanent bracelet<\/a>! <\/p>",
+          "logo": "shopify:\/\/shop_images\/Diamond-Logo.png",
           "logo_mobile": "shopify:\/\/shop_images\/mobile-logo-seagreen_256x256_79182b2b-7668-4862-8b08-f67f60755daf.png",
           "show_locale_selector": true,
           "show_currency_selector": true
@@ -608,7 +608,7 @@
             "type": "filter",
             "settings": {
               "filter_name": "Shop by Type",
-              "filter_tags": "Chains, Contour Bands, Straight Bands, Diamond Bands, Gold Bands, Textured Bands, Masculine, Unisex, Gemstone Essentials, Zodiac, Studs, Hoops, Engravable, Bridal Earrings",
+              "filter_tags": "Bridal, Chains, Contour Bands, Dangle, Diamond Bands, Gold Bands, Engravable, Hoops, Huggies, Gemstone Essentials, Gemstone Rings, Masculine, Zodiac, Signets, Straight Bands, Studs, Textured Bands, Unisex",
               "enable_filter_swatches": false
             }
           },
@@ -624,7 +624,7 @@
             "type": "filter",
             "settings": {
               "filter_name": "Shop by Stone",
-              "filter_tags": "Diamond, Gemstone, Moissanite, Salt & Pepper, Ruby, Sapphire, Spinel, Garnet, Turquoise",
+              "filter_tags": "Diamond, Gemstone, Moissanite, Salt & Pepper, Ruby, Sapphire, Spinel, Garnet, Turquoise, Pearl",
               "enable_filter_swatches": false
             }
           },
@@ -735,7 +735,7 @@
           "blog_tags": false,
           "blog_author": false,
           "read_time": false,
-          "blog_date": true,
+          "blog_date": false,
           "blog_comment_count": false,
           "read_more_link": true,
           "color_region": "light-alt",
@@ -1708,7 +1708,7 @@
             "disabled": true,
             "settings": {
               "title": "Join our Newsletter",
-              "newsletter_text": "",
+              "newsletter_text": "<p><\/p>",
               "newsletter_code": "<div class=\"klaviyo-form-YmSwgi\"><\/div>",
               "show_social": false
             }
@@ -1862,60 +1862,6 @@
           "final_sale_tag": "final sale",
           "final_sale_label": "FINAL SALE AGREEMENT*",
           "final_sale_description": "<p>By checking this box, you agree that this item is considered final sale and as such, all sales are nonrefundable and not exchangeable.<\/p>"
-        }
-      },
-      "1591661011742": {
-        "type": "logo-bar",
-        "disabled": true,
-        "blocks": {
-          "1591661011742-3": {
-            "type": "logo_image",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/popsugar-logo-pink-768x163.jpg",
-              "link": ""
-            }
-          },
-          "1591661117785": {
-            "type": "logo_image",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/Allure_Logo_200x_cropped_a1a21f03-9c1e-4234-a88a-01b6837fe515.png",
-              "link": ""
-            }
-          },
-          "1591661011742-0": {
-            "type": "logo_image",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/Forbes_Logo.png",
-              "link": ""
-            }
-          },
-          "1593628381419": {
-            "type": "logo_image",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/instyle-logo-1.png",
-              "link": ""
-            }
-          },
-          "c7baa2c9-f1b7-4302-89b6-1f5535ec9558": {
-            "type": "logo_image",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/vogue_logo.png",
-              "link": ""
-            }
-          }
-        },
-        "block_order": [
-          "1591661011742-3",
-          "1591661117785",
-          "1591661011742-0",
-          "1593628381419",
-          "c7baa2c9-f1b7-4302-89b6-1f5535ec9558"
-        ],
-        "settings": {
-          "title": "As Featured In",
-          "color_region": "light",
-          "padding_top": "3",
-          "padding_bottom": "3"
         }
       },
       "404-template": {
@@ -2994,7 +2940,7 @@
         "type": "our-story-about-valerie",
         "settings": {
           "title": "About Valerie",
-          "content": "Valerie merges contemporary technology with skillful artistry to create elegant designs inspired by classic styles. With her keen eye for detail and passion for individuality, her designs celebrate not only the beauty of life and love but also the natural world and the stunning gemstones that come from it. A Valerie Madison piece features styles and stones not seen in traditional pieces, such as salt-and-pepper diamonds, rose-cut diamonds, uniquely shaped stones, vibrant hues, and more. Valerie is a Black Latina and proud to be diversifying the jewelry industry with her Seattle small business.",
+          "content": "Valerie merges contemporary technology with skillful artistry to create elegant designs inspired by classic styles. With her keen eye for detail and passion for individuality, her designs celebrate not only the beauty of life and love but also the natural world and the stunning gemstones that come from it. A Valerie Madison piece features styles and stones not seen in traditional pieces, such as rose-cut diamonds, uniquely shaped stones, vibrant hues, and more. Valerie is a Black Latina and proud to be diversifying the jewelry industry with her Seattle small business.",
           "image": "shopify:\/\/shop_images\/Valerie-Arch-Transparent-1200px-1800px.png"
         }
       },
@@ -3197,7 +3143,7 @@
             "settings": {
               "image": "shopify:\/\/shop_images\/Megan_Cosgrove_Headshot.jpg",
               "title": "Megan",
-              "job_title": "Ecommerce Specialist",
+              "job_title": "Ecommerce Coordinator",
               "description": "I am responsible for managing our website's user experience and product launches. I strive to create a seamless shopping experience that is reminiscent of stepping into our lovely Madrona storefront. When I am not glued to my computer, you will find me chasing Biscuit (our office dog) around Seattle or trying out a new restaurant with my other half."
             }
           },
@@ -3217,15 +3163,6 @@
               "title": "Nina",
               "job_title": "LEAD BENCH JEWELER",
               "description": "I am quiet, dedicated, and passionate about working with my hands. I wake up every day excited to put all my love and positivity into the things I make. I’ve lived in Seattle most of my life, except for the 4 years I spent at the Rhode Island School of Design. When I’m not making jewelry, I run, bike, knit, play piano, and drink caffeinated beverages. Sometimes I’m a little too serious."
-            }
-          },
-          "97a96a55-9052-47a8-83df-1f5e01539e7d": {
-            "type": "team_member",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/VMFJ-2020-3.jpg",
-              "title": "Charlotte",
-              "job_title": "Associate Production MANAGER AND BENCH JEWELER",
-              "description": "I make the shiny stuff. When I’m not goldsmithing for Valerie Madison or working in my own jewelry studio, I’m either DIY renovating my mid-mod dream house or in my kitchen testing new recipes. I couldn’t remain at the top of my game in every way without the support of my handsome cat, clever dachshund puppy and my amazing husband to be."
             }
           },
           "6fbd4270-d7b7-4a6f-9bf1-0e7a9e8c2eef": {
@@ -3251,7 +3188,6 @@
           "403aa6d2-005e-4604-a369-5efa4062f6ab",
           "cf3bd9f0-e995-42ed-a2e9-527e40187beb",
           "4362dbc0-cab4-4110-afd2-e469c7319d14",
-          "97a96a55-9052-47a8-83df-1f5e01539e7d",
           "6fbd4270-d7b7-4a6f-9bf1-0e7a9e8c2eef"
         ],
         "settings": {
@@ -3288,8 +3224,8 @@
         "type": "eternity-bracelets-overview",
         "settings": {
           "title": "Permanent Sparkle",
-          "content": "<p>Our welded permanent jewelry offers a clasp-less bracelet that is quickly becoming a wardrobe staple. Our team will custom-fit and painlessly weld a solid gold chain to your wrist. Our styles span from dainty to chunky, so you can find the chain of your dreams. All of our chains are 14K solid gold, never plated or filled. Intended to be worn forever, but can easily be removed with scissors. Not looking for forever? <a href=\"https:\/\/www.valeriemadison.com\/collections\/fine-jewelry\/bracelets-and-anklets\">Check out our chains also available as clasped styles.<\/a><\/p>\n\n<p>Book an appointment below! Appointments are strongly encouraged for all chain options. This appointment is for 1-2 people total to attend. Please book another slot for more than 2 people.<\/p>\n\n<!-- Calendly inline widget begin -->\n<div class=\"calendly-inline-widget\" data-url=\"https:\/\/calendly.com\/valeriemadison\/eternity?hide_event_type_details=1&hide_gdpr_banner=1&text_color=1c4047&primary_color=1c4047\" style=\"min-width:320px;height:630px;\"><\/div>\n<script type=\"text\/javascript\" src=\"https:\/\/assets.calendly.com\/assets\/external\/widget.js\" async><\/script>\n<!-- Calendly inline widget end -->",
-          "image": "shopify:\/\/shop_images\/Eternity_Bracelets_4x5_941843e3-7c83-40bd-af14-59a8cab1f256.jpg"
+          "content": "<p>Our welded permanent jewelry offers a clasp-less bracelet that is quickly becoming a wardrobe staple. Our team will custom-fit and painlessly weld a solid gold chain to your wrist. Our styles span from dainty to bold, so you can find the chain of your dreams. All of our chains are 14K solid gold, never plated or filled. Intended to be worn forever, but can easily be removed with scissors. <\/p>\n\n<p> Appointments are strongly encouraged for all chain options and you can book an appointment below. Our appointments slots are for 1-2 people. Please book additional appointment slots for parties larger than 2 people.<\/p>\n\n<!-- Calendly inline widget begin -->\n<div class=\"calendly-inline-widget\" data-url=\"https:\/\/calendly.com\/valeriemadison\/eternity?hide_event_type_details=1&hide_gdpr_banner=1&text_color=1c4047&primary_color=1c4047\" style=\"min-width:320px;height:630px;\"><\/div>\n<script type=\"text\/javascript\" src=\"https:\/\/assets.calendly.com\/assets\/external\/widget.js\" async><\/script>\n<!-- Calendly inline widget end -->",
+          "image": "shopify:\/\/shop_images\/ZAP.gif"
         }
       },
       "custom-engagement-ring-steps": {
@@ -3300,7 +3236,7 @@
             "settings": {
               "image": "shopify:\/\/shop_images\/Consultation_Photo.jpg",
               "title": "Consultation",
-              "content": "<p>You can join us in person at our Madrona store or virtually. During your 30 minute appointment we’ll help with any questions, show you ring settings that match your lifestyle and aesthetic, and determine what types of diamonds and gemstones will meet your preferences. You'll leave the consultation with a design direction based on your requests and our next steps are to curate a selection of gemstones. <\/p><p><em>*We ask for a $250 non-refundable procurement fee to begin searching for your perfect gem through our trusted network of gemstone and diamond dealers.<\/em><\/p>"
+              "content": "<p>You can join us in person at our Madrona store or virtually. During your 30 minute appointment we’ll help with any questions, show you ring settings that match your lifestyle and aesthetic, and determine what types of diamonds and gemstones will meet your preferences. You'll leave the consultation with a design direction based on your requests and our next steps are to curate a selection of gemstones. <\/p><p><em>*We require a $250 non-refundable procurement fee to begin searching for your perfect gem through our trusted network of gemstone and diamond dealers.<\/em><\/p>"
             }
           },
           "14d2b893-2d2a-4ba2-9f91-7d0c34b1b647": {
@@ -3356,7 +3292,6 @@
         "blocks": {
           "95beecd3-2bab-4b22-b737-ed9a5c1dbf17": {
             "type": "background_block",
-            "disabled": true,
             "settings": {
               "background_color": "light"
             }
@@ -3365,7 +3300,7 @@
             "type": "background_block",
             "settings": {
               "background_color": "light",
-              "banner_image_desktop": "shopify:\/\/shop_images\/Shopify-Turquoise-Stacker-Set-Pear.jpg"
+              "banner_image_desktop": "shopify:\/\/shop_images\/LowRes-10.jpg"
             }
           }
         },
@@ -3375,21 +3310,21 @@
         ],
         "settings": {
           "banner_wrapper_background_color": "light-alt",
-          "pretext": "just released",
-          "heading": "Turquoise to Treasure",
-          "cta_link": "https:\/\/www.valeriemadison.com\/collections\/fine-jewelry\/turquoise?sort_by=created-descending",
-          "cta_text": "Shop the collection",
-          "text_position": "right-block",
-          "text_color": "dark-alt",
-          "banner_image_mobile": "shopify:\/\/shop_images\/Turquoise-Stacker-Set-Pear-1x1.jpg",
-          "text_color_mobile": "dark-alt",
+          "pretext": "This valentine's day",
+          "heading": "Show your love",
+          "cta_link": "https:\/\/www.valeriemadison.com\/pages\/valentines-gift-guide",
+          "cta_text": "shop our gift guide",
+          "text_position": "left-block",
+          "text_color": "dark",
+          "banner_image_mobile": "shopify:\/\/shop_images\/LowRes-10.jpg",
+          "text_color_mobile": "dark",
           "content_background_color_mobile": "light"
         }
       },
       "1630687320cad1aa82": {
         "type": "image-with-text",
         "settings": {
-          "image": "shopify:\/\/shop_images\/Screen_Shot_2022-09-15_at_11.24.15_AM.png",
+          "image": "shopify:\/\/shop_images\/Multi-Jewelry-79-1x1.jpg",
           "title": "Seattle’s only <em>BIPOC<\/em> Fine Jeweler",
           "text": "<p>Founded by a Black Latina woman, we are strongly rooted in our craft and community. We offer a wide range of innovative designs along with exceptional customer service.<br\/><br\/>Our bridal collection ranges from bespoke diamond engagement rings and unique sapphire engagement rings to lab-grown moissanite rings. We truly offer something for everyone, from ready-to-ship designs to custom rings.<\/p><p>Our approach to making jewelry includes using recycled metals, quality accent stones, and consciously sourced stones to create elegant, sophisticated, and vibrant heirloom-quality pieces.<\/p>",
           "cta_text": "Read more",
@@ -3863,7 +3798,7 @@
             "type": "faq_item",
             "settings": {
               "title": "WHICH METALS TYPES ARE OFFERED?",
-              "answer": "We offer 14k sold yellow gold - and it's our most popular choice! Any other colors \/ combinations must be special ordered in advance."
+              "answer": "We offer 14k solid yellow gold - and it's our most popular choice! Any other colors \/ combinations must be special ordered in advance."
             }
           },
           "02942e57-bc02-4915-9bb9-271b7c436a81": {
@@ -3973,8 +3908,8 @@
       "1638989716bc82a38f": {
         "type": "featured-collection",
         "settings": {
-          "title": "Fresh off the bench",
-          "title_cta_text": "shop new designs",
+          "title": "Unique Designs",
+          "title_cta_text": "shop now",
           "collection": "new-arrivals",
           "products_per": 3,
           "products_limit": 9,
@@ -3983,28 +3918,13 @@
           "padding_bottom": "2"
         }
       },
-      "164274212639d1a2f5": {
-        "type": "image-with-text",
-        "settings": {
-          "image": "shopify:\/\/shop_images\/VMFJ.jpg",
-          "title": "Don't be shy, come say Hi!",
-          "text": "<p>Meet the kind hearts behind every piece of jewelry and come visit the showroom to see where our pieces are made. <\/p>",
-          "cta_text": "Meet Us",
-          "cta_link": "https:\/\/www.valeriemadison.com\/pages\/our-story#our-team",
-          "image_position": "left",
-          "is_full_width": false,
-          "color_region": "light",
-          "padding_top": "default",
-          "padding_bottom": "default"
-        }
-      },
       "mega-menu-6": {
         "type": "mega-menu-6",
         "blocks": {
           "bfd772a5-c05e-477f-abb3-1e27183d23ba": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/4x5-Valerie-Silk-Hi-Res.jpg",
+              "image": "shopify:\/\/shop_images\/LOWER-RES-Valerie-headshot_1.jpg",
               "url": "",
               "cta_text": "",
               "cta_subtext": "",
@@ -4037,7 +3957,7 @@
           "93b65dbd-692f-4a1e-bc39-bf95e585a770": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/4x5-Something-Blue-Gemmas-Hi-Res.jpg",
+              "image": "shopify:\/\/shop_images\/Sapphires_Rings_Teal_1.jpg",
               "url": "",
               "cta_text": "",
               "cta_subtext": "",
@@ -4085,9 +4005,14 @@
       "1630687320cad1aa82",
       "1489285524898",
       "1553466079804",
-      "164274212639d1a2f5",
-      "1584247981998",
-      "1591661011742"
-    ]
+      "1584247981998"
+    ],
+    "blocks": {
+      "855628211100114053": {
+        "type": "shopify:\/\/apps\/klaviyo-email-marketing-sms\/blocks\/klaviyo-onsite-embed\/2632fe16-c075-4321-a88b-50b567f42507",
+        "disabled": false,
+        "settings": {}
+      }
+    }
   }
 }
