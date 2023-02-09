@@ -357,7 +357,11 @@
           "738b4509-cd54-4656-8443-5b3e8aa4baae"
         ],
         "settings": {
+<<<<<<< HEAD
           "promo_text": "<p>Seattle, you're invited to our Valentine's event this Saturday, 10am-4pm. ❤️  <a href=\"https:\/\/emeraldcityflowers.myshopify.com\/collections\/valerie-madison-fine-jewelry-x-emerald-city-flowers\" target=\"_blank\" title=\"https:\/\/emeraldcityflowers.myshopify.com\/collections\/valerie-madison-fine-jewelry-x-emerald-city-flowers\">Preorder flowers<\/a> for pick-up or come get a <a href=\"https:\/\/www.valeriemadison.com\/pages\/eternity-bracelets-permanent-bracelet-infinity\" target=\"_blank\" title=\"https:\/\/www.valeriemadison.com\/pages\/eternity-bracelets-permanent-bracelet-infinity\">permanent bracelet<\/a>! <\/p>",
+=======
+          "promo_text": "<p>Today is the last day to <a href=\"https:\/\/emeraldcityflowers.myshopify.com\/collections\/valerie-madison-fine-jewelry-x-emerald-city-flowers\" target=\"_blank\" title=\"https:\/\/emeraldcityflowers.myshopify.com\/collections\/valerie-madison-fine-jewelry-x-emerald-city-flowers\">preorder flowers<\/a> for pick-up this Saturday at our Valentine's event ❤️ Free gift with purchase when you spend, more <a href=\"https:\/\/www.valeriemadison.com\/blogs\/the-studio-blog\/buy-more-love-more-valentines-day-event\" title=\"https:\/\/www.valeriemadison.com\/blogs\/the-studio-blog\/buy-more-love-more-valentines-day-event\">details here<\/a>. <\/p>",
+>>>>>>> is-this-a-gift-checkbox
           "logo": "shopify:\/\/shop_images\/Diamond-Logo.png",
           "logo_mobile": "shopify:\/\/shop_images\/mobile-logo-seagreen_256x256_79182b2b-7668-4862-8b08-f67f60755daf.png",
           "show_locale_selector": true,
@@ -3300,7 +3304,7 @@
             "type": "background_block",
             "settings": {
               "background_color": "light",
-              "banner_image_desktop": "shopify:\/\/shop_images\/LowRes-10.jpg"
+              "banner_image_desktop": "shopify:\/\/shop_images\/Modeled_5_Herringbone_Necklaces.jpg"
             }
           }
         },
@@ -3310,13 +3314,13 @@
         ],
         "settings": {
           "banner_wrapper_background_color": "light-alt",
-          "pretext": "This valentine's day",
-          "heading": "Show your love",
-          "cta_link": "https:\/\/www.valeriemadison.com\/pages\/valentines-gift-guide",
-          "cta_text": "shop our gift guide",
+          "pretext": "our valentine's day event starts now",
+          "heading": "Give a gift they will love",
+          "cta_link": "https:\/\/www.valeriemadison.com\/blogs\/the-studio-blog\/buy-more-love-more-valentines-day-event",
+          "cta_text": "shop the event",
           "text_position": "left-block",
-          "text_color": "dark",
-          "banner_image_mobile": "shopify:\/\/shop_images\/LowRes-10.jpg",
+          "text_color": "light",
+          "banner_image_mobile": "shopify:\/\/shop_images\/Modeled_5_Herringbone_Necklaces.jpg",
           "text_color_mobile": "dark",
           "content_background_color_mobile": "light"
         }
