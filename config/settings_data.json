@@ -357,11 +357,7 @@
           "738b4509-cd54-4656-8443-5b3e8aa4baae"
         ],
         "settings": {
-<<<<<<< HEAD
-          "promo_text": "<p>Seattle, you're invited to our Valentine's event this Saturday, 10am-4pm. ❤️  <a href=\"https:\/\/emeraldcityflowers.myshopify.com\/collections\/valerie-madison-fine-jewelry-x-emerald-city-flowers\" target=\"_blank\" title=\"https:\/\/emeraldcityflowers.myshopify.com\/collections\/valerie-madison-fine-jewelry-x-emerald-city-flowers\">Preorder flowers<\/a> for pick-up or come get a <a href=\"https:\/\/www.valeriemadison.com\/pages\/eternity-bracelets-permanent-bracelet-infinity\" target=\"_blank\" title=\"https:\/\/www.valeriemadison.com\/pages\/eternity-bracelets-permanent-bracelet-infinity\">permanent bracelet<\/a>! <\/p>",
-=======
           "promo_text": "<p>Today is the last day to <a href=\"https:\/\/emeraldcityflowers.myshopify.com\/collections\/valerie-madison-fine-jewelry-x-emerald-city-flowers\" target=\"_blank\" title=\"https:\/\/emeraldcityflowers.myshopify.com\/collections\/valerie-madison-fine-jewelry-x-emerald-city-flowers\">preorder flowers<\/a> for pick-up this Saturday at our Valentine's event ❤️ Free gift with purchase when you spend, more <a href=\"https:\/\/www.valeriemadison.com\/blogs\/the-studio-blog\/buy-more-love-more-valentines-day-event\" title=\"https:\/\/www.valeriemadison.com\/blogs\/the-studio-blog\/buy-more-love-more-valentines-day-event\">details here<\/a>. <\/p>",
->>>>>>> is-this-a-gift-checkbox
           "logo": "shopify:\/\/shop_images\/Diamond-Logo.png",
           "logo_mobile": "shopify:\/\/shop_images\/mobile-logo-seagreen_256x256_79182b2b-7668-4862-8b08-f67f60755daf.png",
           "show_locale_selector": true,
@@ -3294,12 +3290,6 @@
       "1629483439e1253581": {
         "type": "homepage-banner",
         "blocks": {
-          "95beecd3-2bab-4b22-b737-ed9a5c1dbf17": {
-            "type": "background_block",
-            "settings": {
-              "background_color": "light"
-            }
-          },
           "c8162eb0-f303-4a37-a67a-93a3242277ce": {
             "type": "background_block",
             "settings": {
@@ -3309,7 +3299,6 @@
           }
         },
         "block_order": [
-          "95beecd3-2bab-4b22-b737-ed9a5c1dbf17",
           "c8162eb0-f303-4a37-a67a-93a3242277ce"
         ],
         "settings": {
