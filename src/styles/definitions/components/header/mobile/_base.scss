@@ -1,4 +1,5 @@
 .header-mobile {
+  $header-mobile-height: get-vm-spacer(3);
   position: relative;
   z-index: $vm-z-index-header-content;
   background-color: $vm-color-white;
@@ -9,14 +10,15 @@
     justify-content: space-between;
     padding: 0 get-vm-spacer(1);
     height: get-vm-spacer(4);
-    
+
     @include respond-to("medium-down") {
-      height: get-vm-spacer(3);
+      height: $header-mobile-height;
     }
   }
 
   .header-mobile__logo-wrapper {
-    width: 10%;
+    width: 30%;
+    height: $header-mobile-height;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -24,19 +26,25 @@
 
   .header-mobile__logo {
     display: flex;
+    height: $header-mobile-height;
     align-items: center;
     justify-content: center;
+    padding: 0.5rem 0;
     color: $vm-color-sea-green;
 
-    svg {
-      width: 30px;
-      height: 30px;
+    // svg {
+    //   width: 30px;
+    //   height: 30px;
+    // }
+
+    img {
+      height: 100%;
     }
   }
 
   .header-mobile__nav {
     display: flex;
-    width: 45%;
+    width: 35%;
 
     &.header-mobile__nav--right {
       justify-content: flex-end;
@@ -53,7 +61,7 @@
     color: $vm-color-sea-green;
     fill: $vm-color-sea-green;
     transition: all 0.2s;
-    
+
     .vm-icon.vm-icon--bag {
       margin-left: -6px;
     }
@@ -62,15 +70,15 @@
       position: relative;
       top: 1px;
     }
-    
+
     &:hover,
     &:active {
       background-color: $vm-color-cream;
       // color: $vm-color-sand;
       // fill: $vm-color-sand;
     }
-    
-    &:active {      
+
+    &:active {
       border-color: $vm-color-sea-green;
     }
   }

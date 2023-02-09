@@ -3,10 +3,14 @@
   <a
     href="{{ shop.url }}"
     title="{{ shop.name }}">
-    <!-- <img
+    <img
       src="{{ section.settings.logo | img_url: '800x' }}"
       alt="{{ shop.name | escape }}"
-    /> -->
+    />
+    <!--
+    -->
+    {% comment %}
     {% render "icon.logo-v2" %}
+    {% endcomment %}
   </a>
 </div>

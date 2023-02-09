@@ -6173,24 +6173,26 @@ body.modal-is-open {
   }
 }
 .header-mobile .header-mobile__logo-wrapper {
-  width: 10%;
+  width: 30%;
+  height: 3rem;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .header-mobile .header-mobile__logo {
   display: flex;
+  height: 3rem;
   align-items: center;
   justify-content: center;
+  padding: 0.5rem 0;
   color: #1c4747;
 }
-.header-mobile .header-mobile__logo svg {
-  width: 30px;
-  height: 30px;
+.header-mobile .header-mobile__logo img {
+  height: 100%;
 }
 .header-mobile .header-mobile__nav {
   display: flex;
-  width: 45%;
+  width: 35%;
 }
 .header-mobile .header-mobile__nav.header-mobile__nav--right {
   justify-content: flex-end;

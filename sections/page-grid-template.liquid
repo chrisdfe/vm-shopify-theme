@@ -9,9 +9,9 @@
 <div class="row">
   <div class="sixteen columns">
     {% render "page-heading" with {
-      title: page.title,
-      align: "center",
-    } %}
+     title: page.title,
+     align: "center",
+     } %}
   </div>
 </div>
 
@@ -23,16 +23,15 @@
 
 <div class="sixteen columns">
   <div class="row">
-  {% assign email_body = section.settings.cta_mailto_body %}
+    {% assign email_body = section.settings.cta_mailto_body %}
 
     {% for block in section.blocks %}
-      <div class="one-third columns medium-down--one-half">
+      <div class="one-fourth columns medium-down--one-half">
         <div class="product_image">
           <div class="image__container center">
-            {% render 'image-element',
-              image: block.settings.image,
-              alt: block.settings.image.alt,
-            %}
+            {% render 'image-element'
+             , image: block.settings.image,
+             alt: block.settings.image.alt, %}
           </div>
         </div>
 
@@ -40,7 +39,7 @@
           <h5 class="title" itemprop="name">
             {{ block.settings.title }}
           </h5>
-          
+
           {% if description != blank %}
             <p>{{ block.settings.description }}</p>
           {% endif %}
@@ -56,64 +55,60 @@
 
 {% schema %}
 
-{
-  "name": "Page | Featured Grid",
-  "class": "team-section",
-  "settings": [
-    {
-      "type": "text",
-      "id": "cta_text",
-      "label": "CTA Text",
-      "default": "Contact for Pricing"
-    },
-    {
-      "type": "text",
-      "id": "cta_mailto_email",
-      "label": "Mailto link email (e.g custom@valeriemadison.com)",
-      "default": "custom@valeriemadison.com"
-    },
-    {
-      "type": "textarea",
-      "id": "cta_mailto_body",
-      "label": "Prepopulated email body"
-    }
-  ],
-  "blocks": [
-    {
-      "name": "Featured Item Block",
-      "type": "featured-ring",
-      "settings": [
-        {
-          "type": "image_picker",
-          "id": "image",
-          "label": "Image",
-          "info": "800 x 800px recommended"
-        },
-        {
-          "type": "text",
-          "id": "title",
-          "label": "Featured Item Title",
-          "default": "Featured Past Ring"
-        },
-        {
-          "type": "richtext",
-          "id": "description",
-          "label": "Description",
-          "default": "<p>Your Item Description.</p>"
-        },
-       	{
-          "id": "link_url",
-          "type": "url",
-          "label": "Link URL"
-        },
-        {
-          "type": "text",
-          "id": "link_title",
-          "label": "Link Text"
-        }
-      ]
-    }
-  ]
-}
-
+  {
+    "name": "Page | Featured Grid",
+    "class": "team-section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "cta_text",
+        "label": "CTA Text",
+        "default": "Contact for Pricing"
+      }, {
+        "type": "text",
+        "id": "cta_mailto_email",
+        "label": "Mailto link email (e.g custom@valeriemadison.com)",
+        "default": "custom@valeriemadison.com"
+      }, {
+        "type": "textarea",
+        "id": "cta_mailto_body",
+        "label": "Prepopulated email body"
+      }
+    ],
+    "blocks": [
+      {
+        "name": "Featured Item Block",
+        "type": "featured-ring",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image",
+            "info": "800 x 800px recommended"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Featured Item Title",
+            "default": "Featured Past Ring"
+          },
+          {
+            "type": "richtext",
+            "id": "description",
+            "label": "Description",
+            "default": "<p>Your Item Description.</p>"
+          },
+          {
+            "id": "link_url",
+            "type": "url",
+            "label": "Link URL"
+          }, {
+            "type": "text",
+            "id": "link_title",
+            "label": "Link Text"
+          }
+        ]
+      }
+    ]
+  }
 {% endschema %}

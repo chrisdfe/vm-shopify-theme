@@ -15,19 +15,18 @@
         href="{{ shop.url }}"
         title="{{ shop.name | escape }}"
         class="header-mobile__logo">
-        {% render "icon.logo-monogram" %}
-        <!-- {% if section.settings.logo_mobile != nil %}
+        {% if section.settings.logo_mobile != nil %}
           <img
-            src="{{ section.settings.logo_mobile | img_url: '410x' }}"
+            src="{{ section.settings.logo_mobile | img_url: '800x' }}"
             alt="{{ shop.name | escape }}"
             class="lazyload"
           />
         {% elsif section.settings.logo != nil %}
           <img
-            src="{{ section.settings.logo | img_url: '410x' }}"
+            src="{{ section.settings.logo | img_url: '800x' }}"
             alt="{{ shop.name | escape }}"
           />
-        {% endif %} -->
+        {% endif %}
       </a>
     </div>
 
