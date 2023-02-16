@@ -357,7 +357,7 @@
           "738b4509-cd54-4656-8443-5b3e8aa4baae"
         ],
         "settings": {
-          "promo_text": "<p>Today is the last day to <a href=\"https:\/\/emeraldcityflowers.myshopify.com\/collections\/valerie-madison-fine-jewelry-x-emerald-city-flowers\" target=\"_blank\" title=\"https:\/\/emeraldcityflowers.myshopify.com\/collections\/valerie-madison-fine-jewelry-x-emerald-city-flowers\">preorder flowers<\/a> for pick-up this Saturday at our Valentine's event ❤️ Free gift with purchase when you spend, more <a href=\"https:\/\/www.valeriemadison.com\/blogs\/the-studio-blog\/buy-more-love-more-valentines-day-event\" title=\"https:\/\/www.valeriemadison.com\/blogs\/the-studio-blog\/buy-more-love-more-valentines-day-event\">details here<\/a>. <\/p>",
+          "promo_text": "",
           "logo": "shopify:\/\/shop_images\/Diamond-Logo.png",
           "logo_mobile": "shopify:\/\/shop_images\/mobile-logo-seagreen_256x256_79182b2b-7668-4862-8b08-f67f60755daf.png",
           "show_locale_selector": true,
@@ -3201,8 +3201,8 @@
         "type": "our-story-visit-the-store",
         "settings": {
           "title": "Visit Our Store",
-          "content": "<p>Walk-ins welcome! We have a variety of everyday fine jewelry, wedding bands, engagement rings, and lovely gifts available in store available for you to browse!<br\/><\/p><p>We recommend booking an appointment if you are seeking an Engagement Ring or Wedding Band(s) so our team can be available to assist you - book one (or two) below! <\/p><p><\/p><p>*Masks are now optional for fully vaccinated guests. Our team is fully vaccinated for your safety.*<\/p>",
-          "address": "<p>1411 34th Ave<br\/>Seattle, WA 98122<\/p>",
+          "content": "<p>Walk-ins welcome! We have a variety of everyday fine jewelry, wedding bands, engagement rings, and lovely gifts available in store available for you to browse!<br\/><\/p><p>We recommend booking an appointment if you are seeking an Engagement Ring or Wedding Band(s) so our team can be available to assist you - book one (or two) below! <\/p>",
+          "address": "<p>1422 34th Ave<br\/>Seattle, WA 98122<\/p>",
           "store_hours": "<p>Thursday-Friday <strong>12pm-6pm<\/strong><br\/>Saturday <strong>10am-4pm<\/strong><\/p>",
           "parking_directions": "<p>There is limited free street parking.<\/p>",
           "calendly_embed": "<!-- Calendly inline widget begin -->\n<div class=\"calendly-inline-widget\" data-url=\"https:\/\/calendly.com\/valeriemadison?text_color=1c4047&amp;primary_color=714457\" style=\"min-width:320px;height:630px;\"><\/div>\n<script type=\"text\/javascript\" src=\"https:\/\/assets.calendly.com\/assets\/external\/widget.js\" async><\/script>\n<!-- Calendly inline widget end -->",
@@ -3296,7 +3296,7 @@
             "type": "background_block",
             "settings": {
               "background_color": "light",
-              "banner_image_desktop": "shopify:\/\/shop_images\/Modeled_5_Herringbone_Necklaces.jpg"
+              "banner_image_desktop": "shopify:\/\/shop_images\/Shopify-light-blue-sapphire-rings.jpg"
             }
           }
         },
@@ -3305,13 +3305,13 @@
         ],
         "settings": {
           "banner_wrapper_background_color": "light-alt",
-          "pretext": "our valentine's day event starts now",
-          "heading": "Give a gift they will love",
-          "cta_link": "https:\/\/www.valeriemadison.com\/blogs\/the-studio-blog\/buy-more-love-more-valentines-day-event",
-          "cta_text": "shop the event",
+          "pretext": "now featuring",
+          "heading": "Breezy Blues",
+          "cta_link": "https:\/\/www.valeriemadison.com\/collections\/engagement-rings\/new",
+          "cta_text": "Shop the collection",
           "text_position": "left-block",
-          "text_color": "light",
-          "banner_image_mobile": "shopify:\/\/shop_images\/Modeled_5_Herringbone_Necklaces.jpg",
+          "text_color": "dark-alt",
+          "banner_image_mobile": "shopify:\/\/shop_images\/Shopify-light-blue-sapphire-rings-1x1.jpg",
           "text_color_mobile": "dark",
           "content_background_color_mobile": "light"
         }
@@ -3903,9 +3903,9 @@
       "1638989716bc82a38f": {
         "type": "featured-collection",
         "settings": {
-          "title": "Unique Designs",
+          "title": "Modern Originals",
           "title_cta_text": "shop now",
-          "collection": "new-arrivals",
+          "collection": "fine-jewelry",
           "products_per": 3,
           "products_limit": 9,
           "color_region": "light-alt",
