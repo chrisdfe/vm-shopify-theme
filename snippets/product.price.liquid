@@ -24,24 +24,19 @@
           {% if section.settings.display_savings %}
             <span class="sale savings">
               {% if variant.price < variant.compare_at_price %}
-                {{ 'products.product.savings' | t }}  {{ variant.compare_at_price | minus: variant.price | times: 100 | divided_by: variant.compare_at_price }}% (<span class="money">{% assign compare_at = variant.compare_at_price | minus: variant.price %}{% render 'price-element', price: compare_at %}</span>)
+                {{ 'products.product.savings' | t }} {{ variant.compare_at_price | minus: variant.price | times: 100 | divided_by: variant.compare_at_price }}% (<span class="money">{% assign compare_at = variant.compare_at_price | minus: variant.price %}{% render 'price-element', price: compare_at %}</span>)
               {% endif %}
             </span>
           {% endif %}
         </div>
       {% endunless %}
-      
+
       <div class="sold-out__container">
-        <span class="sold_out">{% if variant.available == false %}{{ settings.sold_out_text }}{% endif %}</span>
+        <span class="sold_out">
+          {% if variant.available == false %}
+            {{ settings.sold_out_text }}{% endif %}
+        </span>
       </div>
     </div>
   {% endif %}
-
-  <div class="affirm-as-low-as-wrapper">
-    <p
-      class="affirm-as-low-as paragraph-3"
-      data-page-type="product"
-      data-amount="{{variant.price}}">
-    </p>
-  </div>
 </div>

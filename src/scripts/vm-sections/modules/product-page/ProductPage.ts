@@ -2,6 +2,7 @@ import ProductImagesDesktop from './ProductImagesDesktop';
 import ProductImagesMobile from './ProductImagesMobile';
 // import ProductColorSwatches from './product-color-swatches';
 import ProductForm from './ProductForm';
+import ProductTabs from './ProductTabs';
 
 import ProductRecommendations from './product-recommendations';
 
@@ -10,6 +11,7 @@ export default class ProductPage {
   productImagesMobile: ProductImagesMobile;
   // productColorSwatches: ProductColorSwatches;
   productForm: ProductForm;
+  productTabs: ProductTabs;
 
   stickyContentElement: HTMLElement;
 
@@ -29,6 +31,8 @@ export default class ProductPage {
 
     // functionality ported straight over from turbo
     new ProductRecommendations().initialize();
+
+    this.productTabs = new ProductTabs().initialize();
   }
 
   setStickyContentTop() {

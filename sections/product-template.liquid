@@ -5,32 +5,65 @@
 
 <a name="pagecontent" id="pagecontent"></a>
 
-{% assign show_description_above_add_to_cart = false %}
+{% assign show_ring_sizers_cta_text = false %}
+
+{% if product.tags contains "Ring Resizing" or product.tags contains "Rings" or product.tags contains "Engagement Ring" %}
+  {% unless product.description contains "ring sizers" %}
+    {% assign show_ring_sizers_cta_text = true %}
+  {% endunless %}
+{% endif %}
+
+{% assign show_shipping_estimate = false %}
+{% if settings.enable_estimate %}
+  {% for tag in product.tags %}
+    {% assign tag_n = tag | downcase %}
+    {% if tag_n contains "weeks" or tag contains "days" %}
+      {% assign contains_estimate = true %}
+      {% assign text_weeks_time = tag_n | strip | split: 'weeks' | first %}
+      {% assign text_days_time = tag_n | strip | split: 'days' | last %}
+
+      {% if text_weeks_time != tag and text_days_time != 0 %}
+        {% assign day_start = text_weeks_time | strip | split: '-' | first | plus: 0 | times: 7 %}
+        {% assign day_end = text_weeks_time | strip | split: '-' | last | plus: 0 | times: 7 %}
+      {% elsif text_days_time != tag and text_days_time != 0 %}
+        {% assign day_start = text_days_time | strip | split: '-' | first | plus: 0 %}
+        {% assign day_end = text_days_time | strip | split: '-' | last | plus: 0 %}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+
+  {% if contains_estimate == true and day_start >= 1 and day_end >= 1 %}
+    {% assign show_shipping_estimate = true %}
+  {% endif %}
+{% endif %}
+
+{% assign use_content_tabs = true %}
+
+{% comment %}Only show tabs if shipping estimate is shown{% endcomment %}
+{% unless show_shipping_estimate %}
+  {% assign use_content_tabs = false %}
+{% endunless %}
 
 {% if product.tags contains 'Design Your Own Ring' or product.tags contains 'Services' %}
-  {% assign show_description_above_add_to_cart = true %}
+  {% assign use_content_tabs = false %}
 {% endif %}
 
 <div class="product product-name--{{ product.handle }}">
-  <div 
-    class="product-{{ product.id }}"
-    data-free-text="{{ settings.free_price_text }}">
+  <div class="product-{{ product.id }}" data-free-text="{{ settings.free_price_text }}">
 
     <div class="container">
       <div class="row product_section js-product_section" data-rv-handle="{{ product.handle }}">
 
         <div class="ten columns medium-down--one-whole">
-          {% render 'product.desktop.images',
-            video_looping: section.settings.video_looping,
-            set_product_height: section.settings.set_product_height
-          %}
+          {% render 'product.desktop.images'
+           , video_looping: section.settings.video_looping,
+           set_product_height: section.settings.set_product_height %}
 
-          {% render 'product.mobile.images',
-            video_looping: section.settings.video_looping,
-            set_product_height: section.settings.set_product_height
-          %}
+          {% render 'product.mobile.images'
+           , video_looping: section.settings.video_looping,
+           set_product_height: section.settings.set_product_height %}
         </div>
-        
+
         <div class="six columns medium-down--one-whole">
           <div class="product-content-wrapper">
             {% assign collection_handles = product.collections | map: 'handle' %}
@@ -41,16 +74,54 @@
             {% include "product.vendor" %}
 
             {% include "product.sku" %}
-    
+
             {% include "product.title" %}
-            
+
             {% include "product.reviews-badge" %}
 
             {% include "product.size-chart" %}
-            
+
             {% include "product.price" %}
 
-            {% if show_description_above_add_to_cart %}
+            {% if use_content_tabs %}
+              <div class="vm-product-tabs-wrapper" data-vm-tab-group-id="product-page">
+                <button class="vm-product-tab-button" data-vm-tab-id="description">
+                  details
+                </button>
+
+                <button class="vm-product-tab-button" data-vm-tab-id="shipping-estimate">
+                  shipping estimate
+                </button>
+              </div>
+
+              <div
+                class="vm-product-tab-content"
+                data-vm-tab-group-id="product-page"
+                data-vm-tab-id="shipping-estimate">
+                {% render 'storemods-shipping-estimate' %}
+              </div>
+
+              {% if product.description != blank %}
+                <div
+                  class="vm-product-tab-content"
+                  data-vm-tab-group-id="product-page"
+                  data-vm-tab-id="description">
+                  <div class="product-info">
+                    <div class="product-description">
+                      {{ product.description | split: '<!-- split -->' | first }}
+                    </div>
+
+                    {% if show_ring_sizers_cta_text %}
+                      <div class="product-ring-sizers-cta">
+                        We offer
+                        <a href="{{ section.settings.ring_sizer_text_link }}">ring sizers</a>
+                        for those unsure of their size.
+                      </div>
+                    {% endif %}
+                  </div>
+                </div>
+              {% endif %}
+            {% else %}
               {% if product.description != blank %}
                 <div class="product-info">
                   <div class="product-description">
@@ -58,35 +129,22 @@
                   </div>
                 </div>
               {% endif %}
+
+              {% if show_shipping_estimate %}
+                {% render 'storemods-shipping-estimate' %}
+              {% endif %}
             {% endif %}
 
             {% unless collection_handles contains 'coming-soon' %}
+              <div class="affirm-as-low-as-wrapper">
+                <p
+                  class="affirm-as-low-as paragraph-3"
+                  data-page-type="product"
+                  data-amount="{{variant.price}}"></p>
+              </div>
+
               {% render 'product.form', context: 'product' %}
               {% render 'product.notify-me', product: product %}
-            {% endunless %}
-
-            {% render 'storemods-shipping-estimate' %}
-            
-            {% unless show_description_above_add_to_cart %}
-              {% if product.description != blank %}
-                <div class="product-info">
-                  {% render "accordion.button" with {
-                    title: "details",
-                    accordion_id: "product-description"
-                  } %}
-
-                  {% capture accordion_content %}
-                    <div class="description">
-                      {{ product.description | split: '<!-- split -->' | first }}
-                    </div>
-                  {% endcapture %}
-
-                  {% render "accordion.content" with {
-                    accordion_id: "product-description",
-                    content: accordion_content
-                  } %}
-                </div>
-              {% endif %}
             {% endunless %}
 
             {% include 'product.links' %}
@@ -98,9 +156,9 @@
       </div>
     </div>
   </div>
-  
+
   {% include 'product.reviews' %}
-  
+
 </div>
 
 {% if section.settings.display_recently_viewed %}
@@ -109,628 +167,645 @@
 
 <div data-product-recommendations-container></div>
 
-{% if section.settings.enable_qty == false %} 
-  {% if product.tags contains 'engagement rings' or product.tags contains 'Design Your Own Ring' or  product.tags contains 'engagement' %} 
-  <style>
-    .purchase-details .product-quantity-box {
-      display:none;
-    }
-  </style>
+{% if section.settings.enable_qty == false %}
+  {% if product.tags contains 'engagement rings' or product.tags contains 'Design Your Own Ring' or product.tags contains 'engagement' %}
+    <style>
+      .purchase-details .product-quantity-box {
+        display: none;
+      }
+    </style>
   {% endif %}
 {% endif %}
 
 {% if section.settings.enable_gift == true %}
   {% style %}
     .gift_option {
-        background: {{section.settings.gift_bg}};
-        display: inline-flex;
-        padding: 2px 17px 2px 7px;
-        color: {{section.settings.gift_text_color}};
+      background: {{ section.settings.gift_bg}}
+      ;
+      display: inline-flex;
+      padding: 2px 17px 2px 7px;
+      color: {{ section.settings.gift_text_color}}
+      ;
     }
 
     #this-is-a-gift {
-        margin: 8px;
+      margin: 8px;
     }
   {% endstyle %}
 {% endif %}
 
 {% schema %}
-{
+  {
     "name": "Product",
     "class": "product-template",
     "settings": [
-        {
-            "type": "header",
-            "content": "Product gallery"
-        }, {
-            "type": "checkbox",
-            "id": "product_thumbs",
-            "label": "Show thumbnails",
-            "default": true
-        }, {
-            "type": "checkbox",
-            "id": "gallery_arrows",
-            "label": "Show arrows",
-            "default": true
-        }, {
-            "type": "checkbox",
-            "id": "enable_product_lightbox",
-            "label": "Enable lightbox",
-            "default": true
-        }, {
-            "type": "checkbox",
-            "id": "activate_zoom",
-            "label": "Magnify product images on hover"
-        }, {
-            "type": "range",
-            "id": "slideshow_speed",
-            "label": "Gallery speed",
-            "min": 0,
-            "max": 6,
-            "unit": "sec",
-            "default": 0,
-            "info": "Set to 0 to disable autoplay."
-        }, {
-            "type": "select",
-            "id": "slideshow_animation",
-            "label": "Gallery transition",
-            "options": [
-                {
-                    "value": "slide",
-                    "label": "Slide"
-                }, {
-                    "value": "fade",
-                    "label": "Fade"
-                }
-            ],
-            "default": "slide"
-        }, {
-            "type": "select",
-            "id": "thumbnail_position",
-            "label": "Thumbnails",
-            "default": "bottom",
-            "options": [
-                {
-                    "value": "bottom",
-                    "label": "Bottom"
-                }, {
-                    "value": "left",
-                    "label": "Left"
-                }, {
-                    "value": "right",
-                    "label": "Right"
-                }
-            ]
-        }, {
-            "type": "checkbox",
-            "id": "enable_thumbnail_slider",
-            "label": "Enable thumbnail slider",
-            "default": true
-        }, {
-            "type": "header",
-            "content": "Product information"
-        }, {
-            "type": "checkbox",
-            "id": "display_vendor",
-            "label": "Show vendor"
-        }, {
-            "type": "checkbox",
-            "id": "product_breadcrumb",
-            "label": "Show breadcrumb links"
-        }, {
-            "type": "checkbox",
-            "id": "display_sku",
-            "label": "Show SKU"
-        }, {
-            "type": "checkbox",
-            "id": "display_collections",
-            "label": "Show collections"
-        }, {
-            "type": "checkbox",
-            "id": "display_type",
-            "label": "Show type"
-        }, {
-            "type": "checkbox",
-            "id": "display_tags",
-            "label": "Show tags"
-        }, {
-            "type": "checkbox",
-            "id": "display_social_buttons",
-            "label": "Show social media share icons",
-            "default": true
-        }, {
-            "type": "radio",
-            "id": "product_description_position",
-            "label": "Description position",
-            "options": [
-                {
-                    "value": "top",
-                    "label": "Above product form"
-                }, {
-                    "value": "bottom",
-                    "label": "Below product form"
-                }
-            ]
-        }, {
-            "type": "checkbox",
-            "id": "display_savings",
-            "label": "Show price savings",
-            "default": true
-        }, {
-            "type": "select",
-            "id": "product_info_width",
-            "label": "Product Info - Column Width",
-            "default": "nine|seven",
-            "options": [
-                {
-                    "value": "nine|seven",
-                    "label": "Default: Seven Columns"
-                }, {
-                    "value": "eight|eight",
-                    "label": "Eight Columns"
-                }, {
-                    "value": "seven|nine",
-                    "label": "Nine Columns"
-                }, {
-                    "value": "six|ten",
-                    "label": "Ten Columns"
-                }, {
-                    "value": "five|eleven",
-                    "label": "Eleven Columns"
-                }, {
-                    "value": "four|twelve",
-                    "label": "Twelve Columns"
-                }
-            ]
-        }, {
-            "type": "header",
-            "content": "Dynamic checkout button"
-        }, {
-            "type": "checkbox",
-            "id": "show_payment_button",
-            "label": "Show dynamic checkout button",
-            "default": true,
-            "info": "Each customer will see their preferred payment method from those available on your store, such as PayPal or Apple Pay. [Learn more](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)"
-        }, {
-            "type": "header",
-            "content": "Media",
-            "info": "Learn more about [media types](https://help.shopify.com/en/manual/products/product-media)"
-        }, {
-            "type": "radio",
-            "id": "product_images_position",
-            "label": "Media position",
-            "options": [
-                {
-                    "value": "left",
-                    "label": "Left"
-                }, {
-                    "value": "right",
-                    "label": "Right"
-                }
-            ]
-        }, {
-            "type": "checkbox",
-            "id": "set_product_height",
-            "label": "Set height of product media",
-            "default": false
-        }, {
-            "type": "range",
-            "id": "product_height",
-            "label": "Product media height",
-            "min": 200,
-            "max": 800,
-            "step": 10,
-            "default": 500,
-            "unit": "px"
-        }, {
-            "type": "checkbox",
-            "id": "video_looping",
-            "label": "Enable video looping",
-            "default": false
-        }, {
-            "type": "header",
-            "content": "Product reviews"
-        }, {
-            "type": "paragraph",
-            "content": "Reviews app must be enabled. [Learn more](https://help.outofthesandbox.com/hc/en-us/articles/360008549274#section2)"
-        }, {
-            "type": "checkbox",
-            "id": "enable_shopify_product_badges",
-            "label": "Display star rating on product",
-            "default": false
-        }, {
-            "type": "radio",
-            "id": "review_position",
-            "label": "Reviews position",
-            "default": "next_to_gallery",
-            "options": [
-                {
-                    "value": "next_to_gallery",
-                    "label": "In product description area"
-                }, {
-                    "value": "below_gallery",
-                    "label": "Below image\/description"
-                }
-            ]
-        }, {
-            "type": "range",
-            "id": "related_products_limit",
-            "label": "Limit products",
-            "min": 3,
-            "max": 50,
-            "step": 1,
-            "default": 12
-        }, {
-            "type": "range",
-            "id": "products_per",
-            "label": "Products per row",
-            "min": 3,
-            "max": 5,
-            "step": 1,
-            "default": 3
-        }, {
-            "type": "header",
-            "content": "Recently viewed products"
-        }, {
-            "type": "paragraph",
-            "content": "To test the recently viewed products, view your online store outside of the Editor and visit multiple product pages. [Learn more](https:\/\/help.outofthesandbox.com\/hc\/en-us\/articles\/115008765228)"
-        }, {
-            "type": "checkbox",
-            "id": "display_recently_viewed",
-            "label": "Show recently viewed products",
-            "default": false
-        }, {
-            "type": "text",
-            "id": "rv_title",
-            "label": "Title",
-            "default": "Recently Viewed Items"
-        }, {
-            "type": "radio",
-            "id": "rv_products_style",
-            "label": "Layout",
-            "default": "grid",
-            "options": [
-                {
-                    "value": "slider",
-                    "label": "Slider"
-                }, {
-                    "value": "grid",
-                    "label": "Grid"
-                }
-            ]
-        }, {
-            "type": "range",
-            "id": "rv_max_display",
-            "label": "Products limit",
-            "min": 3,
-            "max": 10,
-            "step": 1,
-            "default": 4
-        }, {
-            "type": "range",
-            "id": "rv_per",
-            "label": "Products per row",
-            "min": 3,
-            "max": 5,
-            "step": 1,
-            "default": 4
-        }, {
-            "type": "header",
-            "content": "Build Your Own Ring Options",
-            "info": "Section for Custom Ring Settings. You can add even more options if you select the 'Add Custom Ring Options' as a new content block"
-        }, {
-            "type": "text",
-            "id": "custom_ring_size_text",
-            "label": "Custom ring size text (below ring size dropdown)",
-            "default": "If your ring size isn't shown above, <a href=\"mailto:hello@valeriemadison.com\">contact us</a> for a custom order"
-        }, {
-            "type": "checkbox",
-            "id": "enable_qty",
-            "label": "Show Quantity",
-            "default": false
-        }, {
-            "type": "checkbox",
-            "id": "enable_ring_size",
-            "label": "Show Ring Sizes",
-            "default": true
-        }, {
-            "type": "checkbox",
-            "id": "include_quarter_sizes",
-            "label": "Include Quarter Sizes",
-            "default": true
-        }, {
-            "type": "text",
-            "id": "minimum_ring_size",
-            "label": "Minimum Ring Size",
-            "default": "3"
-        }, {
-            "type": "text",
-            "id": "maximum_ring_size",
-            "label": "Maximum Ring Size",
-            "default": "12"
-        }, {
-            "type": "collection",
-            "id": "collection1",
-            "label": "Select 1st Collection"
-        }, {
-            "type": "collection",
-            "id": "collection2",
-            "label": "Select 2nd Collection"
-        }, {
-            "type": "checkbox",
-            "id": "enable_prong_style",
-            "label": "Show Prong Style",
-            "default": true
-        }, {
-            "type": "text",
-            "id": "dropdown_prong_style_label",
-            "label": "Prong Style Label",
-            "default": "Prong Style"
-        }, {
-            "type": "textarea",
-            "id": "dropdown_variant_prong_style",
-            "label": "Prong Style",
-            "default": "Option 1, Option 2, Option 3",
-            "info": "Add in Dropdown Values Separated By Comma",
-            "placeholder": "Option 1, Option 2, Option 3"
-        }, {
-            "type": "checkbox",
-            "id": "enable_prong_orientation",
-            "label": "Show Prong Orientation",
-            "default": true
-        }, {
-            "type": "text",
-            "id": "dropdown_prong_orientation_label",
-            "label": "Prong Orientation Label",
-            "default": "Prong Orientation"
-        }, {
-            "type": "textarea",
-            "id": "dropdown_variant_prong_orientation",
-            "label": "Prong Orientation",
-            "default": "Option 1, Option 2, Option 3",
-            "info": "Add in Dropdown Values Separated By Comma",
-            "placeholder": "Option 1, Option 2, Option 3"
-        }, {
-            "type": "checkbox",
-            "id": "enable_stone_orientation",
-            "label": "Show Stone Orientation",
-            "default": true
-        }, {
-            "type": "text",
-            "id": "dropdown_stone_orientation_label",
-            "label": "Stone Orientation Label",
-            "default": "Stone Orientation"
-        }, {
-            "type": "textarea",
-            "id": "dropdown_variant_stone_orientation",
-            "label": "Stone Orientation",
-            "default": "Option 1, Option 2, Option 3",
-            "info": "Add in Dropdown Values Separated By Comma",
-            "placeholder": "Option 1, Option 2, Option 3"
-        }, {
-            "type": "checkbox",
-            "id": "enable_agreement",
-            "label": "Show Agreement",
-            "default": true
-        }, {
-            "type": "text",
-            "id": "agreement_label",
-            "label": "Agreement Label",
-            "default": "Agreement"
-        }, {
-            "type": "richtext",
-            "id": "agreement_description",
-            "label": "Agreement Description"
-        }, {
-            "type": "header",
-            "content": "Gift Options"
-        }, {
-            "type": "checkbox",
-            "id": "enable_gift",
-            "label": "Show Gift Option",
-            "default": false
-        }, {
-            "type": "text",
-            "id": "gift_text",
-            "label": "Gift Text",
-            "default": "This is a Gift"
-        }, {
-            "type": "text",
-            "id": "fewer_boxes_gift_text",
-            "label": "Fewer boxes Gift Text",
-            "default": "It's okay to combine multiple items into fewer boxes"
-        }, {
-            "type": "header",
-            "content": "Final Sale Agreement",
-            "info": "Show final sale agreement checkbox on products with matching tag"
-        }, {
-            "type": "text",
-            "id": "final_sale_tag",
-            "label": "Show On Products With This Tag Name (Case Sensitive)",
-            "default": "final sale"
-        }, {
-            "type": "text",
-            "id": "final_sale_label",
-            "label": "Final Sale Label",
-            "default": "Final Sale"
-        }, {
-            "type": "richtext",
-            "id": "final_sale_description",
-            "label": "Final Sale Description"
-        }
+      {
+        "type": "header",
+        "content": "Product gallery"
+      },
+      {
+        "type": "checkbox",
+        "id": "product_thumbs",
+        "label": "Show thumbnails",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "gallery_arrows",
+        "label": "Show arrows",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_product_lightbox",
+        "label": "Enable lightbox",
+        "default": true
+      }, {
+        "type": "checkbox",
+        "id": "activate_zoom",
+        "label": "Magnify product images on hover"
+      }, {
+        "type": "range",
+        "id": "slideshow_speed",
+        "label": "Gallery speed",
+        "min": 0,
+        "max": 6,
+        "unit": "sec",
+        "default": 0,
+        "info": "Set to 0 to disable autoplay."
+      }, {
+        "type": "select",
+        "id": "slideshow_animation",
+        "label": "Gallery transition",
+        "options": [
+          {
+            "value": "slide",
+            "label": "Slide"
+          }, {
+            "value": "fade",
+            "label": "Fade"
+          }
+        ],
+        "default": "slide"
+      }, {
+        "type": "select",
+        "id": "thumbnail_position",
+        "label": "Thumbnails",
+        "default": "bottom",
+        "options": [
+          {
+            "value": "bottom",
+            "label": "Bottom"
+          }, {
+            "value": "left",
+            "label": "Left"
+          }, {
+            "value": "right",
+            "label": "Right"
+          }
+        ]
+      }, {
+        "type": "checkbox",
+        "id": "enable_thumbnail_slider",
+        "label": "Enable thumbnail slider",
+        "default": true
+      }, {
+        "type": "header",
+        "content": "Product information"
+      }, {
+        "type": "checkbox",
+        "id": "display_vendor",
+        "label": "Show vendor"
+      }, {
+        "type": "checkbox",
+        "id": "product_breadcrumb",
+        "label": "Show breadcrumb links"
+      }, {
+        "type": "checkbox",
+        "id": "display_sku",
+        "label": "Show SKU"
+      }, {
+        "type": "checkbox",
+        "id": "display_collections",
+        "label": "Show collections"
+      }, {
+        "type": "checkbox",
+        "id": "display_type",
+        "label": "Show type"
+      }, {
+        "type": "checkbox",
+        "id": "display_tags",
+        "label": "Show tags"
+      }, {
+        "type": "checkbox",
+        "id": "display_social_buttons",
+        "label": "Show social media share icons",
+        "default": true
+      }, {
+        "type": "radio",
+        "id": "product_description_position",
+        "label": "Description position",
+        "options": [
+          {
+            "value": "top",
+            "label": "Above product form"
+          }, {
+            "value": "bottom",
+            "label": "Below product form"
+          }
+        ]
+      }, {
+        "type": "checkbox",
+        "id": "display_savings",
+        "label": "Show price savings",
+        "default": true
+      }, {
+        "type": "select",
+        "id": "product_info_width",
+        "label": "Product Info - Column Width",
+        "default": "nine|seven",
+        "options": [
+          {
+            "value": "nine|seven",
+            "label": "Default: Seven Columns"
+          },
+          {
+            "value": "eight|eight",
+            "label": "Eight Columns"
+          },
+          {
+            "value": "seven|nine",
+            "label": "Nine Columns"
+          },
+          {
+            "value": "six|ten",
+            "label": "Ten Columns"
+          }, {
+            "value": "five|eleven",
+            "label": "Eleven Columns"
+          }, {
+            "value": "four|twelve",
+            "label": "Twelve Columns"
+          }
+        ]
+      }, {
+        "type": "header",
+        "content": "Dynamic checkout button"
+      }, {
+        "type": "checkbox",
+        "id": "show_payment_button",
+        "label": "Show dynamic checkout button",
+        "default": true,
+        "info": "Each customer will see their preferred payment method from those available on your store, such as PayPal or Apple Pay. [Learn more](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)"
+      }, {
+        "type": "header",
+        "content": "Media",
+        "info": "Learn more about [media types](https://help.shopify.com/en/manual/products/product-media)"
+      }, {
+        "type": "radio",
+        "id": "product_images_position",
+        "label": "Media position",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          }, {
+            "value": "right",
+            "label": "Right"
+          }
+        ]
+      }, {
+        "type": "checkbox",
+        "id": "set_product_height",
+        "label": "Set height of product media",
+        "default": false
+      }, {
+        "type": "range",
+        "id": "product_height",
+        "label": "Product media height",
+        "min": 200,
+        "max": 800,
+        "step": 10,
+        "default": 500,
+        "unit": "px"
+      }, {
+        "type": "checkbox",
+        "id": "video_looping",
+        "label": "Enable video looping",
+        "default": false
+      }, {
+        "type": "header",
+        "content": "Product reviews"
+      }, {
+        "type": "paragraph",
+        "content": "Reviews app must be enabled. [Learn more](https://help.outofthesandbox.com/hc/en-us/articles/360008549274#section2)"
+      }, {
+        "type": "checkbox",
+        "id": "enable_shopify_product_badges",
+        "label": "Display star rating on product",
+        "default": false
+      }, {
+        "type": "radio",
+        "id": "review_position",
+        "label": "Reviews position",
+        "default": "next_to_gallery",
+        "options": [
+          {
+            "value": "next_to_gallery",
+            "label": "In product description area"
+          }, {
+            "value": "below_gallery",
+            "label": "Below image\/description"
+          }
+        ]
+      }, {
+        "type": "range",
+        "id": "related_products_limit",
+        "label": "Limit products",
+        "min": 3,
+        "max": 50,
+        "step": 1,
+        "default": 12
+      }, {
+        "type": "range",
+        "id": "products_per",
+        "label": "Products per row",
+        "min": 3,
+        "max": 5,
+        "step": 1,
+        "default": 3
+      }, {
+        "type": "header",
+        "content": "Recently viewed products"
+      }, {
+        "type": "paragraph",
+        "content": "To test the recently viewed products, view your online store outside of the Editor and visit multiple product pages. [Learn more](https:\/\/help.outofthesandbox.com\/hc\/en-us\/articles\/115008765228)"
+      }, {
+        "type": "checkbox",
+        "id": "display_recently_viewed",
+        "label": "Show recently viewed products",
+        "default": false
+      }, {
+        "type": "text",
+        "id": "rv_title",
+        "label": "Title",
+        "default": "Recently Viewed Items"
+      }, {
+        "type": "radio",
+        "id": "rv_products_style",
+        "label": "Layout",
+        "default": "grid",
+        "options": [
+          {
+            "value": "slider",
+            "label": "Slider"
+          }, {
+            "value": "grid",
+            "label": "Grid"
+          }
+        ]
+      }, {
+        "type": "range",
+        "id": "rv_max_display",
+        "label": "Products limit",
+        "min": 3,
+        "max": 10,
+        "step": 1,
+        "default": 4
+      }, {
+        "type": "range",
+        "id": "rv_per",
+        "label": "Products per row",
+        "min": 3,
+        "max": 5,
+        "step": 1,
+        "default": 4
+      }, {
+        "type": "header",
+        "content": "Build Your Own Ring Options",
+        "info": "Section for Custom Ring Settings. You can add even more options if you select the 'Add Custom Ring Options' as a new content block"
+      }, {
+        "type": "text",
+        "id": "custom_ring_size_text",
+        "label": "Custom ring size text (below ring size dropdown)",
+        "default": "If your ring size isn't shown above, <a href=\"mailto:hello@valeriemadison.com\">contact us</a> for a custom order"
+      }, {
+        "type": "checkbox",
+        "id": "enable_qty",
+        "label": "Show Quantity",
+        "default": false
+      }, {
+        "type": "checkbox",
+        "id": "enable_ring_size",
+        "label": "Show Ring Sizes",
+        "default": true
+      }, {
+        "type": "checkbox",
+        "id": "include_quarter_sizes",
+        "label": "Include Quarter Sizes",
+        "default": true
+      }, {
+        "type": "text",
+        "id": "minimum_ring_size",
+        "label": "Minimum Ring Size",
+        "default": "3"
+      }, {
+        "type": "text",
+        "id": "maximum_ring_size",
+        "label": "Maximum Ring Size",
+        "default": "12"
+      }, {
+        "type": "collection",
+        "id": "collection1",
+        "label": "Select 1st Collection"
+      }, {
+        "type": "collection",
+        "id": "collection2",
+        "label": "Select 2nd Collection"
+      }, {
+        "type": "checkbox",
+        "id": "enable_prong_style",
+        "label": "Show Prong Style",
+        "default": true
+      }, {
+        "type": "text",
+        "id": "dropdown_prong_style_label",
+        "label": "Prong Style Label",
+        "default": "Prong Style"
+      }, {
+        "type": "textarea",
+        "id": "dropdown_variant_prong_style",
+        "label": "Prong Style",
+        "default": "Option 1, Option 2, Option 3",
+        "info": "Add in Dropdown Values Separated By Comma",
+        "placeholder": "Option 1, Option 2, Option 3"
+      }, {
+        "type": "checkbox",
+        "id": "enable_prong_orientation",
+        "label": "Show Prong Orientation",
+        "default": true
+      }, {
+        "type": "text",
+        "id": "dropdown_prong_orientation_label",
+        "label": "Prong Orientation Label",
+        "default": "Prong Orientation"
+      }, {
+        "type": "textarea",
+        "id": "dropdown_variant_prong_orientation",
+        "label": "Prong Orientation",
+        "default": "Option 1, Option 2, Option 3",
+        "info": "Add in Dropdown Values Separated By Comma",
+        "placeholder": "Option 1, Option 2, Option 3"
+      }, {
+        "type": "checkbox",
+        "id": "enable_stone_orientation",
+        "label": "Show Stone Orientation",
+        "default": true
+      }, {
+        "type": "text",
+        "id": "dropdown_stone_orientation_label",
+        "label": "Stone Orientation Label",
+        "default": "Stone Orientation"
+      }, {
+        "type": "textarea",
+        "id": "dropdown_variant_stone_orientation",
+        "label": "Stone Orientation",
+        "default": "Option 1, Option 2, Option 3",
+        "info": "Add in Dropdown Values Separated By Comma",
+        "placeholder": "Option 1, Option 2, Option 3"
+      }, {
+        "type": "checkbox",
+        "id": "enable_agreement",
+        "label": "Show Agreement",
+        "default": true
+      }, {
+        "type": "text",
+        "id": "agreement_label",
+        "label": "Agreement Label",
+        "default": "Agreement"
+      }, {
+        "type": "richtext",
+        "id": "agreement_description",
+        "label": "Agreement Description"
+      }, {
+        "type": "header",
+        "content": "Gift Options"
+      }, {
+        "type": "checkbox",
+        "id": "enable_gift",
+        "label": "Show Gift Option",
+        "default": false
+      }, {
+        "type": "text",
+        "id": "gift_text",
+        "label": "Gift Text",
+        "default": "This is a Gift"
+      }, {
+        "type": "url",
+        "id": "ring_sizer_text_link",
+        "label": "Ring sizer text link"
+      }, {
+        "type": "text",
+        "id": "fewer_boxes_gift_text",
+        "label": "Fewer boxes Gift Text",
+        "default": "It's okay to combine multiple items into fewer boxes"
+      }, {
+        "type": "header",
+        "content": "Final Sale Agreement",
+        "info": "Show final sale agreement checkbox on products with matching tag"
+      }, {
+        "type": "text",
+        "id": "final_sale_tag",
+        "label": "Show On Products With This Tag Name (Case Sensitive)",
+        "default": "final sale"
+      }, {
+        "type": "text",
+        "id": "final_sale_label",
+        "label": "Final Sale Label",
+        "default": "Final Sale"
+      }, {
+        "type": "richtext",
+        "id": "final_sale_description",
+        "label": "Final Sale Description"
+      }
     ],
     "blocks": [
-        {
-            "type": "filter_by_collection",
-            "name": "Collection list",
-            "limit": 1
-        }, {
-            "type": "menu",
-            "name": "Menu",
-            "settings": [
-                {
-                    "type": "link_list",
-                    "id": "custom_menu_linklist",
-                    "label": "Menu"
-                }
-            ]
-        }, {
+      {
+        "type": "filter_by_collection",
+        "name": "Collection list",
+        "limit": 1
+      },
+      {
+        "type": "menu",
+        "name": "Menu",
+        "settings": [
+          {
+            "type": "link_list",
+            "id": "custom_menu_linklist",
+            "label": "Menu"
+          }
+        ]
+      },
+      {
+        "type": "page",
+        "name": "Page",
+        "settings": [
+          {
             "type": "page",
-            "name": "Page",
-            "settings": [
-                {
-                    "type": "page",
-                    "id": "content_page",
-                    "label": "Page"
-                }
-            ]
-        }, {
-            "type": "recently_viewed",
-            "name": "Recently viewed products",
-            "limit": 1,
-            "settings": [
-                {
-                  "type": "paragraph",
-                  "content": "To test the recently viewed products, view your online store outside of the Editor and visit multiple product pages. [Learn more](https:\/\/help.outofthesandbox.com\/hc\/en-us\/articles\/115008765228)"
-                }
-            ]
-        }, {
-            "type": "filter_by_tag",
-            "name": "Tag list",
-            "limit": 1
-        }, {
+            "id": "content_page",
+            "label": "Page"
+          }
+        ]
+      },
+      {
+        "type": "recently_viewed",
+        "name": "Recently viewed products",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "paragraph",
+            "content": "To test the recently viewed products, view your online store outside of the Editor and visit multiple product pages. [Learn more](https:\/\/help.outofthesandbox.com\/hc\/en-us\/articles\/115008765228)"
+          }
+        ]
+      }, {
+        "type": "filter_by_tag",
+        "name": "Tag list",
+        "limit": 1
+      }, {
+        "type": "text",
+        "name": "Text",
+        "settings": [
+          {
             "type": "text",
-            "name": "Text",
-            "settings": [
-                {
-                    "type": "text",
-                    "id": "title",
-                    "label": "Heading",
-                    "default": "Heading"
-                }, {
-                    "type": "richtext",
-                    "id": "text",
-                    "label": "Text",
-                    "default": "<p>Text area can be used for special announcements or general information.</p>"
-                }
-            ]
-        }, {
-            "type": "filter_by_type",
-            "name": "Type list",
-            "limit": 1
-        }, {
-            "type": "filter_by_vendor",
-            "name": "Vendor list",
-            "limit": 1
-        }, {
-            "type": "add_custom_ring_options",
-            "name": "Add Custom Ring Options",
-            "settings": [
-                {
-                    "type": "checkbox",
-                    "id": "enable_variant_id",
-                    "label": "Show Variant",
-                    "default": true
-                }, {
-                    "type": "text",
-                    "id": "variant_name",
-                    "label": "Variant Name"
-                }, {
-                    "type": "textarea",
-                    "id": "dropdown_variant_id",
-                    "label": "Variant Options",
-                    "default": "Option 1, Option 2, Option 3",
-                    "info": "Add in Dropdown Values Separated By Comma",
-                    "placeholder": "Option 1, Option 2, Option 3"
-                }
-            ]
-        }, {
-            "type": "add_product_details",
-            "name": "Product Details",
-            "settings": [
-                {
-                    "type": "checkbox",
-                    "id": "enable_details",
-                    "label": "Enable Details On This Product",
-                    "default": true
-                }, {
-                    "type": "checkbox",
-                    "id": "bold_column_headings",
-                    "label": "Bold Column Headings",
-                    "default": true
-                }, {
-                    "type": "product",
-                    "id": "product_details_id",
-                    "label": "Product",
-                    "info": "Select product to add a detailed description"
-                }, {
-                    "type": "text",
-                    "id": "title",
-                    "label": "Heading"
-                }, {
-                    "type": "text",
-                    "id": "subtext",
-                    "label": "Details Sub Heading"
-                }, {
-                    "type": "header",
-                    "content": "Color Settings"
-                }, {
-                    "type": "color",
-                    "id": "color_background",
-                    "label": "Section Background",
-                    "default": "#f9fafb"
-                }, {
-                    "type": "color",
-                    "id": "color_header",
-                    "label": "Header Color",
-                    "default": "#5a6067"
-                }, {
-                    "type": "color",
-                    "id": "color_subheader",
-                    "label": "Sub Heading Color",
-                    "default": "#0A212D"
-                }, {
-                    "type": "color",
-                    "id": "color_columnheader",
-                    "label": "Column Heading Color",
-                    "default": "#0A212D"
-                }, {
-                    "type": "header",
-                    "content": "Left Column"
-                }, {
-                    "type": "text",
-                    "id": "column_header_left",
-                    "label": "Left Column Header"
-                }, {
-                    "type": "richtext",
-                    "id": "column_details_left",
-                    "label": "Left Column Details"
-                }, {
-                    "type": "image_picker",
-                    "id": "column_icon_left",
-                    "label": "Left Column Icon"
-                }, {
-                    "type": "header",
-                    "content": "Right Column"
-                }, {
-                    "type": "text",
-                    "id": "column_header_right",
-                    "label": "Right Column Header"
-                }, {
-                    "type": "richtext",
-                    "id": "column_details_right",
-                    "label": "Right Column Details"
-                }, {
-                    "type": "image_picker",
-                    "id": "column_icon_right",
-                    "label": "Right Column Icon"
-                }
-            ]
-        }
+            "id": "title",
+            "label": "Heading",
+            "default": "Heading"
+          }, {
+            "type": "richtext",
+            "id": "text",
+            "label": "Text",
+            "default": "<p>Text area can be used for special announcements or general information.</p>"
+          }
+        ]
+      }, {
+        "type": "filter_by_type",
+        "name": "Type list",
+        "limit": 1
+      }, {
+        "type": "filter_by_vendor",
+        "name": "Vendor list",
+        "limit": 1
+      }, {
+        "type": "add_custom_ring_options",
+        "name": "Add Custom Ring Options",
+        "settings": [
+          {
+            "type": "checkbox",
+            "id": "enable_variant_id",
+            "label": "Show Variant",
+            "default": true
+          }, {
+            "type": "text",
+            "id": "variant_name",
+            "label": "Variant Name"
+          }, {
+            "type": "textarea",
+            "id": "dropdown_variant_id",
+            "label": "Variant Options",
+            "default": "Option 1, Option 2, Option 3",
+            "info": "Add in Dropdown Values Separated By Comma",
+            "placeholder": "Option 1, Option 2, Option 3"
+          }
+        ]
+      }, {
+        "type": "add_product_details",
+        "name": "Product Details",
+        "settings": [
+          {
+            "type": "checkbox",
+            "id": "enable_details",
+            "label": "Enable Details On This Product",
+            "default": true
+          },
+          {
+            "type": "checkbox",
+            "id": "bold_column_headings",
+            "label": "Bold Column Headings",
+            "default": true
+          },
+          {
+            "type": "product",
+            "id": "product_details_id",
+            "label": "Product",
+            "info": "Select product to add a detailed description"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Heading"
+          }, {
+            "type": "text",
+            "id": "subtext",
+            "label": "Details Sub Heading"
+          }, {
+            "type": "header",
+            "content": "Color Settings"
+          }, {
+            "type": "color",
+            "id": "color_background",
+            "label": "Section Background",
+            "default": "#f9fafb"
+          }, {
+            "type": "color",
+            "id": "color_header",
+            "label": "Header Color",
+            "default": "#5a6067"
+          }, {
+            "type": "color",
+            "id": "color_subheader",
+            "label": "Sub Heading Color",
+            "default": "#0A212D"
+          }, {
+            "type": "color",
+            "id": "color_columnheader",
+            "label": "Column Heading Color",
+            "default": "#0A212D"
+          }, {
+            "type": "header",
+            "content": "Left Column"
+          }, {
+            "type": "text",
+            "id": "column_header_left",
+            "label": "Left Column Header"
+          }, {
+            "type": "richtext",
+            "id": "column_details_left",
+            "label": "Left Column Details"
+          }, {
+            "type": "image_picker",
+            "id": "column_icon_left",
+            "label": "Left Column Icon"
+          }, {
+            "type": "header",
+            "content": "Right Column"
+          }, {
+            "type": "text",
+            "id": "column_header_right",
+            "label": "Right Column Header"
+          }, {
+            "type": "richtext",
+            "id": "column_details_right",
+            "label": "Right Column Details"
+          }, {
+            "type": "image_picker",
+            "id": "column_icon_right",
+            "label": "Right Column Icon"
+          }
+        ]
+      }
     ],
     "default": {
-        "settings": {}
+      "settings": {}
     }
-}
-
+  }
 {% endschema %}
