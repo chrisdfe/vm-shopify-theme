@@ -1859,6 +1859,8 @@
           "agreement_description": "<p><em>By checking this box, you agree that this ring is considered a Custom Order and as such, all sales are nonrefundable and are final. We will be following your express instructions to create this ring and will be in touch with you to send CAD renderings and any additional photos and video as requested. All rings will be shipped with a Certificate of Authenticity declaring the materials used. <\/em><\/p><p><\/p><p>Turnaround time on Design Your Own Rings is 6-8 weeks.<\/p>",
           "enable_gift": false,
           "gift_text": "This is a Gift",
+          "ring_sizer_text_link": "shopify:\/\/products\/ring-sizers",
+          "fewer_boxes_gift_text": "It's okay to combine multiple items into fewer boxes",
           "final_sale_tag": "final sale",
           "final_sale_label": "FINAL SALE AGREEMENT*",
           "final_sale_description": "<p>By checking this box, you agree that this item is considered final sale and as such, all sales are nonrefundable and not exchangeable.<\/p>"
