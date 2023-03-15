@@ -1,0 +1,451 @@
+{
+  "sections": {
+    "banner": {
+      "type": "page-banner",
+      "disabled": true,
+      "settings": {
+        "title": "Valentine's Day Gift Guide",
+        "subtitle": "Love is in the air! Find the perfect gift for your other half (or yourself) from our curated selection of fine jewelry. Made from solid 14K gold, never plated.",
+        "text": "",
+        "cta_text": "Shop All Fine Jewelry",
+        "cta_link": "shopify:\/\/collections\/fine-jewelry",
+        "content_is_centered": false,
+        "text_is_centered": false,
+        "aspect_ratio": "3-1",
+        "aspect_ratio_mobile": "1-1",
+        "background_image_desktop": "shopify:\/\/shop_images\/VDAY_Gemma_necklace_V2.jpg",
+        "background_image_mobile": "shopify:\/\/shop_images\/VDAY_Gemma_necklace_Mobile_version.jpg",
+        "color_region": "dark"
+      }
+    },
+    "e0b5d3ad-d213-4c28-b53e-4063532ba5f7": {
+      "type": "custom-html",
+      "settings": {
+        "custom_html": "<div class=\"klaviyo-form-RJRLwy\"><\/div>"
+      }
+    },
+    "1347b160-8fec-4d50-8b81-52a224c21885": {
+      "type": "product-grid-with-text",
+      "disabled": true,
+      "blocks": {
+        "3a604c37-407f-41d0-8a6a-48bc43bc2844": {
+          "type": "product-card",
+          "settings": {
+            "product": "14k-gold-x-o-studs-vm306"
+          }
+        },
+        "e916f85a-4806-4fe6-8e4d-edda4d0354b8": {
+          "type": "product-card",
+          "settings": {
+            "product": "classic-gold-huggies-11mm-er23-hp003"
+          }
+        },
+        "7cb8fb94-876c-4c25-a8bd-830dd20ab97c": {
+          "type": "product-card",
+          "settings": {
+            "product": "14k-gold-baby-flat-chain-necklace-vm377"
+          }
+        },
+        "811ff33e-e98e-4310-96fc-9b293512be6b": {
+          "type": "product-card",
+          "settings": {
+            "product": "super-nova-diamond-ring-vm335"
+          }
+        },
+        "c03c6e5f-cc89-4a38-9d29-81dc150481dd": {
+          "type": "product-card",
+          "settings": {
+            "product": "pearl-baguette-diamond-earringser23-dg001d"
+          }
+        },
+        "5248c86e-4458-4b6e-923b-8c6cc18c349f": {
+          "type": "product-card",
+          "settings": {
+            "product": "rose-cut-diamond-threader-earrings-vm292"
+          }
+        }
+      },
+      "block_order": [
+        "3a604c37-407f-41d0-8a6a-48bc43bc2844",
+        "e916f85a-4806-4fe6-8e4d-edda4d0354b8",
+        "7cb8fb94-876c-4c25-a8bd-830dd20ab97c",
+        "811ff33e-e98e-4310-96fc-9b293512be6b",
+        "c03c6e5f-cc89-4a38-9d29-81dc150481dd",
+        "5248c86e-4458-4b6e-923b-8c6cc18c349f"
+      ],
+      "settings": {
+        "title": "Most Gifted",
+        "description": "The season's most popular pieces that are beloved for a good reason. Give that minimal, go-with-everything piece that's sure to delight.",
+        "cta_link": "\/https:\/\/www.valeriemadison.com\/collections\/fine-jewelry\/Best-Sellers",
+        "cta_text": "",
+        "product_grid_position": "right",
+        "color_region": "light-alt",
+        "padding_top": "default",
+        "padding_bottom": "0"
+      }
+    },
+    "cf8c441a-d7c6-4f9d-9500-8de8090ec957": {
+      "type": "product-grid-with-text",
+      "disabled": true,
+      "blocks": {
+        "0f6757f8-6ba8-45b4-a599-b234730ee632": {
+          "type": "product-card",
+          "settings": {
+            "product": "14k-gold-interlocking-trio-necklace-mother-children-vm211"
+          }
+        },
+        "afdc948a-908d-43ba-bda9-282c5b4cdece": {
+          "type": "product-card",
+          "settings": {
+            "product": "14k-gold-medium-double-hoop-earring-vm287s"
+          }
+        },
+        "363f040c-27f3-4484-97c7-810d710a5ad4": {
+          "type": "product-card",
+          "settings": {
+            "product": "fine-herringbone-chain-necklace-vm491"
+          }
+        },
+        "a73f3167-bcc7-48ca-8ec4-1b152ae8a165": {
+          "type": "product-card",
+          "settings": {
+            "product": "pave-diamond-huggies-11mm-er23-hp004d"
+          }
+        },
+        "7c608236-b425-4d58-b03c-bce1997926c1": {
+          "type": "product-card",
+          "settings": {
+            "product": "pink-tourmaline-stacking-ring"
+          }
+        },
+        "48213e82-23c9-47ff-921a-81ee178cd264": {
+          "type": "product-card",
+          "settings": {
+            "product": "baguette-diamond-studs-er23-st001d"
+          }
+        }
+      },
+      "block_order": [
+        "0f6757f8-6ba8-45b4-a599-b234730ee632",
+        "afdc948a-908d-43ba-bda9-282c5b4cdece",
+        "363f040c-27f3-4484-97c7-810d710a5ad4",
+        "a73f3167-bcc7-48ca-8ec4-1b152ae8a165",
+        "7c608236-b425-4d58-b03c-bce1997926c1",
+        "48213e82-23c9-47ff-921a-81ee178cd264"
+      ],
+      "settings": {
+        "title": "Under $500",
+        "description": "These dainty pieces make great additions to a jewelry collection, or a wonderful foundation for a newer fine jewelry collector.",
+        "cta_link": "shopify:\/\/collections\/under-500",
+        "cta_text": "Shop All",
+        "product_grid_position": "left",
+        "color_region": "light-alt",
+        "padding_top": "0",
+        "padding_bottom": "0"
+      }
+    },
+    "4f0303b5-5dd8-49e5-8327-2a857e9630d5": {
+      "type": "product-grid-with-text",
+      "disabled": true,
+      "blocks": {
+        "78920f99-3814-4b88-b67f-a8d67e9dbf3d": {
+          "type": "product-card",
+          "settings": {
+            "product": "pave-diamond-studs-er23-st003d"
+          }
+        },
+        "d71ebb44-d526-4f3f-b146-7010e2c8a37b": {
+          "type": "product-card",
+          "settings": {
+            "product": "heart-signet-vm385"
+          }
+        },
+        "58680e95-5100-4803-ab21-2074364a1b7a": {
+          "type": "product-card",
+          "settings": {
+            "product": "diamond-arch-studs-vm435"
+          }
+        },
+        "d34d45b0-8cdb-4111-93ff-22c272bc2428": {
+          "type": "product-card",
+          "settings": {
+            "product": "dua-ruby-band-vm226-ruby"
+          }
+        },
+        "f0354bbe-0aec-49fd-9cf2-db36673f95b7": {
+          "type": "product-card",
+          "settings": {
+            "product": "pearl-station-necklace-ooak689"
+          }
+        },
+        "f3c5e907-c6b6-4e76-8ddc-5af2a2fd9fb2": {
+          "type": "product-card",
+          "settings": {
+            "product": "lily-seven-stone-rainbow-ring"
+          }
+        }
+      },
+      "block_order": [
+        "78920f99-3814-4b88-b67f-a8d67e9dbf3d",
+        "d71ebb44-d526-4f3f-b146-7010e2c8a37b",
+        "58680e95-5100-4803-ab21-2074364a1b7a",
+        "d34d45b0-8cdb-4111-93ff-22c272bc2428",
+        "f0354bbe-0aec-49fd-9cf2-db36673f95b7",
+        "f3c5e907-c6b6-4e76-8ddc-5af2a2fd9fb2"
+      ],
+      "settings": {
+        "title": "Under $1,000",
+        "description": "Timeless sparkle and carefully deisgned details make for a meaningful gift meant to be handed down for generations.",
+        "cta_link": "\/",
+        "cta_text": "",
+        "product_grid_position": "right",
+        "color_region": "light-alt",
+        "padding_top": "0",
+        "padding_bottom": "0"
+      }
+    },
+    "19248e98-0901-479f-a6e1-1d47dcd97cae": {
+      "type": "product-grid-with-text",
+      "disabled": true,
+      "blocks": {
+        "6d59c19d-f745-4a98-86f7-d4b0cc2ec1bb": {
+          "type": "product-card",
+          "settings": {
+            "product": "vm383-large-round-signet"
+          }
+        },
+        "e4e9bdd5-d4e9-45cc-ab1b-817b0f6d7842": {
+          "type": "product-card",
+          "settings": {
+            "product": "mariner-chain-necklace-vm530"
+          }
+        },
+        "2581c346-6d3e-4fc7-89a8-2fe3dc41eda9": {
+          "type": "product-card",
+          "settings": {
+            "product": "vm465-graduated-diamond-necklace"
+          }
+        },
+        "3714f162-453e-4918-ab89-5948042755e4": {
+          "type": "product-card",
+          "settings": {
+            "product": "celestial-diamond-band-vm483"
+          }
+        },
+        "af7c1e37-8d27-4315-b78f-f38bc3c1655c": {
+          "type": "product-card",
+          "settings": {
+            "product": "diamond-station-chain-necklace-vm501-diamond"
+          }
+        },
+        "de064527-141a-45ec-8d97-c7856236b84c": {
+          "type": "product-card",
+          "settings": {
+            "product": "lily-three-stone-diamond-ring-63tcw-vm251"
+          }
+        }
+      },
+      "block_order": [
+        "6d59c19d-f745-4a98-86f7-d4b0cc2ec1bb",
+        "e4e9bdd5-d4e9-45cc-ab1b-817b0f6d7842",
+        "2581c346-6d3e-4fc7-89a8-2fe3dc41eda9",
+        "3714f162-453e-4918-ab89-5948042755e4",
+        "af7c1e37-8d27-4315-b78f-f38bc3c1655c",
+        "de064527-141a-45ec-8d97-c7856236b84c"
+      ],
+      "settings": {
+        "title": "Under $1,500",
+        "description": "Diamonds last longer than flowers! Give a gift that will outlive even the finest of floral arrangements.",
+        "cta_link": "\/",
+        "cta_text": "",
+        "product_grid_position": "left",
+        "color_region": "light-alt",
+        "padding_top": "0",
+        "padding_bottom": "0"
+      }
+    },
+    "341d5950-d263-445c-ba69-1c950015fa03": {
+      "type": "product-grid-with-text",
+      "disabled": true,
+      "blocks": {
+        "05fb277f-9032-4a34-8c14-3a7fa6ec9fcc": {
+          "type": "product-card",
+          "settings": {
+            "product": "selena-rose-cut-diamond-halo-necklace-vm283"
+          }
+        },
+        "3fecda50-0bd0-4b96-9c20-4d931b10d5d1": {
+          "type": "product-card",
+          "settings": {
+            "product": "1-31ct-tiana-oval-pink-sapphire-diamond-halo-engagement-ring-ooak638"
+          }
+        },
+        "ce08c672-e61a-4e6c-be80-56117f6b10ba": {
+          "type": "product-card",
+          "settings": {
+            "product": "hinged-pave-diamond-bangle-bracelet-vm523"
+          }
+        },
+        "9a60b048-05ed-47dd-9fa3-c96a4c76fdd2": {
+          "type": "product-card",
+          "settings": {
+            "product": "1-58ct-zara-three-stone-cushion-fuchsia-sapphire-and-diamond-engagement-ring-ooak567"
+          }
+        },
+        "ef04f069-5294-4134-9b51-91a5bfa4e27d": {
+          "type": "product-card",
+          "settings": {
+            "product": "3-37ctw-diamond-riveria-necklace-foh-n-riv-04"
+          }
+        },
+        "e953368d-f229-4653-b26e-a677f77330e7": {
+          "type": "product-card",
+          "settings": {
+            "product": "diamond-baguette-dangle-earrings-vm528"
+          }
+        }
+      },
+      "block_order": [
+        "05fb277f-9032-4a34-8c14-3a7fa6ec9fcc",
+        "3fecda50-0bd0-4b96-9c20-4d931b10d5d1",
+        "ce08c672-e61a-4e6c-be80-56117f6b10ba",
+        "9a60b048-05ed-47dd-9fa3-c96a4c76fdd2",
+        "ef04f069-5294-4134-9b51-91a5bfa4e27d",
+        "e953368d-f229-4653-b26e-a677f77330e7"
+      ],
+      "settings": {
+        "title": "$2,000 and Up",
+        "description": "For those who deeply appreciate the finer things in life. Made with ethically-sourced diamonds for sustainable sparkle.",
+        "cta_link": "\/",
+        "cta_text": "",
+        "product_grid_position": "right",
+        "color_region": "light-alt",
+        "padding_top": "0",
+        "padding_bottom": "0"
+      }
+    },
+    "5dabd00a-61ed-4693-872b-e6fa6eb162e7": {
+      "type": "recently-viewed",
+      "settings": {
+        "rv_title": "Recently viewed products",
+        "rv_products_style": "grid",
+        "rv_max_display": 6,
+        "rv_per": 4
+      }
+    },
+    "d2287e95-cea8-456e-938e-64babb0fb9ab": {
+      "type": "cta-cards",
+      "blocks": {
+        "template--14909723738166__d2287e95-cea8-456e-938e-64babb0fb9ab-1678739497bf23cb0b-0": {
+          "type": "cta-card",
+          "settings": {
+            "title": "Engagement Rings",
+            "description": "",
+            "cta_text": "discover",
+            "cta_link": "shopify:\/\/collections\/engagement-rings",
+            "image": "shopify:\/\/shop_images\/engagement.png"
+          }
+        },
+        "template--14909723738166__d2287e95-cea8-456e-938e-64babb0fb9ab-1678739497bf23cb0b-2": {
+          "type": "cta-card",
+          "settings": {
+            "title": "fine jewelry",
+            "description": "",
+            "cta_text": "discover",
+            "cta_link": "shopify:\/\/collections\/fine-jewelry",
+            "image": "shopify:\/\/shop_images\/fine-jewelry.png"
+          }
+        },
+        "template--14909723738166__d2287e95-cea8-456e-938e-64babb0fb9ab-1678739497bf23cb0b-1": {
+          "type": "cta-card",
+          "settings": {
+            "title": "WEDDING BANDS",
+            "description": "",
+            "cta_text": "discover",
+            "cta_link": "shopify:\/\/collections\/wedding-bands",
+            "image": "shopify:\/\/shop_images\/wedding-band.png"
+          }
+        }
+      },
+      "block_order": [
+        "template--14909723738166__d2287e95-cea8-456e-938e-64babb0fb9ab-1678739497bf23cb0b-0",
+        "template--14909723738166__d2287e95-cea8-456e-938e-64babb0fb9ab-1678739497bf23cb0b-2",
+        "template--14909723738166__d2287e95-cea8-456e-938e-64babb0fb9ab-1678739497bf23cb0b-1"
+      ],
+      "settings": {
+        "title": "Continue Browsing",
+        "title_link": "shopify:\/\/collections\/engagement-rings",
+        "title_link_text": "shop now",
+        "description": "",
+        "columns_per_row_desktop": "3",
+        "image_aspect_ratio": "1-1",
+        "color_region": "light",
+        "padding_top": "default",
+        "padding_bottom": "default"
+      }
+    },
+    "d3c762fc-5a7d-4771-9327-fef4901b7ab4": {
+      "type": "cta-cards",
+      "blocks": {
+        "template--14824629108790__d3c762fc-5a7d-4771-9327-fef4901b7ab4-1666295812f978e159-0": {
+          "type": "cta-card",
+          "settings": {
+            "title": "Is a Diamond or Sapphire Ring Right for You?",
+            "description": "Choosing the right stone for your engagement ring brings many factors into consideration. Check out our rundown on what to consider before you make your purchase.",
+            "cta_text": "read more",
+            "cta_link": "\/",
+            "image": "shopify:\/\/shop_images\/Diamond_School.jpg"
+          }
+        },
+        "template--14824629108790__d3c762fc-5a7d-4771-9327-fef4901b7ab4-1666295812f978e159-1": {
+          "type": "cta-card",
+          "settings": {
+            "title": "5 tips on storing your fine jewelry like a pro",
+            "description": "Solid gold jewelry is an investment made to stand the test of time. Taking care of your pieces is key to ensuring they stay in their best and brightest shape. Our experts compiled their best tips for care.",
+            "cta_text": "read more",
+            "cta_link": "\/",
+            "image": "shopify:\/\/shop_images\/Jewelry-Box_2-FULL-SIZE.jpg"
+          }
+        },
+        "template--14824629108790__d3c762fc-5a7d-4771-9327-fef4901b7ab4-1666295812f978e159-2": {
+          "type": "cta-card",
+          "settings": {
+            "title": "Should you get your engagement ring insured?",
+            "description": "If you’re wondering should you insure your ring, the short answer is it depends on the value of the ring. For the long answer (as well as how to get your ring insured), read on.",
+            "cta_text": "read more",
+            "cta_link": "\/",
+            "image": "shopify:\/\/shop_images\/Engagment-sets_1200x1268_115540fa-b69a-4622-b152-97bfe4c62651.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "template--14824629108790__d3c762fc-5a7d-4771-9327-fef4901b7ab4-1666295812f978e159-0",
+        "template--14824629108790__d3c762fc-5a7d-4771-9327-fef4901b7ab4-1666295812f978e159-1",
+        "template--14824629108790__d3c762fc-5a7d-4771-9327-fef4901b7ab4-1666295812f978e159-2"
+      ],
+      "settings": {
+        "title": "Educational Posts",
+        "title_link": "\/",
+        "title_link_text": "read all education blogs",
+        "description": "Need to know more before you buy? Fine jewelry is an investment and we're here to help you feel confident in your purchase from Valerie Madison. Education is a key pillar for our customers, and our knowledgeable staff is proud to share their insights. Reach out to us in the chatbox, over email or by phone for further conversation. Start out by exploring a few of our most helpful articles below that address different jewelry questions you might have top in mind.",
+        "columns_per_row_desktop": "3",
+        "image_aspect_ratio": "2-1",
+        "color_region": "light-alt",
+        "padding_top": "default",
+        "padding_bottom": "default"
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "e0b5d3ad-d213-4c28-b53e-4063532ba5f7",
+    "1347b160-8fec-4d50-8b81-52a224c21885",
+    "cf8c441a-d7c6-4f9d-9500-8de8090ec957",
+    "4f0303b5-5dd8-49e5-8327-2a857e9630d5",
+    "19248e98-0901-479f-a6e1-1d47dcd97cae",
+    "341d5950-d263-445c-ba69-1c950015fa03",
+    "5dabd00a-61ed-4693-872b-e6fa6eb162e7",
+    "d2287e95-cea8-456e-938e-64babb0fb9ab",
+    "d3c762fc-5a7d-4771-9327-fef4901b7ab4"
+  ]
+}

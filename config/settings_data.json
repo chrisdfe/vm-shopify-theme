@@ -357,7 +357,7 @@
           "738b4509-cd54-4656-8443-5b3e8aa4baae"
         ],
         "settings": {
-          "promo_text": "",
+          "promo_text": "<p>Visit Us! 1422 34th Ave Seattle, WA ✨ Open now for walk-ins and <a href=\"https:\/\/calendly.com\/valeriemadison\" target=\"_blank\" title=\"https:\/\/calendly.com\/valeriemadison\">appointments.<\/a><\/p>",
           "logo": "shopify:\/\/shop_images\/Diamond-Logo.png",
           "logo_mobile": "shopify:\/\/shop_images\/mobile-logo-seagreen_256x256_79182b2b-7668-4862-8b08-f67f60755daf.png",
           "show_locale_selector": true,
@@ -366,6 +366,7 @@
       },
       "1489285524898": {
         "type": "testimonial",
+        "disabled": true,
         "blocks": {
           "1489285524898-0": {
             "type": "image",
@@ -3296,7 +3297,7 @@
             "type": "background_block",
             "settings": {
               "background_color": "light",
-              "banner_image_desktop": "shopify:\/\/shop_images\/Shopify-light-blue-sapphire-rings.jpg"
+              "banner_image_desktop": "shopify:\/\/shop_images\/Shopify-Pastel-Sapphire-Rings-Launch.jpg"
             }
           }
         },
@@ -3305,13 +3306,13 @@
         ],
         "settings": {
           "banner_wrapper_background_color": "light-alt",
-          "pretext": "now featuring",
-          "heading": "Breezy Blues",
+          "pretext": "Just bloomed",
+          "heading": "Pastel Sapphires",
           "cta_link": "https:\/\/www.valeriemadison.com\/collections\/engagement-rings\/new",
-          "cta_text": "Shop the collection",
-          "text_position": "left-block",
-          "text_color": "dark-alt",
-          "banner_image_mobile": "shopify:\/\/shop_images\/Shopify-light-blue-sapphire-rings-1x1.jpg",
+          "cta_text": "Shop new rings",
+          "text_position": "center",
+          "text_color": "dark",
+          "banner_image_mobile": "shopify:\/\/shop_images\/Shopify-Editorial-Hand-Shot-Radiant-Cut-and-Emerald-Cut-Zara-Rings-6-1x1.jpg",
           "text_color_mobile": "dark",
           "content_background_color_mobile": "light"
         }
@@ -3740,7 +3741,7 @@
         "type": "eternity-bracelets-chain-styles",
         "settings": {
           "title": "Available Chain Styles",
-          "content": "All chains are available in 14K yellow gold.",
+          "content": "All chains are offered in 14K yellow gold and subject to availability. \n\nIf you have your heart set on a particular style for your appointment, please call our team at 206-395-6359 for up-to-date availability.",
           "image": "shopify:\/\/shop_images\/chain-pricing-larger-text_688fe665-f770-4e78-a49d-b0951be28099.png"
         }
       },
@@ -3758,7 +3759,7 @@
             "type": "faq_item",
             "settings": {
               "title": "WHAT IF I NEED TO REMOVE IT OR IT BREAKS?",
-              "answer": "We ensure the integrity of our weld before your appointment is complete and have been testing them on our staff for over a  year. However, accidents happen! If you need to remove it or your welded jewelry comes off for any reason, please contact us."
+              "answer": "We ensure the integrity of our weld before your appointment is complete and have been testing them on our staff for years. However, accidents happen! If you need to remove it or your welded jewelry comes off for any reason, please contact us."
             }
           },
           "a0505a76-c1c1-4d41-9cbf-e341af8e729b": {
@@ -3802,6 +3803,13 @@
               "title": "WHAT IF I'M ALLERGIC TO GOLD?",
               "answer": "If you've ever had a reaction to gold we do not advise you wear permanent jewelry as all of our chains are solid 14k gold."
             }
+          },
+          "a08d8717-2594-42dd-9ce7-5c1dec731cc5": {
+            "type": "faq_item",
+            "settings": {
+              "title": "What if I break or lose my bracelet?",
+              "answer": "We offer 30-day complimentary re-welding for eternity bracelets. After this timeframe, re-welding will incur a fee, and replacements will be the responsibility of the customer. Please get in touch with our team to explore adding a clasp if the permanent bracelet does not suit your lifestyle."
+            }
           }
         },
         "block_order": [
@@ -3812,7 +3820,8 @@
           "9cf3c7e0-808e-4b49-905a-a4f60242f8e9",
           "d80d2312-36b8-41b7-95e9-9822d42c09ea",
           "2244c8aa-ae1e-4d63-a9db-4b5d2608d67f",
-          "02942e57-bc02-4915-9bb9-271b7c436a81"
+          "02942e57-bc02-4915-9bb9-271b7c436a81",
+          "a08d8717-2594-42dd-9ce7-5c1dec731cc5"
         ],
         "settings": {
           "title": "FAQs"
@@ -3905,7 +3914,7 @@
         "settings": {
           "title": "Modern Originals",
           "title_cta_text": "shop now",
-          "collection": "fine-jewelry",
+          "collection": "new-arrivals",
           "products_per": 3,
           "products_limit": 9,
           "color_region": "light-alt",
