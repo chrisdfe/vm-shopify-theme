@@ -1,59 +1,56 @@
 {% capture content %}
-<div class="container">
-  <div class="row">
+  <div class="container">
+    <div class="row">
 
-    <div class="eight columns medium-down--one-whole medium-down--offset-by-zero">
-      <div class="u-margin-bottom-2">
-        {% include "content-section.title", with {
-          title: section.settings.title,
-          extra_classes: "u-margin-top-0",
-          with_accent: false,
-          title_tag: "h1"
-        } %}
-      </div>
+      <div class="eight columns medium-down--one-whole medium-down--offset-by-zero">
+        <div class="u-margin-bottom-2">
+          {% include "content-section.title", with {
+           title: section.settings.title,
+           extra_classes: "u-margin-top-0",
+           with_accent: false,
+           title_tag: "h1"
+           } %}
+        </div>
 
-      <div class="block-text">
-        <p class="paragraph-1">{{ section.settings.intro_content }}</p>
-        <p >{{ section.settings.body_content }}</p>
+        <div class="block-text">
+          <p class="paragraph-1">{{ section.settings.intro_content }}</p>
+          <p>{{ section.settings.body_content }}</p>
+        </div>
       </div>
     </div>
   </div>
-</div>
 {% endcapture %}
 
 {% include "content-section" with {
-  content: content,
-  id: "our-story--intro",
-  color_region: "dark"
-} %}
+ content: content,
+ id: "our-story--intro",
+ color_region: "dark-alt"
+ } %}
 
 {% schema %}
-{
-  "name": "Intro",
-  "settings": [
-    {
-      "id": "title",
-      "label": "Title",
-      "type": "text",
-      "default": "We're all about your love stories in gold."
-    },
-    {
-      "id": "intro_content",
-      "label": "Intro Content",
-      "type": "textarea",
-      "default": "Whether it’s proposing to the love of your life, marking a special occasion in gold, or truly treating yourself with a gem as amazing as you are, we’re here for it."
-    },
-    {
-      "id": "body_content",
-      "label": "Body Content",
-      "type": "textarea",
-      "default": "With an eye for balance, durability, and function, Valerie's inspiration comes from the beautiful spectrum of colors of diamonds and gemstones she sources as well as the geometry and shapes they come in. All jewelry tells a story and we believe in fine jewelry as an expression of the desire to decorate oneself with metals and jewels that reflect the love and style you want to reflect outwards."
-    },
-    {
-      "id": "icon",
-      "label": "Icon",
-      "type": "image_picker"
-    }
-  ]
-}
+  {
+    "name": "Intro",
+    "settings": [
+      {
+        "id": "title",
+        "label": "Title",
+        "type": "text",
+        "default": "We're all about your love stories in gold."
+      }, {
+        "id": "intro_content",
+        "label": "Intro Content",
+        "type": "textarea",
+        "default": "Whether it’s proposing to the love of your life, marking a special occasion in gold, or truly treating yourself with a gem as amazing as you are, we’re here for it."
+      }, {
+        "id": "body_content",
+        "label": "Body Content",
+        "type": "textarea",
+        "default": "With an eye for balance, durability, and function, Valerie's inspiration comes from the beautiful spectrum of colors of diamonds and gemstones she sources as well as the geometry and shapes they come in. All jewelry tells a story and we believe in fine jewelry as an expression of the desire to decorate oneself with metals and jewels that reflect the love and style you want to reflect outwards."
+      }, {
+        "id": "icon",
+        "label": "Icon",
+        "type": "image_picker"
+      }
+    ]
+  }
 {% endschema %}

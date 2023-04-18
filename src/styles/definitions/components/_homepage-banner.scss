@@ -87,15 +87,15 @@ $vm-homepage-banner-height-mobile: 800px;
   }
 
   &.homepage-banner--text-color-dark {
-    color: $vm-color-plum;
+    color: $vm-color-black;
 
     .cta-link {
-      color: $vm-color-plum;
-      border-color: $vm-color-plum;
+      color: $vm-color-black;
+      border-color: $vm-color-black;
 
       &:hover {
-        color: $vm-color-plum;
-        border-color: $vm-color-plum;
+        color: $vm-color-black;
+        border-color: $vm-color-black;
       }
     }
   }

@@ -1,15 +1,19 @@
 /* Variables - Typography
 ================================================== */
 
-$vm-body-text-color: $vm-color-sea-green;
+// $vm-body-text-color: $vm-color-sea-green;
+$vm-body-text-color: $vm-color-black;
 // $vm-body-text-color: #111;
 
 $vm-font-orpheus: orpheuspro, serif;
 $vm-font-proxima-nova: proxima-nova, sans-serif;
+$vm-font-cormorant: "Cormorant", serif;
+$vm-font-quattrocento: "Quattrocento Sans", sans-serif;
 
-$vm-body-font: $vm-font-proxima-nova;
+// $vm-body-font: $vm-font-proxima-nova;
+$vm-body-font: $vm-font-quattrocento;
 
-$vm-heading-font: $vm-font-orpheus;
+$vm-heading-font: $vm-font-cormorant;
 
 $vm-subheading-font: $vm-body-font;
 
@@ -23,14 +27,14 @@ $vm-link-transition-speed: 0.1s;
 $vm-heading-accent-color: $vm-color-sand;
 $vm-heading-font-weight: 400;
 
-$vm-heading-1-font-size: 60px;
-$vm-heading-1-letter-spacing: 0;
+$vm-heading-1-font-size: 67px;
+$vm-heading-1-letter-spacing: -2px;
 $vm-heading-1-line-height: 1.1;
 $vm-heading-1-font-weight: 400;
 
 $vm-heading-1-mobile-font-size: 50px;
 
-$vm-heading-2-font-size: 40px;
+$vm-heading-2-font-size: 54px;
 $vm-heading-2-letter-spacing: 0;
 $vm-heading-2-line-height: 1.2;
 $vm-heading-2-font-weight: 400;
@@ -44,9 +48,10 @@ $vm-heading-3-font-weight: 400;
 
 $vm-heading-3-mobile-font-size: 26px;
 
-$vm-subheading-letter-spacing: 0.04em;
+// $vm-subheading-letter-spacing: 0.04em;
+$vm-subheading-letter-spacing: 0;
 $vm-subheading-line-height: 1.4;
-$vm-subheading-font-weight: 600;
+$vm-subheading-font-weight: 700;
 
 $vm-subheading-1-font-size: 16px;
 $vm-subheading-1-letter-spacing: $vm-subheading-letter-spacing;

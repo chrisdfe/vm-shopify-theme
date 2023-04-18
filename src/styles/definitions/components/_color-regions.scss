@@ -4,7 +4,7 @@
 .color-region,
 .color-region--light {
   background-color: $vm-color-white;
-  color: $vm-color-sea-green;
+  color: $vm-color-black;
 }
 
 .color-region--light-alt {
@@ -28,21 +28,20 @@
   a {
     color: $vm-color-white;
   }
-
 }
 
 .color-region--dark {
-  background-color: $vm-color-plum;
-  
+  background-color: $vm-color-black;
+
   *::selection {
-    color: $vm-color-plum;
+    color: $vm-color-black;
     background: $vm-color-cream;
   }
 }
 
 .color-region--dark-alt {
-  background-color: $vm-color-sea-green;
-  
+  background-color: $vm-color-forest-green;
+
   *::selection {
     color: $vm-color-sea-green;
     background: $vm-color-cream;

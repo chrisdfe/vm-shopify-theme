@@ -3,9 +3,13 @@
 
 .footer {
   padding: $vm-content-section-padding 0;
-  background-color: $vm-footer-background-color;
-  color: $vm-footer-text-color;
+  // background-color: $vm-footer-background-color;
+  // color: $vm-footer-text-color;
   pointer-events: all;
+
+  h6 {
+    color: $vm-color-cream;
+  }
 
   a,
   a:visited {
