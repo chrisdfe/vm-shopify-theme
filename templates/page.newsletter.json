@@ -2,23 +2,31 @@
   "sections": {
     "banner": {
       "type": "page-banner",
+      "disabled": true,
       "settings": {
-        "title": "Mother's Day Gift Guide",
-        "subtitle": "Find the perfect gift for Mom from our curated selection of fine jewelry. Made from solid 14K gold, never plated.",
+        "title": "Valentine's Day Gift Guide",
+        "subtitle": "Love is in the air! Find the perfect gift for your other half (or yourself) from our curated selection of fine jewelry. Made from solid 14K gold, never plated.",
         "text": "",
         "cta_text": "Shop All Fine Jewelry",
         "cta_link": "shopify:\/\/collections\/fine-jewelry",
         "content_is_centered": false,
         "text_is_centered": false,
-        "aspect_ratio": "2-1",
+        "aspect_ratio": "3-1",
         "aspect_ratio_mobile": "1-1",
-        "background_image_desktop": "shopify:\/\/shop_images\/pear_earrings_modeled_3x2_3a2b45ec-52bc-4fdd-878b-e36bfa9b9c18.jpg",
-        "background_image_mobile": "shopify:\/\/shop_images\/Shopify-Eclipse-Pendant-2x1.jpg",
+        "background_image_desktop": "shopify:\/\/shop_images\/VDAY_Gemma_necklace_V2.jpg",
+        "background_image_mobile": "shopify:\/\/shop_images\/VDAY_Gemma_necklace_Mobile_version.jpg",
         "color_region": "dark"
+      }
+    },
+    "e0b5d3ad-d213-4c28-b53e-4063532ba5f7": {
+      "type": "custom-html",
+      "settings": {
+        "custom_html": "<div class=\"klaviyo-form-VkvMw7\"><\/div>"
       }
     },
     "1347b160-8fec-4d50-8b81-52a224c21885": {
       "type": "product-grid-with-text",
+      "disabled": true,
       "blocks": {
         "3a604c37-407f-41d0-8a6a-48bc43bc2844": {
           "type": "product-card",
@@ -44,16 +52,16 @@
             "product": "super-nova-diamond-ring-vm335"
           }
         },
-        "5248c86e-4458-4b6e-923b-8c6cc18c349f": {
-          "type": "product-card",
-          "settings": {
-            "product": "14k-gold-interlocking-rings-necklace-nk23-pd007-lll"
-          }
-        },
         "c03c6e5f-cc89-4a38-9d29-81dc150481dd": {
           "type": "product-card",
           "settings": {
             "product": "pearl-baguette-diamond-earringser23-dg001d"
+          }
+        },
+        "5248c86e-4458-4b6e-923b-8c6cc18c349f": {
+          "type": "product-card",
+          "settings": {
+            "product": "rose-cut-diamond-threader-earrings-vm292"
           }
         }
       },
@@ -62,8 +70,8 @@
         "e916f85a-4806-4fe6-8e4d-edda4d0354b8",
         "7cb8fb94-876c-4c25-a8bd-830dd20ab97c",
         "811ff33e-e98e-4310-96fc-9b293512be6b",
-        "5248c86e-4458-4b6e-923b-8c6cc18c349f",
-        "c03c6e5f-cc89-4a38-9d29-81dc150481dd"
+        "c03c6e5f-cc89-4a38-9d29-81dc150481dd",
+        "5248c86e-4458-4b6e-923b-8c6cc18c349f"
       ],
       "settings": {
         "title": "Most Gifted",
@@ -78,11 +86,12 @@
     },
     "cf8c441a-d7c6-4f9d-9500-8de8090ec957": {
       "type": "product-grid-with-text",
+      "disabled": true,
       "blocks": {
         "0f6757f8-6ba8-45b4-a599-b234730ee632": {
           "type": "product-card",
           "settings": {
-            "product": "moonstone-pendant-necklace-vm455"
+            "product": "14k-gold-interlocking-trio-necklace-mother-children-vm211"
           }
         },
         "afdc948a-908d-43ba-bda9-282c5b4cdece": {
@@ -137,6 +146,7 @@
     },
     "4f0303b5-5dd8-49e5-8327-2a857e9630d5": {
       "type": "product-grid-with-text",
+      "disabled": true,
       "blocks": {
         "78920f99-3814-4b88-b67f-a8d67e9dbf3d": {
           "type": "product-card",
@@ -153,25 +163,25 @@
         "58680e95-5100-4803-ab21-2074364a1b7a": {
           "type": "product-card",
           "settings": {
-            "product": "14k-gold-tapered-hoops-large-vm439"
+            "product": "diamond-arch-studs-vm435"
           }
         },
         "d34d45b0-8cdb-4111-93ff-22c272bc2428": {
           "type": "product-card",
           "settings": {
-            "product": "dua-diamond-band-vm226"
+            "product": "dua-ruby-band-vm226-ruby"
           }
         },
         "f0354bbe-0aec-49fd-9cf2-db36673f95b7": {
           "type": "product-card",
           "settings": {
-            "product": "diamond-florette-studs-vm495"
+            "product": "pearl-station-necklace-ooak689"
           }
         },
         "f3c5e907-c6b6-4e76-8ddc-5af2a2fd9fb2": {
           "type": "product-card",
           "settings": {
-            "product": "baguette-diamond-pendant-necklace-nk23-pd001d-lll"
+            "product": "lily-seven-stone-rainbow-ring"
           }
         }
       },
@@ -194,65 +204,6 @@
         "padding_bottom": "0"
       }
     },
-    "341d5950-d263-445c-ba69-1c950015fa03": {
-      "type": "product-grid-with-text",
-      "blocks": {
-        "05fb277f-9032-4a34-8c14-3a7fa6ec9fcc": {
-          "type": "product-card",
-          "settings": {
-            "product": "selena-rose-cut-diamond-halo-necklace-vm283"
-          }
-        },
-        "3fecda50-0bd0-4b96-9c20-4d931b10d5d1": {
-          "type": "product-card",
-          "settings": {
-            "product": "open-celestial-diamond-ring-vm498"
-          }
-        },
-        "ef04f069-5294-4134-9b51-91a5bfa4e27d": {
-          "type": "product-card",
-          "settings": {
-            "product": "medium-figaro-chain-necklace-nk23-ch003"
-          }
-        },
-        "ce08c672-e61a-4e6c-be80-56117f6b10ba": {
-          "type": "product-card",
-          "settings": {
-            "product": "hinged-pave-diamond-bangle-bracelet-vm523"
-          }
-        },
-        "9a60b048-05ed-47dd-9fa3-c96a4c76fdd2": {
-          "type": "product-card",
-          "settings": {
-            "product": "toi-et-moi-gemma-necklace-sapphire-and-diamond-necklace-ooak685"
-          }
-        },
-        "e953368d-f229-4653-b26e-a677f77330e7": {
-          "type": "product-card",
-          "settings": {
-            "product": "diamond-baguette-dangle-earrings-vm528"
-          }
-        }
-      },
-      "block_order": [
-        "05fb277f-9032-4a34-8c14-3a7fa6ec9fcc",
-        "3fecda50-0bd0-4b96-9c20-4d931b10d5d1",
-        "ef04f069-5294-4134-9b51-91a5bfa4e27d",
-        "ce08c672-e61a-4e6c-be80-56117f6b10ba",
-        "9a60b048-05ed-47dd-9fa3-c96a4c76fdd2",
-        "e953368d-f229-4653-b26e-a677f77330e7"
-      ],
-      "settings": {
-        "title": "$1,000 and Up",
-        "description": "For those who deeply appreciate the finer things in life. Made with ethically-sourced diamonds for sustainable sparkle.",
-        "cta_link": "\/",
-        "cta_text": "",
-        "product_grid_position": "left",
-        "color_region": "light-alt",
-        "padding_top": "0",
-        "padding_bottom": "0"
-      }
-    },
     "19248e98-0901-479f-a6e1-1d47dcd97cae": {
       "type": "product-grid-with-text",
       "disabled": true,
@@ -260,13 +211,13 @@
         "6d59c19d-f745-4a98-86f7-d4b0cc2ec1bb": {
           "type": "product-card",
           "settings": {
-            "product": "oval-signet-ring-vm382"
+            "product": "vm383-large-round-signet"
           }
         },
         "e4e9bdd5-d4e9-45cc-ab1b-817b0f6d7842": {
           "type": "product-card",
           "settings": {
-            "product": "baguette-diamond-pendant-necklace-nk23-pd001d-lll"
+            "product": "mariner-chain-necklace-vm530"
           }
         },
         "2581c346-6d3e-4fc7-89a8-2fe3dc41eda9": {
@@ -311,6 +262,128 @@
         "color_region": "light-alt",
         "padding_top": "0",
         "padding_bottom": "0"
+      }
+    },
+    "341d5950-d263-445c-ba69-1c950015fa03": {
+      "type": "product-grid-with-text",
+      "disabled": true,
+      "blocks": {
+        "05fb277f-9032-4a34-8c14-3a7fa6ec9fcc": {
+          "type": "product-card",
+          "settings": {
+            "product": "selena-rose-cut-diamond-halo-necklace-vm283"
+          }
+        },
+        "3fecda50-0bd0-4b96-9c20-4d931b10d5d1": {
+          "type": "product-card",
+          "settings": {
+            "product": "1-31ct-tiana-oval-pink-sapphire-diamond-halo-engagement-ring-ooak638"
+          }
+        },
+        "ce08c672-e61a-4e6c-be80-56117f6b10ba": {
+          "type": "product-card",
+          "settings": {
+            "product": "hinged-pave-diamond-bangle-bracelet-vm523"
+          }
+        },
+        "9a60b048-05ed-47dd-9fa3-c96a4c76fdd2": {
+          "type": "product-card",
+          "settings": {
+            "product": "1-58ct-zara-three-stone-cushion-fuchsia-sapphire-and-diamond-engagement-ring-ooak567"
+          }
+        },
+        "ef04f069-5294-4134-9b51-91a5bfa4e27d": {
+          "type": "product-card",
+          "settings": {
+            "product": "3-37ctw-diamond-riveria-necklace-foh-n-riv-04"
+          }
+        },
+        "e953368d-f229-4653-b26e-a677f77330e7": {
+          "type": "product-card",
+          "settings": {
+            "product": "diamond-baguette-dangle-earrings-vm528"
+          }
+        }
+      },
+      "block_order": [
+        "05fb277f-9032-4a34-8c14-3a7fa6ec9fcc",
+        "3fecda50-0bd0-4b96-9c20-4d931b10d5d1",
+        "ce08c672-e61a-4e6c-be80-56117f6b10ba",
+        "9a60b048-05ed-47dd-9fa3-c96a4c76fdd2",
+        "ef04f069-5294-4134-9b51-91a5bfa4e27d",
+        "e953368d-f229-4653-b26e-a677f77330e7"
+      ],
+      "settings": {
+        "title": "$2,000 and Up",
+        "description": "For those who deeply appreciate the finer things in life. Made with ethically-sourced diamonds for sustainable sparkle.",
+        "cta_link": "\/",
+        "cta_text": "",
+        "product_grid_position": "right",
+        "color_region": "light-alt",
+        "padding_top": "0",
+        "padding_bottom": "0"
+      }
+    },
+    "5dabd00a-61ed-4693-872b-e6fa6eb162e7": {
+      "type": "recently-viewed",
+      "disabled": true,
+      "settings": {
+        "rv_title": "Recently viewed products",
+        "rv_products_style": "grid",
+        "rv_max_display": 6,
+        "rv_per": 4
+      }
+    },
+    "d2287e95-cea8-456e-938e-64babb0fb9ab": {
+      "type": "cta-cards",
+      "disabled": true,
+      "blocks": {
+        "template--14909723738166__d2287e95-cea8-456e-938e-64babb0fb9ab-1678739497bf23cb0b-0": {
+          "type": "cta-card",
+          "settings": {
+            "title": "Engagement Rings",
+            "description": "",
+            "cta_text": "discover",
+            "cta_link": "shopify:\/\/collections\/engagement-rings",
+            "image": "shopify:\/\/shop_images\/engagement.png"
+          }
+        },
+        "template--14909723738166__d2287e95-cea8-456e-938e-64babb0fb9ab-1678739497bf23cb0b-2": {
+          "type": "cta-card",
+          "settings": {
+            "title": "fine jewelry",
+            "description": "",
+            "cta_text": "discover",
+            "cta_link": "shopify:\/\/collections\/fine-jewelry",
+            "image": "shopify:\/\/shop_images\/fine-jewelry.png"
+          }
+        },
+        "template--14909723738166__d2287e95-cea8-456e-938e-64babb0fb9ab-1678739497bf23cb0b-1": {
+          "type": "cta-card",
+          "settings": {
+            "title": "WEDDING BANDS",
+            "description": "",
+            "cta_text": "discover",
+            "cta_link": "shopify:\/\/collections\/wedding-bands",
+            "image": "shopify:\/\/shop_images\/wedding-band.png"
+          }
+        }
+      },
+      "block_order": [
+        "template--14909723738166__d2287e95-cea8-456e-938e-64babb0fb9ab-1678739497bf23cb0b-0",
+        "template--14909723738166__d2287e95-cea8-456e-938e-64babb0fb9ab-1678739497bf23cb0b-2",
+        "template--14909723738166__d2287e95-cea8-456e-938e-64babb0fb9ab-1678739497bf23cb0b-1"
+      ],
+      "settings": {
+        "title": "Continue Browsing",
+        "title_link": "shopify:\/\/collections\/engagement-rings",
+        "title_link_text": "shop now",
+        "description": "",
+        "columns_per_row_desktop": "3",
+        "image_aspect_ratio": "1-1",
+        "color_region": "light",
+        "padding_top": "default",
+        "padding_bottom": "default"
       }
     },
     "d3c762fc-5a7d-4771-9327-fef4901b7ab4": {
@@ -368,11 +441,14 @@
   },
   "order": [
     "banner",
+    "e0b5d3ad-d213-4c28-b53e-4063532ba5f7",
     "1347b160-8fec-4d50-8b81-52a224c21885",
     "cf8c441a-d7c6-4f9d-9500-8de8090ec957",
     "4f0303b5-5dd8-49e5-8327-2a857e9630d5",
-    "341d5950-d263-445c-ba69-1c950015fa03",
     "19248e98-0901-479f-a6e1-1d47dcd97cae",
+    "341d5950-d263-445c-ba69-1c950015fa03",
+    "5dabd00a-61ed-4693-872b-e6fa6eb162e7",
+    "d2287e95-cea8-456e-938e-64babb0fb9ab",
     "d3c762fc-5a7d-4771-9327-fef4901b7ab4"
   ]
 }

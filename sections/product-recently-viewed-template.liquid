@@ -2,7 +2,9 @@
 ** Product snippet - only used as AJAX reference for recently viewed **
 {% endcomment %}
 
-<div class="js-recently-viewed-product clearfix">
+<div class="js-recently-viewed-product">
+  {% render "product.card" with { product: product } %}
+  {% comment %}
   <div class="product-wrap">
       <div class="relative product_image {% if settings.collection_secondary_image != blank and product.media[1] != blank %}has-secondary-media-swap{% endif %}">
         <a href="{{ product.url | within: collection }}">
@@ -35,9 +37,11 @@
           </a>
         {% render "product-details", product: product %}
       </div>
+
       <a class="product-info__caption {% if settings.thumbnail_hover_enabled %}hidden{% endif %}" href="{{ product.url | within: collection }}">
         {% render "product-info", product: product %}
       </a>
+          {% endcomment %}
       </div>
     {% render 'collection-swatch', product: product %}
   </div>
