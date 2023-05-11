@@ -141,6 +141,27 @@ $vm-homepage-banner-height-mobile: 800px;
     }
   }
 
+  // Text alignment
+  &.homepage-banner--text-align-center {
+    .homepage-banner__content-wrapper {
+      text-align: center;
+    }
+  }
+
+  &.homepage-banner--text-align-left {
+    .homepage-banner__content-wrapper {
+      text-align: left;
+      align-items: flex-start;
+    }
+  }
+
+  &.homepage-banner--text-align-right {
+    .homepage-banner__content-wrapper {
+      text-align: right;
+      align-items: flex-end;
+    }
+  }
+
   @include respond-to("medium-down") {
     flex-direction: column;
     height: auto;

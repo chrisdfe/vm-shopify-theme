@@ -9868,6 +9868,17 @@ a.tag {
   bottom: 0;
   left: 50%;
 }
+.homepage-banner.homepage-banner--text-align-center .homepage-banner__content-wrapper {
+  text-align: center;
+}
+.homepage-banner.homepage-banner--text-align-left .homepage-banner__content-wrapper {
+  text-align: left;
+  align-items: flex-start;
+}
+.homepage-banner.homepage-banner--text-align-right .homepage-banner__content-wrapper {
+  text-align: right;
+  align-items: flex-end;
+}
 @media only screen and (max-width: 800px) {
   .homepage-banner {
     flex-direction: column;
