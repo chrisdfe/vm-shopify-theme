@@ -357,7 +357,7 @@
           "738b4509-cd54-4656-8443-5b3e8aa4baae"
         ],
         "settings": {
-          "promo_text": "<p>In with the new ✨ Shop our <a href=\"https:\/\/www.valeriemadison.com\/collections\/fine-jewelry\/Final-Few\" title=\"https:\/\/www.valeriemadison.com\/collections\/fine-jewelry\/Final-Few\">final few collection<\/a> for additional savings!<\/p>",
+          "promo_text": "<p>Order by May 9th for delivery by Mother's Day - Shop our <a href=\"https:\/\/www.valeriemadison.com\/pages\/mothers-day-gift-guide\" target=\"_blank\" title=\"https:\/\/www.valeriemadison.com\/pages\/mothers-day-gift-guide\">gift guide<\/a> <\/p>",
           "logo": "shopify:\/\/shop_images\/Diamond-Logo.png",
           "logo_mobile": "shopify:\/\/shop_images\/mobile-logo-seagreen_256x256_79182b2b-7668-4862-8b08-f67f60755daf.png",
           "show_locale_selector": true,
@@ -731,7 +731,7 @@
         "type": "featured-blog",
         "settings": {
           "title": "Recent blog posts",
-          "blog_widget_select": "the-studio-blog",
+          "blog_widget_select": "studio-blog",
           "home_page_articles": 3,
           "blog_tags": false,
           "blog_author": false,
@@ -740,7 +740,7 @@
           "blog_comment_count": false,
           "read_more_link": true,
           "color_region": "dark",
-          "padding_top": "2",
+          "padding_top": "default",
           "padding_bottom": "3"
         }
       },
@@ -1401,7 +1401,7 @@
           "68ee30c7-41af-46f8-878c-4e74d845fa6d": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/VM_Tapered_Hoops.jpg",
+              "image": "shopify:\/\/shop_images\/Tapered_Hoops.jpg",
               "url": "https:\/\/www.valeriemadison.com\/collections\/fine-jewelry\/earrings",
               "cta_text": "Earrings",
               "cta_subtext": "Studs, Hoops, and Dangles",
@@ -1494,7 +1494,7 @@
           "f05e510c-26f7-45d8-a71a-7e639a4d8cb4": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/JoshEmily33_f2198ed2-2a9b-4648-9955-d50b75e7b503.jpg",
+              "image": "shopify:\/\/shop_images\/2D23CECB-0348-4AB6-8A43-338A2BBECFFF_1_105_c.jpg",
               "url": "https:\/\/calendly.com\/valeriemadison",
               "cta_text": "Schedule an appointment",
               "cta_subtext": "",
@@ -1528,7 +1528,7 @@
           "1578277933549-2": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/BANDS_Masculine_jpg_0252c415-63a3-471c-a842-bdf50cb9de69.jpg",
+              "image": "shopify:\/\/shop_images\/Editorial_Group_Tesoro-Bands-1x1.jpg",
               "link": "shopify:\/\/collections\/masculine-wedding-bands",
               "title": "<b>Men's Wedding Bands<\/b>"
             }
@@ -1776,7 +1776,7 @@
               "color_subheader": "#0a212d",
               "color_columnheader": "#0a212d",
               "column_header_left": "How to Find your ring size",
-              "column_details_left": "<p>1. Only you can determine what fits you absolutely best. A ring should slide on fairly easily and have some resistance when taking it off over the knuckle.<\/p><p><br\/>2. Your finger should feel no tightness while wearing a ring. No one else should be able to pull your ring off easily but it shouldn't be difficult for you personally to remove.<\/p><p><br\/>3. Wide rings fit more snugly than narrower rings. We recommend using the appropriate ring sizer width to find your size or try adding ¼-½ size to measurements taken with a narrow ring sizer. When in doubt, give us a call and we can help make a recommendation. <\/p><p><br\/>4. It’s not unusual for rings to fit differently through the day or in different seasons, depending on where you live. Your ring may fit snuggly in the heat and it may spin loosely in the colder winter months.<\/p>",
+              "column_details_left": "<p>1. Only you can determine what fits you absolutely best. A ring should slide on fairly easily and have some resistance when taking it off over the knuckle. These sizers don't have 1\/4 sizes, so note that the dash means a half size!<\/p><p><br\/>2. Your finger should feel no tightness while wearing a ring. No one else should be able to pull your ring off easily but it shouldn't be difficult for you personally to remove.<\/p><p><br\/>3. Wide rings fit more snugly than narrower rings. We recommend using the appropriate ring sizer width to find your size or try adding ¼-½ size to measurements taken with a narrow ring sizer. When in doubt, give us a call and we can help make a recommendation. <\/p><p><br\/>4. It’s not unusual for rings to fit differently through the day or in different seasons, depending on where you live. Your ring may fit snuggly in the heat and it may spin loosely in the colder winter months.<\/p>",
               "column_header_right": "Factors that affect ring size",
               "column_details_right": "<p><span style=\"text-decoration:underline\">Temperature<\/span><br\/>Body temperatures affect blood circulation, so your finger size may be larger when you are warmer and smaller when you are cooler. <\/p><p><span style=\"text-decoration:underline\">Season<\/span><br\/>If you live in an area with strong differences between seasonal temperatures, you may find that your fingers are skinnier in the winter time and more full in the summer time. It's not uncommon for finger sizes to change 1\/4-1\/2 ring size so opt for your largest finger size to accommodate the warmest times of year and just be conscious that there just may be some times of year where your ring fits more perfectly than others. <\/p><p><span style=\"text-decoration:underline\">Diet and time of day<\/span><br\/>It's not uncommon to wake up with fingers feeling swollen, especially if you had a salty meal for dinner the night before. The best time to have your fingers sized is late afternoon when you may be more hydrated and body changes are more likely to be stable. <\/p><p><\/p><p><span style=\"text-decoration:underline\">Activity level<br\/><\/span>Ever notice your fingers swelling after a long walk or workout? That's your circulatory system properly working and pushing blood into your extremities and fingertips. We don't recommend wearing jewelry during exercise but we understand that it happens sometimes and you want to be sized in a way that will allow for these changes.<\/p>"
             }
@@ -3202,9 +3202,9 @@
         "type": "our-story-visit-the-store",
         "settings": {
           "title": "Visit Our Store",
-          "content": "<p>Walk-ins welcome! We have a variety of everyday fine jewelry, wedding bands, engagement rings, and lovely gifts available in store available for you to browse!<br\/><\/p><p>We recommend booking an appointment if you are seeking an Engagement Ring or Wedding Band(s) so our team can be available to assist you - book one (or two) below! <\/p>",
+          "content": "<p>Walk-ins welcome! We have a variety of everyday fine jewelry, wedding bands, engagement rings, and lovely gifts available in store available for you to browse!<\/p><p>We recommend booking an appointment if you are seeking an Engagement Ring or Wedding Band(s) so our team can be available to assist you - book one (or two) below! <\/p>",
           "address": "<p>1422 34th Ave<br\/>Seattle, WA 98122<\/p>",
-          "store_hours": "<p>Thursday-Friday <strong>12pm-6pm<\/strong><br\/>Saturday <strong>10am-4pm<\/strong><\/p>",
+          "store_hours": "<p>Thursday <strong>12pm-6pm<br\/><\/strong>Friday <strong>12pm-6pm<\/strong><br\/>Saturday <strong>10am-4pm<\/strong><\/p>",
           "parking_directions": "<p>There is limited free street parking.<\/p>",
           "calendly_embed": "<!-- Calendly inline widget begin -->\n<div class=\"calendly-inline-widget\" data-url=\"https:\/\/calendly.com\/valeriemadison?text_color=1c4047&amp;primary_color=714457\" style=\"min-width:320px;height:630px;\"><\/div>\n<script type=\"text\/javascript\" src=\"https:\/\/assets.calendly.com\/assets\/external\/widget.js\" async><\/script>\n<!-- Calendly inline widget end -->",
           "map_image": "shopify:\/\/shop_images\/illustrations_map_-_wide_357bb6ce-a3d7-4bfc-a229-2581a31e345d.png",
@@ -3297,30 +3297,31 @@
             "type": "background_block",
             "settings": {
               "background_color": "light",
-              "banner_image_desktop": "shopify:\/\/shop_images\/Facetune_17-04-2023-14-39-11.heic"
+              "banner_image_desktop": "shopify:\/\/shop_images\/3182CDB1-27A1-462F-9C0B-D9FAFEE657D5_1_105_c.jpg"
             }
           },
-          "c8162eb0-f303-4a37-a67a-93a3242277ce": {
+          "e3b103f6-9329-4e07-9674-27d5b318147c": {
             "type": "background_block",
             "settings": {
               "background_color": "light",
-              "banner_image_desktop": "shopify:\/\/shop_images\/Hoops_group_7_1x1_1.jpg"
+              "banner_image_desktop": "shopify:\/\/shop_images\/Multi-Product-Shot-Pearl-earrings-celestial-band-1x1.jpg"
             }
           }
         },
         "block_order": [
           "f4931910-5f58-4686-ba42-235d1b8aa9e0",
-          "c8162eb0-f303-4a37-a67a-93a3242277ce"
+          "e3b103f6-9329-4e07-9674-27d5b318147c"
         ],
         "settings": {
           "banner_wrapper_background_color": "light-alt",
-          "pretext": "sharpen your style",
-          "heading": "Knife Edge Hoops",
-          "cta_link": "https:\/\/www.valeriemadison.com\/collections\/fine-jewelry\/earrings+hoops?sort_by=created-ascending",
-          "cta_text": "Shop hoops",
-          "text_position": "right-block",
-          "text_color": "dark",
-          "banner_image_mobile": "shopify:\/\/shop_images\/9BBBA77B-E398-4466-ADA5-CE3AA5E2920B_1_105_c.jpg",
+          "pretext": "Gift the best",
+          "heading": "For Mom",
+          "cta_link": "shopify:\/\/collections\/new-arrivals",
+          "cta_text": "",
+          "text_position": "center",
+          "text_align": "center",
+          "text_color": "light",
+          "banner_image_mobile": "shopify:\/\/shop_images\/3182CDB1-27A1-462F-9C0B-D9FAFEE657D5_1_105_c.jpg",
           "text_color_mobile": "dark",
           "content_background_color_mobile": "light"
         }
@@ -3328,7 +3329,7 @@
       "1630687320cad1aa82": {
         "type": "image-with-text",
         "settings": {
-          "image": "shopify:\/\/shop_images\/Val-SODO-Studio-val-edited.jpg",
+          "image": "shopify:\/\/shop_images\/Valerie-in-1422.jpg",
           "title": "Seattle’s only <em>BIPOC<\/em> Fine Jeweler",
           "text": "<p>Founded by a Black Latina woman, we are strongly rooted in our craft and community. We offer a wide range of innovative designs along with exceptional customer service.<br\/><br\/>Our bridal collection ranges from bespoke diamond engagement rings and unique sapphire engagement rings to lab-grown moissanite rings. We truly offer something for everyone, from ready-to-ship designs to custom rings.<\/p><p>Our approach to making jewelry includes using recycled metals, quality accent stones, and consciously sourced stones to create elegant, sophisticated, and vibrant heirloom-quality pieces.<\/p>",
           "cta_text": "Read more",
@@ -4007,14 +4008,46 @@
           "content": "Book an appointment below! Appointments are strongly encouraged for all chain options. This appointment is for 1-2 people total to attend. Please book another slot for more than 2 people.",
           "calendly_embed": "<!-- Calendly inline widget begin -->\n<div class=\"calendly-inline-widget\" data-url=\"https:\/\/calendly.com\/valeriemadison\/shopping?hide_event_type_details=1&hide_gdpr_banner=1&text_color=1c4047&primary_color=1c4047\" style=\"min-width:320px;height:630px;\"><\/div>\n<script type=\"text\/javascript\" src=\"https:\/\/assets.calendly.com\/assets\/external\/widget.js\" async><\/script>\n<!-- Calendly inline widget end -->"
         }
+      },
+      "15e8d727-aa7d-4097-be61-acd4ade45747": {
+        "type": "image-with-text",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/VMSneakPeeks-1000.jpg",
+          "title": "Visit our Seattle store",
+          "text": "<p>Our bright and elegant flagship store is located in Seattle's Madrona neighborhood. Walk-ins welcome but appointments are encouraged for bridal shopping. View our <a href=\"https:\/\/www.valeriemadison.com\/pages\/upcoming-events\" target=\"_blank\" title=\"https:\/\/www.valeriemadison.com\/pages\/upcoming-events\">upcoming events<\/a>.<\/p>",
+          "cta_text": "Book an appointment",
+          "cta_link": "https:\/\/www.valeriemadison.com\/pages\/our-story#visit-the-store",
+          "image_position": "left",
+          "is_full_width": false,
+          "color_region": "light",
+          "padding_top": "default",
+          "padding_bottom": "default"
+        }
+      },
+      "248d60fd-46ce-4c6d-ba0d-67827f7be966": {
+        "type": "image-with-text",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/4_e9cb0bc5-2a26-4e02-a6d7-2e1bcf2f58e9.jpg",
+          "title": "You're all set! View our timeless wedding trio.",
+          "text": "<p>We've created this modern and one-of-a-kind engagement ring stack, complete with upper and lower band. Sold as a complete set, or customize your pairing. <\/p>",
+          "cta_text": "Shop Now",
+          "cta_link": "https:\/\/www.valeriemadison.com\/collections\/engagement-rings\/products\/2-18ct-zara-pink-sapphire-engagement-stack",
+          "image_position": "left",
+          "is_full_width": false,
+          "color_region": "light",
+          "padding_top": "2",
+          "padding_bottom": "2"
+        }
       }
     },
     "content_for_index": [
       "1629483439e1253581",
+      "248d60fd-46ce-4c6d-ba0d-67827f7be966",
       "1638989716bc82a38f",
       "163546741951c79e41",
       "1619300542332dabf8",
       "1630687320cad1aa82",
+      "15e8d727-aa7d-4097-be61-acd4ade45747",
       "1578277933549",
       "1489285524898",
       "1553466079804",

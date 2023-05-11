@@ -13,8 +13,8 @@
         "aspect_ratio": "2-1",
         "aspect_ratio_mobile": "1-1",
         "background_image_desktop": "shopify:\/\/shop_images\/pear_earrings_modeled_3x2_3a2b45ec-52bc-4fdd-878b-e36bfa9b9c18.jpg",
-        "background_image_mobile": "shopify:\/\/shop_images\/Shopify-Eclipse-Pendant-2x1.jpg",
-        "color_region": "dark"
+        "background_image_mobile": "shopify:\/\/shop_images\/3182CDB1-27A1-462F-9C0B-D9FAFEE657D5_1_105_c.jpg",
+        "color_region": "dark-alt"
       }
     },
     "1347b160-8fec-4d50-8b81-52a224c21885": {
@@ -23,13 +23,7 @@
         "3a604c37-407f-41d0-8a6a-48bc43bc2844": {
           "type": "product-card",
           "settings": {
-            "product": "14k-gold-x-o-studs-vm306"
-          }
-        },
-        "e916f85a-4806-4fe6-8e4d-edda4d0354b8": {
-          "type": "product-card",
-          "settings": {
-            "product": "classic-gold-huggies-11mm-er23-hp003"
+            "product": "knife-edge-medium-hoops-1-er23-hp010-lll"
           }
         },
         "7cb8fb94-876c-4c25-a8bd-830dd20ab97c": {
@@ -38,10 +32,16 @@
             "product": "14k-gold-baby-flat-chain-necklace-vm377"
           }
         },
+        "e916f85a-4806-4fe6-8e4d-edda4d0354b8": {
+          "type": "product-card",
+          "settings": {
+            "product": "classic-gold-huggies-11mm-er23-hp003"
+          }
+        },
         "811ff33e-e98e-4310-96fc-9b293512be6b": {
           "type": "product-card",
           "settings": {
-            "product": "super-nova-diamond-ring-vm335"
+            "product": "diamond-crossover-band-rg23-bd005d"
           }
         },
         "5248c86e-4458-4b6e-923b-8c6cc18c349f": {
@@ -59,8 +59,8 @@
       },
       "block_order": [
         "3a604c37-407f-41d0-8a6a-48bc43bc2844",
-        "e916f85a-4806-4fe6-8e4d-edda4d0354b8",
         "7cb8fb94-876c-4c25-a8bd-830dd20ab97c",
+        "e916f85a-4806-4fe6-8e4d-edda4d0354b8",
         "811ff33e-e98e-4310-96fc-9b293512be6b",
         "5248c86e-4458-4b6e-923b-8c6cc18c349f",
         "c03c6e5f-cc89-4a38-9d29-81dc150481dd"
@@ -88,7 +88,7 @@
         "afdc948a-908d-43ba-bda9-282c5b4cdece": {
           "type": "product-card",
           "settings": {
-            "product": "14k-gold-medium-double-hoop-earring-vm287s"
+            "product": "pave-chain-ring-rg23-bd020d-lll"
           }
         },
         "363f040c-27f3-4484-97c7-810d710a5ad4": {
@@ -144,28 +144,28 @@
             "product": "pave-diamond-studs-er23-st003d"
           }
         },
+        "58680e95-5100-4803-ab21-2074364a1b7a": {
+          "type": "product-card",
+          "settings": {
+            "product": "dunes-diamond-pendant-necklace-nk23-pd003d-lll"
+          }
+        },
         "d71ebb44-d526-4f3f-b146-7010e2c8a37b": {
           "type": "product-card",
           "settings": {
             "product": "heart-signet-vm385"
           }
         },
-        "58680e95-5100-4803-ab21-2074364a1b7a": {
+        "f0354bbe-0aec-49fd-9cf2-db36673f95b7": {
           "type": "product-card",
           "settings": {
-            "product": "14k-gold-tapered-hoops-large-vm439"
+            "product": "eclipse-pendant-necklace-nk23-pd005-lll"
           }
         },
         "d34d45b0-8cdb-4111-93ff-22c272bc2428": {
           "type": "product-card",
           "settings": {
             "product": "dua-diamond-band-vm226"
-          }
-        },
-        "f0354bbe-0aec-49fd-9cf2-db36673f95b7": {
-          "type": "product-card",
-          "settings": {
-            "product": "diamond-florette-studs-vm495"
           }
         },
         "f3c5e907-c6b6-4e76-8ddc-5af2a2fd9fb2": {
@@ -177,10 +177,10 @@
       },
       "block_order": [
         "78920f99-3814-4b88-b67f-a8d67e9dbf3d",
-        "d71ebb44-d526-4f3f-b146-7010e2c8a37b",
         "58680e95-5100-4803-ab21-2074364a1b7a",
-        "d34d45b0-8cdb-4111-93ff-22c272bc2428",
+        "d71ebb44-d526-4f3f-b146-7010e2c8a37b",
         "f0354bbe-0aec-49fd-9cf2-db36673f95b7",
+        "d34d45b0-8cdb-4111-93ff-22c272bc2428",
         "f3c5e907-c6b6-4e76-8ddc-5af2a2fd9fb2"
       ],
       "settings": {
