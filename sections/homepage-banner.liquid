@@ -1,45 +1,30 @@
 <div class="homepage-banner-wrapper
-            homepage-banner-wrapper--background-color-{{ section.settings.banner_wrapper_background_color }}">
-  <div class="homepage-banner
-              homepage-banner--text-color-{{ section.settings.text_color }}
-              homepage-banner--mobile-text-color-{{ section.settings.text_color_mobile }}
-              homepage-banner--mobile-background-color-{{ section.settings.content_background_color_mobile }}
-              homepage-banner--text-position-{{ section.settings.text_position }}
-              homepage-banner--block-count-{{ section.blocks.size }}">
+                        homepage-banner-wrapper--background-color-{{ section.settings.banner_wrapper_background_color }}"><div class="homepage-banner
+                                homepage-banner--text-color-{{ section.settings.text_color }}
+                                homepage-banner--mobile-text-color-{{ section.settings.text_color_mobile }}
+                                homepage-banner--mobile-background-color-{{ section.settings.content_background_color_mobile }}
+                                homepage-banner--text-position-{{ section.settings.text_position }}
+                                homepage-banner--text-align-{{ section.settings.text_align }}
+                                homepage-banner--block-count-{{ section.blocks.size }}">
     {% for block in section.blocks %}
       <div class="homepage-banner__block
-                  homepage-banner__block--background-color-{{ block.settings.background_color }}">
+                                                homepage-banner__block--background-color-{{ block.settings.background_color }}">
         {% if block.settings.banner_image_desktop %}
           <picture>
             {% if section.blocks.size == 2 %}
               <!-- large (desktop) -->
-              <source
-                srcset="{{ block.settings.banner_image_desktop | img_url: '800x800', crop: 'center' }}"
-                media="(min-width: 801px) and (max-width: 1024px)"
-              />
+              <source srcset="{{ block.settings.banner_image_desktop | img_url: '800x800', crop: 'center' }}" media="(min-width: 801px) and (max-width: 1024px)" />
               <!-- large (widescreen desktop) -->
-              <source
-                srcset="{{ block.settings.banner_image_desktop | img_url: '1600x1600', crop: 'center' }}"
-                media="(min-width: 1025px)"
-                />
+              <source srcset="{{ block.settings.banner_image_desktop | img_url: '1600x1600', crop: 'center' }}" media="(min-width: 1025px)" />
 
-              <img
-                src="{{ block.settings.banner_image_desktop | img_url: '800x800', crop: 'center' }}"
-              />
+              <img src="{{ block.settings.banner_image_desktop | img_url: '800x800', crop: 'center' }}" />
             {% else %}
               <!-- large (desktop) -->
-              <source
-                srcset="{{ block.settings.banner_image_desktop | img_url: '1600x800', crop: 'center' }}"
-                media="(min-width: 801px) and (max-width: 1024px)"
-              />
+              <source srcset="{{ block.settings.banner_image_desktop | img_url: '1600x800', crop: 'center' }}" media="(min-width: 801px) and (max-width: 1024px)" />
               <!-- large (widescreen desktop) -->
-              <source
-                srcset="{{ block.settings.banner_image_desktop | img_url: '1600x800', crop: 'center' }}"
-                media="(min-width: 1025px)" />
-              
-              <img
-                src="{{ block.settings.banner_image_desktop | img_url: '1600x800', crop: 'center' }}"
-              />
+              <source srcset="{{ block.settings.banner_image_desktop | img_url: '1600x800', crop: 'center' }}" media="(min-width: 1025px)" />
+
+              <img src="{{ block.settings.banner_image_desktop | img_url: '1600x800', crop: 'center' }}" />
             {% endif %}
           </picture>
         {% endif %}
@@ -48,11 +33,8 @@
 
     <div class="homepage-banner__block homepage-banner__block--mobile">
       <picture>
-        <source
-          srcset="{{ section.settings.banner_image_mobile | img_url: '800x800', crop: 'bottom' }}"
-          media="(max-width: 800px)"
-        />
-        
+        <source srcset="{{ section.settings.banner_image_mobile | img_url: '800x800', crop: 'bottom' }}" media="(max-width: 800px)" />
+
         <img src="{{ block.settings.banner_image_mobile | img_url: '800x400', crop: 'bottom' }}" />
       </picture>
     </div>
@@ -61,11 +43,11 @@
       {% if section.settings.pretext %}
         <h4 class="homepage-banner__pretext">{{ section.settings.pretext }}</h4>
       {% endif %}
-      
+
       {% if section.settings.heading %}
         <h1 class="homepage-banner__title">{{ section.settings.heading }}</h1>
       {% endif %}
-        
+
       {% if section.settings.cta_link != blank %}
         <div class="homepage-banner__cta-wrapper">
           <a href="{{ section.settings.cta_link }}" class="cta-link">
@@ -79,179 +61,175 @@
 
 {% schema %}
 
-{
-  "name": "Homepage Banner",
-  "settings": [
-    {
-      "id": "banner_wrapper_background_color",
-      "label": "Wrapper Background Color",
-      "type": "select",
-      "options": [
-        {
-          "value": "light",
-          "label": "Light (white)"
-        },
-        {
-          "value": "light-alt",
-          "label": "Light (cream)"
-        }
-      ],
-      "default": "light"
-    },
-    {
-      "id": "pretext",
-      "label": "Pretext",
-      "type": "text",
-      "default": "pretext"
-    },
-    {
-      "id": "heading",
-      "label": "Heading",
-      "type": "text",
-      "default": "Default Heading"
-    },
-    {
-      "id": "cta_link",
-      "label": "CTA Link",
-      "type": "url"
-    },
-    {
-      "id": "cta_text",
-      "label": "CTA Text",
-      "type": "text"
-    },
-    {
-      "id": "text_position",
-      "label": "Text/CTA Position - Desktop",
-      "type": "select",
-      "options": [
-        {
-          "value": "center",
-          "label": "Bottom Center"
-        },
-        {
-          "value": "left-block",
-          "label": "Left Block"
-        },
-        {
-          "value": "right-block",
-          "label": "Right Block"
-        }
-      ],
-      "default": "center"
-    },
-    {
-      "id": "text_color",
-      "label": "Text/CTA Color - Desktop",
-      "type": "select",
-      "options": [
-        {
-          "value": "light",
-          "label": "Light (white)"
-        },
-        {
-          "value": "dark",
-          "label": "Dark (plum)"
-        },
-        {
-          "value": "dark-alt",
-          "label": "Dark - alt (sea green)"
-        }
-      ],
-      "default": "light"
-    },
-    {
-      "id": "banner_image_mobile",
-      "label": "Banner Image - Mobile",
-      "type": "image_picker"
-    },
-    {
-      "id": "text_color_mobile",
-      "label": "Text/CTA Color - Mobile",
-      "type": "select",
-      "options": [
-        {
-          "value": "light",
-          "label": "Light (white)"
-        },
-        {
-          "value": "dark",
-          "label": "Dark (plum)"
-        },
-        {
-          "value": "dark-alt",
-          "label": "Dark - alt (sea green)"
-        }
-      ]
-    },
-    {
-      "id": "content_background_color_mobile",
-      "label": "Text/CTA Background Color - Mobile",
-      "type": "select",
-      "options": [
-        {
-          "value": "light",
-          "label": "Light (white)"
-        },
-        {
-          "value": "light-alt",
-          "label": "Light - alt (cream)"
-        },
-        {
-          "value": "dark",
-          "label": "Dark (plum)"
-        },
-        {
-          "value": "dark-alt",
-          "label": "Dark - alt (sea green)"
-        }
-      ]
-    }
-  ],
-  "blocks": [
-    {
-      "name": "Banner Block",
-      "type": "background_block",
-      "limit": 2,
-      "settings": [
-        {
-          "id": "background_color",
-          "label": "Background Color",
-          "type": "select",
-          "options": [
-            {
-              "value": "light",
-              "label": "Light (white)"
-            },
-            {
-              "value": "light-alt",
-              "label": "Light - alt (cream)"
-            },
-            {
-              "value": "dark",
-              "label": "Dark (plum)"
-            },
-            {
-              "value": "dark-alt",
-              "label": "Dark - alt (sea green)"
-            }
-          ],
-          "default": "light"
-        },
-        {
-          "id": "banner_image_desktop",
-          "label": "Banner Image - Desktop",
-          "type": "image_picker"
-        }
-      ]
-    }
-  ],
-  "presets": [
-    {
-      "name": "Homepage Banner",
-      "category": "Text"
-    }
-  ]
-}
-
+  {
+    "name": "Homepage Banner",
+    "settings": [
+      {
+        "id": "banner_wrapper_background_color",
+        "label": "Wrapper Background Color",
+        "type": "select",
+        "options": [
+          {
+            "value": "light",
+            "label": "Light (white)"
+          }, {
+            "value": "light-alt",
+            "label": "Light (cream)"
+          }
+        ],
+        "default": "light"
+      },
+      {
+        "id": "pretext",
+        "label": "Pretext",
+        "type": "text",
+        "default": "pretext"
+      },
+      {
+        "id": "heading",
+        "label": "Heading",
+        "type": "text",
+        "default": "Default Heading"
+      },
+      {
+        "id": "cta_link",
+        "label": "CTA Link",
+        "type": "url"
+      }, {
+        "id": "cta_text",
+        "label": "CTA Text",
+        "type": "text"
+      }, {
+        "id": "text_position",
+        "label": "Text/CTA Position - Desktop",
+        "type": "select",
+        "options": [
+          {
+            "value": "center",
+            "label": "Bottom Center"
+          }, {
+            "value": "left-block",
+            "label": "Left Block"
+          }, {
+            "value": "right-block",
+            "label": "Right Block"
+          }
+        ],
+        "default": "center"
+      }, {
+        "id": "text_align",
+        "label": "Text/CTA Alignment - Desktop",
+        "type": "select",
+        "options": [
+          {
+            "value": "center",
+            "label": "Center"
+          }, {
+            "value": "left",
+            "label": "Left"
+          }, {
+            "value": "right",
+            "label": "Right"
+          }
+        ],
+        "default": "center"
+      }, {
+        "id": "text_color",
+        "label": "Text/CTA Color - Desktop",
+        "type": "select",
+        "options": [
+          {
+            "value": "light",
+            "label": "Light (white)"
+          }, {
+            "value": "dark",
+            "label": "Dark (plum)"
+          }, {
+            "value": "dark-alt",
+            "label": "Dark - alt (sea green)"
+          }
+        ],
+        "default": "light"
+      }, {
+        "id": "banner_image_mobile",
+        "label": "Banner Image - Mobile",
+        "type": "image_picker"
+      }, {
+        "id": "text_color_mobile",
+        "label": "Text/CTA Color - Mobile",
+        "type": "select",
+        "options": [
+          {
+            "value": "light",
+            "label": "Light (white)"
+          }, {
+            "value": "dark",
+            "label": "Dark (plum)"
+          }, {
+            "value": "dark-alt",
+            "label": "Dark - alt (sea green)"
+          }
+        ]
+      }, {
+        "id": "content_background_color_mobile",
+        "label": "Text/CTA Background Color - Mobile",
+        "type": "select",
+        "options": [
+          {
+            "value": "light",
+            "label": "Light (white)"
+          }, {
+            "value": "light-alt",
+            "label": "Light - alt (cream)"
+          }, {
+            "value": "dark",
+            "label": "Dark (plum)"
+          }, {
+            "value": "dark-alt",
+            "label": "Dark - alt (sea green)"
+          }
+        ]
+      }
+    ],
+    "blocks": [
+      {
+        "name": "Banner Block",
+        "type": "background_block",
+        "limit": 2,
+        "settings": [
+          {
+            "id": "background_color",
+            "label": "Background Color",
+            "type": "select",
+            "options": [
+              {
+                "value": "light",
+                "label": "Light (white)"
+              }, {
+                "value": "light-alt",
+                "label": "Light - alt (cream)"
+              }, {
+                "value": "dark",
+                "label": "Dark (plum)"
+              }, {
+                "value": "dark-alt",
+                "label": "Dark - alt (sea green)"
+              }
+            ],
+            "default": "light"
+          }, {
+            "id": "banner_image_desktop",
+            "label": "Banner Image - Desktop",
+            "type": "image_picker"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Homepage Banner",
+        "category": "Text"
+      }
+    ]
+  }
 {% endschema %}

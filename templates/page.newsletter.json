@@ -21,7 +21,7 @@
     "e0b5d3ad-d213-4c28-b53e-4063532ba5f7": {
       "type": "custom-html",
       "settings": {
-        "custom_html": "<div class=\"klaviyo-form-RJRLwy\"><\/div>"
+        "custom_html": "<div class=\"klaviyo-form-VkvMw7\"><\/div>"
       }
     },
     "1347b160-8fec-4d50-8b81-52a224c21885": {
@@ -326,6 +326,7 @@
     },
     "5dabd00a-61ed-4693-872b-e6fa6eb162e7": {
       "type": "recently-viewed",
+      "disabled": true,
       "settings": {
         "rv_title": "Recently viewed products",
         "rv_products_style": "grid",
@@ -335,6 +336,7 @@
     },
     "d2287e95-cea8-456e-938e-64babb0fb9ab": {
       "type": "cta-cards",
+      "disabled": true,
       "blocks": {
         "template--14909723738166__d2287e95-cea8-456e-938e-64babb0fb9ab-1678739497bf23cb0b-0": {
           "type": "cta-card",
@@ -386,6 +388,7 @@
     },
     "d3c762fc-5a7d-4771-9327-fef4901b7ab4": {
       "type": "cta-cards",
+      "disabled": true,
       "blocks": {
         "template--14824629108790__d3c762fc-5a7d-4771-9327-fef4901b7ab4-1666295812f978e159-0": {
           "type": "cta-card",
