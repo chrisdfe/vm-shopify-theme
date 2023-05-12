@@ -1,383 +1,385 @@
 {% capture content %}
-<div class="container">
-  <div class="row">
-    <div class="twelve columns offset-by-two medium-down--one-whole medium-down--offset-by-zero">
+  <div
+    class="container">
+    <div
+      class="row">
+      <div
+        class="twelve columns offset-by-two medium-down--one-whole medium-down--offset-by-zero">
 
-      <div class="vm-testimonials js-vm-testimonials">
-        {% for block in section.blocks %}
-          <div class="vm-testimonial-slide vm-testimonial-slide--index-{{ index }} js-testimonial-slide {% if forloop.first %}is-active{% endif %}" data-slide-index="{{ forloop.index }}">
-            <div class="vm-testimonial-slide__content">
-              <h2 class="vm-testimonial-slide__title heading-1">
-                <em>&ldquo;{{ block.settings.title }}&rdquo;</em>
-              </h2>
-              
-              <div class="vm-testimonial-slide__testimonial">
-                <p class=" paragraph--block-text">
-                  &ldquo;{{ block.settings.testimonial | strip_html }}&rdquo;
-                </p>
-                
-                {% if block.settings.name != blank %}
-                  <h4 class="vm-testimonial-slide__name subheading-2">
-                    - {{ block.settings.name }}
-                  </h4>
-                {% endif %}
+        <div
+          class="vm-testimonials js-vm-testimonials">
+          {% for block in section.blocks %}
+            <div
+              class="vm-testimonial-slide vm-testimonial-slide--index-{{ index }} js-testimonial-slide {% if forloop.first %}is-active{% endif %}"
+              data-slide-index="{{ forloop.index }}">
+              <div
+                class="vm-testimonial-slide__content">
+                <h2
+                  class="vm-testimonial-slide__title heading-1">
+                  <em>&ldquo;{{ block.settings.title }}&rdquo;</em>
+                </h2>
+
+                <div
+                  class="vm-testimonial-slide__testimonial">
+                  <p
+                    class=" paragraph--block-text">
+                    &ldquo;{{ block.settings.testimonial | strip_html }}&rdquo;
+                  </p>
+
+                  {% if block.settings.name != blank %}
+                    <h4
+                      class="vm-testimonial-slide__name subheading-2">
+                      - {{ block.settings.name }}
+                    </h4>
+                  {% endif %}
+                </div>
               </div>
             </div>
+          {% endfor %}
+
+          <div
+            class="vm-testimonial__buttons-wrapper">
+            <button
+              class="vm-testimonial__slide-button vm-testimonial__slide-button--prev js-testimonials-prev-button">
+              {% include "icon-right-arrow" %}
+            </button>
+
+            <h6
+              class="vm-testimonial__slide-index-indicator">
+              <span
+                class="js-testimonials-slide-index">1</span>
+              <span
+                class="divider">/</span>
+              <span>{{ section.blocks.size }}</span>
+            </h6>
+
+            <button
+              class="vm-testimonial__slide-button vm-testimonial__slide-button--next js-testimonials-next-button">
+              {% include "icon-right-arrow" %}
+            </button>
           </div>
-        {% endfor %}
-
-        <div class="vm-testimonial__buttons-wrapper">
-          <button class="vm-testimonial__slide-button vm-testimonial__slide-button--prev js-testimonials-prev-button">
-            {% include "icon-right-arrow" %}
-          </button>
-
-          <h6 class="vm-testimonial__slide-index-indicator">
-            <span class="js-testimonials-slide-index">1</span>
-            <span class="divider">/</span>
-            <span>{{ section.blocks.size }}</span>
-          </h6>
-          
-          <button class="vm-testimonial__slide-button vm-testimonial__slide-button--next js-testimonials-next-button">
-            {% include "icon-right-arrow" %}
-          </button>
         </div>
-      </div>
 
+      </div>
     </div>
   </div>
-</div>
 {% endcapture %}
 
 {% include "content-section" with {
-  title: section.settings.title,
-  content: content,
-  color_region: section.settings.color_region,
-  padding_top: section.settings.padding_top,
-  padding_bottom: section.settings.padding_bottom,
-} %}
+ title: section.settings.title,
+ content: content,
+ color_region: section.settings.color_region,
+ padding_top: section.settings.padding_top,
+ padding_bottom: section.settings.padding_bottom,
+ } %}
 
 <script>
-(function() {
-  // Constants
-  const SLIDE_INDEX_ATTR = "data-slide-index";
-  const IS_ACTIVE_CLASS = "is-active";
-  const IS_HIDDEN_CLASS = "is-hidden";
-  const NO_TRANSITION_CLASS = "no-transition";
-  const HIDE_TRANSITION_TIME = 500;
-  
-  // State
-  let currentActiveSlideIndex = 1;
-  let fadeOutTimeout = null;
-  let fadeInTimeout = null;
-  let isAnimating = false;
-  
-  // DOM Elements
-  const testimonialsRoot = document.querySelector('.js-vm-testimonials');
-  const slideElements = testimonialsRoot.querySelectorAll('.js-testimonial-slide');
-  const prevButton = testimonialsRoot.querySelector('.js-testimonials-prev-button');
-  const nextButton = testimonialsRoot.querySelector('.js-testimonials-next-button');
-  const slideIndicator = testimonialsRoot.querySelector('.js-testimonials-slide-index');
+  (function() {
 
-  function getElementSlideIndex(element) {
-    const indexAsString = element.getAttribute(SLIDE_INDEX_ATTR);
-    
-    if (!indexAsString) {
-      return -1;
+// Constants
+    const SLIDE_INDEX_ATTR = "data-slide-index";
+    const IS_ACTIVE_CLASS = "is-active";
+    const IS_HIDDEN_CLASS = "is-hidden";
+    const NO_TRANSITION_CLASS = "no-transition";
+    const HIDE_TRANSITION_TIME = 500;
+
+// State
+    let currentActiveSlideIndex = 1;
+    let fadeOutTimeout = null;
+    let fadeInTimeout = null;
+    let isAnimating = false;
+
+// DOM Elements
+    const testimonialsRoot = document.querySelector('.js-vm-testimonials');
+    const slideElements = testimonialsRoot.querySelectorAll('.js-testimonial-slide');
+    const prevButton = testimonialsRoot.querySelector('.js-testimonials-prev-button');
+    const nextButton = testimonialsRoot.querySelector('.js-testimonials-next-button');
+    const slideIndicator = testimonialsRoot.querySelector('.js-testimonials-slide-index');
+
+    function getElementSlideIndex(element) {
+      const indexAsString = element.getAttribute(SLIDE_INDEX_ATTR);
+
+      if (! indexAsString) {
+        return -1;
+      }
+
+      const index = parseInt(indexAsString, 10);
+      return index;
     }
 
-    const index = parseInt(indexAsString, 10);
-    return index;
-  }
+    function getElementBySlideIndex(elements, targetSlideIndex) {
+      for (let i = 0; i < elements.length; i++) {
+        const currentElement = elements[i];
+        const slideIndex = getElementSlideIndex(currentElement);
 
-  function getElementBySlideIndex(elements, targetSlideIndex) {
-    for (let i = 0; i < elements.length; i++) {
-      const currentElement = elements[i];
-      const slideIndex = getElementSlideIndex(currentElement);
-      
-      if (slideIndex === targetSlideIndex) {
-        return currentElement;
+        if (slideIndex === targetSlideIndex) {
+          return currentElement;
+        }
       }
     }
-  }
-  
-  function getCurrentActiveSlide() {
-    return getElementBySlideIndex(slideElements, currentActiveSlideIndex);
-  }
 
-  function getPreviousSlideIndex() {
-    let prevSlideIndex = currentActiveSlideIndex - 1;
-
-    // Wrap around to the end
-    if (prevSlideIndex < 1) {
-      prevSlideIndex = slideElements.length;
+    function getCurrentActiveSlide() {
+      return getElementBySlideIndex(slideElements, currentActiveSlideIndex);
     }
 
-    return prevSlideIndex;
-  }
-  
-  function getNextSlideIndex() {
-    let nextSlideIndex = currentActiveSlideIndex + 1;
+    function getPreviousSlideIndex() {
+      let prevSlideIndex = currentActiveSlideIndex - 1;
 
-    // Wrap around to the beginning
-    if (nextSlideIndex > slideElements.length) {
-      nextSlideIndex = 1;
+// Wrap around to the end
+      if (prevSlideIndex < 1) {
+        prevSlideIndex = slideElements.length;
+      }
+
+      return prevSlideIndex;
     }
 
-    return nextSlideIndex;
-  }
+    function getNextSlideIndex() {
+      let nextSlideIndex = currentActiveSlideIndex + 1;
 
-  function transitionToSlideIndex(newSlideIndex) {
-    if (newSlideIndex === currentActiveSlideIndex) {
-      return;
+// Wrap around to the beginning
+      if (nextSlideIndex > slideElements.length) {
+        nextSlideIndex = 1;
+      }
+
+      return nextSlideIndex;
     }
 
-    isAnimating = true;
+    function transitionToSlideIndex(newSlideIndex) {
+      if (newSlideIndex === currentActiveSlideIndex) {
+        return;
+      }
 
-    const currentActiveSlide = getCurrentActiveSlide();
-    const targetSlide = getElementBySlideIndex(slideElements, newSlideIndex);
-    
-    currentActiveSlide.classList.add(IS_HIDDEN_CLASS);
-    
-    currentActiveSlideIndex = newSlideIndex;
+      isAnimating = true;
 
-    slideIndicator.innerHTML = currentActiveSlideIndex;
-    
-    fadeOutTimeout = setTimeout(function() {
-      currentActiveSlide.classList.remove(IS_ACTIVE_CLASS);
+      const currentActiveSlide = getCurrentActiveSlide();
+      const targetSlide = getElementBySlideIndex(slideElements, newSlideIndex);
 
-      targetSlide.classList.add(NO_TRANSITION_CLASS);
-      targetSlide.classList.add(IS_HIDDEN_CLASS);
-      targetSlide.classList.remove(NO_TRANSITION_CLASS);
+      currentActiveSlide.classList.add(IS_HIDDEN_CLASS);
 
-      targetSlide.classList.add(IS_ACTIVE_CLASS);
+      currentActiveSlideIndex = newSlideIndex;
 
-      fadeInTimeout = setTimeout(function() {
-        targetSlide.classList.remove(IS_HIDDEN_CLASS);
-        isAnimating = false;
-      }, 100)
-    }, HIDE_TRANSITION_TIME);
-  }
+      slideIndicator.innerHTML = currentActiveSlideIndex;
 
-  // Event handlers
-  prevButton.addEventListener('click', function onPrevButtonClicked() {
-    if (isAnimating) {
-      return;
-    }
-    
-    const slideIndex = getPreviousSlideIndex();
-    transitionToSlideIndex(slideIndex);
-  });
-  
-  nextButton.addEventListener('click', function onNextButtonClicked() {
-    if (isAnimating) {
-      return;
+      fadeOutTimeout = setTimeout(function() {
+        currentActiveSlide.classList.remove(IS_ACTIVE_CLASS);
+
+        targetSlide.classList.add(NO_TRANSITION_CLASS);
+        targetSlide.classList.add(IS_HIDDEN_CLASS);
+        targetSlide.classList.remove(NO_TRANSITION_CLASS);
+
+        targetSlide.classList.add(IS_ACTIVE_CLASS);
+
+        fadeInTimeout = setTimeout(function() {
+          targetSlide.classList.remove(IS_HIDDEN_CLASS);
+          isAnimating = false;
+        }, 100)
+      }, HIDE_TRANSITION_TIME);
     }
 
-    const slideIndex = getNextSlideIndex();
-    transitionToSlideIndex(slideIndex);
-  });
-})();
+// Event handlers
+    prevButton.addEventListener('click', function onPrevButtonClicked() {
+      if (isAnimating) {
+        return;
+      }
+
+      const slideIndex = getPreviousSlideIndex();
+      transitionToSlideIndex(slideIndex);
+    });
+
+    nextButton.addEventListener('click', function onNextButtonClicked() {
+      if (isAnimating) {
+        return;
+      }
+
+      const slideIndex = getNextSlideIndex();
+      transitionToSlideIndex(slideIndex);
+    });
+  })();
 </script>
 
 {% schema %}
 
-{
-  "name": "Testimonials",
-  "class": "testimonial-section",
-  "settings": [
-    {
-      "type": "select",
-      "id": "color_region",
-      "label": "Color Region",
-      "options": [
-        {
-          "value": "light",
-          "label": "Light"
-        },
-        {
-          "value": "light-alt",
-          "label": "Light - alternative"
-        },
-        {
-          "value": "dark",
-          "label": "Dark"
-        },
-        {
-          "value": "dark-alt",
-          "label": "Dark - alternative"
-        }
-      ]
-    },
-    {
-      "type": "select",
-      "id": "padding_top",
-      "label": "Top Padding (in spacing units)",
-      "options": [
-        {
-          "value": "default",
-          "label": "Default (5)"
-        },
-        {
-          "value": "0",
-          "label": "0"
-        },
-        {
-          "value": "2",
-          "label": "2"
-        },
-        {
-          "value": "3",
-          "label": "3"
-        },
-        {
-          "value": "8",
-          "label": "8"
-        },
-        {
-          "value": "10",
-          "label": "10"
-        }
-      ]
-    },
-    {
-      "type": "select",
-      "id": "padding_bottom",
-      "label": "Bottom Padding (in spacing units)",
-      "options": [
-        {
-          "value": "default",
-          "label": "Default (5)"
-        },
-        {
-          "value": "0",
-          "label": "0"
-        },
-        {
-          "value": "2",
-          "label": "2"
-        },
-        {
-          "value": "3",
-          "label": "3"
-        },
-        {
-          "value": "8",
-          "label": "8"
-        },
-        {
-          "value": "10",
-          "label": "10"
-        }
-      ]
-    }
-  ],
-  "blocks": [
-    {
-      "type": "image",
-      "name": "Image",
-      "settings": [
-        {
-          "type": "text",
-          "id": "title",
-          "label": "Heading",
-          "default": "Customer Testimonial"
-        },
-        {
-          "type": "richtext",
-          "id": "testimonial",
-          "label": "Testimonial",
-          "default": "<p>Include some of your favorite customer quotes and feedback here as social proof, to build credibility and trust for your services and products.</p>"
-        },
-        {
-          "type": "text",
-          "id": "name",
-          "label": "Customer name"
-        },
-        {
-          "type": "text",
-          "id": "store_name",
-          "label": "Store name"
-        },
-        {
-          "type": "url",
-          "id": "link",
-          "label": "Store link"
-        },
-        {
-          "type": "select",
-          "id": "text_position",
-          "label": "Text position",
-          "options": [
-            {
-              "value": "left",
-              "label": "Left"
-            },
-            {
-              "value": "center",
-              "label": "Center"
-            },
-            {
-              "value": "right",
-              "label": "Right"
-            }
-          ],
-          "default": "center"
-        },
-        {
-          "type": "select",
-          "id": "text_align",
-          "label": "Text alignment",
-          "options": [
-            {
-              "value": "left",
-              "label": "Left"
-            },
-            {
-              "value": "center",
-              "label": "Center"
-            },
-            {
-              "value": "right",
-              "label": "Right"
-            }
-          ],
-          "default": "center"
-        },
-        {
-          "type": "header",
-          "content": "Background image"
-        },
-        {
-          "type": "image_picker",
-          "id": "image",
-          "label": "Image",
-          "info": "1600 x 1000px recommended"
-        },
-        {
-          "type": "checkbox",
-          "id": "darken_bg",
-          "label": "Darken background image"
-        }
-      ]
-    }
-  ],
-  "presets": [
-    {
-      "name": "Testimonials",
-      "category": "Text",
-      "blocks": [
-        {
-          "type": "image"
-        },
-        {
-          "type": "image"
-        },
-        {
-          "type": "image"
-        }
-      ]
-    }
-  ]
-}
-
+  {
+    "name": "Testimonials",
+    "class": "testimonial-section",
+    "settings": [
+      {
+        "type": "select",
+        "id": "color_region",
+        "label": "Color Region",
+        "options": [
+          {
+            "value": "light",
+            "label": "Light"
+          },
+          {
+            "value": "light-alt",
+            "label": "Light - alternative"
+          },
+          {
+            "value": "dark",
+            "label": "Dark"
+          },
+          {
+            "value": "dark-alt",
+            "label": "Dark - alternative"
+          }, {
+            "value": "dark-alt-2",
+            "label": "Dark - alternative 2"
+          }
+        ]
+      }, {
+        "type": "select",
+        "id": "padding_top",
+        "label": "Top Padding (in spacing units)",
+        "options": [
+          {
+            "value": "default",
+            "label": "Default (5)"
+          },
+          {
+            "value": "0",
+            "label": "0"
+          },
+          {
+            "value": "2",
+            "label": "2"
+          },
+          {
+            "value": "3",
+            "label": "3"
+          }, {
+            "value": "8",
+            "label": "8"
+          }, {
+            "value": "10",
+            "label": "10"
+          }
+        ]
+      }, {
+        "type": "select",
+        "id": "padding_bottom",
+        "label": "Bottom Padding (in spacing units)",
+        "options": [
+          {
+            "value": "default",
+            "label": "Default (5)"
+          },
+          {
+            "value": "0",
+            "label": "0"
+          },
+          {
+            "value": "2",
+            "label": "2"
+          },
+          {
+            "value": "3",
+            "label": "3"
+          }, {
+            "value": "8",
+            "label": "8"
+          }, {
+            "value": "10",
+            "label": "10"
+          }
+        ]
+      }
+    ],
+    "blocks": [
+      {
+        "type": "image",
+        "name": "Image",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Heading",
+            "default": "Customer Testimonial"
+          },
+          {
+            "type": "richtext",
+            "id": "testimonial",
+            "label": "Testimonial",
+            "default": "<p>Include some of your favorite customer quotes and feedback here as social proof, to build credibility and trust for your services and products.</p>"
+          },
+          {
+            "type": "text",
+            "id": "name",
+            "label": "Customer name"
+          },
+          {
+            "type": "text",
+            "id": "store_name",
+            "label": "Store name"
+          }, {
+            "type": "url",
+            "id": "link",
+            "label": "Store link"
+          }, {
+            "type": "select",
+            "id": "text_position",
+            "label": "Text position",
+            "options": [
+              {
+                "value": "left",
+                "label": "Left"
+              }, {
+                "value": "center",
+                "label": "Center"
+              }, {
+                "value": "right",
+                "label": "Right"
+              }
+            ],
+            "default": "center"
+          }, {
+            "type": "select",
+            "id": "text_align",
+            "label": "Text alignment",
+            "options": [
+              {
+                "value": "left",
+                "label": "Left"
+              }, {
+                "value": "center",
+                "label": "Center"
+              }, {
+                "value": "right",
+                "label": "Right"
+              }
+            ],
+            "default": "center"
+          }, {
+            "type": "header",
+            "content": "Background image"
+          }, {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image",
+            "info": "1600 x 1000px recommended"
+          }, {
+            "type": "checkbox",
+            "id": "darken_bg",
+            "label": "Darken background image"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Testimonials",
+        "category": "Text",
+        "blocks": [
+          {
+            "type": "image"
+          }, {
+            "type": "image"
+          }, {
+            "type": "image"
+          }
+        ]
+      }
+    ]
+  }
 {% endschema %}

@@ -30,7 +30,7 @@
     align-items: center;
     justify-content: center;
     padding: 0.5rem 0;
-    color: $vm-color-sea-green;
+    color: $vm-color-black;
 
     // svg {
     //   width: 30px;
@@ -58,8 +58,8 @@
     height: 44px;
     background-color: transparent;
     border: 2px solid transparent;
-    color: $vm-color-sea-green;
-    fill: $vm-color-sea-green;
+    color: $vm-color-black;
+    fill: $vm-color-black;
     transition: all 0.2s;
 
     .vm-icon.vm-icon--bag {
@@ -79,7 +79,7 @@
     }
 
     &:active {
-      border-color: $vm-color-sea-green;
+      border-color: $vm-color-black;
     }
   }
 
@@ -107,7 +107,7 @@
         height: 2px;
         width: 100%;
         margin: 5px 0;
-        background-color: $vm-color-sea-green;
+        background-color: $vm-color-black;
       }
     }
   }

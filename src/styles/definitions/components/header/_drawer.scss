@@ -15,7 +15,7 @@ $vm-drawer-mobile-width: 80%;
   .vm-header-drawer__header {
     display: flex;
     padding: 0 0 get-vm-spacer(1);
-    border-bottom: 1px solid $vm-color-sea-green;
+    border-bottom: 1px solid $vm-color-black;
   }
 
   .vm-header-drawer__header__close-button {
@@ -27,12 +27,12 @@ $vm-drawer-mobile-width: 80%;
     padding: 0 10px;
     width: $size;
     height: $size;
-    color: $vm-color-sea-green;
+    color: $vm-color-black;
     background: #fff;
 
     &:hover {
       background: $vm-color-cream;
-      color: $vm-color-sea-green;
+      color: $vm-color-black;
     }
   }
 

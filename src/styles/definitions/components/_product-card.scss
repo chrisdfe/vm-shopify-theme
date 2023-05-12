@@ -5,10 +5,11 @@
   a {
     display: block;
     position: relative;
-    color: $vm-color-sea-green;
+    color: $vm-color-black;
 
     &:hover {
-      color: $vm-color-sand;
+      // color: $vm-color-sand;
+      color: $vm-link-hover-color;
     }
   }
 

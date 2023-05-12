@@ -12,7 +12,7 @@
     padding: get-vm-spacer(2);
     display: block;
     transition: background-color 0.2s, color 0.2s;
-    color: $vm-color-sea-green;
+    color: $vm-color-black;
 
     &:hover {
       background: $vm-color-cream;
@@ -28,7 +28,7 @@
   }
 
   .search-page-result__type-heading {
-    color: $vm-color-sea-green;
+    color: $vm-color-black;
     opacity: 0.6;
     margin-bottom: 0;
   }

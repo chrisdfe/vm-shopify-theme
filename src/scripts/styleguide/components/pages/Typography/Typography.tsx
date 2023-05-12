@@ -17,12 +17,12 @@ function TypographyPage() {
   return (
     <StyleguideLayout page="typography" pageNumber="01" title="Typography">
       <StyleguideSubsection number="01a" title="Fonts" sectionId="fonts">
-        <StyleguideSubsectionRow title="Orpheus Pro">
-          <FontExample font="orpheus-pro" weight="normal" />
+        <StyleguideSubsectionRow title="Cormorant Garamond">
+          <FontExample font="cormorant-garamond" weight="normal" />
         </StyleguideSubsectionRow>
 
-        <StyleguideSubsectionRow title="Proxima Nova">
-          <FontExample font="proxima-nova" weight="normal" />
+        <StyleguideSubsectionRow title="Montserrat">
+          <FontExample font="montserrat" weight="normal" />
         </StyleguideSubsectionRow>
       </StyleguideSubsection>
 
@@ -34,20 +34,20 @@ function TypographyPage() {
           <>
             <p>Headings are used for page and section titles.</p>
             <p>
-              All Headings use <b>Orpheus Pro Regular.</b>
+              All Headings use <b>Cormorant Garamond Regular.</b>
             </p>
           </>
         }
       >
-        <TypeStyleSubsectionRow title="Heading 1" size={58} lineHeight={1.2} spacing={0}>
+        <TypeStyleSubsectionRow title="Heading 1" size={67} lineHeight={1.1} spacing={0}>
           <h1>{QUICK_BROWN_FOX}</h1>
         </TypeStyleSubsectionRow>
 
-        <TypeStyleSubsectionRow title="Heading 2" size={42} lineHeight={1.2} spacing={0}>
+        <TypeStyleSubsectionRow title="Heading 2" size={54} lineHeight={1.1} spacing={0}>
           <h2>{QUICK_BROWN_FOX}</h2>
         </TypeStyleSubsectionRow>
 
-        <TypeStyleSubsectionRow title="Heading 3" size={32} lineHeight={1.2} spacing={0}>
+        <TypeStyleSubsectionRow title="Heading 3" size={34} lineHeight={1.1} spacing={0}>
           <h3>{QUICK_BROWN_FOX}</h3>
         </TypeStyleSubsectionRow>
       </StyleguideSubsection>
@@ -64,17 +64,17 @@ function TypographyPage() {
               more details
             </p>{" "}
             <p>
-              All subheadings use <b>Proxima Nova Semibold</b> and are in{" "}
+              All subheadings use <b>Montserrat Semibold</b> and are in{" "}
               <b>all Caps</b>.
             </p>
           </>
         }
       >
-        <TypeStyleSubsectionRow title="Subheading 1" size={16} lineHeight={1.4} spacing={20}>
+        <TypeStyleSubsectionRow title="Subheading 1" size={15} lineHeight={1.4} spacing={20}>
           <h4>{QUICK_BROWN_FOX}</h4>
         </TypeStyleSubsectionRow>
 
-        <TypeStyleSubsectionRow title="Subheading 2" size={14} lineHeight={1.4} spacing={20}>
+        <TypeStyleSubsectionRow title="Subheading 2" size={13} lineHeight={1.4} spacing={20}>
           <h5>{QUICK_BROWN_FOX}</h5>
         </TypeStyleSubsectionRow>
 
@@ -95,7 +95,7 @@ function TypographyPage() {
           </>
         }
       >
-        <TypeStyleSubsectionRow title="Label" size={16} lineHeight={1.4} spacing={80}>
+        <TypeStyleSubsectionRow title="Label" size={15} lineHeight={1.4} spacing={20}>
           <h4>{QUICK_BROWN_FOX}</h4>
         </TypeStyleSubsectionRow>
       </StyleguideSubsection>
@@ -111,7 +111,7 @@ function TypographyPage() {
             </p>
 
             <p>
-              All paragraph text uses <b>Proxima Nova Regular</b>, and occasionally <em>italics</em> and <b>bold</b> for emphasis.
+              All paragraph text uses <b>Montserrat Regular</b>, and occasionally <em>italics</em> and <b>bold</b> for emphasis.
             </p>
           </>
         }

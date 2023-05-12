@@ -101,7 +101,7 @@
 }
 
 .content-section__heading__title {
-  margin-bottom: 0;
+  margin-bottom: get-vm-spacer(1);
 
   &.content-section__heading__title--align-center {
     text-align: center;

@@ -101,15 +101,15 @@ $vm-homepage-banner-height-mobile: 800px;
   }
 
   &.homepage-banner--text-color-dark-alt {
-    color: $vm-color-sea-green;
+    color: $vm-color-black;
 
     .cta-link {
-      color: $vm-color-sea-green;
-      border-color: $vm-color-sea-green;
+      color: $vm-color-black;
+      border-color: $vm-color-black;
 
       &:hover {
-        color: $vm-color-sea-green;
-        border-color: $vm-color-sea-green;
+        color: $vm-color-black;
+        border-color: $vm-color-black;
       }
     }
   }
@@ -224,15 +224,15 @@ $vm-homepage-banner-height-mobile: 800px;
     }
 
     &.homepage-banner--mobile-text-color-dark-alt {
-      color: $vm-color-sea-green;
+      color: $vm-color-black;
 
       .cta-link {
-        color: $vm-color-sea-green;
-        border-color: $vm-color-sea-green;
+        color: $vm-color-black;
+        border-color: $vm-color-black;
 
         &:hover {
-          color: $vm-color-sea-green;
-          border-color: $vm-color-sea-green;
+          color: $vm-color-black;
+          border-color: $vm-color-black;
         }
       }
     }
@@ -250,7 +250,7 @@ $vm-homepage-banner-height-mobile: 800px;
     }
 
     &.homepage-banner--mobile-background-color-dark-alt {
-      background-color: $vm-color-sea-green;
+      background-color: $vm-color-black;
     }
   }
 }
@@ -273,7 +273,7 @@ $vm-homepage-banner-height-mobile: 800px;
   }
 
   &.homepage-banner__block--background-color-dark-alt {
-    background-color: $vm-color-sea-green;
+    background-color: $vm-color-black;
   }
 
   &.homepage-banner__block--mobile {

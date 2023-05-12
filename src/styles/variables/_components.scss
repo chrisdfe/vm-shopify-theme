@@ -3,30 +3,30 @@
 
 // Navbar
 $vm-navbar-background-color: $vm-color-white;
-$vm-navbar-text-color: $vm-color-sea-green;
-$vm-navbar-text-hover-color: $vm-color-sand;
+$vm-navbar-text-color: $vm-color-black;
+$vm-navbar-text-hover-color: $vm-link-hover-color;
 
 // Button
-$vm-button-background-color: $vm-color-sea-green;
+$vm-button-background-color: $vm-color-black;
 $vm-button-border-color: transparent;
 $vm-button-text-color: $vm-color-white;
 
-$vm-button-hover-background-color: rgba($vm-color-sea-green, 0.6);
+$vm-button-hover-background-color: rgba($vm-color-black, 0.6);
 // $vm-button-hover-background-color: $vm-color-sand;
 $vm-button-hover-border-color: transparent;
 $vm-button-hover-text-color: $vm-color-white;
 
 $vm-button-secondary-background-color: transparent;
-$vm-button-secondary-border-color: $vm-color-sea-green;
-$vm-button-secondary-text-color: $vm-color-sea-green;
+$vm-button-secondary-border-color: $vm-color-black;
+$vm-button-secondary-text-color: $vm-color-black;
 
 $vm-button-secondary-hover-background-color: transparent;
-$vm-button-secondary-hover-border-color: $vm-color-sand;
-$vm-button-secondary-hover-text-color: $vm-color-sand;
+$vm-button-secondary-hover-border-color: $vm-link-hover-color;
+$vm-button-secondary-hover-text-color: $vm-link-hover-color;
 
 // Footer
 $vm-footer-background-color: $vm-color-plum;
 $vm-footer-text-color: $vm-color-white;
-$vm-footer-heading-color: $vm-color-sand;
+$vm-footer-heading-color: $vm-color-white;
 $vm-footer-link-color: $vm-color-white;
 $vm-footer-link-hover-color: $vm-color-sand;

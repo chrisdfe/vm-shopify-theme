@@ -6,10 +6,10 @@
 
   .image-card__link {
     transition: all 0.4s;
-    color: $vm-color-sea-green;
+    color: $vm-color-black;
 
     &:hover {
-      color: $vm-color-sand;
+      color: $vm-link-hover-color;
     }
   }
 

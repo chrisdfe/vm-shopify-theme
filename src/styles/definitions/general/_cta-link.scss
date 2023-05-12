@@ -3,6 +3,7 @@
 
 a.cta-link {
   font-weight: $vm-subheading-font-weight;
+  padding-bottom: 5px;
   border-bottom: 2px solid $vm-link-color;
   text-transform: uppercase;
   font-size: $vm-subheading-2-font-size;
@@ -59,8 +60,8 @@ a.cta-link {
   }
 
   &.cta-link--dark-alt {
-    color: $vm-color-sea-green;
-    border-bottom-color: $vm-color-sea-green;
+    color: $vm-color-black;
+    border-bottom-color: $vm-color-black;
 
     &:hover {
       color: $vm-color-sand;

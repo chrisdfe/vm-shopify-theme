@@ -4,7 +4,7 @@ import classNames from "classnames";
 import "./swatch-color.scss";
 
 const getTextColor = (title) =>
-  ["Sea Green", "Plum"].includes(title) ? "white" : "auto";
+  ["Forest Green", "Coffee Bean", "Black"].includes(title) ? "white" : "auto";
 
 const HAS_COPIED_MESSAGE_LENGTH = 1500;
 // This is set the CSS

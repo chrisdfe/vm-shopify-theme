@@ -1,47 +1,46 @@
 {% capture content %}
-<div class="container">
-  <div class="sixteen columns">
+  <div class="container">
+    <div class="sixteen columns">
 
-    {% include "content-section.title" with {
-      title: section.settings.title,
-      heading_align: "center",
-      title_tag: "h4"
-    } %}
+      {% include "content-section.title" with {
+       title: section.settings.title,
+       heading_align: "center",
+       title_tag: "h4"
+       } %}
 
-    <div class="logo-bar">
-      {% for block in section.blocks %}
-        <div class="logo-bar__item" {{ block.shopify_attributes }}>
-          {% if block.settings.link != blank %}
-            <a href="{{ block.settings.link }}" class="logo-bar__link">
-          {% endif %}
+      <div class="logo-bar">
+        {% for block in section.blocks %}
+          <div class="logo-bar__item" {{ block.shopify_attributes }}>
+            {% if block.settings.link != blank %}
+              <a href="{{ block.settings.link }}" class="logo-bar__link">
+              {% endif %}
 
-          {% if block.settings.image != blank %}
-            {% render 'image-element',
-                    image: block.settings.image,
-                    alt: block.settings.image.alt
-            %}
-          {% else %}
-            {{ 'logo' | placeholder_svg_tag: 'placeholder-svg' }}
-          {% endif %}
+              {% if block.settings.image != blank %}
+                {% render 'image-element'
+                 , image: block.settings.image,
+                 alt: block.settings.image.alt %}
+              {% else %}
+                {{ 'logo' | placeholder_svg_tag: 'placeholder-svg' }}
+              {% endif %}
 
-          {% if block.settings.link != blank %}
-            </a>
-          {% endif %}
-        </div>
-      {% endfor %}
+              {% if block.settings.link != blank %}
+              </a>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+
     </div>
-
   </div>
-</div>
 {% endcapture %}
 
 {% include "content-section" with {
-  title: section.settings.title,
-  content: content,
-  color_region: section.settings.color_region,
-  padding_top: section.settings.padding_top,
-  padding_bottom: section.settings.padding_bottom,
-} %}
+ title: section.settings.title,
+ content: content,
+ color_region: section.settings.color_region,
+ padding_top: section.settings.padding_top,
+ padding_bottom: section.settings.padding_bottom,
+ } %}
 
 {% schema %}
   {
@@ -54,8 +53,7 @@
         "id": "title",
         "label": "Heading",
         "default": "Logo list"
-      },
-      {
+      }, {
         "type": "select",
         "id": "color_region",
         "label": "Color Region",
@@ -75,10 +73,12 @@
           {
             "value": "dark-alt",
             "label": "Dark - alternative"
+          }, {
+            "value": "dark-alt-2",
+            "label": "Dark - alternative 2"
           }
         ]
-      },
-      {
+      }, {
         "type": "select",
         "id": "padding_top",
         "label": "Top Padding (in spacing units)",
@@ -98,18 +98,15 @@
           {
             "value": "3",
             "label": "3"
-          },
-          {
+          }, {
             "value": "8",
             "label": "8"
-          },
-          {
+          }, {
             "value": "10",
             "label": "10"
           }
         ]
-      },
-      {
+      }, {
         "type": "select",
         "id": "padding_bottom",
         "label": "Top Padding (in spacing units)",
@@ -129,12 +126,10 @@
           {
             "value": "3",
             "label": "3"
-          },
-          {
+          }, {
             "value": "8",
             "label": "8"
-          },
-          {
+          }, {
             "value": "10",
             "label": "10"
           }
@@ -151,8 +146,7 @@
             "id": "image",
             "label": "Image",
             "info": "400 x 300px recommended"
-          },
-          {
+          }, {
             "type": "url",
             "id": "link",
             "label": "Link"
@@ -167,14 +161,11 @@
         "blocks": [
           {
             "type": "logo_image"
-          },
-          {
+          }, {
             "type": "logo_image"
-          },
-          {
+          }, {
             "type": "logo_image"
-          },
-          {
+          }, {
             "type": "logo_image"
           }
         ]

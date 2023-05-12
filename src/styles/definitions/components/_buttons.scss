@@ -102,7 +102,7 @@ input.action_button[type="button"] {
 
 .button.button--inverted {
   background: $vm-color-white;
-  color: $vm-color-sea-green;
+  color: $vm-color-black;
   border-color: $vm-color-white;
 
   &:hover {
@@ -114,13 +114,13 @@ input.action_button[type="button"] {
 
 .button.button--bare {
   background: transparent;
-  color: $vm-color-sea-green;
+  color: $vm-color-black;
   border: 0 none;
 
   &:hover {
     background-color: $vm-color-white;
     border: 0 none;
-    color: $vm-color-sea-green;
+    color: $vm-color-black;
   }
 }
 

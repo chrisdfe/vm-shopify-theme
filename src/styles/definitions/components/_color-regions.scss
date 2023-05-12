@@ -12,7 +12,8 @@
 }
 
 .color-region--dark,
-.color-region--dark-alt {
+.color-region--dark-alt,
+.color-region--dark-alt-2 {
   color: $vm-color-white;
 
   h1,
@@ -26,12 +27,14 @@
   }
 
   a {
-    color: $vm-color-white;
-  }
-}
+    color: $vm-color-cream;
+    border-color: $vm-color-cream;
 
-.color-region--dark {
-  background-color: $vm-color-black;
+    &:hover {
+      color: rgba($vm-color-cream, 0.7);
+      border-color: rgba($vm-color-cream, 0.7);
+    }
+  }
 
   *::selection {
     color: $vm-color-black;
@@ -39,11 +42,15 @@
   }
 }
 
+.color-region--dark {
+  background-color: $vm-color-black;
+  // background-color: $vm-color-forest-green;
+}
+
 .color-region--dark-alt {
   background-color: $vm-color-forest-green;
+}
 
-  *::selection {
-    color: $vm-color-sea-green;
-    background: $vm-color-cream;
-  }
+.color-region--dark-alt-2 {
+  background-color: $vm-color-coffee-bean;
 }

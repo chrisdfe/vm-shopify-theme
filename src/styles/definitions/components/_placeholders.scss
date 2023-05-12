@@ -1,7 +1,7 @@
 /* Components - Placeholders
 ================================================== */
 
-$color-blankstate: $vm-color-sea-green;
+$color-blankstate: $vm-color-black;
 $color-blankstate-background: $vm-color-cream;
 
 .placeholder-svg {
@@ -20,11 +20,11 @@ $color-blankstate-background: $vm-color-cream;
 .placeholder-svg--video {
   height: 500px;
 
-  @include respond-to('medium') {
+  @include respond-to("medium") {
     height: 350px;
   }
 
-  @include respond-to('small') {
+  @include respond-to("small") {
     height: 250px;
   }
 }

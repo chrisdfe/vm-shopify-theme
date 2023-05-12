@@ -20,14 +20,12 @@
 }
 
 .blog-header {
-
   .blog-title.blog-tags--true {
     float: none;
   }
 
   .blog-title {
-
-    @include respond-to('medium-down') {
+    @include respond-to("medium-down") {
       width: 100%;
       margin-bottom: 0;
     }
@@ -86,7 +84,7 @@ p.meta {
 }
 
 .blog_meta span:after {
-  content: '';
+  content: "";
   position: absolute;
   right: -16px;
   top: 50%;
@@ -115,13 +113,13 @@ p.meta {
   padding-bottom: 25px;
 
   .article__title {
-    @include respond-to('medium-up') {
+    @include respond-to("medium-up") {
       margin-top: 0;
     }
   }
 
   .continue-button {
-    @include respond-to('medium-up') {
+    @include respond-to("medium-up") {
       margin-bottom: 0;
     }
   }
@@ -131,7 +129,7 @@ p.meta {
   margin: 1rem 0 0;
   display: inline-block;
 
-  @include respond-to('medium-down') {
+  @include respond-to("medium-down") {
     margin-top: 0;
   }
 }
@@ -171,7 +169,7 @@ figure {
   figure {
     padding: 0 20%;
 
-    @include respond-to('medium-down') {
+    @include respond-to("medium-down") {
       padding: 0;
     }
   }
@@ -182,7 +180,7 @@ figure {
 }
 
 .article {
-  @include respond-to('medium-down') {
+  @include respond-to("medium-down") {
     margin-bottom: 2rem;
   }
 }
@@ -197,7 +195,7 @@ figure {
   padding-left: 40px;
   padding-right: 40px;
 
-  @include respond-to('medium-down') {
+  @include respond-to("medium-down") {
     width: 100%;
   }
 }
@@ -215,9 +213,9 @@ body.article {
 }
 
 .toggle span {
-  color: $vm-color-sea-green;
+  color: $vm-color-black;
   font-weight: bold;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: smaller;
   float: right;
   display: none;
@@ -264,7 +262,7 @@ body.article {
     margin-right: 15px;
   }
 
-  @include respond-to('medium-down') {
+  @include respond-to("medium-down") {
     width: 100%;
     border-bottom: 1px solid $vm-border-color;
     padding-bottom: 15px;
@@ -287,7 +285,7 @@ body.article {
   width: 38%;
   float: right;
   text-align: right;
-  @include respond-to('medium-down') {
+  @include respond-to("medium-down") {
     width: 100%;
     float: left;
   }

@@ -12,20 +12,24 @@ import ColorRegionExample from "../../lib/ColorRegionExample";
 
 const VM_SWATCH = [
   {
-    title: "Sea Green",
-    hex: "#1c4047",
+    title: "Cool Neutral",
+    hex: "#f4f3f3"
   },
   {
-    title: "Plum",
-    hex: "#714457",
+    title: "Forest Green",
+    hex: "#262f25"
   },
   {
     title: "Sand",
-    hex: "#DEC1A8",
+    hex: "#eacdb4"
   },
   {
-    title: "Cream",
-    hex: "#F8F4F4",
+    title: "Coffee Bean",
+    hex: "#45262b"
+  },
+  {
+    title: "Black",
+    hex: "#16120f"
   },
 ];
 
@@ -49,10 +53,11 @@ function ColorsPieChart() {
         animationDuration={800}
         animationEasing="ease-in-out"
         data={[
-          { title: "Cream", value: 40, color: "#F8F4F4" },
-          { title: "Plum", value: 30, color: "#714457" },
-          { title: "Sea Green", value: 25, color: "#1c4047" },
-          { title: "Sand", value: 5, color: "#DEC1A8" },
+          { title: "Cool Neutral", value: 40, color: "#f4f3f3" },
+          { title: "Forest Green", value: 25, color: "#262f25" },
+          { title: "Sand", value: 5, color: "#eacdb4" },
+          { title: "Coffee Bean", value: 30, color: "#45262b" },
+          { title: "Black", value: 30, color: "#16120f" },
         ]}
       />
     </div>
@@ -70,22 +75,6 @@ function ColorsPage() {
           <StyleguideSubsection number="02a" title="Swatch" sectionId="swatch">
             <StyleguideSubsectionRow title="Primary Colors">
               <StyleguideSwatch colors={VM_SWATCH} />
-            </StyleguideSubsectionRow>
-          </StyleguideSubsection>
-
-          <StyleguideSubsection
-            number="02b"
-            title="Color Shades"
-            sectionId="color-shades"
-          >
-            <StyleguideSubsectionRow title="Plum">
-              <p>TODO</p>
-            </StyleguideSubsectionRow>
-            <StyleguideSubsectionRow title="Sea green">
-              <p>TODO</p>
-            </StyleguideSubsectionRow>
-            <StyleguideSubsectionRow title="Sand">
-              <p>TODO</p>
             </StyleguideSubsectionRow>
           </StyleguideSubsection>
 
@@ -109,9 +98,13 @@ function ColorsPage() {
             <StyleguideSubsectionRow title="Dark - alt">
               <ColorRegionExample region="dark-alt" />
             </StyleguideSubsectionRow>
+
+            <StyleguideSubsectionRow title="Dark - alt 2">
+              <ColorRegionExample region="dark-alt-2" />
+            </StyleguideSubsectionRow>
           </StyleguideSubsection>
 
-          <StyleguideSubsection
+          {/*           <StyleguideSubsection
             number="02d"
             title="Color Ratios"
             sectionId="color-ratios"
@@ -127,7 +120,7 @@ function ColorsPage() {
             >
               <ColorsPieChart />
             </StyleguideSubsectionRow>
-          </StyleguideSubsection>
+          </StyleguideSubsection> */}
         </div>
       </div>
     </StyleguideLayout>

@@ -31,7 +31,7 @@
     padding: get-vm-spacer(0.5) get-vm-spacer(1);
     transition: all 0.2s;
     align-items: center;
-    color: $vm-color-sea-green;
+    color: $vm-color-black;
 
     &:after {
       border-bottom-width: 0;
@@ -102,9 +102,8 @@
       }
 
       &:hover {
-        color: $vm-color-sand;
+        color: $vm-link-hover-color;
       }
     }
   }
-
 }

@@ -14,10 +14,10 @@
   a {
     display: block;
     // padding: 5px 0;
-    color: $vm-color-sea-green;
-    
+    color: $vm-color-black;
+
     &:hover {
-      color: $vm-color-sand;
+      color: $vm-link-hover-color;
     }
   }
 
@@ -31,19 +31,19 @@
   align-items: center;
   justify-content: space-between;
   background: transparent;
-  color: $vm-color-sea-green;
-  fill: $vm-color-sea-green;
+  color: $vm-color-black;
+  fill: $vm-color-black;
   width: 100%;
   text-align: left;
   padding: get-vm-spacer(1.5) get-vm-spacer(1);
-  border-bottom: 1px solid rgba($vm-color-sea-green, 0.4);
+  border-bottom: 1px solid rgba($vm-color-black, 0.4);
 
   // TODO - don't break accessibility
   &:active,
   &:focus {
     background: $vm-color-cream;
-    color: $vm-color-sea-green;
-    border-bottom: 1px solid rgba($vm-color-sea-green, 0.4);
+    color: $vm-color-black;
+    border-bottom: 1px solid rgba($vm-color-black, 0.4);
   }
 }
 
@@ -67,12 +67,11 @@
 .mobile-menu-list-item--nav-link-list {
   li {
     @include vm-paragraph-3();
-    margin: get-vm-spacer(.5) 0;
+    margin: get-vm-spacer(0.5) 0;
   }
 }
 
 .mobile-menu-list-item--image {
-  
   a {
     display: flex;
   }

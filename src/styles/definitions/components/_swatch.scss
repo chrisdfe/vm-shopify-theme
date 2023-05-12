@@ -64,19 +64,19 @@ $select-button-label-size: 34px;
 
     &:checked {
       & + label {
-        border: 1px solid $vm-color-sea-green;
+        border: 1px solid $vm-color-black;
       }
     }
 
     &:focus {
       & + label {
-        box-shadow: 0 0 0 2px rgba($vm-color-sea-green, 0.2);
+        box-shadow: 0 0 0 2px rgba($vm-color-black, 0.2);
       }
     }
   }
 
   label {
-    border: 1px solid rgba($vm-color-sea-green, 0.2);
+    border: 1px solid rgba($vm-color-black, 0.2);
     min-width: $select-button-size;
     min-height: $select-button-size;
     border-radius: 3px;

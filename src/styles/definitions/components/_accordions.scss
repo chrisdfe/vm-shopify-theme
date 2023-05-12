@@ -6,20 +6,20 @@
   align-items: center;
   justify-content: space-between;
   background: transparent;
-  color: $vm-color-sea-green;
-  fill: $vm-color-sea-green;
+  color: $vm-color-black;
+  fill: $vm-color-black;
   width: 100%;
   text-align: left;
   padding: get-vm-spacer(1.5) get-vm-spacer(0.5);
   border: 0 none;
-  border-bottom: 1px solid $vm-color-sea-green;
+  border-bottom: 1px solid $vm-color-black;
 
   &:hover,
   &:active,
   &:focus {
     background: $vm-color-cream;
-    color: $vm-color-sea-green;
-    border-bottom: 1px solid $vm-color-sea-green;
+    color: $vm-color-black;
+    border-bottom: 1px solid $vm-color-black;
   }
 }
 
@@ -36,7 +36,7 @@
     position: absolute;
     display: block;
     width: $arrow-size;
-    // border-bottom: 2px solid $vm-color-sea-green;
+    // border-bottom: 2px solid $vm-color-black;
     height: 2px;
     background: $vm-border-color;
     transition: transform 0.2s;
@@ -81,11 +81,11 @@
 
 .color-region--dark {
   .vm-accordion-button {
-    color: $vm-color-sand;
-    border-bottom-color: $vm-color-sand;
+    color: $vm-color-white;
+    border-bottom-color: $vm-color-white;
 
     .vm-accordion-button__arrow span {
-      background: $vm-color-sand;
+      background: $vm-color-white;
     }
 
     &:hover,

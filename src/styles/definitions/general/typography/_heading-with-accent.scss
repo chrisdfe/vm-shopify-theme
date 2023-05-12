@@ -5,12 +5,12 @@
   position: relative;
 
   &:after {
-    content: '';
+    content: "";
     position: absolute;
-    bottom: -0.5rem;
-    left: 0.25rem;
+    bottom: -1rem;
+    left: 0.5rem;
     display: block;
-    width: 32px;
+    width: 70px;
     border-bottom: 2px solid $vm-heading-accent-color;
   }
 
@@ -29,7 +29,7 @@
     }
   }
 
-  @include respond-to('small-down') {
+  @include respond-to("small-down") {
     &.heading--with-accent--mobile-align-left {
       text-align: left;
 
@@ -53,6 +53,6 @@
 // .color-region--dark,
 // .color-region--dark-alt {
 //   .heading--with-accent:after {
-//     border-color: $vm-color-white;   
+//     border-color: $vm-color-white;
 //   }
 // }

@@ -130,7 +130,7 @@
 
   &:hover,
   &.is-active {
-    border-color: $vm-color-sea-green;
+    border-color: $vm-color-black;
   }
 }
 
@@ -211,14 +211,14 @@
   $size: 8px;
   width: $size;
   height: $size;
-  background-color: rgba($vm-color-sea-green, 0.2);
+  background-color: rgba($vm-color-black, 0.2);
   border-radius: 50%;
   margin: 0 5px;
   transition: background-color 0.2s;
 
   &:hover,
   &.is-active {
-    background-color: $vm-color-sea-green;
+    background-color: $vm-color-black;
   }
 }
 
@@ -326,8 +326,8 @@
   @include vm-subheading-3();
   background: transparent;
   border: 0 none;
-  border-bottom: 2px solid rgba($vm-color-sea-green, 0.2);
-  color: $vm-color-sea-green;
+  border-bottom: 2px solid rgba($vm-color-black, 0.2);
+  color: $vm-color-black;
   padding-left: get-vm-spacer(0.5);
   padding-right: get-vm-spacer(0.5);
   flex-grow: 1;
@@ -335,8 +335,8 @@
   &:hover,
   &.is-active {
     background: transparent;
-    border-bottom-color: $vm-color-sea-green;
-    color: $vm-color-sea-green;
+    border-bottom-color: $vm-color-black;
+    color: $vm-color-black;
   }
 }
 
@@ -499,7 +499,7 @@
 }
 
 .smart-payment-button--true button .checkmark path {
-  stroke: $vm-color-sea-green;
+  stroke: $vm-color-black;
 }
 
 .smart-payment-button--false .purchase-details {

@@ -6,138 +6,131 @@
 {% include 'include-featured-collection' %}
 
 {% schema %}
-{
-  "name": "Featured collection",
-  "class": "featured-collection-section",
-  "settings": [
-    {
-      "type": "text",
-      "id": "title",
-      "label": "Heading",
-      "default": "Featured collection"
-    },
-    {
-      "type": "text",
-      "id": "title_cta_text",
-      "label": "Title CTA Text",
-      "default": "Shop Now"
-    },
-    {
-      "type": "collection",
-      "id": "collection",
-      "label": "Collection"
-    },
-    {
-      "type": "header",
-      "content": "Products"
-    },
-    {
-      "type": "range",
-      "id": "products_per",
-      "label": "Products per row",
-      "min": 2,
-      "max": 7,
-      "step": 1,
-      "default": 3
-    },
-    {
-      "type": "range",
-      "id": "products_limit",
-      "label": "Limit products",
-      "min": 2,
-      "max": 50,
-      "step": 1,
-      "default": 9
-    },
-    {
-      "type": "header",
-      "content": "Content Section Settings"
-    },
-    {
-      "type": "select",
-      "id": "color_region",
-      "label": "Color Region",
-      "options": [
-        {
-          "value": "light",
-          "label": "Light"
-        },
-        {
-          "value": "light-alt",
-          "label": "Light - alternative"
-        },
-        {
-          "value": "dark",
-          "label": "Dark"
-        },
-        {
-          "value": "dark-alt",
-          "label": "Dark - alternative"
-        }
-      ]
-    },
-    {
-      "type": "select",
-      "id": "padding_top",
-      "label": "Top Padding (in spacing units)",
-      "options": [
-        {
-          "value": "default",
-          "label": "Default (5)"
-        },
-        {
-          "value": "0",
-          "label": "0"
-        },
-        {
-          "value": "2",
-          "label": "2"
-        },
-        {
-          "value": "3",
-          "label": "3"
-        },
-        {
-          "value": "8",
-          "label": "8"
-        },
-        {
-          "value": "10",
-          "label": "10"
-        }
-      ]
-    },
-    {
-      "type": "select",
-      "id": "padding_bottom",
-      "label": "Bottom Padding (in spacing units)",
-      "options": [
-        {
-          "value": "default",
-          "label": "Default (5)"
-        },
-        {
-          "value": "0",
-          "label": "0"
-        },
-        {
-          "value": "2",
-          "label": "2"
-        },
-        {
-          "value": "3",
-          "label": "3"
-        },
-        {
-          "value": "8",
-          "label": "8"
-        },
-        {
-          "value": "10",
-          "label": "10"
-        }
-      ]
-    }
-  ]
-}
+  {
+    "name": "Featured collection",
+    "class": "featured-collection-section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Featured collection"
+      },
+      {
+        "type": "text",
+        "id": "title_cta_text",
+        "label": "Title CTA Text",
+        "default": "Shop Now"
+      },
+      {
+        "type": "collection",
+        "id": "collection",
+        "label": "Collection"
+      },
+      {
+        "type": "header",
+        "content": "Products"
+      }, {
+        "type": "range",
+        "id": "products_per",
+        "label": "Products per row",
+        "min": 2,
+        "max": 7,
+        "step": 1,
+        "default": 3
+      }, {
+        "type": "range",
+        "id": "products_limit",
+        "label": "Limit products",
+        "min": 2,
+        "max": 50,
+        "step": 1,
+        "default": 9
+      }, {
+        "type": "header",
+        "content": "Content Section Settings"
+      }, {
+        "type": "select",
+        "id": "color_region",
+        "label": "Color Region",
+        "options": [
+          {
+            "value": "light",
+            "label": "Light"
+          },
+          {
+            "value": "light-alt",
+            "label": "Light - alternative"
+          },
+          {
+            "value": "dark",
+            "label": "Dark"
+          },
+          {
+            "value": "dark-alt",
+            "label": "Dark - alternative"
+          }, {
+            "value": "dark-alt-2",
+            "label": "Dark - alternative 2"
+          }
+        ]
+      }, {
+        "type": "select",
+        "id": "padding_top",
+        "label": "Top Padding (in spacing units)",
+        "options": [
+          {
+            "value": "default",
+            "label": "Default (5)"
+          },
+          {
+            "value": "0",
+            "label": "0"
+          },
+          {
+            "value": "2",
+            "label": "2"
+          },
+          {
+            "value": "3",
+            "label": "3"
+          }, {
+            "value": "8",
+            "label": "8"
+          }, {
+            "value": "10",
+            "label": "10"
+          }
+        ]
+      }, {
+        "type": "select",
+        "id": "padding_bottom",
+        "label": "Bottom Padding (in spacing units)",
+        "options": [
+          {
+            "value": "default",
+            "label": "Default (5)"
+          },
+          {
+            "value": "0",
+            "label": "0"
+          },
+          {
+            "value": "2",
+            "label": "2"
+          },
+          {
+            "value": "3",
+            "label": "3"
+          }, {
+            "value": "8",
+            "label": "8"
+          }, {
+            "value": "10",
+            "label": "10"
+          }
+        ]
+      }
+    ]
+  }
 {% endschema %}

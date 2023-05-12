@@ -5,15 +5,15 @@ import "./color-region-example.scss";
 
 interface Props {
   region: string,
-  children?: ReactNode
+  children?: ReactNode;
 }
 
 const CLASSNAME_BASE = "vm-styleguide__color-region-example";
 
 const DefaultContent = () => (
   <div>
-    <h2>Heading 2</h2>
-    <h4>heading 4</h4>
+    <h2 style={{ marginBottom: "1rem" }}>Heading 2</h2>
+    <h4 style={{ marginBottom: "1rem" }}>heading 4</h4>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
@@ -33,7 +33,7 @@ const DefaultContent = () => (
     >
       cta link
     </a>
-  </div>
+  </div >
 );
 
 

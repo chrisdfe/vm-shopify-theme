@@ -1,9 +1,9 @@
 /* Variables - Colors
 ================================================== */
 
-// $vm-color-sea-green: #1c4747;
-$vm-color-sea-green: #1c4747;
-// $vm-color-sea-green: #1c4047;
+// $vm-color-black: #1c4747;
+$vm-color-black: #1c4747;
+// $vm-color-black: #1c4047;
 
 // $vm-color-plum: #714457;
 // $vm-color-plum: #7c3a4c;
@@ -16,24 +16,35 @@ $vm-color-plum: #45262b;
 // $vm-color-sand: #daa676;
 
 // $vm-color-sand: #e9b791;
-$vm-color-sand: #e8a37e;
+// $vm-color-sand: #e8a37e;
+// $vm-color-sand: #f5ddc7;
+// $vm-color-sand: #f0d8c8;
+$vm-color-sand: #eacdb4;
+// $vm-color-sand: #d5bea7;
 
 // $vm-color-cream: #f8f4f4;
 // $vm-color-cream: #faf6f4;
 // $vm-color-cream: #faf6f4;
 // $vm-color-cream: #fff8f3;
 // $vm-color-cream: #f4fafd;
-$vm-color-cream: #fbfbfa;
+// $vm-color-cream: #fbfbfa;
+$vm-color-cream: #f4f3f3;
+// $vm-color-cream: #f9f1ec;
 // $vm-color-cream: #dee1e1;
+// $vm-color-cool-fog: #f4f3f3;
 
 $vm-color-forest-green: #262f25;
+$vm-color-coffee-bean: #45262b;
 
 // $vm-color-white: #ffffff;
 $vm-color-white: #fff;
-$vm-color-black: #111;
+// $vm-color-black: #111;
+// $vm-color-black: #211911;
+
+$vm-color-black: #16120f;
 
 :root {
-  --vm-color-sea-green: #{$vm-color-sea-green};
+  --vm-color-black: #{$vm-color-black};
   --vm-color-plum: #{$vm-color-plum};
   --vm-color-sand: #{$vm-color-sand};
   --vm-color-cream: #{$vm-color-cream};

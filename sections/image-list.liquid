@@ -11,79 +11,76 @@
 {% endif %}
 
 {% capture content %}
-<section class="image-list">
-  
-  {% if section.settings.title != blank %}
-    <div class="container">
-      <div class="row">
-        <div class="sixteen columns">
-          {% include "content-section.title" with {
-            title: section.settings.title,
-          } %}
+  <section class="image-list">
+
+    {% if section.settings.title != blank %}
+      <div class="container">
+        <div class="row">
+          <div class="sixteen columns">
+            {% include "content-section.title" with {
+             title: section.settings.title,
+             } %}
+          </div>
         </div>
       </div>
+    {% endif %}
+
+    <div class="container">
+      <div class="row">
+
+        {% for block in section.blocks %}
+          {% if block.type == 'content-image' and block.settings.show_section %}
+            <div class="{{ column_class }} columns medium-down--one-whole">
+              {% capture image_card_content %}
+                <p class="paragraph-2">
+                  {{ block.settings.icon_subtext | strip_html }}
+                </p>
+              {% endcapture %}
+
+              {% render "image-card" with {
+               title: block.settings.title,
+               card_content: image_card_content,
+               modifier_classes: "desktop-no-margin",
+               extra_classes: "image-list__item"
+               } %}
+            </div>
+          {% endif %}
+        {% endfor %}
+
+      </div>
     </div>
-  {% endif %}
 
-  <div class="container">
-    <div class="row">
-
-      {% for block in section.blocks %} 
-        {% if block.type == 'content-image' and block.settings.show_section %}
-          <div class="{{ column_class }} columns medium-down--one-whole">
-            {% capture image_card_content %}
-              <p class="paragraph-2">
-                {{ block.settings.icon_subtext | strip_html }}
-              </p>
-            {% endcapture %}
-
-            {% render "image-card" with {
-              title: block.settings.title,
-              card_content: image_card_content,
-              modifier_classes: "desktop-no-margin",
-              extra_classes: "image-list__item"
-            } %}
-          </div>
-        {% endif %}
-      {% endfor %}
-
-    </div>
-  </div>
-
-</section>
+  </section>
 {% endcapture %}
 
 {% unless template.name != "index" and section.settings.hide_section_list == true %}
   {% include "content-section" with {
-    title: section.settings.title,
-    with_accent: true,
-    content: content,
-    image: section.settings.image,
-    color_region: section.settings.color_region,
-  } %}
+   title: section.settings.title,
+   with_accent: true,
+   content: content,
+   image: section.settings.image,
+   color_region: section.settings.color_region,
+   } %}
 {% endunless %}
 
 {% schema %}
   {
-      "name": "Image List",
-      "settings": [
+    "name": "Image List",
+    "settings": [
       {
         "type": "checkbox",
         "id": "hide_section_list",
         "default": true,
         "label": "Hide On Product Pages"
-      },
-      {
-      "type": "text",
-      "id": "title",
-      "label": "Heading",
-      "default": "Image List Header"
-      },
-      {
+      }, {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Image List Header"
+      }, {
         "type": "header",
         "content": "Color Settings"
-      },
-      {
+      }, {
         "type": "select",
         "id": "color_region",
         "label": "Color Region",
@@ -103,54 +100,55 @@
           {
             "value": "dark-alt",
             "label": "Dark - alternative"
+          }, {
+            "value": "dark-alt-2",
+            "label": "Dark - alternative 2"
           }
         ]
       }
     ],
 
-  "blocks": [
-	{
-      "type": "content-image",
-      "name": "Image Item",
-      "settings": [
-        {
-           "type": "checkbox",
-           "id": "show_section",
-           "default": true,
-           "label": "Display This Image"
-        },
-        {
-          "id": "image_option",
-          "type": "image_picker",
-          "label": "Image"
-        },
-        {
-          "type": "text",
-          "id": "title",
-          "label": "Title Text"
-        },
-        {
-          "type": "richtext",
-          "id": "icon_subtext",
-          "label": "Sub-Heading"
-		}
-      ]}
-],
+    "blocks": [
+      {
+        "type": "content-image",
+        "name": "Image Item",
+        "settings": [
+          {
+            "type": "checkbox",
+            "id": "show_section",
+            "default": true,
+            "label": "Display This Image"
+          }, {
+            "id": "image_option",
+            "type": "image_picker",
+            "label": "Image"
+          }, {
+            "type": "text",
+            "id": "title",
+            "label": "Title Text"
+          }, {
+            "type": "richtext",
+            "id": "icon_subtext",
+            "label": "Sub-Heading"
+          }
+        ]
+      }
+    ],
 
-    "presets": [{
+    "presets": [
+      {
         "name": "Image List",
         "category": "Content",
         "blocks": [
           {
             "type": "content-image"
-          },
-          {
+          }, {
             "type": "content-image"
-          },
-          {
+          }, {
             "type": "content-image"
           }
-		  ]
-    }]
+        ]
+      }
+    ]
   }
 {% endschema %}
