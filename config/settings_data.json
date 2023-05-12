@@ -739,7 +739,7 @@
           "blog_date": false,
           "blog_comment_count": false,
           "read_more_link": true,
-          "color_region": "dark",
+          "color_region": "dark-alt-2",
           "padding_top": "default",
           "padding_bottom": "3"
         }
@@ -3336,7 +3336,7 @@
           "cta_link": "shopify:\/\/pages\/our-story",
           "image_position": "right",
           "is_full_width": false,
-          "color_region": "dark",
+          "color_region": "dark-alt",
           "padding_top": "3",
           "padding_bottom": "3"
         }
