@@ -224,7 +224,7 @@
     "linkedin_link": "",
     "email_link": "hello@valeriemadison.com",
     "og_image_fallback": "shopify:\/\/shop_images\/Shopify-preview-sapphire-rings.jpg",
-    "favicon": "shopify:\/\/shop_images\/VM-plum-favicon-white.png",
+    "favicon": "shopify:\/\/shop_images\/Favicon-circle-Black.png",
     "disqus_enabled": false,
     "disqus_shortname": "",
     "checkout_header_image": "",
@@ -357,9 +357,9 @@
           "738b4509-cd54-4656-8443-5b3e8aa4baae"
         ],
         "settings": {
-          "promo_text": "<p>Order by May 9th for delivery by Mother's Day - Shop our <a href=\"https:\/\/www.valeriemadison.com\/pages\/mothers-day-gift-guide\" target=\"_blank\" title=\"https:\/\/www.valeriemadison.com\/pages\/mothers-day-gift-guide\">gift guide<\/a> <\/p>",
-          "logo": "shopify:\/\/shop_images\/Diamond-Logo.png",
-          "logo_mobile": "shopify:\/\/shop_images\/mobile-logo-seagreen_256x256_79182b2b-7668-4862-8b08-f67f60755daf.png",
+          "promo_text": "<p>Our <a href=\"\/collections\/wedding-bands\" title=\"Wedding Bands\">wedding band event<\/a> ends tonight at 11:59PM PST🤍 Receive 20% off automatically at checkout   <\/p>",
+          "logo": "shopify:\/\/shop_images\/logo_aead7f46-8d1f-481e-b5fd-29ae8e742601.png",
+          "logo_mobile": "shopify:\/\/shop_images\/logo_-_small_f12cff23-1a29-4d2c-be73-a924d821d939.png",
           "show_locale_selector": true,
           "show_currency_selector": true
         }
@@ -1401,7 +1401,7 @@
           "68ee30c7-41af-46f8-878c-4e74d845fa6d": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/Tapered_Hoops.jpg",
+              "image": "shopify:\/\/shop_images\/1E2B6363-AA50-4738-B6C7-FE15883F74ED_1_105_c.jpg",
               "url": "https:\/\/www.valeriemadison.com\/collections\/fine-jewelry\/earrings",
               "cta_text": "Earrings",
               "cta_subtext": "Studs, Hoops, and Dangles",
@@ -1494,7 +1494,7 @@
           "f05e510c-26f7-45d8-a71a-7e639a4d8cb4": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/2D23CECB-0348-4AB6-8A43-338A2BBECFFF_1_105_c.jpg",
+              "image": "shopify:\/\/shop_images\/2D23CECB-0348-4AB6-8A43-338A2BBECFFF_1_105_c_66809a59-2d25-4dc3-80d8-779a83d3c6fb.jpg",
               "url": "https:\/\/calendly.com\/valeriemadison",
               "cta_text": "Schedule an appointment",
               "cta_subtext": "",
@@ -1842,8 +1842,8 @@
           "enable_qty": false,
           "enable_ring_size": true,
           "include_quarter_sizes": true,
-          "minimum_ring_size": "4",
-          "maximum_ring_size": "9",
+          "minimum_ring_size": "3",
+          "maximum_ring_size": "14",
           "collection1": "diamond-rings",
           "collection2": "engagement-rings",
           "enable_prong_style": true,
@@ -1870,23 +1870,23 @@
       "404-template": {
         "type": "404-template",
         "blocks": {
-          "1594498186999": {
-            "type": "content-image",
-            "settings": {
-              "show_section": true,
-              "image_option": "shopify:\/\/shop_images\/Purple_Umbra_Bella_and_Salt_and_Pepper_Cushion_Luna_2.jpg",
-              "image_link": "shopify:\/\/collections\/engagement-rings",
-              "title": "Engagement Rings",
-              "icon_subtext": ""
-            }
-          },
           "1594498217532": {
             "type": "content-image",
             "settings": {
               "show_section": true,
-              "image_option": "shopify:\/\/shop_images\/Wedding_Bands_1.jpg",
+              "image_option": "shopify:\/\/shop_images\/42DFC80A-0E2E-4F03-A5A1-F19E6D41A8C4_1_201_a.jpg",
               "image_link": "shopify:\/\/collections\/wedding-bands",
               "title": "Wedding Bands",
+              "icon_subtext": ""
+            }
+          },
+          "1594498186999": {
+            "type": "content-image",
+            "settings": {
+              "show_section": true,
+              "image_option": "shopify:\/\/shop_images\/Shopify-light-blue-sapphire-rings-1x1_35c92531-9e1a-422b-8a71-732eb40b9c69.jpg",
+              "image_link": "shopify:\/\/collections\/engagement-rings",
+              "title": "Engagement Rings",
               "icon_subtext": ""
             }
           },
@@ -1894,7 +1894,7 @@
             "type": "content-image",
             "settings": {
               "show_section": true,
-              "image_option": "shopify:\/\/shop_images\/GoldMonsteraDangleEarrings_2000x_c74f8c5a-040f-480d-9b71-f78498500e79.jpg",
+              "image_option": "shopify:\/\/shop_images\/Pearl_Chain_Drop_Earrings_5_1x1_a70129fb-59c5-4569-b83a-fbdc175df1b3.jpg",
               "image_link": "shopify:\/\/collections\/earrings",
               "title": "Earrings",
               "icon_subtext": ""
@@ -1902,8 +1902,8 @@
           }
         },
         "block_order": [
-          "1594498186999",
           "1594498217532",
+          "1594498186999",
           "1594498241887"
         ],
         "settings": {
@@ -3204,7 +3204,7 @@
           "title": "Visit Our Store",
           "content": "<p>Walk-ins welcome! We have a variety of everyday fine jewelry, wedding bands, engagement rings, and lovely gifts available in store available for you to browse!<\/p><p>We recommend booking an appointment if you are seeking an Engagement Ring or Wedding Band(s) so our team can be available to assist you - book one (or two) below! <\/p>",
           "address": "<p>1422 34th Ave<br\/>Seattle, WA 98122<\/p>",
-          "store_hours": "<p>Thursday <strong>12pm-6pm<br\/><\/strong>Friday <strong>12pm-6pm<\/strong><br\/>Saturday <strong>10am-4pm<\/strong><\/p>",
+          "store_hours": "<p>Wednesday <strong>12pm-6pm<\/strong><br\/>Thursday <strong>12pm-6pm<br\/><\/strong>Friday <strong>12pm-6pm<\/strong><br\/>Saturday <strong>10am-4pm<\/strong><\/p>",
           "parking_directions": "<p>There is limited free street parking.<\/p>",
           "calendly_embed": "<!-- Calendly inline widget begin -->\n<div class=\"calendly-inline-widget\" data-url=\"https:\/\/calendly.com\/valeriemadison?text_color=1c4047&amp;primary_color=714457\" style=\"min-width:320px;height:630px;\"><\/div>\n<script type=\"text\/javascript\" src=\"https:\/\/assets.calendly.com\/assets\/external\/widget.js\" async><\/script>\n<!-- Calendly inline widget end -->",
           "map_image": "shopify:\/\/shop_images\/illustrations_map_-_wide_357bb6ce-a3d7-4bfc-a229-2581a31e345d.png",
@@ -3296,15 +3296,14 @@
           "f4931910-5f58-4686-ba42-235d1b8aa9e0": {
             "type": "background_block",
             "settings": {
-              "background_color": "light",
-              "banner_image_desktop": "shopify:\/\/shop_images\/3182CDB1-27A1-462F-9C0B-D9FAFEE657D5_1_105_c.jpg"
+              "background_color": "light"
             }
           },
           "e3b103f6-9329-4e07-9674-27d5b318147c": {
             "type": "background_block",
             "settings": {
               "background_color": "light",
-              "banner_image_desktop": "shopify:\/\/shop_images\/Multi-Product-Shot-Pearl-earrings-celestial-band-1x1.jpg"
+              "banner_image_desktop": "shopify:\/\/shop_images\/Vera_-_Mesa_Bands_-_Paloma_-_Wavy_Band_-_SODO-Studio-Shoot-Aug-2nd-2022-1763-val-edited.jpg"
             }
           }
         },
@@ -3314,14 +3313,14 @@
         ],
         "settings": {
           "banner_wrapper_background_color": "light-alt",
-          "pretext": "Gift the best",
-          "heading": "For Mom",
-          "cta_link": "shopify:\/\/collections\/new-arrivals",
-          "cta_text": "",
-          "text_position": "center",
+          "pretext": "Last day to save",
+          "heading": "20% off Wedding Bands ends Tonight",
+          "cta_link": "shopify:\/\/collections\/wedding-bands",
+          "cta_text": "Shop now",
+          "text_position": "left-block",
           "text_align": "center",
-          "text_color": "light",
-          "banner_image_mobile": "shopify:\/\/shop_images\/3182CDB1-27A1-462F-9C0B-D9FAFEE657D5_1_105_c.jpg",
+          "text_color": "dark-alt",
+          "banner_image_mobile": "shopify:\/\/shop_images\/Vera_-_Mesa_Bands_-_Paloma_-_Wavy_Band_-_SODO-Studio-Shoot-Aug-2nd-2022-1763-val-edited.jpg",
           "text_color_mobile": "dark",
           "content_background_color_mobile": "light"
         }
@@ -3906,27 +3905,26 @@
         "type": "image-with-text",
         "disabled": true,
         "settings": {
-          "image": "shopify:\/\/shop_images\/1000px-Eternity-bracelets-and-dua-band-and-crescent-band.jpg",
-          "title": "<em>New<\/em> Eternity Bracelets dates",
-          "text": "<p>Get a solid 14K gold chain permanently welded onto your wrist. These claspless bracelets are so chic and minimalist. Treat yourself or bring someone special to enjoy this experience together in our Seattle store. Prices start at $100.<\/p>",
-          "cta_text": "See the upcoming dates",
-          "cta_link": "https:\/\/www.valeriemadison.com\/pages\/eternity-bracelets",
+          "image": "shopify:\/\/shop_images\/BA171810-60DC-44A2-AEB8-39F6023A648C_1_105_c_966d0b39-4938-497e-a3d3-dade23d34fde.jpg",
+          "title": "This week: White Space Trunk Show",
+          "text": "<p>Valerie Madison Jewelry is proud to host White Space Jewelry this June 15 - 17th! Click <a href=\"https:\/\/docs.google.com\/forms\/d\/1CU3mHqQHENc1bR_1mlLRQe05S_v66Hf6UcrKrOUHv88\/edit\" target=\"_blank\">here <\/a>to RSVP for our Trunk Show Welcome Party Friday, 6\/16 from 3-6pm and check out the weekend's schedule below. Attendees who RSVP will receive a special, limited quantity pearl-themed gift upon arrival!<\/p>",
+          "cta_text": "Find out more",
+          "cta_link": "https:\/\/www.valeriemadison.com\/pages\/upcoming-events",
           "image_position": "left",
           "is_full_width": false,
-          "color_region": "light",
+          "color_region": "dark",
           "padding_top": "default",
           "padding_bottom": "default"
         }
       },
       "1638989716bc82a38f": {
         "type": "featured-collection",
-        "disabled": true,
         "settings": {
-          "title": "Make it your own",
+          "title": "Hot off the Bench",
           "title_cta_text": "shop now",
-          "collection": "create-your-own-diamond-or-gemstone-ring",
+          "collection": "new-arrivals",
           "products_per": 3,
-          "products_limit": 9,
+          "products_limit": 6,
           "color_region": "light-alt",
           "padding_top": "2",
           "padding_bottom": "2"
@@ -4027,11 +4025,11 @@
       "248d60fd-46ce-4c6d-ba0d-67827f7be966": {
         "type": "image-with-text",
         "settings": {
-          "image": "shopify:\/\/shop_images\/4_e9cb0bc5-2a26-4e02-a6d7-2e1bcf2f58e9.jpg",
-          "title": "You're all set! View our timeless wedding trio.",
-          "text": "<p>We've created this modern and one-of-a-kind engagement ring stack, complete with upper and lower band. Sold as a complete set, or customize your pairing. <\/p>",
-          "cta_text": "Shop Now",
-          "cta_link": "https:\/\/www.valeriemadison.com\/collections\/engagement-rings\/products\/2-18ct-zara-pink-sapphire-engagement-stack",
+          "image": "shopify:\/\/shop_images\/Astrid-Hex-diamond-stack-4_1.jpg",
+          "title": "You're all set! View our timeless wedding trios.",
+          "text": "<p>We've created modern and one-of-a-kind engagement ring stacks, complete with upper and lower band. Sold as a complete set, or customize your pairing. <\/p>",
+          "cta_text": "Shop Wedding Stacks",
+          "cta_link": "https:\/\/www.valeriemadison.com\/collections\/engagement-rings\/%23bundle",
           "image_position": "left",
           "is_full_width": false,
           "color_region": "light",
@@ -4042,9 +4040,9 @@
     },
     "content_for_index": [
       "1629483439e1253581",
-      "248d60fd-46ce-4c6d-ba0d-67827f7be966",
-      "1638989716bc82a38f",
       "163546741951c79e41",
+      "1638989716bc82a38f",
+      "248d60fd-46ce-4c6d-ba0d-67827f7be966",
       "1619300542332dabf8",
       "1630687320cad1aa82",
       "15e8d727-aa7d-4097-be61-acd4ade45747",
