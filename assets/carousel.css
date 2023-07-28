@@ -1,0 +1,122 @@
+.carousel img{
+  max-width: 100%;
+  margin: auto;
+}
+
+.product-card a{
+      box-shadow: none;
+    outline: none;
+    border: none;
+}
+
+.desktop{
+  display: flex;
+}
+
+.mobile{
+  display: none;
+}
+
+
+.owl-nav button{
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+   display: none !important;
+}
+
+.owl-carousel{
+  margin-top: 20px;
+}
+.owl-carousel:hover .owl-nav button{
+  display: block !important;
+}
+
+.owl-carousel:hover .owl-nav .owl-next span{
+     display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    text-align: center;
+    width: 100%;
+    margin-left: 1px;
+   margin-top:-2px;
+
+}
+
+.owl-carousel .product-card .product-card__media picture{
+      border: none;
+    box-shadow: none;
+    outline: none;
+}
+
+.owl-carousel:hover .owl-nav .owl-prev span{
+     display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    text-align: center;
+    width: 100%;
+    margin-right: 1px;
+   margin-top:-2px;
+
+}
+
+*:focus-visible {
+    outline: none !important;
+}
+
+.owl-nav button{
+  background-color: white;
+      width: 42px;
+    background: black !important;
+    color: white !important;
+    font-size: 34px !important;
+    height: 40px;
+  border-radius: 50% !important;
+  padding: 14px !important;
+}
+
+.owl-nav .owl-next{
+  right: 20px !important;
+}
+
+.owl-nav .owl-prev{
+  left: 20px !important;
+}
+
+.footer_content p{
+  margin-bottom: 8px;
+}
+
+.header-desktop .header-desktop__nav-link{
+     text-transform: uppercase;
+}
+
+@media screen and (max-width: 480px) {
+ .owl-carousel .product-card__info{
+   display: none;
+ }
+
+  .desktop{
+  display: none;
+}
+
+.mobile{
+  display: block;
+}
+
+ .owl-carousel .product-card__media__secondary{
+   display: none !important;
+ }
+
+  .owl-carousel .product-card__media__primary{
+     opacity: 1 !important;
+  }
+
+.owl-carousel:hover .owl-nav button{
+  display: none !important;
+}
+}

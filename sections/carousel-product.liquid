@@ -1,0 +1,78 @@
+   {{ 'carousel.css' | asset_url | stylesheet_tag }}
+
+<section class="wrapper  u-padding-top-2
+    u-padding-bottom-2">
+  <div class="container">
+   <div class="content-section__heading__title-wrapper desktop"> 
+      <h2 class="content-section__heading__title">{{ section.settings.title }}</h2>
+      <a class="content-section__heading__title-link cta-link cta-link--body-text" href="{{ section.settings.collection.url }}">Shop Now</a>
+    </div>
+    <div class="content-section__heading__title-wrapper mobile"> 
+     
+      <a class="content-section__heading__title-link cta-link cta-link--body-text" href="{{ section.settings.collection.url }}"> <h2 class="content-section__heading__title">{{ section.settings.title }}</h2></a>
+    </div>
+    <div class="owl-carousel owl-theme">
+      {% for product in section.settings.collection.products limit : 10 %}
+     {% render 'product.card',
+                product: product,
+                collection_group_thumb: collection_group_thumb,
+                collection_group_mobile: collection_group_mobile,
+                image_loading: current_image_loading
+              %}
+    {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Carousel Product",
+    "settings": [	
+        {
+			"type" : "collection",
+			"id" : "collection",
+			"label" : "Collection"
+		},
+       {
+			"type" : "text",
+			"id" : "title",
+			"label" : "Title"
+		}
+  ],
+   "presets": [
+      {
+          "name" : "Carousel Product"
+      }
+	]
+  }
+{% endschema %}
+<link href="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+<link href="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/assets/owl.theme.default.min.css" rel="stylesheet">
+<script src="https://owlcarousel2.github.io/OwlCarousel2/assets/vendors/jquery.min.js"></script>
+ <script src="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/owl.carousel.js">
+   </script>
+<script>
+
+var owl = $('.owl-carousel');
+owl.owlCarousel({
+    items:4, 
+    loop:true,
+    margin:10,
+    autoplay:false,
+    nav:true,
+    dots: false,
+    responsive:{
+          0:{
+              items:3,
+            autoplay:false,
+          },
+          600:{
+              items:3
+          },
+          1000:{
+              items:4
+          }
+      }
+});
+
+</script>

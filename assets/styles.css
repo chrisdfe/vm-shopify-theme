@@ -650,6 +650,15 @@ a.cta-link.cta-link--body-text:hover {
   flex-basis: 66.6666666667%;
 }
 
+.icon-account{
+      stroke-width: var(--icon-weight);
+    height: 1rem;
+    width: 1rem;
+    fill: none;
+    vertical-align: middle;
+    transition: transform var(--duration-default) ease;
+    will-change: transform;
+}
 /* Fourths */
 .one-fourth {
   max-width: 25%;

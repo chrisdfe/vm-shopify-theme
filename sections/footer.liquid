@@ -168,15 +168,26 @@
             </div>
           {% elsif block.type == 'text' %}
             <div class="footer_content footer-text {% if block.settings.title == blank %}no-footer-title{% endif %}">
-              {% if block.settings.title != blank %}
-                <h6>{{ block.settings.title }}<span class="right icon-down-arrow"></span></h6>
-              {% endif %}
-
-              {% if block.settings.content %}
-                <div class="toggle_content">
-                  {{ block.settings.content }}
-                </div>
-              {% endif %}
+                <!-- mobile -->
+              <div class="u-hidden-medium-up">
+                {% assign accordion_id = block.settings.title | handleize  %}
+                
+                {% render "accordion.button" with {
+                  title: block.settings.title,
+                  accordion_id: accordion_id
+                } %}
+                
+                {% render "accordion.content" with {
+                  content : block.settings.content,
+                  accordion_id: accordion_id
+                } %}
+              </div>
+              
+              <!-- desktop -->
+              <div class="u-hidden-medium-down">
+                <h6>{{ block.settings.title }}</h6>
+                {{ block.settings.content }}
+              </div>
             </div>
           {% elsif block.type == 'page' %}
             <div class="footer_content footer-text">
