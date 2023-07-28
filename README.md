@@ -7,13 +7,14 @@
 
 ## Getting started
 
-1. After installing the required node, yarn, and themekit you'll need to run `yarn install` to install node dependencies. After that you should be good to go.
-2. Whenever starting on a new theme, this is the process:
+After installing the required node, yarn, and themekit you'll need to run `yarn install` to install node dependencies. After that you should be good to go.
+
+Whenever starting on a new theme, this is the process:
   1) create a new theme in the shopify UI.
   2) In your terminal, run `theme get --list` to get a list of all current themes. You should see your new theme in the list. It should look like this:
   `[120288542774] my new theme I just made`
   copy the number between the `[` and `]`. That is the `themeId`.
-  3) `theme get -t {themeId}` to switch  
+  3) `theme get -t {themeId}` to switch to & download that theme
 
 ## Development workflow
 
